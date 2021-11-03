@@ -3,26 +3,22 @@
 	"version": "1.0.0",
 	"description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
 	"scripts": {
-		"build": "tailwindcss build css/tailwind.css -o public/build/tailwind.css",
-		"tailwind": "postcss css/tailwind.css -o public/build/tailwind.css",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"dev": "vite",
+		"build": "vite build",
+		"serve": "vite preview"
 	},
 	"author": "Zaman <zaman7u@gmail.com>",
 	"license": "MIT",
 	"devDependencies": {
 		"@tailwindcss/forms": "0.2.1",
+		"@tailwindcss/jit": "^0.1.18",
 		"alpinejs": "^2.7.3",
 		"autoprefixer": "^10.1.0",
 		"color": "3.1.2",
+		"path": "^0.12.7",
 		"postcss": "^8.1.7",
-        "postcss-cli": "^8.2.0",
-		"tailwindcss": "^2.2.19"
-	},
-	"keywords": [
-		"tailwind",
-		"tailwind",
-		"dashboard",
-		"template",
-		"admin"
-	]
+		"postcss-cli": "^8.2.0",
+		"tailwindcss": "^2.2.19",
+		"vite": "^2.6.13"
+	}
 }
