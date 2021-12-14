@@ -9,7 +9,27 @@ new Vue({
             isNotificationsMenuOpen: false,
         }
     },
+    mounted() {
+        console.log('mounted');
+        this.dark = this.getThemeFromLocalStorage();
+    },
     methods:{
+        getThemeFromLocalStorage() {
+            // if user already changed the theme, use it
+            if (window.localStorage.getItem('dark')) {
+                return JSON.parse(window.localStorage.getItem('dark'))
+            }
+    
+            // else return their preferences
+            return (
+                !!window.matchMedia &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches
+            )
+        },
+    
+        setThemeToLocalStorage(value) {
+            window.localStorage.setItem('dark', value)
+        },
         toggleTheme(){
             this.dark = !this.dark
             if(this.dark){
@@ -17,6 +37,7 @@ new Vue({
             }else{
                 document.documentElement.className = '';
             }
+            this.setThemeToLocalStorage(this.dark)
         },
         toggleSideMenu(){
             this.isSideMenuOpen = !this.isSideMenuOpen;
