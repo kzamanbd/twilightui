@@ -3,7 +3,7 @@ const plugin = require('tailwindcss/plugin')
 const Color = require('color')
 
 module.exports = {
-    purge: ['public/**/*.html'],
+    purge: ['./**/*.html'],
     darkMode: 'class',
     theme: {
         themeVariants: ['dark'],
@@ -185,7 +185,7 @@ module.exports = {
         plugin(({ addUtilities, e, theme, variants }) => {
             const newUtilities = {}
             Object.entries(theme('colors')).map(([name, value]) => {
-                if (name === 'transparent' || name === 'current') return
+                if (name === 'transparent' || name === 'current') return;
                 const color = value[300] ? value[300] : value
                 const hsla = Color(color).alpha(0.45).hsl().string()
 
