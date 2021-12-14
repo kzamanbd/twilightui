@@ -2,7 +2,7 @@ new Vue({
     el: '#app',
     data(){
         return {
-            dark: false,
+            isDarkMode: false,
             isPagesMenuOpen: false,
             isSideMenuOpen: false,
             isProfileMenuOpen: false,
@@ -10,14 +10,16 @@ new Vue({
         }
     },
     mounted() {
-        console.log('mounted');
-        this.dark = this.getThemeFromLocalStorage();
+        this.isDarkMode = this.getThemeFromLocalStorage();
+        if(this.isDarkMode){
+            document.documentElement.classList.add('dark');
+        }
     },
     methods:{
         getThemeFromLocalStorage() {
             // if user already changed the theme, use it
-            if (window.localStorage.getItem('dark')) {
-                return JSON.parse(window.localStorage.getItem('dark'))
+            if (window.localStorage.getItem('isDarkMode')) {
+                return JSON.parse(window.localStorage.getItem('isDarkMode'))
             }
     
             // else return their preferences
@@ -28,16 +30,12 @@ new Vue({
         },
     
         setThemeToLocalStorage(value) {
-            window.localStorage.setItem('dark', value)
+            window.localStorage.setItem('isDarkMode', value)
         },
         toggleTheme(){
-            this.dark = !this.dark
-            if(this.dark){
-                document.documentElement.className = 'dark';
-            }else{
-                document.documentElement.className = '';
-            }
-            this.setThemeToLocalStorage(this.dark)
+            this.isDarkMode = !this.isDarkMode
+            document.documentElement.classList.toggle('dark');
+            this.setThemeToLocalStorage(this.isDarkMode)
         },
         toggleSideMenu(){
             this.isSideMenuOpen = !this.isSideMenuOpen;
