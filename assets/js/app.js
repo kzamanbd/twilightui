@@ -1,6 +1,6 @@
 new Vue({
     el: '#app',
-    data(){
+    data() {
         return {
             isDarkMode: false,
             isPagesMenuOpen: false,
@@ -12,65 +12,80 @@ new Vue({
         }
     },
     mounted() {
-        this.isDarkMode = this.getThemeFromLocalStorage();
-        if(this.isDarkMode){
-            document.documentElement.classList.add('dark');
+        this.isDarkMode = this.getThemeFromLocalStorage()
+        if (this.isDarkMode) {
+            document.documentElement.classList.add('dark')
         }
     },
-    methods:{
+    methods: {
         getThemeFromLocalStorage() {
             // if user already changed the theme, use it
             if (window.localStorage.getItem('isDarkMode')) {
                 return JSON.parse(window.localStorage.getItem('isDarkMode'))
             }
-    
+
             // else return their preferences
-            return (
-                !!window.matchMedia &&
-                window.matchMedia('(prefers-color-scheme: dark)').matches
-            )
+            return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         },
-    
+
         setThemeToLocalStorage(value) {
             window.localStorage.setItem('isDarkMode', value)
         },
-        toggleTheme(){
+        toggleTheme() {
             this.isDarkMode = !this.isDarkMode
-            document.documentElement.classList.toggle('dark');
+            document.documentElement.classList.toggle('dark')
             this.setThemeToLocalStorage(this.isDarkMode)
         },
-        toggleSideMenu(){
-            this.isSideMenuOpen = !this.isSideMenuOpen;
+        toggleSideMenu() {
+            this.isSideMenuOpen = !this.isSideMenuOpen
         },
-        closeSideMenu(){
-            this.isSideMenuOpen = false;
+        closeSideMenu() {
+            this.isSideMenuOpen = false
         },
-        toggleProfileMenu(){
-            this.isNotificationsMenuOpen = false;
+        toggleProfileMenu() {
+            this.isNotificationsMenuOpen = false
             this.isProfileMenuOpen = !this.isProfileMenuOpen
         },
-        closeProfileMenu(){
+        closeProfileMenu() {
             this.isProfileMenuOpen = false
         },
-        toggleNotificationsMenu(){
+        toggleNotificationsMenu() {
             this.isProfileMenuOpen = false
             this.isNotificationsMenuOpen = !this.isNotificationsMenuOpen
         },
-        closeNotificationsMenu(){
+        closeNotificationsMenu() {
             this.isNotificationsMenuOpen = false
         },
-        togglePagesMenu(){
+        togglePagesMenu() {
             this.isPagesMenuOpen = !this.isPagesMenuOpen
         },
-        closePagesMenu(){
+        closePagesMenu() {
             this.isPagesMenuOpen = false
         },
-        openModal(){
-            this.isModalOpen = true;
+        openModal() {
+            this.isModalOpen = true
         },
-        closeModal(){
-            this.isModalOpen = false;
-            this.trapCleanup = null;
-        }
-    }
+        closeModal() {
+            this.isModalOpen = false
+            this.trapCleanup = null
+        },
+    },
 })
+
+// document.addEventListener('contextmenu', function (e) {
+//     e.preventDefault()
+// })
+// document.addEventListener('keydown', function (e) {
+//     if (e.keyCode == 123) {
+//         re.preventDefault()
+//     }
+//     if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+//         e.preventDefault()
+//     }
+//     if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+//         e.preventDefault()
+//     }
+//     if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+//         e.preventDefault()
+//     }
+// })
