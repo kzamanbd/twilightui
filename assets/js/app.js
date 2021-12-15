@@ -7,6 +7,8 @@ new Vue({
             isSideMenuOpen: false,
             isProfileMenuOpen: false,
             isNotificationsMenuOpen: false,
+            isModalOpen: false,
+            trapCleanup: null,
         }
     },
     mounted() {
@@ -63,5 +65,12 @@ new Vue({
         closePagesMenu(){
             this.isPagesMenuOpen = false
         },
+        openModal(){
+            this.isModalOpen = true;
+        },
+        closeModal(){
+            this.isModalOpen = false;
+            this.trapCleanup = null;
+        }
     }
 })
