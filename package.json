@@ -13,11 +13,10 @@
 		"@tailwindcss/forms": "0.2.1",
 		"autoprefixer": "^10.1.0",
 		"color": "3.1.2",
-		"path": "^0.12.7",
 		"postcss": "^8.1.7",
 		"postcss-cli": "^8.2.0",
 		"prettier": "^2.5.1",
 		"tailwindcss": "^2.2.19",
-		"vite": "^2.6.13"
+		"vite": "^2.7.3"
 	}
 }
