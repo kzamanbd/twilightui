@@ -17,10 +17,10 @@ function data() {
     }
 
     return {
-        dark: getThemeFromLocalStorage(),
+        isDarkMode: getThemeFromLocalStorage(),
         toggleTheme() {
-            this.dark = !this.dark
-            setThemeToLocalStorage(this.dark)
+            this.isDarkMode = !this.isDarkMode
+            setThemeToLocalStorage(this.isDarkMode)
         },
         isSideMenuOpen: false,
         toggleSideMenu() {
