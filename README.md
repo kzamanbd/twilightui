@@ -1,6 +1,5 @@
 # Tailwind Dashboard
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8b7feafc-5a97-4395-aa31-e612c42df8f9/deploy-status)](https://app.netlify.com/sites/tailwind-dashboard-alpinejs/deploys)
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/598cb145-3332-4c52-a9b9-b9568f45bb55/deploy-status)](https://app.netlify.com/sites/tailwind-dashbard/deploys)
 A multi theme, completely accessible, with components and pages examples, ready for production dashboard.
 
 🧪 [See it live](https://zamanz.github.io/tailwind-dashboard/index.html)
@@ -24,21 +23,6 @@ npm run dev
 ### build
 ```sh
 npm run build
-```
-
-then grab everything from the dist folder
-
-### change server port
-Just change the port number in `vite.config.js` file
-```javascript
-export default {
-    plugins: [],
-    server: {
-      open: '/index.html',
-      port: 3020, //< -change this
-    }
-}
-
 ```
 
 ### configure tailwind
