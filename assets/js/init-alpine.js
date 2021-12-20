@@ -58,5 +58,8 @@ function data() {
             this.isModalOpen = false
             this.trapCleanup()
         },
+
+        // settings panel
+        isSettingsPanelOpen: false,
     }
 }

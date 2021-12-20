@@ -195,9 +195,9 @@
                                         </svg>
                                     </div>
                                     <input
-                                        class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+                                        class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 hover:bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
                                         type="text"
-                                        placeholder="Search for projects"
+                                        placeholder="Search"
                                         aria-label="Search"
                                     />
                                 </div>
@@ -427,6 +427,36 @@
                             </div>
                         </div>
                     </main>
+                </div>
+                <!-- Setting panel button -->
+                <button @click="isSettingsPanelOpen = true" class="fixed right-0 px-4 py-2 text-sm font-medium text-white uppercase transform rotate-90 translate-x-8 bg-gray-600 top-1/2 rounded-b-md">
+                    Settings
+                </button>
+
+                <!-- Settings panel -->
+                <div
+                    x-show="isSettingsPanelOpen"
+                    @click.away="isSettingsPanelOpen = false"
+                    x-transition:enter="transition transform duration-300"
+                    x-transition:enter-start="translate-x-full opacity-30  ease-in"
+                    x-transition:enter-end="translate-x-0 opacity-100 ease-out"
+                    x-transition:leave="transition transform duration-300"
+                    x-transition:leave-start="translate-x-0 opacity-100 ease-out"
+                    x-transition:leave-end="translate-x-full opacity-0 ease-in"
+                    class="z-40 fixed inset-y-0 right-0 flex flex-col backdrop-blur bg-white/30 dark:bg-white/10 bg-white shadow-lg bg-opacity-20 w-80"
+                >
+                    <div class="flex items-center justify-between flex-shrink-0 p-2">
+                        <h6 class="p-2 text-lg dark:text-white">Settings</h6>
+                        <button @click="isSettingsPanelOpen = false" class="p-2 rounded-md focus:outline-none focus:ring">
+                            <svg class="w-6 h-6 text-gray-600 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-1 max-h-full p-4 overflow-hidden hover:overflow-y-scroll">
+                        <span class="dark:text-white">Settings Content</span>
+                        <!-- Settings Panel Content ... -->
+                    </div>
                 </div>
             </div>
         </div>
