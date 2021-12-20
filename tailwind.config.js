@@ -4,16 +4,7 @@ module.exports = {
     content: ['./**/*.html'],
     darkMode: 'class',
     theme: {
-        themeVariants: ['dark'],
-        customForms: (theme) => ({
-            default: {
-                'input, textarea': {
-                    '&::placeholder': {
-                        color: theme('colors.gray.400'),
-                    },
-                },
-            },
-        }),
+        themeVariants: ['dark', 'light'],
         extend: {
             maxHeight: {
                 0: '0',
