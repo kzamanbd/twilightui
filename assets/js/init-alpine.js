@@ -61,5 +61,8 @@ function data() {
 
         // settings panel
         isSettingsPanelOpen: false,
+        
+        // search modal
+        isSearchModalOpen: false,
     }
 }
