@@ -63,6 +63,6 @@ function data() {
         isSettingsPanelOpen: false,
         
         // search modal
-        isSearchModalOpen: false,
+        isSearchBoxOpen: false,
     }
 }
