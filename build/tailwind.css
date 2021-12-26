@@ -3061,6 +3061,10 @@ select {
     width: 50%;
   }
 
+  .md\:w-64 {
+    width: 16rem;
+  }
+
   .md\:max-w-4xl {
     max-width: 56rem;
   }
