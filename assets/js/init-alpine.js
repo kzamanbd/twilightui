@@ -22,27 +22,24 @@ function data() {
             this.isDarkMode = !this.isDarkMode
             setThemeToLocalStorage(this.isDarkMode)
         },
+        // sidebar
         isSideMenuOpen: false,
-        toggleSideMenu() {
-            this.isSideMenuOpen = !this.isSideMenuOpen
-        },
-        closeSideMenu() {
-            this.isSideMenuOpen = false
-        },
+        // settings panel
+        isSettingsPanelOpen: false,
+        // search modal
+        isSearchBoxOpen: false,
+
+        // notifications
         isNotificationsMenuOpen: false,
         toggleNotificationsMenu() {
             this.isNotificationsMenuOpen = !this.isNotificationsMenuOpen
         },
-        closeNotificationsMenu() {
-            this.isNotificationsMenuOpen = false
-        },
+
         isProfileMenuOpen: false,
         toggleProfileMenu() {
             this.isProfileMenuOpen = !this.isProfileMenuOpen
         },
-        closeProfileMenu() {
-            this.isProfileMenuOpen = false
-        },
+
         isPagesMenuOpen: false,
         togglePagesMenu() {
             this.isPagesMenuOpen = !this.isPagesMenuOpen
@@ -58,11 +55,5 @@ function data() {
             this.isModalOpen = false
             this.trapCleanup()
         },
-
-        // settings panel
-        isSettingsPanelOpen: false,
-        
-        // search modal
-        isSearchBoxOpen: false,
     }
 }
