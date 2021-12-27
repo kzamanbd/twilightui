@@ -45,4 +45,17 @@
         @apply bg-orange-500;
     }
 
+
+    /* card components */
+
+    .card {
+        @apply bg-white border border-gray-200 dark:border-gray-700 dark:bg-gray-800 rounded-md shadow-sm;
+    }
+    .card-header {
+        @apply p-4 border-b border-gray-200 dark:border-gray-700;
+    }
+    .card-body {
+        @apply p-4;
+    }
+
 }
