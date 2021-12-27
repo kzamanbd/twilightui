@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* components */
+
+@layer components{
+
+    /* dark theme */
+    .dark--theme{
+        @apply dark:text-gray-200;
+    }
+
+    /* text color */
+    .text-primary{
+        @apply text-purple-600;
+    }
+    .text-secondary{
+        @apply text-gray-500;
+    }
+    .text-success{
+        @apply text-green-500;
+    }
+    .text-danger{
+        @apply text-red-500;
+    }
+    .text-warning{
+        @apply text-orange-500;
+    }
+
+    /* background color */
+    .bg-primary{
+        @apply bg-purple-600;
+    }
+    .bg-secondary{
+        @apply bg-gray-500;
+    }
+    .bg-success{
+        @apply bg-green-500;
+    }
+    .bg-danger{
+        @apply bg-red-500;
+    }
+    .bg-warning{
+        @apply bg-orange-500;
+    }
+
+}
