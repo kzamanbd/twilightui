@@ -1259,6 +1259,23 @@ select {
           animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
 .cursor-not-allowed {
   cursor: not-allowed;
 }
@@ -1711,6 +1728,10 @@ select {
 
 .bg-black\/20 {
   background-color: rgb(0 0 0 / 0.2);
+}
+
+.bg-gray-600\/30 {
+  background-color: rgb(75 85 99 / 0.3);
 }
 
 .bg-opacity-20 {
