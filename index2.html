@@ -91,13 +91,13 @@
                                     >
                                         <!-- active & hover classes 'text-gray-700 dark:text-light' -->
                                         <!-- inActive classes 'text-gray-400 dark:text-gray-400' -->
-                                        <li role="menuitem" class="block p-2 text-sm text-gray-700 transition-colors duration-200 rounded-md dark:text-light dark:hover:text-light hover:text-gray-700">
+                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 dark:text-gray-100 transition-colors duration-200 rounded-md hover:text-gray-700">
                                             <a href="index.html">Dashboard V1</a>
                                         </li>
-                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700">
+                                        <li role="menuitem" class="block p-2 text-sm text-gray-700 dark:text-gray-100 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700">
                                             <a href="index2.html">Dashboard V2</a>
                                         </li>
-                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700">
+                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 dark:text-gray-100 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700">
                                             <a href="index3.html">Dashboard V3</a>
                                         </li>
                                     </ul>
@@ -136,25 +136,22 @@
                                     >
                                         <!-- active & hover classes 'text-gray-700 dark:text-light' -->
                                         <!-- inActive classes 'text-gray-400 dark:text-gray-400' -->
-                                        <li role="menuitem" class="block p-2 text-sm text-gray-700 transition-colors duration-200 rounded-md dark:text-light dark:hover:text-light hover:text-gray-700">
+                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 dark:text-gray-100 transition-colors duration-200 rounded-md hover:text-gray-700">
                                             <a href="alerts.html">Alerts</a>
                                         </li>
-                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700">
+                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 dark:text-gray-100 transition-colors duration-200 rounded-md hover:text-gray-700">
                                             <a href="buttons.html">Buttons</a>
                                         </li>
-                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700">
+                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 dark:text-gray-100 transition-colors duration-200 rounded-md hover:text-gray-700">
                                             <a href="cards.html">Cards</a>
                                         </li>
-                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700">
+                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 dark:text-gray-100 transition-colors duration-200 rounded-md hover:text-gray-700">
                                             Dropdowns
                                         </li>
-                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700">
+                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 dark:text-gray-100 transition-colors duration-200 rounded-md hover:text-gray-700">
                                             <a href="forms.html">Forms</a>
                                         </li>
-                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700">
-                                            Lists
-                                        </li>
-                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700">
+                                        <li role="menuitem" class="block p-2 text-sm text-gray-400 dark:text-gray-100 transition-colors duration-200 rounded-md hover:text-gray-700">
                                             Modals
                                         </li>
                                     </ul>
@@ -291,7 +288,7 @@
                 <!-- main-content start -->
                 <div class="flex flex-col flex-1 h-full overflow-hidden overflow-y-auto relative">
                     <!-- header start -->
-                    <header class="sticky top-0 z-10 py-4 backdrop-filter backdrop-blur bg-white/60 dark:bg-gray-800/60 w-full border-b border-b-gray-300 dark:border-b-gray-700 flex-shrink-0 bg-white h-16">
+                    <header class="sticky top-0 z-10 py-4 backdrop-filter backdrop-blur bg-white/60 dark:bg-gray-800/60 w-full border-b border-b-gray-300 dark:border-b-gray-700 flex-shrink-0 h-16">
                         <div class="flex container px-6 mx-auto items-center text-primary dark:text-purple-300">
                             <!-- header menu button -->
                             <div class="flex justify-between items-center md:hidden">
@@ -309,7 +306,7 @@
                                     <div class="hidden md:block">
                                         <button
                                             type="button"
-                                            class="py-1.5 w-72 flex items-center text-sm leading-6 text-gray-400 focus-visible:outline-0 ring-0 focus:ring-0 pl-2 pr-3"
+                                            class="py-1.5 w-72 flex items-center text-sm leading-6 text-gray-600 dark:text-white focus-visible:outline-0 ring-0 focus:ring-0 pl-2 pr-3"
                                             @click="isSearchBoxOpen = true"
                                             @keydown.escape="isSearchBoxOpen = false"
                                         >
@@ -685,8 +682,11 @@
                     </div>
                 </div>
                 <!-- Setting panel button -->
-                <button @click="isSettingsPanelOpen = true" class="fixed right-0 px-4 py-2 text-sm font-medium text-white uppercase transform rotate-90 translate-x-8 bg-gray-600 top-1/2 rounded-b-md">
-                    Settings
+                <button @click="isSettingsPanelOpen = true" class="flex items-center justify-center fixed right-0 p-1 text-sm font-medium text-white bg-primary dark:bg-gray-600 top-1/2 rounded-l-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 0 24 24" width="32px" class="animate-spin" fill="currentColor">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.09-.16-.26-.25-.44-.25-.06 0-.12.01-.17.03l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.06-.02-.12-.03-.18-.03-.17 0-.34.09-.43.25l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.09.16.26.25.44.25.06 0 .12-.01.17-.03l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.06.02.12.03.18.03.17 0 .34-.09.43-.25l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zm-1.98-1.71c.04.31.05.52.05.73 0 .21-.02.43-.05.73l-.14 1.13.89.7 1.08.84-.7 1.21-1.27-.51-1.04-.42-.9.68c-.43.32-.84.56-1.25.73l-1.06.43-.16 1.13-.2 1.35h-1.4l-.19-1.35-.16-1.13-1.06-.43c-.43-.18-.83-.41-1.23-.71l-.91-.7-1.06.43-1.27.51-.7-1.21 1.08-.84.89-.7-.14-1.13c-.03-.31-.05-.54-.05-.74s.02-.43.05-.73l.14-1.13-.89-.7-1.08-.84.7-1.21 1.27.51 1.04.42.9-.68c.43-.32.84-.56 1.25-.73l1.06-.43.16-1.13.2-1.35h1.39l.19 1.35.16 1.13 1.06.43c.43.18.83.41 1.23.71l.91.7 1.06-.43 1.27-.51.7 1.21-1.07.85-.89.7.14 1.13zM12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                    </svg>
                 </button>
 
                 <!-- Settings panel -->
@@ -716,5 +716,8 @@
                 </div>
             </div>
         </div>
+        <!-- All javascript code in this project for now is just for demo DON'T RELY ON IT  -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
+        <script src="./assets/js/script.js"></script>
     </body>
 </html>
