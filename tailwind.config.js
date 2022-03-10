@@ -7,8 +7,10 @@ module.exports = {
         themeVariants: ['dark', 'light'],
         extend: {
             maxHeight: {
-                0: '0',
                 xl: '36rem',
+            },
+            maxWidth: {
+                '8xl': '90rem',
             },
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
