@@ -780,16 +780,16 @@ select {
   top: 50%;
 }
 
-.left-\[max\(0px\2c calc\(50\%-45rem\)\)\] {
-  left: max(0px,calc(50% - 45rem));
-}
-
 .right-auto {
   right: auto;
 }
 
 .top-16 {
   top: 4rem;
+}
+
+.left-\[max\(0px\2c calc\(50\%-45rem\)\)\] {
+  left: max(0px,calc(50% - 45rem));
 }
 
 .z-50 {
@@ -1186,12 +1186,12 @@ select {
   max-width: 36rem;
 }
 
-.max-w-8xl {
-  max-width: 90rem;
-}
-
 .max-w-3xl {
   max-width: 48rem;
+}
+
+.max-w-8xl {
+  max-width: 90rem;
 }
 
 .max-w-2xl {
@@ -3311,10 +3311,6 @@ select {
 }
 
 @media (min-width: 1024px) {
-  .lg\:top-\[3\.8125rem\] {
-    top: 3.8125rem;
-  }
-
   .lg\:z-50 {
     z-index: 50;
   }
