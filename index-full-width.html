@@ -45,15 +45,16 @@
                                     </svg>
                                 </a>
 
-                                <div class="relative hidden lg:flex items-center ml-auto">
-                                    <nav class="text-sm leading-6 font-semibold text-gray-500 dark:text-slate-200">
-                                        <ul class="flex space-x-8">
-                                            <li><a class="hover:text-sky-500 dark:hover:text-sky-400" href="/docs/installation">Docs</a></li>
-                                            <li><a href="https://tailwindui.com" class="hover:text-sky-500 dark:hover:text-sky-400">Components</a></li>
-                                            <li><a class="hover:text-sky-500 dark:hover:text-sky-400" href="/blog">Blog</a></li>
-                                        </ul>
-                                    </nav>
-                                    <div class="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-700 space-x-4">
+                                <div class="relative flex items-center ml-auto">
+                                    <button
+                                        type="button"
+                                        class="ml-auto text-slate-500 w-8 h-8 -my-1 flex items-center justify-center hover:text-slate-600 lg:hidden dark:text-slate-400 dark:hover:text-slate-300"
+                                        @click="isSearchBoxOpen = true"
+                                        @keydown.escape="isSearchBoxOpen = false"
+                                    >
+                                        <span class="material-icons">search</span>
+                                    </button>
+                                    <div class="flex items-center border-l border-slate-200 lg:border-0 ml-6 pl-6 dark:border-slate-700 space-x-4">
                                         <button
                                             type="button"
                                             class="h-8 w-8 flex align-middle items-center justify-center"
@@ -176,19 +177,6 @@
                                             </template>
                                         </div>
                                     </div>
-                                </div>
-                                <button
-                                    type="button"
-                                    class="ml-auto text-slate-500 w-8 h-8 -my-1 flex items-center justify-center hover:text-slate-600 lg:hidden dark:text-slate-400 dark:hover:text-slate-300"
-                                    @click="isSearchBoxOpen = true"
-                                    @keydown.escape="isSearchBoxOpen = false"
-                                >
-                                    <span class="material-icons">search</span>
-                                </button>
-                                <div class="ml-2 -my-1 lg:hidden">
-                                    <button type="button" class="text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
-                                        <span class="material-icons">more_vert</span>
-                                    </button>
                                 </div>
                             </div>
                         </div>
