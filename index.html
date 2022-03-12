@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" :class="{ 'dark': isDarkMode }" x-data="data()" x-init="$refs.loading.classList.add('hidden')">
+<html lang="en" :class="{ 'dark': isDarkMode }" x-data="data()" class="scroll-smooth" x-init="$refs.loading.classList.add('hidden')">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1063,6 +1063,10 @@
                         <!-- Settings Panel Content ... -->
                     </div>
                 </div>
+
+                <a href="#" class="h-8 w-8 bg-primary fixed flex items-center justify-center right-4 z-40 bottom-4 text-white dark:text-gray-300 rounded-full">
+                    <span class="material-icons">arrow_upward</span>
+                </a>
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>

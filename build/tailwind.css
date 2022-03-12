@@ -784,6 +784,14 @@ select {
   right: auto;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
+.bottom-4 {
+  bottom: 1rem;
+}
+
 .top-16 {
   top: 4rem;
 }
@@ -1491,6 +1499,10 @@ select {
 
 .overflow-y-scroll {
   overflow-y: scroll;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
 }
 
 .truncate {
