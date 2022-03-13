@@ -1,10 +1,16 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
     content: ['./**/*.html'],
     darkMode: 'class', // or 'media'
     theme: {
         themeVariants: ['dark', 'light'],
+        colors:{
+            ...colors,
+            primary: colors.purple[600],
+            secondary: colors.yellow,
+        },
         extend: {
             maxHeight: {
                 xl: '36rem',
