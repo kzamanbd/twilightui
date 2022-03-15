@@ -4,13 +4,12 @@
 
 /* components */
 
-@layer components{
-
+@layer components {
     /* dark theme */
     .dark {
         color-scheme: dark;
     }
-    .dark--theme{
+    .dark--theme {
         @apply dark:text-gray-200;
     }
     /* card components */
@@ -24,5 +23,4 @@
     .card-body {
         @apply p-4;
     }
-
 }

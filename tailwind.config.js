@@ -6,12 +6,10 @@ module.exports = {
     darkMode: 'class', // or 'media'
     theme: {
         themeVariants: ['dark', 'light'],
-        colors:{
-            ...colors,
-            primary: colors.purple[600],
-            secondary: colors.yellow,
-        },
         extend: {
+            colors: {
+                primary: colors.purple[600],
+            },
             maxHeight: {
                 xl: '36rem',
             },
@@ -23,7 +21,5 @@ module.exports = {
             },
         },
     },
-    plugins: [
-        require('@tailwindcss/forms')
-    ],
+    plugins: [require('@tailwindcss/forms')],
 }
