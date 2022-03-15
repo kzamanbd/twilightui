@@ -31,7 +31,7 @@ npm run build
 
 ## configure tailwind
 
-There is a `tailwind.config.js` file with `purge` instructions and extra colors, feel free to customize it according to your need
+There is a `tailwind.config.js` file with `content` instructions and extra colors, feel free to customize it according to your need
 
 (TODO: add links)
 
