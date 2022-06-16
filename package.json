@@ -1,17 +1,17 @@
 {
-	"name": "tailwind-dashboard",
-	"version": "1.0.0",
-	"description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
-	"scripts": {
-		"build": "tailwindcss -i ./build/input.css -o ./build/tailwind.css -w"
-	},
-	"author": "Zaman <zaman7u@gmail.com>",
-	"license": "MIT",
-	"devDependencies": {
-		"@tailwindcss/forms": "^0.4.0",
-		"autoprefixer": "^10.4.2",
-		"postcss": "^8.4.8",
-		"prettier": "^2.5.1",
-		"tailwindcss": "^3.0.23"
-	}
+    "name": "tailwind-dashboard",
+    "version": "1.0.0",
+    "description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
+    "scripts": {
+        "build": "tailwindcss -i ./build/input.css -o ./build/tailwind.css -w"
+    },
+    "author": "Zaman <zamandotbd@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.4.0",
+        "autoprefixer": "^10.4.2",
+        "postcss": "^8.4.8",
+        "prettier": "^2.5.1",
+        "tailwindcss": "^3.1.3"
+    }
 }

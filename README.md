@@ -33,9 +33,9 @@ There is a `tailwind.config.js` file with `content` instructions and extra color
 
 (TODO: add links)
 
-- Tailwind CSS
-- Tailwind Forms
-- PostCSS
-- Alpine.js
-- Chart.js (charts)
-- UI Faces (avatars)
+-   Tailwind CSS
+-   Tailwind Forms
+-   PostCSS
+-   Alpine.js
+-   Chart.js (charts)
+-   UI Faces (avatars)
