@@ -1023,6 +1023,14 @@ select{
   top: 0px;
 }
 
+.right-2{
+  right: 0.5rem;
+}
+
+.top-2{
+  top: 0.5rem;
+}
+
 .z-20{
   z-index: 20;
 }
@@ -1421,6 +1429,10 @@ select{
 .animate-spin{
   -webkit-animation: spin 1s linear infinite;
           animation: spin 1s linear infinite;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 
 .appearance-none{
@@ -2021,6 +2033,11 @@ select{
 .text-black{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-gray-300{
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
 .underline{

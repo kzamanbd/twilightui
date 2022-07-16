@@ -28,7 +28,7 @@
                     <div
                         :class="isSideMenuOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
                         class="sidebar fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-gray-800 dark:bg-gray-800 lg:translate-x-0 lg:static lg:inset-0">
-                        <div class="flex items-center justify-center py-2.5">
+                        <div class="flex items-center justify-center relative py-2.5">
                             <a href="/index.html" class="flex items-center">
                                 <svg
                                     class="w-12 h-12"
@@ -49,6 +49,11 @@
 
                                 <span class="mx-2 text-2xl font-semibold text-white app-name"> Dashboard </span>
                             </a>
+                            <span
+                                @click="isSideMenuOpen = false"
+                                class="material-icons text-gray-300 absolute right-2 top-2 cursor-pointer text-lg md:hidden">
+                                close
+                            </span>
                         </div>
 
                         <nav>
@@ -132,7 +137,6 @@
                             <button
                                 type="button"
                                 @click="isSideMenuOpen = !isSideMenuOpen"
-                                @click.away="isSideMenuOpen = false"
                                 class="text-gray-500 focus:outline-none lg:hidden">
                                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
