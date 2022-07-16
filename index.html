@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" :class="{ 'dark': isDarkMode }" x-data="initApp()" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,7 @@
     </head>
 
     <body>
-        <div id="app">
+        <div id="app" :class="{ 'dark': isDarkMode }" x-data="initApp()">
             <div class="flex h-screen bg-gray-200 font-roboto dark:bg-gray-900 dark:text-gray-300">
                 <aside class="flex">
                     <div
@@ -28,8 +28,8 @@
                     <div
                         :class="isSideMenuOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
                         class="sidebar fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-gray-800 dark:bg-gray-800 lg:translate-x-0 lg:static lg:inset-0">
-                        <div class="flex items-center justify-center my-6">
-                            <a href="/dashboard" class="flex items-center">
+                        <div class="flex items-center justify-center py-2.5">
+                            <a href="/index.html" class="flex items-center">
                                 <svg
                                     class="w-12 h-12"
                                     viewBox="0 0 512 512"
@@ -52,51 +52,72 @@
                         </div>
 
                         <nav>
-                            <ul id="nav-menu" class="nav-menu">
+                            <ul id="nav-menu" class="nav-menu space-y-2">
                                 <li>
-                                    <a href="/dashboard" class="nav-link nav-link-active">
+                                    <a href="/index.html" class="nav-link nav-link-active">
                                         <span class="material-icons">dashboard</span>
-                                        <span class="mx-4 link-label truncate">Dashboard</span>
+                                        <span class="link-label">Dashboards</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="/ui-elements" class="nav-link">
+                                <li class="menu-header">Pages</li>
+                                <li x-data="{ isOpen: false }">
+                                    <div role="button" @click="isOpen = !isOpen" class="nav-link">
                                         <span class="material-icons">grid_view</span>
-                                        <span class="mx-4 link-label truncate">UI Elements</span>
+                                        <span class="link-label">UI Elements</span>
                                         <span
-                                            class="material-icons ml-auto transition-transform transform rotate-180 dropdown-icon">
+                                            class="material-icons ml-auto transition-transform transform dropdown-icon"
+                                            :class="{'rotate-180': isOpen}">
                                             expand_more
                                         </span>
-                                    </a>
+                                    </div>
+                                    <template x-if="isOpen">
+                                        <ul
+                                            role="menu"
+                                            aria-label="Dashboards"
+                                            class="space-y-2 ml-6"
+                                            x-transition:enter="transition-all ease-in-out duration-300"
+                                            x-transition:enter-start="opacity-25 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-xl"
+                                            x-transition:leave="transition-all ease-in-out duration-300"
+                                            x-transition:leave-start="opacity-100 max-h-xl"
+                                            x-transition:leave-end="opacity-0 max-h-0">
+                                            <li
+                                                role="menuitem"
+                                                class="flex items-center py-2 px-4 text-gray-500 dark:text-gray-300 transition-colors duration-200 rounded-md hover:text-gray-100">
+                                                <span class="inline-flex rounded-full h-1 w-1 bg-sky-500"></span>
+                                                <a href="#" class="pl-2 text-sm">Buttons</a>
+                                            </li>
+                                        </ul>
+                                    </template>
                                 </li>
                                 <li>
                                     <a href="/tables" class="nav-link">
                                         <span class="material-icons">table_view</span>
-                                        <span class="mx-4 link-label truncate">Tables</span>
+                                        <span class="link-label">Tables</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="/forms" class="nav-link">
                                         <span class="material-icons">check_box</span>
-                                        <span class="mx-4 link-label truncate">Forms</span>
+                                        <span class="link-label">Forms</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="/cards" class="nav-link">
                                         <span class="material-icons">payment</span>
-                                        <span class="mx-4 link-label truncate">Cards</span>
+                                        <span class="link-label">Cards</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="/modal" class="nav-link">
                                         <span class="material-icons">wysiwyg</span>
-                                        <span class="mx-4 link-label truncate">Modal</span>
+                                        <span class="link-label">Modal</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="/blank" class="nav-link">
                                         <span class="material-icons">description</span>
-                                        <span class="mx-4 link-label truncate">Blank</span>
+                                        <span class="link-label">Blank</span>
                                     </a>
                                 </li>
                             </ul>
@@ -597,7 +618,10 @@
                     <div
                         class="flex items-center justify-between flex-shrink-0 pl-4 pr-2 py-4 border-b border-b-gray-300 dark:border-b-gray-800">
                         <h6 class="text-lg dark:text-white">Settings</h6>
-                        <button @click="isSettingsPanelOpen = false" class="rounded-md focus:outline-none focus:ring">
+                        <button
+                            type="button"
+                            @click="isSettingsPanelOpen = false"
+                            class="rounded-md focus:outline-none focus:ring-0">
                             <span class="material-icons">close</span>
                         </button>
                     </div>
