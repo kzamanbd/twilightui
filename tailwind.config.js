@@ -8,7 +8,7 @@ module.exports = {
         themeVariants: ['dark', 'light'],
         extend: {
             colors: {
-                primary: colors.purple[600],
+                primary: colors.indigo[600],
             },
             maxHeight: {
                 xl: '36rem',
@@ -17,7 +17,7 @@ module.exports = {
                 '8xl': '90rem',
             },
             fontFamily: {
-                sans: ['Inter', ...defaultTheme.fontFamily.sans],
+                sans: ['Roboto', ...defaultTheme.fontFamily.sans],
             },
         },
     },
