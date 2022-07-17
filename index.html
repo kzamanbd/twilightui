@@ -116,7 +116,7 @@
                                         </ul>
                                     </template>
                                 </li>
-                                <li class="menu-header pt-2">Pages</li>
+                                <li class="menu-header">Pages</li>
                                 <li x-data="{ isOpen: false }">
                                     <div
                                         role="button"
@@ -285,32 +285,215 @@
                                         </ul>
                                     </template>
                                 </li>
-
-                                <li>
-                                    <a href="/forms" class="nav-link">
+                                <li x-data="{ isOpen: false }">
+                                    <div
+                                        role="button"
+                                        @click="isOpen = !isOpen"
+                                        @click.away="isOpen = false"
+                                        class="nav-link">
                                         <span class="material-icons">corporate_fare</span>
                                         <span class="link-label">Corporate</span>
-                                    </a>
+                                        <span
+                                            class="material-icons ml-auto transition-transform transform dropdown-icon"
+                                            :class="{'rotate-180': isOpen}">
+                                            expand_more
+                                        </span>
+                                    </div>
+                                    <template x-if="isOpen">
+                                        <ul
+                                            role="menu"
+                                            class="ml-6 dropdown-menu"
+                                            aria-label="Corporate"
+                                            x-transition:enter="transition-all ease-in-out duration-300"
+                                            x-transition:enter-start="opacity-25 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-xl"
+                                            x-transition:leave="transition-all ease-in-out duration-300"
+                                            x-transition:leave-start="opacity-100 max-h-xl"
+                                            x-transition:leave-end="opacity-0 max-h-0">
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>About</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Our Team</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Contact Us</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Licenses</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Sitemap</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </template>
                                 </li>
-                                <li>
-                                    <a href="/cards" class="nav-link">
+                                <li x-data="{ isOpen: false }">
+                                    <div
+                                        role="button"
+                                        @click="isOpen = !isOpen"
+                                        @click.away="isOpen = false"
+                                        class="nav-link">
                                         <span class="material-icons">construction</span>
                                         <span class="link-label">Utilities</span>
-                                    </a>
+                                        <span
+                                            class="material-icons ml-auto transition-transform transform dropdown-icon"
+                                            :class="{'rotate-180': isOpen}">
+                                            expand_more
+                                        </span>
+                                    </div>
+                                    <template x-if="isOpen">
+                                        <ul
+                                            role="menu"
+                                            class="ml-6 dropdown-menu"
+                                            aria-label="Utilities"
+                                            x-transition:enter="transition-all ease-in-out duration-300"
+                                            x-transition:enter-start="opacity-25 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-xl"
+                                            x-transition:leave="transition-all ease-in-out duration-300"
+                                            x-transition:leave-start="opacity-100 max-h-xl"
+                                            x-transition:leave-end="opacity-0 max-h-0">
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Modals</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Search</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Wizards</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </template>
                                 </li>
-                                <li>
-                                    <a href="/modal" class="nav-link">
-                                        <span class="material-icons">widgets</span>
-                                        <span class="link-label">Widgets</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/blank" class="nav-link">
+                                <li x-data="{ isOpen: false }">
+                                    <div
+                                        role="button"
+                                        @click="isOpen = !isOpen"
+                                        @click.away="isOpen = false"
+                                        class="nav-link">
                                         <span class="material-icons">work</span>
                                         <span class="link-label">Careers</span>
-                                    </a>
+                                        <span
+                                            class="material-icons ml-auto transition-transform transform dropdown-icon"
+                                            :class="{'rotate-180': isOpen}">
+                                            expand_more
+                                        </span>
+                                    </div>
+                                    <template x-if="isOpen">
+                                        <ul
+                                            role="menu"
+                                            class="ml-6 dropdown-menu"
+                                            aria-label="Corporate"
+                                            x-transition:enter="transition-all ease-in-out duration-300"
+                                            x-transition:enter-start="opacity-25 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-xl"
+                                            x-transition:leave="transition-all ease-in-out duration-300"
+                                            x-transition:leave-start="opacity-100 max-h-xl"
+                                            x-transition:leave-end="opacity-0 max-h-0">
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Careers List</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Careers Apply</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </template>
                                 </li>
-                                <li class="menu-header pt-2">Apps</li>
+                                <li x-data="{ isOpen: false }">
+                                    <div
+                                        role="button"
+                                        @click="isOpen = !isOpen"
+                                        @click.away="isOpen = false"
+                                        class="nav-link">
+                                        <span class="material-icons">widgets</span>
+                                        <span class="link-label">Widgets</span>
+                                        <span
+                                            class="material-icons ml-auto transition-transform transform dropdown-icon"
+                                            :class="{'rotate-180': isOpen}">
+                                            expand_more
+                                        </span>
+                                    </div>
+                                    <template x-if="isOpen">
+                                        <ul
+                                            role="menu"
+                                            class="ml-6 dropdown-menu"
+                                            aria-label="Corporate"
+                                            x-transition:enter="transition-all ease-in-out duration-300"
+                                            x-transition:enter-start="opacity-25 max-h-0"
+                                            x-transition:enter-end="opacity-100 max-h-xl"
+                                            x-transition:leave="transition-all ease-in-out duration-300"
+                                            x-transition:leave-start="opacity-100 max-h-xl"
+                                            x-transition:leave-end="opacity-0 max-h-0">
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Lists</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Statistics</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Charts</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Mixed</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Tables</span>
+                                                </a>
+                                            </li>
+                                            <li role="menuitem" class="dropdown-item">
+                                                <a href="#" class="dropdown-item-link">
+                                                    <span class="pr-2 material-icons text-[8px]">circle</span>
+                                                    <span>Feeds</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </template>
+                                </li>
+                                <li class="menu-header">Apps</li>
                                 <li x-data="{ isOpen: false }">
                                     <div
                                         role="button"

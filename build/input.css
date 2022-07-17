@@ -6,7 +6,7 @@
 
 @layer components {
     .menu-header {
-        @apply px-5 text-gray-500 uppercase;
+        @apply px-5 text-gray-500 uppercase pt-2;
     }
     .mini-sidebar .sidebar {
         @apply w-16 hover:w-64;
