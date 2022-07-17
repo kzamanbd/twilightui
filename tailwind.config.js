@@ -9,6 +9,8 @@ module.exports = {
         extend: {
             colors: {
                 primary: colors.indigo[600],
+                'dark-primary': '#1e1e2d',
+                'dark-secondary': '#151521',
             },
             maxHeight: {
                 xl: '36rem',

@@ -6,7 +6,7 @@
 
 @layer components {
     .menu-header {
-        @apply px-5 text-gray-500 uppercase pt-2;
+        @apply px-5 text-gray-500 uppercase pt-2 text-sm;
     }
     .mini-sidebar .sidebar {
         @apply w-16 hover:w-64;
@@ -34,7 +34,7 @@
         @apply dark:text-gray-200;
     }
     .card {
-        @apply bg-white border border-gray-200 dark:border-gray-700 dark:bg-gray-800 rounded-md shadow-sm;
+        @apply bg-white border border-gray-200 dark:border-gray-700 dark:bg-dark-primary rounded-md shadow-sm;
     }
     .card-header {
         @apply p-4 text-gray-600 dark:text-gray-100 border-b border-gray-200 dark:border-gray-700;
