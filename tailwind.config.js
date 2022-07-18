@@ -13,7 +13,7 @@ module.exports = {
                 'dark-secondary': '#151521',
             },
             height: {
-                sidebar: 'calc(100vh - 90px)',
+                sidebar: 'calc(100vh - 68px)',
             },
             fontFamily: {
                 sans: ['Roboto', ...defaultTheme.fontFamily.sans],

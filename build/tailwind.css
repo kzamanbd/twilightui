@@ -1254,7 +1254,7 @@ select{
 }
 
 .h-sidebar{
-  height: calc(100vh - 90px);
+  height: calc(100vh - 68px);
 }
 
 .h-6{
@@ -1649,10 +1649,6 @@ select{
 
 .border-b-2{
   border-bottom-width: 2px;
-}
-
-.border-dashed{
-  border-style: dashed;
 }
 
 .border-gray-200{
