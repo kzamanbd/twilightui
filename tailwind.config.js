@@ -12,11 +12,8 @@ module.exports = {
                 'dark-primary': '#1e1e2d',
                 'dark-secondary': '#151521',
             },
-            maxHeight: {
-                xl: '36rem',
-            },
-            maxWidth: {
-                '8xl': '90rem',
+            height: {
+                sidebar: 'calc(100vh - 90px)',
             },
             fontFamily: {
                 sans: ['Roboto', ...defaultTheme.fontFamily.sans],

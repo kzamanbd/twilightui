@@ -17,7 +17,7 @@
 
     <body>
         <div id="app" :class="{ 'dark': isDarkMode }" x-data="initApp()">
-            <div class="flex h-screen bg-gray-200 font-roboto dark:bg-dark-secondary dark:text-gray-300">
+            <div class="flex h-screen bg-gray-100 font-roboto dark:bg-dark-secondary dark:text-gray-300">
                 <aside class="flex">
                     <div
                         tabindex="0"
@@ -28,7 +28,7 @@
 
                     <div
                         :class="isSideMenuOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-                        class="sidebar fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-dark-primary lg:translate-x-0 lg:static lg:inset-0">
+                        class="sidebar fixed inset-y-0 left-0 z-30 w-64 overflow-hidden transition duration-300 transform bg-dark-primary lg:translate-x-0 lg:static lg:inset-0">
                         <div class="flex items-center justify-center relative pb-2 pt-[10px]">
                             <a href="/index.html" class="flex items-center">
                                 <svg
@@ -57,9 +57,9 @@
                             </span>
                         </div>
 
-                        <nav>
-                            <ul id="nav-menu" class="nav-menu space-y-2">
-                                <li x-data="{ isOpen: false }">
+                        <nav id="sidebar-menu" class="overflow-y-auto h-sidebar">
+                            <ul class="nav-menu space-y-2">
+                                <li x-data="{ isOpen: true }">
                                     <div
                                         role="button"
                                         @click="isOpen = !isOpen"
@@ -768,7 +768,7 @@
 
                 <div class="flex-1 flex flex-col overflow-hidden">
                     <header
-                        class="flex items-center justify-between px-6 py-4 bg-white border-b-2 border-indigo-600 dark:bg-dark-primary dark:text-gray-300">
+                        class="flex items-center justify-between px-6 py-4 bg-white shadow-md dark:bg-dark-primary dark:text-gray-300">
                         <div class="flex items-center">
                             <button
                                 type="button"
