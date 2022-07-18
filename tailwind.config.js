@@ -5,7 +5,6 @@ module.exports = {
     content: ['./**/*.html'],
     darkMode: 'class', // or 'media'
     theme: {
-        themeVariants: ['dark', 'light'],
         extend: {
             colors: {
                 primary: colors.indigo[600],
