@@ -6,7 +6,7 @@ const pSidebar = new PerfectScrollbar('#sidebar-menu', {
 pSidebar.update()
 document.addEventListener('alpine:init', () => {
     Alpine.store('accordion', {
-        tab: 0,
+        tab: 1,
     })
     Alpine.data('accordion', idx => ({
         init() {
