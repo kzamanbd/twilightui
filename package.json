@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
     "scripts": {
-        "build": "tailwindcss -i ./build/input.css -o ./build/tailwind.css -w"
+        "dev": "tailwindcss -i ./build/input.css -o ./build/tailwind.css -w"
     },
     "author": "Zaman <zamandotbd@gmail.com>",
     "license": "MIT",
