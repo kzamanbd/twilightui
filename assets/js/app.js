@@ -19,6 +19,9 @@ document.addEventListener('alpine:init', () => {
         handleRotate() {
             return this.$store.accordion.tab === this.idx ? 'rotate-180' : ''
         },
+        activeAccordion() {
+            return this.$store.accordion.tab === this.idx ? 'nav-link-active' : ''
+        },
         handleToggle() {
             return this.$store.accordion.tab === this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : ''
         },
