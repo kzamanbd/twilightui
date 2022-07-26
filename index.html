@@ -765,8 +765,7 @@
                 </aside>
 
                 <div class="flex-1 flex flex-col overflow-y-auto overflow-x-hidden">
-                    <header
-                        class="sticky top-0 z-10 flex-shrink-0 flex items-center justify-between px-6 py-4 bg-white shadow-md dark:bg-dark-primary dark:text-gray-300">
+                    <header class="top-header">
                         <div class="flex items-center">
                             <button
                                 type="button"
@@ -995,50 +994,24 @@
                     </header>
 
                     <main class="flex-1 dark:text-gray-300">
-                        <div class="mx-auto px-6 py-8">
+                        <div class="mx-auto p-6">
                             <div class="dashboard">
                                 <!-- Breadcrumb -->
-                                <nav class="flex justify-between mb-6 text-gray-700" aria-label="Breadcrumb">
-                                    <h3 class="text-2xl font-medium text-gray-700 dark:text-gray-300">Dashboard</h3>
-                                    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                                <nav class="mb-6 text-gray-700" aria-label="Breadcrumb">
+                                    <h3 class="text-xl font-medium text-gray-700 dark:text-gray-300">Dashboard</h3>
+                                    <ol class="inline-flex items-center space-x-1 md:space-x-1">
                                         <li class="inline-flex items-center">
                                             <a
                                                 href="#"
-                                                class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-                                                <svg
-                                                    class="w-4 h-4 mr-2"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
-                                                </svg>
-                                                Home
+                                                class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                                                Dashboard
                                             </a>
                                         </li>
-                                        <li>
-                                            <div class="flex items-center">
-                                                <svg
-                                                    class="w-6 h-6 text-gray-400"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 20 20"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        fill-rule="evenodd"
-                                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                        clip-rule="evenodd"></path>
-                                                </svg>
-                                                <a
-                                                    href="#"
-                                                    class="ml-1 text-sm font-medium text-gray-700 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
-                                                    >Templates</a
-                                                >
-                                            </div>
-                                        </li>
+
                                         <li aria-current="page">
                                             <div class="flex items-center">
                                                 <svg
-                                                    class="w-6 h-6 text-gray-400"
+                                                    class="w-4 h-4 text-gray-500"
                                                     fill="currentColor"
                                                     viewBox="0 0 20 20"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -1049,7 +1022,7 @@
                                                 </svg>
                                                 <span
                                                     class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400"
-                                                    >Flowbite</span
+                                                    >Default</span
                                                 >
                                             </div>
                                         </li>
@@ -1244,6 +1217,27 @@
                             </div>
                         </div>
                     </main>
+
+                    <footer
+                        class="px-6 py-4 bg-white dark:bg-dark-primary shadow md:flex md:items-center md:justify-between">
+                        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                            © 2022 <a href="#" class="hover:underline">Twilight™</a>. All Rights Reserved.
+                        </span>
+                        <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                            <li>
+                                <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
+                            </li>
+                            <li>
+                                <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Contact</a>
+                            </li>
+                        </ul>
+                    </footer>
                 </div>
                 <!-- Setting panel button -->
                 <button

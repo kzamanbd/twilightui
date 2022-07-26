@@ -5,6 +5,9 @@
 @tailwind utilities;
 
 @layer components {
+    .top-header {
+        @apply sticky top-0 z-10 flex-shrink-0 flex items-center justify-between px-6 py-4 bg-white shadow-md dark:bg-dark-primary dark:text-gray-300;
+    }
     .menu-header {
         @apply px-5 text-gray-500 uppercase pt-2 text-sm;
     }
