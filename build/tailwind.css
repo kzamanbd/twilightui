@@ -2284,22 +2284,6 @@ select{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #2d3748;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cbd5e0;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #718096;
-}
-
 .sidebar {
   transition: all 0.3s ease-in-out;
 }
