@@ -796,59 +796,31 @@
                         </div>
 
                         <div class="flex items-center space-x-4">
-                            <div class="relative" x-data="{ isSearchOpen: false }">
-                                <form class="flex items-center">
-                                    <label for="simple-search" class="sr-only">Search</label>
-                                    <div
-                                        class="relative w-full mr-2 duration-300"
-                                        :class="isSearchOpen ? '-translate-x-0 ease-out' : 'translate-x-full opacity-0 -z-10 ease-in'">
-                                        <div
-                                            class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                                            <svg
-                                                aria-hidden="true"
-                                                class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                                                fill="currentColor"
-                                                viewBox="0 0 20 20"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                        </div>
-                                        <input
-                                            type="text"
-                                            id="simple-search"
-                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 dark:bg-dark-primary dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            placeholder="Search"
-                                            required="" />
-                                    </div>
-                                    <button
-                                        type="button"
-                                        @click="isSearchOpen = !isSearchOpen"
-                                        class="relative p-2 flex items-center text-xs font-medium text-gray-700 bg-white rounded-lg border border-gray-200 toggle-dark-state-example hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-dark-primary focus:outline-none dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-                                        <svg
-                                            fill="currentColor"
-                                            viewBox="0 0 24 24"
-                                            class="w-4 h-4"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <rect
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                opacity="0.5"
-                                                x="17.0365"
-                                                y="15.1223"
-                                                width="8.15546"
-                                                height="2"
-                                                rx="1"
-                                                transform="rotate(45 17.0365 15.1223)"
-                                                fill="currentColor" />
-                                            <path
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
-                                                fill="currentColor" />
-                                        </svg>
-                                    </button>
-                                </form>
+                            <div class="relative">
+                                <button
+                                    type="button"
+                                    class="relative p-2 flex items-center text-xs font-medium text-gray-700 bg-white rounded-lg border border-gray-200 toggle-dark-state-example hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-dark-primary focus:outline-none dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                    <svg
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                        class="w-4 h-4"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            opacity="0.5"
+                                            x="17.0365"
+                                            y="15.1223"
+                                            width="8.15546"
+                                            height="2"
+                                            rx="1"
+                                            transform="rotate(45 17.0365 15.1223)"
+                                            fill="currentColor" />
+                                        <path
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </button>
                             </div>
                             <button
                                 type="button"
