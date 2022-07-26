@@ -4,7 +4,7 @@
     "description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
     "scripts": {
         "dev": "tailwindcss -i ./build/input.css -o ./build/tailwind.css -w",
-        "build": "tailwindcss -i ./build/input.css -o ./build/tailwind.css"
+        "build": "tailwindcss -i ./build/input.css -o ./build/tailwind.css --minify"
     },
     "author": "Zaman <zamandotbd@gmail.com>",
     "license": "MIT",
