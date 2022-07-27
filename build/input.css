@@ -45,8 +45,8 @@
     .dark {
         color-scheme: dark;
     }
-    .dark--theme {
-        @apply dark:text-gray-200;
+    .dark--text {
+        @apply text-gray-700 dark:text-gray-300;
     }
     .card {
         @apply bg-white border border-gray-200 dark:border-gray-700 dark:bg-dark-primary rounded-md shadow-sm;
