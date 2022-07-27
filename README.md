@@ -1,5 +1,7 @@
 # Tailwind Dashboard
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/916d954d-3f57-432c-80ca-9584f3e4c8b2/deploy-status)](https://app.netlify.com/sites/twilight-dashboard/deploys)
+
 A multi theme, completely accessible, with components and pages examples, ready for production dashboard.
 
 Setting up a tailwind css based project needs to install the tailwindcss npm package, postcss and autoprefixer - it also requires to configure a tailwind.config.js as well as postcss.config.js (optional, if you're planning to use postcss) and then configure those files manually.
