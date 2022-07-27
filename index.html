@@ -9,7 +9,8 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
         <link rel="stylesheet" href="./build/tailwind.css" />
-        <link rel="stylesheet" href="./assets/css/perfect-scrollbar.css" />
+        <link rel="stylesheet" href="./plugins/perfect-scrollbar/css/perfect-scrollbar.css" />
+        <link rel="stylesheet" href="./plugins/apexcharts/apexcharts.css" />
     </head>
 
     <body>
@@ -1064,6 +1065,7 @@
                                     </ol>
                                 </nav>
                                 <!-- End Breadcrumb -->
+
                                 <div class="md:flex md:flex-row md:space-x-4 space-y-4 md:space-y-0 items-end">
                                     <div class="basis-full md:basis-1/4">
                                         <div class="px-5 py-6 card dark--text">
@@ -1094,7 +1096,7 @@
                                     </div>
 
                                     <div class="basis-full md:basis-1/2">
-                                        <div class="px-5 py-6 card dark--text">
+                                        <div class="px-5 py-6 card dark--text relative">
                                             <h3 class="text-xl mb-2">Statistics Card</h3>
                                             <p>Total 48.5% growth 😎 this month</p>
                                             <div class="grid grid-cols-3 gap-4 mt-10">
@@ -1159,6 +1161,132 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <span
+                                                class="material-icons absolute top-2 right-2 active:bg-gray-200 rounded-full p-1 cursor-pointer text-gray-400">
+                                                more_vert
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="md:flex md:flex-row md:space-x-4 space-y-4 md:space-y-0 items-end mt-6">
+                                    <div class="basis-full md:basis-1/4">
+                                        <div class="px-5 py-6 card dark--text relative">
+                                            <h3 class="text-xl">Total Sales</h3>
+                                            <div class="flex items-center my-2">
+                                                <h2 class="text-2xl font-semibold dark--text">$21,845</h2>
+                                                <span class="text-green-500 ml-2">+45%</span>
+                                            </div>
+                                            <div id="total-sales-charts"></div>
+                                            <span
+                                                class="material-icons absolute top-2 right-2 active:bg-gray-200 rounded-full p-1 cursor-pointer text-gray-400">
+                                                more_vert
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="basis-full md:basis-1/4">
+                                        <div class="px-5 py-6 card dark--text">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="text-xl">Revenue Report</h3>
+                                                <span
+                                                    class="dark--text bg-gray-100 text-xs px-2 py-1 rounded-xl dark:bg-blue-200 dark:text-blue-800">
+                                                    This Year
+                                                </span>
+                                            </div>
+                                            <div id="revenue-report-charts"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="basis-full md:basis-1/2">
+                                        <div class="px-5 py-6 card dark--text relative">
+                                            <h3 class="text-xl mb-2">Sales Overview</h3>
+                                            <div class="grid grid-cols-2 gap-4 mt-4">
+                                                <div id="sales-overview-charts"></div>
+                                                <div class="space-x-2">
+                                                    <div class="flex items-center">
+                                                        <div class="rounded bg-purple-500 p-2 text-white">
+                                                            <span aria-hidden="true" class="h-8 w-8">
+                                                                <svg
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 24 24"
+                                                                    role="img"
+                                                                    aria-hidden="true"
+                                                                    fill="currentColor"
+                                                                    class="h-8 w-8">
+                                                                    <path
+                                                                        d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                        <div class="ml-4 flex flex-col">
+                                                            <p class="dark--text mb-0 text-base">Number of Sales</p>
+                                                            <span class="dark--text font-semibold text-xl">
+                                                                $86,400
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="border-b my-6"></div>
+
+                                                    <table class="sales-overview-stats-table w-full">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="flex items-center">
+                                                                        <span
+                                                                            class="inline-flex items-center justify-center h-3 w-3 text-xs bg-purple-500 rounded-full dark:bg-gray-700 mr-2"></span>
+                                                                        <span>Apparel</span>
+                                                                    </div>
+                                                                    <span
+                                                                        class="text-base text--primary font-weight-semibold ml-4"
+                                                                        >$1,840</span
+                                                                    >
+                                                                </td>
+                                                                <td>
+                                                                    <div class="flex items-center">
+                                                                        <span
+                                                                            class="inline-flex items-center justify-center h-3 w-3 text-xs bg-purple-400 rounded-full dark:bg-gray-700 mr-2"></span>
+                                                                        <span>Electronic</span>
+                                                                    </div>
+                                                                    <span
+                                                                        class="text-base text--primary font-weight-semibold ml-4"
+                                                                        >$11,420</span
+                                                                    >
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="mt-4 flex items-center">
+                                                                        <span
+                                                                            class="inline-flex items-center justify-center h-3 w-3 text-xs bg-purple-200 rounded-full dark:bg-gray-700 mr-2"></span>
+                                                                        <span>FMCG</span>
+                                                                    </div>
+                                                                    <span
+                                                                        class="text-base text--primary font-weight-semibold ml-4"
+                                                                        >$30,234</span
+                                                                    >
+                                                                </td>
+                                                                <td>
+                                                                    <div class="mt-4 flex items-center">
+                                                                        <span
+                                                                            class="inline-flex items-center justify-center h-3 w-3 text-xs bg-gray-400 rounded-full dark:bg-gray-700 mr-2"></span>
+                                                                        <span>Other Sales</span>
+                                                                    </div>
+                                                                    <span
+                                                                        class="text-base text--primary font-weight-semibold ml-4"
+                                                                        >$46,054</span
+                                                                    >
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <span
+                                                class="material-icons absolute top-4 right-4 active:bg-gray-200 rounded-full p-1 cursor-pointer text-gray-400">
+                                                more_vert
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -1310,7 +1438,9 @@
             </div>
         </div>
         <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
-        <script src="./assets/js/perfect-scrollbar.js"></script>
+        <script src="./plugins/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="./plugins/apexcharts/apexcharts.min.js"></script>
+        <script src="./assets/js/dashboard-chart.js"></script>
         <script src="./assets/js/init-alpine.js"></script>
         <script src="./assets/js/app.js"></script>
     </body>
