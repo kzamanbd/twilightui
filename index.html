@@ -822,6 +822,7 @@
                                     </svg>
                                 </button>
                             </div>
+
                             <button
                                 type="button"
                                 @click="toggleTheme"
@@ -848,6 +849,7 @@
                                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
                                 </svg>
                             </button>
+
                             <div class="relative" x-data="{ isOpen: false }">
                                 <button
                                     type="button"
@@ -869,7 +871,7 @@
                                 </button>
                                 <div x-show="isOpen">
                                     <div
-                                        class="absolute right-0 mt-2 bg-white rounded-md shadow-lg overflow-hidden z-20"
+                                        class="absolute right-0 mt-5 bg-white rounded-md shadow-lg overflow-hidden z-20"
                                         style="width: 20rem">
                                         <div class="py-2">
                                             <a
@@ -943,22 +945,82 @@
                                 </button>
 
                                 <div x-show="isOpen">
-                                    <div class="absolute right-0 z-20 w-48 py-2 mt-2 bg-white rounded-md shadow-xl">
-                                        <a
-                                            href="/profile"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">
-                                            Profile
-                                        </a>
-                                        <a
-                                            href="/product"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">
-                                            Products
-                                        </a>
-                                        <a
-                                            href="/login"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">
-                                            Log out
-                                        </a>
+                                    <div
+                                        class="absolute right-0 z-20 w-64 py-2 mt-5 bg-white dark:bg-dark-primary rounded-md shadow-xl">
+                                        <div class="flex border-b dark:border-gray-700 px-4 py-2">
+                                            <div class="flex-shrink-0">
+                                                <img
+                                                    class="h-8 w-8 rounded-full object-cover"
+                                                    src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=296&q=80"
+                                                    alt="Your avatar" />
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="leading-5 font-medium text-gray-900 dark:text-gray-300">
+                                                    Kamruzzaman
+                                                </p>
+                                                <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
+                                                    Software Engineer
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 border-b dark:border-gray-700">
+                                            <div class="user-menu-item">
+                                                <a href="#" class="user-menu-link"> My Profile </a>
+                                            </div>
+                                            <div class="user-menu-item">
+                                                <a href="#" class="user-menu-link">
+                                                    My Projects
+                                                    <span
+                                                        class="inline-flex items-center justify-center px-2 py-1 ml-1 text-xs font-bold leading-none text-white bg-primary rounded-full">
+                                                        9
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div class="user-menu-item">
+                                                <a href="#" class="user-menu-link"> My Subscription </a>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 relative">
+                                            <div class="user-menu-item group">
+                                                <a href="#" class="user-menu-link">
+                                                    Language
+                                                    <span class="text-xs font-bold leading-none flex items-center">
+                                                        <img
+                                                            src="./assets/images/flags/united-states.svg"
+                                                            class="h-4 w-4 mr-2 rounded-full"
+                                                            alt="English" />
+                                                        English
+                                                    </span>
+                                                    <!-- language dropdown -->
+                                                    <div
+                                                        class="absolute left-0 -m-40 px-2 py-4 space-y-2 hidden group-hover:block w-40 bg-white dark:bg-dark-primary rounded-md shadow-xl">
+                                                        <div
+                                                            class="flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:dark:bg-dark-secondary text-gray-700 hover:text-primary">
+                                                            <img
+                                                                src="./assets/images/flags/united-states.svg"
+                                                                class="h-4 w-4 mr-2 rounded-full"
+                                                                alt="English" />
+                                                            <span class="text-xs leading-none">English</span>
+                                                        </div>
+                                                        <div
+                                                            class="flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:dark:bg-dark-secondary text-gray-700 hover:text-primary">
+                                                            <img
+                                                                src="./assets/images/flags/france.svg"
+                                                                class="h-4 w-4 mr-2 rounded-full"
+                                                                alt="france" />
+                                                            <span class="text-xs leading-none">France</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="user-menu-item">
+                                                <a href="#" class="user-menu-link"> Account Settings </a>
+                                            </div>
+                                            <div class="user-menu-item">
+                                                <a href="#" class="user-menu-link"> Log out </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

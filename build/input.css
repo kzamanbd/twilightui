@@ -35,6 +35,12 @@
     .dropdown-link-active {
         @apply bg-gray-600 bg-opacity-25 text-gray-100;
     }
+    .user-menu-item {
+        @apply px-4;
+    }
+    .user-menu-link {
+        @apply flex justify-between items-center px-4 py-2 text-sm rounded-md text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-100 hover:dark:bg-dark-secondary;
+    }
     /* dark theme */
     .dark {
         color-scheme: dark;
