@@ -1203,6 +1203,26 @@ select{
   grid-column: span 2 / span 2;
 }
 
+.col-span-full{
+  grid-column: 1 / -1;
+}
+
+.col-span-3{
+  grid-column: span 3 / span 3;
+}
+
+.col-span-1{
+  grid-column: span 1 / span 1;
+}
+
+.col-span-4{
+  grid-column: span 4 / span 4;
+}
+
+.col-span-8{
+  grid-column: span 8 / span 8;
+}
+
 .-m-40{
   margin: -10rem;
 }
@@ -2861,6 +2881,14 @@ select{
 }
 
 @media (min-width: 640px){
+  .sm\:col-span-2{
+    grid-column: span 2 / span 2;
+  }
+
+  .sm\:col-span-1{
+    grid-column: span 1 / span 1;
+  }
+
   .sm\:-mx-6{
     margin-left: -1.5rem;
     margin-right: -1.5rem;
@@ -2874,8 +2902,8 @@ select{
     width: 83.333333%;
   }
 
-  .sm\:basis-1\/2{
-    flex-basis: 50%;
+  .sm\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .sm\:items-center{
@@ -2909,6 +2937,18 @@ select{
     position: relative;
   }
 
+  .md\:col-span-3{
+    grid-column: span 3 / span 3;
+  }
+
+  .md\:col-span-2{
+    grid-column: span 2 / span 2;
+  }
+
+  .md\:col-span-4{
+    grid-column: span 4 / span 4;
+  }
+
   .md\:mb-4{
     margin-bottom: 1rem;
   }
@@ -2927,6 +2967,10 @@ select{
 
   .md\:flex{
     display: flex;
+  }
+
+  .md\:grid{
+    display: grid;
   }
 
   .md\:hidden{
@@ -2961,6 +3005,22 @@ select{
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-7{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-5{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-8{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
   .md\:flex-row{
     flex-direction: row;
   }
@@ -2979,21 +3039,16 @@ select{
     margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
-  .md\:space-x-4 > :not([hidden]) ~ :not([hidden]){
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1rem * var(--tw-space-x-reverse));
-    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
   .md\:space-y-0 > :not([hidden]) ~ :not([hidden]){
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
-  .md\:bg-red-50{
-    --tw-bg-opacity: 1;
-    background-color: rgb(254 242 242 / var(--tw-bg-opacity));
+  .md\:space-x-4 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:pt-4{
@@ -3013,6 +3068,14 @@ select{
     left: 0px;
   }
 
+  .lg\:col-span-2{
+    grid-column: span 2 / span 2;
+  }
+
+  .lg\:col-span-1{
+    grid-column: span 1 / span 1;
+  }
+
   .lg\:-mx-8{
     margin-left: -2rem;
     margin-right: -2rem;
@@ -3026,16 +3089,12 @@ select{
     display: block;
   }
 
+  .lg\:grid{
+    display: grid;
+  }
+
   .lg\:hidden{
     display: none;
-  }
-
-  .lg\:basis-1\/4{
-    flex-basis: 25%;
-  }
-
-  .lg\:basis-1\/2{
-    flex-basis: 50%;
   }
 
   .lg\:translate-x-0{
@@ -3045,6 +3104,20 @@ select{
 
   .lg\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:gap-4{
+    gap: 1rem;
+  }
+
+  .lg\:space-y-0 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
   .lg\:px-8{
