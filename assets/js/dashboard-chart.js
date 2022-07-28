@@ -221,3 +221,131 @@ new ApexCharts(document.querySelector('#sales-overview-charts'), {
     },
     series: [12, 24.5, 15, 50],
 }).render()
+
+// Weekly Sales
+new ApexCharts(document.querySelector('#weekly-sales-charts'), {
+    colors: ['#F7EBFF', '#F7EBFF', '#F7EBFF', '#F7EBFF', '#B857FF', '#F7EBFF', '#F7EBFF'],
+    chart: {
+        type: 'bar',
+        toolbar: {
+            show: false,
+        },
+    },
+    plotOptions: {
+        bar: {
+            columnWidth: '60%',
+            distributed: true,
+            borderRadius: 4,
+            startingShape: 'rounded',
+            endingShape: 'rounded',
+        },
+    },
+    dataLabels: {
+        enabled: false,
+    },
+    legend: {
+        show: false,
+    },
+    xaxis: {
+        categories: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        axisBorder: {
+            show: false,
+        },
+        axisTicks: {
+            show: false,
+        },
+        tickPlacement: 'on',
+        labels: {
+            style: {
+                fontSize: '12px',
+            },
+        },
+    },
+    yaxis: {
+        show: false,
+    },
+    grid: {
+        show: false,
+        padding: {
+            top: -20,
+            left: -10,
+            right: -10,
+        },
+    },
+    series: [
+        {
+            data: [40, 60, 50, 60, 90, 40, 50],
+        },
+    ],
+}).render()
+
+// total growth
+new ApexCharts(document.querySelector('#total-growth-charts'), {
+    grid: {
+        show: false,
+    },
+    chart: {
+        type: 'area',
+        toolbar: {
+            show: false,
+        },
+        sparkline: {
+            enabled: true,
+        },
+    },
+    dataLabels: {
+        enabled: false,
+    },
+    stroke: {
+        curve: 'smooth',
+        width: 2.5,
+    },
+
+    fill: {
+        type: 'gradient',
+        gradient: {
+            shadeIntensity: 0.9,
+            opacityFrom: 0.5,
+            opacityTo: 0.1,
+            stops: [0, 80, 100],
+        },
+    },
+    xaxis: {
+        type: 'numeric',
+        lines: {
+            show: false,
+        },
+        axisBorder: {
+            show: false,
+        },
+        labels: { show: false },
+    },
+    yaxis: [
+        {
+            y: 0,
+            offsetX: 0,
+            offsetY: 0,
+            padding: {
+                left: 0,
+                right: 0,
+            },
+        },
+    ],
+    tooltip: {
+        x: { show: false },
+    },
+    theme: {
+        monochrome: {
+            enabled: true,
+            color: '#56ca00',
+            shadeTo: 'light',
+            shadeIntensity: 0.65,
+        },
+    },
+    series: [
+        {
+            name: 'Subscribers',
+            data: [28, 40, 36, 52, 38, 60, 55],
+        },
+    ],
+}).render()
