@@ -1068,7 +1068,7 @@
 
                                 <div
                                     class="block md:grid md:grid-cols-8 lg:grid-cols-4 gap-4 space-y-4 lg:space-y-0 items-end">
-                                    <div class="md:col-span-4 lg:col-span-1 p-4 card dark--text">
+                                    <div class="md:col-span-4 lg:col-span-1 p-4 card dark--text h-48 min-h-full">
                                         <h3 class="text-xl pb-4">Ratings</h3>
                                         <div class="flex items-center my-4">
                                             <h2 class="text-2xl font-semibold dark--text">13k</h2>
@@ -1080,7 +1080,7 @@
                                         </span>
                                     </div>
 
-                                    <div class="md:col-span-4 lg:col-span-1 p-4 card dark--text">
+                                    <div class="md:col-span-4 lg:col-span-1 p-4 card dark--text h-48 min-h-full">
                                         <h3 class="text-xl pb-4">Sessions</h3>
                                         <div class="flex items-center my-4">
                                             <h2 class="text-2xl font-semibold dark--text">27k</h2>
@@ -1093,7 +1093,7 @@
                                     </div>
 
                                     <div class="col-span-8 lg:col-span-2">
-                                        <div class="p-4 card dark--text">
+                                        <div class="p-4 card dark--text h-48 min-h-full">
                                             <div class="flex justify-between mb-2">
                                                 <h3 class="text-xl">Statistics Card</h3>
                                                 <span
@@ -1118,7 +1118,7 @@
                                                             </svg>
                                                         </span>
                                                     </div>
-                                                    <div class="ms-3">
+                                                    <div class="ml-3">
                                                         <p class="text-xs mb-0">Sales</p>
                                                         <h3 class="text-sm md:text-xl font-weight-bold">245k</h3>
                                                     </div>
@@ -1138,7 +1138,7 @@
                                                             </svg>
                                                         </span>
                                                     </div>
-                                                    <div class="ms-3">
+                                                    <div class="ml-3">
                                                         <p class="text-xs mb-0">Customers</p>
                                                         <h3 class="text-sm md:text-xl font-weight-bold">15.7kk</h3>
                                                     </div>
@@ -1158,7 +1158,7 @@
                                                             </svg>
                                                         </span>
                                                     </div>
-                                                    <div class="ms-3">
+                                                    <div class="ml-3">
                                                         <p class="text-xs mb-0">Product</p>
                                                         <h3 class="text-sm md:text-xl font-weight-bold">1.7kk</h3>
                                                     </div>
@@ -1213,7 +1213,7 @@
                                                 <div id="sales-overview-charts"></div>
                                                 <div class="space-x-2 mt-8 md:mt-0">
                                                     <div class="flex items-center">
-                                                        <div class="rounded bg-purple-500 p-2 text-white">
+                                                        <div class="rounded bg-purple-200 p-1 text-purple-500">
                                                             <span aria-hidden="true" class="h-8 w-8">
                                                                 <svg
                                                                     xmlns="http://www.w3.org/2000/svg"
@@ -1383,6 +1383,49 @@
                                                     </span>
                                                 </div>
                                                 <p>Total 85.4k Sales</p>
+                                                <div id="weekly-sales"></div>
+                                                <div class="flex justify-center space-x-10">
+                                                    <div class="flex items-center space-x-2">
+                                                        <div class="rounded bg-purple-200 p-1 text-purple-500">
+                                                            <span aria-hidden="true">
+                                                                <svg
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 24 24"
+                                                                    role="img"
+                                                                    aria-hidden="true"
+                                                                    fill="currentColor"
+                                                                    class="h-6 w-6 md:h-8 md:w-8">
+                                                                    <path
+                                                                        d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                        <div class="ml-3">
+                                                            <p class="text-xs mb-0">Sales</p>
+                                                            <h3 class="text-sm md:text-xl font-weight-bold">245k</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex items-center space-x-2">
+                                                        <div class="rounded bg-green-200 p-1 text-green-500">
+                                                            <span aria-hidden="true" class="h-8 w-8">
+                                                                <svg
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 24 24"
+                                                                    role="img"
+                                                                    aria-hidden="true"
+                                                                    fill="currentColor"
+                                                                    class="h-8 w-8">
+                                                                    <path
+                                                                        d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                        <div class="ml-3">
+                                                            <p class="text-xs mb-0">Sales</p>
+                                                            <h3 class="text-sm md:text-xl font-weight-bold">245k</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <div class="card p-4">
