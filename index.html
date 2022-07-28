@@ -1577,39 +1577,6 @@
                         </ul>
                     </footer>
                 </div>
-                <!-- Setting panel button -->
-                <button
-                    @click="isSettingsPanelOpen = true"
-                    class="flex items-center justify-center fixed right-0 p-1 text-sm font-medium text-white bg-primary top-1/2 rounded-l-md">
-                    <span class="material-icons animate-spin">settings</span>
-                </button>
-
-                <!-- Settings panel -->
-                <div
-                    x-show="isSettingsPanelOpen"
-                    @click.away="isSettingsPanelOpen = false"
-                    x-transition:enter="transition transform duration-300"
-                    x-transition:enter-start="translate-x-full opacity-30 ease-in"
-                    x-transition:enter-end="translate-x-0 opacity-100 ease-out"
-                    x-transition:leave="transition transform duration-300"
-                    x-transition:leave-start="translate-x-0 opacity-100 ease-out"
-                    x-transition:leave-end="translate-x-full opacity-0 ease-in"
-                    class="z-40 fixed inset-y-0 right-0 flex flex-col backdrop-blur bg-white/30 dark:bg-white/10 bg-white shadow-lg bg-opacity-20 w-80">
-                    <div
-                        class="flex items-center justify-between flex-shrink-0 pl-4 pr-2 py-4 border-b border-b-gray-300 dark:border-b-gray-800">
-                        <h6 class="text-lg dark:text-white">Settings</h6>
-                        <button
-                            type="button"
-                            @click="isSettingsPanelOpen = false"
-                            class="rounded-md focus:outline-none focus:ring-0">
-                            <span class="material-icons">close</span>
-                        </button>
-                    </div>
-                    <div class="flex-1 max-h-full p-4 overflow-hidden hover:overflow-y-auto">
-                        <span class="dark:text-white">Settings Content</span>
-                        <!-- Settings Panel Content ... -->
-                    </div>
-                </div>
             </div>
         </div>
         <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
