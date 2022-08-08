@@ -42,10 +42,10 @@
         @apply ml-auto transition-transform transform;
     }
     .dropdown-item-link {
-        @apply pl-3 text-sm py-2 pr-4 truncate w-full rounded-md;
+        @apply hover:bg-gray-600/25 pl-3 text-sm py-2 pr-4 truncate w-full rounded-md;
     }
     .dropdown-link-active {
-        @apply bg-gray-600 bg-opacity-25 text-gray-100;
+        @apply bg-gray-600/25 text-gray-100;
     }
     .user-menu-item {
         @apply px-4;

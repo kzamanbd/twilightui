@@ -1080,9 +1080,12 @@ select{
   line-height: 1.25rem;
 }
 
+.dropdown-item-link:hover{
+  background-color: rgb(75 85 99 / 0.25);
+}
+
 .dropdown-link-active{
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-  --tw-bg-opacity: 0.25;
+  background-color: rgb(75 85 99 / 0.25);
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
@@ -2060,6 +2063,10 @@ select{
   padding: 0.25rem;
 }
 
+.p-8{
+  padding: 2rem;
+}
+
 .p-6{
   padding: 1.5rem;
 }
@@ -2196,6 +2203,11 @@ select{
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-6xl{
