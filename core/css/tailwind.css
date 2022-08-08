@@ -35,6 +35,9 @@
     .dropdown-circle {
         @apply pr-2 text-8 group-hover:text-primary-600;
     }
+    .dropdown-icon {
+        @apply ml-auto transition-transform transform;
+    }
     .dropdown-item-link {
         @apply pl-3 text-sm py-2 pr-4 truncate w-full rounded-md;
     }
