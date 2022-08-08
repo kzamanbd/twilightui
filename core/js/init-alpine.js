@@ -31,36 +31,5 @@ function initApp() {
         },
         // sidebar
         isSideMenuOpen: false,
-        // settings panel
-        isSettingsPanelOpen: false,
-        // search modal
-        isSearchBoxOpen: false,
-
-        // notifications
-        isNotificationsMenuOpen: false,
-        toggleNotificationsMenu() {
-            this.isNotificationsMenuOpen = !this.isNotificationsMenuOpen
-        },
-
-        isProfileMenuOpen: false,
-        toggleProfileMenu() {
-            this.isProfileMenuOpen = !this.isProfileMenuOpen
-        },
-
-        isPagesMenuOpen: false,
-        togglePagesMenu() {
-            this.isPagesMenuOpen = !this.isPagesMenuOpen
-        },
-        // Modal
-        isModalOpen: false,
-        trapCleanup: null,
-        openModal() {
-            this.isModalOpen = true
-            this.trapCleanup = focusTrap(document.querySelector('#modal'))
-        },
-        closeModal() {
-            this.isModalOpen = false
-            this.trapCleanup()
-        },
     }
 }

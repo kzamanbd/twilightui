@@ -27,3 +27,17 @@ document.addEventListener('alpine:init', () => {
         },
     }))
 })
+
+window.onload = function () {
+    const header = document.getElementById('sticky__header')
+    header.classList.remove('sticky-header')
+    const scrollableContent = document.getElementById('scrollable-content')
+    scrollableContent.addEventListener('scroll', () => {
+        // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        if (scrollableContent.scrollTop > 0) {
+            header.classList.add('sticky-header')
+        } else {
+            header.classList.remove('sticky-header')
+        }
+    })
+}
