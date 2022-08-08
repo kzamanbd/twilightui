@@ -6,8 +6,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: '#009ef7',
-                'dark-primary': '#1e1e2d',
+                'primary-600': '#009EF7',
+                'primary-700': '#0079C2',
+                'dark-primary': '#1E1E2D',
                 'dark-secondary': '#151521',
             },
             height: {
@@ -15,6 +16,9 @@ module.exports = {
             },
             fontFamily: {
                 sans: ['Roboto', ...defaultTheme.fontFamily.sans],
+            },
+            fontSize: {
+                8: '8px',
             },
         },
     },
