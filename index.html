@@ -106,13 +106,134 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="menu-header">Pages</li>
+
+                                <li x-data="accordion(15)">
+                                    <div
+                                        role="button"
+                                        @click="handleClick()"
+                                        class="nav-link"
+                                        :class="activeAccordion()">
+                                        <span class="material-icons">layers</span>
+                                        <span class="link-label">Components</span>
+                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                            expand_more
+                                        </span>
+                                    </div>
+                                    <ul
+                                        x-ref="tab"
+                                        :style="handleToggle()"
+                                        aria-label="User Profile"
+                                        class="dropdown-menu">
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Alert</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Badge</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Button</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Dropdown</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Collapse</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Pagination</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Modals</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu-header">Forms & Tables</li>
+                                <li x-data="accordion(14)">
+                                    <div
+                                        role="button"
+                                        @click="handleClick()"
+                                        class="nav-link"
+                                        :class="activeAccordion()">
+                                        <span class="material-icons">hexagon</span>
+                                        <span class="link-label">Form Elements</span>
+                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                            expand_more
+                                        </span>
+                                    </div>
+                                    <ul
+                                        x-ref="tab"
+                                        :style="handleToggle()"
+                                        aria-label="User Profile"
+                                        class="dropdown-menu">
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Input</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Input Group</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Select</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Radio</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Checkbox</span>
+                                            </a>
+                                        </li>
+                                        <li role="menuitem" class="dropdown-item group">
+                                            <a href="#" class="dropdown-item-link">
+                                                <span class="dropdown-circle material-icons">circle</span>
+                                                <span>Textarea</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
                                 <li>
                                     <a href="./form.html" class="nav-link">
-                                        <span class="material-icons">table_view</span>
+                                        <span class="material-icons">description</span>
                                         <span class="link-label">Form Layout</span>
                                     </a>
                                 </li>
+
+                                <li class="menu-header">Pages</li>
                                 <li x-data="accordion(2)">
                                     <div
                                         role="button"
@@ -156,6 +277,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li x-data="accordion(3)">
                                     <div
                                         role="button"
@@ -201,6 +323,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li x-data="accordion(4)">
                                     <div
                                         role="button"
@@ -250,6 +373,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li x-data="accordion(5)">
                                     <div
                                         role="button"
@@ -299,6 +423,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li x-data="accordion(6)">
                                     <div
                                         role="button"
@@ -336,6 +461,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li x-data="accordion(7)">
                                     <div
                                         role="button"
@@ -363,6 +489,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li x-data="accordion(8)">
                                     <div
                                         role="button"
@@ -414,6 +541,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li class="menu-header">Apps</li>
                                 <li x-data="accordion(9)">
                                     <div
@@ -460,6 +588,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li x-data="accordion(10)">
                                     <div
                                         role="button"
@@ -509,6 +638,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li x-data="accordion(11)">
                                     <div
                                         role="button"
@@ -554,6 +684,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li x-data="accordion(12)">
                                     <div
                                         role="button"
@@ -591,6 +722,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li x-data="accordion(13)">
                                     <div
                                         role="button"
