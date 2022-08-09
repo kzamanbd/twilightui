@@ -16,7 +16,7 @@
     <body>
         <div id="app" :class="{ 'dark': isDarkMode }" x-data="initApp()">
             <div class="flex h-screen bg-[#F5F8FA] font-roboto dark:bg-dark-secondary dark:text-gray-300">
-                <aside class="flex bg-dark-primary">
+                <aside class="flex">
                     <div
                         tabindex="0"
                         role="button"
@@ -26,7 +26,7 @@
 
                     <div
                         :class="isSideMenuOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-                        class="sidebar fixed inset-y-0 left-0 z-30 w-64 overflow-hidden transition duration-300 transform lg:translate-x-0 lg:static lg:inset-0">
+                        class="sidebar bg-dark-primary fixed inset-y-0 left-0 z-30 w-64 overflow-hidden transition duration-300 transform lg:translate-x-0 lg:static lg:inset-0">
                         <div class="flex items-center px-4 relative pb-2 pt-[10px]">
                             <a href="/index.html" class="flex items-center">
                                 <svg
