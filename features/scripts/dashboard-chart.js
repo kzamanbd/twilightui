@@ -9,7 +9,6 @@ new ApexCharts(document.querySelector('#total-sales-charts'), {
         },
     },
     chart: {
-        height: 260,
         type: 'line',
         toolbar: {
             show: false,
@@ -66,7 +65,6 @@ new ApexCharts(document.querySelector('#total-sales-charts'), {
 // Revenue Report
 new ApexCharts(document.querySelector('#revenue-report-charts'), {
     chart: {
-        height: 315,
         stacked: true,
         type: 'bar',
         toolbar: { show: false },
