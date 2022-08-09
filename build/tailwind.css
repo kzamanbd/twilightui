@@ -1295,11 +1295,6 @@ select{
   margin-bottom: 1.5rem;
 }
 
-.-my-2{
-  margin-top: -0.5rem;
-  margin-bottom: -0.5rem;
-}
-
 .my-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -1581,10 +1576,6 @@ select{
   width: 20rem;
 }
 
-.min-w-full{
-  min-width: 100%;
-}
-
 .max-w-sm{
   max-width: 24rem;
 }
@@ -1780,10 +1771,6 @@ select{
   overflow: visible;
 }
 
-.overflow-x-auto{
-  overflow-x: auto;
-}
-
 .overflow-y-auto{
   overflow-y: auto;
 }
@@ -1802,10 +1789,6 @@ select{
 
 .scroll-smooth{
   scroll-behavior: smooth;
-}
-
-.whitespace-nowrap{
-  white-space: nowrap;
 }
 
 .rounded-lg{
@@ -1997,11 +1980,6 @@ select{
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
-.bg-green-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
-}
-
 .bg-black\/50{
   background-color: rgb(0 0 0 / 0.5);
 }
@@ -2159,16 +2137,8 @@ select{
   padding-right: 0.5rem;
 }
 
-.text-left{
-  text-align: left;
-}
-
 .text-center{
   text-align: center;
-}
-
-.text-right{
-  text-align: right;
 }
 
 .align-middle{
@@ -2248,14 +2218,6 @@ select{
   line-height: 1;
 }
 
-.leading-4{
-  line-height: 1rem;
-}
-
-.tracking-wider{
-  letter-spacing: 0.05em;
-}
-
 .text-purple-700{
   --tw-text-opacity: 1;
   color: rgb(126 34 206 / var(--tw-text-opacity));
@@ -2319,11 +2281,6 @@ select{
 .text-red-400{
   --tw-text-opacity: 1;
   color: rgb(248 113 113 / var(--tw-text-opacity));
-}
-
-.text-green-800{
-  --tw-text-opacity: 1;
-  color: rgb(22 101 52 / var(--tw-text-opacity));
 }
 
 .text-indigo-600{
@@ -2574,11 +2531,6 @@ select{
 .hover\:text-gray-900:hover{
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.hover\:text-indigo-900:hover{
-  --tw-text-opacity: 1;
-  color: rgb(49 46 129 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-800:hover{
@@ -2964,11 +2916,6 @@ select{
 }
 
 @media (min-width: 640px){
-  .sm\:-mx-6{
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
-
   .sm\:mt-0{
     margin-top: 0px;
   }
@@ -2985,17 +2932,8 @@ select{
     justify-content: center;
   }
 
-  .sm\:rounded-lg{
-    border-radius: 0.5rem;
-  }
-
   .sm\:p-12{
     padding: 3rem;
-  }
-
-  .sm\:px-6{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
   }
 
   .sm\:text-center{
@@ -3132,11 +3070,6 @@ select{
     grid-column: span 2 / span 2;
   }
 
-  .lg\:-mx-8{
-    margin-left: -2rem;
-    margin-right: -2rem;
-  }
-
   .lg\:mr-32{
     margin-right: 8rem;
   }
@@ -3162,10 +3095,5 @@ select{
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
-  }
-
-  .lg\:px-8{
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 }
