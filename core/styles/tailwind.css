@@ -69,6 +69,12 @@
     .card-body {
         @apply p-4;
     }
+    .alert {
+        @apply p-4 mb-4 text-sm rounded-md;
+    }
+    .alert-icon {
+        @apply p-4 mb-4 text-sm rounded-md flex items-center space-x-3;
+    }
 }
 .sidebar {
     transition: all 0.3s ease-in-out;
