@@ -73,7 +73,10 @@
         @apply p-4 mb-4 text-sm rounded-md;
     }
     .alert-icon {
-        @apply p-4 mb-4 text-sm rounded-md flex items-center space-x-3;
+        @apply flex items-center space-x-3;
+    }
+    .alert-dismiss {
+        @apply flex items-center justify-between space-x-3;
     }
 }
 .sidebar {
