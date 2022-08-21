@@ -14,16 +14,16 @@ document.addEventListener('alpine:init', () => {
         },
         idx: -1,
         handleClick() {
-            this.$store.accordion.tab = this.$store.accordion.tab === this.idx ? 0 : this.idx
+            this.$store.accordion.tab = this.$store.accordion.tab == this.idx ? 0 : this.idx
         },
         handleRotate() {
-            return this.$store.accordion.tab === this.idx ? 'rotate-180' : ''
+            return this.$store.accordion.tab == this.idx ? 'rotate-180' : ''
         },
         activeAccordion() {
-            return this.$store.accordion.tab === this.idx ? 'nav-link-active' : ''
+            return this.$store.accordion.tab == this.idx ? 'nav-link-active' : ''
         },
         handleToggle() {
-            return this.$store.accordion.tab === this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : ''
+            return this.$store.accordion.tab == this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : ''
         },
     }))
 })
