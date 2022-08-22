@@ -5,25 +5,25 @@ const pSidebar = new PerfectScrollbar('#sidebar-menu', {
 })
 pSidebar.update()
 document.addEventListener('alpine:init', () => {
-    Alpine.store('accordion', {
+    Alpine.store('dropdown', {
         tab: 1,
     })
-    Alpine.data('accordion', idx => ({
+    Alpine.data('dropdownItem', idx => ({
         init() {
             this.idx = idx
         },
         idx: -1,
         handleClick() {
-            this.$store.accordion.tab = this.$store.accordion.tab == this.idx ? 0 : this.idx
+            this.$store.dropdown.tab = this.$store.dropdown.tab == this.idx ? 0 : this.idx
         },
         handleRotate() {
-            return this.$store.accordion.tab == this.idx ? 'rotate-180' : ''
+            return this.$store.dropdown.tab == this.idx ? 'rotate-180' : ''
         },
-        activeAccordion() {
-            return this.$store.accordion.tab == this.idx ? 'nav-link-active' : ''
+        activeDropdown() {
+            return this.$store.dropdown.tab == this.idx ? 'nav-link-active' : ''
         },
         handleToggle() {
-            return this.$store.accordion.tab == this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : ''
+            return this.$store.dropdown.tab == this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : ''
         },
     }))
 })

@@ -56,12 +56,12 @@
 
                         <nav id="sidebar-menu" class="overflow-y-auto h-sidebar">
                             <ul class="nav-menu space-y-2">
-                                <li x-data="accordion(1)">
+                                <li x-data="dropdownItem(1)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link nav-link-active"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">dashboard</span>
                                         <span class="link-label">Dashboards</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -106,12 +106,12 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="accordion(15)">
+                                <li x-data="dropdownItem(15)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">layers</span>
                                         <span class="link-label">Components</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -169,12 +169,12 @@
                                 </li>
 
                                 <li class="menu-header">Forms & Tables</li>
-                                <li x-data="accordion(14)">
+                                <li x-data="dropdownItem(14)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">hexagon</span>
                                         <span class="link-label">Form Elements</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -233,12 +233,12 @@
                                 </li>
 
                                 <li class="menu-header">Pages</li>
-                                <li x-data="accordion(2)">
+                                <li x-data="dropdownItem(2)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">perm_contact_calendar</span>
                                         <span class="link-label">User Profile</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -277,12 +277,12 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="accordion(3)">
+                                <li x-data="dropdownItem(3)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons rotate-90">label_important_outline</span>
                                         <span class="link-label">Account</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -323,12 +323,12 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="accordion(4)">
+                                <li x-data="dropdownItem(4)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">person</span>
                                         <span class="link-label">Authentication</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -373,12 +373,12 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="accordion(5)">
+                                <li x-data="dropdownItem(5)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">corporate_fare</span>
                                         <span class="link-label">Corporate</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -423,12 +423,12 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="accordion(6)">
+                                <li x-data="dropdownItem(6)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">construction</span>
                                         <span class="link-label">Utilities</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -461,12 +461,12 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="accordion(7)">
+                                <li x-data="dropdownItem(7)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">work</span>
                                         <span class="link-label">Careers</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -489,12 +489,12 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="accordion(8)">
+                                <li x-data="dropdownItem(8)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">widgets</span>
                                         <span class="link-label">Widgets</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -542,12 +542,12 @@
                                 </li>
 
                                 <li class="menu-header">Apps</li>
-                                <li x-data="accordion(9)">
+                                <li x-data="dropdownItem(9)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">fence</span>
                                         <span class="link-label">Projects</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -588,12 +588,12 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="accordion(10)">
+                                <li x-data="dropdownItem(10)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">shopping_basket</span>
                                         <span class="link-label">eCommerce</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -638,12 +638,12 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="accordion(11)">
+                                <li x-data="dropdownItem(11)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">interests</span>
                                         <span class="link-label">Contacts</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -684,12 +684,12 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="accordion(12)">
+                                <li x-data="dropdownItem(12)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">workspaces</span>
                                         <span class="link-label">User Management</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
@@ -722,12 +722,12 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="accordion(13)">
+                                <li x-data="dropdownItem(13)">
                                     <div
                                         role="button"
                                         @click="handleClick()"
                                         class="nav-link"
-                                        :class="activeAccordion()">
+                                        :class="activeDropdown()">
                                         <span class="material-icons">change_history</span>
                                         <span class="link-label">Customers</span>
                                         <span class="material-icons dropdown-icon" :class="handleRotate()">
