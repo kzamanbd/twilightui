@@ -14,7 +14,7 @@
     </head>
 
     <body>
-        <div id="app" :class="{ 'dark': isDarkMode }" x-data="initApp()">
+        <div x-data="twilight" :class="{ 'dark': isDarkMode }">
             <div class="flex h-screen bg-white-gray font-roboto dark:bg-dark-secondary dark:text-gray-300">
                 <aside class="flex">
                     <div
@@ -57,7 +57,7 @@
 
                         <nav id="sidebar-menu" class="overflow-y-auto h-sidebar">
                             <ul class="nav-menu space-y-2">
-                                <li x-data="dropdownItem(1)">
+                                <li x-data="dropdownItem('dashboard')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -1470,7 +1470,6 @@
         <script src="./core/plugins/perfect-scrollbar/perfect-scrollbar.js"></script>
         <script src="./features/plugins/apexcharts/apexcharts.min.js"></script>
         <script src="./features/scripts/dashboard-chart.js"></script>
-        <script src="./core/scripts/init-alpine.js"></script>
         <script src="./core/scripts/app.js"></script>
     </body>
 </html>

@@ -7,13 +7,12 @@
         <link rel="icon" href="../favicon.png" />
         <!-- Fonts -->
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
         <link rel="stylesheet" href="../build/tailwind.css" />
         <link rel="stylesheet" href="../core/plugins/perfect-scrollbar/css/perfect-scrollbar.css" />
     </head>
 
     <body>
-        <div id="app" :class="{ 'dark': isDarkMode }" x-data="initApp()">
+        <div x-data="twilight" :class="{ 'dark': isDarkMode }">
             <div class="flex h-screen bg-white-gray font-roboto dark:bg-dark-secondary dark:text-gray-300">
                 <aside class="flex">
                     <div
@@ -1369,7 +1368,6 @@
         </div>
         <script src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js" defer></script>
         <script src="../core/plugins/perfect-scrollbar/perfect-scrollbar.js"></script>
-        <script src="../core/scripts/init-alpine.js"></script>
         <script src="../core/scripts/app.js"></script>
     </body>
 </html>
