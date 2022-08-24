@@ -4,11 +4,11 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Alerts - Twilight Dashboard</title>
-        <link rel="icon" href="../favicon.png" />
+        <link rel="icon" href="./favicon.png" />
         <!-- Fonts -->
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        <link rel="stylesheet" href="../build/tailwind.css" />
-        <link rel="stylesheet" href="../core/plugins/perfect-scrollbar/css/perfect-scrollbar.css" />
+        <link rel="stylesheet" href="./build/tailwind.css" />
+        <link rel="stylesheet" href="./core/plugins/perfect-scrollbar/css/perfect-scrollbar.css" />
     </head>
 
     <body>
@@ -53,13 +53,16 @@
                             </span>
                         </div>
 
-                        <nav id="sidebar-menu" class="overflow-y-auto h-sidebar">
+                        <nav
+                            id="sidebar-menu"
+                            class="overflow-y-auto h-sidebar"
+                            x-init="$store.dropdown.tab = 'components'">
                             <ul class="nav-menu space-y-2">
-                                <li x-data="dropdownItem(1)">
+                                <li x-data="dropdownItem('dashboard')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
-                                        class="nav-link nav-link-active"
+                                        class="nav-link"
                                         :class="activeDropdown()">
                                         <span class="material-icons">dashboard</span>
                                         <span class="link-label">Dashboards</span>
@@ -67,13 +70,9 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul
-                                        x-ref="tab"
-                                        :style="handleToggle()"
-                                        aria-label="Dashboards"
-                                        class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
-                                            <a href="index.html" class="dropdown-item-link dropdown-link-active">
+                                            <a href="index.html" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
                                                 <span>Default</span>
                                             </a>
@@ -105,7 +104,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(15)">
+                                <li x-data="dropdownItem('components')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -117,13 +116,9 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul
-                                        x-ref="tab"
-                                        :style="handleToggle()"
-                                        aria-label="User Profile"
-                                        class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
-                                            <a href="#" class="dropdown-item-link">
+                                            <a href="./alerts.html" class="dropdown-item-link dropdown-link-active">
                                                 <span class="dropdown-circle material-icons">circle</span>
                                                 <span>Alert</span>
                                             </a>
@@ -168,7 +163,7 @@
                                 </li>
 
                                 <li class="menu-header">Forms & Tables</li>
-                                <li x-data="dropdownItem(14)">
+                                <li x-data="dropdownItem('form-elements')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -180,11 +175,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul
-                                        x-ref="tab"
-                                        :style="handleToggle()"
-                                        aria-label="User Profile"
-                                        class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -232,7 +223,7 @@
                                 </li>
 
                                 <li class="menu-header">Pages</li>
-                                <li x-data="dropdownItem(2)">
+                                <li x-data="dropdownItem('user-profile')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -244,11 +235,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul
-                                        x-ref="tab"
-                                        :style="handleToggle()"
-                                        aria-label="User Profile"
-                                        class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -276,7 +263,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(3)">
+                                <li x-data="dropdownItem('account')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -288,7 +275,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" aria-label="Account" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -322,7 +309,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(4)">
+                                <li x-data="dropdownItem('authentication')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -334,11 +321,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul
-                                        x-ref="tab"
-                                        :style="handleToggle()"
-                                        aria-label="Authentication"
-                                        class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="/login.html" class="dropdown-item-link" target="_blank">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -372,7 +355,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(5)">
+                                <li x-data="dropdownItem('corporate')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -384,11 +367,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul
-                                        x-ref="tab"
-                                        :style="handleToggle()"
-                                        aria-label="Corporate"
-                                        class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -422,7 +401,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(6)">
+                                <li x-data="dropdownItem('utilities')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -434,11 +413,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul
-                                        x-ref="tab"
-                                        :style="handleToggle()"
-                                        aria-label="Utilities"
-                                        class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -460,7 +435,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(7)">
+                                <li x-data="dropdownItem('careers')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -472,7 +447,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" aria-label="Careers" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -488,7 +463,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(8)">
+                                <li x-data="dropdownItem('widgets')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -500,7 +475,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" aria-label="Widgets" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -541,7 +516,7 @@
                                 </li>
 
                                 <li class="menu-header">Apps</li>
-                                <li x-data="dropdownItem(9)">
+                                <li x-data="dropdownItem('projects')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -553,7 +528,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" aria-label="Products" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -587,7 +562,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(10)">
+                                <li x-data="dropdownItem('eCommerce')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -599,11 +574,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul
-                                        x-ref="tab"
-                                        :style="handleToggle()"
-                                        aria-label="eCommerce"
-                                        class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -637,7 +608,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(11)">
+                                <li x-data="dropdownItem('contacts')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -649,7 +620,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" aria-label="Contacts" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -683,7 +654,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(12)">
+                                <li x-data="dropdownItem('user-management')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -695,11 +666,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul
-                                        x-ref="tab"
-                                        :style="handleToggle()"
-                                        aria-label="User Management"
-                                        class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -721,7 +688,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(13)">
+                                <li x-data="dropdownItem('customers')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -733,11 +700,7 @@
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul
-                                        x-ref="tab"
-                                        :style="handleToggle()"
-                                        aria-label="Customers"
-                                        class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -986,7 +949,7 @@
                                                     Language
                                                     <span class="text-xs font-bold leading-none flex items-center">
                                                         <img
-                                                            src="../core/images/flags/united-states.svg"
+                                                            src="./core/images/flags/united-states.svg"
                                                             class="h-4 w-4 mr-2 rounded-full"
                                                             alt="English" />
                                                         English
@@ -997,7 +960,7 @@
                                                         <div
                                                             class="flex items-center rounded-md px-4 py-2 hover:bg-gray-100 dark:hover:text-gray-300 hover:dark:bg-dark-secondary dark--text hover:text-primary-600">
                                                             <img
-                                                                src="../core/images/flags/united-states.svg"
+                                                                src="./core/images/flags/united-states.svg"
                                                                 class="h-4 w-4 mr-2 rounded-full"
                                                                 alt="English" />
                                                             <span class="text-xs leading-none">English</span>
@@ -1005,7 +968,7 @@
                                                         <div
                                                             class="flex items-center rounded-md px-4 py-2 hover:bg-gray-100 dark:hover:text-gray-300 hover:dark:bg-dark-secondary dark--text hover:text-primary-600">
                                                             <img
-                                                                src="../core/images/flags/france.svg"
+                                                                src="./core/images/flags/france.svg"
                                                                 class="h-4 w-4 mr-2 rounded-full"
                                                                 alt="france" />
                                                             <span class="text-xs leading-none">France</span>
@@ -1367,7 +1330,7 @@
             </div>
         </div>
         <script src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js" defer></script>
-        <script src="../core/plugins/perfect-scrollbar/perfect-scrollbar.js"></script>
-        <script src="../core/scripts/app.js"></script>
+        <script src="./core/plugins/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="./core/scripts/app.js"></script>
     </body>
 </html>

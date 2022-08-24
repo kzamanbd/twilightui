@@ -55,13 +55,16 @@
                             </span>
                         </div>
 
-                        <nav id="sidebar-menu" class="overflow-y-auto h-sidebar">
+                        <nav
+                            id="sidebar-menu"
+                            class="overflow-y-auto h-sidebar"
+                            x-init="$store.dropdown.tab = 'dashboard'">
                             <ul class="nav-menu space-y-2">
                                 <li x-data="dropdownItem('dashboard')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
-                                        class="nav-link nav-link-active"
+                                        class="nav-link"
                                         :class="activeDropdown()">
                                         <span class="material-icons">dashboard</span>
                                         <span class="link-label">Dashboards</span>
@@ -103,7 +106,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(15)">
+                                <li x-data="dropdownItem('components')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -117,7 +120,7 @@
                                     </div>
                                     <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
-                                            <a href="./pages/alerts.html" class="dropdown-item-link">
+                                            <a href="./alerts.html" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
                                                 <span>Alert</span>
                                             </a>
@@ -162,7 +165,7 @@
                                 </li>
 
                                 <li class="menu-header">Forms & Tables</li>
-                                <li x-data="dropdownItem(14)">
+                                <li x-data="dropdownItem('form-elements')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -222,7 +225,7 @@
                                 </li>
 
                                 <li class="menu-header">Pages</li>
-                                <li x-data="dropdownItem(2)">
+                                <li x-data="dropdownItem('user-profile')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -262,7 +265,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(3)">
+                                <li x-data="dropdownItem('account')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -308,7 +311,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(4)">
+                                <li x-data="dropdownItem('authentication')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -354,7 +357,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(5)">
+                                <li x-data="dropdownItem('corporate')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -400,7 +403,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(6)">
+                                <li x-data="dropdownItem('utilities')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -434,7 +437,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(7)">
+                                <li x-data="dropdownItem('careers')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -462,7 +465,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(8)">
+                                <li x-data="dropdownItem('widgets')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -515,7 +518,7 @@
                                 </li>
 
                                 <li class="menu-header">Apps</li>
-                                <li x-data="dropdownItem(9)">
+                                <li x-data="dropdownItem('projects')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -561,7 +564,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(10)">
+                                <li x-data="dropdownItem('eCommerce')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -607,7 +610,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(11)">
+                                <li x-data="dropdownItem('contacts')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -653,7 +656,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(12)">
+                                <li x-data="dropdownItem('user-management')">
                                     <div
                                         role="button"
                                         @click="handleClick()"
@@ -687,7 +690,7 @@
                                     </ul>
                                 </li>
 
-                                <li x-data="dropdownItem(13)">
+                                <li x-data="dropdownItem('customers')">
                                     <div
                                         role="button"
                                         @click="handleClick()"

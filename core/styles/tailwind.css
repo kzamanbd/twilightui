@@ -15,7 +15,7 @@
         @apply mx-2 text-xl font-semibold text-white;
     }
     .menu-header {
-        @apply px-5 text-gray-500 uppercase pt-2 text-sm;
+        @apply px-5 text-gray-500 uppercase pt-2 text-sm truncate w-full;
     }
     .mini-sidebar .sidebar {
         @apply w-16 hover:w-64;
