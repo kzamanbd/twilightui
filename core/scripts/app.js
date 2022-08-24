@@ -35,6 +35,11 @@ document.addEventListener('alpine:init', () => {
         },
         // sidebar
         isSideMenuOpen: false,
+        isMiniSidebar: false,
+        handleMiniSidebar() {
+            this.isMiniSidebar = !this.isMiniSidebar
+            document.body.classList.toggle('mini-sidebar')
+        },
     }))
 
     Alpine.store('dropdown', {

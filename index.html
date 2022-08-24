@@ -19,13 +19,9 @@
 
     <body>
         <div x-ref="twilight" x-data="twilight">
-            <div
-                x-ref="loading"
-                class="fixed inset-0 z-50 flex items-center justify-center text-white backdrop-blur bg-black/50">
-                Loading.....
-            </div>
+            <div x-ref="loading" class="loading">Loading.....</div>
 
-            <div class="flex h-screen bg-white-gray font-roboto dark:bg-dark-secondary dark:text-gray-300">
+            <div class="twilight-container">
                 <aside class="flex">
                     <div
                         tabindex="0"
@@ -34,10 +30,8 @@
                         :class="isSideMenuOpen ? 'block' : 'hidden'"
                         class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"></div>
 
-                    <div
-                        :class="isSideMenuOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-                        class="sidebar bg-dark-primary fixed inset-y-0 left-0 z-30 w-64 overflow-hidden transition duration-300 transform lg:translate-x-0 lg:static lg:inset-0">
-                        <div class="flex items-center px-4 relative pb-2 pt-[10px]">
+                    <div class="sidebar" :class="isSideMenuOpen ? 'translate-x-0' : '-translate-x-full'">
+                        <div class="brand-logo" :class="{'justify-center' : isMiniSidebar }">
                             <a href="/index.html" class="flex items-center">
                                 <svg
                                     class="w-12 h-12"
@@ -756,7 +750,7 @@
                             </button>
                             <button
                                 type="button"
-                                @click="document.body.classList.toggle('mini-sidebar')"
+                                @click="handleMiniSidebar()"
                                 class="text-gray-500 focus:outline-none hidden lg:block">
                                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -771,9 +765,7 @@
 
                         <div class="flex items-center space-x-4">
                             <div class="relative">
-                                <button
-                                    type="button"
-                                    class="relative p-2 flex items-center text-xs font-medium text-gray-700 bg-white rounded-lg border border-gray-200 toggle-dark-state-example hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-dark-primary focus:outline-none dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                <button type="button" class="header-btn">
                                     <svg
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
@@ -797,10 +789,7 @@
                                 </button>
                             </div>
 
-                            <button
-                                type="button"
-                                @click="toggleTheme"
-                                class="flex items-center p-2 text-xs font-medium text-gray-700 bg-white rounded-lg border border-gray-200 toggle-dark-state-example hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-dark-primary focus:outline-none dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                            <button type="button" @click="toggleTheme" class="header-btn">
                                 <svg
                                     aria-hidden="true"
                                     data-toggle-icon="sun"
@@ -829,7 +818,7 @@
                                     type="button"
                                     @click="isOpen = !isOpen"
                                     @click.away="isOpen = false"
-                                    class="relative p-2 flex items-center text-xs font-medium text-gray-700 bg-white rounded-lg border border-gray-200 toggle-dark-state-example hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-dark-primary focus:outline-none dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                                    class="header-btn">
                                     <svg
                                         class="w-4 h-4"
                                         viewBox="0 0 24 24"
