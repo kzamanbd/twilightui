@@ -1,9 +1,4 @@
-const pSidebar = new PerfectScrollbar('#sidebar-menu', {
-    wheelSpeed: 2,
-    wheelPropagation: true,
-    minScrollbarLength: 20,
-})
-pSidebar.update()
+//* alpine init
 document.addEventListener('alpine:init', () => {
     //! get theme from local storage
     function getTwilightTheme() {
@@ -24,6 +19,7 @@ document.addEventListener('alpine:init', () => {
         status: 'Active',
         role: 'Owner',
     }
+    // alpine data
     Alpine.data('twilight', () => ({
         init() {
             this.$refs.loading.classList.add('hidden')
@@ -44,6 +40,7 @@ document.addEventListener('alpine:init', () => {
     Alpine.store('dropdown', {
         tab: undefined,
     })
+
     Alpine.data('dropdownItem', idx => ({
         init() {
             this.idx = idx
@@ -65,6 +62,13 @@ document.addEventListener('alpine:init', () => {
 })
 
 window.onload = function () {
+    // active scrollbar
+    new PerfectScrollbar('#sidebar-menu', {
+        wheelSpeed: 2,
+        wheelPropagation: true,
+        minScrollbarLength: 20,
+    }).update()
+
     const header = document.getElementById('sticky__header')
     const scrollableContent = document.getElementById('scrollable-content')
     scrollableContent.addEventListener('scroll', () => {
