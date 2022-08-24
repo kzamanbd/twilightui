@@ -8,7 +8,7 @@
     .loading {
         @apply fixed inset-0 z-50 flex items-center justify-center text-white backdrop-blur bg-black/50;
     }
-    .twilight-container {
+    .twilight {
         @apply flex h-screen bg-white-gray dark:bg-dark-secondary dark:text-gray-300;
     }
     .top-header {
@@ -32,6 +32,9 @@
     .sidebar {
         @apply bg-dark-primary fixed inset-y-0 left-0 z-30 w-64 overflow-hidden transition duration-300 transform;
         @apply lg:translate-x-0 lg:static lg:inset-0 ease-in-out !important;
+    }
+    .sidebar-close {
+        @apply text-gray-300 absolute right-2 top-2 cursor-pointer text-lg md:hidden;
     }
     .mini-sidebar .sidebar {
         @apply w-16 hover:w-64;

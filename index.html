@@ -21,7 +21,7 @@
         <div x-ref="twilight" x-data="twilight">
             <div x-ref="loading" class="loading">Loading.....</div>
 
-            <div class="twilight-container">
+            <div class="twilight">
                 <aside class="flex">
                     <div
                         tabindex="0"
@@ -52,11 +52,7 @@
 
                                 <span class="app-name"> Twilight </span>
                             </a>
-                            <span
-                                @click="isSideMenuOpen = false"
-                                class="material-icons text-gray-300 absolute right-2 top-2 cursor-pointer text-lg md:hidden">
-                                close
-                            </span>
+                            <span @click="isSideMenuOpen = false" class="material-icons sidebar-close"> close </span>
                         </div>
 
                         <nav
