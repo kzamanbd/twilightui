@@ -6,7 +6,7 @@ const pSidebar = new PerfectScrollbar('#sidebar-menu', {
 pSidebar.update()
 document.addEventListener('alpine:init', () => {
     //! get theme from local storage
-    function getThemeFromLocalStorage() {
+    function getTwilightTheme() {
         // if user already changed the theme, use it
         if (window.localStorage.getItem('dark')) {
             return JSON.parse(window.localStorage.getItem('dark'))
@@ -15,10 +15,7 @@ document.addEventListener('alpine:init', () => {
         // else return their preferences
         return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
     }
-    //! set theme to local storage
-    function setThemeToLocalStorage(value) {
-        window.localStorage.setItem('dark', value)
-    }
+
     const testUser = {
         name: 'John Doe',
         email: 'john@example.com',
@@ -28,11 +25,17 @@ document.addEventListener('alpine:init', () => {
         role: 'Owner',
     }
     Alpine.data('twilight', () => ({
+        init() {
+            this.$refs.loading.classList.add('hidden')
+            if (getTwilightTheme()) {
+                this.$refs.twilight.classList.add('dark')
+            }
+        },
         users: [...Array(10).keys()].map(() => testUser),
-        isDarkMode: getThemeFromLocalStorage(),
         toggleTheme() {
-            this.isDarkMode = !this.isDarkMode
-            setThemeToLocalStorage(this.isDarkMode)
+            this.$refs.twilight.classList.toggle('dark')
+            //! set theme to local storage
+            window.localStorage.setItem('dark', !getTwilightTheme())
         },
         // sidebar
         isSideMenuOpen: false,

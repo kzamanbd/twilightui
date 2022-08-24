@@ -12,7 +12,13 @@
     </head>
 
     <body>
-        <div x-data="twilight" :class="{ 'dark': isDarkMode }">
+        <div x-ref="twilight" x-data="twilight">
+            <div
+                x-ref="loading"
+                class="fixed inset-0 z-50 flex items-center justify-center text-white backdrop-blur bg-black/50">
+                Loading.....
+            </div>
+
             <div class="flex h-screen bg-white-gray font-roboto dark:bg-dark-secondary dark:text-gray-300">
                 <aside class="flex">
                     <div
