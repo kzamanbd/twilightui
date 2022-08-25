@@ -4,12 +4,12 @@ export default {
             // here I check that click was outside the el and his children
             if (!(el == event.target || el.contains(event.target))) {
                 // and if it did, call method provided in attribute value
-                vNode.context[binding.expression](event)
+                vNode.context[binding.expression](event);
             }
-        }
-        document.body.addEventListener('click', el.clickOutsideEvent)
+        };
+        document.body.addEventListener('click', el.clickOutsideEvent);
     },
     unbind: function (el) {
-        document.body.removeEventListener('click', el.clickOutsideEvent)
+        document.body.removeEventListener('click', el.clickOutsideEvent);
     },
-}
+};

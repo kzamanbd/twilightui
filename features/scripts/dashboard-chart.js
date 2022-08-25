@@ -60,7 +60,7 @@ new ApexCharts(document.querySelector('#total-sales-charts'), {
             data: [0, 258, 30, 240, 150, 400],
         },
     ],
-}).render()
+}).render();
 
 // Revenue Report
 new ApexCharts(document.querySelector('#revenue-report-charts'), {
@@ -174,7 +174,7 @@ new ApexCharts(document.querySelector('#revenue-report-charts'), {
             data: [-145, -80, -60, -180, -100, -60, -85, -75, -100],
         },
     ],
-}).render()
+}).render();
 
 // Sales Overview
 new ApexCharts(document.querySelector('#sales-overview-charts'), {
@@ -202,7 +202,7 @@ new ApexCharts(document.querySelector('#sales-overview-charts'), {
 
                         offsetY: -15,
                         formatter(value) {
-                            return `${value}k`
+                            return `${value}k`;
                         },
                     },
                     total: {
@@ -210,7 +210,7 @@ new ApexCharts(document.querySelector('#sales-overview-charts'), {
                         label: 'Weekly Visits',
                         color: 'rgba(94, 86, 105, 0.68)',
                         formatter(value) {
-                            return `${value.globals.seriesTotals.reduce((total, num) => total + num)}k`
+                            return `${value.globals.seriesTotals.reduce((total, num) => total + num)}k`;
                         },
                     },
                 },
@@ -218,7 +218,7 @@ new ApexCharts(document.querySelector('#sales-overview-charts'), {
         },
     },
     series: [12, 24.5, 15, 50],
-}).render()
+}).render();
 
 // Weekly Sales
 new ApexCharts(document.querySelector('#weekly-sales-charts'), {
@@ -275,7 +275,7 @@ new ApexCharts(document.querySelector('#weekly-sales-charts'), {
             data: [40, 60, 50, 60, 90, 40, 50],
         },
     ],
-}).render()
+}).render();
 
 // total growth
 new ApexCharts(document.querySelector('#total-growth-charts'), {
@@ -346,4 +346,4 @@ new ApexCharts(document.querySelector('#total-growth-charts'), {
             data: [28, 40, 36, 52, 38, 60, 55],
         },
     ],
-}).render()
+}).render();
