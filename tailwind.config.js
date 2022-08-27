@@ -1,5 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     content: ['./**/*.html', './core/**/*.js'],
@@ -31,4 +30,4 @@ module.exports = {
         },
     },
     plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
-}
+};
