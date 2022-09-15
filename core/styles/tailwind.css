@@ -9,7 +9,7 @@
         @apply fixed inset-0 z-50 flex items-center justify-center text-white backdrop-blur bg-black/50;
     }
     .twilight {
-        @apply flex h-screen bg-white-gray dark:bg-dark-secondary dark:text-gray-300;
+        @apply flex h-screen bg-light-gray dark:bg-dark-secondary dark:text-gray-300;
     }
     .top-header {
         @apply sticky top-0 z-10 flex-shrink-0 flex items-center justify-between mx-6 py-4 duration-200 transition-all ease-in-out;

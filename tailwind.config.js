@@ -1,4 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
+const primary = colors.violet;
 
 module.exports = {
     content: ['./**/*.html', './core/**/*.js'],
@@ -6,17 +8,29 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                dark: {
+                    primary: '#1E1E2D',
+                    secondary: '#151521',
+                },
+                light: {
+                    gray: '#F5F8FA',
+                },
+                primary: {
+                    100: primary[100],
+                    200: primary[200],
+                    300: primary[300],
+                    400: primary[400],
+                    DEFAULT: primary[500],
+                    600: primary[600],
+                    700: primary[700],
+                    800: primary[800],
+                    900: primary[900],
+                },
                 info: '#56B6F7',
-                danger: '#F3616D',
-                primary: '#2563eb',
-                success: '#28AB55',
-                warning: '#EACA4A',
-                secondary: '#EBEEF3',
-                'white-gray': '#F5F8FA',
-                'primary-600': '#2563eb',
-                'primary-700': '#1D4ED8',
-                'dark-primary': '#1E1E2D',
-                'dark-secondary': '#151521',
+                danger: colors.red[500],
+                success: colors.green[600],
+                warning: colors.yellow[500],
+                secondary: primary[300],
             },
             height: {
                 sidebar: 'calc(100vh - 68px)',
