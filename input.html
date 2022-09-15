@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Alerts - Twilight Dashboard</title>
+        <title>Forms - Twilight Dashboard</title>
         <link rel="icon" href="./favicon.png" />
         <!-- Core Fonts, Style -->
         <link rel="stylesheet" href="./core/fonts/material-icons.css" />
@@ -56,7 +56,7 @@
                         <nav
                             id="sidebar-menu"
                             class="overflow-y-auto h-sidebar"
-                            x-init="$store.dropdown.tab = 'components'">
+                            x-init="$store.dropdown.tab = 'form-elements'">
                             <ul class="nav-menu space-y-2">
                                 <li x-data="dropdownItem('dashboard')">
                                     <div
@@ -118,7 +118,7 @@
                                     </div>
                                     <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
-                                            <a href="./alerts.html" class="dropdown-item-link dropdown-link-active">
+                                            <a href="./alerts.html" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
                                                 <span>Alert</span>
                                             </a>
@@ -177,7 +177,7 @@
                                     </div>
                                     <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
-                                            <a href="./input.html" class="dropdown-item-link">
+                                            <a href="./input.html" class="dropdown-item-link dropdown-link-active">
                                                 <span class="dropdown-circle material-icons">circle</span>
                                                 <span>Input</span>
                                             </a>
@@ -991,13 +991,13 @@
                                 <!-- Breadcrumb -->
                                 <nav class="flex justify-between items-center md:mb-4 mb-2" aria-label="Breadcrumb">
                                     <div class="text-gray-700">
-                                        <h3 class="text-base font-medium dark:text-gray-300">Components</h3>
+                                        <h3 class="text-base font-medium dark:text-gray-300">Form Elements</h3>
                                         <ol class="inline-flex items-center space-x-1 md:space-x-1">
                                             <li class="inline-flex items-center">
                                                 <a
                                                     href="#"
                                                     class="inline-flex items-center text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-                                                    Components
+                                                    Form Elements
                                                 </a>
                                             </li>
 
@@ -1015,7 +1015,7 @@
                                                     </svg>
                                                     <span
                                                         class="ml-1 text-xs font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                                                        Alerts
+                                                        Forms
                                                     </span>
                                                 </div>
                                             </li>
@@ -1024,277 +1024,198 @@
                                 </nav>
                                 <!-- End Breadcrumb -->
 
-                                <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 lg:space-y-0 mt-6">
-                                    <div class="card dark--text">
-                                        <div class="card-header">Default</div>
-                                        <div class="card-body">
-                                            <div class="alert bg-primary text-white" role="alert">
-                                                <span>
-                                                    Primary alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-success text-white" role="alert">
-                                                <span>
-                                                    Success alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-info text-white" role="alert">
-                                                <span>
-                                                    Info alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-warning text-gray-700" role="alert">
-                                                <span>
-                                                    Warning alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-danger text-white" role="alert">
-                                                <span>
-                                                    Danger alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                <div class="mx-auto grid">
+                                    <!-- General elements -->
+                                    <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300">
+                                        Elements
+                                    </h4>
+                                    <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+                                        <label class="block text-sm">
+                                            <span class="form-label">Name</span>
+                                            <input class="form-control" placeholder="Jane Doe" />
+                                        </label>
 
-                                            <div class="alert bg-secondary text-gray-800" role="alert">
-                                                <span>
-                                                    Secondary alert! Change a few things up and try submitting again.
-                                                </span>
+                                        <div class="mt-4 text-sm">
+                                            <span class="text-gray-700 dark:text-gray-400"> Account Type </span>
+                                            <div class="mt-2">
+                                                <label
+                                                    class="inline-flex items-center text-gray-600 dark:text-gray-400">
+                                                    <input
+                                                        type="radio"
+                                                        class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                                                        name="accountType"
+                                                        value="personal" />
+                                                    <span class="ml-2">Personal</span>
+                                                </label>
+                                                <label
+                                                    class="inline-flex items-center ml-6 text-gray-600 dark:text-gray-400">
+                                                    <input
+                                                        type="radio"
+                                                        class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                                                        name="accountType"
+                                                        value="business" />
+                                                    <span class="ml-2">Business</span>
+                                                </label>
                                             </div>
+                                        </div>
 
-                                            <div class="alert bg-light-gray text-gray-800" role="alert">
-                                                <span>
-                                                    Light alert! Change a few things up and try submitting again.
+                                        <label class="block mt-4 text-sm">
+                                            <span class="text-gray-700 dark:text-gray-400"> Requested Limit </span>
+                                            <select class="form-control">
+                                                <option>$1,000</option>
+                                                <option>$5,000</option>
+                                                <option>$10,000</option>
+                                                <option>$25,000</option>
+                                            </select>
+                                        </label>
+
+                                        <label class="block mt-4 text-sm">
+                                            <span class="text-gray-700 dark:text-gray-400"> Multiselect </span>
+                                            <select class="form-control" multiple>
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                                <option>Option 5</option>
+                                            </select>
+                                        </label>
+
+                                        <label class="block mt-4 text-sm">
+                                            <span class="text-gray-700 dark:text-gray-400">Message</span>
+                                            <textarea
+                                                class="form-control"
+                                                rows="3"
+                                                placeholder="Enter some long form content."></textarea>
+                                        </label>
+
+                                        <div class="flex mt-6 text-sm">
+                                            <label class="flex items-center dark:text-gray-400">
+                                                <input
+                                                    type="checkbox"
+                                                    class="text-purple-600 form-checkbox rounded focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray" />
+                                                <span class="ml-2">
+                                                    I agree to the
+                                                    <span class="underline">privacy policy</span>
                                                 </span>
-                                            </div>
+                                            </label>
                                         </div>
                                     </div>
 
-                                    <div class="card dark--text">
-                                        <div class="card-header">With Icons</div>
-                                        <div class="card-body">
-                                            <div class="alert alert-icon bg-primary text-white" role="alert">
-                                                <span class="material-icons">star</span>
-                                                <span>
-                                                    Primary alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert alert-icon bg-success text-white" role="alert">
-                                                <span class="material-icons">check_circle</span>
-                                                <span>
-                                                    Success alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert alert-icon bg-info text-white" role="alert">
-                                                <span class="material-icons">info</span>
-                                                <span>
-                                                    Info alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert alert-icon bg-warning text-gray-700" role="alert">
-                                                <span class="material-icons">warning</span>
-                                                <span>
-                                                    Warning alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert alert-icon bg-danger text-white" role="alert">
-                                                <span class="material-icons">error</span>
-                                                <span>
-                                                    Danger alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                    <!-- Validation inputs -->
+                                    <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300">
+                                        Validation
+                                    </h4>
+                                    <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+                                        <!-- Invalid input -->
+                                        <label class="block text-sm">
+                                            <span class="text-gray-700 dark:text-gray-400"> Invalid input </span>
+                                            <input
+                                                class="block w-full mt-1 text-sm border rounded appearance-none p-2 border-red-600 dark:text-gray-300 dark:bg-gray-700 focus:border-red-400 focus:outline-none focus:shadow-outline-red form-input"
+                                                placeholder="Jane Doe" />
+                                            <span class="text-xs text-red-600 dark:text-red-400">
+                                                Your password is too short.
+                                            </span>
+                                        </label>
 
-                                            <div class="alert alert-icon bg-secondary text-gray-800" role="alert">
-                                                <span class="material-icons">info</span>
-                                                <span>
-                                                    Secondary alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                        <!-- Valid input -->
+                                        <label class="block mt-4 text-sm">
+                                            <span class="text-gray-700 dark:text-gray-400"> Valid input </span>
+                                            <input
+                                                class="block w-full mt-1 text-sm border rounded appearance-none p-2 border-green-600 dark:text-gray-300 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green form-input"
+                                                placeholder="Jane Doe" />
+                                            <span class="text-xs text-green-600 dark:text-green-400">
+                                                Your password is strong.
+                                            </span>
+                                        </label>
 
-                                            <div class="alert alert-icon bg-light-gray text-gray-800" role="alert">
-                                                <span class="material-icons">info</span>
-                                                <span>
-                                                    Light alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                        </div>
+                                        <!-- Helper text -->
+                                        <label class="block mt-4 text-sm">
+                                            <span class="text-gray-700 dark:text-gray-400"> Helper text </span>
+                                            <input
+                                                class="block w-full mt-1 text-sm border rounded appearance-none p-2 dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray form-input"
+                                                placeholder="Jane Doe" />
+                                            <span class="text-xs text-gray-600 dark:text-gray-400">
+                                                Your password must be at least 6 characters long.
+                                            </span>
+                                        </label>
                                     </div>
 
-                                    <div class="card dark--text">
-                                        <div class="card-header">Heading</div>
-                                        <div class="card-body">
-                                            <div class="alert bg-primary text-white" role="alert">
-                                                <h4 class="text-2xl mb-4">Primary alert!</h4>
-                                                <span>
-                                                    Primary alert! Change a few things up and try submitting again.
-                                                </span>
+                                    <!-- Inputs with icons -->
+                                    <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300">Icons</h4>
+                                    <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+                                        <label class="block text-sm">
+                                            <span class="text-gray-700 dark:text-gray-400">Icon left</span>
+                                            <!-- focus-within sets the color for the icon when input is focused -->
+                                            <div
+                                                class="relative text-gray-500 focus-within:text-purple-600 dark:focus-within:text-purple-400">
+                                                <input class="pl-10 form-control" placeholder="Jane Doe" />
+                                                <div
+                                                    class="absolute inset-y-0 flex items-center ml-3 pointer-events-none">
+                                                    <svg
+                                                        class="w-5 h-5"
+                                                        aria-hidden="true"
+                                                        fill="none"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor">
+                                                        <path
+                                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                                    </svg>
+                                                </div>
                                             </div>
-                                            <div class="alert bg-success text-white" role="alert">
-                                                <h4 class="text-2xl mb-4">Success alert!</h4>
-                                                <span>
-                                                    Success alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-info text-white" role="alert">
-                                                <h4 class="text-2xl mb-4">Info alert!</h4>
-                                                <span>
-                                                    Info alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-warning text-gray-700" role="alert">
-                                                <h4 class="text-2xl mb-4">Warning alert!</h4>
-                                                <span>
-                                                    Warning alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-danger text-white" role="alert">
-                                                <h4 class="text-2xl mb-4">Danger alert!</h4>
-                                                <span>
-                                                    Danger alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                        </label>
 
-                                            <div class="alert bg-secondary text-gray-800" role="alert">
-                                                <h4 class="text-2xl mb-4">Secondary alert!</h4>
-                                                <span>
-                                                    Secondary alert! Change a few things up and try submitting again.
-                                                </span>
+                                        <label class="block mt-4 text-sm">
+                                            <span class="text-gray-700 dark:text-gray-400">Icon right</span>
+                                            <!-- focus-within sets the color for the icon when input is focused -->
+                                            <div
+                                                class="relative text-gray-500 focus-within:text-purple-600 dark:focus-within:text-purple-400">
+                                                <input class="pr-10 form-control" placeholder="Jane Doe" />
+                                                <div
+                                                    class="absolute inset-y-0 right-0 flex items-center mr-3 pointer-events-none">
+                                                    <svg
+                                                        class="w-5 h-5"
+                                                        aria-hidden="true"
+                                                        fill="none"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor">
+                                                        <path
+                                                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                                    </svg>
+                                                </div>
                                             </div>
-
-                                            <div class="alert bg-light-gray text-gray-800" role="alert">
-                                                <h4 class="text-2xl mb-4">Light alert!</h4>
-                                                <span>
-                                                    Light alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                        </div>
+                                        </label>
                                     </div>
 
-                                    <div class="card dark--text">
-                                        <div class="card-header">Dismissible</div>
-                                        <div class="card-body">
-                                            <div
-                                                class="alert alert-dismiss bg-primary text-white"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Primary alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
+                                    <!-- Inputs with buttons -->
+                                    <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300">Buttons</h4>
+                                    <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+                                        <label class="block text-sm">
+                                            <span class="text-gray-700 dark:text-gray-400"> Button left </span>
+                                            <div class="relative">
+                                                <input class="pl-20 form-control" placeholder="Jane Doe" />
+                                                <button
+                                                    class="absolute inset-y-0 px-4 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-primary-600 border border-transparent rounded-l-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
+                                                    Click
+                                                </button>
                                             </div>
-                                            <div
-                                                class="alert alert-dismiss bg-success text-white"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Success alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
-                                            <div
-                                                class="alert alert-dismiss bg-info text-white"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Info alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
-                                            <div
-                                                class="alert alert-dismiss bg-warning text-gray-700"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Warning alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
-                                            <div
-                                                class="alert alert-dismiss bg-danger text-white"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Danger alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
+                                        </label>
 
-                                            <div
-                                                class="alert alert-dismiss bg-secondary text-gray-800"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Secondary alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
+                                        <label class="block mt-4 text-sm">
+                                            <span class="text-gray-700 dark:text-gray-400"> Button right </span>
+                                            <div class="relative text-gray-500 focus-within:text-primary-600">
+                                                <input class="form-control pr-20" placeholder="Jane Doe" />
+                                                <button
+                                                    class="absolute inset-y-0 right-0 px-4 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-primary-600 border border-transparent rounded-r-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                                                    Click
+                                                </button>
                                             </div>
-
-                                            <div
-                                                class="alert alert-dismiss bg-light-gray text-gray-800"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Light alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card dark--text">
-                                        <div class="card-header">Light</div>
-                                        <div class="card-body">
-                                            <div class="alert bg-primary/25 text-primary" role="alert">
-                                                <span>
-                                                    Primary alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-success/25 text-success" role="alert">
-                                                <span>
-                                                    Success alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-info/25 text-info" role="alert">
-                                                <span>
-                                                    Info alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-warning/25 text-warning" role="alert">
-                                                <span>
-                                                    Warning alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-danger/25 text-danger" role="alert">
-                                                <span>
-                                                    Danger alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-
-                                            <div class="alert bg-light-gray text-gray-800" role="alert">
-                                                <span>
-                                                    Light alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                        </div>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
