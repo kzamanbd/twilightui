@@ -6,16 +6,19 @@
 
 @layer components {
     .loading {
-        @apply fixed inset-0 z-50 flex items-center justify-center text-white backdrop-blur bg-black/50;
+        @apply fixed inset-0 z-50 flex items-center justify-center;
+        @apply text-white backdrop-blur bg-black/50;
     }
     .twilight {
         @apply flex h-screen bg-light-gray dark:bg-dark-secondary dark:text-gray-300;
     }
     .top-header {
-        @apply sticky top-0 z-10 flex-shrink-0 flex items-center justify-between mx-6 py-4 duration-200 transition-all ease-in-out;
+        @apply sticky top-0 z-10 flex-shrink-0 flex items-center;
+        @apply justify-between mx-6 py-4 duration-200 transition-all ease-in-out;
     }
     .sticky-header {
-        @apply px-4 bg-white shadow-md dark:shadow-lg dark:bg-dark-primary dark:text-gray-300 rounded-bl-lg rounded-br-lg;
+        @apply px-4 bg-white shadow-md dark:shadow-lg dark:bg-dark-primary;
+        @apply dark:text-gray-300 rounded-bl-lg rounded-br-lg;
     }
     .brand-logo {
         @apply flex items-center px-4 relative pb-2 pt-[10px];
@@ -24,13 +27,18 @@
         @apply mx-2 text-xl font-semibold text-white;
     }
     .header-btn {
-        @apply relative p-2 flex items-center text-xs font-medium text-gray-700 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-500 dark:bg-dark-primary focus:outline-none dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700;
+        @apply relative p-2 flex items-center text-xs font-medium text-gray-700;
+        @apply bg-white rounded-lg border border-gray-200 hover:bg-gray-100;
+        @apply hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300
+        @apply dark:focus:ring-gray-500 dark:bg-dark-primary focus:outline-none;
+        @apply dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700;
     }
     .menu-header {
         @apply px-5 text-gray-500 uppercase pt-2 text-sm truncate w-full;
     }
     .sidebar {
-        @apply bg-dark-primary fixed inset-y-0 left-0 z-30 w-64 overflow-hidden transition duration-300 transform;
+        @apply bg-dark-primary fixed inset-y-0 left-0 z-30 w-64;
+        @apply overflow-hidden transition duration-300 transform;
         @apply lg:translate-x-0 lg:static lg:inset-0 ease-in-out !important;
     }
     .sidebar-close {
@@ -52,7 +60,8 @@
         @apply mx-4 overflow-hidden max-h-0 duration-500 transition-all space-y-1;
     }
     .dropdown-item {
-        @apply flex items-center text-gray-400 transition-colors duration-200 rounded-md hover:text-gray-100;
+        @apply flex items-center text-gray-400 transition-colors;
+        @apply duration-200 rounded-md hover:text-gray-100;
     }
     .dropdown-circle {
         @apply pr-2 text-8 group-hover:text-primary-600;
@@ -61,7 +70,8 @@
         @apply ml-auto transition-transform transform;
     }
     .dropdown-item-link {
-        @apply hover:bg-gray-600/25 pl-3 text-sm py-2 pr-4 truncate w-full rounded-md;
+        @apply hover:bg-gray-600/25 pl-3 text-sm py-2 pr-4;
+        @apply truncate w-full rounded-md;
     }
     .dropdown-link-active {
         @apply bg-gray-600/25 text-gray-100;
@@ -70,7 +80,9 @@
         @apply px-4;
     }
     .user-menu-link {
-        @apply flex justify-between items-center px-4 py-2 text-sm rounded-md text-gray-700 dark:text-gray-300 hover:text-primary-600 hover:bg-gray-100 hover:dark:bg-dark-secondary;
+        @apply flex justify-between items-center px-4 py-2 text-sm;
+        @apply rounded-md text-gray-700 dark:text-gray-300 hover:text-primary-600;
+        @apply hover:bg-gray-100 hover:dark:bg-dark-secondary;
     }
     /* dark theme */
     .dark {
@@ -83,7 +95,8 @@
         @apply bg-white dark:bg-dark-primary rounded-md shadow-sm;
     }
     .card-header {
-        @apply p-4 text-gray-600 dark:text-gray-100 border-b border-gray-200 dark:border-gray-700;
+        @apply p-4 text-gray-600 dark:text-gray-100 border-b;
+        @apply border-gray-200 dark:border-gray-700;
     }
     .card-body {
         @apply p-4;
@@ -97,7 +110,15 @@
     .alert-dismiss {
         @apply flex items-center justify-between space-x-3;
     }
+    .btn-primary {
+        @apply inline-flex items-center px-4 py-2.5 bg-primary border border-transparent;
+        @apply rounded-md font-semibold text-xs text-white uppercase tracking-widest;
+        @apply hover:bg-primary-700 active:bg-primary-900 focus:outline-none;
+        @apply focus:border-primary-900 focus:ring ring-primary-300 disabled:opacity-25;
+        @apply transition ease-in-out duration-150;
+    }
 }
+
 .sidebar {
     transition: all 0.3s ease-in-out;
 }
