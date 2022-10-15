@@ -15,8 +15,8 @@ Use this boilerplate as the starting point for your **Tailwind CSS** based templ
 ## start
 
 ```sh
-git clone https://github.com/zamanz/tailwind-dashboard.git
-cd tailwind-dashboard
+git clone https://github.com/kzamanbd/twilight.git
+cd twilight
 npm install
 npm run dev
 ```
@@ -38,4 +38,3 @@ There is a `tailwind.config.js` file with `content` instructions and extra color
 -   PostCSS
 -   Alpine.js
 -   Chart.js (charts)
--   UI Faces (avatars)
