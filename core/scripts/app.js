@@ -50,6 +50,7 @@ document.addEventListener('alpine:init', () => {
                 const options = {
                     body: 'Do you like this notification?',
                     data: 'I like peas.',
+                    icon: '/favicon.png'
                 };
                 const notification = new Notification('Hi there!', options);
                 console.log(notification);
