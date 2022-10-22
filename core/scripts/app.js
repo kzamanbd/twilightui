@@ -34,7 +34,7 @@ document.addEventListener('alpine:init', () => {
             window.localStorage.setItem('dark', !getTwilightTheme());
         },
         // sidebar
-        isSideMenuOpen: false,
+        isMenuOpen: false,
         isMiniSidebar: false,
         handleMiniSidebar() {
             this.isMiniSidebar = !this.isMiniSidebar;
@@ -59,7 +59,7 @@ document.addEventListener('alpine:init', () => {
                 Notification.requestPermission().then(permission => {
                     // If the user accepts, let's create a notification
                     if (permission === 'granted') {
-                        const notification = new Notification('Hi there!');
+                        const notification = new Notification('Hi there! Notification permission granted.');
                         console.log(notification);
                     }
                 });

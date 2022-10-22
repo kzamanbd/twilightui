@@ -26,18 +26,18 @@
                     <div
                         tabindex="0"
                         role="button"
-                        @click="isSideMenuOpen = false"
-                        :class="isSideMenuOpen ? 'block' : 'hidden'"
+                        @click="isMenuOpen = false"
+                        :class="isMenuOpen ? 'block' : 'hidden'"
                         class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"></div>
 
-                    <div class="sidebar" :class="isSideMenuOpen ? 'translate-x-0' : '-translate-x-full'">
+                    <div class="sidebar" :class="isMenuOpen ? 'translate-x-0' : '-translate-x-full'">
                         <div class="brand-logo" :class="{'justify-center' : isMiniSidebar }">
                             <a href="/index.html" class="flex items-center">
                                 <img class="w-12 h-12" src="./core/images/logo.svg" alt="logo" />
 
                                 <span class="app-name"> Twilight </span>
                             </a>
-                            <span @click="isSideMenuOpen = false" class="material-icons sidebar-close"> close </span>
+                            <span @click="isMenuOpen = false" class="material-icons sidebar-close"> close </span>
                         </div>
 
                         <nav
@@ -718,7 +718,7 @@
                         <div class="flex items-center">
                             <button
                                 type="button"
-                                @click="isSideMenuOpen = !isSideMenuOpen"
+                                @click="isMenuOpen = !isMenuOpen"
                                 class="text-gray-500 focus:outline-none lg:hidden">
                                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
