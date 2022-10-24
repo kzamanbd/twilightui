@@ -85,6 +85,12 @@
         @apply rounded-md text-gray-700 dark:text-gray-300 hover:text-primary-600;
         @apply hover:bg-gray-100 hover:dark:bg-dark-secondary;
     }
+    .login-bg {
+        @apply relative z-[1] w-full max-w-lg before:absolute before:bg-[url('/core/images/login-left.png')];
+        @apply before:left-[-45px] before:top-[-70px] before:w-[244px] before:h-[244px] before:z-[-1];
+        @apply after:absolute after:bg-[url('/core/images/login-right.png')];
+        @apply after:right-[-50px] after:bottom-[-50px] after:w-[244px] after:h-[244px] after:z-[-1];
+    }
     /* dark theme */
     .dark {
         color-scheme: dark;
@@ -131,6 +137,10 @@
     }
     .form-radio {
         @apply text-primary-600 focus:border-primary-400 focus:outline-none;
+    }
+    .form-check {
+        @apply text-primary-600 border-gray-200 rounded-md focus:border-primary-600;
+        @apply focus:ring focus:ring-opacity-40 focus:ring-primary-600;
     }
 }
 
