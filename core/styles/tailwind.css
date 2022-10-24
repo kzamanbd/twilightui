@@ -19,6 +19,7 @@
     .sticky-header {
         @apply px-4 bg-white shadow-md dark:shadow-lg dark:bg-dark-primary;
         @apply dark:text-gray-300 rounded-bl-lg rounded-br-lg;
+        @apply supports-[backdrop-filter]:bg-light-gray/60 supports-[backdrop-filter]:backdrop-blur;
     }
     .brand-logo {
         @apply flex items-center px-4 relative pb-2 pt-[10px];

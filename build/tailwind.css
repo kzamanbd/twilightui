@@ -944,6 +944,15 @@ select{
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
+@supports ((-webkit-backdrop-filter: var(--tw)) or (backdrop-filter: var(--tw))){
+  .sticky-header{
+    background-color: rgb(245 248 250 / 0.6);
+    --tw-backdrop-blur: blur(8px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  }
+}
+
 .brand-logo{
   position: relative;
   display: flex;
