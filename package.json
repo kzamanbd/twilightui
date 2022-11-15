@@ -6,7 +6,7 @@
         "dev": "tailwindcss -i ./core/styles/tailwind.css -o ./build/tailwind.css -w",
         "build": "tailwindcss -i ./core/styles/tailwind.css -o ./build/tailwind.css --minify"
     },
-    "author": "Kamruzzaman <kzamanbd4@gmail.com>",
+    "author": "Kamruzzaman <kzamanbn@gmail.com>",
     "license": "MIT",
     "devDependencies": {
         "@tailwindcss/aspect-ratio": "^0.4.0",

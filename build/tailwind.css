@@ -1502,6 +1502,11 @@ select{
   color: rgb(156 163 175 / var(--tw-placeholder-opacity));
 }
 
+.form-control:focus-visible{
+  --tw-border-opacity: 1;
+  border-color: rgb(139 92 246 / var(--tw-border-opacity));
+}
+
 .dark .form-control:focus{
   --tw-border-opacity: 1;
   border-color: rgb(139 92 246 / var(--tw-border-opacity));
