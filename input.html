@@ -8,10 +8,10 @@
         <!-- Core Fonts, Style -->
         <link rel="stylesheet" href="./core/fonts/material-icons.css" />
         <link rel="stylesheet" href="./build/tailwind.css" />
-        <link rel="stylesheet" href="./core/plugins/perfect-scrollbar/css/perfect-scrollbar.css" />
+        <link rel="stylesheet" href="./core/plugins/simplebar/simplebar.css" />
         <!-- Core Script -->
         <script src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js" defer></script>
-        <script src="./core/plugins/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="./core/plugins/simplebar/simplebar.min.js"></script>
         <script src="./core/scripts/app.js"></script>
     </head>
 
@@ -54,7 +54,7 @@
                         </div>
 
                         <nav
-                            id="sidebar-menu"
+                            data-simplebar
                             class="overflow-y-auto h-sidebar"
                             x-init="$store.dropdown.tab = 'form-elements'">
                             <ul class="nav-menu space-y-2">
@@ -726,7 +726,7 @@
                     </div>
                 </aside>
 
-                <div id="scrollable-content" class="flex-1 flex flex-col overflow-y-auto overflow-x-hidden">
+                <div data-simplebar class="twilight-scrollable flex-1 flex flex-col overflow-y-auto overflow-x-hidden">
                     <header id="sticky__header" class="top-header">
                         <div class="flex items-center">
                             <button
