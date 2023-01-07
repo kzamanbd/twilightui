@@ -106,4 +106,11 @@ window.onload = function () {
             header?.classList.remove('sticky-header');
         }
     });
+    document.addEventListener("visibilitychange", (event) => {
+        if (document.visibilityState === 'visible') {
+            console.log('welcome', event);
+        } else {
+            console.log('hidden', event);
+        }
+    });
 };

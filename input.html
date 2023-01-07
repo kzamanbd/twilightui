@@ -59,18 +59,14 @@
                             x-init="$store.dropdown.tab = 'form-elements'">
                             <ul class="nav-menu space-y-2">
                                 <li x-data="dropdownItem('dashboard')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">dashboard</span>
                                         <span class="link-label">Dashboards</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="index.html" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -105,18 +101,14 @@
                                 </li>
 
                                 <li x-data="dropdownItem('components')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">layers</span>
                                         <span class="link-label">Components</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="./alerts.html" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -164,18 +156,14 @@
 
                                 <li class="menu-header">Forms & Tables</li>
                                 <li x-data="dropdownItem('form-elements')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">hexagon</span>
                                         <span class="link-label">Form Elements</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="./input.html" class="dropdown-item-link dropdown-link-active">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -224,18 +212,14 @@
 
                                 <li class="menu-header">Pages</li>
                                 <li x-data="dropdownItem('user-profile')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">perm_contact_calendar</span>
                                         <span class="link-label">User Profile</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -264,18 +248,14 @@
                                 </li>
 
                                 <li x-data="dropdownItem('account')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons rotate-90">label_important_outline</span>
                                         <span class="link-label">Account</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -310,18 +290,14 @@
                                 </li>
 
                                 <li x-data="dropdownItem('authentication')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">person</span>
                                         <span class="link-label">Authentication</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="/login.html" class="dropdown-item-link" target="_blank">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -356,18 +332,14 @@
                                 </li>
 
                                 <li x-data="dropdownItem('corporate')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">corporate_fare</span>
                                         <span class="link-label">Corporate</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -402,18 +374,14 @@
                                 </li>
 
                                 <li x-data="dropdownItem('utilities')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">construction</span>
                                         <span class="link-label">Utilities</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -436,18 +404,14 @@
                                 </li>
 
                                 <li x-data="dropdownItem('careers')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">work</span>
                                         <span class="link-label">Careers</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -464,18 +428,14 @@
                                 </li>
 
                                 <li x-data="dropdownItem('widgets')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">widgets</span>
                                         <span class="link-label">Widgets</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -517,18 +477,14 @@
 
                                 <li class="menu-header">Apps</li>
                                 <li x-data="dropdownItem('projects')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">fence</span>
                                         <span class="link-label">Projects</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -563,18 +519,14 @@
                                 </li>
 
                                 <li x-data="dropdownItem('eCommerce')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">shopping_basket</span>
                                         <span class="link-label">eCommerce</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -609,18 +561,14 @@
                                 </li>
 
                                 <li x-data="dropdownItem('contacts')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">interests</span>
                                         <span class="link-label">Contacts</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -655,18 +603,14 @@
                                 </li>
 
                                 <li x-data="dropdownItem('user-management')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">workspaces</span>
                                         <span class="link-label">User Management</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
@@ -689,18 +633,14 @@
                                 </li>
 
                                 <li x-data="dropdownItem('customers')">
-                                    <div
-                                        role="button"
-                                        @click="handleClick()"
-                                        class="nav-link"
-                                        :class="activeDropdown()">
+                                    <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
                                         <span class="material-icons">change_history</span>
                                         <span class="link-label">Customers</span>
-                                        <span class="material-icons dropdown-icon" :class="handleRotate()">
+                                        <span class="material-icons dropdown-icon" :class="handleRotate">
                                             expand_more
                                         </span>
                                     </div>
-                                    <ul x-ref="tab" :style="handleToggle()" class="dropdown-menu">
+                                    <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                         <li role="menuitem" class="dropdown-item group">
                                             <a href="#" class="dropdown-item-link">
                                                 <span class="dropdown-circle material-icons">circle</span>
