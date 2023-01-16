@@ -25,7 +25,7 @@
         @apply flex items-center px-4 relative pb-2 pt-[10px];
     }
     .app-name {
-        @apply mx-2 text-xl font-semibold text-white;
+        @apply mx-2 text-xl font-semibold text-gray-800 dark:text-white;
     }
     .header-btn {
         @apply relative p-2 flex items-center text-xs font-medium text-gray-700;
@@ -38,8 +38,8 @@
         @apply px-5 text-gray-500 uppercase pt-2 text-sm truncate w-full;
     }
     .sidebar {
-        @apply bg-dark-primary fixed inset-y-0 left-0 z-30 w-64;
-        @apply overflow-hidden transition duration-300 transform;
+        @apply bg-white dark:bg-dark-primary fixed inset-y-0 left-0 z-30 w-64 border-r border-gray-200;
+        @apply overflow-hidden transition duration-300 transform dark:border-none;
         @apply lg:translate-x-0 lg:static lg:inset-0 ease-in-out !important;
     }
     .sidebar-shadow {
@@ -52,10 +52,8 @@
         @apply w-16 hover:w-64;
     }
     .nav-link {
-        @apply flex items-center mx-4 py-2 duration-200 text-gray-400 hover:text-gray-100;
-    }
-    .nav-link-active {
-        @apply text-gray-100 border-gray-100;
+        @apply flex items-center mx-4 py-2 text-gray-600 hover:text-gray-900;
+        @apply dark:text-gray-400 dark:hover:text-gray-100 duration-200;
     }
     .link-label {
         @apply mx-2 truncate text-sm;
@@ -64,8 +62,8 @@
         @apply mx-4 overflow-hidden max-h-0 duration-500 transition-all space-y-1;
     }
     .dropdown-item {
-        @apply flex items-center text-gray-400 transition-colors;
-        @apply duration-200 rounded-md hover:text-gray-100;
+        @apply flex items-center dark:text-gray-400 dark:hover:text-gray-100 transition-colors;
+        @apply duration-200 rounded-md text-gray-600 hover:text-gray-900;
     }
     .dropdown-circle {
         @apply pr-2 text-8 group-hover:text-primary-600;
@@ -74,11 +72,11 @@
         @apply ml-auto transition-transform transform;
     }
     .dropdown-item-link {
-        @apply hover:bg-gray-600/25 pl-3 text-sm py-2 pr-4;
-        @apply truncate w-full rounded-md;
+        @apply hover:bg-primary hover:text-white pl-3 text-sm py-2 pr-4;
+        @apply truncate w-full rounded-md dark:hover:bg-gray-600/25;
     }
     .dropdown-link-active {
-        @apply bg-gray-600/25 text-gray-100;
+        @apply bg-primary text-white dark:bg-gray-600/25 dark:text-gray-100;
     }
     .user-menu-item {
         @apply px-4;

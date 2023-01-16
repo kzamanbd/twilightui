@@ -970,6 +970,11 @@ select{
   line-height: 1.75rem;
   font-weight: 600;
   --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.dark .app-name{
+  --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
@@ -1055,14 +1060,33 @@ select{
   left: 0px;
   z-index: 30;
   width: 16rem;
+  border-right-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.dark .sidebar{
   --tw-bg-opacity: 1;
   background-color: rgb(30 30 45 / var(--tw-bg-opacity));
+}
+
+.sidebar{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   overflow: hidden;
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
+}
+
+.dark .sidebar{
+  border-style: none;
+}
+
+.sidebar{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
@@ -1133,18 +1157,24 @@ select{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-  transition-duration: 200ms;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
 .nav-link:hover{
   --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
+  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
-.nav-link-active{
-  --tw-border-opacity: 1;
-  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+.nav-link{
+  transition-duration: 200ms;
+}
+
+.dark .nav-link{
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.dark .nav-link:hover{
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
 }
@@ -1181,19 +1211,33 @@ select{
 .dropdown-item{
   display: flex;
   align-items: center;
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.dark .dropdown-item{
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.dark .dropdown-item:hover{
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.dropdown-item{
   border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
   transition-duration: 200ms;
 }
 
 .dropdown-item:hover{
   --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
+  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 .dropdown-circle{
@@ -1224,7 +1268,10 @@ select{
 }
 
 .dropdown-item-link:hover{
-  background-color: rgb(75 85 99 / 0.25);
+  --tw-bg-opacity: 1;
+  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .dropdown-item-link{
@@ -1235,7 +1282,18 @@ select{
   border-radius: 0.375rem;
 }
 
+.dark .dropdown-item-link:hover{
+  background-color: rgb(75 85 99 / 0.25);
+}
+
 .dropdown-link-active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dark .dropdown-link-active{
   background-color: rgb(75 85 99 / 0.25);
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
