@@ -42,6 +42,9 @@
         @apply overflow-hidden transition duration-300 transform;
         @apply lg:translate-x-0 lg:static lg:inset-0 ease-in-out !important;
     }
+    .sidebar-shadow {
+        @apply fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden cursor-pointer;
+    }
     .sidebar-close {
         @apply text-gray-300 absolute right-2 top-2 cursor-pointer text-lg md:hidden;
     }
