@@ -81,7 +81,7 @@
         @apply ml-auto transition-transform transform;
     }
     .dropdown-item-link {
-        @apply flex items-center pl-3 text-sm py-2 pr-4;
+        @apply flex items-center text-sm p-2;
         @apply truncate w-full rounded-md hover:bg-primary hover:text-white;
     }
     .dropdown-link-active {
