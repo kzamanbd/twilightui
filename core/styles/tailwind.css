@@ -5,12 +5,19 @@
 @tailwind utilities;
 
 @layer components {
+    /* dark theme */
+    .dark {
+        color-scheme: dark;
+    }
+    .dark--text {
+        @apply text-gray-700 dark:text-gray-300;
+    }
     .loading {
         @apply fixed inset-0 z-50 flex items-center justify-center;
         @apply text-white backdrop-blur bg-black/50;
     }
     .twilight {
-        @apply flex h-screen bg-light-gray dark:bg-dark-secondary dark:text-gray-300;
+        @apply flex h-screen bg-light-gray dark:bg-dark-secondary dark--text;
     }
     .top-header {
         @apply sticky top-0 z-10 flex-shrink-0 flex items-center;
@@ -18,24 +25,24 @@
     }
     .sticky-header {
         @apply px-4 bg-white shadow-md dark:shadow-lg dark:bg-dark-primary;
-        @apply dark:text-gray-300 rounded-bl-lg rounded-br-lg;
+        @apply dark--text rounded-bl-lg rounded-br-lg;
         @apply supports-[backdrop-filter]:bg-light-gray/60 supports-[backdrop-filter]:backdrop-blur;
     }
     .brand-logo {
         @apply flex items-center px-4 relative pb-2 pt-[10px];
     }
     .app-name {
-        @apply mx-2 text-xl font-semibold text-gray-800 dark:text-white;
+        @apply mx-2 text-xl font-semibold dark--text;
     }
     .header-btn {
-        @apply relative p-2 flex items-center text-xs font-medium text-gray-700;
+        @apply relative p-2 flex items-center text-xs font-medium dark--text;
         @apply bg-white rounded-lg border border-gray-200 hover:bg-gray-100;
         @apply hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300;
         @apply dark:focus:ring-gray-500 dark:bg-dark-primary focus:outline-none;
-        @apply dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700;
+        @apply dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700;
     }
     .menu-header {
-        @apply px-5 text-gray-500 uppercase pt-2 text-sm truncate w-full;
+        @apply px-5 dark--text uppercase pt-2 text-sm truncate w-full;
     }
     .sidebar {
         @apply bg-white dark:bg-dark-primary fixed inset-y-0 left-0 z-30 w-64 border-r border-gray-200;
@@ -46,7 +53,7 @@
         @apply fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden cursor-pointer;
     }
     .sidebar-close {
-        @apply text-gray-300 absolute right-2 top-2 cursor-pointer text-lg md:hidden;
+        @apply dark--text absolute right-2 top-2 cursor-pointer text-lg md:hidden;
     }
     .mini-sidebar .sidebar {
         @apply w-16 hover:w-64;
@@ -55,8 +62,7 @@
         @apply pl-2 py-2 pr-4;
     }
     .nav-link {
-        @apply flex items-center p-2 text-gray-600 hover:text-gray-900;
-        @apply dark:text-gray-400 dark:hover:text-gray-100 duration-200;
+        @apply dark--text flex items-center p-2 hover:text-gray-900 dark:hover:text-gray-100;
     }
     .nav-link.nav-link-active {
         @apply mb-1.5 bg-gray-200 rounded-md dark:bg-gray-700;
@@ -71,8 +77,8 @@
         @apply overflow-hidden max-h-0 duration-500 transition-all space-y-1;
     }
     .dropdown-item {
-        @apply flex items-center dark:text-gray-400 dark:hover:text-gray-100 transition-colors;
-        @apply duration-200 rounded-md text-gray-600 hover:text-gray-900;
+        @apply flex items-center dark--text transition-colors;
+        @apply duration-200 rounded-md hover:text-gray-900 dark:hover:text-gray-100;
     }
     .dropdown-circle {
         @apply leading-[unset] text-[10px] group-hover:text-white w-6 h-6 flex items-center justify-center;
@@ -92,7 +98,7 @@
     }
     .user-menu-link {
         @apply flex justify-between items-center px-4 py-2 text-sm;
-        @apply rounded-md text-gray-700 dark:text-gray-300 hover:text-primary-600;
+        @apply rounded-md dark--text hover:text-primary-600;
         @apply hover:bg-gray-100 hover:dark:bg-dark-secondary;
     }
     .login-bg {
@@ -101,19 +107,11 @@
         @apply after:absolute after:bg-[url('/core/images/login-right.png')];
         @apply after:right-[-50px] after:bottom-[-50px] after:w-[244px] after:h-[244px] after:z-[-1];
     }
-    /* dark theme */
-    .dark {
-        color-scheme: dark;
-    }
-    .dark--text {
-        @apply text-gray-700 dark:text-gray-300;
-    }
     .card {
         @apply bg-white dark:bg-dark-primary rounded-md shadow-sm;
     }
     .card-header {
-        @apply p-4 text-gray-600 dark:text-gray-100 border-b;
-        @apply border-gray-200 dark:border-gray-700;
+        @apply p-4 dark--text border-b border-gray-200 dark:border-gray-700;
     }
     .card-body {
         @apply p-4;
@@ -138,10 +136,10 @@
         @apply mb-3;
     }
     .form-label {
-        @apply block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300;
+        @apply block mb-2 text-sm font-medium dark--text;
     }
     .form-control {
-        @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg;
+        @apply bg-gray-50 border border-gray-300 dark--text text-sm rounded-lg;
         @apply focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700;
         @apply dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
         @apply focus-visible:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500;
