@@ -65,10 +65,11 @@
         @apply p-2;
     }
     .nav-link {
-        @apply dark--text flex items-center p-2 hover:text-gray-900 dark:hover:text-gray-100;
+        @apply dark--text flex items-center p-2 hover:bg-gray-200 hover:text-gray-900;
+        @apply hover:dark:bg-gray-700 dark:hover:text-gray-100 rounded-md;
     }
     .nav-link.nav-link-active {
-        @apply mb-1.5 bg-gray-200 rounded-md dark:bg-gray-700;
+        @apply mb-1.5 bg-gray-200 dark:bg-gray-700;
     }
     .mini-sidebar .sidebar:not(:hover) .nav-link {
         @apply mx-2 flex justify-center;
@@ -84,17 +85,16 @@
         @apply duration-200 rounded-md hover:text-gray-900 dark:hover:text-gray-100;
     }
     .dropdown-circle {
-        @apply leading-[unset] text-[10px] group-hover:text-white w-6 h-6 flex items-center justify-center;
+        @apply leading-[unset] text-[10px] w-6 h-6 flex items-center justify-center;
     }
     .dropdown-icon {
         @apply ml-auto transition-transform transform;
     }
     .dropdown-item-link {
-        @apply flex items-center text-sm p-2;
-        @apply truncate w-full rounded-md hover:bg-primary hover:text-white;
+        @apply nav-link truncate w-full;
     }
     .dropdown-link-active {
-        @apply bg-primary text-white;
+        @apply bg-primary text-white !important;
     }
     .user-menu-item {
         @apply px-4;
