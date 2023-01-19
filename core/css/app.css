@@ -47,7 +47,7 @@
     .sidebar {
         @apply bg-white dark:bg-dark-primary fixed inset-y-0 left-0 z-30 w-64 border-r border-gray-200;
         @apply overflow-hidden transition duration-300 transform dark:border-none;
-        @apply lg:translate-x-0 lg:static lg:inset-0 ease-in-out !important;
+        @apply lg:translate-x-0 lg:static lg:inset-0 transition-all ease-in-out duration-300 !important;
     }
     .sidebar-shadow {
         @apply fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden cursor-pointer;
@@ -61,14 +61,17 @@
     .nav-menu {
         @apply pl-2 py-2 pr-4;
     }
+    .mini-sidebar .sidebar:not(:hover) .nav-menu {
+        @apply p-2;
+    }
     .nav-link {
         @apply dark--text flex items-center p-2 hover:text-gray-900 dark:hover:text-gray-100;
     }
     .nav-link.nav-link-active {
         @apply mb-1.5 bg-gray-200 rounded-md dark:bg-gray-700;
     }
-    .mini-sidebar .nav-link {
-        @apply mx-2;
+    .mini-sidebar .sidebar:not(:hover) .nav-link {
+        @apply mx-2 flex justify-center;
     }
     .link-label {
         @apply mx-2 truncate text-sm;
@@ -153,9 +156,6 @@
     }
 }
 
-.sidebar {
-    transition: all 0.3s ease-in-out;
-}
 .mini-sidebar .app-name,
 .mini-sidebar .menu-header,
 .mini-sidebar .dropdown-icon,

@@ -1133,6 +1133,8 @@ select{
 }
 
 .sidebar{
+  transition-property: all !important;
+  transition-duration: 300ms !important;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
@@ -1210,6 +1212,10 @@ select{
   padding-right: 1rem;
 }
 
+.mini-sidebar .sidebar:not(:hover) .nav-menu{
+  padding: 0.5rem;
+}
+
 .nav-link{
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
@@ -1248,9 +1254,11 @@ select{
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
-.mini-sidebar .nav-link{
+.mini-sidebar .sidebar:not(:hover) .nav-link{
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .link-label{
@@ -3053,10 +3061,6 @@ select{
 
 .ease-out{
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-}
-
-.sidebar {
-  transition: all 0.3s ease-in-out;
 }
 
 .mini-sidebar .app-name,
