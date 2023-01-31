@@ -66,7 +66,7 @@
     }
     .nav-link {
         @apply dark--text flex items-center p-2 hover:bg-gray-200 hover:text-gray-900;
-        @apply hover:dark:bg-gray-700 dark:hover:text-gray-100 rounded-md;
+        @apply hover:dark:bg-gray-700 dark:hover:text-gray-100 rounded-md font-medium;
     }
     .nav-link.nav-link-active {
         @apply mb-1.5 bg-gray-200 dark:bg-gray-700;
