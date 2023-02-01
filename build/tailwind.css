@@ -1601,6 +1601,31 @@ select{
   --tw-ring-color: rgb(76 29 149 / var(--tw-ring-opacity));
 }
 
+.btn-circle{
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-circle:active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+.btn-circle{
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
 .form-group{
   margin-bottom: 0.75rem;
 }
@@ -2197,10 +2222,6 @@ select{
 
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.cursor-pointer{
-  cursor: pointer;
 }
 
 .resize{
@@ -2905,14 +2926,14 @@ select{
   color: rgb(124 58 237 / var(--tw-text-opacity));
 }
 
-.text-gray-400{
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
 .text-purple-500{
   --tw-text-opacity: 1;
   color: rgb(168 85 247 / var(--tw-text-opacity));
+}
+
+.text-gray-400{
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .text-red-400{
@@ -3068,10 +3089,6 @@ select{
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.duration-200{
-  transition-duration: 200ms;
 }
 
 .duration-150{
@@ -3291,11 +3308,6 @@ select{
 
 .focus\:ring-offset-2:focus{
   --tw-ring-offset-width: 2px;
-}
-
-.active\:bg-gray-200:active{
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .active\:bg-primary-600:active{
