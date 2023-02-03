@@ -85,13 +85,13 @@ document.addEventListener('alpine:init', () => {
             this.$store.dropdown.tab = this.$store.dropdown.tab == this.idx ? -1 : this.idx;
         },
         handleRotate() {
-            return this.$store.dropdown.tab == this.idx && 'rotate-180';
+            return this.$store.dropdown.tab == this.idx ? 'rotate-180' : '';
         },
         activeDropdown() {
-            return this.$store.dropdown.tab == this.idx && 'nav-link-active';
+            return this.$store.dropdown.tab == this.idx ? 'nav-link-active' : '';
         },
         handleToggle() {
-            return this.$store.dropdown.tab == this.idx && `max-height: ${this.$refs.tab.scrollHeight}px`;
+            return this.$store.dropdown.tab == this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px; margin-top: 6px` : '';
         },
     }));
 });

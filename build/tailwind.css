@@ -1252,7 +1252,6 @@ select{
 }
 
 .nav-link.nav-link-active{
-  margin-bottom: 0.375rem;
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
@@ -1381,7 +1380,6 @@ select{
 }
 
 .dropdown-item-link.nav-link-active{
-  margin-bottom: 0.375rem;
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
@@ -1751,6 +1749,10 @@ select{
 
 .visible{
   visibility: visible;
+}
+
+.collapse{
+  visibility: collapse;
 }
 
 .fixed{
