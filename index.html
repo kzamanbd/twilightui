@@ -33,7 +33,7 @@
                         <span @click="isMenuOpen = false" class="material-icons sidebar-close"> close </span>
                     </div>
 
-                    <nav data-simplebar class="overflow-y-auto h-sidebar" x-init="$store.dropdown.tab = 'dashboard'">
+                    <nav data-simplebar class="overflow-y-auto h-sidebar" x-init="currentActiveTab('dashboard')">
                         <ul class="nav-menu space-y-2">
                             <li x-data="dropdownItem('dashboard')">
                                 <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">

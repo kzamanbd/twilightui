@@ -69,6 +69,9 @@ document.addEventListener('alpine:init', () => {
             // At last, if the user has denied notifications, and you
             // want to be respectful there is no need to bother them anymore.
         },
+        currentActiveTab(tab) {
+            this.$store.dropdown.tab = tab;
+        }
     }));
 
     Alpine.store('dropdown', {
