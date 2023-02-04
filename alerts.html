@@ -31,7 +31,7 @@
                         <span @click="isMenuOpen = false" class="material-icons sidebar-close"> close </span>
                     </div>
 
-                    <nav data-simplebar class="overflow-y-auto h-sidebar" x-init="currentActiveTab('dashboard')">
+                    <nav data-simplebar class="overflow-y-auto h-sidebar" x-init="currentActiveTab('components')">
                         <ul class="nav-menu space-y-2">
                             <li x-data="dropdownItem('dashboard')">
                                 <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
@@ -49,7 +49,7 @@
                                         </a>
                                     </li>
                                     <li role="menuitem" class="dropdown-item group">
-                                        <a href="analytics.html" class="dropdown-item-link dropdown-link-active">
+                                        <a href="analytics.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Analytics</span>
                                         </a>
@@ -85,7 +85,7 @@
                                 </div>
                                 <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
                                     <li role="menuitem" class="dropdown-item group">
-                                        <a href="./alerts.html" class="dropdown-item-link">
+                                        <a href="./alerts.html" class="dropdown-item-link dropdown-link-active">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Alert</span>
                                         </a>
@@ -899,315 +899,293 @@
                         </div>
                     </header>
 
-                    <main class="flex-1 dark:text-gray-300">
-                        <div class="mx-auto px-6 pb-4 pt-2 md:pt-4">
-                            <div class="components">
-                                <!-- Breadcrumb -->
-                                <nav class="flex justify-between items-center md:mb-4 mb-2" aria-label="Breadcrumb">
-                                    <div class="text-gray-700">
-                                        <h3 class="text-base font-medium dark:text-gray-300">Components</h3>
-                                        <ol class="inline-flex items-center space-x-1 md:space-x-1">
-                                            <li class="inline-flex items-center">
-                                                <a
-                                                    href="#"
-                                                    class="inline-flex items-center text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-                                                    Components
-                                                </a>
-                                            </li>
+                    <main class="flex-1">
+                        <div class="twilight-content">
+                            <!-- Breadcrumb -->
+                            <nav class="flex justify-between items-center md:mb-4 mb-2">
+                                <div class="text-gray-700">
+                                    <h3 class="text-base font-medium dark:text-gray-300">Components</h3>
+                                    <ol class="inline-flex items-center space-x-1 md:space-x-1">
+                                        <li class="inline-flex items-center">
+                                            <a
+                                                href="#"
+                                                class="inline-flex items-center text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                                                Components
+                                            </a>
+                                        </li>
 
-                                            <li aria-current="page">
-                                                <div class="flex items-center">
-                                                    <svg
-                                                        class="w-4 h-4 text-gray-500"
-                                                        fill="currentColor"
-                                                        viewBox="0 0 20 20"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            fill-rule="evenodd"
-                                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                            clip-rule="evenodd"></path>
-                                                    </svg>
-                                                    <span
-                                                        class="ml-1 text-xs font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                                                        Alerts
-                                                    </span>
-                                                </div>
-                                            </li>
-                                        </ol>
-                                    </div>
-                                </nav>
-                                <!-- End Breadcrumb -->
+                                        <li aria-current="page">
+                                            <div class="flex items-center">
+                                                <svg
+                                                    class="w-4 h-4 text-gray-500"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                                <span
+                                                    class="ml-1 text-xs font-medium text-gray-500 md:ml-2 dark:text-gray-400">
+                                                    Alerts
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </nav>
+                            <!-- End Breadcrumb -->
 
-                                <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 lg:space-y-0 mt-6">
-                                    <div class="card dark--text">
-                                        <div class="card-header border-0">Default</div>
-                                        <div class="card-body">
-                                            <div class="alert bg-primary text-white" role="alert">
-                                                <span>
-                                                    Primary alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-success text-white" role="alert">
-                                                <span>
-                                                    Success alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-info text-white" role="alert">
-                                                <span>
-                                                    Info alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-warning text-gray-700" role="alert">
-                                                <span>
-                                                    Warning alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-danger text-white" role="alert">
-                                                <span>
-                                                    Danger alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                            <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 lg:space-y-0 mt-6">
+                                <div class="card dark--text">
+                                    <div class="card-header border-0">Default</div>
+                                    <div class="card-body">
+                                        <div class="alert bg-primary text-white" role="alert">
+                                            <span>
+                                                Primary alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert bg-success text-white" role="alert">
+                                            <span>
+                                                Success alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert bg-info text-white" role="alert">
+                                            <span> Info alert! Change a few things up and try submitting again. </span>
+                                        </div>
+                                        <div class="alert bg-warning text-gray-700" role="alert">
+                                            <span>
+                                                Warning alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert bg-danger text-white" role="alert">
+                                            <span>
+                                                Danger alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
 
-                                            <div class="alert bg-secondary text-gray-800" role="alert">
-                                                <span>
-                                                    Secondary alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                        <div class="alert bg-secondary text-gray-800" role="alert">
+                                            <span>
+                                                Secondary alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
 
-                                            <div class="alert bg-light-gray text-gray-800" role="alert">
-                                                <span>
-                                                    Light alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                        <div class="alert bg-light-gray text-gray-800" role="alert">
+                                            <span> Light alert! Change a few things up and try submitting again. </span>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="card dark--text">
-                                        <div class="card-header border-0">With Icons</div>
-                                        <div class="card-body">
-                                            <div class="alert alert-icon bg-primary text-white" role="alert">
-                                                <span class="material-icons">star</span>
-                                                <span>
-                                                    Primary alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert alert-icon bg-success text-white" role="alert">
-                                                <span class="material-icons">check_circle</span>
-                                                <span>
-                                                    Success alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert alert-icon bg-info text-white" role="alert">
-                                                <span class="material-icons">info</span>
-                                                <span>
-                                                    Info alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert alert-icon bg-warning text-gray-700" role="alert">
-                                                <span class="material-icons">warning</span>
-                                                <span>
-                                                    Warning alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert alert-icon bg-danger text-white" role="alert">
-                                                <span class="material-icons">error</span>
-                                                <span>
-                                                    Danger alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                <div class="card dark--text">
+                                    <div class="card-header border-0">With Icons</div>
+                                    <div class="card-body">
+                                        <div class="alert alert-icon bg-primary text-white" role="alert">
+                                            <span class="material-icons">star</span>
+                                            <span>
+                                                Primary alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert alert-icon bg-success text-white" role="alert">
+                                            <span class="material-icons">check_circle</span>
+                                            <span>
+                                                Success alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert alert-icon bg-info text-white" role="alert">
+                                            <span class="material-icons">info</span>
+                                            <span> Info alert! Change a few things up and try submitting again. </span>
+                                        </div>
+                                        <div class="alert alert-icon bg-warning text-gray-700" role="alert">
+                                            <span class="material-icons">warning</span>
+                                            <span>
+                                                Warning alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert alert-icon bg-danger text-white" role="alert">
+                                            <span class="material-icons">error</span>
+                                            <span>
+                                                Danger alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
 
-                                            <div class="alert alert-icon bg-secondary text-gray-800" role="alert">
-                                                <span class="material-icons">info</span>
-                                                <span>
-                                                    Secondary alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                        <div class="alert alert-icon bg-secondary text-gray-800" role="alert">
+                                            <span class="material-icons">info</span>
+                                            <span>
+                                                Secondary alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
 
-                                            <div class="alert alert-icon bg-light-gray text-gray-800" role="alert">
-                                                <span class="material-icons">info</span>
-                                                <span>
-                                                    Light alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                        <div class="alert alert-icon bg-light-gray text-gray-800" role="alert">
+                                            <span class="material-icons">info</span>
+                                            <span> Light alert! Change a few things up and try submitting again. </span>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="card dark--text">
-                                        <div class="card-header border-0">Heading</div>
-                                        <div class="card-body">
-                                            <div class="alert bg-primary text-white" role="alert">
-                                                <h4 class="text-2xl mb-4">Primary alert!</h4>
-                                                <span>
-                                                    Primary alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-success text-white" role="alert">
-                                                <h4 class="text-2xl mb-4">Success alert!</h4>
-                                                <span>
-                                                    Success alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-info text-white" role="alert">
-                                                <h4 class="text-2xl mb-4">Info alert!</h4>
-                                                <span>
-                                                    Info alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-warning text-gray-700" role="alert">
-                                                <h4 class="text-2xl mb-4">Warning alert!</h4>
-                                                <span>
-                                                    Warning alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-danger text-white" role="alert">
-                                                <h4 class="text-2xl mb-4">Danger alert!</h4>
-                                                <span>
-                                                    Danger alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                <div class="card dark--text">
+                                    <div class="card-header border-0">Heading</div>
+                                    <div class="card-body">
+                                        <div class="alert bg-primary text-white" role="alert">
+                                            <h4 class="text-2xl mb-4">Primary alert!</h4>
+                                            <span>
+                                                Primary alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert bg-success text-white" role="alert">
+                                            <h4 class="text-2xl mb-4">Success alert!</h4>
+                                            <span>
+                                                Success alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert bg-info text-white" role="alert">
+                                            <h4 class="text-2xl mb-4">Info alert!</h4>
+                                            <span> Info alert! Change a few things up and try submitting again. </span>
+                                        </div>
+                                        <div class="alert bg-warning text-gray-700" role="alert">
+                                            <h4 class="text-2xl mb-4">Warning alert!</h4>
+                                            <span>
+                                                Warning alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert bg-danger text-white" role="alert">
+                                            <h4 class="text-2xl mb-4">Danger alert!</h4>
+                                            <span>
+                                                Danger alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
 
-                                            <div class="alert bg-secondary text-gray-800" role="alert">
-                                                <h4 class="text-2xl mb-4">Secondary alert!</h4>
-                                                <span>
-                                                    Secondary alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                        <div class="alert bg-secondary text-gray-800" role="alert">
+                                            <h4 class="text-2xl mb-4">Secondary alert!</h4>
+                                            <span>
+                                                Secondary alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
 
-                                            <div class="alert bg-light-gray text-gray-800" role="alert">
-                                                <h4 class="text-2xl mb-4">Light alert!</h4>
-                                                <span>
-                                                    Light alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                        <div class="alert bg-light-gray text-gray-800" role="alert">
+                                            <h4 class="text-2xl mb-4">Light alert!</h4>
+                                            <span> Light alert! Change a few things up and try submitting again. </span>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="card dark--text">
-                                        <div class="card-header border-0">Dismissible</div>
-                                        <div class="card-body">
-                                            <div
-                                                class="alert alert-dismiss bg-primary text-white"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Primary alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
-                                            <div
-                                                class="alert alert-dismiss bg-success text-white"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Success alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
-                                            <div
-                                                class="alert alert-dismiss bg-info text-white"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Info alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
-                                            <div
-                                                class="alert alert-dismiss bg-warning text-gray-700"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Warning alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
-                                            <div
-                                                class="alert alert-dismiss bg-danger text-white"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Danger alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
+                                <div class="card dark--text">
+                                    <div class="card-header border-0">Dismissible</div>
+                                    <div class="card-body">
+                                        <div
+                                            class="alert alert-dismiss bg-primary text-white"
+                                            role="alert"
+                                            x-data="{isShow: true}"
+                                            x-show="isShow">
+                                            <span>
+                                                Primary alert! Change a few things up and try submitting again.
+                                            </span>
+                                            <span class="material-icons" @click="isShow = false" role="button">
+                                                close
+                                            </span>
+                                        </div>
+                                        <div
+                                            class="alert alert-dismiss bg-success text-white"
+                                            role="alert"
+                                            x-data="{isShow: true}"
+                                            x-show="isShow">
+                                            <span>
+                                                Success alert! Change a few things up and try submitting again.
+                                            </span>
+                                            <span class="material-icons" @click="isShow = false" role="button">
+                                                close
+                                            </span>
+                                        </div>
+                                        <div
+                                            class="alert alert-dismiss bg-info text-white"
+                                            role="alert"
+                                            x-data="{isShow: true}"
+                                            x-show="isShow">
+                                            <span> Info alert! Change a few things up and try submitting again. </span>
+                                            <span class="material-icons" @click="isShow = false" role="button">
+                                                close
+                                            </span>
+                                        </div>
+                                        <div
+                                            class="alert alert-dismiss bg-warning text-gray-700"
+                                            role="alert"
+                                            x-data="{isShow: true}"
+                                            x-show="isShow">
+                                            <span>
+                                                Warning alert! Change a few things up and try submitting again.
+                                            </span>
+                                            <span class="material-icons" @click="isShow = false" role="button">
+                                                close
+                                            </span>
+                                        </div>
+                                        <div
+                                            class="alert alert-dismiss bg-danger text-white"
+                                            role="alert"
+                                            x-data="{isShow: true}"
+                                            x-show="isShow">
+                                            <span>
+                                                Danger alert! Change a few things up and try submitting again.
+                                            </span>
+                                            <span class="material-icons" @click="isShow = false" role="button">
+                                                close
+                                            </span>
+                                        </div>
 
-                                            <div
-                                                class="alert alert-dismiss bg-secondary text-gray-800"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Secondary alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
+                                        <div
+                                            class="alert alert-dismiss bg-secondary text-gray-800"
+                                            role="alert"
+                                            x-data="{isShow: true}"
+                                            x-show="isShow">
+                                            <span>
+                                                Secondary alert! Change a few things up and try submitting again.
+                                            </span>
+                                            <span class="material-icons" @click="isShow = false" role="button">
+                                                close
+                                            </span>
+                                        </div>
 
-                                            <div
-                                                class="alert alert-dismiss bg-light-gray text-gray-800"
-                                                role="alert"
-                                                x-data="{isShow: true}"
-                                                x-show="isShow">
-                                                <span>
-                                                    Light alert! Change a few things up and try submitting again.
-                                                </span>
-                                                <span class="material-icons" @click="isShow = false" role="button">
-                                                    close
-                                                </span>
-                                            </div>
+                                        <div
+                                            class="alert alert-dismiss bg-light-gray text-gray-800"
+                                            role="alert"
+                                            x-data="{isShow: true}"
+                                            x-show="isShow">
+                                            <span> Light alert! Change a few things up and try submitting again. </span>
+                                            <span class="material-icons" @click="isShow = false" role="button">
+                                                close
+                                            </span>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="card dark--text">
-                                        <div class="card-header border-0">Light</div>
-                                        <div class="card-body">
-                                            <div class="alert bg-primary/25 text-primary" role="alert">
-                                                <span>
-                                                    Primary alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-success/25 text-success" role="alert">
-                                                <span>
-                                                    Success alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-info/25 text-info" role="alert">
-                                                <span>
-                                                    Info alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-warning/25 text-warning" role="alert">
-                                                <span>
-                                                    Warning alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
-                                            <div class="alert bg-danger/25 text-danger" role="alert">
-                                                <span>
-                                                    Danger alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                <div class="card dark--text">
+                                    <div class="card-header border-0">Light</div>
+                                    <div class="card-body">
+                                        <div class="alert bg-primary/25 text-primary" role="alert">
+                                            <span>
+                                                Primary alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert bg-success/25 text-success" role="alert">
+                                            <span>
+                                                Success alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert bg-info/25 text-info" role="alert">
+                                            <span> Info alert! Change a few things up and try submitting again. </span>
+                                        </div>
+                                        <div class="alert bg-warning/25 text-warning" role="alert">
+                                            <span>
+                                                Warning alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
+                                        <div class="alert bg-danger/25 text-danger" role="alert">
+                                            <span>
+                                                Danger alert! Change a few things up and try submitting again.
+                                            </span>
+                                        </div>
 
-                                            <div class="alert bg-light-gray text-gray-800" role="alert">
-                                                <span>
-                                                    Light alert! Change a few things up and try submitting again.
-                                                </span>
-                                            </div>
+                                        <div class="alert bg-light-gray text-gray-800" role="alert">
+                                            <span> Light alert! Change a few things up and try submitting again. </span>
                                         </div>
                                     </div>
                                 </div>

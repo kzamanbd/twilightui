@@ -923,6 +923,26 @@ select{
   background-color: rgb(21 21 33 / var(--tw-bg-opacity));
 }
 
+.twilight-content{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+}
+
+.dark .twilight-content{
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px){
+  .twilight-content{
+    padding-top: 1rem;
+  }
+}
+
 .top-header{
   position: sticky;
   top: 0px;
@@ -1545,6 +1565,8 @@ select{
   padding: 1rem;
 }
 
+/* Alert components */
+
 .alert{
   margin-bottom: 1rem;
   border-radius: 0.375rem;
@@ -1575,6 +1597,8 @@ select{
   margin-right: calc(0.75rem * var(--tw-space-x-reverse));
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
+
+/* button components */
 
 .btn-primary{
   --tw-bg-opacity: 1;
@@ -1649,6 +1673,8 @@ select{
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
+
+/* Form components */
 
 .form-group{
   margin-bottom: 0.75rem;
@@ -1941,10 +1967,6 @@ select{
 
 .mr-4{
   margin-right: 1rem;
-}
-
-.mt-auto{
-  margin-top: auto;
 }
 
 .ml-2{
@@ -3620,10 +3642,6 @@ select{
     display: block;
   }
 
-  .md\:flex{
-    display: flex;
-  }
-
   .md\:grid{
     display: grid;
   }
@@ -3666,14 +3684,6 @@ select{
 
   .md\:flex-row{
     flex-direction: row;
-  }
-
-  .md\:items-center{
-    align-items: center;
-  }
-
-  .md\:justify-between{
-    justify-content: space-between;
   }
 
   .md\:space-x-1 > :not([hidden]) ~ :not([hidden]){
