@@ -98,7 +98,7 @@ document.addEventListener('alpine:init', () => {
 
 window.onload = function () {
     const header = document.getElementById('sticky__header');
-    const scrollableContent = document.querySelector('.twilight-scrollable .simplebar-content-wrapper');
+    const scrollableContent = document.querySelector('.twilight-scrollable');
     scrollableContent?.addEventListener('scroll', () => {
         // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
         if (scrollableContent.scrollTop > 0) {

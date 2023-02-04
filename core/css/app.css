@@ -104,6 +104,9 @@
         @apply rounded-md dark--text hover:text-primary-600;
         @apply hover:bg-gray-100 hover:dark:bg-dark-secondary;
     }
+    .footer {
+        @apply px-6 py-4 bg-white dark:bg-dark-primary shadow md:flex md:items-center md:justify-between mt-auto;
+    }
     .login-bg {
         @apply relative z-[1] w-full max-w-lg before:absolute before:bg-[url('/core/images/login-left.png')];
         @apply before:left-[-45px] before:top-[-70px] before:w-[244px] before:h-[244px] before:z-[-1];
