@@ -75,7 +75,7 @@
         @apply bg-gray-200 dark:bg-gray-700;
     }
     .mini-sidebar .sidebar:not(:hover) .nav-link {
-        @apply mx-2 flex justify-center;
+        @apply p-2 flex justify-center;
     }
     .link-label {
         @apply mx-2 truncate text-sm;
