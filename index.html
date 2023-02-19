@@ -27,13 +27,13 @@
                 <aside class="sidebar" :class="isMenuOpen ? 'translate-x-0' : '-translate-x-full'">
                     <div class="brand-logo" :class="{'justify-center' : isMiniSidebar }">
                         <a href="/index.html" class="flex items-center">
-                            <img class="w-12 h-12" src="./core/images/logo.svg" alt="logo" />
+                            <img class="h-12 w-12" src="./core/images/logo.svg" alt="logo" />
                             <span class="app-name"> Twilight </span>
                         </a>
                         <span @click="isMenuOpen = false" class="material-icons sidebar-close"> close </span>
                     </div>
 
-                    <nav data-simplebar class="overflow-y-auto h-sidebar" x-init="currentActiveTab('dashboard')">
+                    <nav data-simplebar class="h-sidebar overflow-y-auto" x-init="currentActiveTab('dashboard')">
                         <ul class="nav-menu space-y-2">
                             <li x-data="dropdownItem('dashboard')">
                                 <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
@@ -642,14 +642,14 @@
                     </nav>
                 </aside>
 
-                <div class="twilight-scrollable flex-1 flex flex-col overflow-y-auto overflow-x-hidden">
+                <div class="twilight-scrollable flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
                     <header id="sticky__header" class="top-header">
                         <div class="flex items-center">
                             <button
                                 type="button"
                                 @click="isMenuOpen = !isMenuOpen"
                                 class="text-gray-500 focus:outline-none lg:hidden">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M4 6H20M4 12H20M4 18H11"
                                         stroke="currentColor"
@@ -661,8 +661,8 @@
                             <button
                                 type="button"
                                 @click="handleMiniSidebar()"
-                                class="text-gray-500 focus:outline-none hidden lg:block">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                class="hidden text-gray-500 focus:outline-none lg:block">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M4 6H20M4 12H20M4 18H11"
                                         stroke="currentColor"
@@ -679,7 +679,7 @@
                                     <svg
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
-                                        class="w-4 h-4"
+                                        class="h-4 w-4"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <rect
                                             xmlns="http://www.w3.org/2000/svg"
@@ -703,7 +703,7 @@
                                 <svg
                                     aria-hidden="true"
                                     data-toggle-icon="sun"
-                                    class="w-4 h-4 dark:flex hidden"
+                                    class="hidden h-4 w-4 dark:flex"
                                     fill="currentColor"
                                     viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -715,7 +715,7 @@
                                 <svg
                                     aria-hidden="true"
                                     data-toggle-icon="moon"
-                                    class="w-4 h-4 dark:hidden flex"
+                                    class="flex h-4 w-4 dark:hidden"
                                     fill="currentColor"
                                     viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -730,7 +730,7 @@
                                     @click.away="isOpen = false"
                                     class="header-btn">
                                     <svg
-                                        class="w-4 h-4"
+                                        class="h-4 w-4"
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -744,16 +744,16 @@
                                 </button>
                                 <div x-show="isOpen">
                                     <div
-                                        class="absolute right-0 w-72 py-2 mt-5 bg-white rounded-md shadow-lg overflow-hidden z-20">
+                                        class="absolute right-0 z-20 mt-5 w-72 overflow-hidden rounded-md bg-white py-2 shadow-lg">
                                         <div class="py-2">
                                             <a
                                                 href="/"
-                                                class="flex items-center px-4 py-3 border-b hover:bg-gray-100 -mx-2">
+                                                class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
                                                 <img
-                                                    class="h-8 w-8 rounded-full object-cover mx-1"
+                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
                                                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
                                                     alt="avatar" />
-                                                <p class="text-gray-600 text-sm mx-2">
+                                                <p class="mx-2 text-sm text-gray-600">
                                                     <span class="font-bold" href="#"> Sara Salah </span>
                                                     replied on the
                                                     <span class="font-bold text-blue-500" href="#"> Upload Image </span>
@@ -762,36 +762,36 @@
                                             </a>
                                             <a
                                                 href="/"
-                                                class="flex items-center px-4 py-3 border-b hover:bg-gray-100 -mx-2">
+                                                class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
                                                 <img
-                                                    class="h-8 w-8 rounded-full object-cover mx-1"
+                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
                                                     src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
                                                     alt="avatar" />
-                                                <p class="text-gray-600 text-sm mx-2">
+                                                <p class="mx-2 text-sm text-gray-600">
                                                     <span class="font-bold" href="#"> Slick Net </span>
                                                     start following you . 45m
                                                 </p>
                                             </a>
                                             <a
                                                 href="/"
-                                                class="flex items-center px-4 py-3 border-b hover:bg-gray-100 -mx-2">
+                                                class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
                                                 <img
-                                                    class="h-8 w-8 rounded-full object-cover mx-1"
+                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
                                                     src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
                                                     alt="avatar" />
-                                                <p class="text-gray-600 text-sm mx-2">
+                                                <p class="mx-2 text-sm text-gray-600">
                                                     <span class="font-bold" href="#"> Jane Doe </span>
                                                     Like Your reply on
                                                     <span class="font-bold text-blue-500" href="#"> Test with TDD </span
                                                     >article . 1h
                                                 </p>
                                             </a>
-                                            <a href="/" class="flex items-center px-4 py-3 hover:bg-gray-100 -mx-2">
+                                            <a href="/" class="-mx-2 flex items-center px-4 py-3 hover:bg-gray-100">
                                                 <img
-                                                    class="h-8 w-8 rounded-full object-cover mx-1"
+                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
                                                     src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=398&q=80"
                                                     alt="avatar" />
-                                                <p class="text-gray-600 text-sm mx-2">
+                                                <p class="mx-2 text-sm text-gray-600">
                                                     <span class="font-bold" href="#"> Abigail Bennett </span>
                                                     start following you . 3h
                                                 </p>
@@ -799,7 +799,7 @@
                                         </div>
                                         <a
                                             href="/"
-                                            class="block mx-4 bg-gray-800 text-white text-center font-bold py-2">
+                                            class="mx-4 block bg-gray-800 py-2 text-center font-bold text-white">
                                             See all notifications
                                         </a>
                                     </div>
@@ -811,17 +811,17 @@
                                     type="button"
                                     @click="isOpen = !isOpen"
                                     @click.away="isOpen = false"
-                                    class="relative z-10 block w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none">
+                                    class="relative z-10 block h-8 w-8 overflow-hidden rounded-full shadow focus:outline-none">
                                     <img
-                                        class="object-cover w-full h-full"
+                                        class="h-full w-full object-cover"
                                         src="https://www.gravatar.com/avatar/7d07260bf12eaff12086c86ea14849d1"
                                         alt="Your avatar" />
                                 </button>
 
                                 <div x-show="isOpen">
                                     <div
-                                        class="absolute right-0 z-20 w-64 py-2 mt-5 bg-white dark:bg-dark-primary rounded-md shadow-xl">
-                                        <div class="flex items-center border-b dark:border-gray-700 px-4 py-2">
+                                        class="absolute right-0 z-20 mt-5 w-64 rounded-md bg-white py-2 shadow-xl dark:bg-dark-primary">
+                                        <div class="flex items-center border-b px-4 py-2 dark:border-gray-700">
                                             <div class="flex-shrink-0">
                                                 <img
                                                     class="h-8 w-8 rounded-full object-cover"
@@ -829,7 +829,7 @@
                                                     alt="Your avatar" />
                                             </div>
                                             <div class="ml-3">
-                                                <p class="leading-5 font-medium text-gray-900 dark:text-gray-300">
+                                                <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
                                                     Kamruzzaman
                                                 </p>
                                                 <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
@@ -837,7 +837,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="py-2 border-b dark:border-gray-700">
+                                        <div class="border-b py-2 dark:border-gray-700">
                                             <div class="user-menu-item">
                                                 <a href="#" class="user-menu-link"> My Profile </a>
                                             </div>
@@ -845,7 +845,7 @@
                                                 <a href="#" class="user-menu-link">
                                                     My Projects
                                                     <span
-                                                        class="inline-flex items-center justify-center px-2 py-1 ml-1 text-xs font-bold leading-none text-white bg-primary-600 rounded-full">
+                                                        class="ml-1 inline-flex items-center justify-center rounded-full bg-primary-600 px-2 py-1 text-xs font-bold leading-none text-white">
                                                         9
                                                     </span>
                                                 </a>
@@ -854,33 +854,33 @@
                                                 <a href="#" class="user-menu-link"> My Subscription </a>
                                             </div>
                                         </div>
-                                        <div class="py-2 relative">
+                                        <div class="relative py-2">
                                             <div class="user-menu-item group">
                                                 <a href="#" class="user-menu-link">
                                                     Language
-                                                    <span class="text-xs font-bold leading-none flex items-center">
+                                                    <span class="flex items-center text-xs font-bold leading-none">
                                                         <img
                                                             src="./core/images/flags/united-states.svg"
-                                                            class="h-4 w-4 mr-2 rounded-full"
+                                                            class="mr-2 h-4 w-4 rounded-full"
                                                             alt="English" />
                                                         English
                                                     </span>
                                                     <!-- language dropdown -->
                                                     <div
-                                                        class="absolute left-0 -m-40 px-2 py-4 space-y-2 hidden group-hover:block w-40 bg-white dark:bg-dark-primary rounded-md shadow-xl">
+                                                        class="absolute left-0 -m-40 hidden w-40 space-y-2 rounded-md bg-white px-2 py-4 shadow-xl group-hover:block dark:bg-dark-primary">
                                                         <div
-                                                            class="flex items-center rounded-md px-4 py-2 hover:bg-gray-100 dark:hover:text-gray-300 hover:dark:bg-dark-secondary dark--text hover:text-primary-600">
+                                                            class="dark--text flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:text-primary-600 hover:dark:bg-dark-secondary dark:hover:text-gray-300">
                                                             <img
                                                                 src="./core/images/flags/united-states.svg"
-                                                                class="h-4 w-4 mr-2 rounded-full"
+                                                                class="mr-2 h-4 w-4 rounded-full"
                                                                 alt="English" />
                                                             <span class="text-xs leading-none">English</span>
                                                         </div>
                                                         <div
-                                                            class="flex items-center rounded-md px-4 py-2 hover:bg-gray-100 dark:hover:text-gray-300 hover:dark:bg-dark-secondary dark--text hover:text-primary-600">
+                                                            class="dark--text flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:text-primary-600 hover:dark:bg-dark-secondary dark:hover:text-gray-300">
                                                             <img
                                                                 src="./core/images/flags/france.svg"
-                                                                class="h-4 w-4 mr-2 rounded-full"
+                                                                class="mr-2 h-4 w-4 rounded-full"
                                                                 alt="france" />
                                                             <span class="text-xs leading-none">France</span>
                                                         </div>
@@ -904,7 +904,7 @@
                     <main class="flex-1">
                         <div class="twilight-content">
                             <!-- Breadcrumb -->
-                            <nav class="flex justify-between items-center md:mb-4 mb-2" aria-label="Breadcrumb">
+                            <nav class="mb-2 flex items-center justify-between md:mb-4" aria-label="Breadcrumb">
                                 <div class="text-gray-700">
                                     <h3 class="text-base font-medium dark:text-gray-300">Dashboard</h3>
                                     <ol class="inline-flex items-center space-x-1 md:space-x-1">
@@ -919,7 +919,7 @@
                                         <li aria-current="page">
                                             <div class="flex items-center">
                                                 <svg
-                                                    class="w-4 h-4 text-gray-500"
+                                                    class="h-4 w-4 text-gray-500"
                                                     fill="currentColor"
                                                     viewBox="0 0 20 20"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -929,7 +929,7 @@
                                                         clip-rule="evenodd"></path>
                                                 </svg>
                                                 <span
-                                                    class="ml-1 text-xs font-medium text-gray-500 md:ml-2 dark:text-gray-400">
+                                                    class="ml-1 text-xs font-medium text-gray-500 dark:text-gray-400 md:ml-2">
                                                     Default
                                                 </span>
                                             </div>
@@ -943,41 +943,41 @@
                             <!-- End Breadcrumb -->
 
                             <div
-                                class="block md:grid md:grid-cols-8 lg:grid-cols-4 gap-4 space-y-4 lg:space-y-0 items-stretch">
-                                <div class="md:col-span-4 lg:col-span-1 p-4 card dark--text h-48 min-h-full">
-                                    <h3 class="text-xl pb-4">Ratings</h3>
-                                    <div class="flex items-center my-4">
-                                        <h2 class="text-2xl font-semibold dark--text">13k</h2>
-                                        <span class="text-green-500 ml-2">+45%</span>
+                                class="block items-stretch gap-4 space-y-4 md:grid md:grid-cols-8 lg:grid-cols-4 lg:space-y-0">
+                                <div class="card dark--text h-48 min-h-full p-4 md:col-span-4 lg:col-span-1">
+                                    <h3 class="pb-4 text-xl">Ratings</h3>
+                                    <div class="my-4 flex items-center">
+                                        <h2 class="dark--text text-2xl font-semibold">13k</h2>
+                                        <span class="ml-2 text-green-500">+45%</span>
                                     </div>
                                     <span
-                                        class="text-primary-600 bg-primary-600/10 text-sm font-semibold mr-2 px-3 py-1 rounded-xl dark:bg-blue-200 dark:text-blue-800">
+                                        class="mr-2 rounded-xl bg-primary-600/10 px-3 py-1 text-sm font-semibold text-primary-600 dark:bg-blue-200 dark:text-blue-800">
                                         Year of 2021
                                     </span>
                                 </div>
 
-                                <div class="md:col-span-4 lg:col-span-1 p-4 card dark--text h-48 min-h-full">
-                                    <h3 class="text-xl pb-4">Sessions</h3>
-                                    <div class="flex items-center my-4">
-                                        <h2 class="text-2xl font-semibold dark--text">27k</h2>
-                                        <span class="text-green-500 ml-2">+45%</span>
+                                <div class="card dark--text h-48 min-h-full p-4 md:col-span-4 lg:col-span-1">
+                                    <h3 class="pb-4 text-xl">Sessions</h3>
+                                    <div class="my-4 flex items-center">
+                                        <h2 class="dark--text text-2xl font-semibold">27k</h2>
+                                        <span class="ml-2 text-green-500">+45%</span>
                                     </div>
                                     <span
-                                        class="dark--text bg-gray-200 text-sm font-semibold mr-2 px-3 py-1 rounded-xl dark:bg-blue-200 dark:text-blue-800">
+                                        class="dark--text mr-2 rounded-xl bg-gray-200 px-3 py-1 text-sm font-semibold dark:bg-blue-200 dark:text-blue-800">
                                         Last Week
                                     </span>
                                 </div>
 
                                 <div class="col-span-8 lg:col-span-2">
-                                    <div class="p-4 card dark--text h-48 min-h-full">
-                                        <div class="flex justify-between mb-2">
+                                    <div class="card dark--text h-48 min-h-full p-4">
+                                        <div class="mb-2 flex justify-between">
                                             <h3 class="text-xl">Statistics Card</h3>
                                             <button type="button" class="material-icons btn-circle">more_vert</button>
                                         </div>
                                         <p>Total 48.5% growth 😎 this month</p>
-                                        <div class="grid grid-cols-3 gap-4 mt-10">
+                                        <div class="mt-10 grid grid-cols-3 gap-4">
                                             <div class="flex items-center space-x-2">
-                                                <div class="rounded bg-primary-600 p-1 md:p-2 text-white">
+                                                <div class="rounded bg-primary-600 p-1 text-white md:p-2">
                                                     <span aria-hidden="true">
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
@@ -992,12 +992,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="ml-3">
-                                                    <p class="text-xs mb-0">Sales</p>
-                                                    <h3 class="text-sm md:text-xl font-weight-bold">245k</h3>
+                                                    <p class="mb-0 text-xs">Sales</p>
+                                                    <h3 class="font-weight-bold text-sm md:text-xl">245k</h3>
                                                 </div>
                                             </div>
                                             <div class="flex items-center space-x-2">
-                                                <div class="rounded bg-green-600 p-1 md:p-2 text-white">
+                                                <div class="rounded bg-green-600 p-1 text-white md:p-2">
                                                     <span aria-hidden="true">
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
@@ -1012,12 +1012,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="ml-3">
-                                                    <p class="text-xs mb-0">Customers</p>
-                                                    <h3 class="text-sm md:text-xl font-weight-bold">15.7kk</h3>
+                                                    <p class="mb-0 text-xs">Customers</p>
+                                                    <h3 class="font-weight-bold text-sm md:text-xl">15.7kk</h3>
                                                 </div>
                                             </div>
                                             <div class="flex items-center space-x-2">
-                                                <div class="rounded bg-yellow-400 p-1 md:p-2 text-white">
+                                                <div class="rounded bg-yellow-400 p-1 text-white md:p-2">
                                                     <span aria-hidden="true">
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
@@ -1032,8 +1032,8 @@
                                                     </span>
                                                 </div>
                                                 <div class="ml-3">
-                                                    <p class="text-xs mb-0">Product</p>
-                                                    <h3 class="text-sm md:text-xl font-weight-bold">1.7kk</h3>
+                                                    <p class="mb-0 text-xs">Product</p>
+                                                    <h3 class="font-weight-bold text-sm md:text-xl">1.7kk</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -1042,24 +1042,24 @@
                             </div>
 
                             <div
-                                class="block md:grid md:grid-cols-8 lg:grid-cols-4 gap-4 space-y-4 lg:space-y-0 mt-6 items-stretch">
-                                <div class="md:col-span-4 lg:col-span-1 p-4 card dark--text">
-                                    <div class="flex justify-between mb-2">
+                                class="mt-6 block items-stretch gap-4 space-y-4 md:grid md:grid-cols-8 lg:grid-cols-4 lg:space-y-0">
+                                <div class="card dark--text p-4 md:col-span-4 lg:col-span-1">
+                                    <div class="mb-2 flex justify-between">
                                         <h3 class="text-xl">Total Sales</h3>
                                         <button type="button" class="material-icons btn-circle">more_vert</button>
                                     </div>
-                                    <div class="flex items-center my-2">
-                                        <h2 class="text-2xl font-semibold dark--text">$21,845</h2>
-                                        <span class="text-green-500 ml-2">+45%</span>
+                                    <div class="my-2 flex items-center">
+                                        <h2 class="dark--text text-2xl font-semibold">$21,845</h2>
+                                        <span class="ml-2 text-green-500">+45%</span>
                                     </div>
                                     <div id="total-sales-charts"></div>
                                 </div>
 
-                                <div class="md:col-span-4 lg:col-span-1 p-4 card dark--text">
+                                <div class="card dark--text p-4 md:col-span-4 lg:col-span-1">
                                     <div class="flex items-center justify-between">
                                         <h3 class="text-xl">Revenue Report</h3>
                                         <span
-                                            class="dark--text bg-gray-100 text-xs px-2 py-1 rounded-xl dark:bg-blue-200 dark:text-blue-800">
+                                            class="dark--text rounded-xl bg-gray-100 px-2 py-1 text-xs dark:bg-blue-200 dark:text-blue-800">
                                             This Year
                                         </span>
                                     </div>
@@ -1067,14 +1067,14 @@
                                 </div>
 
                                 <div class="col-span-8 lg:col-span-2">
-                                    <div class="p-4 card dark--text">
-                                        <div class="flex justify-between mb-2">
+                                    <div class="card dark--text p-4">
+                                        <div class="mb-2 flex justify-between">
                                             <h3 class="text-xl">Sales Overview</h3>
                                             <button type="button" class="material-icons btn-circle">more_vert</button>
                                         </div>
-                                        <div class="md:grid md:grid-cols-2 gap-4 mt-4">
+                                        <div class="mt-4 gap-4 md:grid md:grid-cols-2">
                                             <div id="sales-overview-charts"></div>
-                                            <div class="space-x-2 mt-8 md:mt-0">
+                                            <div class="mt-8 space-x-2 md:mt-0">
                                                 <div class="flex items-center">
                                                     <div class="rounded bg-purple-200 p-1 text-purple-500">
                                                         <span aria-hidden="true" class="h-8 w-8">
@@ -1092,11 +1092,11 @@
                                                     </div>
                                                     <div class="ml-4 flex flex-col">
                                                         <p class="dark--text mb-0 text-base">Number of Sales</p>
-                                                        <span class="dark--text font-semibold text-xl"> $86,400 </span>
+                                                        <span class="dark--text text-xl font-semibold"> $86,400 </span>
                                                     </div>
                                                 </div>
 
-                                                <div class="border-b my-6"></div>
+                                                <div class="my-6 border-b"></div>
 
                                                 <table class="sales-overview-stats-table w-full">
                                                     <tbody>
@@ -1104,22 +1104,22 @@
                                                             <td>
                                                                 <div class="flex items-center">
                                                                     <span
-                                                                        class="inline-flex items-center justify-center h-3 w-3 text-xs bg-purple-500 rounded-full dark:bg-gray-700 mr-2"></span>
+                                                                        class="mr-2 inline-flex h-3 w-3 items-center justify-center rounded-full bg-purple-500 text-xs dark:bg-gray-700"></span>
                                                                     <span>Apparel</span>
                                                                 </div>
                                                                 <span
-                                                                    class="text-base text--primary font-weight-semibold ml-4"
+                                                                    class="text--primary font-weight-semibold ml-4 text-base"
                                                                     >$1,840</span
                                                                 >
                                                             </td>
                                                             <td>
                                                                 <div class="flex items-center">
                                                                     <span
-                                                                        class="inline-flex items-center justify-center h-3 w-3 text-xs bg-purple-400 rounded-full dark:bg-gray-700 mr-2"></span>
+                                                                        class="mr-2 inline-flex h-3 w-3 items-center justify-center rounded-full bg-purple-400 text-xs dark:bg-gray-700"></span>
                                                                     <span>Electronic</span>
                                                                 </div>
                                                                 <span
-                                                                    class="text-base text--primary font-weight-semibold ml-4"
+                                                                    class="text--primary font-weight-semibold ml-4 text-base"
                                                                     >$11,420</span
                                                                 >
                                                             </td>
@@ -1128,22 +1128,22 @@
                                                             <td>
                                                                 <div class="mt-4 flex items-center">
                                                                     <span
-                                                                        class="inline-flex items-center justify-center h-3 w-3 text-xs bg-purple-200 rounded-full dark:bg-gray-700 mr-2"></span>
+                                                                        class="mr-2 inline-flex h-3 w-3 items-center justify-center rounded-full bg-purple-200 text-xs dark:bg-gray-700"></span>
                                                                     <span>FMCG</span>
                                                                 </div>
                                                                 <span
-                                                                    class="text-base text--primary font-weight-semibold ml-4"
+                                                                    class="text--primary font-weight-semibold ml-4 text-base"
                                                                     >$30,234</span
                                                                 >
                                                             </td>
                                                             <td>
                                                                 <div class="mt-4 flex items-center">
                                                                     <span
-                                                                        class="inline-flex items-center justify-center h-3 w-3 text-xs bg-gray-400 rounded-full dark:bg-gray-700 mr-2"></span>
+                                                                        class="mr-2 inline-flex h-3 w-3 items-center justify-center rounded-full bg-gray-400 text-xs dark:bg-gray-700"></span>
                                                                     <span>Other Sales</span>
                                                                 </div>
                                                                 <span
-                                                                    class="text-base text--primary font-weight-semibold ml-4"
+                                                                    class="text--primary font-weight-semibold ml-4 text-base"
                                                                     >$46,054</span
                                                                 >
                                                             </td>
@@ -1156,17 +1156,17 @@
                                 </div>
                             </div>
 
-                            <div class="block md:grid md:grid-cols-2 gap-4 space-y-4 lg:space-y-0 mt-6 items-stretch">
+                            <div class="mt-6 block items-stretch gap-4 space-y-4 md:grid md:grid-cols-2 lg:space-y-0">
                                 <div class="col-span-2 md:col-span-1">
-                                    <div class="p-4 card dark--text relative">
-                                        <div class="flex justify-between mb-2">
+                                    <div class="card dark--text relative p-4">
+                                        <div class="mb-2 flex justify-between">
                                             <h3 class="text-xl">Activity Timeline</h3>
                                             <button type="button" class="material-icons btn-circle">more_vert</button>
                                         </div>
-                                        <ol class="relative border-l border-gray-200 dark:border-gray-700 space-y-8">
+                                        <ol class="relative space-y-8 border-l border-gray-200 dark:border-gray-700">
                                             <li class="ml-4">
                                                 <div
-                                                    class="absolute w-3 h-3 bg-red-500 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                                                    class="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-red-500 dark:border-gray-900 dark:bg-gray-700"></div>
                                                 <time
                                                     class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                                                     February 2022
@@ -1179,7 +1179,7 @@
                                                 </p>
                                                 <a href="#" class="flex items-center text-sm font-medium text-gray-900">
                                                     <svg
-                                                        class="mr-2 w-5 h-5 fill-red-500"
+                                                        class="mr-2 h-5 w-5 fill-red-500"
                                                         viewBox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path
@@ -1190,7 +1190,7 @@
                                             </li>
                                             <li class="ml-4">
                                                 <div
-                                                    class="absolute w-3 h-3 bg-purple-500 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                                                    class="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-purple-500 dark:border-gray-900 dark:bg-gray-700"></div>
                                                 <time
                                                     class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                                                     March 2022
@@ -1204,7 +1204,7 @@
                                             </li>
                                             <li class="ml-4">
                                                 <div
-                                                    class="absolute w-3 h-3 bg-sky-500 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                                                    class="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-sky-500 dark:border-gray-900 dark:bg-gray-700"></div>
                                                 <time
                                                     class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
                                                     >April 2022</time
@@ -1218,7 +1218,7 @@
                                             </li>
                                             <li class="ml-4">
                                                 <div
-                                                    class="absolute w-3 h-3 bg-yellow-500 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                                                    class="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-yellow-500 dark:border-gray-900 dark:bg-gray-700"></div>
                                                 <time
                                                     class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
                                                     >April 2022</time
@@ -1231,9 +1231,9 @@
                                     </div>
                                 </div>
                                 <div class="col-span-2 md:col-span-1">
-                                    <div class="block md:grid md:grid-cols-3 gap-4 space-y-4 lg:space-y-0 items-end">
+                                    <div class="block items-end gap-4 space-y-4 md:grid md:grid-cols-3 lg:space-y-0">
                                         <div class="card col-span-2 p-4">
-                                            <div class="flex justify-between mb-2">
+                                            <div class="mb-2 flex justify-between">
                                                 <h3 class="text-xl">Weekly Sales</h3>
                                                 <button type="button" class="material-icons btn-circle">
                                                     more_vert
@@ -1258,8 +1258,8 @@
                                                         </span>
                                                     </div>
                                                     <div class="ml-3">
-                                                        <p class="text-xs mb-0">Sales</p>
-                                                        <h3 class="text-sm md:text-xl font-weight-bold">245k</h3>
+                                                        <p class="mb-0 text-xs">Sales</p>
+                                                        <h3 class="font-weight-bold text-sm md:text-xl">245k</h3>
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center space-x-2">
@@ -1278,22 +1278,22 @@
                                                         </span>
                                                     </div>
                                                     <div class="ml-3">
-                                                        <p class="text-xs mb-0">Sales</p>
-                                                        <h3 class="text-sm md:text-xl font-weight-bold">245k</h3>
+                                                        <p class="mb-0 text-xs">Sales</p>
+                                                        <h3 class="font-weight-bold text-sm md:text-xl">245k</h3>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="space-y-4">
-                                            <div class="p-4 card">
+                                            <div class="card p-4">
                                                 <h3 class="text-xl">42.5k</h3>
                                                 <div id="total-growth-charts" class="my-4"></div>
                                                 <p>Total Growth</p>
                                             </div>
 
-                                            <div class="p-4 card">
-                                                <div class="flex justify-between mb-2">
+                                            <div class="card p-4">
+                                                <div class="mb-2 flex justify-between">
                                                     <div class="rounded-full bg-green-500 p-1 text-white">
                                                         <span aria-hidden="true" class="h-8 w-8">
                                                             <svg
@@ -1314,9 +1314,9 @@
                                                 </div>
                                                 <div class="my-4">
                                                     <p>New Project</p>
-                                                    <h2 class="my-2 text-2xl font-semibold dark--text">
+                                                    <h2 class="dark--text my-2 text-2xl font-semibold">
                                                         862
-                                                        <span class="text-red-400 ml-2">-18%</span>
+                                                        <span class="ml-2 text-red-400">-18%</span>
                                                     </h2>
                                                     <p>Yearly Project</p>
                                                 </div>
@@ -1329,10 +1329,10 @@
                     </main>
 
                     <footer class="footer">
-                        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                        <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
                             © 2022 <a href="#" class="hover:underline">Twilight™</a>. All Rights Reserved.
                         </span>
-                        <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                        <ul class="mt-3 flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
                             <li>
                                 <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
                             </li>

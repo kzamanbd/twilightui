@@ -22,7 +22,7 @@
                 <!-- Loading screen -->
                 <div
                     x-ref="loading"
-                    class="fixed inset-0 z-50 flex items-center justify-center text-white backdrop-blur bg-black/50">
+                    class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 text-white backdrop-blur">
                     Loading.....
                 </div>
                 <!-- Sidebar -->
@@ -33,17 +33,17 @@
                     x-transition:leave="transition ease-in-out duration-150"
                     x-transition:leave-start="opacity-100"
                     x-transition:leave-end="opacity-0 transform -translate-x-20"
-                    class="z-20 fixed flex flex-col max-h-screen overflow-hidden md:relative inset-y-0 flex-shrink-0 w-64 bg-white dark:bg-gray-800 md:block lg:block"
+                    class="fixed inset-y-0 z-20 flex max-h-screen w-64 flex-shrink-0 flex-col overflow-hidden bg-white dark:bg-gray-800 md:relative md:block lg:block"
                     :class="{'hidden' : !isMenuOpen}"
                     @click.away="closeSideMenu"
                     @keydown.escape="closeSideMenu">
-                    <nav class="text-gray-500 dark:text-gray-400 h-full">
-                        <div class="px-6 py-4 h-16 flex justify-between">
+                    <nav class="h-full text-gray-500 dark:text-gray-400">
+                        <div class="flex h-16 justify-between px-6 py-4">
                             <a class="text-lg font-bold text-gray-800 dark:text-gray-200" href="index.html">
                                 Tailwind
                             </a>
                             <button type="button" class="md:hidden" @click="closeSideMenu">
-                                <svg viewBox="0 0 10 10" class="w-2 h-2 overflow-visible">
+                                <svg viewBox="0 0 10 10" class="h-2 w-2 overflow-visible">
                                     <path
                                         d="M0 0L10 10M10 0L0 10"
                                         fill="none"
@@ -53,13 +53,13 @@
                                 </svg>
                             </button>
                         </div>
-                        <ul id="sidebar-link" class="sidebar-link mt-16 inset-y-0 overflow-y-auto fixed w-64">
+                        <ul id="sidebar-link" class="sidebar-link fixed inset-y-0 mt-16 w-64 overflow-y-auto">
                             <li class="relative px-6 py-3">
                                 <a
-                                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                    class="inline-flex w-full items-center text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                     href="index.html">
                                     <svg
-                                        class="w-5 h-5"
+                                        class="h-5 w-5"
                                         aria-hidden="true"
                                         fill="none"
                                         stroke-linecap="round"
@@ -75,10 +75,10 @@
                             </li>
                             <li class="relative px-6 py-3">
                                 <a
-                                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                    class="inline-flex w-full items-center text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                     href="forms.html">
                                     <svg
-                                        class="w-5 h-5"
+                                        class="h-5 w-5"
                                         aria-hidden="true"
                                         fill="none"
                                         stroke-linecap="round"
@@ -94,10 +94,10 @@
                             </li>
                             <li class="relative px-6 py-3">
                                 <a
-                                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                    class="inline-flex w-full items-center text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                     href="cards.html">
                                     <svg
-                                        class="w-5 h-5"
+                                        class="h-5 w-5"
                                         aria-hidden="true"
                                         fill="none"
                                         stroke-linecap="round"
@@ -113,10 +113,10 @@
                             </li>
                             <li class="relative px-6 py-3">
                                 <a
-                                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                    class="inline-flex w-full items-center text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                     href="charts.html">
                                     <svg
-                                        class="w-5 h-5"
+                                        class="h-5 w-5"
                                         aria-hidden="true"
                                         fill="none"
                                         stroke-linecap="round"
@@ -132,10 +132,10 @@
                             </li>
                             <li class="relative px-6 py-3">
                                 <a
-                                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                    class="inline-flex w-full items-center text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                     href="buttons.html">
                                     <svg
-                                        class="w-5 h-5"
+                                        class="h-5 w-5"
                                         aria-hidden="true"
                                         fill="none"
                                         stroke-linecap="round"
@@ -151,10 +151,10 @@
                             </li>
                             <li class="relative px-6 py-3">
                                 <a
-                                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                    class="inline-flex w-full items-center text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                     href="modals.html">
                                     <svg
-                                        class="w-5 h-5"
+                                        class="h-5 w-5"
                                         aria-hidden="true"
                                         fill="none"
                                         stroke-linecap="round"
@@ -170,10 +170,10 @@
                             </li>
                             <li class="relative px-6 py-3">
                                 <a
-                                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                    class="inline-flex w-full items-center text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                     href="tables.html">
                                     <svg
-                                        class="w-5 h-5"
+                                        class="h-5 w-5"
                                         aria-hidden="true"
                                         fill="none"
                                         stroke-linecap="round"
@@ -188,15 +188,15 @@
                             </li>
                             <li class="relative px-6 py-3">
                                 <span
-                                    class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                                    class="absolute inset-y-0 left-0 w-1 rounded-tr-lg rounded-br-lg bg-purple-600"
                                     aria-hidden="true"></span>
                                 <button
-                                    class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                                    class="inline-flex w-full items-center justify-between text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:text-gray-100 dark:hover:text-gray-200"
                                     @click="togglePagesMenu"
                                     aria-haspopup="true">
                                     <span class="inline-flex items-center">
                                         <svg
-                                            class="w-5 h-5"
+                                            class="h-5 w-5"
                                             aria-hidden="true"
                                             fill="none"
                                             stroke-linecap="round"
@@ -209,7 +209,7 @@
                                         </svg>
                                         <span class="ml-4">Pages</span>
                                     </span>
-                                    <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg class="h-4 w-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                                         <path
                                             fill-rule="evenodd"
                                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -224,7 +224,7 @@
                                         x-transition:leave="transition-all ease-in-out duration-300"
                                         x-transition:leave-start="opacity-100 max-h-xl"
                                         x-transition:leave-end="opacity-0 max-h-0"
-                                        class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                        class="mt-2 space-y-2 overflow-hidden rounded-md bg-gray-50 p-2 text-sm font-medium text-gray-500 shadow-inner dark:bg-gray-900 dark:text-gray-400"
                                         aria-label="submenu">
                                         <li
                                             class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
@@ -251,7 +251,7 @@
                             </li>
                             <li class="relative px-6 py-3">
                                 <button
-                                    class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                                    class="focus:shadow-outline-purple flex w-full items-center justify-between rounded-lg border border-transparent bg-purple-600 px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 hover:bg-purple-700 focus:outline-none active:bg-purple-600">
                                     Create account
                                     <span class="ml-2" aria-hidden="true">+</span>
                                 </button>
@@ -270,19 +270,19 @@
                     x-transition:leave="transition ease-in-out duration-150"
                     x-transition:leave-start="opacity-100"
                     x-transition:leave-end="opacity-0"
-                    class="fixed inset-0 z-10 flex items-end backdrop-blur-sm bg-white/30 dark:bg-white/20 sm:items-center sm:justify-center md:hidden"></div>
+                    class="fixed inset-0 z-10 flex items-end bg-white/30 backdrop-blur-sm dark:bg-white/20 sm:items-center sm:justify-center md:hidden"></div>
                 <!-- Backdrop end -->
 
-                <div class="flex flex-col flex-1 h-full overflow-hidden relative">
-                    <header class="sticky z-10 flex-shrink-0 py-4 bg-white shadow-md dark:bg-gray-800 h-16">
+                <div class="relative flex h-full flex-1 flex-col overflow-hidden">
+                    <header class="sticky z-10 h-16 flex-shrink-0 bg-white py-4 shadow-md dark:bg-gray-800">
                         <div
-                            class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
+                            class="container mx-auto flex h-full items-center justify-between px-6 text-purple-600 dark:text-purple-300">
                             <!-- Mobile hamburger -->
                             <button
-                                class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
+                                class="focus:shadow-outline-purple mr-5 -ml-1 rounded-md p-1 focus:outline-none md:hidden"
                                 @click="toggleSideMenu"
                                 aria-label="Menu">
-                                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="h-6 w-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                                     <path
                                         fill-rule="evenodd"
                                         d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
@@ -290,10 +290,10 @@
                                 </svg>
                             </button>
                             <!-- Search input -->
-                            <div class="flex justify-start flex-1 lg:mr-32">
-                                <div class="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
+                            <div class="flex flex-1 justify-start lg:mr-32">
+                                <div class="relative mr-6 w-full max-w-xl focus-within:text-purple-500">
                                     <div class="absolute inset-y-0 flex items-center pl-2">
-                                        <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                        <svg class="h-4 w-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                                             <path
                                                 fill-rule="evenodd"
                                                 d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
@@ -301,22 +301,22 @@
                                         </svg>
                                     </div>
                                     <input
-                                        class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 hover:bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+                                        class="dark:focus:shadow-outline-gray focus:shadow-outline-purple form-input w-full rounded-md border-0 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 hover:bg-gray-100 focus:border-purple-300 focus:bg-white focus:placeholder-gray-500 focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:placeholder-gray-500 dark:focus:placeholder-gray-600"
                                         type="text"
                                         placeholder="Search"
                                         aria-label="Search" />
                                 </div>
                             </div>
-                            <ul class="flex items-center flex-shrink-0 space-x-6">
+                            <ul class="flex flex-shrink-0 items-center space-x-6">
                                 <!-- Theme toggler -->
                                 <li class="flex">
                                     <button
-                                        class="rounded-md focus:outline-none focus:shadow-outline-purple"
+                                        class="focus:shadow-outline-purple rounded-md focus:outline-none"
                                         @click="toggleTheme"
                                         aria-label="Toggle color mode">
                                         <template x-if="!isDarkMode">
                                             <svg
-                                                class="w-5 h-5"
+                                                class="h-5 w-5"
                                                 aria-hidden="true"
                                                 fill="currentColor"
                                                 viewBox="0 0 20 20">
@@ -326,7 +326,7 @@
                                         </template>
                                         <template x-if="isDarkMode">
                                             <svg
-                                                class="w-5 h-5"
+                                                class="h-5 w-5"
                                                 aria-hidden="true"
                                                 fill="currentColor"
                                                 viewBox="0 0 20 20">
@@ -341,19 +341,19 @@
                                 <!-- Notifications menu -->
                                 <li class="relative">
                                     <button
-                                        class="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
+                                        class="focus:shadow-outline-purple relative rounded-md align-middle focus:outline-none"
                                         @click="toggleNotificationsMenu"
                                         @keydown.escape="closeNotificationsMenu"
                                         aria-label="Notifications"
                                         aria-haspopup="true">
-                                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                        <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                                             <path
                                                 d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
                                         </svg>
                                         <!-- Notification badge -->
                                         <span
                                             aria-hidden="true"
-                                            class="absolute top-0 right-0 inline-block w-3 h-3 transform translate-x-1 -translate-y-1 bg-red-400 border-2 border-white rounded-full dark:border-gray-800"></span>
+                                            class="absolute top-0 right-0 inline-block h-3 w-3 translate-x-1 -translate-y-1 transform rounded-full border-2 border-white bg-red-400 dark:border-gray-800"></span>
                                     </button>
                                     <template x-if="isNotificationsMenuOpen">
                                         <ul
@@ -362,32 +362,32 @@
                                             x-transition:leave-end="opacity-0"
                                             @click.away="closeNotificationsMenu"
                                             @keydown.escape="closeNotificationsMenu"
-                                            class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700">
+                                            class="absolute right-0 mt-2 w-56 space-y-2 rounded-md border border-gray-100 bg-white p-2 text-gray-600 shadow-md dark:border-gray-700 dark:bg-gray-700 dark:text-gray-300">
                                             <li class="flex">
                                                 <a
-                                                    class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                                    class="inline-flex w-full items-center justify-between rounded-md px-2 py-1 text-sm font-semibold transition-colors duration-150 hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                     href="#">
                                                     <span>Messages</span>
                                                     <span
-                                                        class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-600 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-600">
+                                                        class="inline-flex items-center justify-center rounded-full bg-red-100 px-2 py-1 text-xs font-bold leading-none text-red-600 dark:bg-red-600 dark:text-red-100">
                                                         13
                                                     </span>
                                                 </a>
                                             </li>
                                             <li class="flex">
                                                 <a
-                                                    class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                                    class="inline-flex w-full items-center justify-between rounded-md px-2 py-1 text-sm font-semibold transition-colors duration-150 hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                     href="#">
                                                     <span>Sales</span>
                                                     <span
-                                                        class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-600 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-600">
+                                                        class="inline-flex items-center justify-center rounded-full bg-red-100 px-2 py-1 text-xs font-bold leading-none text-red-600 dark:bg-red-600 dark:text-red-100">
                                                         2
                                                     </span>
                                                 </a>
                                             </li>
                                             <li class="flex">
                                                 <a
-                                                    class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                                    class="inline-flex w-full items-center justify-between rounded-md px-2 py-1 text-sm font-semibold transition-colors duration-150 hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                     href="#">
                                                     <span>Alerts</span>
                                                 </a>
@@ -398,13 +398,13 @@
                                 <!-- Profile menu -->
                                 <li class="relative">
                                     <button
-                                        class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
+                                        class="focus:shadow-outline-purple rounded-full align-middle focus:outline-none"
                                         @click="toggleProfileMenu"
                                         @keydown.escape="closeProfileMenu"
                                         aria-label="Account"
                                         aria-haspopup="true">
                                         <img
-                                            class="object-cover w-8 h-8 rounded-full"
+                                            class="h-8 w-8 rounded-full object-cover"
                                             src="https://ui-avatars.com/api/?name=KZ&color=7F9CF5&background=EBF4FF"
                                             alt=""
                                             aria-hidden="true" />
@@ -416,14 +416,14 @@
                                             x-transition:leave-end="opacity-0"
                                             @click.away="closeProfileMenu"
                                             @keydown.escape="closeProfileMenu"
-                                            class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
+                                            class="absolute right-0 mt-2 w-56 space-y-2 rounded-md border border-gray-100 bg-white p-2 text-gray-600 shadow-md dark:border-gray-700 dark:bg-gray-700 dark:text-gray-300"
                                             aria-label="submenu">
                                             <li class="flex">
                                                 <a
-                                                    class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                                    class="inline-flex w-full items-center rounded-md px-2 py-1 text-sm font-semibold transition-colors duration-150 hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                     href="#">
                                                     <svg
-                                                        class="w-4 h-4 mr-3"
+                                                        class="mr-3 h-4 w-4"
                                                         aria-hidden="true"
                                                         fill="none"
                                                         stroke-linecap="round"
@@ -439,10 +439,10 @@
                                             </li>
                                             <li class="flex">
                                                 <a
-                                                    class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                                    class="inline-flex w-full items-center rounded-md px-2 py-1 text-sm font-semibold transition-colors duration-150 hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                     href="#">
                                                     <svg
-                                                        class="w-4 h-4 mr-3"
+                                                        class="mr-3 h-4 w-4"
                                                         aria-hidden="true"
                                                         fill="none"
                                                         stroke-linecap="round"
@@ -459,10 +459,10 @@
                                             </li>
                                             <li class="flex">
                                                 <a
-                                                    class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                                    class="inline-flex w-full items-center rounded-md px-2 py-1 text-sm font-semibold transition-colors duration-150 hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                     href="#">
                                                     <svg
-                                                        class="w-4 h-4 mr-3"
+                                                        class="mr-3 h-4 w-4"
                                                         aria-hidden="true"
                                                         fill="none"
                                                         stroke-linecap="round"
@@ -482,9 +482,9 @@
                             </ul>
                         </div>
                     </header>
-                    <main class="flex-1 max-h-full overflow-hidden overflow-y-scroll">
+                    <main class="max-h-full flex-1 overflow-hidden overflow-y-scroll">
                         <!-- Remove everything INSIDE this div to a really blank page -->
-                        <div class="container px-6 mx-auto grid">
+                        <div class="container mx-auto grid px-6">
                             <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Blank</h2>
                         </div>
                     </main>
@@ -492,7 +492,7 @@
                 <!-- Setting panel button -->
                 <button
                     @click="isSettingsPanelOpen = true"
-                    class="fixed right-0 px-4 py-2 text-sm font-medium text-white uppercase transform rotate-90 translate-x-8 bg-gray-600 top-1/2 rounded-b-md">
+                    class="fixed right-0 top-1/2 translate-x-8 rotate-90 transform rounded-b-md bg-gray-600 px-4 py-2 text-sm font-medium uppercase text-white">
                     Settings
                 </button>
 
@@ -506,14 +506,14 @@
                     x-transition:leave="transition transform duration-300"
                     x-transition:leave-start="translate-x-0 opacity-100 ease-out"
                     x-transition:leave-end="translate-x-full opacity-0 ease-in"
-                    class="z-40 fixed inset-y-0 right-0 flex flex-col backdrop-blur bg-white/30 dark:bg-white/10 bg-white shadow-lg bg-opacity-20 w-80">
-                    <div class="flex items-center justify-between flex-shrink-0 p-2">
+                    class="fixed inset-y-0 right-0 z-40 flex w-80 flex-col bg-white/30 bg-white bg-opacity-20 shadow-lg backdrop-blur dark:bg-white/10">
+                    <div class="flex flex-shrink-0 items-center justify-between p-2">
                         <h6 class="p-2 text-lg dark:text-white">Settings</h6>
                         <button
                             @click="isSettingsPanelOpen = false"
-                            class="p-2 rounded-md focus:outline-none focus:ring">
+                            class="rounded-md p-2 focus:outline-none focus:ring">
                             <svg
-                                class="w-6 h-6 text-gray-600 dark:text-white"
+                                class="h-6 w-6 text-gray-600 dark:text-white"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
@@ -526,7 +526,7 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="flex-1 max-h-full p-4 overflow-hidden hover:overflow-y-scroll">
+                    <div class="max-h-full flex-1 overflow-hidden p-4 hover:overflow-y-scroll">
                         <span class="dark:text-white">Settings Content</span>
                         <!-- Settings Panel Content ... -->
                     </div>

@@ -14,46 +14,46 @@
     }
     .loading {
         @apply fixed inset-0 z-50 flex items-center justify-center;
-        @apply text-white backdrop-blur bg-black/50;
+        @apply bg-black/50 text-white backdrop-blur;
     }
     .twilight {
-        @apply flex h-screen bg-light-gray dark:bg-dark-secondary dark--text;
+        @apply dark--text flex h-screen bg-light-gray dark:bg-dark-secondary;
     }
     .twilight-content {
-        @apply mx-auto px-6 pb-4 pt-2 md:pt-4 dark:text-gray-300;
+        @apply mx-auto px-6 pb-4 pt-2 dark:text-gray-300 md:pt-4;
     }
     .top-header {
-        @apply sticky top-0 z-10 flex-shrink-0 flex items-center;
-        @apply justify-between mx-6 py-4 duration-200 transition-all ease-in-out;
+        @apply sticky top-0 z-10 flex flex-shrink-0 items-center;
+        @apply mx-6 justify-between py-4 transition-all duration-200 ease-in-out;
     }
     .sticky-header {
-        @apply px-4 bg-white shadow-md dark:shadow-lg dark:bg-dark-primary;
+        @apply bg-white px-4 shadow-md dark:bg-dark-primary dark:shadow-lg;
         @apply dark--text rounded-bl-lg rounded-br-lg;
         @apply supports-[backdrop-filter]:bg-light-gray/60 supports-[backdrop-filter]:backdrop-blur;
     }
     .brand-logo {
-        @apply flex items-center px-4 relative pb-2 pt-[10px];
+        @apply relative flex items-center px-4 pb-2 pt-[10px];
     }
     .app-name {
-        @apply mx-2 text-xl font-semibold dark--text;
+        @apply dark--text mx-2 text-xl font-semibold;
     }
     .header-btn {
-        @apply relative p-2 flex items-center text-xs font-medium dark--text;
-        @apply bg-white rounded-lg border border-gray-200 hover:bg-gray-100;
+        @apply dark--text relative flex items-center p-2 text-xs font-medium;
+        @apply rounded-lg border border-gray-200 bg-white hover:bg-gray-100;
         @apply hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300;
-        @apply dark:focus:ring-gray-500 dark:bg-dark-primary focus:outline-none;
-        @apply dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700;
+        @apply focus:outline-none dark:bg-dark-primary dark:focus:ring-gray-500;
+        @apply dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-white;
     }
     .menu-header {
-        @apply px-5 dark--text uppercase pt-2 text-sm truncate w-full;
+        @apply dark--text w-full truncate px-5 pt-2 text-sm uppercase;
     }
     .sidebar {
-        @apply bg-white dark:bg-dark-primary fixed inset-y-0 left-0 z-30 w-64 border-r border-gray-200;
-        @apply overflow-hidden transition duration-300 transform dark:border-none;
-        @apply lg:translate-x-0 lg:static lg:inset-0 transition-all ease-in-out duration-300 !important;
+        @apply fixed inset-y-0 left-0 z-30 w-64 border-r border-gray-200 bg-white dark:bg-dark-primary;
+        @apply transform overflow-hidden transition duration-300 dark:border-none;
+        @apply transition-all duration-300 ease-in-out lg:static lg:inset-0 lg:translate-x-0 !important;
     }
     .sidebar-shadow {
-        @apply fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden cursor-pointer;
+        @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
     }
     .sidebar-close {
         @apply dark--text absolute right-2 top-2 cursor-pointer text-lg md:hidden;
@@ -62,39 +62,39 @@
         @apply w-16 hover:w-64;
     }
     .nav-menu {
-        @apply pl-2 py-2 pr-4;
+        @apply py-2 pl-2 pr-4;
     }
     .mini-sidebar .sidebar:not(:hover) .nav-menu {
         @apply p-2;
     }
     .nav-link {
         @apply dark--text flex items-center p-2 hover:bg-gray-200 hover:text-gray-900;
-        @apply hover:dark:bg-gray-700 dark:hover:text-gray-100 rounded-md font-medium;
+        @apply rounded-md font-medium hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
     .nav-link.nav-link-active {
         @apply bg-gray-200 dark:bg-gray-700;
     }
     .mini-sidebar .sidebar:not(:hover) .nav-link {
-        @apply p-2 flex justify-center;
+        @apply flex justify-center p-2;
     }
     .link-label {
         @apply mx-2 truncate text-sm;
     }
     .dropdown-menu {
-        @apply overflow-hidden max-h-0 duration-500 transition-all space-y-1;
+        @apply max-h-0 space-y-1 overflow-hidden transition-all duration-500;
     }
     .dropdown-item {
-        @apply flex items-center dark--text transition-colors;
-        @apply duration-200 rounded-md hover:text-gray-900 dark:hover:text-gray-100;
+        @apply dark--text flex items-center transition-colors;
+        @apply rounded-md duration-200 hover:text-gray-900 dark:hover:text-gray-100;
     }
     .dropdown-circle {
-        @apply leading-[unset] text-[10px] w-6 h-6 flex items-center justify-center;
+        @apply flex h-6 w-6 items-center justify-center text-[10px] leading-[unset];
     }
     .dropdown-icon {
-        @apply ml-auto transition-transform transform;
+        @apply ml-auto transform transition-transform;
     }
     .dropdown-item-link {
-        @apply nav-link truncate w-full;
+        @apply nav-link w-full truncate;
     }
     .dropdown-link-active {
         @apply bg-primary text-white !important;
@@ -103,24 +103,24 @@
         @apply px-4;
     }
     .user-menu-link {
-        @apply flex justify-between items-center px-4 py-2 text-sm;
-        @apply rounded-md dark--text hover:text-primary-600;
+        @apply flex items-center justify-between px-4 py-2 text-sm;
+        @apply dark--text rounded-md hover:text-primary-600;
         @apply hover:bg-gray-100 hover:dark:bg-dark-secondary;
     }
     .footer {
-        @apply px-6 py-4 bg-white dark:bg-dark-primary shadow md:flex md:items-center md:justify-between mt-auto;
+        @apply mt-auto bg-white px-6 py-4 shadow dark:bg-dark-primary md:flex md:items-center md:justify-between;
     }
     .login-bg {
         @apply relative z-[1] w-full max-w-lg before:absolute before:bg-[url('/core/images/login-left.png')];
-        @apply before:left-[-45px] before:top-[-70px] before:w-[244px] before:h-[244px] before:z-[-1];
+        @apply before:left-[-45px] before:top-[-70px] before:z-[-1] before:h-[244px] before:w-[244px];
         @apply after:absolute after:bg-[url('/core/images/login-right.png')];
-        @apply after:right-[-50px] after:bottom-[-50px] after:w-[244px] after:h-[244px] after:z-[-1];
+        @apply after:right-[-50px] after:bottom-[-50px] after:z-[-1] after:h-[244px] after:w-[244px];
     }
     .card {
-        @apply bg-white dark:bg-dark-primary rounded-md shadow-sm;
+        @apply rounded-md bg-white shadow-sm dark:bg-dark-primary;
     }
     .card-header {
-        @apply p-4 dark--text border-b border-gray-200 dark:border-gray-700;
+        @apply dark--text border-b border-gray-200 p-4 dark:border-gray-700;
     }
     .card-body {
         @apply p-4;
@@ -128,7 +128,7 @@
 
     /* Alert components */
     .alert {
-        @apply p-4 mb-4 text-sm rounded-md;
+        @apply mb-4 rounded-md p-4 text-sm;
     }
     .alert-icon {
         @apply flex items-center space-x-3;
@@ -139,12 +139,12 @@
 
     /* button components */
     .btn-primary {
-        @apply focus:outline-none text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-300;
-        @apply font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-900;
+        @apply bg-primary-600 text-white hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300;
+        @apply mb-2 rounded-lg px-5 py-2.5 text-sm font-medium dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-900;
     }
     .btn-circle {
-        @apply active:bg-gray-200 transition-colors ease-in-out duration-200;
-        @apply flex items-center justify-center rounded-full h-8 w-8 cursor-pointer text-gray-400;
+        @apply transition-colors duration-200 ease-in-out active:bg-gray-200;
+        @apply flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-gray-400;
     }
 
     /* Form components */
@@ -152,20 +152,20 @@
         @apply mb-3;
     }
     .form-label {
-        @apply block mb-2 text-sm font-medium dark--text;
+        @apply dark--text mb-2 block text-sm font-medium;
     }
     .form-control {
-        @apply bg-gray-50 border border-gray-300 dark--text text-sm rounded-lg;
-        @apply focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700;
-        @apply dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
-        @apply focus-visible:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500;
+        @apply dark--text rounded-lg border border-gray-300 bg-gray-50 text-sm;
+        @apply block w-full p-2.5 focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-700;
+        @apply dark:border-gray-600 dark:text-white dark:placeholder-gray-400;
+        @apply focus-visible:border-primary-500 dark:focus:border-primary-500 dark:focus:ring-primary-500;
     }
     .form-radio {
         @apply text-primary-600 focus:border-primary-400 focus:outline-none;
     }
     .form-check {
-        @apply text-primary-600 border-gray-200 rounded-md focus:border-primary-600;
-        @apply focus:ring focus:ring-opacity-40 focus:ring-primary-600;
+        @apply rounded-md border-gray-200 text-primary-600 focus:border-primary-600;
+        @apply focus:ring focus:ring-primary-600 focus:ring-opacity-40;
     }
 }
 
