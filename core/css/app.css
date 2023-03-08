@@ -96,7 +96,7 @@
     .dropdown-icon {
         @apply ml-auto rotate-[-180deg] transform transition-transform group-[[data-te-collapse-collapsed]]:rotate-0;
     }
-    .dropdown-item-link {
+    .dropdown-link {
         @apply nav-link w-full truncate;
     }
     .dropdown-link-active {
