@@ -99,7 +99,7 @@
     .dropdown-link {
         @apply nav-link w-full truncate;
     }
-    .dropdown-link-active {
+    .dropdown-link.active {
         @apply bg-primary text-white !important;
     }
     .user-menu-item {
