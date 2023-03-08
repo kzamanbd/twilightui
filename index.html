@@ -45,7 +45,6 @@
                                     data-te-collapse-init
                                     data-te-target="#dashboard"
                                     aria-expanded="true"
-                                    aria-controls="dashboard"
                                     class="dropdown-button group">
                                     <div class="nav-link">
                                         <span class="material-icons">dashboard</span>
@@ -400,7 +399,7 @@
                             <!-- corporate start -->
                             <li>
                                 <div
-                                    type="button"
+                                    role="button"
                                     class="dropdown-button group"
                                     data-te-ripple-init
                                     data-te-collapse-init
@@ -856,6 +855,7 @@
                         <div class="flex items-center">
                             <button
                                 type="button"
+                                aria-label="Toggle Menu"
                                 @click="isMenuOpen = !isMenuOpen"
                                 class="text-gray-500 focus:outline-none lg:hidden">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -884,7 +884,7 @@
 
                         <div class="flex items-center space-x-4">
                             <div class="relative">
-                                <button type="button" class="header-btn">
+                                <button type="button" class="header-btn" aria-label="Search">
                                     <svg
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
@@ -908,7 +908,7 @@
                                 </button>
                             </div>
 
-                            <button type="button" @click="toggleTheme" class="header-btn">
+                            <button type="button" @click="toggleTheme" class="header-btn" aria-label="Themes">
                                 <svg
                                     aria-hidden="true"
                                     data-toggle-icon="sun"
@@ -933,7 +933,7 @@
                             </button>
 
                             <div class="relative">
-                                <button type="button" data-te-dropdown-toggle-ref class="header-btn">
+                                <button type="button" data-te-dropdown-toggle-ref class="header-btn" aria-label="Notification>
                                     <svg
                                         class="h-4 w-4"
                                         viewBox="0 0 24 24"
