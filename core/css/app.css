@@ -71,6 +71,9 @@
         @apply dark--text flex items-center p-2 hover:bg-gray-200 hover:text-gray-900;
         @apply rounded-md font-medium hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
+    .dropdown-button {
+        @apply w-full rounded-md [&:not([data-te-collapse-collapsed])]:bg-gray-200 dark:[&:not([data-te-collapse-collapsed])]:bg-gray-700;
+    }
     .nav-link.nav-link-active {
         @apply bg-gray-200 dark:bg-gray-700;
     }
@@ -81,17 +84,17 @@
         @apply mx-2 truncate text-sm;
     }
     .dropdown-menu {
-        @apply max-h-0 space-y-1 overflow-hidden transition-all duration-500;
+        @apply mt-2 space-y-1 overflow-hidden;
     }
     .dropdown-item {
         @apply dark--text flex items-center transition-colors;
-        @apply rounded-md duration-200 hover:text-gray-900 dark:hover:text-gray-100;
+        @apply rounded-md hover:text-gray-900 dark:hover:text-gray-100;
     }
     .dropdown-circle {
         @apply flex h-6 w-6 items-center justify-center text-[10px] leading-[unset];
     }
     .dropdown-icon {
-        @apply ml-auto transform transition-transform;
+        @apply ml-auto rotate-[-180deg] transform transition-transform group-[[data-te-collapse-collapsed]]:rotate-0;
     }
     .dropdown-item-link {
         @apply nav-link w-full truncate;

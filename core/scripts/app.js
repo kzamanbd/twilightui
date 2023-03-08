@@ -20,7 +20,7 @@ document.addEventListener('alpine:init', () => {
         status: 'Active',
         role: 'Owner',
     };
-    // alpine data
+    //? alpine data
     Alpine.data('twilight', () => ({
         init() {
             this.$refs.loading.classList.add('hidden');
@@ -51,7 +51,7 @@ document.addEventListener('alpine:init', () => {
                 const options = {
                     body: 'Do you like this notification?',
                     data: 'I like peas.',
-                    icon: '/favicon.png'
+                    icon: '/favicon.png',
                 };
                 const notification = new Notification('Hi there!', options);
                 console.log(notification);
@@ -65,36 +65,6 @@ document.addEventListener('alpine:init', () => {
                     }
                 });
             }
-
-            // At last, if the user has denied notifications, and you
-            // want to be respectful there is no need to bother them anymore.
-        },
-        currentActiveTab(tab) {
-            this.$store.dropdown.tab = tab;
-        }
-    }));
-
-    Alpine.store('dropdown', {
-        tab: undefined,
-    });
-
-    Alpine.data('dropdownItem', idx => ({
-        init() {
-            this.idx = idx;
-            console.log(window.location.pathname);
-        },
-        idx: -1,
-        handleClick() {
-            this.$store.dropdown.tab = this.$store.dropdown.tab == this.idx ? -1 : this.idx;
-        },
-        handleRotate() {
-            return this.$store.dropdown.tab == this.idx ? 'rotate-180' : '';
-        },
-        activeDropdown() {
-            return this.$store.dropdown.tab == this.idx ? 'nav-link-active' : '';
-        },
-        handleToggle() {
-            return this.$store.dropdown.tab == this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px; margin-top: 6px` : '';
         },
     }));
 });
@@ -110,11 +80,18 @@ window.onload = function () {
             header?.classList.remove('sticky-header');
         }
     });
-    document.addEventListener("visibilitychange", (event) => {
+
+    //? handle visibility change
+    document.addEventListener('visibilitychange', event => {
         if (document.visibilityState === 'visible') {
-            console.log('welcome', event);
+            console.log('welcome');
         } else {
-            console.log('hidden', event);
+            console.log('hidden');
         }
+    });
+
+    // handle offline/online event
+    window.addEventListener('offline', event => {
+        console.log('offline');
     });
 };
