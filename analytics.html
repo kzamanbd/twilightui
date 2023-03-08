@@ -7,9 +7,11 @@
         <link rel="icon" href="./favicon.png" />
         <!-- Core Fonts, Style -->
         <link rel="stylesheet" href="./core/fonts/material-icons.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
         <link rel="stylesheet" href="./build/tailwind.css" />
         <link rel="stylesheet" href="./core/plugins/simplebar/simplebar.css" />
         <!-- Core Script -->
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
         <script src="./core/scripts/alpinejs.js" defer></script>
         <script src="./core/plugins/simplebar/simplebar.min.js"></script>
         <script src="./core/scripts/app.js"></script>
@@ -31,17 +33,30 @@
                         <span @click="isMenuOpen = false" class="material-icons sidebar-close"> close </span>
                     </div>
 
-                    <nav data-simplebar class="h-sidebar overflow-y-auto" x-init="currentActiveTab('dashboard')">
-                        <ul class="nav-menu space-y-2">
-                            <li x-data="dropdownItem('dashboard')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">dashboard</span>
-                                    <span class="link-label">Dashboards</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                    <nav data-simplebar class="h-sidebar overflow-y-auto">
+                        <ul id="accordionExample" class="nav-menu space-y-2">
+                            <!-- dashboard start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-target="#dashboard"
+                                    aria-expanded="true"
+                                    aria-controls="dashboard"
+                                    class="dropdown-button group">
+                                    <div class="nav-link">
+                                        <span class="material-icons">dashboard</span>
+                                        <span class="link-label">Dashboards</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="dashboard"
+                                    class="dropdown-menu !visible"
+                                    data-te-collapse-item
+                                    data-te-collapse-show
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="index.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -74,16 +89,29 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- dashboard end -->
 
-                            <li x-data="dropdownItem('components')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">layers</span>
-                                    <span class="link-label">Components</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- components start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#components"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">layers</span>
+                                        <span class="link-label">Components</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="components"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./alerts.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -128,17 +156,33 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- components end -->
 
+                            <!-- page header -->
                             <li class="menu-header">Forms & Tables</li>
-                            <li x-data="dropdownItem('form-elements')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">hexagon</span>
-                                    <span class="link-label">Form Elements</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- page header end -->
+
+                            <!-- form elements start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#form-elements"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">hexagon</span>
+                                        <span class="link-label">Form Elements</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="form-elements"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./input.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -177,24 +221,42 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- form elements end -->
 
-                            <li>
+                            <!-- form layout single item -->
+                            <li data-te-ripple-init>
                                 <a href="./form.html" class="nav-link">
                                     <span class="material-icons">description</span>
                                     <span class="link-label">Form Layout</span>
                                 </a>
                             </li>
+                            <!-- form layout single item end -->
 
+                            <!-- page header -->
                             <li class="menu-header">Pages</li>
-                            <li x-data="dropdownItem('user-profile')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">perm_contact_calendar</span>
-                                    <span class="link-label">User Profile</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- page header end -->
+
+                            <!-- user profile start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#user-profile"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">perm_contact_calendar</span>
+                                        <span class="link-label">User Profile</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="user-profile"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./user-profile/overview.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -221,16 +283,29 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- user profile end -->
 
-                            <li x-data="dropdownItem('accounts')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons rotate-90">label_important_outline</span>
-                                    <span class="link-label">Accounts</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- accounts start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#accounts"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons rotate-90">label_important_outline</span>
+                                        <span class="link-label">Accounts</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="accounts"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./accounts/overview.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -263,16 +338,29 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- accounts end -->
 
-                            <li x-data="dropdownItem('authentication')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">person</span>
-                                    <span class="link-label">Authentication</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- Authentication start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#authentication"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">person</span>
+                                        <span class="link-label">Authentication</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="authentication"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="/login.html" class="dropdown-item-link" target="_blank">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -305,16 +393,29 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- Authentication end -->
 
-                            <li x-data="dropdownItem('corporate')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">corporate_fare</span>
-                                    <span class="link-label">Corporate</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- corporate start -->
+                            <li>
+                                <div
+                                    type="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#corporate"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">corporate_fare</span>
+                                        <span class="link-label">Corporate</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="corporate"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./corporate/about.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -347,16 +448,29 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- corporate end -->
 
-                            <li x-data="dropdownItem('utilities')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">construction</span>
-                                    <span class="link-label">Utilities</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- utilities start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#utilities"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">construction</span>
+                                        <span class="link-label">Utilities</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="utilities"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./utilities/modals.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -377,16 +491,29 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- utilities end -->
 
-                            <li x-data="dropdownItem('careers')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">work</span>
-                                    <span class="link-label">Careers</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- Careers pages start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#careers"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">work</span>
+                                        <span class="link-label">Careers</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="careers"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./careers/careers-list.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -401,16 +528,29 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- Careers pages end -->
 
-                            <li x-data="dropdownItem('widgets')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">widgets</span>
-                                    <span class="link-label">Widgets</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- widgets start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#widgets"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">widgets</span>
+                                        <span class="link-label">Widgets</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="widgets"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./widgets/lists.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -449,17 +589,33 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- widgets end -->
 
+                            <!-- page header -->
                             <li class="menu-header">Apps</li>
-                            <li x-data="dropdownItem('projects')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">fence</span>
-                                    <span class="link-label">Projects</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- page header end -->
+
+                            <!-- project start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#projects"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">fence</span>
+                                        <span class="link-label">Projects</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="projects"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./apps/project.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -492,16 +648,29 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- project end -->
 
-                            <li x-data="dropdownItem('eCommerce')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">shopping_basket</span>
-                                    <span class="link-label">eCommerce</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- eCommerce start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#eCommerce"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">shopping_basket</span>
+                                        <span class="link-label">eCommerce</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="eCommerce"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./eCommerce/category.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -534,16 +703,29 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- eCommerce end -->
 
-                            <li x-data="dropdownItem('contacts')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">interests</span>
-                                    <span class="link-label">Contacts</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- contacts start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#contacts"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">interests</span>
+                                        <span class="link-label">Contacts</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="contacts"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./contacts/getting-started.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -576,16 +758,29 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- contacts end -->
 
-                            <li x-data="dropdownItem('user-management')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">workspaces</span>
-                                    <span class="link-label">User Management</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- user management start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#user-management"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">workspaces</span>
+                                        <span class="link-label">User Management</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="user-management"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./user-management/users.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -606,16 +801,29 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- user management end -->
 
-                            <li x-data="dropdownItem('customers')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
-                                    <span class="material-icons">change_history</span>
-                                    <span class="link-label">Customers</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                            <!-- customer start -->
+                            <li>
+                                <div
+                                    role="button"
+                                    class="dropdown-button group"
+                                    data-te-ripple-init
+                                    data-te-collapse-init
+                                    data-te-collapse-collapsed
+                                    data-te-target="#customers"
+                                    aria-expanded="false">
+                                    <div class="nav-link">
+                                        <span class="material-icons">change_history</span>
+                                        <span class="link-label">Customers</span>
+                                        <span class="material-icons dropdown-icon"> expand_more </span>
+                                    </div>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
+                                <ul
+                                    id="customers"
+                                    class="dropdown-menu !visible hidden"
+                                    data-te-collapse-item
+                                    data-te-parent="#accordionExample">
                                     <li role="menuitem" class="dropdown-item group">
                                         <a href="./customers/getting-started.html" class="dropdown-item-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -636,6 +844,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            <!-- customer end -->
                         </ul>
                     </nav>
                 </aside>
@@ -721,12 +930,8 @@
                                 </svg>
                             </button>
 
-                            <div class="relative" x-data="{ isOpen: false }">
-                                <button
-                                    type="button"
-                                    @click="isOpen = !isOpen"
-                                    @click.away="isOpen = false"
-                                    class="header-btn">
+                            <div class="relative">
+                                <button type="button" data-te-dropdown-toggle-ref class="header-btn">
                                     <svg
                                         class="h-4 w-4"
                                         viewBox="0 0 24 24"
@@ -740,75 +945,73 @@
                                             stroke-linejoin="round"></path>
                                     </svg>
                                 </button>
-                                <div x-show="isOpen">
-                                    <div
-                                        class="absolute right-0 z-20 mt-5 w-72 overflow-hidden rounded-md bg-white py-2 shadow-lg">
-                                        <div class="py-2">
-                                            <a
-                                                href="/"
-                                                class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
-                                                <img
-                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
-                                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                                                    alt="avatar" />
-                                                <p class="mx-2 text-sm text-gray-600">
-                                                    <span class="font-bold" href="#"> Sara Salah </span>
-                                                    replied on the
-                                                    <span class="font-bold text-blue-500" href="#"> Upload Image </span>
-                                                    article . 2m
-                                                </p>
-                                            </a>
-                                            <a
-                                                href="/"
-                                                class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
-                                                <img
-                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
-                                                    src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                                                    alt="avatar" />
-                                                <p class="mx-2 text-sm text-gray-600">
-                                                    <span class="font-bold" href="#"> Slick Net </span>
-                                                    start following you . 45m
-                                                </p>
-                                            </a>
-                                            <a
-                                                href="/"
-                                                class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
-                                                <img
-                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
-                                                    src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                                                    alt="avatar" />
-                                                <p class="mx-2 text-sm text-gray-600">
-                                                    <span class="font-bold" href="#"> Jane Doe </span>
-                                                    Like Your reply on
-                                                    <span class="font-bold text-blue-500" href="#"> Test with TDD </span
-                                                    >article . 1h
-                                                </p>
-                                            </a>
-                                            <a href="/" class="-mx-2 flex items-center px-4 py-3 hover:bg-gray-100">
-                                                <img
-                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
-                                                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=398&q=80"
-                                                    alt="avatar" />
-                                                <p class="mx-2 text-sm text-gray-600">
-                                                    <span class="font-bold" href="#"> Abigail Bennett </span>
-                                                    start following you . 3h
-                                                </p>
-                                            </a>
-                                        </div>
+
+                                <div
+                                    data-te-dropdown-menu-ref
+                                    class="absolute right-0 z-20 mt-5 hidden w-72 overflow-hidden rounded-md bg-white py-2 shadow-lg [&[data-te-dropdown-show]]:block">
+                                    <div class="py-2">
                                         <a
                                             href="/"
-                                            class="mx-4 block bg-gray-800 py-2 text-center font-bold text-white">
-                                            See all notifications
+                                            class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Sara Salah </span>
+                                                replied on the
+                                                <span class="font-bold text-blue-500" href="#"> Upload Image </span>
+                                                article . 2m
+                                            </p>
+                                        </a>
+                                        <a
+                                            href="/"
+                                            class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Slick Net </span>
+                                                start following you . 45m
+                                            </p>
+                                        </a>
+                                        <a
+                                            href="/"
+                                            class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Jane Doe </span>
+                                                Like Your reply on
+                                                <span class="font-bold text-blue-500" href="#"> Test with TDD </span
+                                                >article . 1h
+                                            </p>
+                                        </a>
+                                        <a href="/" class="-mx-2 flex items-center px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=398&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Abigail Bennett </span>
+                                                start following you . 3h
+                                            </p>
                                         </a>
                                     </div>
+                                    <a href="/" class="mx-4 block bg-gray-800 py-2 text-center font-bold text-white">
+                                        See all notifications
+                                    </a>
                                 </div>
                             </div>
 
-                            <div class="relative" x-data="{ isOpen: false }">
+                            <div class="relative">
                                 <button
                                     type="button"
-                                    @click="isOpen = !isOpen"
-                                    @click.away="isOpen = false"
+                                    data-te-dropdown-toggle-ref
+                                    aria-expanded="false"
                                     class="relative z-10 block h-8 w-8 overflow-hidden rounded-full shadow focus:outline-none">
                                     <img
                                         class="h-full w-full object-cover"
@@ -816,82 +1019,81 @@
                                         alt="Your avatar" />
                                 </button>
 
-                                <div x-show="isOpen">
-                                    <div
-                                        class="absolute right-0 z-20 mt-5 w-64 rounded-md bg-white py-2 shadow-xl dark:bg-dark-primary">
-                                        <div class="flex items-center border-b px-4 py-2 dark:border-gray-700">
-                                            <div class="flex-shrink-0">
-                                                <img
-                                                    class="h-8 w-8 rounded-full object-cover"
-                                                    src="https://www.gravatar.com/avatar/7d07260bf12eaff12086c86ea14849d1"
-                                                    alt="Your avatar" />
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
-                                                    Kamruzzaman
-                                                </p>
-                                                <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
-                                                    Software Engineer
-                                                </p>
-                                            </div>
+                                <div
+                                    data-te-dropdown-menu-ref
+                                    class="absolute right-0 z-20 hidden w-64 rounded-md bg-white py-2 shadow-xl dark:bg-dark-primary [&[data-te-dropdown-show]]:block">
+                                    <div class="flex items-center border-b px-4 py-2 dark:border-gray-700">
+                                        <div class="flex-shrink-0">
+                                            <img
+                                                class="h-8 w-8 rounded-full object-cover"
+                                                src="https://www.gravatar.com/avatar/7d07260bf12eaff12086c86ea14849d1"
+                                                alt="Your avatar" />
                                         </div>
-                                        <div class="border-b py-2 dark:border-gray-700">
-                                            <div class="user-menu-item">
-                                                <a href="#" class="user-menu-link"> My Profile </a>
-                                            </div>
-                                            <div class="user-menu-item">
-                                                <a href="#" class="user-menu-link">
-                                                    My Projects
-                                                    <span
-                                                        class="ml-1 inline-flex items-center justify-center rounded-full bg-primary-600 px-2 py-1 text-xs font-bold leading-none text-white">
-                                                        9
-                                                    </span>
-                                                </a>
-                                            </div>
-                                            <div class="user-menu-item">
-                                                <a href="#" class="user-menu-link"> My Subscription </a>
-                                            </div>
+                                        <div class="ml-3">
+                                            <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
+                                                Kamruzzaman
+                                            </p>
+                                            <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
+                                                Software Engineer
+                                            </p>
                                         </div>
-                                        <div class="relative py-2">
-                                            <div class="user-menu-item group">
-                                                <a href="#" class="user-menu-link">
-                                                    Language
-                                                    <span class="flex items-center text-xs font-bold leading-none">
+                                    </div>
+                                    <div class="border-b py-2 dark:border-gray-700">
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> My Profile </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link">
+                                                My Projects
+                                                <span
+                                                    class="ml-1 inline-flex items-center justify-center rounded-full bg-primary-600 px-2 py-1 text-xs font-bold leading-none text-white">
+                                                    9
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> My Subscription </a>
+                                        </div>
+                                    </div>
+                                    <div class="relative py-2">
+                                        <div class="user-menu-item group">
+                                            <a href="#" class="user-menu-link">
+                                                Language
+                                                <span class="flex items-center text-xs font-bold leading-none">
+                                                    <img
+                                                        src="./core/images/flags/united-states.svg"
+                                                        class="mr-2 h-4 w-4 rounded-full"
+                                                        alt="English" />
+                                                    English
+                                                </span>
+                                                <!-- language dropdown -->
+                                                <div
+                                                    class="absolute left-0 -m-40 hidden w-40 space-y-2 rounded-md bg-white px-2 py-4 shadow-xl group-hover:block dark:bg-dark-primary">
+                                                    <div
+                                                        class="dark--text flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:text-primary-600 hover:dark:bg-dark-secondary dark:hover:text-gray-300">
                                                         <img
                                                             src="./core/images/flags/united-states.svg"
                                                             class="mr-2 h-4 w-4 rounded-full"
                                                             alt="English" />
-                                                        English
-                                                    </span>
-                                                    <!-- language dropdown -->
-                                                    <div
-                                                        class="absolute left-0 -m-40 hidden w-40 space-y-2 rounded-md bg-white px-2 py-4 shadow-xl group-hover:block dark:bg-dark-primary">
-                                                        <div
-                                                            class="dark--text flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:text-primary-600 hover:dark:bg-dark-secondary dark:hover:text-gray-300">
-                                                            <img
-                                                                src="./core/images/flags/united-states.svg"
-                                                                class="mr-2 h-4 w-4 rounded-full"
-                                                                alt="English" />
-                                                            <span class="text-xs leading-none">English</span>
-                                                        </div>
-                                                        <div
-                                                            class="dark--text flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:text-primary-600 hover:dark:bg-dark-secondary dark:hover:text-gray-300">
-                                                            <img
-                                                                src="./core/images/flags/france.svg"
-                                                                class="mr-2 h-4 w-4 rounded-full"
-                                                                alt="france" />
-                                                            <span class="text-xs leading-none">France</span>
-                                                        </div>
+                                                        <span class="text-xs leading-none">English</span>
                                                     </div>
-                                                </a>
-                                            </div>
+                                                    <div
+                                                        class="dark--text flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:text-primary-600 hover:dark:bg-dark-secondary dark:hover:text-gray-300">
+                                                        <img
+                                                            src="./core/images/flags/france.svg"
+                                                            class="mr-2 h-4 w-4 rounded-full"
+                                                            alt="france" />
+                                                        <span class="text-xs leading-none">France</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
 
-                                            <div class="user-menu-item">
-                                                <a href="#" class="user-menu-link"> Account Settings </a>
-                                            </div>
-                                            <div class="user-menu-item">
-                                                <a href="./login.html" class="user-menu-link"> Log out </a>
-                                            </div>
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> Account Settings </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="./login.html" class="user-menu-link"> Log out </a>
                                         </div>
                                     </div>
                                 </div>
