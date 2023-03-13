@@ -1,97 +1,65 @@
 // Description: Main app script
-
-document.addEventListener('alpine:init', () => {
-    //! get theme from local storage
+const app = function () {
+    document.getElementById('loading').classList.add('hidden');
     function getTwilightTheme() {
         // if user already changed the theme, use it
         if (window.localStorage.getItem('dark')) {
             return JSON.parse(window.localStorage.getItem('dark'));
         }
-
         // else return their preferences
         return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
 
-    const testUser = {
-        name: 'John Doe',
-        email: 'john@example.com',
-        title: 'Software Engineer',
-        title2: 'Web dev',
-        status: 'Active',
-        role: 'Owner',
-    };
-    //? alpine data
-    Alpine.data('twilight', () => ({
-        init() {
-            this.$refs.loading.classList.add('hidden');
-            if (getTwilightTheme()) {
-                this.$refs.twilight.classList.add('dark');
-            }
-        },
-        users: [...Array(10).keys()].map(() => testUser),
-        toggleTheme() {
-            this.$refs.twilight.classList.toggle('dark');
-            //! set theme to local storage
-            window.localStorage.setItem('dark', !getTwilightTheme());
-        },
-        // sidebar
-        isMenuOpen: false,
-        isMiniSidebar: false,
-        handleMiniSidebar() {
-            this.isMiniSidebar = !this.isMiniSidebar;
-            document.body.classList.toggle('mini-sidebar');
-        },
-        notifyMe() {
-            if (!('Notification' in window)) {
-                // Check if the browser supports notifications
-                alert('This browser does not support desktop notification');
-            } else if (Notification.permission === 'granted') {
-                // Check whether notification permissions have already been granted;
-                // if so, create a notification
-                const options = {
-                    body: 'Do you like this notification?',
-                    data: 'I like peas.',
-                    icon: '/favicon.png',
-                };
-                const notification = new Notification('Hi there!', options);
-                console.log(notification);
-            } else if (Notification.permission !== 'denied') {
-                // We need to ask the user for permission
-                Notification.requestPermission().then(permission => {
-                    // If the user accepts, let's create a notification
-                    if (permission === 'granted') {
-                        const notification = new Notification('Hi there! Notification permission granted.');
-                        console.log(notification);
-                    }
-                });
-            }
-        },
-    }));
-});
+    //? toggle theme
+    if (getTwilightTheme()) document.body.classList.add('dark');
+    document.getElementById('toggleTheme').addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        //! set theme to local storage
+        window.localStorage.setItem('dark', !getTwilightTheme());
+    });
 
-window.onload = function () {
+    //? sidebar
+    const sidebarMenu = document.getElementById('sidebar-menu');
+    const sidebarShadow = document.querySelector('.sidebar-shadow');
+    document.getElementById('toggleMenuBtn').addEventListener('click', () => {
+        if (sidebarMenu.classList.contains('closed')) {
+            sidebarMenu.classList.add('open');
+            sidebarMenu.classList.remove('closed');
+            sidebarShadow.classList.toggle('hidden');
+        } else {
+            sidebarMenu.classList.add('closed');
+            sidebarMenu.classList.remove('open');
+        }
+    });
+
+    sidebarShadow.addEventListener('click', () => {
+        sidebarMenu.classList.add('closed');
+        sidebarMenu.classList.remove('open');
+        sidebarShadow.classList.toggle('hidden');
+    });
+
+    document.getElementById('miniSidebarBtn').addEventListener('click', () => {
+        document.body.classList.toggle('mini-sidebar');
+        document.getElementById('brand-logo').classList.toggle('justify-center');
+    });
+
+    document.querySelector('.sidebar-close').addEventListener('click', () => {
+        sidebarMenu.classList.add('closed');
+        sidebarMenu.classList.remove('open');
+        sidebarShadow.classList.toggle('hidden');
+    });
+
     const header = document.getElementById('sticky__header');
-    const scrollableContent = document.querySelector('.twilight-scrollable');
-    scrollableContent?.addEventListener('scroll', () => {
+    const scrollable = document.querySelector('.twilight-scrollable');
+
+    scrollable?.addEventListener('scroll', () => {
         // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-        if (scrollableContent.scrollTop > 0) {
+        if (scrollable.scrollTop > 0) {
             header?.classList.add('sticky-header');
         } else {
             header?.classList.remove('sticky-header');
         }
     });
-
-    //? handle visibility change
-    document.addEventListener('visibilitychange', event => {
-        if (document.visibilityState === 'visible') {
-            console.log('welcome');
-        } else {
-            console.log('hidden');
-        }
-    });
-
-    // handle offline/online event
-    window.addEventListener('offline', event => {
-        console.log('offline');
-    });
 };
+
+window.onload = app;

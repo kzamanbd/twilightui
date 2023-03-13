@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" dir="ltr">
+<html lang="en" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,12 +7,10 @@
         <link rel="icon" href="./favicon.png" />
         <!-- Core Fonts, Style -->
         <link rel="stylesheet" href="./core/fonts/material-icons.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
         <link rel="stylesheet" href="./build/tailwind.css" />
         <link rel="stylesheet" href="./core/plugins/simplebar/simplebar.css" />
         <!-- Core Script -->
-        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-        <script src="./core/scripts/alpinejs.js" defer></script>
+        <script src="./core/plugins/tw-elements/index.min.js"></script>
         <script src="./core/plugins/simplebar/simplebar.min.js"></script>
         <script src="./core/scripts/app.js"></script>
         <!-- Apex Charts -->
@@ -20,19 +18,19 @@
     </head>
 
     <body>
-        <div x-ref="twilight" x-data="twilight">
-            <div x-ref="loading" class="loading">Loading.....</div>
+        <div id="app">
+            <div id="loading" class="loading">Loading.....</div>
 
             <div class="twilight">
-                <div @click="isMenuOpen = false" :class="{ hidden: !isMenuOpen }" class="sidebar-shadow"></div>
+                <div class="sidebar-shadow hidden"></div>
 
-                <aside class="sidebar" :class="isMenuOpen ? 'translate-x-0' : '-translate-x-full'">
-                    <div class="brand-logo" :class="{'justify-center' : isMiniSidebar }">
+                <aside id="sidebar-menu" class="sidebar-menu closed">
+                    <div id="brand-logo" class="brand-logo">
                         <a href="/index.html" class="flex items-center">
                             <img class="h-12 w-12" src="./core/images/logo.svg" alt="logo" />
                             <span class="app-name"> Twilight </span>
                         </a>
-                        <span @click="isMenuOpen = false" class="material-icons sidebar-close"> close </span>
+                        <span class="material-icons sidebar-close"> close </span>
                     </div>
 
                     <nav data-simplebar class="h-sidebar overflow-y-auto">
@@ -856,7 +854,7 @@
                             <button
                                 type="button"
                                 aria-label="Toggle Menu"
-                                @click="isMenuOpen = !isMenuOpen"
+                                id="toggleMenuBtn"
                                 class="text-gray-500 focus:outline-none lg:hidden">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -869,7 +867,7 @@
                             </button>
                             <button
                                 type="button"
-                                @click="handleMiniSidebar()"
+                                id="miniSidebarBtn"
                                 class="hidden text-gray-500 focus:outline-none lg:block"
                                 aria-label="Mini Sidebar">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -909,7 +907,7 @@
                                 </button>
                             </div>
 
-                            <button type="button" @click="toggleTheme" class="header-btn" aria-label="Themes">
+                            <button type="button" id="toggleTheme" class="header-btn" aria-label="Themes">
                                 <svg
                                     aria-hidden="true"
                                     data-toggle-icon="sun"

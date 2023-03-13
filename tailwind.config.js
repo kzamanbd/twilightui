@@ -46,6 +46,5 @@ module.exports = {
         require('@tailwindcss/typography'),
         require('@tailwindcss/aspect-ratio'),
         require('prettier-plugin-tailwindcss'),
-        require("tw-elements/dist/plugin")
     ],
 };
