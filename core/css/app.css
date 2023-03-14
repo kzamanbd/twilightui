@@ -85,10 +85,10 @@
     }
     .menu-header {
         @apply dark--text relative w-full truncate px-5 pt-2 text-sm uppercase;
-        @apply border-gray-300 after:absolute after:left-0 after:top-3 after:w-full after:border-b after:bg-gray-300;
+        @apply after:absolute after:left-0 after:top-3 after:w-full  after:bg-gray-300;
     }
     .mini-sidebar .sidebar-menu .menu-header {
-        @apply indent-10 after:block;
+        @apply indent-10 after:block after:border-b after:border-gray-300;
     }
     .mini-sidebar .sidebar-menu:hover .menu-header {
         @apply indent-0 after:hidden after:border-b-0;
