@@ -40,7 +40,6 @@ const app = function () {
 
     document.getElementById('miniSidebarBtn').addEventListener('click', () => {
         document.body.classList.toggle('mini-sidebar');
-        document.getElementById('brand-logo').classList.toggle('justify-center');
     });
 
     document.querySelector('.sidebar-close').addEventListener('click', () => {
@@ -50,7 +49,7 @@ const app = function () {
     });
 
     const header = document.getElementById('sticky__header');
-    const scrollable = document.querySelector('.twilight-scrollable');
+    const scrollable = document.querySelector('.twilight-body');
 
     scrollable?.addEventListener('scroll', () => {
         // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position

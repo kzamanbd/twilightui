@@ -32,12 +32,6 @@
         @apply bg-white px-4 shadow-md dark:bg-dark-primary dark:shadow-lg;
         @apply dark--text rounded-bl-lg rounded-br-lg;
     }
-    .brand-logo {
-        @apply relative flex items-center px-4 pb-2 pt-[10px];
-    }
-    .app-name {
-        @apply dark--text mx-2 text-xl font-semibold;
-    }
     .header-btn {
         @apply dark--text relative flex items-center p-2 text-xs font-medium;
         @apply rounded-lg border border-gray-200 bg-white hover:bg-gray-100;
@@ -66,10 +60,31 @@
         @apply dark--text absolute right-2 top-2 cursor-pointer text-lg lg:hidden;
     }
     .mini-sidebar .sidebar-menu {
-        @apply w-16 hover:w-64;
+        @apply fixed inset-y-0 left-0 z-30 w-16 hover:w-64 !important;
+    }
+    .mini-sidebar .twilight-body {
+        @apply pl-16;
+    }
+    .brand-logo {
+        @apply relative flex items-center px-2 pb-2 pt-[10px];
+    }
+    .mini-sidebar .sidebar-menu:not(:hover) .brand-logo {
+        @apply justify-center px-0;
+    }
+    .mini-sidebar .sidebar-menu:hover .brand-logo {
+        @apply justify-start;
+    }
+    .app-name {
+        @apply dark--text mx-2 text-xl font-semibold;
     }
     .menu-header {
         @apply dark--text w-full truncate px-5 pt-2 text-sm uppercase;
+    }
+    .mini-sidebar .sidebar-menu .menu-header {
+        @apply invisible;
+    }
+    .mini-sidebar .sidebar-menu:hover .menu-header {
+        @apply visible;
     }
     .nav-menu {
         @apply py-2 pl-2 pr-4;
@@ -88,14 +103,17 @@
     .nav-link.nav-link-active {
         @apply bg-gray-200 dark:bg-gray-700;
     }
-    .mini-sidebar .sidebar-menu:not(:hover) .nav-link {
+    /* .mini-sidebar .sidebar-menu:not(:hover) .nav-link {
         @apply flex justify-center p-2;
-    }
+    } */
     .link-label {
         @apply mx-2 truncate text-sm;
     }
     .dropdown-menu {
         @apply space-y-1 overflow-hidden;
+    }
+    .mini-sidebar .dropdown-menu {
+        @apply [&:not([data-te-collapse-show])]:hidden !important;
     }
     .dropdown-item {
         @apply dark--text flex items-center transition-colors;
@@ -114,14 +132,12 @@
         @apply bg-primary text-white !important;
     }
     .mini-sidebar .app-name,
-    .mini-sidebar .menu-header,
     .mini-sidebar .dropdown-icon,
     .mini-sidebar .dropdown-menu,
     .mini-sidebar .nav-menu .link-label {
-        @apply hidden opacity-0;
+        @apply hidden opacity-0 duration-200;
     }
     .mini-sidebar .sidebar-menu:hover .app-name,
-    .mini-sidebar .sidebar-menu:hover .menu-header,
     .mini-sidebar .sidebar-menu:hover .dropdown-icon,
     .mini-sidebar .sidebar-menu:hover .dropdown-menu,
     .mini-sidebar .sidebar-menu:hover .nav-menu .link-label {
