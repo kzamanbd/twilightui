@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
 const primary = colors.violet;
 
@@ -46,5 +47,13 @@ module.exports = {
         require('@tailwindcss/typography'),
         require('@tailwindcss/aspect-ratio'),
         require('prettier-plugin-tailwindcss'),
+        plugin(function ({ addVariant, e }) {
+            // mini sidebar variant
+            addVariant('mini-sidebar', ({ modifySelectors, separator }) => {
+                modifySelectors(({ className }) => {
+                    return `.mini-sidebar .${e(`mini-sidebar${separator}${className}`)}`;
+                });
+            });
+        }),
     ],
 };
