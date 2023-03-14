@@ -68,6 +68,12 @@
     .brand-logo {
         @apply relative flex items-center px-2 pb-2 pt-[10px];
     }
+    .mini-sidebar .sidebar-menu .brand-logo {
+        @apply w-16;
+    }
+    .mini-sidebar .sidebar-menu:hover .brand-logo {
+        @apply w-64;
+    }
     .mini-sidebar .sidebar-menu:not(:hover) .brand-logo {
         @apply justify-center px-0;
     }
