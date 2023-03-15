@@ -8,19 +8,22 @@
         <!-- Core Fonts, Style -->
         <link rel="stylesheet" href="./core/fonts/material-icons.css" />
         <link rel="stylesheet" href="./build/tailwind.css" />
+        <link rel="stylesheet" href="./core/css/button-ripple.css" />
         <link rel="stylesheet" href="./core/plugins/simplebar/simplebar.css" />
         <!-- Core Script -->
         <script src="./core/plugins/tw-elements/index.min.js"></script>
         <script src="./core/plugins/simplebar/simplebar.min.js"></script>
         <script src="https://unpkg.com/alpinejs" defer></script>
+        <script src="./core/scripts/button-ripple.js" defer></script>
         <script src="./core/scripts/app.js"></script>
+        <script src="./core/scripts/init.js"></script>
         <!-- Apex Charts -->
         <link rel="stylesheet" href="./features/plugins/apexcharts/apexcharts.css" />
     </head>
 
     <body>
-        <div id="app">
-            <div id="loading" class="loading duration-300">Loading.....</div>
+        <div id="app" x-data="twilightTheme">
+            <div x-ref="loading" id="loading" class="loading duration-300">Loading.....</div>
 
             <div class="twilight">
                 <div class="sidebar-shadow hidden"></div>
@@ -35,28 +38,20 @@
                     </div>
 
                     <nav data-simplebar class="h-sidebar overflow-y-auto">
-                        <ul id="menu-accordion" class="nav-menu space-y-2">
+                        <ul id="menu-accordion" class="nav-menu space-y-2" x-init="currentActiveTab('dashboard')">
                             <!-- dashboard start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('dashboard')">
                                 <div
+                                    ripple
                                     role="button"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-target="#dashboard"
-                                    aria-expanded="true"
-                                    class="dropdown-button group">
-                                    <div class="nav-link">
-                                        <span class="material-icons">dashboard</span>
-                                        <span class="link-label">Dashboards</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">dashboard</span>
+                                    <span class="link-label">Dashboards</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="dashboard"
-                                    class="dropdown-menu !visible"
-                                    data-te-collapse-item
-                                    data-te-collapse-show
-                                    data-te-parent="#menu-accordion">
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="index.html" class="dropdown-link active">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -92,26 +87,18 @@
                             <!-- dashboard end -->
 
                             <!-- components start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('components')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#components"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">layers</span>
-                                        <span class="link-label">Components</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">layers</span>
+                                    <span class="link-label">Components</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="components"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./alerts.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -163,26 +150,18 @@
                             <!-- page header end -->
 
                             <!-- form elements start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('form-elements')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#form-elements"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">hexagon</span>
-                                        <span class="link-label">Form Elements</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">hexagon</span>
+                                    <span class="link-label">Form Elements</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="form-elements"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./input.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -224,7 +203,7 @@
                             <!-- form elements end -->
 
                             <!-- form layout single item -->
-                            <li class="menu-item" data-te-ripple-init>
+                            <li class="menu-item" ripple>
                                 <a href="./form.html" class="nav-link">
                                     <span class="material-icons">description</span>
                                     <span class="link-label">Form Layout</span>
@@ -237,26 +216,19 @@
                             <!-- page header end -->
 
                             <!-- user profile start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('user-profile')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#user-profile"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">perm_contact_calendar</span>
-                                        <span class="link-label">User Profile</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">perm_contact_calendar</span>
+                                    <span class="link-label">User Profile</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="user-profile"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./user-profile/overview.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -286,26 +258,19 @@
                             <!-- user profile end -->
 
                             <!-- accounts start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('accounts')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#accounts"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons rotate-90">label_important_outline</span>
-                                        <span class="link-label">Accounts</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons rotate-90">label_important_outline</span>
+                                    <span class="link-label">Accounts</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="accounts"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./accounts/overview.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -341,26 +306,19 @@
                             <!-- accounts end -->
 
                             <!-- Authentication start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('authentication')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#authentication"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">person</span>
-                                        <span class="link-label">Authentication</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">person</span>
+                                    <span class="link-label">Authentication</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="authentication"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="/login.html" class="dropdown-link" target="_blank">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -396,26 +354,19 @@
                             <!-- Authentication end -->
 
                             <!-- corporate start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('corporate')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#corporate"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">corporate_fare</span>
-                                        <span class="link-label">Corporate</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">corporate_fare</span>
+                                    <span class="link-label">Corporate</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="corporate"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./corporate/about.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -451,26 +402,19 @@
                             <!-- corporate end -->
 
                             <!-- utilities start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('utilities')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#utilities"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">construction</span>
-                                        <span class="link-label">Utilities</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">construction</span>
+                                    <span class="link-label">Utilities</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="utilities"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./utilities/modals.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -494,26 +438,18 @@
                             <!-- utilities end -->
 
                             <!-- Careers pages start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('careers')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#careers"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">work</span>
-                                        <span class="link-label">Careers</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">work</span>
+                                    <span class="link-label">Careers</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="careers"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./careers/careers-list.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -531,26 +467,18 @@
                             <!-- Careers pages end -->
 
                             <!-- widgets start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('widgets')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#widgets"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">widgets</span>
-                                        <span class="link-label">Widgets</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">widgets</span>
+                                    <span class="link-label">Widgets</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="widgets"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./widgets/lists.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -596,26 +524,18 @@
                             <!-- page header end -->
 
                             <!-- project start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('projects')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#projects"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">fence</span>
-                                        <span class="link-label">Projects</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">fence</span>
+                                    <span class="link-label">Projects</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="projects"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./apps/project.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -651,26 +571,18 @@
                             <!-- project end -->
 
                             <!-- eCommerce start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('eCommerce')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#eCommerce"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">shopping_basket</span>
-                                        <span class="link-label">eCommerce</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">shopping_basket</span>
+                                    <span class="link-label">eCommerce</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="eCommerce"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./eCommerce/category.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -706,26 +618,19 @@
                             <!-- eCommerce end -->
 
                             <!-- contacts start -->
-                            <li class="menu-item">
+                            <
+                            <li class="menu-item" x-data="accordionItem('contacts')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#contacts"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">interests</span>
-                                        <span class="link-label">Contacts</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">interests</span>
+                                    <span class="link-label">Contacts</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="contacts"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./contacts/getting-started.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -761,26 +666,18 @@
                             <!-- contacts end -->
 
                             <!-- user management start -->
-                            <li class="menu-item">
+                            <li class="menu-item" x-data="accordionItem('user-management')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#user-management"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">workspaces</span>
-                                        <span class="link-label">User Management</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">workspaces</span>
+                                    <span class="link-label">User Management</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="user-management"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./user-management/users.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -803,27 +700,20 @@
                             </li>
                             <!-- user management end -->
 
-                            <!-- customer start -->
-                            <li class="menu-item">
+                            <!-- customers start -->
+                            <li class="menu-item" x-data="accordionItem('customers')">
                                 <div
+                                    ripple
                                     role="button"
-                                    class="dropdown-button group"
-                                    data-te-ripple-init
-                                    data-te-collapse-init
-                                    data-te-collapse-collapsed
-                                    data-te-target="#customers"
-                                    aria-expanded="false">
-                                    <div class="nav-link">
-                                        <span class="material-icons">change_history</span>
-                                        <span class="link-label">Customers</span>
-                                        <span class="material-icons dropdown-icon"> expand_more </span>
-                                    </div>
+                                    class="nav-link group"
+                                    @click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">change_history</span>
+                                    <span class="link-label">Customers</span>
+                                    <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
-                                <ul
-                                    id="customers"
-                                    class="dropdown-menu !visible hidden"
-                                    data-te-collapse-item
-                                    data-te-parent="#menu-accordion">
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group" data-te-ripple-init>
                                         <a href="./customers/getting-started.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
@@ -844,7 +734,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <!-- customer end -->
+                            <!-- customers end -->
                         </ul>
                     </nav>
                 </aside>
@@ -1141,9 +1031,7 @@
                                     </ol>
                                 </div>
                                 <div>
-                                    <button @click="notifyMe" type="button" class="btn-primary" data-te-ripple-init>
-                                        Add Target
-                                    </button>
+                                    <button ripple type="button" class="btn-primary">Add Target</button>
                                 </div>
                             </nav>
                             <!-- End Breadcrumb -->

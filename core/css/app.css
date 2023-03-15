@@ -82,7 +82,7 @@
         @apply dark--text mx-2 text-xl font-semibold;
     }
     .menu-header {
-        @apply dark--text relative w-full truncate px-5 pt-2 text-sm uppercase;
+        @apply dark--text relative w-full truncate pl-2 pt-2 text-sm uppercase;
         @apply after:absolute after:left-0 after:top-3 after:w-full  after:bg-gray-300;
     }
     .mini-sidebar .sidebar-menu .menu-header {
@@ -98,21 +98,21 @@
         @apply pr-2;
     }
     .nav-link {
-        @apply flex items-center p-2 duration-200 hover:bg-light-gray hover:text-[#009ef7];
+        @apply flex items-center p-2 duration-200 hover:bg-light-gray hover:text-primary;
         @apply rounded-md font-normal hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
     .dropdown-button {
-        @apply w-full rounded-md duration-200 [&:not([data-te-collapse-collapsed])]:mb-2 [&:not([data-te-collapse-collapsed])]:text-[#009ef7];
+        @apply w-full rounded-md duration-200 [&:not([data-te-collapse-collapsed])]:mb-2 [&:not([data-te-collapse-collapsed])]:text-primary;
         @apply [&:not([data-te-collapse-collapsed])]:bg-light-gray dark:[&:not([data-te-collapse-collapsed])]:bg-gray-700;
     }
     .nav-link.nav-link-active {
-        @apply bg-light-gray dark:bg-gray-700;
+        @apply bg-light-gray text-primary dark:bg-gray-700;
     }
     .link-label {
         @apply mx-2 truncate text-sm;
     }
     .dropdown-menu {
-        @apply space-y-1 overflow-hidden;
+        @apply max-h-0 space-y-1 overflow-hidden duration-500;
     }
     .mini-sidebar .dropdown-menu {
         @apply [&:not([data-te-collapse-show])]:hidden !important;
@@ -125,7 +125,7 @@
         @apply flex h-6 w-6 items-center justify-center text-[10px] leading-[unset];
     }
     .dropdown-icon {
-        @apply ml-auto rotate-[-180deg] transform transition-transform group-[[data-te-collapse-collapsed]]:rotate-0;
+        @apply ml-auto transform transition-transform group-[.nav-link-active]:rotate-180;
     }
     .dropdown-link {
         @apply nav-link w-full truncate;
