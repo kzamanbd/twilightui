@@ -957,6 +957,9 @@ select{
 /* start top header components */
 
 .top-header{
+  position: sticky;
+  top: 0px;
+  z-index: 10;
   display: flex;
   height: 70px;
   flex-shrink: 0;
@@ -967,6 +970,12 @@ select{
   background-color: rgb(245 248 250 / var(--tw-bg-opacity));
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+@media (min-width: 1024px){
+  .top-header{
+    position: relative;
+  }
 }
 
 .header-btn{

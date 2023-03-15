@@ -28,7 +28,7 @@
 
     /* start top header components */
     .top-header {
-        @apply flex h-[70px] flex-shrink-0 items-center justify-between border-b bg-light-gray py-4;
+        @apply sticky top-0 z-10 flex h-[70px] flex-shrink-0 items-center justify-between border-b bg-light-gray py-4 lg:relative;
     }
     .header-btn {
         @apply dark--text relative flex items-center p-2 text-xs font-medium;
