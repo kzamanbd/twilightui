@@ -42,7 +42,7 @@
                             <!-- dashboard start -->
                             <li class="menu-item" x-data="accordionItem('dashboard')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -52,31 +52,31 @@
                                     <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
-                                        <a href="index.html" class="dropdown-link active">
+                                    <li class="dropdown-item group">
+                                        <a href="index.html" class="dropdown-link active" data-ripple>
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Default</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="analytics.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Analytics</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="ecommerce.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">eCommerce</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="online-courses.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Online Courses</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="marketing.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Marketing</span>
@@ -89,7 +89,7 @@
                             <!-- components start -->
                             <li class="menu-item" x-data="accordionItem('components')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -99,43 +99,43 @@
                                     <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./alerts.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Alert</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./components/badge.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Badge</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./components/button.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Button</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./components/dropdown.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Dropdown</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./components/collapse.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Collapse</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./components/pagination" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Pagination</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./components/modals.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Modals</span>
@@ -152,7 +152,7 @@
                             <!-- form elements start -->
                             <li class="menu-item" x-data="accordionItem('form-elements')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -162,37 +162,37 @@
                                     <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./input.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Input</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./forms/input-group.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Input Group</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./forms/select.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Select</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./forms/radio.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Radio</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./forms/checkbox.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Checkbox</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./forms/textarea.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Textarea</span>
@@ -218,7 +218,7 @@
                             <!-- user profile start -->
                             <li class="menu-item" x-data="accordionItem('user-profile')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -229,25 +229,25 @@
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./user-profile/overview.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Overview</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./user-profile/documents.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Documents</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./user-profile/followers.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Followers</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./user-profile/activities.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Activities</span>
@@ -260,7 +260,7 @@
                             <!-- accounts start -->
                             <li class="menu-item" x-data="accordionItem('accounts')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -271,31 +271,31 @@
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./accounts/overview.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Overview</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./accounts/settings.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Settings</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./accounts/statements.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Statements</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./accounts/activities.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Activities</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./accounts/logs.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Logs</span>
@@ -308,7 +308,7 @@
                             <!-- Authentication start -->
                             <li class="menu-item" x-data="accordionItem('authentication')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -319,31 +319,31 @@
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="/login.html" class="dropdown-link" target="_blank">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Login</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./authentication/register.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Register</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./authentication/reset-password.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Reset Password</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./authentication/forget-password.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Forget Password</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./authentication/new-password.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">New Password</span>
@@ -356,7 +356,7 @@
                             <!-- corporate start -->
                             <li class="menu-item" x-data="accordionItem('corporate')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -367,31 +367,31 @@
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./corporate/about.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">About</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./corporate/our-team.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Our Team</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./corporate/contact-us.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Contact Us</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./corporate/licenses.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Licenses</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./corporate/sitemap.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Sitemap</span>
@@ -404,7 +404,7 @@
                             <!-- utilities start -->
                             <li class="menu-item" x-data="accordionItem('utilities')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -415,19 +415,19 @@
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./utilities/modals.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Modals</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./utilities/search.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Search</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./utilities/wizards.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Wizards</span>
@@ -440,7 +440,7 @@
                             <!-- Careers pages start -->
                             <li class="menu-item" x-data="accordionItem('careers')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -450,13 +450,13 @@
                                     <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./careers/careers-list.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Careers List</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./careers/apply.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Careers Apply</span>
@@ -469,7 +469,7 @@
                             <!-- widgets start -->
                             <li class="menu-item" x-data="accordionItem('widgets')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -479,37 +479,37 @@
                                     <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./widgets/lists.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Lists</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./widgets/statistics.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Statistics</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./widgets/charts.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Charts</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./widgets/mixed.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Mixed</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./widgets/tables.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Tables</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./widgets/feeds.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Feeds</span>
@@ -526,7 +526,7 @@
                             <!-- project start -->
                             <li class="menu-item" x-data="accordionItem('projects')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -536,31 +536,31 @@
                                     <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./apps/project.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">My Project</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./apps/view-project.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">View Project</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./apps/users.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Users</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./apps/files.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Files</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./apps/settings.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Settings</span>
@@ -573,7 +573,7 @@
                             <!-- eCommerce start -->
                             <li class="menu-item" x-data="accordionItem('eCommerce')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -583,31 +583,31 @@
                                     <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./eCommerce/category.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Category</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./eCommerce/sales.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Sales</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./eCommerce/customers.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Customers</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./eCommerce/reports.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Reports</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./eCommerce/settings.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Settings</span>
@@ -621,7 +621,7 @@
                             <
                             <li class="menu-item" x-data="accordionItem('contacts')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -631,31 +631,31 @@
                                     <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./contacts/getting-started.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Getting Started</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./contacts/add-contact.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Add Contact</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./contacts/edit-contact.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Edit Contact</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./contacts/view-contact.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">View Contact</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./contacts/settings.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Settings</span>
@@ -668,7 +668,7 @@
                             <!-- user management start -->
                             <li class="menu-item" x-data="accordionItem('user-management')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -678,19 +678,19 @@
                                     <span class="material-icons dropdown-icon"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./user-management/users.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Users</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./user-management/roles.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Roles</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./user-management/permissions.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Permissions</span>
@@ -703,7 +703,7 @@
                             <!-- customers start -->
                             <li class="menu-item" x-data="accordionItem('customers')">
                                 <div
-                                    ripple
+                                    data-ripple
                                     role="button"
                                     class="nav-link group"
                                     @click="handleClick"
@@ -714,19 +714,19 @@
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./customers/getting-started.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Getting Started</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./customers/customer-listing.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Customer Listing</span>
                                         </a>
                                     </li>
-                                    <li class="dropdown-item group" data-te-ripple-init>
+                                    <li class="dropdown-item group">
                                         <a href="./customers/customer-details.html" class="dropdown-link">
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Customer Details</span>
@@ -1031,7 +1031,7 @@
                                     </ol>
                                 </div>
                                 <div>
-                                    <button ripple type="button" class="btn-primary">Add Target</button>
+                                    <button data-ripple type="button" class="btn-primary">Add Target</button>
                                 </div>
                             </nav>
                             <!-- End Breadcrumb -->
@@ -1066,7 +1066,7 @@
                                     <div class="card dark--text h-48 min-h-full p-4">
                                         <div class="mb-2 flex justify-between">
                                             <h3 class="text-xl">Statistics Card</h3>
-                                            <button type="button" class="material-icons btn-circle" data-te-ripple-init>
+                                            <button data-ripple type="button" class="material-icons btn-circle">
                                                 more_vert
                                             </button>
                                         </div>
@@ -1142,7 +1142,7 @@
                                 <div class="card dark--text p-4 md:col-span-4 lg:col-span-1">
                                     <div class="mb-2 flex justify-between">
                                         <h3 class="text-xl">Total Sales</h3>
-                                        <button type="button" class="material-icons btn-circle" data-te-ripple-init>
+                                        <button data-ripple type="button" class="material-icons btn-circle">
                                             more_vert
                                         </button>
                                     </div>
@@ -1168,7 +1168,7 @@
                                     <div class="card dark--text p-4">
                                         <div class="mb-2 flex justify-between">
                                             <h3 class="text-xl">Sales Overview</h3>
-                                            <button type="button" class="material-icons btn-circle" data-te-ripple-init>
+                                            <button data-ripple type="button" class="material-icons btn-circle">
                                                 more_vert
                                             </button>
                                         </div>
@@ -1261,7 +1261,7 @@
                                     <div class="card dark--text relative p-4">
                                         <div class="mb-2 flex justify-between">
                                             <h3 class="text-xl">Activity Timeline</h3>
-                                            <button type="button" class="material-icons btn-circle" data-te-ripple-init>
+                                            <button data-ripple type="button" class="material-icons btn-circle">
                                                 more_vert
                                             </button>
                                         </div>
@@ -1337,10 +1337,7 @@
                                         <div class="card col-span-2 p-4">
                                             <div class="mb-2 flex justify-between">
                                                 <h3 class="text-xl">Weekly Sales</h3>
-                                                <button
-                                                    type="button"
-                                                    class="material-icons btn-circle"
-                                                    data-te-ripple-init>
+                                                <button data-ripple type="button" class="material-icons btn-circle">
                                                     more_vert
                                                 </button>
                                             </div>
@@ -1413,10 +1410,7 @@
                                                             </svg>
                                                         </span>
                                                     </div>
-                                                    <button
-                                                        type="button"
-                                                        class="material-icons btn-circle"
-                                                        data-te-ripple-init>
+                                                    <button data-ripple type="button" class="material-icons btn-circle">
                                                         more_vert
                                                     </button>
                                                 </div>

@@ -1,7 +1,7 @@
 // self calling function
 (function () {
     // get all elements with ripple attribute
-    const ripples = document.querySelectorAll('[ripple]');
+    const ripples = document.querySelectorAll('[data-ripple]');
 
     // add event listener to each element
     function debounce(func, delay) {
