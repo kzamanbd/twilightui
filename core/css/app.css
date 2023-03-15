@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -19,18 +19,16 @@
     .twilight {
         @apply dark--text flex h-screen bg-light-gray dark:bg-dark-secondary;
     }
+    .twilight-body {
+        @apply flex flex-1 flex-col overflow-y-auto overflow-x-hidden;
+    }
     .twilight-content {
         @apply mx-auto px-6 pb-4 pt-2 dark:text-gray-300 md:pt-4;
     }
 
     /* start top header components */
     .top-header {
-        @apply sticky top-0 z-10 flex flex-shrink-0 items-center;
-        @apply mx-6 justify-between py-4 transition-all duration-200 ease-in-out;
-    }
-    .sticky-header {
-        @apply bg-white px-4 shadow-md dark:bg-dark-primary dark:shadow-lg;
-        @apply dark--text rounded-bl-lg rounded-br-lg;
+        @apply flex h-[70px] flex-shrink-0 items-center justify-between border-b bg-light-gray py-4;
     }
     .header-btn {
         @apply dark--text relative flex items-center p-2 text-xs font-medium;
@@ -43,8 +41,8 @@
 
     /* start sidebar menu components */
     .sidebar-menu {
-        @apply fixed inset-y-0 left-0 z-30 w-64 border-r border-gray-200 bg-white dark:bg-dark-primary;
-        @apply transform overflow-hidden transition duration-200 dark:border-none;
+        @apply fixed inset-y-0 left-0 z-30 w-64 border-gray-200 bg-white dark:bg-dark-primary;
+        @apply transform overflow-hidden shadow-sm shadow-slate-100 transition duration-200 dark:border-none;
         @apply transition-all duration-200 ease-in-out lg:static lg:inset-0 lg:translate-x-0 !important;
     }
     .sidebar-menu.open {
@@ -60,16 +58,16 @@
         @apply dark--text absolute right-2 top-2 cursor-pointer text-lg lg:hidden;
     }
     .mini-sidebar .sidebar-menu {
-        @apply fixed inset-y-0 left-0 z-30 w-16 hover:w-64 !important;
+        @apply fixed inset-y-0 left-0 z-30 w-[70px] hover:w-64 !important;
     }
     .mini-sidebar .twilight-body {
         @apply pl-16;
     }
     .brand-logo {
-        @apply relative flex items-center px-2 pb-2 pt-[10px];
+        @apply relative flex h-[70px] items-center border-b p-2;
     }
     .mini-sidebar .sidebar-menu .brand-logo {
-        @apply w-16;
+        @apply w-[70px];
     }
     .mini-sidebar .sidebar-menu:hover .brand-logo {
         @apply w-64;
@@ -94,25 +92,22 @@
         @apply indent-0 after:hidden after:border-b-0;
     }
     .nav-menu {
-        @apply py-2 pl-2 pr-4;
+        @apply mt-4 px-4 pb-2;
     }
     .mini-sidebar .sidebar-menu:not(:hover) .nav-menu {
-        @apply p-2;
+        @apply pr-2;
     }
     .nav-link {
-        @apply dark--text flex items-center p-2 hover:bg-gray-200 hover:text-gray-900;
-        @apply rounded-md font-medium hover:dark:bg-gray-700 dark:hover:text-gray-100;
+        @apply flex items-center p-2 duration-200 hover:bg-light-gray hover:text-[#009ef7];
+        @apply rounded-md font-normal hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
     .dropdown-button {
-        @apply w-full rounded-md duration-200 [&:not([data-te-collapse-collapsed])]:mb-2;
-        @apply [&:not([data-te-collapse-collapsed])]:bg-gray-200 dark:[&:not([data-te-collapse-collapsed])]:bg-gray-700;
+        @apply w-full rounded-md duration-200 [&:not([data-te-collapse-collapsed])]:mb-2 [&:not([data-te-collapse-collapsed])]:text-[#009ef7];
+        @apply [&:not([data-te-collapse-collapsed])]:bg-light-gray dark:[&:not([data-te-collapse-collapsed])]:bg-gray-700;
     }
     .nav-link.nav-link-active {
-        @apply bg-gray-200 dark:bg-gray-700;
+        @apply bg-light-gray dark:bg-gray-700;
     }
-    /* .mini-sidebar .sidebar-menu:not(:hover) .nav-link {
-        @apply flex justify-center p-2;
-    } */
     .link-label {
         @apply mx-2 truncate text-sm;
     }
@@ -159,7 +154,14 @@
     .user-menu-link {
         @apply flex items-center justify-between px-4 py-2 text-sm;
         @apply dark--text rounded-md hover:text-primary-600;
-        @apply hover:bg-gray-100 hover:dark:bg-dark-secondary;
+        @apply hover:bg-light-gray hover:dark:bg-dark-secondary;
+    }
+    .language-dropdown {
+        @apply absolute left-0 -m-40 hidden w-40 space-y-2 rounded-md bg-white px-2 py-4 shadow-xl group-hover:block dark:bg-dark-primary;
+    }
+    .language-dropdown-item {
+        @apply dark--text flex items-center rounded-md px-4 py-2 hover:bg-light-gray hover:text-primary-600;
+        @apply hover:dark:bg-dark-secondary dark:hover:text-gray-300;
     }
     /* end user menu components */
     .footer {
@@ -194,7 +196,7 @@
 
     /* button components */
     .btn-primary {
-        @apply bg-primary-600 text-white hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300;
+        @apply bg-primary text-white hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300;
         @apply mb-2 rounded-lg px-5 py-2.5 text-sm font-medium dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-900;
     }
     .btn-circle {

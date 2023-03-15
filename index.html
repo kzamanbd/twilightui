@@ -12,6 +12,7 @@
         <!-- Core Script -->
         <script src="./core/plugins/tw-elements/index.min.js"></script>
         <script src="./core/plugins/simplebar/simplebar.min.js"></script>
+        <script src="https://unpkg.com/alpinejs" defer></script>
         <script src="./core/scripts/app.js"></script>
         <!-- Apex Charts -->
         <link rel="stylesheet" href="./features/plugins/apexcharts/apexcharts.css" />
@@ -848,9 +849,9 @@
                     </nav>
                 </aside>
 
-                <div class="twilight-body flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
-                    <header id="sticky__header" class="top-header">
-                        <div class="flex items-center">
+                <div class="twilight-body">
+                    <header class="top-header">
+                        <div class="ml-6 flex items-center">
                             <button
                                 type="button"
                                 aria-label="Toggle Menu"
@@ -881,7 +882,7 @@
                             </button>
                         </div>
 
-                        <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-4 pr-6">
                             <div class="relative">
                                 <button type="button" class="header-btn" aria-label="Search">
                                     <svg
@@ -931,7 +932,7 @@
                                 </svg>
                             </button>
 
-                            <div class="relative">
+                            <div class="relative" data-te-dropdown-ref>
                                 <button
                                     type="button"
                                     data-te-dropdown-toggle-ref
@@ -1012,7 +1013,7 @@
                                 </div>
                             </div>
 
-                            <div class="relative">
+                            <div class="relative" data-te-dropdown-ref>
                                 <button
                                     type="button"
                                     data-te-dropdown-toggle-ref
@@ -1021,18 +1022,18 @@
                                     class="relative z-10 block h-8 w-8 overflow-hidden rounded-full shadow focus:outline-none">
                                     <img
                                         class="h-full w-full object-cover"
-                                        src="https://www.gravatar.com/avatar/7d07260bf12eaff12086c86ea14849d1"
+                                        src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=ffffff"
                                         alt="Your avatar" />
                                 </button>
 
                                 <div
                                     data-te-dropdown-menu-ref
-                                    class="absolute right-0 z-20 hidden w-64 rounded-md bg-white py-2 shadow-xl dark:bg-dark-primary [&[data-te-dropdown-show]]:block">
+                                    class="absolute right-0 z-20 hidden w-64 rounded-md bg-white py-2 shadow-2xl dark:bg-dark-primary [&[data-te-dropdown-show]]:block">
                                     <div class="flex items-center border-b px-4 py-2 dark:border-gray-700">
                                         <div class="flex-shrink-0">
                                             <img
                                                 class="h-8 w-8 rounded-full object-cover"
-                                                src="https://www.gravatar.com/avatar/7d07260bf12eaff12086c86ea14849d1"
+                                                src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=F5F8FA"
                                                 alt="Your avatar" />
                                         </div>
                                         <div class="ml-3">
@@ -1052,7 +1053,7 @@
                                             <a href="#" class="user-menu-link">
                                                 My Projects
                                                 <span
-                                                    class="ml-1 inline-flex items-center justify-center rounded-full bg-primary-600 px-2 py-1 text-xs font-bold leading-none text-white">
+                                                    class="ml-1 inline-flex items-center justify-center rounded-full bg-primary px-2 py-1 text-xs font-bold leading-none text-white">
                                                     9
                                                 </span>
                                             </a>
@@ -1073,18 +1074,15 @@
                                                     English
                                                 </span>
                                                 <!-- language dropdown -->
-                                                <div
-                                                    class="absolute left-0 -m-40 hidden w-40 space-y-2 rounded-md bg-white px-2 py-4 shadow-xl group-hover:block dark:bg-dark-primary">
-                                                    <div
-                                                        class="dark--text flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:text-primary-600 hover:dark:bg-dark-secondary dark:hover:text-gray-300">
+                                                <div class="language-dropdown">
+                                                    <div class="language-dropdown-item">
                                                         <img
                                                             src="./core/images/flags/united-states.svg"
                                                             class="mr-2 h-4 w-4 rounded-full"
                                                             alt="English" />
                                                         <span class="text-xs leading-none">English</span>
                                                     </div>
-                                                    <div
-                                                        class="dark--text flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:text-primary-600 hover:dark:bg-dark-secondary dark:hover:text-gray-300">
+                                                    <div class="language-dropdown-item">
                                                         <img
                                                             src="./core/images/flags/france.svg"
                                                             class="mr-2 h-4 w-4 rounded-full"
@@ -1159,7 +1157,7 @@
                                         <span class="ml-2 text-green-500">+45%</span>
                                     </div>
                                     <span
-                                        class="mr-2 rounded-xl bg-primary-600/10 px-3 py-1 text-sm font-semibold text-primary-600 dark:bg-blue-200 dark:text-blue-800">
+                                        class="mr-2 rounded-xl bg-sky-100 px-3 py-1 text-sm font-semibold text-primary dark:bg-blue-200 dark:text-blue-800">
                                         Year of 2021
                                     </span>
                                 </div>
@@ -1187,7 +1185,7 @@
                                         <p>Total 48.5% growth 😎 this month</p>
                                         <div class="mt-10 grid grid-cols-3 gap-4">
                                             <div class="flex items-center space-x-2">
-                                                <div class="rounded bg-primary-600 p-1 text-white md:p-2">
+                                                <div class="rounded bg-primary p-1 text-white md:p-2">
                                                     <span aria-hidden="true">
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"

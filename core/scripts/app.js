@@ -47,18 +47,6 @@ const app = function () {
         sidebarMenu.classList.remove('open');
         sidebarShadow.classList.toggle('hidden');
     });
-
-    const header = document.getElementById('sticky__header');
-    const scrollable = document.querySelector('.twilight-body');
-
-    scrollable?.addEventListener('scroll', () => {
-        // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-        if (scrollable.scrollTop > 0) {
-            header?.classList.add('sticky-header');
-        } else {
-            header?.classList.remove('sticky-header');
-        }
-    });
 };
 
 window.onload = app;

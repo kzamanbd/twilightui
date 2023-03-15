@@ -1,7 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
-const primary = colors.violet;
+const primary = colors.sky;
 
 module.exports = {
     content: ['./**/*.html', './core/**/*.js'],
@@ -26,7 +26,7 @@ module.exports = {
                     700: primary[700],
                     800: primary[800],
                     900: primary[900],
-                    DEFAULT: primary[500],
+                    DEFAULT: '#009ef7',
                 },
                 info: '#56B6F7',
                 danger: colors.red[500],
@@ -38,7 +38,7 @@ module.exports = {
                 sidebar: 'calc(100vh - 68px)',
             },
             fontFamily: {
-                sans: ['Roboto', ...defaultTheme.fontFamily.sans],
+                sans: ['Inter, Helvetica, "sans-serif"', ...defaultTheme.fontFamily.sans],
             },
         },
     },
