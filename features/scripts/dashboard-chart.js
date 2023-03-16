@@ -179,7 +179,7 @@ new ApexCharts(document.querySelector('#revenue-report-charts'), {
 // Sales Overview
 new ApexCharts(document.querySelector('#sales-overview-charts'), {
     labels: ['Apparel', 'Electronics', 'FMCG', 'Other Sales'],
-    colors: ['#009ef7', '#AC39FF', '#C574FF', '#DDDDDD'],
+    colors: ['#009EF7', '#47BE7D', '#C574FF', '#DDDDDD'],
     chart: {
         type: 'donut',
         sparkline: {
@@ -222,7 +222,7 @@ new ApexCharts(document.querySelector('#sales-overview-charts'), {
 
 // Weekly Sales
 new ApexCharts(document.querySelector('#weekly-sales-charts'), {
-    colors: ['#F7EBFF', '#F7EBFF', '#F7EBFF', '#F7EBFF', '#B857FF', '#F7EBFF', '#F7EBFF'],
+    colors: ['#FFF8DD', '#009ef7c4', '#009EF7', '#009ef7a1', '#50CD89', '#F7EBFF', '#F7EBFF'],
     chart: {
         type: 'bar',
         toolbar: {

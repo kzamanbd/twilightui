@@ -26,7 +26,7 @@ module.exports = {
                     700: primary[700],
                     800: primary[800],
                     900: primary[900],
-                    DEFAULT: '#009ef7',
+                    DEFAULT: '#009EF7',
                 },
                 info: '#56B6F7',
                 danger: colors.red[500],

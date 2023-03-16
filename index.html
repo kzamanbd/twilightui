@@ -11,34 +11,32 @@
         <link rel="stylesheet" href="./core/css/button-ripple.css" />
         <link rel="stylesheet" href="./core/plugins/simplebar/simplebar.css" />
         <!-- Core Script -->
-        <script src="./core/plugins/tw-elements/index.min.js"></script>
         <script src="./core/plugins/simplebar/simplebar.min.js"></script>
         <script src="https://unpkg.com/alpinejs" defer></script>
         <script src="./core/scripts/button-ripple.js" defer></script>
         <script src="./core/scripts/app.js"></script>
-        <script src="./core/scripts/init.js"></script>
         <!-- Apex Charts -->
         <link rel="stylesheet" href="./features/plugins/apexcharts/apexcharts.css" />
     </head>
 
     <body>
         <div id="app" x-data="twilightTheme">
-            <div x-ref="loading" id="loading" class="loading duration-300">Loading.....</div>
+            <div x-ref="loading" class="loading duration-300">Loading.....</div>
 
             <div class="twilight">
-                <div class="sidebar-shadow hidden"></div>
+                <div x-on:click="toggleMenuOpen" class="sidebar-shadow" :class="{ show: isMenuOpen }"></div>
 
-                <aside id="sidebar-menu" class="sidebar-menu closed">
+                <aside class="sidebar-menu" :class="{ open: isMenuOpen }">
                     <div id="brand-logo" class="brand-logo">
                         <a href="/index.html" class="flex items-center">
-                            <img class="h-12 w-12" src="./core/images/logo.svg" alt="logo" />
+                            <img class="h-12 w-12" src="./core/images/logo.png" alt="logo" />
                             <span class="app-name"> Twilight </span>
                         </a>
-                        <span class="material-icons sidebar-close"> close </span>
+                        <span x-on:click="toggleMenuOpen" class="material-icons sidebar-close"> close </span>
                     </div>
 
                     <nav data-simplebar class="h-sidebar overflow-y-auto">
-                        <ul id="menu-accordion" class="nav-menu space-y-2" x-init="currentActiveTab('dashboard')">
+                        <ul class="nav-menu space-y-2" x-init="activeAccordion('dashboard')">
                             <!-- dashboard start -->
                             <li class="menu-item" x-data="accordionItem('dashboard')">
                                 <div
@@ -618,7 +616,6 @@
                             <!-- eCommerce end -->
 
                             <!-- contacts start -->
-                            <
                             <li class="menu-item" x-data="accordionItem('contacts')">
                                 <div
                                     data-ripple
@@ -744,8 +741,8 @@
                         <div class="ml-6 flex items-center">
                             <button
                                 type="button"
+                                x-on:click="toggleMenuOpen"
                                 aria-label="Toggle Menu"
-                                id="toggleMenuBtn"
                                 class="text-gray-500 focus:outline-none lg:hidden">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -758,7 +755,7 @@
                             </button>
                             <button
                                 type="button"
-                                id="miniSidebarBtn"
+                                x-on:click="toggleMiniSidebar"
                                 class="hidden text-gray-500 focus:outline-none lg:block"
                                 aria-label="Mini Sidebar">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -798,7 +795,7 @@
                                 </button>
                             </div>
 
-                            <button type="button" id="toggleTheme" class="header-btn" aria-label="Themes">
+                            <button type="button" x-on:click="toggleTheme" class="header-btn" aria-label="Themes">
                                 <svg
                                     aria-hidden="true"
                                     data-toggle-icon="sun"
@@ -822,10 +819,11 @@
                                 </svg>
                             </button>
 
-                            <div class="relative" data-te-dropdown-ref>
+                            <div class="relative" x-data="{ isOpen: false }">
                                 <button
                                     type="button"
-                                    data-te-dropdown-toggle-ref
+                                    x-on:click="isOpen = !isOpen"
+                                    x-on:click.away="isOpen = false"
                                     class="header-btn"
                                     aria-label="Notification">
                                     <svg
@@ -843,8 +841,10 @@
                                 </button>
 
                                 <div
-                                    data-te-dropdown-menu-ref
-                                    class="absolute right-0 z-20 mt-5 hidden w-72 overflow-hidden rounded-md bg-white py-2 shadow-lg [&[data-te-dropdown-show]]:block">
+                                    x-show="isOpen"
+                                    x-transition:enter.duration.500ms
+                                    x-transition:leave.duration.400ms
+                                    class="absolute right-0 z-20 mt-5 w-72 overflow-hidden rounded-md bg-white py-2 shadow-lg">
                                     <div class="py-2">
                                         <a
                                             href="/"
@@ -903,10 +903,11 @@
                                 </div>
                             </div>
 
-                            <div class="relative" data-te-dropdown-ref>
+                            <div class="relative" x-data="{ isOpen: false }">
                                 <button
                                     type="button"
-                                    data-te-dropdown-toggle-ref
+                                    x-on:click="isOpen = !isOpen"
+                                    x-on:click.away="isOpen = false"
                                     aria-expanded="false"
                                     aria-label="User Profile"
                                     class="relative z-10 block h-8 w-8 overflow-hidden rounded-full shadow focus:outline-none">
@@ -917,8 +918,10 @@
                                 </button>
 
                                 <div
-                                    data-te-dropdown-menu-ref
-                                    class="absolute right-0 z-20 hidden w-64 rounded-md bg-white py-2 shadow-2xl dark:bg-dark-primary [&[data-te-dropdown-show]]:block">
+                                    x-show="isOpen"
+                                    x-transition:enter.duration.500ms
+                                    x-transition:leave.duration.400ms
+                                    class="absolute right-0 z-20 mt-5 w-64 rounded-md bg-white py-2 shadow-2xl dark:bg-dark-primary">
                                     <div class="flex items-center border-b px-4 py-2 dark:border-gray-700">
                                         <div class="flex-shrink-0">
                                             <img

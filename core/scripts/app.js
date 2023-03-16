@@ -1,52 +1,72 @@
-// Description: Main app script
-const app = function () {
-    document.getElementById('loading').classList.add('hidden');
+// alpine.js config
+document.addEventListener('alpine:init', () => {
+    //! get theme from local storage
     function getTwilightTheme() {
         // if user already changed the theme, use it
         if (window.localStorage.getItem('dark')) {
             return JSON.parse(window.localStorage.getItem('dark'));
         }
+
         // else return their preferences
         return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
 
-    //? toggle theme
-    if (getTwilightTheme()) document.body.classList.add('dark');
-    document.getElementById('toggleTheme').addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-        //! set theme to local storage
-        window.localStorage.setItem('dark', !getTwilightTheme());
-    });
+    const testUser = {
+        name: 'John Doe',
+        email: 'john@example.com',
+        title: 'Software Engineer',
+        title2: 'Web dev',
+        status: 'Active',
+        role: 'Owner',
+    };
 
-    //? sidebar
-    const sidebarMenu = document.getElementById('sidebar-menu');
-    const sidebarShadow = document.querySelector('.sidebar-shadow');
-    document.getElementById('toggleMenuBtn').addEventListener('click', () => {
-        if (sidebarMenu.classList.contains('closed')) {
-            sidebarMenu.classList.add('open');
-            sidebarMenu.classList.remove('closed');
-            sidebarShadow.classList.toggle('hidden');
-        } else {
-            sidebarMenu.classList.add('closed');
-            sidebarMenu.classList.remove('open');
-        }
+    Alpine.store('accordion', {
+        tab: undefined,
     });
+    //? alpine data
+    Alpine.data('twilightTheme', () => ({
+        init() {
+            this.$refs.loading.classList.add('hidden');
+            if (getTwilightTheme()) {
+                document.body.classList.add('dark');
+            }
+        },
+        users: [...Array(10).keys()].map(() => testUser),
+        toggleTheme() {
+            document.body.classList.toggle('dark');
+            //! set theme to local storage
+            window.localStorage.setItem('dark', !getTwilightTheme());
+        },
+        // sidebar
+        isMenuOpen: false,
+        isMiniSidebar: false,
+        toggleMenuOpen() {
+            this.isMenuOpen = !this.isMenuOpen;
+        },
+        toggleMiniSidebar() {
+            this.isMiniSidebar = !this.isMiniSidebar;
+            document.body.classList.toggle('mini-sidebar');
+        },
+        activeAccordion(tabName) {
+            this.$store.accordion.tab = tabName;
+        },
+    }));
 
-    sidebarShadow.addEventListener('click', () => {
-        sidebarMenu.classList.add('closed');
-        sidebarMenu.classList.remove('open');
-        sidebarShadow.classList.toggle('hidden');
-    });
-
-    document.getElementById('miniSidebarBtn').addEventListener('click', () => {
-        document.body.classList.toggle('mini-sidebar');
-    });
-
-    document.querySelector('.sidebar-close').addEventListener('click', () => {
-        sidebarMenu.classList.add('closed');
-        sidebarMenu.classList.remove('open');
-        sidebarShadow.classList.toggle('hidden');
-    });
-};
-
-window.onload = app;
+    Alpine.data('accordionItem', idx => ({
+        init() {
+            this.idx = idx;
+        },
+        idx: null,
+        handleClick() {
+            this.$store.accordion.tab = this.$store.accordion.tab == this.idx ? null : this.idx;
+        },
+        activeAccordion() {
+            return this.$store.accordion.tab == this.idx ? 'nav-link-active' : '';
+        },
+        handleToggle() {
+            return this.$store.accordion.tab == this.idx
+                ? `max-height: ${this.$refs.tab.scrollHeight}px; margin-top: 12px`
+                : '';
+        },
+    }));
+});
