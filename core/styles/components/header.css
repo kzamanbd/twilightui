@@ -1,7 +1,7 @@
 @layer components {
     /* start top header components */
     .top-header {
-        @apply sticky top-0 z-10 flex h-[70px] flex-shrink-0 items-center  lg:relative;
+        @apply sticky top-0 z-10 flex h-[70px] flex-shrink-0 items-center dark:border-b-gray-700 lg:relative;
         @apply justify-between border-b bg-light-gray py-4 dark:bg-dark-primary dark:shadow-lg;
     }
     .header-btn {

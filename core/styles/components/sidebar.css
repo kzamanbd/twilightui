@@ -2,7 +2,7 @@
     /* start sidebar menu components */
     .sidebar-menu {
         @apply fixed inset-y-0 left-0 z-30 w-64 border-gray-200 bg-white dark:bg-dark-primary;
-        @apply transform overflow-hidden shadow-sm shadow-slate-100 transition duration-200 dark:border-none;
+        @apply transform overflow-hidden shadow-sm transition duration-200 dark:border-none;
         @apply transition-all duration-200 ease-in-out lg:static lg:inset-0 lg:translate-x-0 !important;
     }
     .sidebar-menu {
@@ -21,7 +21,7 @@
         @apply lg:pl-16;
     }
     .brand-logo {
-        @apply relative flex h-[70px] items-center border-b py-2 px-4;
+        @apply relative flex h-[70px] items-center border-b py-2 px-4 dark:border-b-gray-700;
     }
     .mini-sidebar .sidebar-menu .brand-logo {
         @apply w-[70px];
@@ -43,7 +43,7 @@
         @apply after:absolute after:left-0 after:top-3 after:w-full  after:bg-gray-300;
     }
     .mini-sidebar .sidebar-menu .menu-header {
-        @apply indent-10 after:block after:border-b after:border-gray-300;
+        @apply indent-10 after:block after:border-b after:border-gray-300 dark:after:bg-gray-700;
     }
     .mini-sidebar .sidebar-menu:hover .menu-header {
         @apply indent-0 after:hidden after:border-b-0;
@@ -58,8 +58,8 @@
         @apply flex items-center p-2 duration-200 hover:bg-light-gray hover:text-primary;
         @apply rounded-md font-normal hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
-    .nav-link.nav-link-active {
-        @apply bg-light-gray text-primary dark:bg-gray-700;
+    .nav-link.active {
+        @apply bg-light-gray text-primary dark:bg-gray-700 dark:text-white;
     }
     .link-label {
         @apply mx-2 truncate text-sm;
@@ -78,7 +78,7 @@
         @apply flex h-6 w-6 items-center justify-center text-[10px] leading-[unset];
     }
     .dropdown-icon {
-        @apply ml-auto transform transition-transform group-[.nav-link-active]:rotate-180;
+        @apply ml-auto transform transition-transform group-[.active]:rotate-180;
     }
     .dropdown-link {
         @apply nav-link w-full truncate;

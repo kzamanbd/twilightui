@@ -61,7 +61,7 @@ document.addEventListener('alpine:init', () => {
             this.$store.accordion.tab = this.$store.accordion.tab == this.idx ? null : this.idx;
         },
         activeAccordion() {
-            return this.$store.accordion.tab == this.idx ? 'nav-link-active' : '';
+            return this.$store.accordion.tab == this.idx ? 'active' : '';
         },
         handleToggle() {
             return this.$store.accordion.tab == this.idx
