@@ -1,0 +1,22 @@
+@layer components {
+    /* dark theme */
+    .dark {
+        color-scheme: dark;
+    }
+    .dark--text {
+        @apply text-gray-700 dark:text-gray-300;
+    }
+    .loading {
+        @apply fixed inset-0 z-50 flex items-center justify-center;
+        @apply bg-gray-700/50 text-white backdrop-blur;
+    }
+    .twilight {
+        @apply dark--text flex h-screen bg-light-gray dark:bg-dark-secondary;
+    }
+    .twilight-body {
+        @apply flex flex-1 flex-col overflow-y-auto overflow-x-hidden;
+    }
+    .twilight-content {
+        @apply mx-auto px-6 pb-4 pt-2 dark:text-gray-300 md:pt-4;
+    }
+}

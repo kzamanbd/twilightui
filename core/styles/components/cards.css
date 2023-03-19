@@ -1,0 +1,11 @@
+@layer components {
+    .card {
+        @apply rounded-md bg-white shadow-sm dark:bg-dark-primary;
+    }
+    .card-header {
+        @apply dark--text border-b border-gray-200 p-4 dark:border-gray-700;
+    }
+    .card-body {
+        @apply p-4;
+    }
+}

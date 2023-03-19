@@ -1,0 +1,12 @@
+@layer components {
+    /* Alert components */
+    .alert {
+        @apply mb-4 rounded-md p-4 text-sm;
+    }
+    .alert-icon {
+        @apply flex items-center space-x-3;
+    }
+    .alert-dismiss {
+        @apply flex items-center justify-between space-x-3;
+    }
+}
