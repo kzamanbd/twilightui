@@ -14,8 +14,6 @@
         <script src="https://unpkg.com/alpinejs" defer></script>
         <script src="./core/scripts/button-ripple.js" defer></script>
         <script src="./core/scripts/app.js"></script>
-        <!-- Apex Charts -->
-        <link rel="stylesheet" href="./plugins/apexcharts/apexcharts.css" />
     </head>
 
     <body>
@@ -53,6 +51,12 @@
                                         <a href="index.html" class="dropdown-link active" data-ripple>
                                             <span class="dropdown-circle material-icons">circle</span>
                                             <span class="link-label">Default</span>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item group">
+                                        <a href="crm.html" class="dropdown-link">
+                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="link-label">CRM</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
@@ -1000,7 +1004,7 @@
                     <main class="flex-1">
                         <div class="twilight-content">
                             <!-- Breadcrumb -->
-                            <nav class="mb-2 flex items-center justify-between md:mb-4" aria-label="Breadcrumb">
+                            <nav class="mb-2 flex items-center justify-between md:mb-4">
                                 <div class="text-gray-700">
                                     <h3 class="text-base font-medium dark:text-gray-300">Dashboard</h3>
                                     <ol class="inline-flex items-center space-x-1 md:space-x-1">
@@ -1032,400 +1036,31 @@
                                         </li>
                                     </ol>
                                 </div>
-                                <div>
-                                    <button data-ripple type="button" class="btn-primary">Add Target</button>
-                                </div>
                             </nav>
                             <!-- End Breadcrumb -->
 
                             <div
                                 class="block items-stretch gap-4 space-y-4 md:grid md:grid-cols-8 lg:grid-cols-4 lg:space-y-0">
                                 <div class="card dark--text h-48 min-h-full p-4 md:col-span-4 lg:col-span-1">
-                                    <h3 class="pb-4 text-xl">Ratings</h3>
-                                    <div class="my-4 flex items-center">
-                                        <h2 class="dark--text text-2xl font-semibold">13k</h2>
-                                        <span class="ml-2 text-green-500">+45%</span>
-                                    </div>
-                                    <span
-                                        class="mr-2 rounded-xl bg-sky-100 px-3 py-1 text-sm font-semibold text-primary dark:bg-blue-200 dark:text-blue-800">
-                                        Year of 2021
-                                    </span>
+                                    <h3 class="pb-2 text-xl">Congratulations John!</h3>
+                                    <p>You have won Trophy</p>
                                 </div>
-
-                                <div class="card dark--text h-48 min-h-full p-4 md:col-span-4 lg:col-span-1">
-                                    <h3 class="pb-4 text-xl">Sessions</h3>
-                                    <div class="my-4 flex items-center">
-                                        <h2 class="dark--text text-2xl font-semibold">27k</h2>
-                                        <span class="ml-2 text-green-500">+45%</span>
-                                    </div>
-                                    <span
-                                        class="dark--text mr-2 rounded-xl bg-gray-200 px-3 py-1 text-sm font-semibold dark:bg-blue-200 dark:text-blue-800">
-                                        Last Week
-                                    </span>
-                                </div>
-
-                                <div class="col-span-8 lg:col-span-2">
-                                    <div class="card dark--text h-48 min-h-full p-4">
-                                        <div class="mb-2 flex justify-between">
-                                            <h3 class="text-xl">Statistics Card</h3>
-                                            <button data-ripple type="button" class="material-icons btn-circle">
-                                                more_vert
-                                            </button>
-                                        </div>
-                                        <p>Total 48.5% growth 😎 this month</p>
-                                        <div class="mt-10 grid grid-cols-3 gap-4">
-                                            <div class="flex items-center space-x-2">
-                                                <div class="rounded bg-primary p-1 text-white md:p-2">
-                                                    <span aria-hidden="true">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            viewBox="0 0 24 24"
-                                                            role="img"
-                                                            aria-hidden="true"
-                                                            fill="currentColor"
-                                                            class="h-6 w-6 md:h-8 md:w-8">
-                                                            <path
-                                                                d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"></path>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <p class="mb-0 text-xs">Sales</p>
-                                                    <h3 class="font-weight-bold text-sm md:text-xl">245k</h3>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center space-x-2">
-                                                <div class="rounded bg-green-600 p-1 text-white md:p-2">
-                                                    <span aria-hidden="true">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            viewBox="0 0 24 24"
-                                                            role="img"
-                                                            aria-hidden="true"
-                                                            fill="currentColor"
-                                                            class="h-6 w-6 md:h-8 md:w-8">
-                                                            <path
-                                                                d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M12,13C14.67,13 20,14.33 20,17V20H4V17C4,14.33 9.33,13 12,13M12,14.9C9.03,14.9 5.9,16.36 5.9,17V18.1H18.1V17C18.1,16.36 14.97,14.9 12,14.9Z"></path>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <p class="mb-0 text-xs">Customers</p>
-                                                    <h3 class="font-weight-bold text-sm md:text-xl">15.7kk</h3>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center space-x-2">
-                                                <div class="rounded bg-yellow-400 p-1 text-white md:p-2">
-                                                    <span aria-hidden="true">
-                                                        <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            viewBox="0 0 24 24"
-                                                            role="img"
-                                                            aria-hidden="true"
-                                                            fill="currentColor"
-                                                            class="h-6 w-6 md:h-8 md:w-8">
-                                                            <path
-                                                                d="M16,17H5V7H16L19.55,12M17.63,5.84C17.27,5.33 16.67,5 16,5H5A2,2 0 0,0 3,7V17A2,2 0 0,0 5,19H16C16.67,19 17.27,18.66 17.63,18.15L22,12L17.63,5.84Z"></path>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                                <div class="ml-3">
-                                                    <p class="mb-0 text-xs">Product</p>
-                                                    <h3 class="font-weight-bold text-sm md:text-xl">1.7kk</h3>
-                                                </div>
+                                <div class="animate-pulse rounded bg-white shadow md:flex">
+                                    <div
+                                        class="h-24 w-24 rounded-full bg-gray-200 md:h-auto md:w-48 md:rounded-none"></div>
+                                    <div class="flex-1 space-y-4 p-4 text-center md:text-left">
+                                        <div class="flex justify-between">
+                                            <p class="w-12 bg-slate-200 text-[12px] text-slate-200">Loading</p>
+                                            <div class="flex space-x-2">
+                                                <p class="w-6 bg-slate-200 text-[12px] text-slate-200">l</p>
+                                                <p class="w-6 bg-slate-200 text-[12px] text-slate-200">l</p>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div
-                                class="mt-6 block items-stretch gap-4 space-y-4 md:grid md:grid-cols-8 lg:grid-cols-4 lg:space-y-0">
-                                <div class="card dark--text p-4 md:col-span-4 lg:col-span-1">
-                                    <div class="mb-2 flex justify-between">
-                                        <h3 class="text-xl">Total Sales</h3>
-                                        <button data-ripple type="button" class="material-icons btn-circle">
-                                            more_vert
-                                        </button>
-                                    </div>
-                                    <div class="my-2 flex items-center">
-                                        <h2 class="dark--text text-2xl font-semibold">$21,845</h2>
-                                        <span class="ml-2 text-green-500">+45%</span>
-                                    </div>
-                                    <div id="total-sales-charts"></div>
-                                </div>
-
-                                <div class="card dark--text p-4 md:col-span-4 lg:col-span-1">
-                                    <div class="flex items-center justify-between">
-                                        <h3 class="text-xl">Revenue Report</h3>
-                                        <span
-                                            class="dark--text rounded-xl bg-gray-100 px-2 py-1 text-xs dark:bg-blue-200 dark:text-blue-800">
-                                            This Year
-                                        </span>
-                                    </div>
-                                    <div id="revenue-report-charts"></div>
-                                </div>
-
-                                <div class="col-span-8 lg:col-span-2">
-                                    <div class="card dark--text p-4">
-                                        <div class="mb-2 flex justify-between">
-                                            <h3 class="text-xl">Sales Overview</h3>
-                                            <button data-ripple type="button" class="material-icons btn-circle">
-                                                more_vert
-                                            </button>
-                                        </div>
-                                        <div class="mt-4 gap-4 md:grid md:grid-cols-2">
-                                            <div id="sales-overview-charts"></div>
-                                            <div class="mt-8 space-x-2 md:mt-0">
-                                                <div class="flex items-center">
-                                                    <div class="rounded bg-purple-200 p-1 text-purple-500">
-                                                        <span aria-hidden="true" class="h-8 w-8">
-                                                            <svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="0 0 24 24"
-                                                                role="img"
-                                                                aria-hidden="true"
-                                                                fill="currentColor"
-                                                                class="h-8 w-8">
-                                                                <path
-                                                                    d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-                                                    <div class="ml-4 flex flex-col">
-                                                        <p class="dark--text mb-0 text-base">Number of Sales</p>
-                                                        <span class="dark--text text-xl font-semibold"> $86,400 </span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="my-6 border-b"></div>
-
-                                                <table class="sales-overview-stats-table w-full">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="flex items-center">
-                                                                    <span
-                                                                        class="mr-2 inline-flex h-3 w-3 items-center justify-center rounded-full bg-purple-500 text-xs dark:bg-gray-700"></span>
-                                                                    <span>Apparel</span>
-                                                                </div>
-                                                                <span
-                                                                    class="text--primary font-weight-semibold ml-4 text-base"
-                                                                    >$1,840</span
-                                                                >
-                                                            </td>
-                                                            <td>
-                                                                <div class="flex items-center">
-                                                                    <span
-                                                                        class="mr-2 inline-flex h-3 w-3 items-center justify-center rounded-full bg-purple-400 text-xs dark:bg-gray-700"></span>
-                                                                    <span>Electronic</span>
-                                                                </div>
-                                                                <span
-                                                                    class="text--primary font-weight-semibold ml-4 text-base"
-                                                                    >$11,420</span
-                                                                >
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="mt-4 flex items-center">
-                                                                    <span
-                                                                        class="mr-2 inline-flex h-3 w-3 items-center justify-center rounded-full bg-purple-200 text-xs dark:bg-gray-700"></span>
-                                                                    <span>FMCG</span>
-                                                                </div>
-                                                                <span
-                                                                    class="text--primary font-weight-semibold ml-4 text-base"
-                                                                    >$30,234</span
-                                                                >
-                                                            </td>
-                                                            <td>
-                                                                <div class="mt-4 flex items-center">
-                                                                    <span
-                                                                        class="mr-2 inline-flex h-3 w-3 items-center justify-center rounded-full bg-gray-400 text-xs dark:bg-gray-700"></span>
-                                                                    <span>Other Sales</span>
-                                                                </div>
-                                                                <span
-                                                                    class="text--primary font-weight-semibold ml-4 text-base"
-                                                                    >$46,054</span
-                                                                >
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-6 block items-stretch gap-4 space-y-4 md:grid md:grid-cols-2 lg:space-y-0">
-                                <div class="col-span-2 md:col-span-1">
-                                    <div class="card dark--text relative p-4">
-                                        <div class="mb-2 flex justify-between">
-                                            <h3 class="text-xl">Activity Timeline</h3>
-                                            <button data-ripple type="button" class="material-icons btn-circle">
-                                                more_vert
-                                            </button>
-                                        </div>
-                                        <ol class="relative space-y-8 border-l border-gray-200 dark:border-gray-700">
-                                            <li class="ml-4">
-                                                <div
-                                                    class="absolute -left-2 h-4 w-4 rounded-full border border-white bg-red-500 dark:border-gray-900 dark:bg-gray-700"></div>
-                                                <time
-                                                    class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                                    February 2022
-                                                </time>
-                                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                                    8 Invoices have been paid
-                                                </h3>
-                                                <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                                                    Invoices have been paid to the company.
-                                                </p>
-                                                <a href="#" class="flex items-center text-sm font-medium text-gray-900">
-                                                    <svg
-                                                        class="mr-2 h-5 w-5 fill-red-500"
-                                                        viewBox="0 0 20 20"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M10.1,11.4C10.08,11.44 9.81,13.16 8,16.09C8,16.09 4.5,17.91 5.33,19.27C6,20.35 7.65,19.23 9.07,16.59C9.07,16.59 10.89,15.95 13.31,15.77C13.31,15.77 17.17,17.5 17.7,15.66C18.22,13.8 14.64,14.22 14,14.41C14,14.41 12,13.06 11.5,11.2C11.5,11.2 12.64,7.25 10.89,7.3C9.14,7.35 9.8,10.43 10.1,11.4M10.91,12.44C10.94,12.45 11.38,13.65 12.8,14.9C12.8,14.9 10.47,15.36 9.41,15.8C9.41,15.8 10.41,14.07 10.91,12.44M14.84,15.16C15.42,15 17.17,15.31 17.1,15.64C17.04,15.97 14.84,15.16 14.84,15.16M7.77,17C7.24,18.24 6.33,19 6.1,19C5.87,19 6.8,17.4 7.77,17M10.91,10.07C10.91,10 10.55,7.87 10.91,7.92C11.45,8 10.91,10 10.91,10.07Z"></path>
-                                                    </svg>
-                                                    <span>invoice.pdf</span>
-                                                </a>
-                                            </li>
-                                            <li class="ml-4">
-                                                <div
-                                                    class="absolute -left-2 h-4 w-4 rounded-full border border-white bg-purple-500 dark:border-gray-900 dark:bg-gray-700"></div>
-                                                <time
-                                                    class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                                    March 2022
-                                                </time>
-                                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                                    Order #37745 from September
-                                                </h3>
-                                                <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-                                                    Invoices have been paid to the company.
-                                                </p>
-                                            </li>
-                                            <li class="ml-4">
-                                                <div
-                                                    class="absolute -left-2 h-4 w-4 rounded-full border border-white bg-sky-500 dark:border-gray-900 dark:bg-gray-700"></div>
-                                                <time
-                                                    class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                                    April 2022
-                                                </time>
-                                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                                    Client Meeting
-                                                </h3>
-                                                <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-                                                    Project meeting with john 👨🏻‍💻 @10:15am
-                                                </p>
-                                            </li>
-                                            <li class="ml-4">
-                                                <div
-                                                    class="absolute -left-2 h-4 w-4 rounded-full border border-white bg-yellow-500 dark:border-gray-900 dark:bg-gray-700"></div>
-                                                <time
-                                                    class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                                    April 2022
-                                                </time>
-                                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                                    Public Meeting
-                                                </h3>
-                                            </li>
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div class="col-span-2 md:col-span-1">
-                                    <div class="block items-end gap-4 space-y-4 md:grid md:grid-cols-3 lg:space-y-0">
-                                        <div class="card col-span-2 p-4">
-                                            <div class="mb-2 flex justify-between">
-                                                <h3 class="text-xl">Weekly Sales</h3>
-                                                <button data-ripple type="button" class="material-icons btn-circle">
-                                                    more_vert
-                                                </button>
-                                            </div>
-                                            <p>Total 85.4k Sales</p>
-                                            <div id="weekly-sales-charts" class="mb-6"></div>
-                                            <div class="flex justify-center space-x-10">
-                                                <div class="flex items-center space-x-2">
-                                                    <div class="rounded bg-purple-200 p-1 text-purple-500">
-                                                        <span aria-hidden="true">
-                                                            <svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="0 0 24 24"
-                                                                role="img"
-                                                                aria-hidden="true"
-                                                                fill="currentColor"
-                                                                class="h-6 w-6 md:h-8 md:w-8">
-                                                                <path
-                                                                    d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6H16Z"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-                                                    <div class="ml-3">
-                                                        <p class="mb-0 text-xs">Sales</p>
-                                                        <h3 class="font-weight-bold text-sm md:text-xl">245k</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center space-x-2">
-                                                    <div class="rounded bg-green-200 p-1 text-green-500">
-                                                        <span aria-hidden="true" class="h-8 w-8">
-                                                            <svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="0 0 24 24"
-                                                                role="img"
-                                                                aria-hidden="true"
-                                                                fill="currentColor"
-                                                                class="h-8 w-8">
-                                                                <path
-                                                                    d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-                                                    <div class="ml-3">
-                                                        <p class="mb-0 text-xs">Sales</p>
-                                                        <h3 class="font-weight-bold text-sm md:text-xl">245k</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="space-y-4">
-                                            <div class="card p-4">
-                                                <h3 class="text-xl">42.5k</h3>
-                                                <div id="total-growth-charts" class="my-4"></div>
-                                                <p>Total Growth</p>
-                                            </div>
-
-                                            <div class="card p-4">
-                                                <div class="mb-2 flex justify-between">
-                                                    <div class="rounded-full bg-green-500 p-1 text-white">
-                                                        <span aria-hidden="true" class="h-8 w-8">
-                                                            <svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="0 0 24 24"
-                                                                role="img"
-                                                                aria-hidden="true"
-                                                                fill="currentColor"
-                                                                class="h-8 w-8">
-                                                                <path
-                                                                    d="M6.5,17H15L18.5,12L15,7H6.5L10,12L6.5,17M15,19H3L7.5,12L3,5H15C15.69,5 16.23,5.3 16.64,5.86L21,12L16.64,18.14C16.23,18.7 15.69,19 15,19Z"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-                                                    <button data-ripple type="button" class="material-icons btn-circle">
-                                                        more_vert
-                                                    </button>
-                                                </div>
-                                                <div class="my-4">
-                                                    <p>New Project</p>
-                                                    <h2 class="dark--text my-2 text-2xl font-semibold">
-                                                        862
-                                                        <span class="ml-2 text-red-400">-18%</span>
-                                                    </h2>
-                                                    <p>Yearly Project</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <p class="bg-slate-200 text-[9px] text-slate-200">Loading...</p>
+                                        <p class="w-60 bg-slate-200 text-[9px] text-slate-200">Loading...</p>
+                                        <p class="w-36 bg-slate-200 text-[7px] text-slate-200">Loading...</p>
+                                        <p class="w-16 bg-slate-200 text-[7px] text-slate-200">Loading...</p>
+                                        <p class="w-20 bg-slate-200 text-[12px] text-slate-200">Loading...</p>
                                     </div>
                                 </div>
                             </div>
@@ -1456,8 +1091,5 @@
                 </div>
             </div>
         </div>
-
-        <script src="./plugins/apexcharts/apexcharts.min.js"></script>
-        <script src="./features/dashboard/dashboard-chart.js"></script>
     </body>
 </html>
