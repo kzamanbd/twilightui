@@ -2,7 +2,7 @@
     /* start sidebar menu components */
     .sidebar-menu {
         @apply fixed inset-y-0 left-0 z-30 w-64 border-gray-200 bg-white dark:bg-dark-primary;
-        @apply transform overflow-hidden shadow-sm transition duration-200 dark:border-none;
+        @apply transform overflow-hidden shadow-sm dark:border-none;
         @apply transition-all duration-200 ease-in-out lg:static lg:inset-0 lg:translate-x-0 !important;
     }
     .sidebar-menu {
