@@ -1,6 +1,6 @@
 # Tailwind Dashboard
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/916d954d-3f57-432c-80ca-9584f3e4c8b2/deploy-status)](https://app.netlify.com/sites/twilight-dashboard/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/916d954d-3f57-432c-80ca-9584f3e4c8b2/deploy-status)](https://app.netlify.com/sites/twilighti/deploys)
 
 A multi theme, completely accessible, with components and pages examples, ready for production dashboard.
 
