@@ -33,6 +33,7 @@ module.exports = {
                 success: colors.green[600],
                 warning: colors.yellow[500],
                 secondary: primary[300],
+                darkGray: '#6D7993',
             },
             height: {
                 sidebar: 'calc(100vh - 68px)',

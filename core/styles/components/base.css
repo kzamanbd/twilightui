@@ -4,7 +4,7 @@
         color-scheme: dark;
     }
     .dark--text {
-        @apply text-gray-700 dark:text-gray-300;
+        @apply text-gray-700 dark:text-[#6D7993];
     }
     .loading {
         @apply fixed inset-0 z-50 flex items-center justify-center;
@@ -14,9 +14,14 @@
         @apply dark--text flex h-screen bg-light-gray dark:bg-dark-secondary;
     }
     .twilight-body {
-        @apply flex flex-1 flex-col overflow-y-auto overflow-x-hidden;
+        @apply flex flex-1 flex-col overflow-y-auto overflow-x-hidden transition-all duration-300 ease-in-out;
     }
     .twilight-content {
         @apply mx-auto px-6 pb-4 pt-2 dark:text-gray-300 md:pt-4;
+    }
+
+    /* customize simple bar scrollbar color */
+    .simplebar-scrollbar {
+        @apply before:w-1;
     }
 }
