@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&display=swap');
+/* @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css'); */
 
 @import 'tailwindcss/base';
-
 @import 'tailwindcss/components';
 /* custom components */
 @import './components/base.css';
@@ -13,10 +13,13 @@
 @import './components/button-ripple.css';
 @import './components/form.css';
 @import './components/alerts.css';
-/* end custom components */
-
 /* Start Pages */
-@import './pages/login.css';
-/* end pages */
+@import './components/pages/login.css';
 
+/* utilities */
 @import 'tailwindcss/utilities';
+/* customize simple bar scrollbar color */
+.simplebar-scrollbar:before {
+    width: 4px !important;
+    background: #e2e8f0 !important;
+}
