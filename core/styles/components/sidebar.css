@@ -11,7 +11,7 @@
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden [&:not(.show)]:hidden;
     }
     .mini-sidebar-icons {
-        @apply fixed -right-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white text-primary shadow-lg;
+        @apply fixed -right-4 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white text-primary shadow-lg lg:flex;
     }
     .sidebar-close {
         @apply dark--text fixed right-2 cursor-pointer text-lg lg:hidden;
