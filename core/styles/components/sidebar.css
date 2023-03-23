@@ -44,8 +44,8 @@
         @apply dark--text mx-2 text-xl font-semibold;
     }
     .menu-header {
-        @apply dark--text relative w-full truncate pl-2 pt-2 text-xs font-semibold uppercase text-gray-400;
-        @apply after:absolute after:left-0 after:top-3 after:w-full  after:bg-gray-300;
+        @apply dark--text relative w-full truncate pt-2 text-xs font-semibold uppercase text-gray-400;
+        @apply pl-4 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
     }
     .mini-sidebar .sidebar-menu .menu-header {
         @apply indent-40 after:ml-1.5 after:block after:border-b after:border-gray-300 dark:after:bg-gray-700;
@@ -65,14 +65,18 @@
     .menu-item {
         @apply pl-4;
     }
-    .nav-link {
+    .menu-item .material-icons,
+    .menu-item .material-symbols-outlined {
+        @apply text-xl leading-none;
+    }
+    .menu-link {
         @apply flex items-center p-2 duration-300 hover:bg-light-gray hover:text-primary;
         @apply rounded-md font-normal hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
     .sidebar-link-active {
         @apply bg-light-gray text-primary dark:bg-gray-700 dark:text-white;
     }
-    .nav-link.active {
+    .menu-link.active {
         @apply sidebar-link-active;
     }
     .link-label {
@@ -88,7 +92,7 @@
         @apply dark--text flex items-center rounded-md hover:text-gray-900 dark:hover:text-gray-100;
     }
     .menu-bullet-dot {
-        @apply mx-2 h-1 w-1 rounded-full bg-primary;
+        @apply ml-2 mr-1 h-1 w-1 rounded-full bg-primary;
     }
     .dropdown-circle {
         @apply flex h-4 w-4 items-center justify-center text-[10px] leading-[unset];
@@ -97,7 +101,7 @@
         @apply ml-auto transform transition-transform group-[.active]:rotate-180;
     }
     .dropdown-link {
-        @apply nav-link w-full truncate;
+        @apply menu-link w-full truncate;
     }
     .dropdown-link.active {
         @apply sidebar-link-active;
