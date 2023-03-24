@@ -2,7 +2,7 @@
     /* start sidebar menu components */
     .sidebar-menu {
         @apply fixed inset-y-0 left-0 z-30 w-64 border-gray-200 bg-white shadow-sm dark:bg-dark-primary;
-        @apply transition-all duration-300 ease-in-out lg:static lg:inset-0 lg:translate-x-0 !important;
+        @apply lg:static lg:inset-0 lg:translate-x-0 !important;
     }
     .sidebar-menu {
         @apply [&.open]:translate-x-0 [&:not(.open)]:-translate-x-full;
@@ -70,7 +70,7 @@
         @apply text-xl leading-none;
     }
     .menu-link {
-        @apply flex items-center p-2 duration-300 hover:bg-light-gray hover:text-primary;
+        @apply flex items-center p-2 hover:bg-light-gray hover:text-primary;
         @apply rounded-md font-normal hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
     .sidebar-link-active {
@@ -83,10 +83,10 @@
         @apply mx-2 truncate text-sm font-medium;
     }
     .dropdown-menu {
-        @apply max-h-0 space-y-1 overflow-hidden duration-300;
+        @apply max-h-0 space-y-1 overflow-hidden;
     }
     .mini-sidebar .sidebar-menu:not(:hover) .dropdown-menu {
-        @apply hidden duration-300;
+        @apply hidden;
     }
     .dropdown-item {
         @apply dark--text flex items-center rounded-md hover:text-gray-900 dark:hover:text-gray-100;
