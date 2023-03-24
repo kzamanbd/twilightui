@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
     "scripts": {
-        "dev": "tailwindcss -i ./core/styles/app.css -o ./build/tailwind.css -w",
-        "build": "tailwindcss -i ./core/styles/app.css -o ./build/tailwind.css --minify"
+        "dev": "tailwindcss -i ./assets/css/app.css -o ./build/tailwind.css -w",
+        "build": "tailwindcss -i ./assets/css/app.css -o ./build/tailwind.css --minify"
     },
     "author": "Kamruzzaman <kzamanbn@gmail.com>",
     "license": "MIT",

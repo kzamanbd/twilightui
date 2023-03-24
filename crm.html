@@ -6,14 +6,14 @@
         <title>Dashboard - Twilight Dashboard</title>
         <link rel="icon" href="./favicon.png" />
         <!-- Core Fonts, Style -->
-        <link rel="stylesheet" href="./core/fonts/material-icons.css" />
+        <link rel="stylesheet" href="./assets/fonts/material-icons.css" />
         <link rel="stylesheet" href="./build/tailwind.css" />
         <link rel="stylesheet" href="./plugins/simplebar/simplebar.css" />
         <!-- Core Script -->
         <script src="./plugins/simplebar/simplebar.min.js"></script>
         <script src="https://unpkg.com/alpinejs" defer></script>
-        <script src="./core/scripts/button-ripple.js" defer></script>
-        <script src="./core/scripts/app.js"></script>
+        <script src="./assets/scripts/button-ripple.js" defer></script>
+        <script src="./assets/scripts/app.js"></script>
         <!-- Apex Charts -->
         <link rel="stylesheet" href="./plugins/apexcharts/apexcharts.css" />
     </head>
@@ -28,7 +28,7 @@
                 <aside class="sidebar-menu" :class="{ open: isMenuOpen }">
                     <div id="brand-logo" class="sidebar-brand-logo">
                         <a href="/index.html" class="flex items-center">
-                            <img class="brand-logo-image" src="./core/images/logo.png" alt="logo" />
+                            <img class="brand-logo-image" src="./assets/images/logo.png" alt="logo" />
                             <span class="app-name"> Twilight </span>
                         </a>
                         <div class="mini-sidebar-icons" x-on:click="toggleMiniSidebar">
@@ -957,7 +957,7 @@
                                                 Language
                                                 <span class="flex items-center text-xs font-bold leading-none">
                                                     <img
-                                                        src="./core/images/flags/united-states.svg"
+                                                        src="./assets/images/flags/united-states.svg"
                                                         class="mr-2 h-4 w-4 rounded-full"
                                                         alt="English" />
                                                     English
@@ -966,14 +966,14 @@
                                                 <div class="language-dropdown">
                                                     <div class="language-dropdown-item">
                                                         <img
-                                                            src="./core/images/flags/united-states.svg"
+                                                            src="./assets/images/flags/united-states.svg"
                                                             class="mr-2 h-4 w-4 rounded-full"
                                                             alt="English" />
                                                         <span class="text-xs leading-none">English</span>
                                                     </div>
                                                     <div class="language-dropdown-item">
                                                         <img
-                                                            src="./core/images/flags/france.svg"
+                                                            src="./assets/images/flags/france.svg"
                                                             class="mr-2 h-4 w-4 rounded-full"
                                                             alt="france" />
                                                         <span class="text-xs leading-none">France</span>
