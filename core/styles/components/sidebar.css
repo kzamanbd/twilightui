@@ -83,10 +83,10 @@
         @apply mx-2 truncate text-sm font-medium;
     }
     .dropdown-menu {
-        @apply max-h-0 space-y-1 overflow-hidden;
+        @apply max-h-0 space-y-1 overflow-hidden duration-300;
     }
     .mini-sidebar .sidebar-menu:not(:hover) .dropdown-menu {
-        @apply hidden;
+        @apply hidden duration-300;
     }
     .dropdown-item {
         @apply dark--text flex items-center rounded-md hover:text-gray-900 dark:hover:text-gray-100;

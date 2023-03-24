@@ -65,7 +65,7 @@ document.addEventListener('alpine:init', () => {
         },
         handleToggle() {
             return this.$store.accordion.tab == this.idx
-                ? `max-height: ${this.$refs.tab.scrollHeight}px; margin-top: 12px`
+                ? `max-height: ${this.$refs.tab.scrollHeight}px; margin-top: 8px`
                 : '';
         },
     }));
