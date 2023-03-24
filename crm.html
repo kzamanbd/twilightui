@@ -26,62 +26,67 @@
                 <div x-on:click="toggleMenuOpen" class="sidebar-shadow" :class="{ show: isMenuOpen }"></div>
 
                 <aside class="sidebar-menu" :class="{ open: isMenuOpen }">
-                    <div id="brand-logo" class="brand-logo">
+                    <div id="brand-logo" class="sidebar-brand-logo">
                         <a href="/index.html" class="flex items-center">
-                            <img class="h-12 w-12" src="./core/images/logo.png" alt="logo" />
+                            <img class="brand-logo-image" src="./core/images/logo.png" alt="logo" />
                             <span class="app-name"> Twilight </span>
                         </a>
+                        <div class="mini-sidebar-icons" x-on:click="toggleMiniSidebar">
+                            <div class="material-icons rotate-180 duration-300 mini-sidebar:rotate-0">
+                                navigate_next
+                            </div>
+                        </div>
                         <span x-on:click="toggleMenuOpen" class="material-icons sidebar-close"> close </span>
                     </div>
 
-                    <nav data-simplebar class="h-sidebar overflow-y-auto">
+                    <nav data-simplebar class="sidebar-menu-content">
                         <ul class="nav-menu space-y-2" x-init="activeAccordion('dashboard')">
                             <!-- dashboard start -->
                             <li class="menu-item" x-data="accordionItem('dashboard')">
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">dashboard</span>
                                     <span class="link-label">Dashboards</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
-                                        <a href="index.html" class="dropdown-link" data-ripple>
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                        <a href="index.html" class="dropdown-link active" data-ripple>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Default</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
-                                        <a href="crm.html" class="dropdown-link active">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                        <a href="crm.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">CRM</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="analytics.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Analytics</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="ecommerce.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">eCommerce</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="online-courses.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Online Courses</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="marketing.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Marketing</span>
                                         </a>
                                     </li>
@@ -94,53 +99,53 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">layers</span>
                                     <span class="link-label">Components</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./alerts.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Alert</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./components/badge.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Badge</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./components/button.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Button</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./components/dropdown.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Dropdown</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./components/collapse.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Collapse</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./components/pagination" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Pagination</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./components/modals.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Modals</span>
                                         </a>
                                     </li>
@@ -157,47 +162,47 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">hexagon</span>
                                     <span class="link-label">Form Elements</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./input.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Input</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./forms/input-group.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Input Group</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./forms/select.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Select</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./forms/radio.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Radio</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./forms/checkbox.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Checkbox</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./forms/textarea.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Textarea</span>
                                         </a>
                                     </li>
@@ -207,7 +212,7 @@
 
                             <!-- form layout single item -->
                             <li class="menu-item" ripple>
-                                <a href="./form.html" class="nav-link">
+                                <a href="./form.html" class="menu-link">
                                     <span class="material-icons">description</span>
                                     <span class="link-label">Form Layout</span>
                                 </a>
@@ -223,36 +228,36 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">perm_contact_calendar</span>
                                     <span class="link-label">User Profile</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./user-profile/overview.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Overview</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./user-profile/documents.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Documents</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./user-profile/followers.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Followers</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./user-profile/activities.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Activities</span>
                                         </a>
                                     </li>
@@ -265,42 +270,42 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons rotate-90">label_important_outline</span>
                                     <span class="link-label">Accounts</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./accounts/overview.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Overview</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./accounts/settings.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Settings</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./accounts/statements.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Statements</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./accounts/activities.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Activities</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./accounts/logs.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Logs</span>
                                         </a>
                                     </li>
@@ -313,42 +318,42 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">person</span>
                                     <span class="link-label">Authentication</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="/login.html" class="dropdown-link" target="_blank">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Login</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./authentication/register.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Register</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./authentication/reset-password.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Reset Password</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./authentication/forget-password.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Forget Password</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./authentication/new-password.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">New Password</span>
                                         </a>
                                     </li>
@@ -361,42 +366,42 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">corporate_fare</span>
                                     <span class="link-label">Corporate</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./corporate/about.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">About</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./corporate/our-team.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Our Team</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./corporate/contact-us.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Contact Us</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./corporate/licenses.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Licenses</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./corporate/sitemap.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Sitemap</span>
                                         </a>
                                     </li>
@@ -409,30 +414,30 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">construction</span>
                                     <span class="link-label">Utilities</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./utilities/modals.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Modals</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./utilities/search.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Search</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./utilities/wizards.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Wizards</span>
                                         </a>
                                     </li>
@@ -445,23 +450,23 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">work</span>
                                     <span class="link-label">Careers</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./careers/careers-list.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Careers List</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./careers/apply.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Careers Apply</span>
                                         </a>
                                     </li>
@@ -474,47 +479,47 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">widgets</span>
                                     <span class="link-label">Widgets</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./widgets/lists.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Lists</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./widgets/statistics.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Statistics</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./widgets/charts.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Charts</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./widgets/mixed.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Mixed</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./widgets/tables.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Tables</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./widgets/feeds.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Feeds</span>
                                         </a>
                                     </li>
@@ -531,41 +536,41 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">fence</span>
                                     <span class="link-label">Projects</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./apps/project.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">My Project</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./apps/view-project.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">View Project</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./apps/users.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Users</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./apps/files.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Files</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./apps/settings.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Settings</span>
                                         </a>
                                     </li>
@@ -578,41 +583,41 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">shopping_basket</span>
                                     <span class="link-label">eCommerce</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./eCommerce/category.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Category</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./eCommerce/sales.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Sales</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./eCommerce/customers.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Customers</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./eCommerce/reports.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Reports</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./eCommerce/settings.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Settings</span>
                                         </a>
                                     </li>
@@ -625,41 +630,41 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">interests</span>
                                     <span class="link-label">Contacts</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./contacts/getting-started.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Getting Started</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./contacts/add-contact.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Add Contact</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./contacts/edit-contact.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Edit Contact</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./contacts/view-contact.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">View Contact</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./contacts/settings.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Settings</span>
                                         </a>
                                     </li>
@@ -672,29 +677,29 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">workspaces</span>
                                     <span class="link-label">User Management</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./user-management/users.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Users</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./user-management/roles.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Roles</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./user-management/permissions.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Permissions</span>
                                         </a>
                                     </li>
@@ -707,30 +712,30 @@
                                 <div
                                     data-ripple
                                     role="button"
-                                    class="nav-link group"
-                                    @click="handleClick"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
                                     :class="activeAccordion">
                                     <span class="material-icons">change_history</span>
                                     <span class="link-label">Customers</span>
-                                    <span class="material-icons dropdown-icon"> expand_more </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
 
                                 <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
                                     <li class="dropdown-item group">
                                         <a href="./customers/getting-started.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Getting Started</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./customers/customer-listing.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Customer Listing</span>
                                         </a>
                                     </li>
                                     <li class="dropdown-item group">
                                         <a href="./customers/customer-details.html" class="dropdown-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Customer Details</span>
                                         </a>
                                     </li>
@@ -749,20 +754,6 @@
                                 x-on:click="toggleMenuOpen"
                                 aria-label="Toggle Menu"
                                 class="text-gray-500 focus:outline-none lg:hidden">
-                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M4 6H20M4 12H20M4 18H11"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                            <button
-                                type="button"
-                                x-on:click="toggleMiniSidebar"
-                                class="hidden text-gray-500 focus:outline-none lg:block"
-                                aria-label="Mini Sidebar">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M4 6H20M4 12H20M4 18H11"
