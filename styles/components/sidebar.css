@@ -54,7 +54,7 @@
         @apply indent-0 after:hidden after:border-b-0;
     }
     .sidebar-menu-content {
-        @apply h-[calc(100vh_-_122px)] overflow-y-auto overflow-x-hidden;
+        @apply h-[calc(100vh_-_118px)] overflow-y-auto overflow-x-hidden;
     }
     .nav-menu {
         @apply mt-4 pr-4 pb-2;
@@ -118,5 +118,10 @@
     .mini-sidebar .sidebar-menu:hover .nav-menu .link-label {
         @apply block opacity-100 transition-all duration-300 ease-in-out;
     }
-    /* end sidebar components */
+    .documents-button {
+        @apply flex h-12 items-center px-4;
+    }
+    .documents-link {
+        @apply btn-primary mb-0 flex w-full items-center justify-center justify-items-end py-2;
+    }
 }
