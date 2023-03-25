@@ -48,13 +48,23 @@ module.exports = {
         require('@tailwindcss/typography'),
         require('@tailwindcss/aspect-ratio'),
         require('prettier-plugin-tailwindcss'),
-        plugin(function ({ addVariant, e }) {
+        plugin(function ({ addUtilities, addVariant, e, theme }) {
             // mini sidebar variant
             addVariant('mini-sidebar', ({ modifySelectors, separator }) => {
                 modifySelectors(({ className }) => {
                     return `.mini-sidebar .${e(`mini-sidebar${separator}${className}`)}`;
                 });
             });
+            const newUtilities = {
+                '.twilight-scrollbar': {
+                    '.twilight-scrollbar::-webkit-scrollbar': { width: '6px' },
+                    '.twilight-scrollbar::-webkit-scrollbar-track': { background: theme('bg-secondary') },
+                    '.twilight-scrollbar::-webkit-scrollbar-thumb': { background: '#888' },
+                    '.twilight-scrollbar::-webkit-scrollbar-thumb:hover': { background: '#555' },
+                },
+            };
+
+            addUtilities(newUtilities, ['responsive', 'hover']);
         }),
     ],
 };
