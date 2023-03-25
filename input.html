@@ -5,658 +5,758 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Input - Twilight Dashboard</title>
         <link rel="icon" href="/favicon.png" />
-        <!-- Core Fonts, Style -->
+        <!-- start:Core Fonts, Style -->
         <link rel="stylesheet" href="/fonts/material-icons.css" />
         <link rel="stylesheet" href="/styles/app.css" />
-        <!-- Core Script -->
-        <script type="module" src="./scripts/app.js"></script>
+        <script type="module" src="/scripts/app.js"></script>
+        <!-- end:Core Fonts, Style -->
     </head>
 
     <body>
-        <div x-ref="twilight" x-data="twilight">
-            <div x-ref="loading" class="loading">Loading.....</div>
+        <div id="app" x-data="twilightTheme">
+            <div x-ref="loading" class="loading duration-300">Loading.....</div>
 
             <div class="twilight">
-                <div @click="isMenuOpen = false" :class="{ hidden: !isMenuOpen }" class="sidebar-shadow"></div>
+                <div x-on:click="toggleMenuOpen" class="sidebar-shadow" :class="{ show: isMenuOpen }"></div>
 
-                <aside class="sidebar" :class="isMenuOpen ? 'translate-x-0' : '-translate-x-full'">
-                    <div class="brand-logo" :class="{'justify-center' : isMiniSidebar }">
+                <aside class="sidebar-menu" :class="{ open: isMenuOpen }">
+                    <div id="brand-logo" class="sidebar-brand-logo">
                         <a href="/index.html" class="flex items-center">
-                            <img class="h-12 w-12" src="./core/images/logo.svg" alt="logo" />
+                            <img class="brand-logo-image" src="/images/logo.png" alt="logo" />
                             <span class="app-name"> Twilight </span>
                         </a>
-                        <span @click="isMenuOpen = false" class="material-icons sidebar-close"> close </span>
+                        <div class="mini-sidebar-icons" x-on:click="toggleMiniSidebar">
+                            <div class="material-icons rotate-180 duration-300 mini-sidebar:rotate-0">
+                                navigate_next
+                            </div>
+                        </div>
+                        <span x-on:click="toggleMenuOpen" class="material-icons sidebar-close"> close </span>
                     </div>
-
-                    <nav data-simplebar class="h-sidebar overflow-y-auto" x-init="currentActiveTab('form-elements')">
-                        <ul class="nav-menu space-y-2">
-                            <li x-data="dropdownItem('dashboard')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                    <nav data-simplebar class="sidebar-menu-content twilight-scrollbar">
+                        <ul class="nav-menu space-y-2" x-init="activeAccordion('dashboard')">
+                            <!-- dashboard start -->
+                            <li class="menu-item" x-data="accordionItem('dashboard')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">dashboard</span>
                                     <span class="link-label">Dashboards</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="index.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="index.html" class="dropdown-link" data-ripple>
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Default</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="analytics.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="crm.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="link-label">CRM</span>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item group">
+                                        <a href="analytics.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Analytics</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="ecommerce.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="ecommerce.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">eCommerce</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="online-courses.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="online-courses.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Online Courses</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="marketing.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="marketing.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Marketing</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- dashboard end -->
 
-                            <li x-data="dropdownItem('components')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- components start -->
+                            <li class="menu-item" x-data="accordionItem('components')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">layers</span>
                                     <span class="link-label">Components</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./alerts.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./alerts.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Alert</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./components/badge.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./components/badge.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Badge</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./components/button.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./components/button.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Button</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./components/dropdown.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./components/dropdown.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Dropdown</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./components/collapse.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./components/collapse.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Collapse</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./components/pagination" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./components/pagination" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Pagination</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./components/modals.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./components/modals.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Modals</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- components end -->
 
+                            <!-- page header -->
                             <li class="menu-header">Forms & Tables</li>
-                            <li x-data="dropdownItem('form-elements')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- page header end -->
+
+                            <!-- form elements start -->
+                            <li class="menu-item" x-data="accordionItem('form-elements')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">hexagon</span>
                                     <span class="link-label">Form Elements</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./input.html" class="dropdown-item-link dropdown-link-active">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./input.html" class="dropdown-link active">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Input</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./forms/input-group.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./forms/input-group.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Input Group</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./forms/select.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./forms/select.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Select</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./forms/radio.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./forms/radio.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Radio</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./forms/checkbox.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./forms/checkbox.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Checkbox</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./forms/textarea.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./forms/textarea.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Textarea</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- form elements end -->
 
-                            <li>
-                                <a href="./form.html" class="nav-link">
+                            <!-- form layout single item -->
+                            <li class="menu-item" ripple>
+                                <a href="./form.html" class="menu-link">
                                     <span class="material-icons">description</span>
                                     <span class="link-label">Form Layout</span>
                                 </a>
                             </li>
+                            <!-- form layout single item end -->
 
+                            <!-- page header -->
                             <li class="menu-header">Pages</li>
-                            <li x-data="dropdownItem('user-profile')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- page header end -->
+
+                            <!-- user profile start -->
+                            <li class="menu-item" x-data="accordionItem('user-profile')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">perm_contact_calendar</span>
                                     <span class="link-label">User Profile</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./user-profile/overview.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./user-profile/overview.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Overview</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./user-profile/documents.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./user-profile/documents.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Documents</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./user-profile/followers.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./user-profile/followers.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Followers</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./user-profile/activities.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./user-profile/activities.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Activities</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- user profile end -->
 
-                            <li x-data="dropdownItem('accounts')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- accounts start -->
+                            <li class="menu-item" x-data="accordionItem('accounts')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons rotate-90">label_important_outline</span>
                                     <span class="link-label">Accounts</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./accounts/overview.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./accounts/overview.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Overview</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./accounts/settings.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./accounts/settings.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Settings</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./accounts/statements.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./accounts/statements.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Statements</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./accounts/activities.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./accounts/activities.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Activities</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./accounts/logs.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./accounts/logs.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Logs</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- accounts end -->
 
-                            <li x-data="dropdownItem('authentication')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- Authentication start -->
+                            <li class="menu-item" x-data="accordionItem('authentication')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">person</span>
                                     <span class="link-label">Authentication</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="/login.html" class="dropdown-item-link" target="_blank">
-                                            <span class="dropdown-circle material-icons">circle</span>
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="/login.html" class="dropdown-link" target="_blank">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Login</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./authentication/register.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./authentication/register.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Register</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./authentication/reset-password.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./authentication/reset-password.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Reset Password</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./authentication/forget-password.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./authentication/forget-password.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Forget Password</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./authentication/new-password.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./authentication/new-password.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">New Password</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- Authentication end -->
 
-                            <li x-data="dropdownItem('corporate')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- corporate start -->
+                            <li class="menu-item" x-data="accordionItem('corporate')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">corporate_fare</span>
                                     <span class="link-label">Corporate</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./corporate/about.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./corporate/about.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">About</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./corporate/our-team.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./corporate/our-team.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Our Team</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./corporate/contact-us.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./corporate/contact-us.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Contact Us</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./corporate/licenses.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./corporate/licenses.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Licenses</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./corporate/sitemap.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./corporate/sitemap.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Sitemap</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- corporate end -->
 
-                            <li x-data="dropdownItem('utilities')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- utilities start -->
+                            <li class="menu-item" x-data="accordionItem('utilities')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">construction</span>
                                     <span class="link-label">Utilities</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./utilities/modals.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./utilities/modals.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Modals</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./utilities/search.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./utilities/search.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Search</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./utilities/wizards.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./utilities/wizards.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Wizards</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- utilities end -->
 
-                            <li x-data="dropdownItem('careers')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- Careers pages start -->
+                            <li class="menu-item" x-data="accordionItem('careers')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">work</span>
                                     <span class="link-label">Careers</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./careers/careers-list.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./careers/careers-list.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Careers List</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./careers/apply.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./careers/apply.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Careers Apply</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- Careers pages end -->
 
-                            <li x-data="dropdownItem('widgets')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- widgets start -->
+                            <li class="menu-item" x-data="accordionItem('widgets')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">widgets</span>
                                     <span class="link-label">Widgets</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./widgets/lists.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./widgets/lists.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Lists</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./widgets/statistics.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./widgets/statistics.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Statistics</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./widgets/charts.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./widgets/charts.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Charts</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./widgets/mixed.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./widgets/mixed.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Mixed</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./widgets/tables.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./widgets/tables.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Tables</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./widgets/feeds.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./widgets/feeds.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Feeds</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- widgets end -->
 
+                            <!-- page header -->
                             <li class="menu-header">Apps</li>
-                            <li x-data="dropdownItem('projects')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- page header end -->
+
+                            <!-- project start -->
+                            <li class="menu-item" x-data="accordionItem('projects')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">fence</span>
                                     <span class="link-label">Projects</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./apps/project.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./apps/project.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">My Project</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./apps/view-project.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./apps/view-project.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">View Project</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./apps/users.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./apps/users.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Users</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./apps/files.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./apps/files.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Files</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./apps/settings.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./apps/settings.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Settings</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- project end -->
 
-                            <li x-data="dropdownItem('eCommerce')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- eCommerce start -->
+                            <li class="menu-item" x-data="accordionItem('eCommerce')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">shopping_basket</span>
                                     <span class="link-label">eCommerce</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./eCommerce/category.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./eCommerce/category.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Category</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./eCommerce/sales.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./eCommerce/sales.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Sales</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./eCommerce/customers.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./eCommerce/customers.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Customers</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./eCommerce/reports.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./eCommerce/reports.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Reports</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./eCommerce/settings.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./eCommerce/settings.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Settings</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- eCommerce end -->
 
-                            <li x-data="dropdownItem('contacts')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- contacts start -->
+                            <li class="menu-item" x-data="accordionItem('contacts')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">interests</span>
                                     <span class="link-label">Contacts</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./contacts/getting-started.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./contacts/getting-started.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Getting Started</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./contacts/add-contact.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./contacts/add-contact.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Add Contact</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./contacts/edit-contact.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./contacts/edit-contact.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Edit Contact</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./contacts/view-contact.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./contacts/view-contact.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">View Contact</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./contacts/settings.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./contacts/settings.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Settings</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- contacts end -->
 
-                            <li x-data="dropdownItem('user-management')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- user management start -->
+                            <li class="menu-item" x-data="accordionItem('user-management')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">workspaces</span>
                                     <span class="link-label">User Management</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./user-management/users.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./user-management/users.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Users</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./user-management/roles.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./user-management/roles.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Roles</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./user-management/permissions.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./user-management/permissions.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Permissions</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- user management end -->
 
-                            <li x-data="dropdownItem('customers')">
-                                <div role="button" @click="handleClick" class="nav-link" :class="activeDropdown">
+                            <!-- customers start -->
+                            <li class="menu-item" x-data="accordionItem('customers')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
                                     <span class="material-icons">change_history</span>
                                     <span class="link-label">Customers</span>
-                                    <span class="material-icons dropdown-icon" :class="handleRotate">
-                                        expand_more
-                                    </span>
+                                    <span class="material-icons dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-ref="tab" :style="handleToggle" class="dropdown-menu">
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./customers/getting-started.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+
+                                <ul x-ref="tab" class="dropdown-menu" :style="handleToggle">
+                                    <li class="dropdown-item group">
+                                        <a href="./customers/getting-started.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Getting Started</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./customers/customer-listing.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./customers/customer-listing.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Customer Listing</span>
                                         </a>
                                     </li>
-                                    <li role="menuitem" class="dropdown-item group">
-                                        <a href="./customers/customer-details.html" class="dropdown-item-link">
-                                            <span class="dropdown-circle material-icons">circle</span>
+                                    <li class="dropdown-item group">
+                                        <a href="./customers/customer-details.html" class="dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
                                             <span class="link-label">Customer Details</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+                            <!-- customers end -->
                         </ul>
                     </nav>
+
+                    <div class="documents-button px-4">
+                        <a
+                            href="https://github.com/kzamaan/twilight"
+                            target="_blank"
+                            class="btn-primary flex items-center justify-center">
+                            <span class="material-icons mr-2">description</span>
+                            <span class="btn-label">Documentation</span>
+                        </a>
+                    </div>
                 </aside>
 
-                <div class="twilight-scrollable flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
-                    <header id="sticky__header" class="top-header">
-                        <div class="flex items-center">
+                <div class="twilight-body">
+                    <header class="top-header">
+                        <div class="ml-6 flex items-center">
                             <button
                                 type="button"
-                                @click="isMenuOpen = !isMenuOpen"
+                                x-on:click="toggleMenuOpen"
+                                aria-label="Toggle Menu"
                                 class="text-gray-500 focus:outline-none lg:hidden">
-                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M4 6H20M4 12H20M4 18H11"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"></path>
-                                </svg>
-                            </button>
-                            <button
-                                type="button"
-                                @click="handleMiniSidebar()"
-                                class="hidden text-gray-500 focus:outline-none lg:block">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M4 6H20M4 12H20M4 18H11"
@@ -668,9 +768,9 @@
                             </button>
                         </div>
 
-                        <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-4 pr-6">
                             <div class="relative">
-                                <button type="button" class="header-btn">
+                                <button type="button" class="header-btn" aria-label="Search">
                                     <svg
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
@@ -694,7 +794,7 @@
                                 </button>
                             </div>
 
-                            <button type="button" @click="toggleTheme" class="header-btn">
+                            <button type="button" x-on:click="toggleTheme" class="header-btn" aria-label="Themes">
                                 <svg
                                     aria-hidden="true"
                                     data-toggle-icon="sun"
@@ -721,9 +821,10 @@
                             <div class="relative" x-data="{ isOpen: false }">
                                 <button
                                     type="button"
-                                    @click="isOpen = !isOpen"
-                                    @click.away="isOpen = false"
-                                    class="header-btn">
+                                    x-on:click="isOpen = !isOpen"
+                                    x-on:click.away="isOpen = false"
+                                    class="header-btn"
+                                    aria-label="Notification">
                                     <svg
                                         class="h-4 w-4"
                                         viewBox="0 0 24 24"
@@ -737,158 +838,158 @@
                                             stroke-linejoin="round"></path>
                                     </svg>
                                 </button>
-                                <div x-show="isOpen">
-                                    <div
-                                        class="absolute right-0 z-20 mt-5 w-72 overflow-hidden rounded-md bg-white py-2 shadow-lg">
-                                        <div class="py-2">
-                                            <a
-                                                href="/"
-                                                class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
-                                                <img
-                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
-                                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                                                    alt="avatar" />
-                                                <p class="mx-2 text-sm text-gray-600">
-                                                    <span class="font-bold" href="#"> Sara Salah </span>
-                                                    replied on the
-                                                    <span class="font-bold text-blue-500" href="#"> Upload Image </span>
-                                                    article . 2m
-                                                </p>
-                                            </a>
-                                            <a
-                                                href="/"
-                                                class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
-                                                <img
-                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
-                                                    src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                                                    alt="avatar" />
-                                                <p class="mx-2 text-sm text-gray-600">
-                                                    <span class="font-bold" href="#"> Slick Net </span>
-                                                    start following you . 45m
-                                                </p>
-                                            </a>
-                                            <a
-                                                href="/"
-                                                class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
-                                                <img
-                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
-                                                    src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                                                    alt="avatar" />
-                                                <p class="mx-2 text-sm text-gray-600">
-                                                    <span class="font-bold" href="#"> Jane Doe </span>
-                                                    Like Your reply on
-                                                    <span class="font-bold text-blue-500" href="#"> Test with TDD </span
-                                                    >article . 1h
-                                                </p>
-                                            </a>
-                                            <a href="/" class="-mx-2 flex items-center px-4 py-3 hover:bg-gray-100">
-                                                <img
-                                                    class="mx-1 h-8 w-8 rounded-full object-cover"
-                                                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=398&q=80"
-                                                    alt="avatar" />
-                                                <p class="mx-2 text-sm text-gray-600">
-                                                    <span class="font-bold" href="#"> Abigail Bennett </span>
-                                                    start following you . 3h
-                                                </p>
-                                            </a>
-                                        </div>
+
+                                <div
+                                    x-show="isOpen"
+                                    x-transition:enter.duration.500ms
+                                    x-transition:leave.duration.400ms
+                                    class="absolute right-0 z-20 mt-5 w-72 overflow-hidden rounded-md bg-white py-2 shadow-lg">
+                                    <div class="py-2">
                                         <a
                                             href="/"
-                                            class="mx-4 block bg-gray-800 py-2 text-center font-bold text-white">
-                                            See all notifications
+                                            class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Sara Salah </span>
+                                                replied on the
+                                                <span class="font-bold text-blue-500" href="#"> Upload Image </span>
+                                                article . 2m
+                                            </p>
+                                        </a>
+                                        <a
+                                            href="/"
+                                            class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Slick Net </span>
+                                                start following you . 45m
+                                            </p>
+                                        </a>
+                                        <a
+                                            href="/"
+                                            class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Jane Doe </span>
+                                                Like Your reply on
+                                                <span class="font-bold text-blue-500" href="#"> Test with TDD </span
+                                                >article . 1h
+                                            </p>
+                                        </a>
+                                        <a href="/" class="-mx-2 flex items-center px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=398&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Abigail Bennett </span>
+                                                start following you . 3h
+                                            </p>
                                         </a>
                                     </div>
+                                    <a href="/" class="mx-4 block bg-gray-800 py-2 text-center font-bold text-white">
+                                        See all notifications
+                                    </a>
                                 </div>
                             </div>
 
                             <div class="relative" x-data="{ isOpen: false }">
                                 <button
                                     type="button"
-                                    @click="isOpen = !isOpen"
-                                    @click.away="isOpen = false"
+                                    x-on:click="isOpen = !isOpen"
+                                    x-on:click.away="isOpen = false"
+                                    aria-expanded="false"
+                                    aria-label="User Profile"
                                     class="relative z-10 block h-8 w-8 overflow-hidden rounded-full shadow focus:outline-none">
                                     <img
                                         class="h-full w-full object-cover"
-                                        src="https://www.gravatar.com/avatar/7d07260bf12eaff12086c86ea14849d1"
+                                        src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=ffffff"
                                         alt="Your avatar" />
                                 </button>
 
-                                <div x-show="isOpen">
-                                    <div
-                                        class="absolute right-0 z-20 mt-5 w-64 rounded-md bg-white py-2 shadow-xl dark:bg-dark-primary">
-                                        <div class="flex items-center border-b px-4 py-2 dark:border-gray-700">
-                                            <div class="flex-shrink-0">
-                                                <img
-                                                    class="h-8 w-8 rounded-full object-cover"
-                                                    src="https://www.gravatar.com/avatar/7d07260bf12eaff12086c86ea14849d1"
-                                                    alt="Your avatar" />
-                                            </div>
-                                            <div class="ml-3">
-                                                <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
-                                                    Kamruzzaman
-                                                </p>
-                                                <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
-                                                    Software Engineer
-                                                </p>
-                                            </div>
+                                <div
+                                    x-show="isOpen"
+                                    x-transition:enter.duration.500ms
+                                    x-transition:leave.duration.400ms
+                                    class="absolute right-0 z-20 mt-5 w-64 rounded-md bg-white py-2 shadow-2xl dark:bg-dark-primary">
+                                    <div class="flex items-center border-b px-4 py-2 dark:border-gray-700">
+                                        <div class="flex-shrink-0">
+                                            <img
+                                                class="h-8 w-8 rounded-full object-cover"
+                                                src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=F5F8FA"
+                                                alt="Your avatar" />
                                         </div>
-                                        <div class="border-b py-2 dark:border-gray-700">
-                                            <div class="user-menu-item">
-                                                <a href="#" class="user-menu-link"> My Profile </a>
-                                            </div>
-                                            <div class="user-menu-item">
-                                                <a href="#" class="user-menu-link">
-                                                    My Projects
-                                                    <span
-                                                        class="ml-1 inline-flex items-center justify-center rounded-full bg-primary-600 px-2 py-1 text-xs font-bold leading-none text-white">
-                                                        9
-                                                    </span>
-                                                </a>
-                                            </div>
-                                            <div class="user-menu-item">
-                                                <a href="#" class="user-menu-link"> My Subscription </a>
-                                            </div>
+                                        <div class="ml-3">
+                                            <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
+                                                Kamruzzaman
+                                            </p>
+                                            <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
+                                                Software Engineer
+                                            </p>
                                         </div>
-                                        <div class="relative py-2">
-                                            <div class="user-menu-item group">
-                                                <a href="#" class="user-menu-link">
-                                                    Language
-                                                    <span class="flex items-center text-xs font-bold leading-none">
+                                    </div>
+                                    <div class="border-b py-2 dark:border-gray-700">
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> My Profile </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link">
+                                                My Projects
+                                                <span
+                                                    class="ml-1 inline-flex items-center justify-center rounded-full bg-primary px-2 py-1 text-xs font-bold leading-none text-white">
+                                                    9
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> My Subscription </a>
+                                        </div>
+                                    </div>
+                                    <div class="relative py-2">
+                                        <div class="user-menu-item group">
+                                            <a href="#" class="user-menu-link">
+                                                Language
+                                                <span class="flex items-center text-xs font-bold leading-none">
+                                                    <img
+                                                        src="/images/flags/united-states.svg"
+                                                        class="mr-2 h-4 w-4 rounded-full"
+                                                        alt="English" />
+                                                    English
+                                                </span>
+                                                <!-- language dropdown -->
+                                                <div class="language-dropdown">
+                                                    <div class="language-dropdown-item">
                                                         <img
-                                                            src="./core/images/flags/united-states.svg"
+                                                            src="/images/flags/united-states.svg"
                                                             class="mr-2 h-4 w-4 rounded-full"
                                                             alt="English" />
-                                                        English
-                                                    </span>
-                                                    <!-- language dropdown -->
-                                                    <div
-                                                        class="absolute left-0 -m-40 hidden w-40 space-y-2 rounded-md bg-white px-2 py-4 shadow-xl group-hover:block dark:bg-dark-primary">
-                                                        <div
-                                                            class="dark--text flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:text-primary-600 hover:dark:bg-dark-secondary dark:hover:text-gray-300">
-                                                            <img
-                                                                src="./core/images/flags/united-states.svg"
-                                                                class="mr-2 h-4 w-4 rounded-full"
-                                                                alt="English" />
-                                                            <span class="text-xs leading-none">English</span>
-                                                        </div>
-                                                        <div
-                                                            class="dark--text flex items-center rounded-md px-4 py-2 hover:bg-gray-100 hover:text-primary-600 hover:dark:bg-dark-secondary dark:hover:text-gray-300">
-                                                            <img
-                                                                src="./core/images/flags/france.svg"
-                                                                class="mr-2 h-4 w-4 rounded-full"
-                                                                alt="france" />
-                                                            <span class="text-xs leading-none">France</span>
-                                                        </div>
+                                                        <span class="text-xs leading-none">English</span>
                                                     </div>
-                                                </a>
-                                            </div>
+                                                    <div class="language-dropdown-item">
+                                                        <img
+                                                            src="/images/flags/france.svg"
+                                                            class="mr-2 h-4 w-4 rounded-full"
+                                                            alt="france" />
+                                                        <span class="text-xs leading-none">France</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
 
-                                            <div class="user-menu-item">
-                                                <a href="#" class="user-menu-link"> Account Settings </a>
-                                            </div>
-                                            <div class="user-menu-item">
-                                                <a href="./login.html" class="user-menu-link"> Log out </a>
-                                            </div>
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> Account Settings </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="./login.html" class="user-menu-link"> Log out </a>
                                         </div>
                                     </div>
                                 </div>
@@ -1150,7 +1251,9 @@
                                 <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
                             </li>
                             <li>
-                                <a href="#" class="hover:underline">Contact</a>
+                                <a href="https://github.com/kzamaan/twilight" class="hover:underline" target="_blank">
+                                    Github
+                                </a>
                             </li>
                         </ul>
                     </footer>
