@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
     "scripts": {
-        "dev": "tailwindcss -i ./styles/app.css -o ./build/tailwind.css -w",
-        "build": "tailwindcss -i ./styles/app.css -o ./build/tailwind.css --minify"
+        "dev": "vite",
+        "build": "vite build"
     },
     "author": "Kamruzzaman <kzamanbn@gmail.com>",
     "license": "MIT",
@@ -12,11 +12,15 @@
         "@tailwindcss/aspect-ratio": "^0.4.0",
         "@tailwindcss/forms": "^0.5.2",
         "@tailwindcss/typography": "^0.5.2",
+        "alpinejs": "^3.12.0",
         "autoprefixer": "^10.4.2",
         "postcss": "^8.4.8",
         "postcss-import": "^15.1.0",
         "prettier": "^2.8.4",
         "prettier-plugin-tailwindcss": "^0.2.3",
-        "tailwindcss": "^3.2.1"
+        "resize-observer-polyfill": "^1.5.1",
+        "simplebar": "^6.2.2",
+        "tailwindcss": "^3.2.1",
+        "vite": "^4.2.1"
     }
 }

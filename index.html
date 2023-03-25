@@ -4,15 +4,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dashboard - Twilight Dashboard</title>
-        <link rel="icon" href="./favicon.png" />
+        <link rel="icon" href="/favicon.png" />
         <!-- Core Fonts, Style -->
-        <link rel="stylesheet" href="./public/fonts/material-icons.css" />
-        <link rel="stylesheet" href="./plugins/simplebar/simplebar.css" />
-        <link rel="stylesheet" href="./build/tailwind.css" />
+        <link rel="stylesheet" href="/fonts/material-icons.css" />
+        <link rel="stylesheet" href="/styles/app.css" />
         <!-- Core Script -->
-        <script src="./plugins/simplebar/simplebar.min.js"></script>
-        <script src="https://unpkg.com/alpinejs" defer></script>
-        <script src="./scripts/app.js"></script>
+        <script type="module" src="./scripts/app.js"></script>
     </head>
 
     <body>
@@ -25,7 +22,7 @@
                 <aside class="sidebar-menu" :class="{ open: isMenuOpen }">
                     <div id="brand-logo" class="sidebar-brand-logo">
                         <a href="/index.html" class="flex items-center">
-                            <img class="brand-logo-image" src="./public/images/logo.png" alt="logo" />
+                            <img class="brand-logo-image" src="/images/logo.png" alt="logo" />
                             <span class="app-name"> Twilight </span>
                         </a>
                         <div class="mini-sidebar-icons" x-on:click="toggleMiniSidebar">
@@ -35,7 +32,6 @@
                         </div>
                         <span x-on:click="toggleMenuOpen" class="material-icons sidebar-close"> close </span>
                     </div>
-
                     <nav data-simplebar class="sidebar-menu-content">
                         <ul class="nav-menu space-y-2" x-init="activeAccordion('dashboard')">
                             <!-- dashboard start -->
@@ -964,7 +960,7 @@
                                                 Language
                                                 <span class="flex items-center text-xs font-bold leading-none">
                                                     <img
-                                                        src="./public/images/flags/united-states.svg"
+                                                        src="/images/flags/united-states.svg"
                                                         class="mr-2 h-4 w-4 rounded-full"
                                                         alt="English" />
                                                     English
@@ -973,14 +969,14 @@
                                                 <div class="language-dropdown">
                                                     <div class="language-dropdown-item">
                                                         <img
-                                                            src="./public/images/flags/united-states.svg"
+                                                            src="/images/flags/united-states.svg"
                                                             class="mr-2 h-4 w-4 rounded-full"
                                                             alt="English" />
                                                         <span class="text-xs leading-none">English</span>
                                                     </div>
                                                     <div class="language-dropdown-item">
                                                         <img
-                                                            src="./public/images/flags/france.svg"
+                                                            src="/images/flags/france.svg"
                                                             class="mr-2 h-4 w-4 rounded-full"
                                                             alt="france" />
                                                         <span class="text-xs leading-none">France</span>
