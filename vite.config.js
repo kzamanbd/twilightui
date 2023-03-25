@@ -16,11 +16,11 @@ export default defineConfig({
         rollupOptions: {
             input: Object.fromEntries(
                 glob.sync(['./*.html', './pages/**/*.html']).map(file => [
-                    // This remove `src/` as well as the file extension from each
-                    // file, so e.g. src/nested/foo.js becomes nested/foo
+                    // This remove `pages/` as well as the file extension from each
+                    // file, so e.g. pages/nested/foo.html becomes nested/foo
                     path.relative(__dirname, file.slice(0, file.length - path.extname(file).length)),
                     // This expands the relative paths to absolute paths, so e.g.
-                    // src/nested/foo becomes /project/src/nested/foo.js
+                    // pages/nested/foo becomes /project/pages/nested/foo.html
                     fileURLToPath(new URL(file, import.meta.url)),
                 ]),
             ),
