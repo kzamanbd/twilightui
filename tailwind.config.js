@@ -17,6 +17,7 @@ module.exports = {
                     gray: '#F5F8FA',
                 },
                 primary: {
+                    50: primary[50],
                     100: primary[100],
                     200: primary[200],
                     300: primary[300],

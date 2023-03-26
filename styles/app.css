@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&display=swap');
 
 @import 'tailwindcss/base';
+@import './base/typography.css';
 @import 'tailwindcss/components';
 /* custom components */
 @import './components/base.css';
@@ -12,7 +13,10 @@
 @import './components/button-ripple.css';
 @import './components/form.css';
 @import './components/alerts.css';
+@import './components/breadcrumb.css';
+
 /* Start Pages */
+@import './components/pages/dashboard.css';
 @import './components/pages/login.css';
 
 /* utilities */

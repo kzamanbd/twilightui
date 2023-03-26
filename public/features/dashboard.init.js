@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //  MINI CHART
 
     // mini-1
-    var minichart1Colors = getChartColorsArray('#mini-chart1');
+    var miniChart1Colors = getChartColorsArray('#mini-chart1');
     var options = {
         series: [
             {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 enabled: true,
             },
         },
-        colors: minichart1Colors,
+        colors: miniChart1Colors,
         stroke: {
             curve: 'smooth',
             width: 2,
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart.render();
 
     // mini-2
-    var minichart2Colors = getChartColorsArray('#mini-chart2');
+    var miniChart2Colors = getChartColorsArray('#mini-chart2');
     var options = {
         series: [
             {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 enabled: true,
             },
         },
-        colors: minichart2Colors,
+        colors: miniChart2Colors,
         stroke: {
             curve: 'smooth',
             width: 2,
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart.render();
 
     // mini-3
-    var minichart3Colors = getChartColorsArray('#mini-chart3');
+    var miniChart3Colors = getChartColorsArray('#mini-chart3');
     var options = {
         series: [
             {
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 enabled: true,
             },
         },
-        colors: minichart3Colors,
+        colors: miniChart3Colors,
         stroke: {
             curve: 'smooth',
             width: 2,
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chart.render();
 
     // mini-4
-    var minichart4Colors = getChartColorsArray('#mini-chart4');
+    var miniChart4Colors = getChartColorsArray('#mini-chart4');
     var options = {
         series: [
             {
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 enabled: true,
             },
         },
-        colors: minichart4Colors,
+        colors: miniChart4Colors,
         stroke: {
             curve: 'smooth',
             width: 2,
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //
     // Wallet Balance
     //
-    var piechartColors = getChartColorsArray('#wallet-balance');
+    var pieChartColors = getChartColorsArray('#wallet-balance');
     var options = {
         series: [35, 70, 15],
         chart: {
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
             type: 'pie',
         },
         labels: ['Ethereum', 'Bitcoin', 'Litecoin'],
-        colors: piechartColors,
+        colors: pieChartColors,
         stroke: {
             width: 0,
         },
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Invested Overview
     //
 
-    var radialchartColors = getChartColorsArray('#invested-overview');
+    var radialChartColors = getChartColorsArray('#invested-overview');
     var options = {
         chart: {
             height: 270,
@@ -254,13 +254,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
             },
         },
-        colors: [radialchartColors[0]],
+        colors: [radialChartColors[0]],
         fill: {
             type: 'gradient',
             gradient: {
                 shade: 'dark',
                 type: 'horizontal',
-                gradientToColors: [radialchartColors[1]],
+                gradientToColors: [radialChartColors[1]],
                 shadeIntensity: 0.15,
                 inverseColors: false,
                 opacityFrom: 1,
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //
     // Market Overview
     //
-    var barchartColors = getChartColorsArray('#market-overview');
+    var barChartColors = getChartColorsArray('#market-overview');
     var options = {
         series: [
             {
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 columnWidth: '20%',
             },
         },
-        colors: barchartColors,
+        colors: barChartColors,
         fill: {
             opacity: 1,
         },
