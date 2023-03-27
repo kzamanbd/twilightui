@@ -16,6 +16,9 @@
     .twilight-body {
         @apply flex flex-1 flex-col overflow-y-auto overflow-x-hidden transition-all duration-300;
     }
+    .mini-sidebar .twilight-body {
+        @apply lg:pl-[70px];
+    }
     .twilight-content {
         @apply relative mx-auto px-6 pb-4 pt-2 dark:text-gray-300 md:pt-4;
         @apply h-full bg-[url('/images/mask.svg')] after:absolute after:top-0 after:left-0 after:z-0 after:w-full;

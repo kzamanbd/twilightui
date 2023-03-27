@@ -1,7 +1,7 @@
 @layer components {
     /* start sidebar menu components */
     .sidebar-menu {
-        @apply fixed inset-y-0 left-0 z-30 w-64 border-gray-200 bg-white shadow-sm dark:bg-dark-primary;
+        @apply fixed inset-y-0 left-0 z-30 w-64 border-gray-200 bg-white shadow-lg dark:bg-dark-primary;
         @apply lg:static lg:inset-0 lg:translate-x-0 !important;
     }
     .sidebar-menu {
@@ -13,14 +13,11 @@
     .mini-sidebar-icons {
         @apply fixed -right-4 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white text-primary shadow-lg lg:flex;
     }
+    .mini-sidebar .sidebar-menu {
+        @apply fixed inset-y-0 left-0 z-30 w-[70px] duration-500 hover:w-64 !important;
+    }
     .sidebar-close {
         @apply dark--text fixed right-2 cursor-pointer text-lg lg:hidden;
-    }
-    .mini-sidebar .sidebar-menu {
-        @apply fixed inset-y-0 left-0 z-30 w-[70px] duration-300 hover:w-64 !important;
-    }
-    .mini-sidebar .twilight-body {
-        @apply lg:pl-16;
     }
     .sidebar-brand-logo {
         @apply relative flex h-[70px] items-center border-b py-2 px-4 dark:border-b-gray-700;
@@ -28,17 +25,11 @@
     .brand-logo-image {
         @apply h-12 w-12;
     }
-    .mini-sidebar .sidebar-brand-logo {
-        @apply w-[70px];
-    }
-    .mini-sidebar .sidebar-menu:hover .sidebar-brand-logo {
-        @apply w-64;
-    }
     .mini-sidebar .sidebar-menu:not(:hover) .sidebar-brand-logo {
-        @apply justify-center px-0;
+        @apply justify-center;
     }
     .mini-sidebar .sidebar-menu:hover .sidebar-brand-logo {
-        @apply justify-start;
+        @apply justify-start duration-500;
     }
     .app-name {
         @apply dark--text mx-2 text-xl font-semibold;
@@ -98,8 +89,9 @@
         @apply tw-link-active;
     }
     .mini-sidebar .sidebar-menu:not(:hover) .app-name,
-    .mini-sidebar .sidebar-menu:not(:hover) .tw-dropdown-arrow,
     .mini-sidebar .sidebar-menu:not(:hover) .tw-dropdown-menu,
+    .mini-sidebar .sidebar-menu:not(:hover) .tw-dropdown-arrow,
+    .mini-sidebar .sidebar-menu:not(:hover) .mini-sidebar-icons,
     .mini-sidebar .sidebar-menu:not(:hover) .documents-link .btn-label,
     .mini-sidebar .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label {
         @apply hidden opacity-0 duration-300;

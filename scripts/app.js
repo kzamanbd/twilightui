@@ -12,6 +12,7 @@ import { createPopper } from '@popperjs/core';
 import ResizeObserver from 'resize-observer-polyfill';
 window.ResizeObserver = ResizeObserver;
 
+// app config
 (function () {
     'use strict';
 
@@ -34,16 +35,18 @@ window.ResizeObserver = ResizeObserver;
         status: 'Active',
         role: 'Owner',
     };
-
-    Alpine.store('accordion', {
-        tab: undefined,
-    });
     //? alpine data
     Alpine.data('twilightTheme', () => ({
         init() {
             this.$refs.loading.classList.add('hidden');
             if (getTwilightTheme()) {
                 document.body.classList.add('dark');
+            }
+
+            // if user sidebar is mini
+            if (localStorage.getItem('mini-sidebar')) {
+                this.isMiniSidebar = JSON.parse(localStorage.getItem('mini-sidebar'));
+                document.body.classList.add('mini-sidebar');
             }
         },
         users: [...Array(10).keys()].map(() => testUser),
@@ -61,12 +64,16 @@ window.ResizeObserver = ResizeObserver;
         toggleMiniSidebar() {
             this.isMiniSidebar = !this.isMiniSidebar;
             document.body.classList.toggle('mini-sidebar');
+            localStorage.setItem('mini-sidebar', this.isMiniSidebar);
         },
         activeAccordion(tabName) {
             this.$store.accordion.tab = tabName;
         },
     }));
 
+    Alpine.store('accordion', {
+        tab: undefined,
+    });
     Alpine.data('accordionItem', idx => ({
         init() {
             this.idx = idx;
@@ -88,6 +95,7 @@ window.ResizeObserver = ResizeObserver;
     Alpine.start();
 })();
 
+// ripple effect
 document.addEventListener('DOMContentLoaded', function () {
     // get all elements with ripple attribute
     const ripples = document.querySelectorAll('[data-ripple]');
