@@ -51,9 +51,9 @@ module.exports = {
         require('prettier-plugin-tailwindcss'),
         plugin(function ({ addVariant, e }) {
             // mini sidebar variant
-            addVariant('mini-sidebar', ({ modifySelectors, separator }) => {
+            addVariant('collapsible-vertical', ({ modifySelectors, separator }) => {
                 modifySelectors(({ className }) => {
-                    return `.mini-sidebar .${e(`mini-sidebar${separator}${className}`)}`;
+                    return `.collapsible-vertical .${e(`collapsible-vertical${separator}${className}`)}`;
                 });
             });
         }),

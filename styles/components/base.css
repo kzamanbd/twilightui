@@ -16,7 +16,7 @@
     .twilight-body {
         @apply flex flex-1 flex-col overflow-y-auto overflow-x-hidden transition-all duration-300;
     }
-    .mini-sidebar .twilight-body {
+    .collapsible-vertical .twilight-body {
         @apply lg:pl-[70px];
     }
     .twilight-content {

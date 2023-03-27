@@ -44,9 +44,9 @@ window.ResizeObserver = ResizeObserver;
             }
 
             // if user sidebar is mini
-            if (localStorage.getItem('mini-sidebar') == 'true') {
+            if (localStorage.getItem('collapsible-vertical') == 'true') {
                 this.isMiniSidebar = true;
-                document.body.classList.add('mini-sidebar');
+                document.body.classList.add('collapsible-vertical');
             }
         },
         users: [...Array(10).keys()].map(() => testUser),
@@ -63,8 +63,8 @@ window.ResizeObserver = ResizeObserver;
         },
         toggleMiniSidebar() {
             this.isMiniSidebar = !this.isMiniSidebar;
-            document.body.classList.toggle('mini-sidebar');
-            localStorage.setItem('mini-sidebar', this.isMiniSidebar);
+            document.body.classList.toggle('collapsible-vertical');
+            localStorage.setItem('collapsible-vertical', this.isMiniSidebar);
         },
         activeAccordion(tabName) {
             this.$store.accordion.item = tabName;
@@ -87,7 +87,7 @@ window.ResizeObserver = ResizeObserver;
         },
         handleToggle() {
             return this.$store.accordion.item == this.idx
-                ? `max-height: ${this.$refs.tab.scrollHeight}px; margin-top: 8px`
+                ? `max-height: ${this.$refs.tab.scrollHeight}px; margin-top: 4px`
                 : '';
         },
     }));

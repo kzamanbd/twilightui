@@ -2,7 +2,7 @@
     /* start sidebar menu components */
     .sidebar-menu {
         @apply fixed inset-y-0 left-0 z-30 w-64 border-gray-200 bg-white shadow-lg dark:bg-dark-primary;
-        @apply transition-all duration-300 lg:static lg:inset-0 lg:translate-x-0 !important;
+        @apply lg:static lg:inset-0 lg:translate-x-0 !important;
     }
     .sidebar-menu {
         @apply [&.open]:translate-x-0 [&:not(.open)]:-translate-x-full;
@@ -10,11 +10,11 @@
     .sidebar-shadow {
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden [&:not(.show)]:hidden;
     }
-    .mini-sidebar-icons {
-        @apply fixed -right-4 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white text-primary shadow-lg lg:flex;
+    .collapsible-vertical-icon {
+        @apply fixed -right-4 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white text-primary shadow-lg dark:bg-gray-700 lg:flex;
     }
-    .mini-sidebar .sidebar-menu {
-        @apply fixed inset-y-0 left-0 z-30 w-[70px] duration-500 hover:w-64 !important;
+    .collapsible-vertical .sidebar-menu {
+        @apply fixed inset-y-0 left-0 z-30 w-[70px] transition-[width] duration-500 ease-in-out hover:w-64 !important;
     }
     .sidebar-close {
         @apply dark--text fixed right-2 cursor-pointer text-lg lg:hidden;
@@ -32,10 +32,10 @@
         @apply dark--text relative w-full truncate pt-2 text-xs font-semibold uppercase text-gray-400;
         @apply px-2 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
     }
-    .mini-sidebar .sidebar-menu .menu-header {
-        @apply indent-40 after:ml-1.5 after:block after:border-b after:border-gray-300 dark:after:bg-gray-700;
+    .collapsible-vertical .sidebar-menu .menu-header {
+        @apply indent-10 after:ml-1.5 after:block after:border-b after:border-gray-300 dark:after:bg-gray-700;
     }
-    .mini-sidebar .sidebar-menu:hover .menu-header {
+    .collapsible-vertical .sidebar-menu:hover .menu-header {
         @apply indent-0 after:hidden after:border-b-0;
     }
     .tw-menu-content {
@@ -82,18 +82,18 @@
     .tw-dropdown-link.active {
         @apply tw-link-active;
     }
-    .mini-sidebar .sidebar-menu:not(:hover) .app-name,
-    .mini-sidebar .sidebar-menu:not(:hover) .tw-dropdown-menu,
-    .mini-sidebar .sidebar-menu:not(:hover) .tw-dropdown-arrow,
-    .mini-sidebar .sidebar-menu:not(:hover) .mini-sidebar-icons,
-    .mini-sidebar .sidebar-menu:not(:hover) .documents-link .btn-label,
-    .mini-sidebar .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label {
-        @apply hidden opacity-0 duration-300;
+    .collapsible-vertical .sidebar-menu:not(:hover) .app-name,
+    .collapsible-vertical .sidebar-menu:not(:hover) .tw-dropdown-menu,
+    .collapsible-vertical .sidebar-menu:not(:hover) .tw-dropdown-arrow,
+    .collapsible-vertical .sidebar-menu:not(:hover) collapsible-vertical-icons,
+    .collapsible-vertical .sidebar-menu:not(:hover) .documents-link .btn-label,
+    .collapsible-vertical .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label {
+        @apply hidden opacity-0 transition-opacity duration-300 ease-in-out;
     }
     .documents-button {
         @apply flex h-12 items-center px-4;
     }
     .documents-link {
-        @apply btn-primary mb-0 flex w-full items-center justify-center justify-items-end py-2 duration-300;
+        @apply btn-primary mb-0 flex w-full items-center justify-center justify-items-end py-2;
     }
 }
