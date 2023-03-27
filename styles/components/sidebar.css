@@ -11,7 +11,14 @@
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden [&:not(.show)]:hidden;
     }
     .collapsible-vertical-icon {
-        @apply fixed -right-4 hidden h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white text-primary shadow-lg dark:bg-gray-700 lg:flex;
+        @apply fixed -right-4 hidden h-8 w-8 cursor-pointer items-center justify-center;
+        @apply rounded-full bg-white text-primary shadow-lg dark:bg-gray-700 lg:flex;
+    }
+    .collapsible-vertical-icon .material-icons {
+        @apply rotate-180 duration-300 collapsible-vertical:rotate-0;
+    }
+    .collapsible-vertical-icon:hover {
+        @apply bg-light-gray dark:bg-gray-700;
     }
     .collapsible-vertical .sidebar-menu {
         @apply fixed inset-y-0 left-0 z-30 w-[70px] transition-[width] duration-500 ease-in-out hover:w-64 !important;
