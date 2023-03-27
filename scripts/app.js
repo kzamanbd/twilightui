@@ -1,6 +1,8 @@
 // alpine.js config
+import persist from '@alpinejs/persist';
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
+Alpine.plugin(persist);
 
 // simplebar
 import 'animate.css';
@@ -28,18 +30,9 @@ window.ResizeObserver = ResizeObserver;
         return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
 
-    const testUser = {
-        name: 'John Doe',
-        email: 'john@example.com',
-        title: 'Software Engineer',
-        title2: 'Web dev',
-        status: 'Active',
-        role: 'Owner',
-    };
     //? alpine data
     Alpine.data('twilightTheme', () => ({
         init() {
-            this.$refs.loading.classList.add('hidden');
             if (getTwilightTheme()) {
                 document.body.classList.add('dark');
             }
@@ -50,7 +43,6 @@ window.ResizeObserver = ResizeObserver;
                 document.body.classList.add('collapsible-vertical');
             }
         },
-        users: [...Array(10).keys()].map(() => testUser),
         toggleTheme() {
             document.body.classList.toggle('dark');
             //! set theme to local storage
@@ -92,6 +84,201 @@ window.ResizeObserver = ResizeObserver;
                 : '';
         },
     }));
+
+    // theme config
+
+    const $themeConfig = {
+        locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
+        theme: 'light', // light, dark, system
+        rtlClass: 'ltr', // rtl, ltr
+        menu: 'vertical', // vertical, collapsible-vertical, horizontal
+        layout: 'full', // full, boxed-layout
+        animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
+        navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
+        semidark: false,
+    };
+    window.addEventListener('DOMContentLoaded', function () {
+        // screen loader
+        const loading = document.getElementsByClassName('loading');
+        console.log(loading);
+        if (loading?.length) {
+            loading[0].classList.add('animate__fadeOut');
+            setTimeout(() => {
+                loading[0].remove();
+            }, 200);
+        }
+    });
+
+    // set current year in footer
+    const yearEle = document.querySelector('#footer-year');
+    if (yearEle) {
+        yearEle.innerHTML = new Date().getFullYear();
+    }
+
+    Alpine.data('collapse', () => ({
+        collapse: false,
+
+        collapseSidebar() {
+            this.collapse = !this.collapse;
+        },
+    }));
+
+    Alpine.data('dropdown', (initialOpenState = false) => ({
+        open: initialOpenState,
+
+        toggle() {
+            this.open = !this.open;
+        },
+    }));
+    Alpine.data('modal', (initialOpenState = false) => ({
+        open: initialOpenState,
+
+        toggle() {
+            this.open = !this.open;
+        },
+    }));
+
+    // Magic: $tooltip
+    Alpine.magic('tooltip', el => (message, placement) => {
+        let instance = tippy(el, {
+            content: message,
+            trigger: 'manual',
+            placement: placement || undefined,
+            allowHTML: true,
+        });
+
+        instance.show();
+    });
+
+    Alpine.directive('dynamictooltip', (el, { expression }, { evaluate }) => {
+        let string = evaluate(expression);
+        tippy(el, {
+            content: string.charAt(0).toUpperCase() + string.slice(1),
+        });
+    });
+
+    // Directive: x-tooltip
+    Alpine.directive('tooltip', (el, { expression }) => {
+        tippy(el, {
+            content: expression,
+            placement: el.getAttribute('data-placement') || undefined,
+            allowHTML: true,
+            delay: el.getAttribute('data-delay') || 0,
+            animation: el.getAttribute('data-animation') || 'fade',
+            theme: el.getAttribute('data-theme') || '',
+        });
+    });
+
+    // Magic: $popovers
+    Alpine.magic('popovers', el => (message, placement) => {
+        let instance = tippy(el, {
+            content: message,
+            placement: placement || undefined,
+            interactive: true,
+            allowHTML: true,
+            // hideOnClick: el.getAttribute("data-dismissable") ? true : "toggle",
+            delay: el.getAttribute('data-delay') || 0,
+            animation: el.getAttribute('data-animation') || 'fade',
+            theme: el.getAttribute('data-theme') || '',
+            trigger: el.getAttribute('data-trigger') || 'click',
+        });
+
+        instance.show();
+    });
+
+    Alpine.store('app', {
+        // theme
+        theme: Alpine.$persist($themeConfig.theme),
+        toggleTheme(val) {
+            if (!val) {
+                val = this.theme || $themeConfig.theme; // light|dark|system
+            }
+
+            this.theme = val;
+        },
+
+        // navigation menu
+        menu: Alpine.$persist($themeConfig.menu),
+        toggleMenu(val) {
+            if (!val) {
+                val = this.menu || $themeConfig.menu; // vertical, collapsible-vertical, horizontal
+            }
+            this.sidebar = false; // reset sidebar state
+            this.menu = val;
+        },
+
+        // layout
+        layout: Alpine.$persist($themeConfig.layout),
+        toggleLayout(val) {
+            if (!val) {
+                val = this.layout || $themeConfig.layout; // full, boxed-layout
+            }
+
+            this.layout = val;
+        },
+
+        // rtl support
+        rtlClass: Alpine.$persist($themeConfig.rtlClass),
+        toggleRTL(val) {
+            if (!val) {
+                val = this.rtlClass || $themeConfig.rtlClass; // rtl, ltr
+            }
+
+            this.rtlClass = val;
+            this.setRTLLayout();
+        },
+
+        setRTLLayout() {
+            document.querySelector('html').setAttribute('dir', this.rtlClass || $themeConfig.rtlClass);
+        },
+
+        // animation
+        animation: Alpine.$persist($themeConfig.animation),
+        toggleAnimation(val) {
+            if (!val) {
+                val = this.animation || $themeConfig.animation; // animate__fadeIn, animate__fadeInDown, animate__fadeInLeft, animate__fadeInRight
+            }
+            val = val?.trim();
+
+            this.animation = val;
+        },
+
+        // navbar type
+        navbar: Alpine.$persist($themeConfig.navbar),
+        toggleNavbar(val) {
+            if (!val) {
+                val = this.navbar || $themeConfig.navbar; // navbar-sticky, navbar-floating, navbar-static
+            }
+
+            this.navbar = val;
+        },
+
+        // semidark
+        semidark: Alpine.$persist($themeConfig.semidark),
+        toggleSemidark(val) {
+            if (!val) {
+                val = this.semidark || $themeConfig.semidark;
+            }
+
+            this.semidark = val;
+        },
+
+        // multi language
+        locale: Alpine.$persist($themeConfig.locale),
+        toggleLocale(val) {
+            if (!val) {
+                val = this.locale || $themeConfig.locale;
+            }
+
+            this.locale = val;
+        },
+
+        // sidebar
+        sidebar: false,
+        toggleSidebar() {
+            this.sidebar = !this.sidebar;
+        },
+    });
 
     Alpine.start();
 })();
