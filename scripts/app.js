@@ -80,7 +80,7 @@ window.ResizeObserver = ResizeObserver;
         },
         idx: null,
         handleClick() {
-            this.$store.accordion.item = this.$store.accordion.item == this.idx ? null : this.idx;
+            this.$store.accordion.item = this.$store.accordion.item != this.idx && this.idx;
         },
         activeAccordion() {
             return this.$store.accordion.item == this.idx && 'active';
