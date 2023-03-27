@@ -45,7 +45,7 @@
     }
     .tw-menu-header {
         @apply dark--text relative w-full truncate pt-2 text-xs font-semibold uppercase text-gray-400;
-        @apply pl-4 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
+        @apply px-2 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
     }
     .mini-sidebar .sidebar-menu .menu-header {
         @apply indent-40 after:ml-1.5 after:block after:border-b after:border-gray-300 dark:after:bg-gray-700;
@@ -53,17 +53,11 @@
     .mini-sidebar .sidebar-menu:hover .menu-header {
         @apply indent-0 after:hidden after:border-b-0;
     }
-    .sidebar-menu-content {
+    .tw-menu-content {
         @apply h-[calc(100vh_-_118px)] overflow-y-auto overflow-x-hidden;
     }
     .tw-nav-menu {
-        @apply mt-4 pr-4 pb-2;
-    }
-    .mini-sidebar .sidebar-menu:not(:hover) .tw-nav-menu {
-        @apply pr-2;
-    }
-    .tw-menu-item {
-        @apply pl-4;
+        @apply mt-4 px-4 pb-2;
     }
     .tw-menu-item .material-icons,
     .tw-menu-item .material-symbols-outlined {
@@ -84,9 +78,6 @@
     }
     .tw-dropdown-menu {
         @apply max-h-0 space-y-1 overflow-hidden duration-300;
-    }
-    .mini-sidebar .sidebar-menu:not(:hover) .tw-dropdown-menu {
-        @apply hidden duration-300;
     }
     .tw-dropdown-item {
         @apply dark--text flex items-center rounded-md hover:text-gray-900 dark:hover:text-gray-100;
