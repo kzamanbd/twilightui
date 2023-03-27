@@ -35,7 +35,7 @@
                         </div>
                         <span x-on:click="toggleMenuOpen" class="material-icons sidebar-close"> close </span>
                     </div>
-                    <nav data-simplebar class="sidebar-menu-content no-scrollbar">
+                    <nav data-simplebar class="tw-menu-content no-scrollbar">
                         <ul class="tw-nav-menu space-y-2" x-init="activeAccordion('dashboard')">
                             <!-- dashboard start -->
                             <li class="tw-menu-item" x-data="accordionItem('dashboard')">
@@ -748,8 +748,8 @@
                             target="_blank"
                             class="documents-link"
                             data-ripple>
-                            <span class="material-icons mr-2">description</span>
-                            <span class="btn-label">Documentation</span>
+                            <span class="material-icons">description</span>
+                            <span class="btn-label ml-2">Documentation</span>
                         </a>
                     </div>
                 </aside>
@@ -1704,7 +1704,7 @@
                                                     </div>
                                                 </div>
                                                 <span
-                                                    class="whitespace-pre px-1 text-base text-danger ltr:ml-auto rtl:mr-auto"
+                                                    class="ml-auto whitespace-pre px-1 text-base text-danger rtl:mr-auto"
                                                     >-$16.44</span
                                                 >
                                             </div>
@@ -1737,7 +1737,7 @@
                                                     </div>
                                                 </div>
                                                 <span
-                                                    class="whitespace-pre px-1 text-base text-success ltr:ml-auto rtl:mr-auto"
+                                                    class="ml-auto whitespace-pre px-1 text-base text-success rtl:mr-auto"
                                                     >+$66.44</span
                                                 >
                                             </div>
@@ -1762,7 +1762,7 @@
                                                     </div>
                                                 </div>
                                                 <span
-                                                    class="whitespace-pre px-1 text-base text-danger ltr:ml-auto rtl:mr-auto"
+                                                    class="ml-auto whitespace-pre px-1 text-base text-danger rtl:mr-auto"
                                                     >-$32.00</span
                                                 >
                                             </div>
@@ -1778,7 +1778,7 @@
                                                     </div>
                                                 </div>
                                                 <span
-                                                    class="whitespace-pre px-1 text-base text-success ltr:ml-auto rtl:mr-auto"
+                                                    class="ml-auto whitespace-pre px-1 text-base text-success rtl:mr-auto"
                                                     >+$10.08</span
                                                 >
                                             </div>
@@ -1809,7 +1809,7 @@
                                                     </div>
                                                 </div>
                                                 <span
-                                                    class="whitespace-pre px-1 text-base text-danger ltr:ml-auto rtl:mr-auto"
+                                                    class="ml-auto whitespace-pre px-1 text-base text-danger rtl:mr-auto"
                                                     >-$22.00</span
                                                 >
                                             </div>
@@ -1920,6 +1920,371 @@
                                             <button type="button" class="btn btn-secondary mr-2">View Details</button>
                                             <button type="button" class="btn btn-success">Pay Now $29.51</button>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
+                                <div class="card h-full w-full">
+                                    <div class="card-header flex items-center justify-between">
+                                        <h5 class="dark:text-white-light text-lg font-semibold">Recent Orders</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="w-full">
+                                            <thead>
+                                                <tr class="bg-gray-100">
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold">Customer</th>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold">Product</th>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold">Invoice</th>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold">Price</th>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="group hover:text-black dark:hover:text-white/90">
+                                                    <td class="min-w-[150px] px-4 py-3 text-black dark:text-white">
+                                                        <div class="flex items-center">
+                                                            <img
+                                                                class="mr-3 h-8 w-8 rounded-md object-cover"
+                                                                src="/images/profile-6.jpeg"
+                                                                alt="avatar" />
+                                                            <span class="whitespace-nowrap">Luke Ivory</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-primary">Headphone</td>
+                                                    <td class="px-4 py-3">
+                                                        <a href="apps-invoice-preview.html">#46894</a>
+                                                    </td>
+                                                    <td class="px-4 py-3">$56.07</td>
+                                                    <td class="px-4 py-3">
+                                                        <span
+                                                            class="badge bg-success shadow-md dark:group-hover:bg-transparent">
+                                                            Paid
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr
+                                                    class="text-white-dark dark:hover:text-white-light/90 group hover:text-black">
+                                                    <td class="px-4 py-3 text-black dark:text-white">
+                                                        <div class="flex items-center">
+                                                            <img
+                                                                class="mr-3 h-8 w-8 rounded-md object-cover"
+                                                                src="/images/profile-7.jpeg"
+                                                                alt="avatar" />
+                                                            <span class="whitespace-nowrap">Andy King</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-info">Nike Sport</td>
+                                                    <td class="px-4 py-3">
+                                                        <a href="apps-invoice-preview.html">#76894</a>
+                                                    </td>
+                                                    <td class="px-4 py-3">$126.04</td>
+                                                    <td class="px-4 py-3">
+                                                        <span
+                                                            class="badge bg-secondary shadow-md dark:group-hover:bg-transparent">
+                                                            Shipped
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr
+                                                    class="text-white-dark dark:hover:text-white-light/90 group hover:text-black">
+                                                    <td class="px-4 py-3 text-black dark:text-white">
+                                                        <div class="flex items-center">
+                                                            <img
+                                                                class="mr-3 h-8 w-8 rounded-md object-cover"
+                                                                src="/images/profile-8.jpeg"
+                                                                alt="avatar" />
+                                                            <span class="whitespace-nowrap">Laurie Fox</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-warning">Sunglasses</td>
+                                                    <td class="px-4 py-3">
+                                                        <a href="apps-invoice-preview.html">#66894</a>
+                                                    </td>
+                                                    <td class="px-4 py-3">$56.07</td>
+                                                    <td class="px-4 py-3">
+                                                        <span
+                                                            class="badge bg-success shadow-md dark:group-hover:bg-transparent">
+                                                            Paid
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr
+                                                    class="text-white-dark dark:hover:text-white-light/90 group hover:text-black">
+                                                    <td class="px-4 py-3 text-black dark:text-white">
+                                                        <div class="flex items-center">
+                                                            <img
+                                                                class="mr-3 h-8 w-8 rounded-md object-cover"
+                                                                src="/images/profile-9.jpeg"
+                                                                alt="avatar" />
+                                                            <span class="whitespace-nowrap">Ryan Collins</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-danger">Sport</td>
+                                                    <td class="px-4 py-3">
+                                                        <a href="apps-invoice-preview.html">#75844</a>
+                                                    </td>
+                                                    <td class="px-4 py-3">$110.00</td>
+                                                    <td class="px-4 py-3">
+                                                        <span
+                                                            class="badge bg-secondary shadow-md dark:group-hover:bg-transparent">
+                                                            Shipped
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr
+                                                    class="text-white-dark dark:hover:text-white-light/90 group hover:text-black">
+                                                    <td class="px-4 py-3 text-black dark:text-white">
+                                                        <div class="flex items-center">
+                                                            <img
+                                                                class="mr-3 h-8 w-8 rounded-md object-cover"
+                                                                src="/images/profile-10.jpeg"
+                                                                alt="avatar" />
+                                                            <span class="whitespace-nowrap">Irene Collins</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-secondary">Speakers</td>
+                                                    <td class="px-4 py-3">
+                                                        <a href="apps-invoice-preview.html">#46894</a>
+                                                    </td>
+                                                    <td class="px-4 py-3">$56.07</td>
+                                                    <td class="px-4 py-3">
+                                                        <span
+                                                            class="badge bg-success shadow-md dark:group-hover:bg-transparent">
+                                                            Paid
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="card h-full w-full">
+                                    <div class="card-header flex items-center justify-between">
+                                        <h5 class="dark:text-white-light text-lg font-semibold">Top Selling Product</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="w-full">
+                                            <thead>
+                                                <tr class="bg-gray-100">
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold">Product</th>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold">Price</th>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold">Discount</th>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold">Sold</th>
+                                                    <th class="px-4 py-3 text-left text-sm font-semibold">Source</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="group hover:text-black dark:hover:text-white/90">
+                                                    <td class="min-w-[150px] px-4 py-3 text-black dark:text-white">
+                                                        <div class="flex">
+                                                            <img
+                                                                class="mr-3 h-8 w-8 rounded-md object-cover"
+                                                                src="/images/products/headphones.jpg"
+                                                                alt="avatar" />
+                                                            <p class="whitespace-nowrap">
+                                                                Headphones
+                                                                <span class="block text-xs text-primary">Digital</span>
+                                                            </p>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3">$168.09</td>
+                                                    <td class="px-4 py-3">$60.09</td>
+                                                    <td class="px-4 py-3">170</td>
+                                                    <td class="px-4 py-3">
+                                                        <a class="flex items-center text-danger" href="javascript:;">
+                                                            <svg
+                                                                class="mr-1 h-3.5 w-3.5"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M12.6644 5.47875L16.6367 9.00968C18.2053 10.404 18.9896 11.1012 18.9896 11.9993C18.9896 12.8975 18.2053 13.5946 16.6367 14.989L12.6644 18.5199C11.9484 19.1563 11.5903 19.4746 11.2952 19.342C11 19.2095 11 18.7305 11 17.7725V15.4279C7.4 15.4279 3.5 17.1422 2 19.9993C2 10.8565 7.33333 8.57075 11 8.57075V6.22616C11 5.26817 11 4.78917 11.2952 4.65662C11.5903 4.52407 11.9484 4.8423 12.6644 5.47875Z"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"></path>
+                                                                <path
+                                                                    opacity="0.5"
+                                                                    d="M15.5386 4.5L20.7548 9.34362C21.5489 10.081 22.0001 11.1158 22.0001 12.1994C22.0001 13.3418 21.4989 14.4266 20.629 15.1671L15.5386 19.5"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"></path>
+                                                            </svg>
+
+                                                            Direct
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr
+                                                    class="text-white-dark dark:hover:text-white-light/90 group hover:text-black">
+                                                    <td class="px-4 py-3 text-black dark:text-white">
+                                                        <div class="flex">
+                                                            <img
+                                                                class="mr-3 h-8 w-8 rounded-md object-cover"
+                                                                src="/images/products/shoes.jpg"
+                                                                alt="avatar" />
+                                                            <p class="whitespace-nowrap">
+                                                                Shoes
+                                                                <span class="block text-xs text-warning">Faishon</span>
+                                                            </p>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3">$126.04</td>
+                                                    <td class="px-4 py-3">$47.09</td>
+                                                    <td class="px-4 py-3">130</td>
+                                                    <td class="px-4 py-3">
+                                                        <a class="flex items-center text-success" href="javascript:;">
+                                                            <svg
+                                                                class="mr-1 h-3.5 w-3.5"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M12.6644 5.47875L16.6367 9.00968C18.2053 10.404 18.9896 11.1012 18.9896 11.9993C18.9896 12.8975 18.2053 13.5946 16.6367 14.989L12.6644 18.5199C11.9484 19.1563 11.5903 19.4746 11.2952 19.342C11 19.2095 11 18.7305 11 17.7725V15.4279C7.4 15.4279 3.5 17.1422 2 19.9993C2 10.8565 7.33333 8.57075 11 8.57075V6.22616C11 5.26817 11 4.78917 11.2952 4.65662C11.5903 4.52407 11.9484 4.8423 12.6644 5.47875Z"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"></path>
+                                                                <path
+                                                                    opacity="0.5"
+                                                                    d="M15.5386 4.5L20.7548 9.34362C21.5489 10.081 22.0001 11.1158 22.0001 12.1994C22.0001 13.3418 21.4989 14.4266 20.629 15.1671L15.5386 19.5"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"></path>
+                                                            </svg>
+                                                            Google
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr
+                                                    class="text-white-dark dark:hover:text-white-light/90 group hover:text-black">
+                                                    <td class="px-4 py-3 text-black dark:text-white">
+                                                        <div class="flex">
+                                                            <img
+                                                                class="mr-3 h-8 w-8 rounded-md object-cover"
+                                                                src="/images/products/watch.jpg"
+                                                                alt="avatar" />
+                                                            <p class="whitespace-nowrap">
+                                                                Watch
+                                                                <span class="block text-xs text-danger">
+                                                                    Accessories
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3">$56.07</td>
+                                                    <td class="px-4 py-3">$20.00</td>
+                                                    <td class="px-4 py-3">66</td>
+                                                    <td class="px-4 py-3">
+                                                        <a class="flex items-center text-warning" href="javascript:;">
+                                                            <svg
+                                                                class="mr-1 h-3.5 w-3.5"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M12.6644 5.47875L16.6367 9.00968C18.2053 10.404 18.9896 11.1012 18.9896 11.9993C18.9896 12.8975 18.2053 13.5946 16.6367 14.989L12.6644 18.5199C11.9484 19.1563 11.5903 19.4746 11.2952 19.342C11 19.2095 11 18.7305 11 17.7725V15.4279C7.4 15.4279 3.5 17.1422 2 19.9993C2 10.8565 7.33333 8.57075 11 8.57075V6.22616C11 5.26817 11 4.78917 11.2952 4.65662C11.5903 4.52407 11.9484 4.8423 12.6644 5.47875Z"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"></path>
+                                                                <path
+                                                                    opacity="0.5"
+                                                                    d="M15.5386 4.5L20.7548 9.34362C21.5489 10.081 22.0001 11.1158 22.0001 12.1994C22.0001 13.3418 21.4989 14.4266 20.629 15.1671L15.5386 19.5"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"></path>
+                                                            </svg>
+                                                            Ads
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr
+                                                    class="text-white-dark dark:hover:text-white-light/90 group hover:text-black">
+                                                    <td class="px-4 py-3 text-black dark:text-white">
+                                                        <div class="flex">
+                                                            <img
+                                                                class="mr-3 h-8 w-8 rounded-md object-cover"
+                                                                src="/images/products/laptop.jpg"
+                                                                alt="avatar" />
+                                                            <p class="whitespace-nowrap">
+                                                                Laptop
+                                                                <span class="block text-xs text-primary">Digital</span>
+                                                            </p>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3">$110.00</td>
+                                                    <td class="px-4 py-3">$33.00</td>
+                                                    <td class="px-4 py-3">35</td>
+                                                    <td class="px-4 py-3">
+                                                        <a class="flex items-center text-secondary" href="javascript:;">
+                                                            <svg
+                                                                class="mr-1 h-3.5 w-3.5"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M12.6644 5.47875L16.6367 9.00968C18.2053 10.404 18.9896 11.1012 18.9896 11.9993C18.9896 12.8975 18.2053 13.5946 16.6367 14.989L12.6644 18.5199C11.9484 19.1563 11.5903 19.4746 11.2952 19.342C11 19.2095 11 18.7305 11 17.7725V15.4279C7.4 15.4279 3.5 17.1422 2 19.9993C2 10.8565 7.33333 8.57075 11 8.57075V6.22616C11 5.26817 11 4.78917 11.2952 4.65662C11.5903 4.52407 11.9484 4.8423 12.6644 5.47875Z"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"></path>
+                                                                <path
+                                                                    opacity="0.5"
+                                                                    d="M15.5386 4.5L20.7548 9.34362C21.5489 10.081 22.0001 11.1158 22.0001 12.1994C22.0001 13.3418 21.4989 14.4266 20.629 15.1671L15.5386 19.5"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"></path>
+                                                            </svg>
+                                                            Email
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr
+                                                    class="text-white-dark dark:hover:text-white-light/90 group hover:text-black">
+                                                    <td class="px-4 py-3 text-black dark:text-white">
+                                                        <div class="flex">
+                                                            <img
+                                                                class="mr-3 h-8 w-8 rounded-md object-cover"
+                                                                src="/images/products/camera.jpg"
+                                                                alt="avatar" />
+                                                            <p class="whitespace-nowrap">
+                                                                Camera
+                                                                <span class="block text-xs text-primary">Digital</span>
+                                                            </p>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3">$56.07</td>
+                                                    <td class="px-4 py-3">$26.04</td>
+                                                    <td class="px-4 py-3">30</td>
+                                                    <td class="px-4 py-3">
+                                                        <a class="flex items-center text-primary" href="javascript:;">
+                                                            <svg
+                                                                class="mr-1 h-3.5 w-3.5"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M12.6644 5.47875L16.6367 9.00968C18.2053 10.404 18.9896 11.1012 18.9896 11.9993C18.9896 12.8975 18.2053 13.5946 16.6367 14.989L12.6644 18.5199C11.9484 19.1563 11.5903 19.4746 11.2952 19.342C11 19.2095 11 18.7305 11 17.7725V15.4279C7.4 15.4279 3.5 17.1422 2 19.9993C2 10.8565 7.33333 8.57075 11 8.57075V6.22616C11 5.26817 11 4.78917 11.2952 4.65662C11.5903 4.52407 11.9484 4.8423 12.6644 5.47875Z"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"></path>
+                                                                <path
+                                                                    opacity="0.5"
+                                                                    d="M15.5386 4.5L20.7548 9.34362C21.5489 10.081 22.0001 11.1158 22.0001 12.1994C22.0001 13.3418 21.4989 14.4266 20.629 15.1671L15.5386 19.5"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"></path>
+                                                            </svg>
+                                                            Referral
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
