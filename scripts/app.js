@@ -44,8 +44,8 @@ window.ResizeObserver = ResizeObserver;
             }
 
             // if user sidebar is mini
-            if (localStorage.getItem('mini-sidebar')) {
-                this.isMiniSidebar = JSON.parse(localStorage.getItem('mini-sidebar'));
+            if (localStorage.getItem('mini-sidebar') == 'true') {
+                this.isMiniSidebar = true;
                 document.body.classList.add('mini-sidebar');
             }
         },
@@ -67,12 +67,12 @@ window.ResizeObserver = ResizeObserver;
             localStorage.setItem('mini-sidebar', this.isMiniSidebar);
         },
         activeAccordion(tabName) {
-            this.$store.accordion.tab = tabName;
+            this.$store.accordion.item = tabName;
         },
     }));
 
     Alpine.store('accordion', {
-        tab: undefined,
+        item: undefined,
     });
     Alpine.data('accordionItem', idx => ({
         init() {
@@ -80,13 +80,13 @@ window.ResizeObserver = ResizeObserver;
         },
         idx: null,
         handleClick() {
-            this.$store.accordion.tab = this.$store.accordion.tab == this.idx ? null : this.idx;
+            this.$store.accordion.item = this.$store.accordion.item == this.idx ? null : this.idx;
         },
         activeAccordion() {
-            return this.$store.accordion.tab == this.idx ? 'active' : '';
+            return this.$store.accordion.item == this.idx && 'active';
         },
         handleToggle() {
-            return this.$store.accordion.tab == this.idx
+            return this.$store.accordion.item == this.idx
                 ? `max-height: ${this.$refs.tab.scrollHeight}px; margin-top: 8px`
                 : '';
         },

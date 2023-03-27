@@ -2,7 +2,7 @@
     /* start sidebar menu components */
     .sidebar-menu {
         @apply fixed inset-y-0 left-0 z-30 w-64 border-gray-200 bg-white shadow-lg dark:bg-dark-primary;
-        @apply lg:static lg:inset-0 lg:translate-x-0 !important;
+        @apply transition-all duration-300 lg:static lg:inset-0 lg:translate-x-0 !important;
     }
     .sidebar-menu {
         @apply [&.open]:translate-x-0 [&:not(.open)]:-translate-x-full;
@@ -20,16 +20,10 @@
         @apply dark--text fixed right-2 cursor-pointer text-lg lg:hidden;
     }
     .sidebar-brand-logo {
-        @apply relative flex h-[70px] items-center border-b py-2 px-4 dark:border-b-gray-700;
+        @apply relative flex h-[70px] items-center justify-between border-b py-2 px-4 dark:border-b-gray-700;
     }
     .brand-logo-image {
-        @apply h-12 w-12;
-    }
-    .mini-sidebar .sidebar-menu:not(:hover) .sidebar-brand-logo {
-        @apply justify-center;
-    }
-    .mini-sidebar .sidebar-menu:hover .sidebar-brand-logo {
-        @apply justify-start duration-500;
+        @apply h-10 w-10;
     }
     .app-name {
         @apply dark--text mx-2 text-xl font-semibold;
@@ -100,6 +94,6 @@
         @apply flex h-12 items-center px-4;
     }
     .documents-link {
-        @apply btn-primary mb-0 flex w-full items-center justify-center justify-items-end py-2;
+        @apply btn-primary mb-0 flex w-full items-center justify-center justify-items-end py-2 duration-300;
     }
 }
