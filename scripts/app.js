@@ -3,6 +3,7 @@ import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 
 // simplebar
+import 'animate.css';
 import 'simplebar'; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
 import 'simplebar/dist/simplebar.css';
 
