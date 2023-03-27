@@ -42,11 +42,12 @@
         @apply dark--text relative w-full truncate pt-2 text-xs font-semibold uppercase text-gray-400;
         @apply px-2 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
     }
-    .collapsible-vertical .sidebar-menu .menu-header {
-        @apply indent-10 after:ml-1.5 after:block after:border-b after:border-gray-300 dark:after:bg-gray-700;
+    .collapsible-vertical .sidebar-menu:not(:hover) .tw-menu-header .label,
+    .sidebar-menu .tw-menu-header .icon {
+        @apply hidden;
     }
-    .collapsible-vertical .sidebar-menu:hover .menu-header {
-        @apply indent-0 after:hidden after:border-b-0;
+    .collapsible-vertical .sidebar-menu:not(:hover) .tw-menu-header .icon {
+        @apply block;
     }
     .tw-menu-content {
         @apply h-[calc(100vh_-_118px)] overflow-y-auto overflow-x-hidden;
