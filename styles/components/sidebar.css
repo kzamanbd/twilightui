@@ -109,6 +109,7 @@
     .mini-sidebar .sidebar-menu:not(:hover) .app-name,
     .mini-sidebar .sidebar-menu:not(:hover) .tw-dropdown-arrow,
     .mini-sidebar .sidebar-menu:not(:hover) .tw-dropdown-menu,
+    .mini-sidebar .sidebar-menu:not(:hover) .documents-link .btn-label,
     .mini-sidebar .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label {
         @apply hidden opacity-0 duration-300;
     }
