@@ -13,8 +13,10 @@
     </head>
 
     <body>
-        <div id="app" x-data="twilightTheme">
-            <div x-ref="loading" class="loading duration-300">Loading.....</div>
+        <div
+            x-data="twilightTheme"
+            :class="[ $store.app.sidebar && 'toggle-sidebar', $store.app.theme, $store.app.menu, $store.app.layout]">
+            <div class="loading duration-300">Loading.....</div>
 
             <div class="twilight">
                 <div x-on:click="toggleMenuOpen" class="sidebar-shadow" :class="{ show: isMenuOpen }"></div>
@@ -25,7 +27,7 @@
                             <img class="brand-logo-image" src="/images/logo.png" alt="logo" />
                             <span class="app-name"> Twilight </span>
                         </a>
-                        <div class="collapsible-vertical-icon" x-on:click="toggleMiniSidebar">
+                        <div class="toggle-sidebar-icon" x-on:click="$store.app.toggleSidebar()">
                             <span class="material-icons"> navigate_next </span>
                         </div>
                         <span x-on:click="toggleMenuOpen" class="material-icons sidebar-close"> close </span>

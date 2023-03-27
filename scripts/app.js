@@ -32,17 +32,6 @@ window.ResizeObserver = ResizeObserver;
 
     //? alpine data
     Alpine.data('twilightTheme', () => ({
-        init() {
-            if (getTwilightTheme()) {
-                document.body.classList.add('dark');
-            }
-
-            // if user sidebar is mini
-            if (localStorage.getItem('collapsible-vertical') == 'true') {
-                this.isMiniSidebar = true;
-                document.body.classList.add('collapsible-vertical');
-            }
-        },
         toggleTheme() {
             document.body.classList.toggle('dark');
             //! set theme to local storage
@@ -50,14 +39,8 @@ window.ResizeObserver = ResizeObserver;
         },
         // sidebar
         isMenuOpen: false,
-        isMiniSidebar: false,
         toggleMenuOpen() {
             this.isMenuOpen = !this.isMenuOpen;
-        },
-        toggleMiniSidebar() {
-            this.isMiniSidebar = !this.isMiniSidebar;
-            document.body.classList.toggle('collapsible-vertical');
-            localStorage.setItem('collapsible-vertical', this.isMiniSidebar);
         },
         activeAccordion(tabName) {
             this.$store.accordion.item = tabName;
@@ -91,11 +74,11 @@ window.ResizeObserver = ResizeObserver;
         locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
         theme: 'light', // light, dark, system
         rtlClass: 'ltr', // rtl, ltr
-        menu: 'vertical', // vertical, collapsible-vertical, horizontal
+        menu: 'vertical', // vertical, toggle-sidebar, horizontal
         layout: 'full', // full, boxed-layout
         animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
         navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
-        semidark: false,
+        semiDark: false,
     };
     window.addEventListener('DOMContentLoaded', function () {
         // screen loader
@@ -253,14 +236,14 @@ window.ResizeObserver = ResizeObserver;
             this.navbar = val;
         },
 
-        // semidark
-        semidark: Alpine.$persist($themeConfig.semidark),
-        toggleSemidark(val) {
+        // semi dark
+        semiDark: Alpine.$persist($themeConfig.semiDark),
+        toggleSemiDark(val) {
             if (!val) {
-                val = this.semidark || $themeConfig.semidark;
+                val = this.semiDark || $themeConfig.semiDark;
             }
 
-            this.semidark = val;
+            this.semiDark = val;
         },
 
         // multi language
