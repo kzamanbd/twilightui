@@ -2,10 +2,10 @@
     /* start sidebar menu components */
     .sidebar-menu {
         @apply fixed inset-y-0 left-0 z-30 w-64 border-gray-200 bg-white shadow-lg dark:bg-dark-primary;
-        @apply lg:static lg:inset-0 lg:translate-x-0 !important;
+        @apply lg:inset-0 lg:translate-x-0 !important;
     }
     .sidebar-menu {
-        @apply [&.open]:translate-x-0 [&:not(.open)]:-translate-x-full;
+        @apply transition-transform duration-500 ease-in-out [&.open]:translate-x-0 [&:not(.open)]:-translate-x-full;
     }
     .sidebar-shadow {
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden [&:not(.show)]:hidden;
@@ -33,7 +33,10 @@
         @apply h-10 w-10;
     }
     .app-name {
-        @apply dark--text mx-2 text-xl font-semibold;
+        @apply dark--text visible mx-2 text-xl font-semibold opacity-100 transition-opacity duration-500 ease-in-out;
+    }
+    .collapsible-vertical .sidebar-menu:not(:hover) .app-name {
+        @apply invisible opacity-0;
     }
     .tw-menu-header {
         @apply dark--text relative w-full truncate pt-2 text-xs font-semibold uppercase text-gray-400;
@@ -89,10 +92,9 @@
     .tw-dropdown-link.active {
         @apply tw-link-active;
     }
-    .collapsible-vertical .sidebar-menu:not(:hover) .app-name,
     .collapsible-vertical .sidebar-menu:not(:hover) .tw-dropdown-menu,
     .collapsible-vertical .sidebar-menu:not(:hover) .tw-dropdown-arrow,
-    .collapsible-vertical .sidebar-menu:not(:hover) collapsible-vertical-icons,
+    .collapsible-vertical .sidebar-menu:not(:hover) .collapsible-vertical-icon,
     .collapsible-vertical .sidebar-menu:not(:hover) .documents-link .btn-label,
     .collapsible-vertical .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label {
         @apply hidden opacity-0 transition-opacity duration-300 ease-in-out;
