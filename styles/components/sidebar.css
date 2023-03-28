@@ -1,18 +1,15 @@
 @layer components {
     /* start sidebar menu components */
     .sidebar-menu {
-        @apply fixed inset-y-0 left-0 z-30 w-0 border-gray-200 bg-white shadow-lg;
-        @apply transition-[width] duration-500 ease-in-out dark:bg-dark-primary lg:w-64;
+        @apply fixed inset-y-0 -left-64 z-30 border-gray-200 shadow-none lg:left-0 lg:shadow-lg;
+        @apply w-64 bg-white duration-300 ease-in-out dark:bg-dark-primary;
     }
     .toggle-sidebar .sidebar-menu,
     .collapsible-vertical .sidebar-menu {
-        @apply fixed inset-y-0 left-0 z-30 transition-[width] duration-500 ease-in-out lg:w-[70px] lg:hover:w-64 !important;
+        @apply fixed inset-y-0 left-0 z-30 lg:w-[70px] lg:hover:w-64 !important;
     }
     .toggle-sidebar .sidebar-menu {
-        @apply w-64;
-    }
-    .collapsible-vertical.toggle-sidebar .sidebar-menu {
-        @apply lg:w-64 !important;
+        @apply left-0 shadow-lg !important;
     }
     .sidebar-shadow {
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
@@ -22,7 +19,7 @@
         @apply rounded-full bg-white text-primary shadow-lg duration-300 dark:bg-gray-700 lg:flex;
     }
     .toggle-sidebar-icon .material-icons {
-        @apply rotate-180 duration-300;
+        @apply rotate-180;
     }
     .toggle-sidebar .toggle-sidebar-icon .material-icons {
         @apply rotate-0;
@@ -34,7 +31,7 @@
         @apply dark--text absolute right-2 cursor-pointer text-lg lg:hidden;
     }
     .tw-brand-logo {
-        @apply relative flex h-[70px] items-center justify-between border-b py-2 px-4 dark:border-b-gray-700;
+        @apply relative flex h-[70px] items-center justify-between border-b px-4 py-2 dark:border-b-gray-700;
     }
     .brand-logo-image {
         @apply h-10 w-10;

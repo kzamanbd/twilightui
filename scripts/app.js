@@ -60,9 +60,6 @@ window.ResizeObserver = ResizeObserver;
         toggleMenuOpen() {
             this.isMenuOpen = !this.isMenuOpen;
         },
-        activeAccordion(tabName) {
-            this.$store.accordion.item = tabName;
-        },
     }));
 
     Alpine.store('accordion', {
