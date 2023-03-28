@@ -1,9 +1,11 @@
-import colors from 'tailwindcss/colors';
-import defaultTheme from 'tailwindcss/defaultTheme';
-import plugin from 'tailwindcss/plugin';
+/** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
+const colors = require('tailwindcss/colors');
 const primary = colors.sky;
 
-export default {
+module.exports = {
     content: ['./**/*.html'],
     darkMode: 'class', // or 'media'
     theme: {
