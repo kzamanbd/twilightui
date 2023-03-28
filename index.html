@@ -1025,7 +1025,7 @@
                             <div class="relative pb-5 text-center">
                                 <a
                                     href="javascript:;"
-                                    class="absolute top-0 right-0 opacity-30 hover:opacity-100 dark:text-white"
+                                    class="absolute right-0 top-0 opacity-30 hover:opacity-100 dark:text-white"
                                     @click="showCustomizer = false">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -1054,7 +1054,7 @@
                                 <div class="mt-3 grid grid-cols-3 gap-2">
                                     <button
                                         type="button"
-                                        class="btn btn-outline-primary flex items-center"
+                                        class="btn flex items-center px-4"
                                         :class="[$store.app.theme === 'light' ? 'btn-primary' :'btn-outline-primary']"
                                         @click="$store.app.toggleTheme('light')">
                                         <span class="material-icons"> light_mode </span>
@@ -1062,7 +1062,7 @@
                                     </button>
                                     <button
                                         type="button"
-                                        class="btn btn-outline-primary flex items-center px-4"
+                                        class="btn flex items-center px-4"
                                         :class="[$store.app.theme === 'dark' ? 'btn-primary' :'btn-outline-primary']"
                                         @click="$store.app.toggleTheme('dark')">
                                         <span class="material-icons"> dark_mode </span>
@@ -1070,7 +1070,7 @@
                                     </button>
                                     <button
                                         type="button"
-                                        class="btn btn-primary flex items-center"
+                                        class="btn flex items-center px-4"
                                         :class="[$store.app.theme === 'system' ? 'btn-primary' :'btn-outline-primary']"
                                         @click="$store.app.toggleTheme('system')">
                                         <span class="material-icons"> settings_suggest </span>
@@ -1087,35 +1087,35 @@
                                 <div class="mt-3 grid grid-cols-3 gap-2">
                                     <button
                                         type="button"
-                                        class="btn"
+                                        class="btn flex items-center px-4"
                                         :class="[$store.app.menu === 'horizontal' ? 'btn-primary' :'btn-outline-primary']"
                                         @click="$store.app.toggleMenu('horizontal')">
                                         Horizontal
                                     </button>
                                     <button
                                         type="button"
-                                        class="btn"
+                                        class="btn flex items-center px-4 text-center"
                                         :class="[$store.app.menu === 'vertical' ? 'btn-primary' :'btn-outline-primary']"
                                         @click="$store.app.toggleMenu('vertical')">
                                         Vertical
                                     </button>
                                     <button
                                         type="button"
-                                        class="btn"
+                                        class="btn flex items-center px-4 text-center"
                                         :class="[$store.app.menu === 'collapsible-vertical' ? 'btn-primary' :'btn-outline-primary']"
                                         @click="$store.app.toggleMenu('collapsible-vertical')">
                                         Collapsible
                                     </button>
                                 </div>
                                 <div class="mt-5 text-primary">
-                                    <label class="mb-0 inline-flex">
+                                    <label class="mb-0 inline-flex items-center">
                                         <input
                                             x-model="$store.app.semiDark"
                                             type="checkbox"
                                             :value="true"
                                             class="form-checkbox"
                                             @change="$store.app.toggleSemiDark()" />
-                                        <span>Semi Dark (Sidebar &amp; Header)</span>
+                                        <span class="ml-2">Semi Dark (Sidebar &amp; Header)</span>
                                     </label>
                                 </div>
                             </div>
@@ -1166,7 +1166,7 @@
                                 <h5 class="mb-1 text-base leading-none dark:text-white">Navbar Type</h5>
                                 <p class="text-white-dark text-xs">Sticky or Floating.</p>
                                 <div class="mt-3 flex items-center gap-3 text-primary">
-                                    <label class="mb-0 inline-flex">
+                                    <label class="mb-0 inline-flex items-center">
                                         <input
                                             x-model="$store.app.navbar"
                                             type="radio"
@@ -1174,9 +1174,9 @@
                                             class="form-radio"
                                             @change="$store.app.toggleNavbar()"
                                             name="$store.app.navbar" />
-                                        <span>Sticky</span>
+                                        <span class="ml-2">Sticky</span>
                                     </label>
-                                    <label class="mb-0 inline-flex">
+                                    <label class="mb-0 inline-flex items-center">
                                         <input
                                             x-model="$store.app.navbar"
                                             type="radio"
@@ -1184,9 +1184,9 @@
                                             class="form-radio"
                                             @change="$store.app.toggleNavbar()"
                                             name="$store.app.navbar" />
-                                        <span>Floating</span>
+                                        <span class="ml-2">Floating</span>
                                     </label>
-                                    <label class="mb-0 inline-flex">
+                                    <label class="mb-0 inline-flex items-center">
                                         <input
                                             x-model="$store.app.navbar"
                                             type="radio"
@@ -1194,7 +1194,7 @@
                                             class="form-radio"
                                             @change="$store.app.toggleNavbar()"
                                             name="$store.app.navbar" />
-                                        <span>Static</span>
+                                        <span class="ml-2">Static</span>
                                     </label>
                                 </div>
                             </div>
@@ -1205,7 +1205,7 @@
                                 <div class="mt-3">
                                     <select
                                         x-model="$store.app.animation"
-                                        class="form-select border-primary text-primary"
+                                        class="form-select w-full border-primary text-primary"
                                         @change="$store.app.toggleAnimation()">
                                         <option value="">Select Animation</option>
                                         <option value="animate__fadeIn">Fade</option>
