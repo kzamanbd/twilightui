@@ -11,6 +11,9 @@
     .toggle-sidebar .sidebar-menu {
         @apply left-0 w-64 shadow-lg !important;
     }
+    .vertical.toggle-sidebar .sidebar-menu {
+        @apply lg:-left-64 lg:shadow-none !important;
+    }
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu {
         @apply -left-64 shadow-none lg:left-0 lg:shadow-lg !important;
     }
@@ -28,7 +31,7 @@
         @apply rotate-0;
     }
     .toggle-sidebar-icon:hover {
-        @apply bg-light-gray dark:bg-gray-700;
+        @apply rotate-0;
     }
     .sidebar-close {
         @apply dark--text absolute right-2 cursor-pointer text-lg lg:hidden;
@@ -106,18 +109,21 @@
     .tw-dropdown-link.active {
         @apply tw-link-active dark:hover:text-gray-200;
     }
-    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-dropdown-menu,
-    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-dropdown-arrow,
-    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .toggle-sidebar-icon,
-    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .documents-link .btn-label,
-    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label,
     /* collapsible-vertical */
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-dropdown-menu,
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-dropdown-arrow,
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .toggle-sidebar-icon,
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .documents-link .btn-label,
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label {
-        @apply transition-opacity duration-300 ease-in-out lg:hidden lg:opacity-0;
+        @apply lg:hidden lg:opacity-0;
+    }
+    /* vertical menu */
+    .vertical.toggle-sidebar .sidebar-menu .tw-dropdown-menu,
+    .vertical.toggle-sidebar .sidebar-menu .tw-dropdown-arrow,
+    .vertical.toggle-sidebar .sidebar-menu .toggle-sidebar-icon,
+    .vertical.toggle-sidebar .sidebar-menu .documents-link .btn-label,
+    .vertical.toggle-sidebar .sidebar-menu .tw-nav-menu .tw-link-label {
+        @apply lg:block lg:opacity-100 !important;
     }
     .documents-button {
         @apply flex h-12 items-center px-4;

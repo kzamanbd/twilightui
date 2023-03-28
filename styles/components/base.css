@@ -16,9 +16,11 @@
     .twilight-body {
         @apply flex h-full flex-1 flex-col overflow-y-auto overflow-x-hidden transition-all duration-300 lg:ml-64;
     }
-    .vertical.toggle-sidebar .twilight-body,
     .collapsible-vertical:not(.toggle-sidebar) .twilight-body {
         @apply lg:ml-[70px];
+    }
+    .vertical.toggle-sidebar .twilight-body {
+        @apply lg:ml-0;
     }
     .twilight-content {
         @apply relative mx-auto px-6 pb-4 pt-2 dark:text-gray-300 md:pt-4;
