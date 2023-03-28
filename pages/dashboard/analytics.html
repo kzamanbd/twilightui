@@ -34,7 +34,7 @@
                         <span x-on:click="toggleMenuOpen" class="material-icons sidebar-close"> close </span>
                     </div>
                     <nav data-simplebar class="tw-menu-content no-scrollbar">
-                        <ul class="tw-nav-menu space-y-2" x-init="activeAccordion('dashboard')">
+                        <ul class="tw-nav-menu space-y-2">
                             <!-- dashboard start -->
                             <li class="tw-menu-item" x-data="accordionItem('dashboard')">
                                 <div
@@ -61,7 +61,7 @@
                                         </a>
                                     </li>
                                     <li class="tw-dropdown-item group">
-                                        <a href="/pages/dashboard/analytics.html" class="tw-dropdown-link active">
+                                        <a href="/pages/dashboard/analytics.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Analytics</span>
                                         </a>
