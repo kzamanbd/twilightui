@@ -1,32 +1,39 @@
 @layer components {
     /* start sidebar menu components */
     .sidebar-menu {
-        @apply fixed inset-y-0 left-0 z-30 w-64 border-gray-200 bg-white shadow-lg dark:bg-dark-primary;
-        @apply lg:inset-0 lg:translate-x-0 !important;
+        @apply fixed inset-y-0 left-0 z-30 w-0 border-gray-200 bg-white shadow-lg;
+        @apply transition-[width] duration-500 ease-in-out dark:bg-dark-primary lg:w-64;
     }
-    .sidebar-menu {
-        @apply transition-transform duration-500 ease-in-out [&.open]:translate-x-0 [&:not(.open)]:-translate-x-full;
+    .toggle-sidebar .sidebar-menu,
+    .collapsible-vertical .sidebar-menu {
+        @apply fixed inset-y-0 left-0 z-30 transition-[width] duration-500 ease-in-out lg:w-[70px] lg:hover:w-64 !important;
+    }
+    .toggle-sidebar .sidebar-menu {
+        @apply w-64;
+    }
+    .collapsible-vertical.toggle-sidebar .sidebar-menu {
+        @apply lg:w-64 !important;
     }
     .sidebar-shadow {
-        @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden [&:not(.show)]:hidden;
+        @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
     }
     .toggle-sidebar-icon {
-        @apply fixed -right-4 hidden h-8 w-8 cursor-pointer items-center justify-center;
-        @apply rounded-full bg-white text-primary shadow-lg dark:bg-gray-700 lg:flex;
+        @apply absolute -right-4 hidden h-8 w-8 cursor-pointer items-center justify-center lg:flex;
+        @apply rounded-full bg-white text-primary shadow-lg duration-300 dark:bg-gray-700 lg:flex;
     }
     .toggle-sidebar-icon .material-icons {
-        @apply rotate-180 duration-300 toggle-sidebar:rotate-0;
+        @apply rotate-180 duration-300;
+    }
+    .toggle-sidebar .toggle-sidebar-icon .material-icons {
+        @apply rotate-0;
     }
     .toggle-sidebar-icon:hover {
         @apply bg-light-gray dark:bg-gray-700;
     }
-    .toggle-sidebar .sidebar-menu {
-        @apply fixed inset-y-0 left-0 z-30 w-[70px] transition-[width] duration-500 ease-in-out hover:w-64 !important;
-    }
     .sidebar-close {
-        @apply dark--text fixed right-2 cursor-pointer text-lg lg:hidden;
+        @apply dark--text absolute right-2 cursor-pointer text-lg lg:hidden;
     }
-    .sidebar-brand-logo {
+    .tw-brand-logo {
         @apply relative flex h-[70px] items-center justify-between border-b py-2 px-4 dark:border-b-gray-700;
     }
     .brand-logo-image {
@@ -35,19 +42,25 @@
     .app-name {
         @apply dark--text visible mx-2 text-xl font-semibold opacity-100 transition-opacity duration-500 ease-in-out;
     }
-    .toggle-sidebar .sidebar-menu:not(:hover) .app-name {
-        @apply invisible opacity-0;
+    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .app-name,
+    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .app-name {
+        @apply lg:invisible lg:opacity-0;
     }
     .tw-menu-header {
         @apply dark--text relative w-full truncate pt-2 text-xs font-semibold uppercase text-gray-400;
         @apply px-2 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
     }
-    .toggle-sidebar .sidebar-menu:not(:hover) .tw-menu-header .label,
     .sidebar-menu .tw-menu-header .icon {
         @apply hidden;
     }
-    .toggle-sidebar .sidebar-menu:not(:hover) .tw-menu-header .icon {
-        @apply block;
+    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-menu-header .label,
+    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-menu-header .label,
+    .sidebar-menu .tw-menu-header .icon {
+        @apply lg:hidden;
+    }
+    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-menu-header .icon,
+    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-menu-header .icon {
+        @apply lg:block;
     }
     .tw-menu-content {
         @apply h-[calc(100vh_-_118px)] overflow-y-auto overflow-x-hidden;
@@ -93,12 +106,18 @@
     .tw-dropdown-link.active {
         @apply tw-link-active;
     }
-    .toggle-sidebar .sidebar-menu:not(:hover) .tw-dropdown-menu,
-    .toggle-sidebar .sidebar-menu:not(:hover) .tw-dropdown-arrow,
-    .toggle-sidebar .sidebar-menu:not(:hover) .toggle-sidebar-icon,
-    .toggle-sidebar .sidebar-menu:not(:hover) .documents-link .btn-label,
-    .toggle-sidebar .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label {
-        @apply hidden opacity-0 transition-opacity duration-300 ease-in-out;
+    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-dropdown-menu,
+    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-dropdown-arrow,
+    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .toggle-sidebar-icon,
+    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .documents-link .btn-label,
+    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label,
+    /* collapsible-vertical */
+    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-dropdown-menu,
+    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-dropdown-arrow,
+    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .toggle-sidebar-icon,
+    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .documents-link .btn-label,
+    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label {
+        @apply transition-opacity duration-300 ease-in-out lg:hidden lg:opacity-0;
     }
     .documents-button {
         @apply flex h-12 items-center px-4;

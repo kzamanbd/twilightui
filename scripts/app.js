@@ -56,6 +56,7 @@ window.ResizeObserver = ResizeObserver;
         },
         // sidebar
         isMenuOpen: false,
+        showCustomizer: false,
         toggleMenuOpen() {
             this.isMenuOpen = !this.isMenuOpen;
         },
