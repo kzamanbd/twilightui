@@ -22,18 +22,18 @@
     }
     .twilight-content {
         @apply relative mx-auto px-6 pb-4 pt-2 dark:text-gray-300 md:pt-4;
-        @apply h-full bg-[url('/images/mask.svg')] after:absolute after:top-0 after:left-0 after:z-0 after:w-full;
+        @apply h-full bg-[url('/images/mask.svg')] after:absolute after:left-0 after:top-0 after:z-0 after:w-full;
         @apply bg-light-gray [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-dark-secondary;
     }
 
     .app-customizer {
-        @apply fixed top-0 bottom-0 -right-[400px] z-[51] w-full max-w-[400px] bg-white p-4 shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[right] duration-300 dark:bg-[#0e1726];
+        @apply fixed -right-[400px] bottom-0 top-0 z-[51] w-full max-w-[400px] bg-white p-4 shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[right] duration-300 dark:bg-[#0e1726];
     }
     .customizer-shadow {
         @apply fixed inset-0 z-[51] hidden bg-[black]/60 px-4 transition-[display] supports-[backdrop-filter]:bg-light-gray/20 supports-[backdrop-filter]:backdrop-blur;
     }
     .customizer-button {
-        @apply absolute top-0 bottom-0 -left-12 my-auto flex h-10 w-12 cursor-pointer items-center justify-center rounded-tl-full rounded-bl-full bg-primary text-white;
+        @apply absolute -left-12 bottom-0 top-0 my-auto flex h-10 w-12 cursor-pointer items-center justify-center rounded-bl-full rounded-tl-full bg-primary text-white;
     }
     .customizer-card {
         @apply mb-3 rounded-md border border-dashed border-[#e0e6ed] p-3 dark:border-[#1b2e4b];

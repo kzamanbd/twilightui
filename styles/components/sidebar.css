@@ -5,11 +5,14 @@
         @apply w-64 bg-white duration-300 ease-in-out dark:bg-dark-primary;
     }
     .toggle-sidebar .sidebar-menu,
-    .collapsible-vertical .sidebar-menu {
+    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu {
         @apply fixed inset-y-0 left-0 z-30 lg:w-[70px] lg:hover:w-64 !important;
     }
     .toggle-sidebar .sidebar-menu {
-        @apply left-0 shadow-lg !important;
+        @apply left-0 w-64 shadow-lg !important;
+    }
+    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu {
+        @apply -left-64 shadow-none lg:left-0 lg:shadow-lg !important;
     }
     .sidebar-shadow {
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
@@ -63,21 +66,21 @@
         @apply h-[calc(100vh_-_118px)] overflow-y-auto overflow-x-hidden;
     }
     .tw-nav-menu {
-        @apply mt-4 px-4 pb-2;
+        @apply mt-2 px-4 pb-2;
     }
     .tw-menu-item .material-icons,
     .tw-menu-item .material-symbols-outlined {
         @apply text-xl leading-none;
     }
     .tw-menu-link {
-        @apply flex items-center p-2 hover:bg-light-gray hover:text-primary;
-        @apply rounded-md font-normal hover:dark:bg-gray-700 dark:hover:text-gray-100;
+        @apply flex items-center p-2.5 hover:bg-light-gray hover:text-primary;
+        @apply rounded-md font-normal dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
     .tw-link-active {
-        @apply bg-light-gray text-primary dark:bg-gray-700 dark:text-white;
+        @apply bg-light-gray text-primary dark:bg-gray-700 dark:text-gray-300;
     }
     .tw-menu-link.active {
-        @apply tw-link-active;
+        @apply tw-link-active dark:hover:text-gray-200;
     }
     .tw-link-label {
         @apply mx-2 truncate text-sm font-medium;
@@ -101,7 +104,7 @@
         @apply tw-menu-link w-full truncate;
     }
     .tw-dropdown-link.active {
-        @apply tw-link-active;
+        @apply tw-link-active dark:hover:text-gray-200;
     }
     .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-dropdown-menu,
     .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-dropdown-arrow,
