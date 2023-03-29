@@ -10,6 +10,9 @@
         @apply fixed inset-0 z-50 flex items-center justify-center;
         @apply bg-gray-700/50 text-white backdrop-blur;
     }
+    .boxed-layout {
+        @apply lg:container lg:mx-auto lg:shadow-lg;
+    }
     .twilight {
         @apply dark--text h-screen bg-light-gray dark:bg-dark-secondary;
     }
@@ -23,8 +26,7 @@
         @apply lg:ml-0;
     }
     .twilight-content {
-        @apply relative mx-auto px-6 pb-4 pt-2 dark:text-gray-300 md:pt-4;
-        @apply h-full bg-[url('/images/mask.svg')] after:absolute after:left-0 after:top-0 after:z-0 after:w-full;
+        @apply relative mx-auto h-full bg-[url('/images/mask.svg')] px-6 pb-4 pt-2 dark:text-gray-300 md:pt-4;
         @apply bg-light-gray [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-dark-secondary;
     }
 

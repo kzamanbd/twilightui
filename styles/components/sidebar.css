@@ -17,6 +17,9 @@
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu {
         @apply -left-64 shadow-none lg:left-0 lg:shadow-lg !important;
     }
+    .boxed-layout .sidebar-menu {
+        @apply lg:left-auto;
+    }
     .sidebar-shadow {
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
     }
