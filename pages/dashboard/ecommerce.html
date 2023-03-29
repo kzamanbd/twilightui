@@ -15,26 +15,46 @@
     </head>
 
     <body>
-        <div id="app" x-data="twilightTheme">
-            <div x-ref="loading" class="loading duration-300">Loading.....</div>
-
+        <div
+            x-data="twilightTheme"
+            :class="[ $store.app.sidebar && 'toggle-sidebar', $store.app.theme, $store.app.menu, $store.app.layout]">
             <div class="twilight">
-                <div x-on:click="toggleMenuOpen" class="sidebar-shadow" :class="{ show: isMenuOpen }"></div>
+                <div class="loading duration-300">Loading.....</div>
+                <div x-on:click="$store.app.toggleSidebar()" class="sidebar-shadow" x-show="$store.app.sidebar"></div>
 
-                <aside class="sidebar-menu" :class="{ open: isMenuOpen }">
-                    <div id="brand-logo" class="sidebar-brand-logo">
+                <aside class="sidebar-menu">
+                    <div id="brand-logo" class="tw-brand-logo">
                         <a href="/index.html" class="flex items-center">
                             <img class="brand-logo-image" src="/images/logo.png" alt="logo" />
                             <span class="app-name"> Twilight </span>
                         </a>
-                        <div class="toggle-sidebar-icon" x-on:click="toggleMiniSidebar">
-                            <span class="material-icons"> navigate_next </span>
-                        </div>
-                        <span x-on:click="toggleMenuOpen" class="material-icons sidebar-close"> close </span>
+                        <a href="javascript:;" class="collapse-icon" @click="$store.app.toggleSidebar()">
+                            <svg
+                                class="m-auto h-5 w-5"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13 19L7 12L13 5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path
+                                    opacity="0.5"
+                                    d="M16.9998 19L10.9998 12L16.9998 5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </a>
                     </div>
 
                     <nav data-simplebar class="tw-menu-content no-scrollbar">
-                        <ul class="tw-nav-menu space-y-2" x-init="activeAccordion('dashboard')">
+                        <ul class="tw-nav-menu space-y-2">
                             <!-- dashboard start -->
                             <li class="tw-menu-item" x-data="accordionItem('dashboard')">
                                 <div
@@ -55,6 +75,12 @@
                                         </a>
                                     </li>
                                     <li class="tw-dropdown-item group">
+                                        <a href="/pages/dashboard/crypto.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Crypto</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
                                         <a href="/pages/dashboard/crm.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">CRM</span>
@@ -67,7 +93,7 @@
                                         </a>
                                     </li>
                                     <li class="tw-dropdown-item group">
-                                        <a href="/pages/dashboard/ecommerce.html" class="tw-dropdown-link active">
+                                        <a href="/pages/dashboard/ecommerce.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">eCommerce</span>
                                         </a>
@@ -76,12 +102,6 @@
                                         <a href="/pages/dashboard/project.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Projects</span>
-                                        </a>
-                                    </li>
-                                    <li class="tw-dropdown-item group">
-                                        <a href="/pages/dashboard/marketing.html" class="tw-dropdown-link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Marketing</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -761,14 +781,14 @@
                     </div>
                 </aside>
 
-                <div class="twilight-body">
+                <div class="twilight-body" :class="[$store.app.navbar]">
                     <header class="top-header">
                         <div class="ml-6 flex items-center">
                             <button
                                 type="button"
-                                x-on:click="toggleMenuOpen"
+                                x-on:click="$store.app.toggleSidebar()"
                                 aria-label="Toggle Menu"
-                                class="text-gray-500 focus:outline-none lg:hidden">
+                                class="text-gray-500 focus:outline-none">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M4 6H20M4 12H20M4 18H11"
@@ -781,55 +801,6 @@
                         </div>
 
                         <div class="flex items-center space-x-4 pr-6">
-                            <div class="relative">
-                                <button type="button" class="header-btn" aria-label="Search">
-                                    <svg
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                        class="h-4 w-4"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            opacity="0.5"
-                                            x="17.0365"
-                                            y="15.1223"
-                                            width="8.15546"
-                                            height="2"
-                                            rx="1"
-                                            transform="rotate(45 17.0365 15.1223)"
-                                            fill="currentColor" />
-                                        <path
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <button type="button" x-on:click="toggleTheme" class="header-btn" aria-label="Themes">
-                                <svg
-                                    aria-hidden="true"
-                                    data-toggle-icon="sun"
-                                    class="hidden h-4 w-4 dark:flex"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                                        fillRule="evenodd"
-                                        clipRule="evenodd" />
-                                </svg>
-                                <svg
-                                    aria-hidden="true"
-                                    data-toggle-icon="moon"
-                                    class="flex h-4 w-4 dark:hidden"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                                </svg>
-                            </button>
-
                             <div class="relative" x-data="{ isOpen: false }">
                                 <button
                                     type="button"
@@ -1009,7 +980,7 @@
                         </div>
                     </header>
 
-                    <main class="flex-1">
+                    <main class="animate__animated flex-1" :class="[$store.app.animation]">
                         <div class="twilight-content">
                             <!-- Start:Breadcrumb -->
                             <nav class="breadcrumb">
@@ -1743,11 +1714,13 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </main>
 
                     <footer class="footer">
                         <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
-                            © 2022 <a href="#" class="hover:underline">Twilight™</a>. All Rights Reserved.
+                            © <span id="footer-year"></span> <a href="#" class="hover:underline">Twilight™</a>. All
+                            Rights Reserved.
                         </span>
                         <ul class="mt-3 flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
                             <li>
@@ -1766,6 +1739,220 @@
                             </li>
                         </ul>
                     </footer>
+                </div>
+
+                <!-- Theme customizer -->
+                <div class="theme-customizer">
+                    <div
+                        class="customizer-shadow"
+                        :class="{'!block': showCustomizer}"
+                        @click="showCustomizer = false"></div>
+
+                    <nav class="app-customizer" :class="{'!right-0' : showCustomizer}">
+                        <a href="javascript:;" class="customizer-button" @click="showCustomizer = !showCustomizer">
+                            <div class="material-icons animate-[spin_3s_linear_infinite]">settings</div>
+                        </a>
+                        <div data-simplebar class="h-full overflow-y-auto overflow-x-hidden">
+                            <div class="relative pb-5 text-center">
+                                <a
+                                    href="javascript:;"
+                                    class="absolute right-0 top-0 opacity-30 hover:opacity-100 dark:text-white"
+                                    @click="showCustomizer = false">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24px"
+                                        height="24px"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="h-5 w-5">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </a>
+                                <h4 class="mb-1 dark:text-white">TEMPLATE CUSTOMIZER</h4>
+                                <p class="text-white-dark">
+                                    Set preferences that will be cookies for your live preview demonstration.
+                                </p>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Color Scheme</h5>
+                                <p class="text-white-dark text-xs">Overall light or dark presentation.</p>
+                                <div class="mt-3 grid grid-cols-3 gap-2">
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4"
+                                        :class="[$store.app.theme === 'light' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleTheme('light')">
+                                        <span class="material-icons"> light_mode </span>
+                                        Light
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4"
+                                        :class="[$store.app.theme === 'dark' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleTheme('dark')">
+                                        <span class="material-icons"> dark_mode </span>
+                                        Dark
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4"
+                                        :class="[$store.app.theme === 'system' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleTheme('system')">
+                                        <span class="material-icons"> settings_suggest </span>
+                                        System
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Navigation Position</h5>
+                                <p class="text-white-dark text-xs">
+                                    Select the primary navigation paradigm for your app.
+                                </p>
+                                <div class="mt-3 grid grid-cols-3 gap-2">
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4"
+                                        :class="[$store.app.menu === 'horizontal' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleMenu('horizontal')">
+                                        Horizontal
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4 text-center"
+                                        :class="[$store.app.menu === 'vertical' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleMenu('vertical')">
+                                        Vertical
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4 text-center"
+                                        :class="[$store.app.menu === 'collapsible-vertical' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleMenu('collapsible-vertical')">
+                                        Collapsible
+                                    </button>
+                                </div>
+                                <div class="mt-5 text-primary">
+                                    <label class="mb-0 inline-flex items-center">
+                                        <input
+                                            x-model="$store.app.semiDark"
+                                            type="checkbox"
+                                            :value="true"
+                                            class="form-checkbox"
+                                            @change="$store.app.toggleSemiDark()" />
+                                        <span class="ml-2">Semi Dark (Sidebar &amp; Header)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Layout Style</h5>
+                                <p class="text-white-dark text-xs">Select the primary layout style for your app.</p>
+                                <div class="mt-3 flex gap-2">
+                                    <button
+                                        type="button"
+                                        class="btn flex-auto"
+                                        :class="[$store.app.layout === 'boxed-layout' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleLayout('boxed-layout')">
+                                        Box
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex-auto"
+                                        :class="[$store.app.layout === 'full' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleLayout('full')">
+                                        Full
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Direction</h5>
+                                <p class="text-white-dark text-xs">Select the direction for your app.</p>
+                                <div class="mt-3 flex gap-2">
+                                    <button
+                                        type="button"
+                                        class="btn flex-auto"
+                                        :class="[$store.app.rtlClass === 'ltr' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleRTL('ltr')">
+                                        LTR
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex-auto"
+                                        :class="[$store.app.rtlClass === 'rtl' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleRTL('rtl')">
+                                        RTL
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Navbar Type</h5>
+                                <p class="text-white-dark text-xs">Sticky or Floating.</p>
+                                <div class="mt-3 flex items-center gap-3 text-primary">
+                                    <label class="mb-0 inline-flex items-center">
+                                        <input
+                                            x-model="$store.app.navbar"
+                                            type="radio"
+                                            value="navbar-sticky"
+                                            class="form-radio"
+                                            @change="$store.app.toggleNavbar()"
+                                            name="$store.app.navbar" />
+                                        <span class="ml-2">Sticky</span>
+                                    </label>
+                                    <label class="mb-0 inline-flex items-center">
+                                        <input
+                                            x-model="$store.app.navbar"
+                                            type="radio"
+                                            value="navbar-floating"
+                                            class="form-radio"
+                                            @change="$store.app.toggleNavbar()"
+                                            name="$store.app.navbar" />
+                                        <span class="ml-2">Floating</span>
+                                    </label>
+                                    <label class="mb-0 inline-flex items-center">
+                                        <input
+                                            x-model="$store.app.navbar"
+                                            type="radio"
+                                            value="navbar-static"
+                                            class="form-radio"
+                                            @change="$store.app.toggleNavbar()"
+                                            name="$store.app.navbar" />
+                                        <span class="ml-2">Static</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Router Transition</h5>
+                                <p class="text-white-dark text-xs">Animation of main content.</p>
+                                <div class="mt-3">
+                                    <select
+                                        x-model="$store.app.animation"
+                                        class="form-select w-full border-primary text-primary"
+                                        @change="$store.app.toggleAnimation()">
+                                        <option value="">Select Animation</option>
+                                        <option value="animate__fadeIn">Fade</option>
+                                        <option value="animate__fadeInDown">Fade Down</option>
+                                        <option value="animate__fadeInUp">Fade Up</option>
+                                        <option value="animate__fadeInLeft">Fade Left</option>
+                                        <option value="animate__fadeInRight">Fade Right</option>
+                                        <option value="animate__slideInDown">Slide Down</option>
+                                        <option value="animate__slideInLeft">Slide Left</option>
+                                        <option value="animate__slideInRight">Slide Right</option>
+                                        <option value="animate__zoomIn">Zoom In</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>

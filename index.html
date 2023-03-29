@@ -16,9 +16,8 @@
         <div
             x-data="twilightTheme"
             :class="[ $store.app.sidebar && 'toggle-sidebar', $store.app.theme, $store.app.menu, $store.app.layout]">
-            <div class="loading duration-300">Loading.....</div>
-
             <div class="twilight">
+                <div class="loading duration-300">Loading.....</div>
                 <div x-on:click="$store.app.toggleSidebar()" class="sidebar-shadow" x-show="$store.app.sidebar"></div>
 
                 <aside class="sidebar-menu">
