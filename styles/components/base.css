@@ -27,7 +27,7 @@
     }
     .twilight-content {
         @apply relative mx-auto h-full bg-[url('/images/mask.svg')] px-6 pb-4 pt-2 dark:text-gray-300 md:pt-4;
-        @apply bg-light-gray [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-dark-secondary;
+        @apply bg-light-gray [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,1))] dark:bg-dark-secondary;
     }
 
     .app-customizer {
