@@ -127,6 +127,9 @@ window.ResizeObserver = ResizeObserver;
         toggle() {
             this.open = !this.open;
         },
+        close() {
+            this.open = false;
+        },
     }));
     Alpine.data('modal', (initialOpenState = false) => ({
         open: initialOpenState,
