@@ -5,9 +5,8 @@
         @apply justify-between border-b bg-light-gray py-4 dark:bg-dark-primary dark:shadow-lg;
         @apply supports-[backdrop-filter]:bg-light-gray/60 supports-[backdrop-filter]:backdrop-blur lg:backdrop-blur-none lg:backdrop-filter-none;
     }
-    .sticky-header {
-        @apply bg-white px-4 shadow-md dark:bg-dark-primary dark:shadow-lg;
-        @apply dark--text rounded-bl-lg rounded-br-lg;
+    .navbar-sticky {
+        @apply dark--text sticky bg-white shadow dark:bg-dark-primary dark:shadow-lg;
         @apply supports-[backdrop-filter]:bg-light-gray/60 supports-[backdrop-filter]:backdrop-blur;
     }
     .header-btn {
