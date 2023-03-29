@@ -1,4 +1,11 @@
 @layer base {
+    body:has(> .boxed-layout) {
+        @apply bg-gray-50;
+    }
+    body:has(> .dark) {
+        @apply bg-gray-900;
+    }
+    /* typography */
     h1 {
         @apply text-4xl font-semibold;
     }
