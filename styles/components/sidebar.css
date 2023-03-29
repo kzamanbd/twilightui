@@ -20,21 +20,8 @@
     .sidebar-shadow {
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
     }
-    .toggle-sidebar-icon {
-        @apply absolute -right-4 hidden h-8 w-8 cursor-pointer items-center justify-center lg:flex;
-        @apply rounded-full bg-white text-primary shadow-lg duration-300 dark:bg-gray-700 lg:flex;
-    }
-    .toggle-sidebar-icon .material-icons {
-        @apply rotate-180;
-    }
-    .toggle-sidebar .toggle-sidebar-icon .material-icons {
-        @apply rotate-0;
-    }
-    .toggle-sidebar-icon:hover {
-        @apply rotate-0;
-    }
-    .sidebar-close {
-        @apply dark--text absolute right-2 cursor-pointer text-lg lg:hidden;
+    .collapse-icon {
+        @apply flex h-8 w-8 items-center rounded-full transition duration-300 hover:bg-gray-500/10 rtl:rotate-180;
     }
     .tw-brand-logo {
         @apply relative flex h-[70px] items-center justify-between border-b px-4 py-2 dark:border-b-gray-700;
@@ -110,17 +97,17 @@
         @apply tw-link-active dark:hover:text-gray-200;
     }
     /* collapsible-vertical */
+    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .collapse-icon,
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-dropdown-menu,
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-dropdown-arrow,
-    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .toggle-sidebar-icon,
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .documents-link .btn-label,
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label {
         @apply lg:hidden lg:opacity-0;
     }
     /* vertical menu */
+    .vertical.toggle-sidebar .sidebar-menu .collapse-icon,
     .vertical.toggle-sidebar .sidebar-menu .tw-dropdown-menu,
     .vertical.toggle-sidebar .sidebar-menu .tw-dropdown-arrow,
-    .vertical.toggle-sidebar .sidebar-menu .toggle-sidebar-icon,
     .vertical.toggle-sidebar .sidebar-menu .documents-link .btn-label,
     .vertical.toggle-sidebar .sidebar-menu .tw-nav-menu .tw-link-label {
         @apply lg:block lg:opacity-100 !important;

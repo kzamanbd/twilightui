@@ -27,12 +27,29 @@
                             <img class="brand-logo-image" src="/images/logo.png" alt="logo" />
                             <span class="app-name"> Twilight </span>
                         </a>
-                        <div class="toggle-sidebar-icon" x-on:click="$store.app.toggleSidebar()">
-                            <span class="material-icons"> navigate_next </span>
-                        </div>
-                        <span x-on:click="$store.app.toggleSidebar()" class="material-icons sidebar-close">
-                            close
-                        </span>
+                        <a href="javascript:;" class="collapse-icon" @click="$store.app.toggleSidebar()">
+                            <svg
+                                class="m-auto h-5 w-5"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13 19L7 12L13 5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path
+                                    opacity="0.5"
+                                    d="M16.9998 19L10.9998 12L16.9998 5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </a>
                     </div>
 
                     <nav data-simplebar class="tw-menu-content no-scrollbar">
@@ -81,9 +98,9 @@
                                         </a>
                                     </li>
                                     <li class="tw-dropdown-item group">
-                                        <a href="/pages/dashboard/marketing.html" class="tw-dropdown-link">
+                                        <a href="/pages/dashboard/crypto.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Marketing</span>
+                                            <span class="tw-link-label">Crypto</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -770,7 +787,7 @@
                                 type="button"
                                 x-on:click="$store.app.toggleSidebar()"
                                 aria-label="Toggle Menu"
-                                class="text-gray-500 focus:outline-none lg:hidden">
+                                class="text-gray-500 focus:outline-none">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M4 6H20M4 12H20M4 18H11"
