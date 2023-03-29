@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dashboard - Twilight Dashboard</title>
+        <title>Crypto - Twilight Dashboard</title>
         <link rel="icon" href="/favicon.png" />
         <!-- start:Core Fonts, Style -->
         <link rel="stylesheet" href="/fonts/material-icons.css" />
@@ -11,7 +11,1499 @@
         <script type="module" src="/scripts/app.js"></script>
         <!-- end:Core Fonts, Style -->
     </head>
+
     <body>
-        Hello Crypto
+        <div
+            x-data="twilightTheme"
+            :class="[ $store.app.sidebar && 'toggle-sidebar', $store.app.theme, $store.app.menu, $store.app.layout]">
+            <div class="twilight">
+                <div class="loading duration-300">Loading.....</div>
+                <div x-on:click="$store.app.toggleSidebar()" class="sidebar-shadow" x-show="$store.app.sidebar"></div>
+
+                <aside class="sidebar-menu">
+                    <div id="brand-logo" class="tw-brand-logo">
+                        <a href="/index.html" class="flex items-center">
+                            <img class="brand-logo-image" src="/images/logo.png" alt="logo" />
+                            <span class="app-name"> Twilight </span>
+                        </a>
+                        <a href="javascript:;" class="collapse-icon" @click="$store.app.toggleSidebar()">
+                            <svg
+                                class="m-auto h-5 w-5"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13 19L7 12L13 5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path
+                                    opacity="0.5"
+                                    d="M16.9998 19L10.9998 12L16.9998 5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <nav data-simplebar class="tw-menu-content no-scrollbar">
+                        <ul class="tw-nav-menu space-y-2">
+                            <!-- dashboard start -->
+                            <li class="tw-menu-item" x-data="accordionItem('dashboard')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">dashboard</span>
+                                    <span class="tw-link-label">Dashboards</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/index.html" class="tw-dropdown-link" data-ripple>
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Default</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/pages/dashboard/crypto.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Crypto</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/pages/dashboard/crm.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">CRM</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/pages/dashboard/analytics.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Analytics</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/pages/dashboard/ecommerce.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">eCommerce</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/pages/dashboard/project.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Projects</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- dashboard end -->
+
+                            <!-- components start -->
+                            <li class="tw-menu-item" x-data="accordionItem('components')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">layers</span>
+                                    <span class="tw-link-label">Components</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./alerts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Alert</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./components/badge.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Badge</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./components/button.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Button</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./components/dropdown.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Dropdown</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./components/collapse.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Collapse</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./components/pagination" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Pagination</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./components/modals.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Modals</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- components end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
+                                <span class="label">Forms & Tables</span>
+                            </li>
+                            <!-- page header end -->
+
+                            <!-- form elements start -->
+                            <li class="tw-menu-item" x-data="accordionItem('form-elements')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">hexagon</span>
+                                    <span class="tw-link-label">Form Elements</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./input.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Input</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./forms/input-group.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Input Group</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./forms/select.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Select</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./forms/radio.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Radio</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./forms/checkbox.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Checkbox</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./forms/textarea.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Textarea</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- form elements end -->
+
+                            <!-- form layout single item -->
+                            <li class="tw-menu-item" ripple>
+                                <a href="./form.html" class="tw-menu-link">
+                                    <span class="material-icons">description</span>
+                                    <span class="tw-link-label">Form Layout</span>
+                                </a>
+                            </li>
+                            <!-- form layout single item end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
+                                <span class="label">Pages</span>
+                            </li>
+                            <!-- page header end -->
+
+                            <!-- user profile start -->
+                            <li class="tw-menu-item" x-data="accordionItem('user-profile')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">perm_contact_calendar</span>
+                                    <span class="tw-link-label">User Profile</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/overview.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Overview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/documents.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Documents</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/followers.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Followers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/activities.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Activities</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- user profile end -->
+
+                            <!-- accounts start -->
+                            <li class="tw-menu-item" x-data="accordionItem('accounts')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons rotate-90">label_important_outline</span>
+                                    <span class="tw-link-label">Accounts</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/overview.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Overview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/statements.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Statements</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/activities.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Activities</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/logs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Logs</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- accounts end -->
+
+                            <!-- Authentication start -->
+                            <li class="tw-menu-item" x-data="accordionItem('authentication')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">person</span>
+                                    <span class="tw-link-label">Authentication</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/login.html" class="tw-dropdown-link" target="_blank">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Login</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/register.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Register</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/reset-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Reset Password</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/forget-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Forget Password</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/new-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">New Password</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Authentication end -->
+
+                            <!-- corporate start -->
+                            <li class="tw-menu-item" x-data="accordionItem('corporate')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">corporate_fare</span>
+                                    <span class="tw-link-label">Corporate</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/about.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">About</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/our-team.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Our Team</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/contact-us.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Contact Us</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/licenses.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Licenses</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/sitemap.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sitemap</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- corporate end -->
+
+                            <!-- utilities start -->
+                            <li class="tw-menu-item" x-data="accordionItem('utilities')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">construction</span>
+                                    <span class="tw-link-label">Utilities</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/modals.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Modals</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/search.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Search</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/wizards.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Wizards</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- utilities end -->
+
+                            <!-- Careers pages start -->
+                            <li class="tw-menu-item" x-data="accordionItem('careers')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">work</span>
+                                    <span class="tw-link-label">Careers</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./careers/careers-list.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Careers List</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./careers/apply.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Careers Apply</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Careers pages end -->
+
+                            <!-- widgets start -->
+                            <li class="tw-menu-item" x-data="accordionItem('widgets')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">widgets</span>
+                                    <span class="tw-link-label">Widgets</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./widgets/lists.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Lists</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./widgets/statistics.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Statistics</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./widgets/charts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Charts</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./widgets/mixed.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Mixed</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./widgets/tables.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Tables</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./widgets/feeds.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Feeds</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- widgets end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
+                                <span class="label">Apps</span>
+                            </li>
+                            <!-- page header end -->
+
+                            <!-- project start -->
+                            <li class="tw-menu-item" x-data="accordionItem('projects')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">fence</span>
+                                    <span class="tw-link-label">Projects</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./apps/project.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">My Project</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./apps/view-project.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">View Project</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./apps/users.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Users</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./apps/files.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Files</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./apps/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- project end -->
+
+                            <!-- eCommerce start -->
+                            <li class="tw-menu-item" x-data="accordionItem('eCommerce')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">shopping_basket</span>
+                                    <span class="tw-link-label">eCommerce</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/category.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Category</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/sales.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sales</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/customers.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/reports.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Reports</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- eCommerce end -->
+
+                            <!-- contacts start -->
+                            <li class="tw-menu-item" x-data="accordionItem('contacts')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">interests</span>
+                                    <span class="tw-link-label">Contacts</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/getting-started.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Getting Started</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/add-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Add Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/edit-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Edit Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/view-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">View Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- contacts end -->
+
+                            <!-- user management start -->
+                            <li class="tw-menu-item" x-data="accordionItem('user-management')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">workspaces</span>
+                                    <span class="tw-link-label">User Management</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/users.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Users</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/roles.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Roles</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/permissions.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Permissions</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- user management end -->
+
+                            <!-- customers start -->
+                            <li class="tw-menu-item" x-data="accordionItem('customers')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    x-on:click="handleClick"
+                                    :class="activeAccordion">
+                                    <span class="material-icons">change_history</span>
+                                    <span class="tw-link-label">Customers</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/getting-started.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Getting Started</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/customer-listing.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customer Listing</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/customer-details.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customer Details</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- customers end -->
+                        </ul>
+                    </nav>
+
+                    <div class="documents-button">
+                        <a
+                            data-ripple
+                            href="https://github.com/kzamaan/twilight"
+                            target="_blank"
+                            class="documents-link"
+                            data-ripple>
+                            <span class="material-icons">description</span>
+                            <span class="btn-label ml-2">Documentation</span>
+                        </a>
+                    </div>
+                </aside>
+
+                <div class="twilight-body">
+                    <header class="top-header" :class="[$store.app.navbar]">
+                        <div class="ml-6 flex items-center">
+                            <button
+                                type="button"
+                                x-on:click="$store.app.toggleSidebar()"
+                                aria-label="Toggle Menu"
+                                class="text-gray-500 focus:outline-none">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4 6H20M4 12H20M4 18H11"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="flex items-center space-x-4 pr-6">
+                            <div class="relative" x-data="{ isOpen: false }">
+                                <button
+                                    type="button"
+                                    x-on:click="isOpen = !isOpen"
+                                    x-on:click.away="isOpen = false"
+                                    class="header-btn"
+                                    aria-label="Notification">
+                                    <svg
+                                        class="h-4 w-4"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+
+                                <div
+                                    x-show="isOpen"
+                                    x-transition:enter.duration.500ms
+                                    x-transition:leave.duration.400ms
+                                    class="absolute right-0 z-20 mt-5 w-72 overflow-hidden rounded-md bg-white py-2 shadow-lg">
+                                    <div class="py-2">
+                                        <a
+                                            href="/"
+                                            class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Sara Salah </span>
+                                                replied on the
+                                                <span class="font-bold text-blue-500" href="#"> Upload Image </span>
+                                                article . 2m
+                                            </p>
+                                        </a>
+                                        <a
+                                            href="/"
+                                            class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Slick Net </span>
+                                                start following you . 45m
+                                            </p>
+                                        </a>
+                                        <a
+                                            href="/"
+                                            class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Jane Doe </span>
+                                                Like Your reply on
+                                                <span class="font-bold text-blue-500" href="#"> Test with TDD </span
+                                                >article . 1h
+                                            </p>
+                                        </a>
+                                        <a href="/" class="-mx-2 flex items-center px-4 py-3 hover:bg-gray-100">
+                                            <img
+                                                class="mx-1 h-8 w-8 rounded-full object-cover"
+                                                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=398&q=80"
+                                                alt="avatar" />
+                                            <p class="mx-2 text-sm text-gray-600">
+                                                <span class="font-bold" href="#"> Abigail Bennett </span>
+                                                start following you . 3h
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <a href="/" class="mx-4 block bg-gray-800 py-2 text-center font-bold text-white">
+                                        See all notifications
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="relative" x-data="{ isOpen: false }">
+                                <button
+                                    type="button"
+                                    x-on:click="isOpen = !isOpen"
+                                    x-on:click.away="isOpen = false"
+                                    aria-expanded="false"
+                                    aria-label="User Profile"
+                                    class="relative z-10 block h-8 w-8 overflow-hidden rounded-full shadow focus:outline-none">
+                                    <img
+                                        class="h-full w-full object-cover"
+                                        src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=ffffff"
+                                        alt="Your avatar" />
+                                </button>
+
+                                <div
+                                    x-show="isOpen"
+                                    x-transition:enter.duration.500ms
+                                    x-transition:leave.duration.400ms
+                                    class="absolute right-0 z-20 mt-5 w-64 rounded-md bg-white py-2 shadow-2xl dark:bg-dark-primary">
+                                    <div class="flex items-center border-b px-4 py-2 dark:border-gray-700">
+                                        <div class="flex-shrink-0">
+                                            <img
+                                                class="h-8 w-8 rounded-full object-cover"
+                                                src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=F5F8FA"
+                                                alt="Your avatar" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
+                                                Kamruzzaman
+                                            </p>
+                                            <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
+                                                Software Engineer
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="border-b py-2 dark:border-gray-700">
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> My Profile </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link">
+                                                My Projects
+                                                <span
+                                                    class="ml-1 inline-flex items-center justify-center rounded-full bg-primary px-2 py-1 text-xs font-bold leading-none text-white">
+                                                    9
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> My Subscription </a>
+                                        </div>
+                                    </div>
+                                    <div class="relative py-2">
+                                        <div class="user-menu-item group">
+                                            <a href="#" class="user-menu-link">
+                                                Language
+                                                <span class="flex items-center text-xs font-bold leading-none">
+                                                    <img
+                                                        src="/images/flags/united-states.svg"
+                                                        class="mr-2 h-4 w-4 rounded-full"
+                                                        alt="English" />
+                                                    English
+                                                </span>
+                                                <!-- language dropdown -->
+                                                <div class="language-dropdown">
+                                                    <div class="language-dropdown-item">
+                                                        <img
+                                                            src="/images/flags/united-states.svg"
+                                                            class="mr-2 h-4 w-4 rounded-full"
+                                                            alt="English" />
+                                                        <span class="text-xs leading-none">English</span>
+                                                    </div>
+                                                    <div class="language-dropdown-item">
+                                                        <img
+                                                            src="/images/flags/france.svg"
+                                                            class="mr-2 h-4 w-4 rounded-full"
+                                                            alt="france" />
+                                                        <span class="text-xs leading-none">France</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> Account Settings </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="./login.html" class="user-menu-link"> Log out </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+                    <main class="animate__animated flex-1" :class="[$store.app.animation]">
+                        <div class="twilight-content">
+                            <!-- Start:Breadcrumb -->
+                            <nav class="breadcrumb">
+                                <div class="left-link">
+                                    <ol class="breadcrumb-nav">
+                                        <li class="inline-flex items-center">
+                                            <a href="/" class="breadcrumb-item"> Dashboard </a>
+                                        </li>
+
+                                        <li aria-current="page">
+                                            <div class="flex items-center">
+                                                <div class="material-icons rotate-180 text-lg">navigate_before</div>
+                                                <span class="breadcrumb-item-current"> Crypto </span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </nav>
+                            <!-- End:Breadcrumb -->
+
+                            <div x-data="crypto">
+                                <div class="relative mt-5 flex flex-col gap-5 xl:flex-row">
+                                    <div
+                                        class="card absolute z-10 hidden w-80 flex-none divide-y divide-[#ebedf2] overflow-visible border-0 p-0 dark:divide-[#191e3a] lg:overflow-y-auto xl:relative xl:block"
+                                        :class="{'!block h-full' : isShowCryptoMenu}">
+                                        <template x-for="item in coins">
+                                            <button
+                                                type="button"
+                                                class="flex w-full items-center p-4 hover:bg-gray-100 dark:hover:bg-[#192A3A]"
+                                                :class="{'bg-gray-100 dark:bg-[#192A3A]' : selectedCoinObj.title === item.title}"
+                                                @click="selectBitCoin(item)">
+                                                <div class="ltr:pr-4 rtl:pl-4">
+                                                    <div class="flex items-baseline font-semibold">
+                                                        <div
+                                                            class="text-md ltr:mr-1 rtl:ml-1"
+                                                            x-text="item.title"></div>
+                                                        <div
+                                                            class="text-white-dark text-xs uppercase"
+                                                            x-text="`(${item.alias})`"></div>
+                                                    </div>
+                                                    <div
+                                                        class="mt-2 flex items-center"
+                                                        :class="[item.isUp ? 'text-success' : 'text-danger']">
+                                                        <div
+                                                            class="min-w-20 text-xl ltr:mr-3 rtl:ml-3"
+                                                            x-text="`$${item.value}`"></div>
+                                                        <span>
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-4 w-4"
+                                                                :class="{'rotate-180' : !item.isUp}"
+                                                                viewBox="0 0 20 20"
+                                                                fill="currentColor">
+                                                                <path
+                                                                    fill-rule="evenodd"
+                                                                    d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z"
+                                                                    clip-rule="evenodd"></path>
+                                                            </svg>
+                                                        </span>
+                                                        <div class="text-sm font-medium" x-text="`${item.perc}%`"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-1">
+                                                    <div :id="item.title.toLowerCase()" class="chart"></div>
+                                                </div>
+                                            </button>
+                                        </template>
+                                    </div>
+
+                                    <div
+                                        class="absolute z-[5] hidden h-full w-full rounded-md bg-black/60"
+                                        :class="{'!block xl:!hidden' : isShowCryptoMenu}"
+                                        @click="isShowCryptoMenu = !isShowCryptoMenu"></div>
+
+                                    <div class="card flex-1 p-0">
+                                        <div
+                                            class="flex-wrap items-center border-b border-[#ebedf2] p-4 dark:border-[#191e3a] md:flex">
+                                            <div class="flex flex-1 items-start ltr:pr-4 rtl:pl-4">
+                                                <button
+                                                    type="button"
+                                                    class="block hover:text-primary ltr:mr-5 rtl:ml-5 xl:hidden"
+                                                    @click="isShowCryptoMenu = !isShowCryptoMenu">
+                                                    <svg
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-6 w-6">
+                                                        <path
+                                                            d="M20 7L4 7"
+                                                            stroke="currentColor"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"></path>
+                                                        <path
+                                                            opacity="0.5"
+                                                            d="M20 12L4 12"
+                                                            stroke="currentColor"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"></path>
+                                                        <path
+                                                            d="M20 17L4 17"
+                                                            stroke="currentColor"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"></path>
+                                                    </svg>
+                                                </button>
+                                                <div>
+                                                    <div class="flex items-center">
+                                                        <div
+                                                            class="text-md font-semibold ltr:mr-1 rtl:ml-1"
+                                                            x-text="selectedCoinObj.title">
+                                                            Bitcoin
+                                                        </div>
+                                                        <div
+                                                            class="text-white-dark text-xs font-semibold uppercase"
+                                                            x-text="`(${selectedCoinObj.alias})`">
+                                                            (BTC)
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="mt-2 flex items-center text-success"
+                                                        :class="selectedCoinObj.isUp ? 'text-success' : 'text-danger'">
+                                                        <div
+                                                            class="min-w-20 text-2xl ltr:mr-3 rtl:ml-3"
+                                                            x-text="`$${selectedCoinObj.value}`">
+                                                            $170.46
+                                                        </div>
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            class="mb-px h-4 w-4"
+                                                            :class="{'rotate-180' : !selectedCoinObj.isUp}"
+                                                            viewBox="0 0 20 20"
+                                                            fill="currentColor">
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                        <div
+                                                            class="mb-px text-sm font-medium"
+                                                            x-text="`${selectedCoinObj.perc}%`">
+                                                            2.35%
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul
+                                                class="text-white-dark mt-5 grid grid-cols-2 divide-[#ebedf2] font-semibold rtl:divide-x-reverse dark:divide-[#253b5c] sm:mt-0 sm:grid-cols-4 sm:divide-x ltr:md:ml-auto rtl:md:mr-auto">
+                                                <li class="px-4 py-1">
+                                                    Market Cap
+                                                    <span
+                                                        class="dark:text-white-light mt-1.5 block text-lg text-black"
+                                                        x-text="`$${selectedCoinObj.marketcap}B`"
+                                                        >$148.75B</span
+                                                    >
+                                                </li>
+                                                <li class="px-4 py-1">
+                                                    Volume
+                                                    <span
+                                                        class="dark:text-white-light mt-1.5 block text-lg text-black"
+                                                        x-text="`$${selectedCoinObj.volume}B`"
+                                                        >$22.9B</span
+                                                    >
+                                                </li>
+                                                <li class="px-4 py-1">
+                                                    Supply
+                                                    <span
+                                                        class="dark:text-white-light mt-1.5 block text-lg text-black"
+                                                        x-text="`${selectedCoinObj.supply}M`">
+                                                        18.17M
+                                                    </span>
+                                                </li>
+                                                <li class="px-4 py-1">
+                                                    All Time High
+                                                    <span
+                                                        class="dark:text-white-light mt-1.5 block text-lg text-black"
+                                                        x-text="`$${selectedCoinObj.highest}`">
+                                                        $19,891.00
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div
+                                            class="mb-5 grid grid-rows-1 gap-4 border-b border-[#ebedf2] p-4 dark:border-[#253b5c] sm:grid-cols-4">
+                                            <div>
+                                                <div class="mb-1.5 font-semibold">Action</div>
+                                                <select class="text-white-dark form-select">
+                                                    <option>Buy</option>
+                                                    <option>Sell</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <div class="mb-1.5 font-semibold">Wallet</div>
+                                                <select class="text-white-dark form-select">
+                                                    <option>Bitcoin</option>
+                                                    <option>Ethereum</option>
+                                                    <option>Zcash</option>
+                                                    <option>Litecoin</option>
+                                                    <option>Binance</option>
+                                                    <option>Solana</option>
+                                                    <option>Tether</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <div class="mb-1.5 font-semibold">Amount</div>
+                                                <div class="relative flex">
+                                                    <input
+                                                        type="text"
+                                                        placeholder
+                                                        class="form-input ltr:rounded-r-none ltr:border-r-0 rtl:rounded-l-none rtl:border-l-0" />
+                                                    <div
+                                                        x-data="dropdown"
+                                                        @click.outside="open = false"
+                                                        class="dropdown">
+                                                        <div
+                                                            class="flex cursor-pointer items-center justify-center gap-1 rounded-none border bg-[#f1f2f3] px-3 py-2 font-semibold ltr:rounded-r-md rtl:rounded-l-md dark:border-[#253b5c] dark:bg-[#1b2e4b]"
+                                                            @click="toggle">
+                                                            BTC
+
+                                                            <svg
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-4 w-4">
+                                                                <path
+                                                                    d="M19 9L12 15L5 9"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <ul
+                                                            x-show="open"
+                                                            x-transition
+                                                            x-transition.duration.300ms
+                                                            class="absolute right-0 z-40 mt-1 min-w-[120px] rounded bg-white px-2 shadow"
+                                                            style="display: none">
+                                                            <li
+                                                                class="flex items-center px-4 py-2 text-sm hover:bg-primary-50 hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">BTC</a>
+                                                            </li>
+                                                            <li
+                                                                class="flex items-center px-4 py-2 text-sm hover:bg-primary-50 hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">ETH</a>
+                                                            </li>
+                                                            <li
+                                                                class="flex items-center px-4 py-2 text-sm hover:bg-primary-50 hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">ZEC</a>
+                                                            </li>
+                                                            <li
+                                                                class="flex items-center px-4 py-2 text-sm hover:bg-primary-50 hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">LTC</a>
+                                                            </li>
+                                                            <li
+                                                                class="flex items-center px-4 py-2 text-sm hover:bg-primary-50 hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">BNB</a>
+                                                            </li>
+                                                            <li
+                                                                class="flex items-center px-4 py-2 text-sm hover:bg-primary-50 hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">SOL</a>
+                                                            </li>
+                                                            <li
+                                                                class="flex items-center px-4 py-2 text-sm hover:bg-primary-50 hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">USDT</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-primary self-end">Buy</button>
+                                        </div>
+                                        <!-- selected chart -->
+                                        <div class="flex-1 px-4">
+                                            <div x-ref="selectedBitCoin" style="min-height: 426px"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+
+                    <footer class="footer">
+                        <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
+                            © <span id="footer-year"></span> <a href="#" class="hover:underline">Twilight™</a>. All
+                            Rights Reserved.
+                        </span>
+                        <ul class="mt-3 flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                            <li>
+                                <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
+                            </li>
+                            <li>
+                                <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/kzamaan/twilight" class="hover:underline" target="_blank">
+                                    Github
+                                </a>
+                            </li>
+                        </ul>
+                    </footer>
+                </div>
+
+                <!-- Theme customizer -->
+                <div class="theme-customizer">
+                    <div
+                        class="customizer-shadow"
+                        :class="{'!block': showCustomizer}"
+                        @click="showCustomizer = false"></div>
+
+                    <nav class="app-customizer" :class="{'!right-0' : showCustomizer}">
+                        <a href="javascript:;" class="customizer-button" @click="showCustomizer = !showCustomizer">
+                            <div class="material-icons animate-[spin_3s_linear_infinite]">settings</div>
+                        </a>
+                        <div data-simplebar class="h-full overflow-y-auto overflow-x-hidden">
+                            <div class="relative pb-5 text-center">
+                                <a
+                                    href="javascript:;"
+                                    class="absolute right-0 top-0 opacity-30 hover:opacity-100 dark:text-white"
+                                    @click="showCustomizer = false">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24px"
+                                        height="24px"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="h-5 w-5">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </a>
+                                <h4 class="mb-1 dark:text-white">TEMPLATE CUSTOMIZER</h4>
+                                <p class="text-white-dark">
+                                    Set preferences that will be cookies for your live preview demonstration.
+                                </p>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Color Scheme</h5>
+                                <p class="text-white-dark text-xs">Overall light or dark presentation.</p>
+                                <div class="mt-3 grid grid-cols-3 gap-2">
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4"
+                                        :class="[$store.app.theme === 'light' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleTheme('light')">
+                                        <span class="material-icons"> light_mode </span>
+                                        Light
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4"
+                                        :class="[$store.app.theme === 'dark' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleTheme('dark')">
+                                        <span class="material-icons"> dark_mode </span>
+                                        Dark
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4"
+                                        :class="[$store.app.theme === 'system' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleTheme('system')">
+                                        <span class="material-icons"> settings_suggest </span>
+                                        System
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Navigation Position</h5>
+                                <p class="text-white-dark text-xs">
+                                    Select the primary navigation paradigm for your app.
+                                </p>
+                                <div class="mt-3 grid grid-cols-3 gap-2">
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4"
+                                        :class="[$store.app.menu === 'horizontal' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleMenu('horizontal')">
+                                        Horizontal
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4 text-center"
+                                        :class="[$store.app.menu === 'vertical' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleMenu('vertical')">
+                                        Vertical
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex items-center px-4 text-center"
+                                        :class="[$store.app.menu === 'collapsible-vertical' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleMenu('collapsible-vertical')">
+                                        Collapsible
+                                    </button>
+                                </div>
+                                <div class="mt-5 text-primary">
+                                    <label class="mb-0 inline-flex items-center">
+                                        <input
+                                            x-model="$store.app.semiDark"
+                                            type="checkbox"
+                                            :value="true"
+                                            class="form-checkbox"
+                                            @change="$store.app.toggleSemiDark()" />
+                                        <span class="ml-2">Semi Dark (Sidebar &amp; Header)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Layout Style</h5>
+                                <p class="text-white-dark text-xs">Select the primary layout style for your app.</p>
+                                <div class="mt-3 flex gap-2">
+                                    <button
+                                        type="button"
+                                        class="btn flex-auto"
+                                        :class="[$store.app.layout === 'boxed-layout' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleLayout('boxed-layout')">
+                                        Box
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex-auto"
+                                        :class="[$store.app.layout === 'full' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleLayout('full')">
+                                        Full
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Direction</h5>
+                                <p class="text-white-dark text-xs">Select the direction for your app.</p>
+                                <div class="mt-3 flex gap-2">
+                                    <button
+                                        type="button"
+                                        class="btn flex-auto"
+                                        :class="[$store.app.rtlClass === 'ltr' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleRTL('ltr')">
+                                        LTR
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn flex-auto"
+                                        :class="[$store.app.rtlClass === 'rtl' ? 'btn-primary' :'btn-outline-primary']"
+                                        @click="$store.app.toggleRTL('rtl')">
+                                        RTL
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Navbar Type</h5>
+                                <p class="text-white-dark text-xs">Sticky or Floating.</p>
+                                <div class="mt-3 flex items-center gap-3 text-primary">
+                                    <label class="mb-0 inline-flex items-center">
+                                        <input
+                                            x-model="$store.app.navbar"
+                                            type="radio"
+                                            value="navbar-sticky"
+                                            class="form-radio"
+                                            @change="$store.app.toggleNavbar()"
+                                            name="$store.app.navbar" />
+                                        <span class="ml-2">Sticky</span>
+                                    </label>
+                                    <label class="mb-0 inline-flex items-center">
+                                        <input
+                                            x-model="$store.app.navbar"
+                                            type="radio"
+                                            value="navbar-floating"
+                                            class="form-radio"
+                                            @change="$store.app.toggleNavbar()"
+                                            name="$store.app.navbar" />
+                                        <span class="ml-2">Floating</span>
+                                    </label>
+                                    <label class="mb-0 inline-flex items-center">
+                                        <input
+                                            x-model="$store.app.navbar"
+                                            type="radio"
+                                            value="navbar-static"
+                                            class="form-radio"
+                                            @change="$store.app.toggleNavbar()"
+                                            name="$store.app.navbar" />
+                                        <span class="ml-2">Static</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="customizer-card">
+                                <h5 class="mb-1 text-base leading-none dark:text-white">Router Transition</h5>
+                                <p class="text-white-dark text-xs">Animation of main content.</p>
+                                <div class="mt-3">
+                                    <select
+                                        x-model="$store.app.animation"
+                                        class="form-select w-full border-primary text-primary"
+                                        @change="$store.app.toggleAnimation()">
+                                        <option value>Select Animation</option>
+                                        <option value="animate__fadeIn">Fade</option>
+                                        <option value="animate__fadeInDown">Fade Down</option>
+                                        <option value="animate__fadeInUp">Fade Up</option>
+                                        <option value="animate__fadeInLeft">Fade Left</option>
+                                        <option value="animate__fadeInRight">Fade Right</option>
+                                        <option value="animate__slideInDown">Slide Down</option>
+                                        <option value="animate__slideInLeft">Slide Left</option>
+                                        <option value="animate__slideInRight">Slide Right</option>
+                                        <option value="animate__zoomIn">Zoom In</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <script src="/plugins/apexcharts/apexcharts.min.js"></script>
+        <script src="/features/dashboard/crypto.init.js"></script>
     </body>
 </html>
