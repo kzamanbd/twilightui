@@ -7,8 +7,8 @@
         @apply text-gray-700 dark:text-[#6D7993];
     }
     .loading {
-        @apply fixed inset-0 z-50 flex items-center justify-center;
-        @apply bg-gray-300 text-gray-600 backdrop-blur dark:bg-gray-700 dark:text-white;
+        @apply fixed inset-0 z-[9999] flex items-center justify-center;
+        @apply bg-gray-300 text-gray-600 dark:bg-gray-700 dark:text-white;
     }
     .boxed-layout {
         @apply lg:container lg:mx-auto lg:shadow-lg;
