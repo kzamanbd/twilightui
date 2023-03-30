@@ -31,13 +31,13 @@
     }
 
     .app-customizer {
-        @apply fixed -right-[400px] bottom-0 top-0 z-[51] w-full max-w-[400px] bg-white p-4 shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[right] duration-300 dark:bg-[#0e1726];
+        @apply fixed -right-[400px] bottom-0 top-0 z-[51] w-full max-w-[400px] bg-white shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[right] duration-300 dark:bg-[#0e1726];
     }
     .customizer-shadow {
         @apply fixed inset-0 z-[51] hidden bg-[black]/60 px-4 transition-[display] supports-[backdrop-filter]:bg-light-gray/20 supports-[backdrop-filter]:backdrop-blur;
     }
     .customizer-button {
-        @apply absolute -left-12 bottom-0 top-0 my-auto flex h-10 w-12 cursor-pointer items-center justify-center rounded-bl-full rounded-tl-full bg-primary text-white;
+        @apply absolute bottom-14 right-5 flex cursor-pointer items-center justify-center rounded-md bg-primary p-2 text-white;
     }
     .customizer-card {
         @apply mb-3 rounded-md border border-dashed border-[#e0e6ed] p-3 dark:border-[#1b2e4b];
