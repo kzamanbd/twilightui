@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&display=swap');
+@import 'material-icons/iconfont/filled.css';
+@import 'material-icons/iconfont/outlined.css';
 
 @import 'tailwindcss/base';
 @import './base/custom.css';
