@@ -58,7 +58,7 @@ window.ResizeObserver = ResizeObserver;
         },
         handleToggle() {
             return this.$store.accordion.item == this.idx
-                ? `max-height: ${this.$refs.tab.scrollHeight}px; margin-top: 4px`
+                ? `max-height: ${this.$refs.dropdown.scrollHeight}px; margin-top: 4px`
                 : '';
         },
     }));
