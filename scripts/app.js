@@ -75,17 +75,6 @@ window.ResizeObserver = ResizeObserver;
         semiDark: false,
     };
 
-    window.addEventListener('DOMContentLoaded', function () {
-        // screen loader
-        const loading = document.getElementsByClassName('loading');
-        if (loading?.length) {
-            loading[0].classList.add('animate__fadeOut');
-            setTimeout(() => {
-                loading[0].remove();
-            }, 200);
-        }
-    });
-
     // set current year in footer
     const yearEle = document.querySelector('#footer-year');
     if (yearEle) {
@@ -274,6 +263,14 @@ window.ResizeObserver = ResizeObserver;
 
 // ripple effect
 document.addEventListener('DOMContentLoaded', function () {
+    // screen loader
+    const loading = document.getElementsByClassName('loading');
+    if (loading?.length) {
+        loading[0].classList.add('animate__fadeOut');
+        setTimeout(() => {
+            loading[0].remove();
+        }, 200);
+    }
     // get all elements with ripple attribute
     const ripples = document.querySelectorAll('[data-ripple]');
 
