@@ -1,8 +1,10 @@
 @layer components {
     /* start sidebar menu components */
     .sidebar-menu {
-        @apply fixed inset-y-0 -left-64 z-30 border-gray-200 shadow-none lg:left-0 lg:shadow-lg;
-        @apply w-64 bg-white duration-300 ease-in-out dark:bg-dark-primary;
+        @apply fixed inset-y-0 -left-64 z-30 w-64 border-gray-200 shadow-none duration-300 ease-in-out lg:left-0 lg:shadow-lg;
+    }
+    .sidebar-content {
+        @apply h-full bg-white dark:bg-dark-primary;
     }
     .toggle-sidebar .sidebar-menu,
     .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu {
@@ -85,7 +87,7 @@
         @apply dark--text flex items-center rounded-md hover:text-gray-900 dark:hover:text-gray-100;
     }
     .menu-bullet-dot {
-        @apply ml-2 mr-1 h-1 w-1 rounded-full bg-primary;
+        @apply ml-2 mr-1 h-1.5 w-1.5 rounded-full bg-primary;
     }
     .tw-dropdown-circle {
         @apply flex h-4 w-4 items-center justify-center text-[10px] leading-[unset];
