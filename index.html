@@ -801,8 +801,8 @@
                         <div class="flex items-center space-x-4 pr-6">
                             <button
                                 type="button"
-                                @click="$store.app.toggleTheme('light')"
-                                class="header-btn"
+                                @click="$store.app.toggleTheme()"
+                                class="header-item"
                                 aria-label="Themes">
                                 <svg
                                     aria-hidden="true"
@@ -827,7 +827,7 @@
                                 </svg>
                             </button>
                             <div class="relative" x-data="dropdown" @click.outside="close">
-                                <button type="button" @click="toggle" class="header-btn" aria-label="Notification">
+                                <button type="button" @click="toggle" class="header-item" aria-label="Notification">
                                     <svg
                                         class="h-4 w-4"
                                         viewBox="0 0 24 24"

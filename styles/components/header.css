@@ -9,11 +9,9 @@
         @apply dark--text sticky bg-white shadow dark:bg-dark-primary dark:shadow-lg;
         @apply supports-[backdrop-filter]:bg-light-gray/60 supports-[backdrop-filter]:backdrop-blur;
     }
-    .header-btn {
+    .header-item {
         @apply dark--text relative flex items-center p-2 text-xs font-medium;
-        @apply rounded-lg border border-gray-200 bg-white hover:bg-gray-100;
-        @apply hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-gray-300;
-        @apply focus:outline-none dark:bg-dark-primary dark:focus:ring-gray-500;
+        @apply rounded-lg border border-gray-200 bg-white hover:bg-gray-100 dark:bg-dark-primary;
         @apply dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-white;
     }
     /* start user menu components */

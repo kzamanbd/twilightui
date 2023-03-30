@@ -19,17 +19,6 @@ window.ResizeObserver = ResizeObserver;
 (function () {
     'use strict';
 
-    //! get theme from local storage
-    function getTwilightTheme() {
-        // if user already changed the theme, use it
-        if (window.localStorage.getItem('dark')) {
-            return JSON.parse(window.localStorage.getItem('dark'));
-        }
-
-        // else return their preferences
-        return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-
     //? alpine data
     Alpine.data('twilightTheme', () => ({
         init() {
@@ -49,22 +38,13 @@ window.ResizeObserver = ResizeObserver;
                 }
             }
         },
-        toggleTheme() {
-            document.body.classList.toggle('dark');
-            //! set theme to local storage
-            window.localStorage.setItem('dark', !getTwilightTheme());
-        },
-        // sidebar
-        isMenuOpen: false,
         showCustomizer: false,
-        toggleMenuOpen() {
-            this.isMenuOpen = !this.isMenuOpen;
-        },
     }));
 
     Alpine.store('accordion', {
         item: undefined,
     });
+
     Alpine.data('accordionItem', idx => ({
         init() {
             this.idx = idx;
@@ -84,7 +64,6 @@ window.ResizeObserver = ResizeObserver;
     }));
 
     // theme config
-
     const $themeConfig = {
         locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
         theme: 'light', // light, dark, system
@@ -191,11 +170,20 @@ window.ResizeObserver = ResizeObserver;
         // theme
         theme: Alpine.$persist($themeConfig.theme),
         toggleTheme(val) {
-            if (!val) {
-                val = this.theme || $themeConfig.theme; // light|dark|system
+            let theme = $themeConfig.theme; // light|dark|system
+            if (val) {
+                theme = val;
+            } else {
+                if (this.theme === 'system') {
+                    theme = 'light';
+                } else if (this.theme === 'light') {
+                    theme = 'dark';
+                } else if (this.theme === 'dark') {
+                    theme = 'system';
+                }
             }
 
-            this.theme = val;
+            this.theme = theme;
         },
 
         // navigation menu
