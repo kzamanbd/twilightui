@@ -20,11 +20,14 @@
             x-data="twilightTheme"
             :class="[ $store.app.sidebar && 'toggle-sidebar', $store.app.theme, $store.app.menu, $store.app.layout]">
             <div class="twilight">
+                <!-- Loading dialog -->
                 <div class="loading duration-300">Loading.....</div>
+                <!-- mobile sidebar shadow -->
                 <div @click="$store.app.toggleSidebar()" class="sidebar-shadow" x-show="$store.app.sidebar"></div>
-
+                <!-- Sidebar menu -->
                 <aside class="sidebar-menu">
                     <div class="sidebar-content">
+                        <!-- Sidebar Logo -->
                         <div id="brand-logo" class="tw-brand-logo">
                             <a href="/index.html" class="flex items-center">
                                 <img class="brand-logo-image" src="/images/logo.png" alt="logo" />
@@ -54,7 +57,7 @@
                                 </svg>
                             </a>
                         </div>
-
+                        <!-- Menu Content -->
                         <nav data-simplebar class="tw-menu-content no-scrollbar">
                             <ul class="tw-nav-menu space-y-2">
                                 <!-- dashboard start -->
@@ -69,7 +72,7 @@
                                         <span class="tw-link-label">Dashboards</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="/index.html" class="tw-dropdown-link" data-ripple>
                                                 <span class="menu-bullet-dot"></span>
@@ -77,31 +80,31 @@
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="/pages/dashboard/crypto.html" class="tw-dropdown-link">
+                                            <a href="/dashboard-crypto.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Crypto</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="/pages/dashboard/crm.html" class="tw-dropdown-link">
+                                            <a href="/dashboard-crm.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">CRM</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="/pages/dashboard/analytics.html" class="tw-dropdown-link">
+                                            <a href="/dashboard-analytics.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Analytics</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="/pages/dashboard/ecommerce.html" class="tw-dropdown-link">
+                                            <a href="/dashboard-ecommerce.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">eCommerce</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="/pages/dashboard/project.html" class="tw-dropdown-link">
+                                            <a href="/dashboard-project.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Projects</span>
                                             </a>
@@ -122,45 +125,45 @@
                                         <span class="tw-link-label">Components</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
-                                            <a href="./alerts.html" class="tw-dropdown-link">
+                                            <a href="/alerts.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Alert</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/badge.html" class="tw-dropdown-link">
+                                            <a href="/badge.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Badge</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/button.html" class="tw-dropdown-link">
+                                            <a href="/button.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Button</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/dropdown.html" class="tw-dropdown-link">
+                                            <a href="/dropdown.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Dropdown</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/collapse.html" class="tw-dropdown-link">
+                                            <a href="/collapse.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Collapse</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/pagination" class="tw-dropdown-link">
+                                            <a href="/pagination" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Pagination</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/modals.html" class="tw-dropdown-link">
+                                            <a href="/modals.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Modals</span>
                                             </a>
@@ -177,7 +180,7 @@
                                 <!-- page header end -->
 
                                 <!-- form elements start -->
-                                <li class="tw-menu-item" x-data="accordionItem('form-elements')">
+                                <li class="tw-menu-item" x-data="accordionItem('form')">
                                     <div
                                         data-ripple
                                         role="button"
@@ -188,39 +191,39 @@
                                         <span class="tw-link-label">Form Elements</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
-                                            <a href="./input.html" class="tw-dropdown-link">
+                                            <a href="/forms-input.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Input</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./forms/input-group.html" class="tw-dropdown-link">
+                                            <a href="/forms-input-group.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Input Group</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./forms/select.html" class="tw-dropdown-link">
+                                            <a href="/forms-select.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Select</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./forms/radio.html" class="tw-dropdown-link">
+                                            <a href="/forms-radio.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Radio</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./forms/checkbox.html" class="tw-dropdown-link">
+                                            <a href="/forms-checkbox.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Checkbox</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./forms/textarea.html" class="tw-dropdown-link">
+                                            <a href="/forms-textarea.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Textarea</span>
                                             </a>
@@ -246,7 +249,7 @@
                                 <!-- page header end -->
 
                                 <!-- user profile start -->
-                                <li class="tw-menu-item" x-data="accordionItem('user-profile')">
+                                <li class="tw-menu-item" x-data="accordionItem('profile')">
                                     <div
                                         data-ripple
                                         role="button"
@@ -258,7 +261,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./user-profile/overview.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -300,7 +303,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./accounts/overview.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -348,7 +351,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="/login.html" class="tw-dropdown-link" target="_blank">
                                                 <span class="menu-bullet-dot"></span>
@@ -396,7 +399,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./corporate/about.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -444,7 +447,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./utilities/modals.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -479,7 +482,7 @@
                                         <span class="tw-link-label">Careers</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./careers/careers-list.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -508,7 +511,7 @@
                                         <span class="tw-link-label">Widgets</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./widgets/lists.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -568,7 +571,7 @@
                                         <span class="tw-link-label">Projects</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./apps/project.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -615,7 +618,7 @@
                                         <span class="tw-link-label">eCommerce</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./eCommerce/category.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -662,7 +665,7 @@
                                         <span class="tw-link-label">Contacts</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./contacts/getting-started.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -698,7 +701,7 @@
                                 <!-- contacts end -->
 
                                 <!-- user management start -->
-                                <li class="tw-menu-item" x-data="accordionItem('user-management')">
+                                <li class="tw-menu-item" x-data="accordionItem('user')">
                                     <div
                                         data-ripple
                                         role="button"
@@ -709,7 +712,7 @@
                                         <span class="tw-link-label">User Management</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./user-management/users.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -745,7 +748,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./customers/getting-started.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -786,6 +789,7 @@
 
                 <div class="twilight-body">
                     <header class="top-header" :class="[$store.app.navbar]">
+                        <!-- sidebar toggle button -->
                         <div class="ml-6 flex items-center">
                             <button
                                 type="button"
@@ -1171,7 +1175,7 @@
                                                     </button>
                                                     <button
                                                         type="button"
-                                                        class="btn text-13 border-transparent bg-primary-50/50 px-2 py-1 font-medium text-primary-500 hover:bg-primary hover:text-white focus:bg-primary focus:text-white dark:bg-primary/20 dark:text-primary-300 dark:hover:bg-primary-100 dark:hover:text-primary-500">
+                                                        class="btn text-13 bg-primary-50/50 dark:hover:bg-primary-100 border-transparent px-2 py-1 font-medium text-primary-500 hover:bg-primary hover:text-white focus:bg-primary focus:text-white dark:bg-primary/20 dark:text-primary-300 dark:hover:text-primary-500">
                                                         1M
                                                     </button>
                                                     <button
@@ -1321,7 +1325,7 @@
                                                                 <div class="mt-3">
                                                                     <a
                                                                         href="#"
-                                                                        class="btn border-transparent bg-primary px-2.5 py-1.5 text-xs text-white shadow-md shadow-primary-100 hover:bg-primary-700 focus:bg-primary-700 focus:ring focus:ring-primary-50/50 dark:shadow-zinc-600">
+                                                                        class="btn shadow-primary-100 focus:ring-primary-50/50 border-transparent bg-primary px-2.5 py-1.5 text-xs text-white shadow-md hover:bg-primary-700 focus:bg-primary-700 focus:ring dark:shadow-zinc-600">
                                                                         View more
                                                                         <div class="material-icons text-xs">east</div>
                                                                     </a>
@@ -1335,11 +1339,11 @@
 
                                         <div class="col-span-12 lg:col-span-4">
                                             <div
-                                                class="card relative h-full overflow-hidden border-transparent bg-primary shadow shadow-primary-100 dark:shadow-zinc-800">
+                                                class="card shadow-primary-100 relative h-full overflow-hidden border-transparent bg-primary shadow dark:shadow-zinc-800">
                                                 <div class="card-body text-center">
                                                     <div class="absolute right-0 top-0">
                                                         <span
-                                                            class="material-icons rotate-12 rounded-full bg-primary-200/50 text-7xl text-white/50">
+                                                            class="material-icons bg-primary-200/50 rotate-12 rounded-full text-7xl text-white/50">
                                                             currency_bitcoin
                                                         </span>
                                                     </div>
@@ -1430,7 +1434,7 @@
                                                                 Payment method :
                                                             </label>
                                                             <select
-                                                                class="selection:text-10 w-full rounded border-gray-100 bg-gray-50/20 py-1.5 focus:border-primary-100 focus:ring focus:ring-primary-50/50 dark:border-zinc-600 dark:bg-dark-primary dark:text-zinc-100 dark:focus:ring-gray-500/10">
+                                                                class="selection:text-10 focus:border-primary-100 focus:ring-primary-50/50 w-full rounded border-gray-100 bg-gray-50/20 py-1.5 focus:ring dark:border-zinc-600 dark:bg-dark-primary dark:text-zinc-100 dark:focus:ring-gray-500/10">
                                                                 <option>Direct Bank Payment</option>
                                                                 <option>Credit / Debit Card</option>
                                                                 <option>Paypal</option>
@@ -1449,7 +1453,7 @@
                                                                     Amount
                                                                 </label>
                                                                 <select
-                                                                    class="border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring focus:ring-primary-50/60 dark:border-zinc-600 dark:bg-dark-primary dark:text-zinc-100 dark:focus:ring-gray-500/10"
+                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:border-zinc-600 dark:bg-dark-primary dark:text-zinc-100 dark:focus:ring-gray-500/10"
                                                                     style="max-width: 90px">
                                                                     <option value="BT" selected="">BTC</option>
                                                                     <option value="ET">ETH</option>
@@ -1457,7 +1461,7 @@
                                                                 </select>
                                                                 <input
                                                                     type="text"
-                                                                    class="w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring focus:ring-primary-50/60 dark:bg-dark-primary dark:focus:ring-gray-500/10"
+                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:focus:ring-gray-500/10"
                                                                     placeholder="0.00121255" />
                                                             </div>
 
@@ -1469,7 +1473,7 @@
                                                                 </label>
                                                                 <input
                                                                     type="text"
-                                                                    class="w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring focus:ring-primary-50/60 dark:bg-dark-primary dark:focus:ring-gray-500/10"
+                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:focus:ring-gray-500/10"
                                                                     placeholder="$58,245" />
                                                                 <label
                                                                     class="border-l border-gray-100 bg-gray-50/20 px-3 py-2 dark:border-zinc-600 dark:bg-dark-primary">
@@ -1485,7 +1489,7 @@
                                                                 </label>
                                                                 <input
                                                                     type="text"
-                                                                    class="w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring focus:ring-primary-50/60 dark:bg-dark-primary dark:focus:ring-gray-500/10"
+                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:focus:ring-gray-500/10"
                                                                     placeholder="$36,854.25" />
                                                             </div>
                                                         </div>
@@ -1541,7 +1545,7 @@
                                                                     Amount
                                                                 </label>
                                                                 <select
-                                                                    class="border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring focus:ring-primary-50/60 dark:border-zinc-600 dark:bg-dark-primary dark:text-gray-100 dark:focus:ring-gray-500/10"
+                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:border-zinc-600 dark:bg-dark-primary dark:text-gray-100 dark:focus:ring-gray-500/10"
                                                                     style="max-width: 90px">
                                                                     <option value="BT" selected="">BTC</option>
                                                                     <option value="ET">ETH</option>
@@ -1549,7 +1553,7 @@
                                                                 </select>
                                                                 <input
                                                                     type="text"
-                                                                    class="w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring focus:ring-primary-50/60 dark:bg-dark-primary dark:placeholder:text-gray-200 dark:focus:ring-gray-500/10"
+                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:placeholder:text-gray-200 dark:focus:ring-gray-500/10"
                                                                     placeholder="0.00121255" />
                                                             </div>
 
@@ -1561,7 +1565,7 @@
                                                                 </label>
                                                                 <input
                                                                     type="text"
-                                                                    class="w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring focus:ring-primary-50/60 dark:bg-dark-primary dark:placeholder:text-gray-200 dark:focus:ring-gray-500/10"
+                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:placeholder:text-gray-200 dark:focus:ring-gray-500/10"
                                                                     placeholder="$58,245" />
                                                                 <label
                                                                     class="border-l border-gray-100 bg-gray-50/20 px-3 py-2 dark:border-zinc-600 dark:bg-dark-primary dark:text-gray-100">
@@ -1577,7 +1581,7 @@
                                                                 </label>
                                                                 <input
                                                                     type="text"
-                                                                    class="ark:border-zinc-600 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring focus:ring-primary-50/60 dark:bg-dark-primary dark:placeholder:text-gray-200"
+                                                                    class="ark:border-zinc-600 focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:placeholder:text-gray-200"
                                                                     placeholder="$36,854.25" />
                                                             </div>
                                                         </div>
@@ -2791,7 +2795,7 @@
 
                                                 <li class="relative flex pb-6 pl-12">
                                                     <div class="absolute left-0 z-40">
-                                                        <div class="h-10 w-10 rounded-full bg-primary-50 text-center">
+                                                        <div class="bg-primary-50 h-10 w-10 rounded-full text-center">
                                                             <span
                                                                 class="material-icons text-2xl leading-relaxed text-primary-500">
                                                                 currency_lira
@@ -2937,7 +2941,7 @@
 
                                                 <li class="relative flex pb-6 pl-12">
                                                     <div class="absolute left-0 z-40">
-                                                        <div class="h-10 w-10 rounded-full bg-primary-50 text-center">
+                                                        <div class="bg-primary-50 h-10 w-10 rounded-full text-center">
                                                             <span
                                                                 class="material-icons text-2xl leading-relaxed text-primary-500">
                                                                 currency_franc
@@ -3083,7 +3087,7 @@
 
                                                 <li class="relative flex pl-12">
                                                     <div class="absolute left-0">
-                                                        <div class="h-10 w-10 rounded-full bg-primary-50 text-center">
+                                                        <div class="bg-primary-50 h-10 w-10 rounded-full text-center">
                                                             <span
                                                                 class="material-icons text-2xl leading-relaxed text-yellow-500">
                                                                 currency_bitcoin
@@ -3168,7 +3172,7 @@
                                                 <div class="ml-auto flex gap-1">
                                                     <button
                                                         type="button"
-                                                        class="btn text-13 border-transparent bg-primary-50/50 px-2 py-1 text-primary-500 hover:bg-primary hover:text-white focus:bg-primary focus:text-white dark:bg-primary/20 dark:text-primary-200 dark:hover:bg-primary dark:hover:text-white">
+                                                        class="btn text-13 bg-primary-50/50 dark:text-primary-200 border-transparent px-2 py-1 text-primary-500 hover:bg-primary hover:text-white focus:bg-primary focus:text-white dark:bg-primary/20 dark:hover:bg-primary dark:hover:text-white">
                                                         ALL
                                                     </button>
                                                     <button

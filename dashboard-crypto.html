@@ -3,15 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ecommerce - Twilight Dashboard</title>
+        <title>Crypto - Twilight Dashboard</title>
         <link rel="icon" href="/favicon.png" />
         <!-- start:Core Fonts, Style -->
         <link rel="stylesheet" href="/fonts/material-icons.css" />
         <link rel="stylesheet" href="/styles/app.css" />
         <script type="module" src="/scripts/app.js"></script>
         <!-- end:Core Fonts, Style -->
-        <!-- Jvm map style -->
-        <link rel="stylesheet" href="/plugins/jsvectormap/jsvectormap.min.css" />
     </head>
 
     <body>
@@ -19,11 +17,14 @@
             x-data="twilightTheme"
             :class="[ $store.app.sidebar && 'toggle-sidebar', $store.app.theme, $store.app.menu, $store.app.layout]">
             <div class="twilight">
+                <!-- Loading dialog -->
                 <div class="loading duration-300">Loading.....</div>
+                <!-- mobile sidebar shadow -->
                 <div @click="$store.app.toggleSidebar()" class="sidebar-shadow" x-show="$store.app.sidebar"></div>
-
+                <!-- Sidebar menu -->
                 <aside class="sidebar-menu">
                     <div class="sidebar-content">
+                        <!-- Sidebar Logo -->
                         <div id="brand-logo" class="tw-brand-logo">
                             <a href="/index.html" class="flex items-center">
                                 <img class="brand-logo-image" src="/images/logo.png" alt="logo" />
@@ -53,7 +54,7 @@
                                 </svg>
                             </a>
                         </div>
-
+                        <!-- Menu Content -->
                         <nav data-simplebar class="tw-menu-content no-scrollbar">
                             <ul class="tw-nav-menu space-y-2">
                                 <!-- dashboard start -->
@@ -68,7 +69,7 @@
                                         <span class="tw-link-label">Dashboards</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="/index.html" class="tw-dropdown-link" data-ripple>
                                                 <span class="menu-bullet-dot"></span>
@@ -76,31 +77,31 @@
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="/pages/dashboard/crypto.html" class="tw-dropdown-link">
+                                            <a href="/dashboard-crypto.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Crypto</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="/pages/dashboard/crm.html" class="tw-dropdown-link">
+                                            <a href="/dashboard-crm.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">CRM</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="/pages/dashboard/analytics.html" class="tw-dropdown-link">
+                                            <a href="/dashboard-analytics.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Analytics</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="/pages/dashboard/ecommerce.html" class="tw-dropdown-link">
+                                            <a href="/dashboard-ecommerce.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">eCommerce</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="/pages/dashboard/project.html" class="tw-dropdown-link">
+                                            <a href="/dashboard-project.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Projects</span>
                                             </a>
@@ -121,45 +122,45 @@
                                         <span class="tw-link-label">Components</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
-                                            <a href="./alerts.html" class="tw-dropdown-link">
+                                            <a href="/alerts.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Alert</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/badge.html" class="tw-dropdown-link">
+                                            <a href="/badge.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Badge</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/button.html" class="tw-dropdown-link">
+                                            <a href="/button.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Button</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/dropdown.html" class="tw-dropdown-link">
+                                            <a href="/dropdown.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Dropdown</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/collapse.html" class="tw-dropdown-link">
+                                            <a href="/collapse.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Collapse</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/pagination" class="tw-dropdown-link">
+                                            <a href="/pagination" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Pagination</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./components/modals.html" class="tw-dropdown-link">
+                                            <a href="/modals.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Modals</span>
                                             </a>
@@ -176,7 +177,7 @@
                                 <!-- page header end -->
 
                                 <!-- form elements start -->
-                                <li class="tw-menu-item" x-data="accordionItem('form-elements')">
+                                <li class="tw-menu-item" x-data="accordionItem('form')">
                                     <div
                                         data-ripple
                                         role="button"
@@ -187,39 +188,39 @@
                                         <span class="tw-link-label">Form Elements</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
-                                            <a href="./input.html" class="tw-dropdown-link">
+                                            <a href="/forms-input.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Input</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./forms/input-group.html" class="tw-dropdown-link">
+                                            <a href="/forms-input-group.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Input Group</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./forms/select.html" class="tw-dropdown-link">
+                                            <a href="/forms-select.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Select</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./forms/radio.html" class="tw-dropdown-link">
+                                            <a href="/forms-radio.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Radio</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./forms/checkbox.html" class="tw-dropdown-link">
+                                            <a href="/forms-checkbox.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Checkbox</span>
                                             </a>
                                         </li>
                                         <li class="tw-dropdown-item group">
-                                            <a href="./forms/textarea.html" class="tw-dropdown-link">
+                                            <a href="/forms-textarea.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
                                                 <span class="tw-link-label">Textarea</span>
                                             </a>
@@ -245,7 +246,7 @@
                                 <!-- page header end -->
 
                                 <!-- user profile start -->
-                                <li class="tw-menu-item" x-data="accordionItem('user-profile')">
+                                <li class="tw-menu-item" x-data="accordionItem('profile')">
                                     <div
                                         data-ripple
                                         role="button"
@@ -257,7 +258,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./user-profile/overview.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -299,7 +300,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./accounts/overview.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -347,7 +348,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="/login.html" class="tw-dropdown-link" target="_blank">
                                                 <span class="menu-bullet-dot"></span>
@@ -395,7 +396,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./corporate/about.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -443,7 +444,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./utilities/modals.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -478,7 +479,7 @@
                                         <span class="tw-link-label">Careers</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./careers/careers-list.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -507,7 +508,7 @@
                                         <span class="tw-link-label">Widgets</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./widgets/lists.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -567,7 +568,7 @@
                                         <span class="tw-link-label">Projects</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./apps/project.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -614,7 +615,7 @@
                                         <span class="tw-link-label">eCommerce</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./eCommerce/category.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -661,7 +662,7 @@
                                         <span class="tw-link-label">Contacts</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./contacts/getting-started.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -697,7 +698,7 @@
                                 <!-- contacts end -->
 
                                 <!-- user management start -->
-                                <li class="tw-menu-item" x-data="accordionItem('user-management')">
+                                <li class="tw-menu-item" x-data="accordionItem('user')">
                                     <div
                                         data-ripple
                                         role="button"
@@ -708,7 +709,7 @@
                                         <span class="tw-link-label">User Management</span>
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./user-management/users.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -744,7 +745,7 @@
                                         <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                     </div>
 
-                                    <ul x-ref="tab" class="tw-dropdown-menu" :style="handleToggle">
+                                    <ul x-ref="dropdown" class="tw-dropdown-menu" :style="handleToggle">
                                         <li class="tw-dropdown-item group">
                                             <a href="./customers/getting-started.html" class="tw-dropdown-link">
                                                 <span class="menu-bullet-dot"></span>
@@ -785,6 +786,7 @@
 
                 <div class="twilight-body">
                     <header class="top-header" :class="[$store.app.navbar]">
+                        <!-- sidebar toggle button -->
                         <div class="ml-6 flex items-center">
                             <button
                                 type="button"
@@ -1015,7 +1017,7 @@
                                         <li aria-current="page">
                                             <div class="flex items-center">
                                                 <div class="material-icons rotate-180 text-lg">navigate_before</div>
-                                                <span class="breadcrumb-item-current"> E commerce </span>
+                                                <span class="breadcrumb-item-current"> Crypto </span>
                                             </div>
                                         </li>
                                     </ol>
@@ -1023,718 +1025,268 @@
                             </nav>
                             <!-- End:Breadcrumb -->
 
-                            <div class="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-                                <div class="sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-2">
-                                    <div class="card relative w-full overflow-hidden">
-                                        <div
-                                            class="xs:grid-cols-2 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 xl:gap-4">
-                                            <div
-                                                class="xs:col-span-1 col-span-4 border-r border-b border-dashed dark:border-slate-700 sm:col-span-1 lg:col-span-2 xl:col-span-1 xl:border-b-0">
-                                                <div class="p-4 text-center">
-                                                    <span class="my-1 text-2xl font-semibold dark:text-slate-200">
-                                                        520
-                                                    </span>
-                                                    <h6 class="my-2 text-xs font-semibold uppercase text-slate-400">
-                                                        Today's Orders
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="xs:col-span-1 col-span-4 border-r-0 border-b border-dashed dark:border-slate-700 sm:col-span-1 lg:col-span-2 xl:col-span-1 xl:border-r xl:border-b-0">
-                                                <div class="p-4 text-center">
-                                                    <span class="my-1 text-2xl font-semibold dark:text-slate-200">
-                                                        82.8%
-                                                    </span>
-                                                    <h6 class="my-2 text-xs font-semibold uppercase text-slate-400">
-                                                        Conversion Rate
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="xs:col-span-1 col-span-4 border-r border-b border-dashed dark:border-slate-700 sm:col-span-1 md:border-b-0 lg:col-span-2 xl:col-span-1">
-                                                <div class="p-4 text-center">
-                                                    <span class="my-1 text-2xl font-semibold dark:text-slate-200">
-                                                        $92.5
-                                                    </span>
-                                                    <h6 class="my-2 text-xs font-semibold uppercase text-slate-400">
-                                                        Avg. Value
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="xs:col-span-1 col-span-4 sm:col-span-1 lg:col-span-2 xl:col-span-1">
-                                                <div class="p-4 text-center">
-                                                    <span class="my-1 text-2xl font-semibold dark:text-slate-200">
-                                                        $360.50
-                                                    </span>
-                                                    <h6 class="my-2 text-xs font-semibold uppercase text-slate-400">
-                                                        Gross sale
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="border-b border-dashed dark:border-slate-700"></div>
-                                        <div class="p-4">
-                                            <h4 class="py-2 font-medium dark:text-slate-300">Revenue Status</h4>
-                                            <div
-                                                id="revenue-status"
-                                                class="apex-charts bg-[url('/images/widgets/svg-map.svg')] bg-contain bg-center bg-no-repeat dark:bg-[url('/images/widgets/dark-map.svg')]"
-                                                style="min-height: 350px"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
-                                    <div class="grid h-full grid-cols-2 gap-4">
-                                        <div class="col-span-2">
-                                            <div class="card relative h-full w-full">
-                                                <div class="card-body text-center">
-                                                    <div class="items-cente flex flex-wrap justify-between xl:gap-x-2">
+                            <div x-data="crypto">
+                                <div class="relative mt-5 flex flex-col gap-5 xl:flex-row">
+                                    <div
+                                        class="card absolute z-10 hidden w-80 flex-none divide-y divide-[#ebedf2] overflow-visible border-0 p-0 dark:divide-[#191e3a] lg:overflow-y-auto xl:relative xl:block"
+                                        :class="{'!block h-full' : isShowCryptoMenu}">
+                                        <template x-for="item in coins">
+                                            <button
+                                                type="button"
+                                                class="flex w-full items-center p-4 hover:bg-gray-100 dark:hover:bg-[#192A3A]"
+                                                :class="{'bg-gray-100 dark:bg-[#192A3A]' : selectedCoinObj.title === item.title}"
+                                                @click="selectBitCoin(item)">
+                                                <div class="ltr:pr-4 rtl:pl-4">
+                                                    <div class="flex items-baseline font-semibold">
                                                         <div
-                                                            class="inline-flex items-center justify-center text-center">
-                                                            <div
-                                                                id="weekly_report"
-                                                                class="relative h-20 w-32"
-                                                                style="
-                                                                    user-select: none;
-                                                                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                                                                "></div>
-                                                        </div>
-                                                        <div class="self-center">
-                                                            <span
-                                                                class="my-1 text-2xl font-semibold dark:text-slate-300">
-                                                                $24,500
-                                                            </span>
-                                                            <h6
-                                                                class="my-2 text-xs font-semibold uppercase text-slate-400">
-                                                                Today's Revenue
-                                                            </h6>
-                                                        </div>
-                                                        <div class="xs:mt-0 mt-4 self-center">
-                                                            <button
-                                                                class="flex rounded bg-blue-500 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-600 lg:px-4">
-                                                                <span class="material-icons"> get_app </span>
-                                                                Withdraw
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-2">
-                                            <div class="card relative h-full w-full">
-                                                <div class="card-body text-center">
-                                                    <div id="map_1" class="jvm-container h-60 w-full"></div>
-                                                    <div
-                                                        class="xs:grid-cols-2 mt-2 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 xl:gap-4">
+                                                            class="text-md ltr:mr-1 rtl:ml-1"
+                                                            x-text="item.title"></div>
                                                         <div
-                                                            class="xs:col-span-1 xs:border-r col-span-4 border-r-0 border-b border-dashed dark:border-slate-700 sm:col-span-1 md:border-b-0 lg:col-span-2 xl:col-span-1 xl:border-b-0">
-                                                            <div class="p-4 text-center">
-                                                                <p
-                                                                    class="relative my-1 inline-block text-2xl font-semibold dark:text-slate-300">
-                                                                    $15,520
-                                                                    <span
-                                                                        class="absolute top-0 right-0 h-1 w-1 rounded-full bg-pink-500"></span>
-                                                                </p>
-                                                                <h6
-                                                                    class="mt-2 text-xs font-semibold uppercase text-slate-400">
-                                                                    Domestic
-                                                                </h6>
-                                                            </div>
-                                                        </div>
+                                                            class="text-white-dark text-xs uppercase"
+                                                            x-text="`(${item.alias})`"></div>
+                                                    </div>
+                                                    <div
+                                                        class="mt-2 flex items-center"
+                                                        :class="[item.isUp ? 'text-success' : 'text-danger']">
                                                         <div
-                                                            class="xs:col-span-1 col-span-4 sm:col-span-1 lg:col-span-2 xl:col-span-1">
-                                                            <div class="p-4 text-center">
-                                                                <p
-                                                                    class="relative my-1 inline-block text-2xl font-semibold dark:text-slate-300">
-                                                                    $36,880
-                                                                    <span
-                                                                        class="absolute top-0 right-0 h-1 w-1 rounded-full bg-blue-500"></span>
-                                                                </p>
-                                                                <h6
-                                                                    class="mt-2 text-xs font-semibold uppercase text-slate-400">
-                                                                    International
-                                                                </h6>
-                                                            </div>
-                                                        </div>
+                                                            class="min-w-20 text-xl ltr:mr-3 rtl:ml-3"
+                                                            x-text="`$${item.value}`"></div>
+                                                        <span>
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-4 w-4"
+                                                                :class="{'rotate-180' : !item.isUp}"
+                                                                viewBox="0 0 20 20"
+                                                                fill="currentColor">
+                                                                <path
+                                                                    fill-rule="evenodd"
+                                                                    d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z"
+                                                                    clip-rule="evenodd"></path>
+                                                            </svg>
+                                                        </span>
+                                                        <div class="text-sm font-medium" x-text="`${item.perc}%`"></div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                                <div class="flex-1">
+                                                    <div :id="item.title.toLowerCase()" class="chart"></div>
+                                                </div>
+                                            </button>
+                                        </template>
                                     </div>
-                                </div>
-                            </div>
-                            <!--end inner-grid-->
-                            <div class="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-                                <div
-                                    class="order-1 sm:col-span-1 md:col-span-1 lg:order-1 lg:col-span-1 xl:order-1 xl:col-span-1">
-                                    <div class="card relative w-full overflow-hidden">
-                                        <div class="card-header">
-                                            <h4 class="font-medium">Order By Device</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div id="Sales" class="-mt-8 h-72 w-full"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="order-2 sm:col-span-1 md:col-span-1 lg:order-3 lg:col-span-2 xl:order-2 xl:col-span-1">
-                                    <div class="card relative w-full overflow-hidden">
-                                        <div class="card-header">
-                                            <h4 class="font-medium">Reports overview</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <h2 class="mb-4 text-3xl font-medium dark:text-slate-300">$8836.68</h2>
-                                            <div class="mx-auto mb-2 w-full">
-                                                <div class="flex items-center">
-                                                    <div
-                                                        class="mr-0.5 h-2 w-1/4 rounded-tl rounded-bl bg-blue-500"></div>
-                                                    <div
-                                                        class="relative mr-0.5 h-2 w-1/4 bg-gray-200 dark:bg-slate-700">
-                                                        <div class="h-2 bg-yellow-500"></div>
-                                                    </div>
-                                                    <div
-                                                        class="relative mr-0.5 h-2 w-1/4 bg-gray-200 dark:bg-slate-700">
-                                                        <div class="h-2 w-1/2 bg-pink-500"></div>
-                                                    </div>
-                                                    <div
-                                                        class="h-2 w-1/4 rounded-tr rounded-br bg-gray-200 dark:bg-slate-700"></div>
-                                                </div>
-                                            </div>
-                                            <div class="flex flex-col">
-                                                <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                                                    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                                                        <div class="overflow-hidden">
-                                                            <table class="min-w-full">
-                                                                <thead class="bg-gray-50 dark:bg-gray-700">
-                                                                    <tr>
-                                                                        <th
-                                                                            scope="col"
-                                                                            class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                            Device
-                                                                        </th>
-                                                                        <th
-                                                                            scope="col"
-                                                                            class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                            Amount
-                                                                        </th>
-                                                                        <th
-                                                                            scope="col"
-                                                                            class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                            % Change
-                                                                        </th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <!-- Product 1 -->
-                                                                    <tr
-                                                                        class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                        <td
-                                                                            class="flex items-center whitespace-nowrap p-3 text-sm font-medium text-gray-900 dark:text-white">
-                                                                            <span
-                                                                                class="relative mr-2 inline-block h-1 w-1 self-center rounded-full bg-blue-500"></span>
-                                                                            Gross value
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                            $6,543.55
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-right text-sm text-gray-500 dark:text-gray-400">
-                                                                            <span
-                                                                                class="rounded bg-green-100 py-1 px-2 text-[12px] font-medium text-green-700 focus:outline-none dark:text-green-600"
-                                                                                >+6.8</span
-                                                                            >
-                                                                        </td>
-                                                                    </tr>
-                                                                    <!-- Product 2 -->
-                                                                    <tr
-                                                                        class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                        <td
-                                                                            class="flex items-center whitespace-nowrap p-3 text-sm font-medium text-gray-900 dark:text-white">
-                                                                            <span
-                                                                                class="relative mr-2 inline-block h-1 w-1 self-center rounded-full bg-yellow-500"></span>
-                                                                            Net volume from sales
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                            $3,654.21
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-right text-sm text-gray-500 dark:text-gray-400">
-                                                                            <span
-                                                                                class="rounded bg-blue-100 py-1 px-2 text-[12px] font-medium text-blue-700 focus:outline-none dark:text-blue-600">
-                                                                                +4.5
-                                                                            </span>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <!-- Product 2 -->
-                                                                    <tr class="bg-white dark:bg-gray-800">
-                                                                        <td
-                                                                            class="flex items-center whitespace-nowrap p-3 text-sm font-medium text-gray-900 dark:text-white">
-                                                                            <span
-                                                                                class="relative mr-2 inline-block h-1 w-1 self-center rounded-full bg-pink-500"></span>
-                                                                            Other
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                            $563.20
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-right text-sm text-gray-500 dark:text-gray-400">
-                                                                            <span
-                                                                                class="rounded bg-pink-100 py-1 px-2 text-[12px] font-medium text-pink-700 focus:outline-none dark:text-pink-600">
-                                                                                -1.2
-                                                                            </span>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="order-3 sm:col-span-1 md:col-span-1 lg:order-2 lg:col-span-1 xl:order-3 xl:col-span-1">
-                                    <div class="card relative w-full overflow-hidden">
-                                        <div class="card-header">
-                                            <h4 class="font-medium">Top Dealer</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="w-full">
-                                                <div class="mb-2 flex items-center">
-                                                    <div class="h-12 w-12 rounded">
-                                                        <img
-                                                            class="h-full w-full overflow-hidden rounded object-cover object-center"
-                                                            src="/images/users/avatar-1.jpg"
-                                                            alt="logo" />
-                                                    </div>
-                                                    <div class="ml-2">
-                                                        <a
-                                                            tabindex="0"
-                                                            class="cursor-pointer text-gray-800 hover:text-gray-500 focus:text-gray-500 focus:underline focus:outline-none dark:text-gray-100"
-                                                            ><h5 class="text-base font-medium">
-                                                                Fitbit Incorporation
-                                                            </h5></a
-                                                        >
-                                                        <p
-                                                            tabindex="0"
-                                                            class="text-xs font-medium text-gray-500 focus:outline-none dark:text-gray-400">
-                                                            San Diego, California
-                                                        </p>
-                                                    </div>
-                                                </div>
 
-                                                <div
-                                                    class="xs:grid-cols-2 mt-2 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 xl:gap-4">
-                                                    <div
-                                                        class="xs:col-span-1 xs:border-r col-span-4 border-r-0 border-b border-dashed dark:border-slate-700 sm:col-span-1 md:border-b-0 lg:col-span-2 xl:col-span-1 xl:border-b-0">
-                                                        <div class="p-4 text-center">
-                                                            <p
-                                                                class="relative my-1 inline-block text-2xl font-semibold dark:text-slate-300">
-                                                                5,520
-                                                            </p>
-                                                            <h6
-                                                                class="mt-2 text-xs font-semibold uppercase text-slate-400">
-                                                                Products Sold
-                                                            </h6>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="xs:col-span-1 col-span-4 sm:col-span-1 lg:col-span-2 xl:col-span-1">
-                                                        <div class="p-4 text-center">
-                                                            <p
-                                                                class="relative my-1 inline-block text-2xl font-semibold dark:text-slate-300">
-                                                                $36,880
-                                                            </p>
-                                                            <h6
-                                                                class="mt-2 text-xs font-semibold uppercase text-slate-400">
-                                                                Total Earning
-                                                            </h6>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mt-4">
-                                                    <p
-                                                        class="pb-1 text-right text-sm font-semibold leading-none text-indigo-700">
-                                                        73%
-                                                    </p>
-                                                </div>
-                                                <div
-                                                    class="relative h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
-                                                    <div
-                                                        class="h-2 w-60 rounded-full bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-600"></div>
-                                                </div>
+                                    <div
+                                        class="absolute z-[5] hidden h-full w-full rounded-md bg-black/60"
+                                        :class="{'!block xl:!hidden' : isShowCryptoMenu}"
+                                        @click="isShowCryptoMenu = !isShowCryptoMenu"></div>
+
+                                    <div class="card flex-1 p-0">
+                                        <div
+                                            class="flex-wrap items-center border-b border-[#ebedf2] p-4 dark:border-[#191e3a] md:flex">
+                                            <div class="flex flex-1 items-start ltr:pr-4 rtl:pl-4">
                                                 <button
-                                                    class="mt-5 w-full rounded bg-gray-100 py-3 text-sm font-medium text-indigo-700 hover:bg-opacity-50 hover:text-black focus:bg-opacity-50 focus:text-black focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2 dark:bg-slate-700 dark:text-slate-300 dark:hover:text-slate-100">
-                                                    Send Message
+                                                    type="button"
+                                                    class="block hover:text-primary ltr:mr-5 rtl:ml-5 xl:hidden"
+                                                    @click="isShowCryptoMenu = !isShowCryptoMenu">
+                                                    <svg
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-6 w-6">
+                                                        <path
+                                                            d="M20 7L4 7"
+                                                            stroke="currentColor"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"></path>
+                                                        <path
+                                                            opacity="0.5"
+                                                            d="M20 12L4 12"
+                                                            stroke="currentColor"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"></path>
+                                                        <path
+                                                            d="M20 17L4 17"
+                                                            stroke="currentColor"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"></path>
+                                                    </svg>
                                                 </button>
+                                                <div>
+                                                    <div class="flex items-center">
+                                                        <div
+                                                            class="text-md font-semibold ltr:mr-1 rtl:ml-1"
+                                                            x-text="selectedCoinObj.title">
+                                                            Bitcoin
+                                                        </div>
+                                                        <div
+                                                            class="text-white-dark text-xs font-semibold uppercase"
+                                                            x-text="`(${selectedCoinObj.alias})`">
+                                                            (BTC)
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="mt-2 flex items-center text-success"
+                                                        :class="selectedCoinObj.isUp ? 'text-success' : 'text-danger'">
+                                                        <div
+                                                            class="min-w-20 text-2xl ltr:mr-3 rtl:ml-3"
+                                                            x-text="`$${selectedCoinObj.value}`">
+                                                            $170.46
+                                                        </div>
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            class="mb-px h-4 w-4"
+                                                            :class="{'rotate-180' : !selectedCoinObj.isUp}"
+                                                            viewBox="0 0 20 20"
+                                                            fill="currentColor">
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                        <div
+                                                            class="mb-px text-sm font-medium"
+                                                            x-text="`${selectedCoinObj.perc}%`">
+                                                            2.35%
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
+                                            <ul
+                                                class="text-white-dark mt-5 grid grid-cols-2 divide-[#ebedf2] font-semibold rtl:divide-x-reverse dark:divide-[#253b5c] sm:mt-0 sm:grid-cols-4 sm:divide-x ltr:md:ml-auto rtl:md:mr-auto">
+                                                <li class="px-4 py-1">
+                                                    Market Cap
+                                                    <span
+                                                        class="dark:text-white-light mt-1.5 block text-lg text-black"
+                                                        x-text="`$${selectedCoinObj.marketcap}B`"
+                                                        >$148.75B</span
+                                                    >
+                                                </li>
+                                                <li class="px-4 py-1">
+                                                    Volume
+                                                    <span
+                                                        class="dark:text-white-light mt-1.5 block text-lg text-black"
+                                                        x-text="`$${selectedCoinObj.volume}B`"
+                                                        >$22.9B</span
+                                                    >
+                                                </li>
+                                                <li class="px-4 py-1">
+                                                    Supply
+                                                    <span
+                                                        class="dark:text-white-light mt-1.5 block text-lg text-black"
+                                                        x-text="`${selectedCoinObj.supply}M`">
+                                                        18.17M
+                                                    </span>
+                                                </li>
+                                                <li class="px-4 py-1">
+                                                    All Time High
+                                                    <span
+                                                        class="dark:text-white-light mt-1.5 block text-lg text-black"
+                                                        x-text="`$${selectedCoinObj.highest}`">
+                                                        $19,891.00
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div
+                                            class="mb-5 grid grid-rows-1 gap-4 border-b border-[#ebedf2] p-4 dark:border-[#253b5c] sm:grid-cols-4">
+                                            <div>
+                                                <div class="mb-1.5 font-semibold">Action</div>
+                                                <select class="text-white-dark form-select">
+                                                    <option>Buy</option>
+                                                    <option>Sell</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <div class="mb-1.5 font-semibold">Wallet</div>
+                                                <select class="text-white-dark form-select">
+                                                    <option>Bitcoin</option>
+                                                    <option>Ethereum</option>
+                                                    <option>Zcash</option>
+                                                    <option>Litecoin</option>
+                                                    <option>Binance</option>
+                                                    <option>Solana</option>
+                                                    <option>Tether</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <div class="mb-1.5 font-semibold">Amount</div>
+                                                <div class="relative flex">
+                                                    <input
+                                                        type="text"
+                                                        placeholder
+                                                        class="form-input ltr:rounded-r-none ltr:border-r-0 rtl:rounded-l-none rtl:border-l-0" />
+                                                    <div
+                                                        x-data="dropdown"
+                                                        @click.outside="open = false"
+                                                        class="dropdown">
+                                                        <div
+                                                            class="flex cursor-pointer items-center justify-center gap-1 rounded-none border bg-[#f1f2f3] px-3 py-2 font-semibold ltr:rounded-r-md rtl:rounded-l-md dark:border-[#253b5c] dark:bg-[#1b2e4b]"
+                                                            @click="toggle">
+                                                            BTC
+
+                                                            <svg
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-4 w-4">
+                                                                <path
+                                                                    d="M19 9L12 15L5 9"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <ul
+                                                            x-show="open"
+                                                            x-transition
+                                                            x-transition.duration.300ms
+                                                            class="absolute right-0 z-40 mt-1 min-w-[120px] rounded bg-white px-2 shadow"
+                                                            style="display: none">
+                                                            <li
+                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">BTC</a>
+                                                            </li>
+                                                            <li
+                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">ETH</a>
+                                                            </li>
+                                                            <li
+                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">ZEC</a>
+                                                            </li>
+                                                            <li
+                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">LTC</a>
+                                                            </li>
+                                                            <li
+                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">BNB</a>
+                                                            </li>
+                                                            <li
+                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">SOL</a>
+                                                            </li>
+                                                            <li
+                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                                <a href="javascript:;" @click="toggle">USDT</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-primary self-end">Buy</button>
+                                        </div>
+                                        <!-- selected chart -->
+                                        <div class="flex-1 px-4">
+                                            <div x-ref="selectedBitCoin" style="min-height: 426px"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!--end inner-grid-->
-                            <div class="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
-                                <div class="sm:col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-1">
-                                    <div class="card relative h-full w-full overflow-hidden">
-                                        <div class="card-header">
-                                            <h4 class="font-medium">Earnings Reports</h4>
-                                        </div>
-                                        <div class="card-body flex flex-col">
-                                            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                                                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                                                    <div class="overflow-hidden">
-                                                        <table class="min-w-full">
-                                                            <thead class="bg-gray-50 dark:bg-gray-700">
-                                                                <tr>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Date
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Item Counts
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Tax
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Earning
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <!-- 1 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        03 March
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        50
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-red-500 dark:text-red-400">
-                                                                        -$40
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                                                        $15,500.00
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 2 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        04 March
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        120
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        -
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                                                        $20,900.00
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 3 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        05 March
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        90
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-red-500 dark:text-red-400">
-                                                                        -$20
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                                                        $10,500.00
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 4 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        06 March
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        160
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        -
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                                                        $35,000.00
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 5 -->
-                                                                <tr class="bg-white dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        07 March
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        80
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-red-500 dark:text-red-400">
-                                                                        -$60
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                                                        $18,880.00
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end inner-grid-->
-                                </div>
-                                <div class="sm:col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-1">
-                                    <div class="card relative h-full w-full overflow-hidden">
-                                        <div class="card-header">
-                                            <h4 class="font-medium">Most Popular Products</h4>
-                                        </div>
-                                        <div class="card-body flex flex-col">
-                                            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                                                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                                                    <div class="overflow-hidden">
-                                                        <table class="min-w-full">
-                                                            <thead class="bg-gray-50 dark:bg-gray-700">
-                                                                <tr>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Product
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Price
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Sell
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Status
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Action
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <!-- 1 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
-                                                                        <img
-                                                                            src="/images/products/01.png"
-                                                                            class="mr-2 inline-block h-5" />T-Wind
-                                                                        Camera EDM 5D(White)
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        $50 <del class="text-gray-400">$90</del>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        450<small class="text-gray-400">(500)</small>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <span
-                                                                            class="rounded bg-green-100 py-1 px-2 text-[12px] font-medium text-green-700 focus:outline-none dark:text-green-600">
-                                                                            Stock
-                                                                        </span>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-gray-500 dark:text-gray-400">
-                                                                                mode_edit
-                                                                            </span>
-                                                                        </a>
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-red-500 dark:text-red-400">
-                                                                                delete_outline
-                                                                            </span>
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 2 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
-                                                                        <img
-                                                                            src="/images/products/02.png"
-                                                                            class="mr-2 inline-block h-5" />T-Wind Shoes
-                                                                        Max-Zon
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        $49 <del class="text-gray-400">$88</del>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        850<small class="text-gray-400">(900)</small>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <span
-                                                                            class="rounded bg-green-100 py-1 px-2 text-[12px] font-medium text-green-700 focus:outline-none dark:text-green-600">
-                                                                            Stock
-                                                                        </span>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-gray-500 dark:text-gray-400">
-                                                                                mode_edit
-                                                                            </span>
-                                                                        </a>
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-red-500 dark:text-red-400">
-                                                                                delete_outline
-                                                                            </span>
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 3 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
-                                                                        <img
-                                                                            src="/images/products/03.png"
-                                                                            class="mr-2 inline-block h-5" />T-Wind VR 5D
-                                                                        (Black)
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        $39 <del class="text-gray-400">$99</del>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        700<small class="text-gray-400">(700)</small>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <span
-                                                                            class="rounded bg-red-100 py-1 px-2 text-[12px] font-medium text-red-700 focus:outline-none dark:text-red-600">
-                                                                            Sold
-                                                                        </span>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-gray-500 dark:text-gray-400">
-                                                                                mode_edit
-                                                                            </span>
-                                                                        </a>
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-red-500 dark:text-red-400">
-                                                                                delete_outline
-                                                                            </span>
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 4 -->
-                                                                <tr class="bg-white dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
-                                                                        <img
-                                                                            src="/images/products/04.png"
-                                                                            class="mr-2 inline-block h-5" />T-Wind Mask
-                                                                        N99 [ISI]
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        $5 <del class="text-gray-400">$9</del>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        1850<small class="text-gray-400">(2000)</small>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <span
-                                                                            class="rounded bg-green-100 py-1 px-2 text-[12px] font-medium text-green-700 focus:outline-none dark:text-green-600">
-                                                                            Stock
-                                                                        </span>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-gray-500 dark:text-gray-400">
-                                                                                mode_edit
-                                                                            </span>
-                                                                        </a>
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-red-500 dark:text-red-400">
-                                                                                delete_outline
-                                                                            </span>
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end inner-grid-->
-                                </div>
-                            </div>
-                        </div>
                         </div>
                     </main>
 
@@ -1959,7 +1511,7 @@
                                         x-model="$store.app.animation"
                                         class="form-select w-full border-primary text-primary"
                                         @change="$store.app.toggleAnimation()">
-                                        <option value="">Select Animation</option>
+                                        <option value>Select Animation</option>
                                         <option value="animate__fadeIn">Fade</option>
                                         <option value="animate__fadeInDown">Fade Down</option>
                                         <option value="animate__fadeInUp">Fade Up</option>
@@ -1977,10 +1529,7 @@
                 </div>
             </div>
         </div>
-        <script src="/plugins/jsvectormap/jsvectormap.min.js"></script>
-        <script src="/plugins/jsvectormap/world-maps.js"></script>
-        <script src="/plugins/echarts/echarts.min.js"></script>
         <script src="/plugins/apexcharts/apexcharts.min.js"></script>
-        <script src="/features/dashboard/ecommerce.init.js"></script>
+        <script src="/features/dashboard/crypto.init.js"></script>
     </body>
 </html>
