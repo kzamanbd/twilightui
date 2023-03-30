@@ -64,7 +64,7 @@
         @apply mt-2 px-4 pb-2;
     }
     .tw-menu-item .material-icons,
-    .tw-menu-item .material-symbols-outlined {
+    .tw-menu-item .material-icons-outlined {
         @apply text-xl leading-none;
     }
     .tw-menu-link {
