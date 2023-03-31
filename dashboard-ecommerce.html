@@ -821,6 +821,7 @@
                                     brightness_auto
                                 </span>
                             </button>
+
                             <div class="relative" x-data="dropdown" @click.outside="close">
                                 <button type="button" @click="toggle" class="header-item" aria-label="Notification">
                                     <span class="material-icons-outlined"> notifications </span>
@@ -888,6 +889,14 @@
                                     </a>
                                 </div>
                             </div>
+
+                            <button
+                                @click="showCustomizer = true"
+                                class="header-item"
+                                type="button"
+                                aria-label="setting">
+                                <span class="material-icons-outlined"> settings </span>
+                            </button>
 
                             <div class="relative flex" x-data="dropdown" @click.outside="close">
                                 <button
@@ -1749,14 +1758,11 @@
                         @click="showCustomizer = false"></div>
 
                     <nav class="app-customizer" :class="{'!right-0' : showCustomizer}">
-                        <a href="javascript:;" class="customizer-button" @click="showCustomizer = !showCustomizer">
-                            <div class="material-icons animate-[spin_3s_linear_infinite]">settings</div>
-                        </a>
-                        <div data-simplebar class="h-full overflow-y-auto overflow-x-hidden">
-                            <div class="relative pb-5 text-center">
+                        <div data-simplebar class="overflow-y-auto overflow-x-hidden p-4">
+                            <div class="relative text-center">
                                 <a
                                     href="javascript:;"
-                                    class="absolute right-0 top-0 opacity-30 hover:opacity-100 dark:text-white"
+                                    class="absolute right-3 top-3 opacity-30 hover:opacity-100 dark:text-white"
                                     @click="showCustomizer = false">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -1938,7 +1944,7 @@
                                         x-model="$store.app.animation"
                                         class="form-select w-full border-primary text-primary"
                                         @change="$store.app.toggleAnimation()">
-                                        <option value="">Select Animation</option>
+                                        <option value>Select Animation</option>
                                         <option value="animate__fadeIn">Fade</option>
                                         <option value="animate__fadeInDown">Fade Down</option>
                                         <option value="animate__fadeInUp">Fade Up</option>
