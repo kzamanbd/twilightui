@@ -61,7 +61,7 @@
         @apply h-[calc(100vh_-_118px)] overflow-y-auto overflow-x-hidden;
     }
     .tw-nav-menu {
-        @apply mt-2 px-4 pb-2;
+        @apply mt-2 space-y-1 px-4 pb-2;
     }
     .tw-menu-item .material-icons,
     .tw-menu-item .material-icons-outlined {
@@ -81,7 +81,7 @@
         @apply mx-2 truncate text-sm font-medium;
     }
     .tw-dropdown-menu {
-        @apply max-h-0 space-y-1 overflow-hidden duration-300;
+        @apply mt-1 space-y-1 overflow-hidden;
     }
     .tw-dropdown-item {
         @apply dark--text flex items-center rounded-md hover:text-gray-900 dark:hover:text-gray-100;

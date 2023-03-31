@@ -1,7 +1,9 @@
 // alpine.js config
+import collapse from '@alpinejs/collapse';
 import persist from '@alpinejs/persist';
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
+Alpine.plugin(collapse);
 Alpine.plugin(persist);
 
 import 'animate.css';
@@ -53,13 +55,11 @@ window.ResizeObserver = ResizeObserver;
         handleClick() {
             this.$store.accordion.item = this.$store.accordion.item != this.idx && this.idx;
         },
-        activeAccordion() {
+        activeDropdown() {
             return this.$store.accordion.item == this.idx && 'active';
         },
-        handleToggle() {
-            return this.$store.accordion.item == this.idx
-                ? `max-height: ${this.$refs.dropdown.scrollHeight}px; margin-top: 4px`
-                : '';
+        expanded() {
+            return this.$store.accordion.item == this.idx;
         },
     }));
 
