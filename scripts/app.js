@@ -369,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var alertDismiss = document.querySelectorAll('.alert-dismissible');
 
         Array.from(alertDismiss).forEach(function (item) {
-            item.querySelector('.alert-close').addEventListener('click', function () {
+            item.querySelector('.alert-dismiss').addEventListener('click', function () {
                 item.classList.add('hidden');
             });
         });
