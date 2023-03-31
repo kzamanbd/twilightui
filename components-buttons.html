@@ -3,14 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ecommerce - Twilight Dashboard</title>
+        <title>Dashboard - Twilight Dashboard</title>
         <link rel="icon" href="/favicon.png" />
         <!-- start:Core Style and Script -->
         <link rel="stylesheet" href="/styles/app.css" />
         <script type="module" src="/scripts/app.js"></script>
-
-        <!-- Jvm map style -->
-        <link rel="stylesheet" href="/plugins/jsvectormap/jsvectormap.min.css" />
     </head>
 
     <body>
@@ -998,13 +995,13 @@
                                 <div class="left-link">
                                     <ol class="breadcrumb-nav">
                                         <li class="inline-flex items-center">
-                                            <a href="/" class="breadcrumb-item"> Dashboard </a>
+                                            <a href="/" class="breadcrumb-item"> Components </a>
                                         </li>
 
                                         <li aria-current="page">
                                             <div class="flex items-center">
                                                 <div class="material-icons rotate-180 text-lg">navigate_before</div>
-                                                <span class="breadcrumb-item-current"> E commerce </span>
+                                                <span class="breadcrumb-item-current"> Buttons </span>
                                             </div>
                                         </li>
                                     </ol>
@@ -1012,715 +1009,890 @@
                             </nav>
                             <!-- End:Breadcrumb -->
 
-                            <div class="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-                                <div class="sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-2">
-                                    <div class="card relative w-full overflow-hidden">
-                                        <div
-                                            class="xs:grid-cols-2 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 xl:gap-4">
-                                            <div
-                                                class="xs:col-span-1 col-span-4 border-b border-r border-dashed dark:border-slate-700 sm:col-span-1 lg:col-span-2 xl:col-span-1 xl:border-b-0">
-                                                <div class="p-4 text-center">
-                                                    <span class="my-1 text-2xl font-semibold dark:text-slate-200">
-                                                        520
-                                                    </span>
-                                                    <h6 class="my-2 text-xs font-semibold uppercase text-slate-400">
-                                                        Today's Orders
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="xs:col-span-1 col-span-4 border-b border-r-0 border-dashed dark:border-slate-700 sm:col-span-1 lg:col-span-2 xl:col-span-1 xl:border-b-0 xl:border-r">
-                                                <div class="p-4 text-center">
-                                                    <span class="my-1 text-2xl font-semibold dark:text-slate-200">
-                                                        82.8%
-                                                    </span>
-                                                    <h6 class="my-2 text-xs font-semibold uppercase text-slate-400">
-                                                        Conversion Rate
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="xs:col-span-1 col-span-4 border-b border-r border-dashed dark:border-slate-700 sm:col-span-1 md:border-b-0 lg:col-span-2 xl:col-span-1">
-                                                <div class="p-4 text-center">
-                                                    <span class="my-1 text-2xl font-semibold dark:text-slate-200">
-                                                        $92.5
-                                                    </span>
-                                                    <h6 class="my-2 text-xs font-semibold uppercase text-slate-400">
-                                                        Avg. Value
-                                                    </h6>
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="xs:col-span-1 col-span-4 sm:col-span-1 lg:col-span-2 xl:col-span-1">
-                                                <div class="p-4 text-center">
-                                                    <span class="my-1 text-2xl font-semibold dark:text-slate-200">
-                                                        $360.50
-                                                    </span>
-                                                    <h6 class="my-2 text-xs font-semibold uppercase text-slate-400">
-                                                        Gross sale
-                                                    </h6>
-                                                </div>
-                                            </div>
+                            <div class="buttons space-y-4">
+                                <div class="grid grid-cols-1">
+                                    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+                                        <div class="card-body pb-0">
+                                            <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                Default Buttons
+                                            </h6>
                                         </div>
-                                        <div class="border-b border-dashed dark:border-slate-700"></div>
-                                        <div class="p-4">
-                                            <h4 class="py-2 font-medium dark:text-slate-300">Revenue Status</h4>
-                                            <div
-                                                id="revenue-status"
-                                                class="apex-charts bg-[url('/images/widgets/svg-map.svg')] bg-contain bg-center bg-no-repeat dark:bg-[url('/images/widgets/dark-map.svg')]"
-                                                style="min-height: 350px"></div>
+                                        <div class="card-body flex flex-wrap gap-3">
+                                            <button
+                                                type="button"
+                                                class="btn border-violet-500 bg-violet-500 text-white hover:border-violet-600 hover:bg-violet-600 focus:border-violet-600 focus:bg-violet-600 focus:ring focus:ring-violet-500/30 active:border-violet-600 active:bg-violet-600">
+                                                Primary
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-gray-500 bg-gray-500 text-white hover:border-gray-600 hover:bg-gray-600 focus:border-gray-600 focus:bg-gray-600 focus:ring focus:ring-gray-500/30 active:border-gray-600 active:bg-gray-600">
+                                                Secondary
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-green-500 bg-green-500 text-white hover:border-green-600 hover:bg-green-600 focus:border-green-600 focus:bg-green-600 focus:ring focus:ring-green-500/30 active:border-green-600 active:bg-green-600">
+                                                Success
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-sky-500 bg-sky-500 text-white hover:border-sky-600 hover:bg-sky-600 focus:border-sky-600 focus:bg-sky-600 focus:ring focus:ring-sky-500/30 active:border-sky-600 active:bg-sky-600">
+                                                Info
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-yellow-500 bg-yellow-500 text-white hover:border-yellow-600 hover:bg-yellow-600 focus:border-yellow-600 focus:bg-yellow-600 focus:ring focus:ring-yellow-500/30 active:border-yellow-600 active:bg-yellow-600">
+                                                Warning
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-red-500 bg-red-500 text-white hover:border-red-600 hover:bg-red-600 focus:border-red-600 focus:bg-red-600 focus:ring focus:ring-red-500/30 active:border-red-600 active:bg-red-600">
+                                                Danger
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-neutral-800 bg-neutral-800 text-white hover:border-neutral-900 hover:bg-neutral-900 focus:border-neutral-900 focus:bg-neutral-900 focus:ring focus:ring-neutral-500/30 active:border-neutral-900 active:bg-neutral-900">
+                                                Dark
+                                            </button>
+                                            <button type="button" class="btn group border-0 text-violet-500">
+                                                <span
+                                                    class="transition-all duration-100 ease-in-out group-hover:border-b group-hover:border-violet-500"
+                                                    >Link</span
+                                                >
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-gray-100 bg-gray-100 text-black focus:border-gray-300 focus:bg-gray-300 focus:ring focus:ring-gray-500/30 active:border-gray-300 active:bg-gray-300">
+                                                Light
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
-                                    <div class="grid h-full grid-cols-2 gap-4">
-                                        <div class="col-span-2">
-                                            <div class="card relative h-full w-full">
-                                                <div class="card-body text-center">
-                                                    <div class="items-cente flex flex-wrap justify-between xl:gap-x-2">
-                                                        <div
-                                                            class="inline-flex items-center justify-center text-center">
-                                                            <div
-                                                                id="weekly_report"
-                                                                class="relative h-20 w-32"
-                                                                style="
-                                                                    user-select: none;
-                                                                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                                                                "></div>
-                                                        </div>
-                                                        <div class="self-center">
-                                                            <span
-                                                                class="my-1 text-2xl font-semibold dark:text-slate-300">
-                                                                $24,500
-                                                            </span>
-                                                            <h6
-                                                                class="my-2 text-xs font-semibold uppercase text-slate-400">
-                                                                Today's Revenue
-                                                            </h6>
-                                                        </div>
-                                                        <div class="xs:mt-0 mt-4 self-center">
-                                                            <button
-                                                                class="flex rounded bg-blue-500 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-600 lg:px-4">
-                                                                <span class="material-icons-outlined"> get_app </span>
-                                                                Withdraw
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-span-2">
-                                            <div class="card relative h-full w-full">
-                                                <div class="card-body text-center">
-                                                    <div id="map_1" class="jvm-container h-60 w-full"></div>
-                                                    <div
-                                                        class="xs:grid-cols-2 mt-2 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 xl:gap-4">
-                                                        <div
-                                                            class="xs:col-span-1 xs:border-r col-span-4 border-b border-r-0 border-dashed dark:border-slate-700 sm:col-span-1 md:border-b-0 lg:col-span-2 xl:col-span-1 xl:border-b-0">
-                                                            <div class="p-4 text-center">
-                                                                <p
-                                                                    class="relative my-1 inline-block text-2xl font-semibold dark:text-slate-300">
-                                                                    $15,520
-                                                                    <span
-                                                                        class="absolute right-0 top-0 h-1 w-1 rounded-full bg-pink-500"></span>
-                                                                </p>
-                                                                <h6
-                                                                    class="mt-2 text-xs font-semibold uppercase text-slate-400">
-                                                                    Domestic
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="xs:col-span-1 col-span-4 sm:col-span-1 lg:col-span-2 xl:col-span-1">
-                                                            <div class="p-4 text-center">
-                                                                <p
-                                                                    class="relative my-1 inline-block text-2xl font-semibold dark:text-slate-300">
-                                                                    $36,880
-                                                                    <span
-                                                                        class="absolute right-0 top-0 h-1 w-1 rounded-full bg-blue-500"></span>
-                                                                </p>
-                                                                <h6
-                                                                    class="mt-2 text-xs font-semibold uppercase text-slate-400">
-                                                                    International
-                                                                </h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--end inner-grid-->
-                            <div class="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-                                <div
-                                    class="order-1 sm:col-span-1 md:col-span-1 lg:order-1 lg:col-span-1 xl:order-1 xl:col-span-1">
-                                    <div class="card relative w-full overflow-hidden">
-                                        <div class="card-header">
-                                            <h4 class="font-medium">Order By Device</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div id="Sales" class="-mt-8 h-72 w-full"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="order-2 sm:col-span-1 md:col-span-1 lg:order-3 lg:col-span-2 xl:order-2 xl:col-span-1">
-                                    <div class="card relative w-full overflow-hidden">
-                                        <div class="card-header">
-                                            <h4 class="font-medium">Reports overview</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <h2 class="mb-4 text-3xl font-medium dark:text-slate-300">$8836.68</h2>
-                                            <div class="mx-auto mb-2 w-full">
-                                                <div class="flex items-center">
-                                                    <div
-                                                        class="mr-0.5 h-2 w-1/4 rounded-bl rounded-tl bg-blue-500"></div>
-                                                    <div
-                                                        class="relative mr-0.5 h-2 w-1/4 bg-gray-200 dark:bg-slate-700">
-                                                        <div class="h-2 bg-yellow-500"></div>
-                                                    </div>
-                                                    <div
-                                                        class="relative mr-0.5 h-2 w-1/4 bg-gray-200 dark:bg-slate-700">
-                                                        <div class="h-2 w-1/2 bg-pink-500"></div>
-                                                    </div>
-                                                    <div
-                                                        class="h-2 w-1/4 rounded-br rounded-tr bg-gray-200 dark:bg-slate-700"></div>
-                                                </div>
-                                            </div>
-                                            <div class="flex flex-col">
-                                                <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                                                    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                                                        <div class="overflow-hidden">
-                                                            <table class="min-w-full">
-                                                                <thead class="bg-gray-50 dark:bg-gray-700">
-                                                                    <tr>
-                                                                        <th
-                                                                            scope="col"
-                                                                            class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                            Device
-                                                                        </th>
-                                                                        <th
-                                                                            scope="col"
-                                                                            class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                            Amount
-                                                                        </th>
-                                                                        <th
-                                                                            scope="col"
-                                                                            class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                            % Change
-                                                                        </th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <!-- Product 1 -->
-                                                                    <tr
-                                                                        class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                        <td
-                                                                            class="flex items-center whitespace-nowrap p-3 text-sm font-medium text-gray-900 dark:text-white">
-                                                                            <span
-                                                                                class="relative mr-2 inline-block h-1 w-1 self-center rounded-full bg-blue-500"></span>
-                                                                            Gross value
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                            $6,543.55
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-right text-sm text-gray-500 dark:text-gray-400">
-                                                                            <span
-                                                                                class="rounded bg-green-100 px-2 py-1 text-[12px] font-medium text-green-700 focus:outline-none dark:text-green-600"
-                                                                                >+6.8</span
-                                                                            >
-                                                                        </td>
-                                                                    </tr>
-                                                                    <!-- Product 2 -->
-                                                                    <tr
-                                                                        class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                        <td
-                                                                            class="flex items-center whitespace-nowrap p-3 text-sm font-medium text-gray-900 dark:text-white">
-                                                                            <span
-                                                                                class="relative mr-2 inline-block h-1 w-1 self-center rounded-full bg-yellow-500"></span>
-                                                                            Net volume from sales
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                            $3,654.21
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-right text-sm text-gray-500 dark:text-gray-400">
-                                                                            <span
-                                                                                class="rounded bg-blue-100 px-2 py-1 text-[12px] font-medium text-blue-700 focus:outline-none dark:text-blue-600">
-                                                                                +4.5
-                                                                            </span>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <!-- Product 2 -->
-                                                                    <tr class="bg-white dark:bg-gray-800">
-                                                                        <td
-                                                                            class="flex items-center whitespace-nowrap p-3 text-sm font-medium text-gray-900 dark:text-white">
-                                                                            <span
-                                                                                class="relative mr-2 inline-block h-1 w-1 self-center rounded-full bg-pink-500"></span>
-                                                                            Other
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                            $563.20
-                                                                        </td>
-                                                                        <td
-                                                                            class="whitespace-nowrap p-3 text-right text-sm text-gray-500 dark:text-gray-400">
-                                                                            <span
-                                                                                class="rounded bg-pink-100 px-2 py-1 text-[12px] font-medium text-pink-700 focus:outline-none dark:text-pink-600">
-                                                                                -1.2
-                                                                            </span>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="order-3 sm:col-span-1 md:col-span-1 lg:order-2 lg:col-span-1 xl:order-3 xl:col-span-1">
-                                    <div class="card relative w-full overflow-hidden">
-                                        <div class="card-header">
-                                            <h4 class="font-medium">Top Dealer</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="w-full">
-                                                <div class="mb-2 flex items-center">
-                                                    <div class="h-12 w-12 rounded">
-                                                        <img
-                                                            class="h-full w-full overflow-hidden rounded object-cover object-center"
-                                                            src="/images/users/avatar-1.jpg"
-                                                            alt="logo" />
-                                                    </div>
-                                                    <div class="ml-2">
-                                                        <a
-                                                            tabindex="0"
-                                                            class="cursor-pointer text-gray-800 hover:text-gray-500 focus:text-gray-500 focus:underline focus:outline-none dark:text-gray-100"
-                                                            ><h5 class="text-base font-medium">
-                                                                Fitbit Incorporation
-                                                            </h5></a
-                                                        >
-                                                        <p
-                                                            tabindex="0"
-                                                            class="text-xs font-medium text-gray-500 focus:outline-none dark:text-gray-400">
-                                                            San Diego, California
-                                                        </p>
-                                                    </div>
-                                                </div>
 
-                                                <div
-                                                    class="xs:grid-cols-2 mt-2 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 xl:gap-4">
-                                                    <div
-                                                        class="xs:col-span-1 xs:border-r col-span-4 border-b border-r-0 border-dashed dark:border-slate-700 sm:col-span-1 md:border-b-0 lg:col-span-2 xl:col-span-1 xl:border-b-0">
-                                                        <div class="p-4 text-center">
-                                                            <p
-                                                                class="relative my-1 inline-block text-2xl font-semibold dark:text-slate-300">
-                                                                5,520
-                                                            </p>
-                                                            <h6
-                                                                class="mt-2 text-xs font-semibold uppercase text-slate-400">
-                                                                Products Sold
-                                                            </h6>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="xs:col-span-1 col-span-4 sm:col-span-1 lg:col-span-2 xl:col-span-1">
-                                                        <div class="p-4 text-center">
-                                                            <p
-                                                                class="relative my-1 inline-block text-2xl font-semibold dark:text-slate-300">
-                                                                $36,880
-                                                            </p>
-                                                            <h6
-                                                                class="mt-2 text-xs font-semibold uppercase text-slate-400">
-                                                                Total Earning
-                                                            </h6>
-                                                        </div>
-                                                    </div>
+                                <div class="grid grid-cols-1">
+                                    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+                                        <div class="card-body pb-0">
+                                            <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                Outline Buttons
+                                            </h6>
+                                        </div>
+                                        <div class="card-body flex flex-wrap gap-3">
+                                            <button
+                                                type="button"
+                                                class="btn border-violet-500 text-violet-500 hover:border-violet-600 hover:bg-violet-600 hover:text-white focus:border-violet-600 focus:bg-violet-600 focus:text-white focus:ring focus:ring-violet-500/30 active:border-violet-600 active:bg-violet-600">
+                                                Primary
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-gray-500 text-gray-500 hover:border-gray-600 hover:bg-gray-600 hover:text-white focus:border-gray-600 focus:bg-gray-600 focus:text-white focus:ring focus:ring-gray-500/30 active:border-gray-600 active:bg-gray-600">
+                                                Secondary
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-green-500 text-green-500 hover:border-green-600 hover:bg-green-600 hover:text-white focus:border-green-600 focus:bg-green-600 focus:text-white focus:ring focus:ring-green-500/30 active:border-green-600 active:bg-green-600">
+                                                Success
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-sky-500 text-sky-500 hover:border-sky-600 hover:bg-sky-600 hover:text-white focus:border-sky-600 focus:bg-sky-600 focus:text-white focus:ring focus:ring-sky-500/30 active:border-sky-600 active:bg-sky-600">
+                                                Info
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-yellow-500 text-yellow-500 hover:border-yellow-600 hover:bg-yellow-600 hover:text-white focus:border-yellow-600 focus:bg-yellow-600 focus:text-white focus:ring focus:ring-yellow-500/30 active:border-yellow-600 active:bg-yellow-600">
+                                                Warning
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-red-500 text-red-500 hover:border-red-600 hover:bg-red-600 hover:text-white focus:border-red-600 focus:bg-red-600 focus:text-white focus:ring focus:ring-red-500/30 active:border-red-600 active:bg-red-600">
+                                                Danger
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-neutral-800 text-neutral-500 hover:border-neutral-900 hover:bg-neutral-900 hover:text-white focus:border-neutral-900 focus:bg-neutral-900 focus:text-white focus:ring focus:ring-neutral-500/30 active:border-neutral-900 active:bg-neutral-900">
+                                                Dark
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn hover:bg-gray-50/50/50 border-gray-100 text-black hover:border-gray-100 focus:border-gray-100 focus:bg-gray-100 focus:ring focus:ring-gray-500/10 active:border-gray-100 active:bg-gray-100 dark:text-gray-100 dark:hover:border-zinc-100 dark:hover:text-white">
+                                                Light
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1">
+                                    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+                                        <div class="card-body pb-0">
+                                            <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                Rounded Buttons
+                                            </h6>
+                                        </div>
+                                        <div class="card-body flex flex-wrap gap-3">
+                                            <button
+                                                type="button"
+                                                class="btn rounded-full border-violet-500 bg-violet-500 text-white hover:border-violet-600 hover:bg-violet-600 focus:border-violet-600 focus:bg-violet-600 focus:ring focus:ring-violet-500/30 active:border-violet-600 active:bg-violet-600">
+                                                Primary
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn rounded-full border-gray-500 bg-gray-500 text-white hover:border-gray-600 hover:bg-gray-600 focus:border-gray-600 focus:bg-gray-600 focus:ring focus:ring-gray-500/30 active:border-gray-600 active:bg-gray-600">
+                                                Secondary
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn rounded-full border-green-500 bg-green-500 text-white hover:border-green-600 hover:bg-green-600 focus:border-green-600 focus:bg-green-600 focus:ring focus:ring-green-500/30 active:border-green-600 active:bg-green-600">
+                                                Success
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn rounded-full border-sky-500 bg-sky-500 text-white hover:border-sky-600 hover:bg-sky-600 focus:border-sky-600 focus:bg-sky-600 focus:ring focus:ring-sky-500/30 active:border-sky-600 active:bg-sky-600">
+                                                Info
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn rounded-full border-yellow-500 bg-yellow-500 text-white hover:border-yellow-600 hover:bg-yellow-600 focus:border-yellow-600 focus:bg-yellow-600 focus:ring focus:ring-yellow-500/30 active:border-yellow-600 active:bg-yellow-600">
+                                                Warning
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn rounded-full border-red-500 bg-red-500 text-white hover:border-red-600 hover:bg-red-600 focus:border-red-600 focus:bg-red-600 focus:ring focus:ring-red-500/30 active:border-red-600 active:bg-red-600">
+                                                Danger
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn rounded-full border-neutral-800 bg-neutral-800 text-white hover:border-neutral-900 hover:bg-neutral-900 focus:border-neutral-900 focus:bg-neutral-900 focus:ring focus:ring-neutral-500/30 active:border-neutral-900 active:bg-neutral-900">
+                                                Dark
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn group rounded-full border-0 text-violet-500">
+                                                <span
+                                                    class="transition-all duration-100 ease-in-out group-hover:border-b group-hover:border-violet-500"
+                                                    >Link</span
+                                                >
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn rounded-full border-gray-100 bg-gray-100 text-black hover:border-gray-300 hover:bg-gray-300 focus:border-gray-300 focus:bg-gray-300 focus:ring focus:ring-gray-500/30 active:border-gray-300 active:bg-gray-300">
+                                                Light
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1">
+                                    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+                                        <div class="card-body pb-0">
+                                            <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">Soft Buttons</h6>
+                                        </div>
+                                        <div class="card-body flex flex-wrap gap-3">
+                                            <button
+                                                type="button"
+                                                class="btn border-violet-50 bg-violet-50 text-violet-500 hover:border-violet-600 hover:bg-violet-600 hover:text-white focus:border-violet-600 focus:bg-violet-600 focus:text-white focus:ring focus:ring-violet-500/30 active:border-violet-600 active:bg-violet-600 dark:border-transparent dark:bg-violet-500/20">
+                                                Primary
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-gray-50 bg-gray-50 text-gray-500 hover:border-gray-600 hover:bg-gray-600 hover:text-white focus:border-gray-600 focus:bg-gray-600 focus:text-white focus:ring focus:ring-gray-500/30 active:border-gray-600 active:bg-gray-600 dark:border-transparent dark:bg-gray-500/20">
+                                                Secondary
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-green-50 bg-green-50 text-green-500 hover:border-green-600 hover:bg-green-600 hover:text-white focus:border-green-600 focus:bg-green-600 focus:text-white focus:ring focus:ring-green-500/30 active:border-green-600 active:bg-green-600 dark:border-transparent dark:bg-green-500/20">
+                                                Success
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-sky-50 bg-sky-50 text-sky-500 hover:border-sky-600 hover:bg-sky-600 hover:text-white focus:border-sky-600 focus:bg-sky-600 focus:text-white focus:ring focus:ring-sky-500/30 active:border-sky-600 active:bg-sky-600 dark:border-transparent dark:bg-sky-500/20">
+                                                Info
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-yellow-50 bg-yellow-50 text-yellow-500 hover:border-yellow-600 hover:bg-yellow-600 hover:text-white focus:border-yellow-600 focus:bg-yellow-600 focus:text-white focus:ring focus:ring-yellow-500/30 active:border-yellow-600 active:bg-yellow-600 dark:border-transparent dark:bg-yellow-500/20">
+                                                Warning
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-red-50 bg-red-50 text-red-500 hover:border-red-600 hover:bg-red-600 hover:text-white focus:border-red-600 focus:bg-red-600 focus:text-white focus:ring focus:ring-red-500/30 active:border-red-600 active:bg-red-600 dark:border-transparent dark:bg-red-500/20">
+                                                Danger
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-neutral-50 bg-neutral-50 text-neutral-800 hover:border-neutral-900 hover:bg-neutral-900 hover:text-white focus:border-neutral-900 focus:bg-neutral-900 focus:text-white focus:ring focus:ring-neutral-500/30 active:border-neutral-900 active:bg-neutral-900 dark:border-transparent dark:bg-neutral-500/20">
+                                                Dark
+                                            </button>
+                                            <button type="button" class="btn group border-0 text-violet-500">
+                                                <span
+                                                    class="transition-all duration-100 ease-in-out group-hover:border-b group-hover:border-violet-500"
+                                                    >Link</span
+                                                >
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-gray-50 bg-gray-50 text-gray-800 focus:border-gray-300 focus:bg-gray-300 focus:ring focus:ring-gray-500/30 active:border-gray-300 active:bg-gray-300">
+                                                Light
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1">
+                                    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+                                        <div class="card-body pb-0">
+                                            <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                Buttons with Label
+                                            </h6>
+                                        </div>
+                                        <div class="card-body flex flex-wrap gap-3">
+                                            <button
+                                                type="button"
+                                                class="btn border-0 bg-violet-500 p-0 align-middle text-white hover:bg-violet-600 focus:ring-2 focus:ring-violet-500/30">
+                                                <span
+                                                    class="material-icons-outlined text-16 h-full w-10 rounded-l bg-white bg-opacity-20 py-3 align-middle">
+                                                    face
+                                                </span>
+                                                <span class="px-3 leading-[2.8]">Primary</span>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-0 bg-green-500 p-0 align-middle text-white hover:bg-green-600 focus:ring-2 focus:ring-green-500/30">
+                                                <span
+                                                    class="material-icons-outlined text-16 h-full w-10 rounded-l bg-white bg-opacity-20 py-3 align-middle">
+                                                    done_all
+                                                </span>
+                                                <span class="px-3 leading-[2.8]">Success</span>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-0 bg-yellow-500 p-0 align-middle text-white hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-500/30">
+                                                <span
+                                                    class="material-icons-outlined text-16 h-full w-10 rounded-l bg-white bg-opacity-20 py-3 align-middle">
+                                                    report_problem
+                                                </span>
+                                                <span class="px-3 leading-[2.8]">Warning</span>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-0 bg-red-500 p-0 align-middle text-white hover:bg-red-600 focus:ring-2 focus:ring-red-500/30">
+                                                <span
+                                                    class="material-icons-outlined text-16 h-full w-10 rounded-l bg-white bg-opacity-20 py-3 align-middle">
+                                                    error_outline
+                                                </span>
+                                                <span class="px-3 leading-[2.8]">Danger</span>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-0 bg-neutral-700 p-0 align-middle text-white hover:bg-neutral-800 focus:ring-2 focus:ring-neutral-500/30">
+                                                <span
+                                                    class="material-icons-outlined text-16 h-full w-10 rounded-l bg-white bg-opacity-20 py-3 align-middle">
+                                                    donut_large
+                                                </span>
+                                                <span class="px-3 leading-[2.8]">Dark</span>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-0 bg-gray-50 p-0 align-middle text-black hover:bg-neutral-800 focus:ring-2 focus:ring-neutral-500/30">
+                                                <span
+                                                    class="material-icons-outlined text-16 h-full w-10 rounded-l bg-white bg-opacity-20 py-3 align-middle">
+                                                    hourglass_empty
+                                                </span>
+                                                <span class="px-3 leading-[2.8]">Light</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1">
+                                    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+                                        <div class="card-body pb-0">
+                                            <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                Button with leading icon
+                                            </h6>
+                                        </div>
+                                        <div class="card-body flex flex-wrap gap-3">
+                                            <button
+                                                type="button"
+                                                class="btn border-violet-500 bg-violet-500 text-white hover:border-violet-600 hover:bg-violet-600 focus:border-violet-600 focus:bg-violet-600 focus:ring focus:ring-violet-500/30 active:border-violet-600 active:bg-violet-600">
+                                                <span class="material-icons-outlined text-16 mr-1 align-middle">
+                                                    face
+                                                </span>
+                                                <span class="align-middle">Primary</span>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-green-500 bg-green-500 text-white hover:border-green-600 hover:bg-green-600 focus:border-green-600 focus:bg-green-600 focus:ring focus:ring-green-500/30 active:border-green-600 active:bg-green-600">
+                                                <span class="material-icons-outlined text-16 mr-1 align-middle">
+                                                    done_all
+                                                </span>
+                                                <span class="align-middle">Success</span>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-yellow-500 bg-yellow-500 text-white hover:border-yellow-600 hover:bg-yellow-600 focus:border-yellow-600 focus:bg-yellow-600 focus:ring focus:ring-yellow-500/30 active:border-yellow-600 active:bg-yellow-600">
+                                                <span class="material-icons-outlined text-16 mr-1 align-middle">
+                                                    report_problem
+                                                </span>
+                                                <span class="align-middle">Warning</span>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-red-500 bg-red-500 text-white hover:border-red-600 hover:bg-red-600 focus:border-red-600 focus:bg-red-600 focus:ring focus:ring-red-500/30 active:border-red-600 active:bg-red-600">
+                                                <span class="material-icons-outlined text-16 mr-1 align-middle">
+                                                    error_outline
+                                                </span>
+                                                <span class="align-middle">Danger</span>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-neutral-800 bg-neutral-800 text-white hover:border-neutral-900 hover:bg-neutral-900 focus:border-neutral-900 focus:bg-neutral-900 focus:ring focus:ring-neutral-500/30 active:border-neutral-900 active:bg-neutral-900">
+                                                <span class="material-icons-outlined text-16 mr-1 align-middle">
+                                                    donut_large
+                                                </span>
+                                                <span class="align-middle">Dark</span>
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn border-gray-50 bg-gray-50 text-black focus:border-gray-300 focus:bg-gray-300 focus:ring focus:ring-gray-500/30 active:border-gray-300 active:bg-gray-300">
+                                                <span class="material-icons-outlined text-16 mr-1 align-middle">
+                                                    hourglass_empty
+                                                </span>
+                                                <span class="align-middle">Light</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1">
+                                    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+                                        <div class="grid grid-cols-1 xl:grid-cols-2">
+                                            <div>
+                                                <div class="card-body pb-0">
+                                                    <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                        Soft Icon Buttons
+                                                    </h6>
                                                 </div>
-                                                <div class="mt-4">
-                                                    <p
-                                                        class="pb-1 text-right text-sm font-semibold leading-none text-indigo-700">
-                                                        73%
-                                                    </p>
+                                                <div class="card-body flex flex-wrap gap-3">
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-violet-50 bg-violet-50 text-violet-500 hover:border-violet-600 hover:bg-violet-600 hover:text-white focus:border-violet-600 focus:bg-violet-600 focus:text-white focus:ring focus:ring-violet-500/10 active:border-violet-600 active:bg-violet-600 dark:border-transparent dark:bg-violet-500/20">
+                                                        <span class="material-icons-outlined text-16 align-middle">
+                                                            face
+                                                        </span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-green-50 bg-green-50 text-green-500 hover:border-green-600 hover:bg-green-600 hover:text-white focus:border-green-600 focus:bg-green-600 focus:text-white focus:ring focus:ring-green-500/10 active:border-green-600 active:bg-green-600 dark:border-transparent dark:bg-green-500/20">
+                                                        <span class="material-icons-outlined text-16 align-middle">
+                                                            done_all
+                                                        </span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-yellow-50 bg-yellow-50 text-yellow-500 hover:border-yellow-600 hover:bg-yellow-600 hover:text-white focus:border-yellow-600 focus:bg-yellow-600 focus:text-white focus:ring focus:ring-yellow-500/10 active:border-yellow-600 active:bg-yellow-600 dark:border-transparent dark:bg-yellow-500/20">
+                                                        <span class="material-icons-outlined text-16 align-middle">
+                                                            report_problem
+                                                        </span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-red-50 bg-red-50 text-red-500 hover:border-red-600 hover:bg-red-600 hover:text-white focus:border-red-600 focus:bg-red-600 focus:text-white focus:ring focus:ring-red-500/10 active:border-red-600 active:bg-red-600 dark:border-transparent dark:bg-red-500/20">
+                                                        <span class="material-icons-outlined text-16 align-middle">
+                                                            error_outline
+                                                        </span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-neutral-100 bg-neutral-100 text-neutral-800 hover:border-neutral-900 hover:bg-neutral-900 hover:text-white focus:border-neutral-900 focus:bg-neutral-900 focus:text-white focus:ring focus:ring-neutral-500/10 active:border-neutral-900 active:bg-neutral-900 dark:border-transparent dark:bg-neutral-500/20 dark:text-gray-100">
+                                                        <span class="material-icons-outlined text-16 align-middle">
+                                                            donut_large
+                                                        </span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-gray-50 bg-gray-50 text-black hover:border-gray-300 hover:bg-gray-300 focus:border-gray-300 focus:bg-gray-300 focus:ring focus:ring-gray-500/10 active:border-gray-300 active:bg-gray-300 dark:border-transparent dark:bg-gray-500/20">
+                                                        <span class="material-icons-outlined text-16 align-middle">
+                                                            hourglass_empty
+                                                        </span>
+                                                    </button>
                                                 </div>
-                                                <div
-                                                    class="relative h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
-                                                    <div
-                                                        class="h-2 w-60 rounded-full bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-600"></div>
+                                            </div>
+
+                                            <div>
+                                                <div class="card-body pb-0">
+                                                    <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                        Icon Buttons
+                                                    </h6>
                                                 </div>
-                                                <button
-                                                    class="mt-5 w-full rounded bg-gray-100 py-3 text-sm font-medium text-indigo-700 hover:bg-opacity-50 hover:text-black focus:bg-opacity-50 focus:text-black focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2 dark:bg-slate-700 dark:text-slate-300 dark:hover:text-slate-100">
-                                                    Send Message
-                                                </button>
+                                                <div class="card-body flex flex-wrap gap-3">
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-violet-500 bg-violet-500 text-white hover:border-violet-600 hover:bg-violet-600 focus:border-violet-600 focus:bg-violet-600 focus:ring focus:ring-violet-500/30 active:border-violet-600 active:bg-violet-600">
+                                                        <span class="material-icons-outlined text-16 align-middle">
+                                                            face
+                                                        </span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-green-500 bg-green-500 text-white hover:border-green-600 hover:bg-green-600 focus:border-green-600 focus:bg-green-600 focus:ring focus:ring-green-500/30 active:border-green-600 active:bg-green-600">
+                                                        <span class="material-icons-outlined text-16 align-middle">
+                                                            done_all
+                                                        </span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-yellow-500 bg-yellow-500 text-white hover:border-yellow-600 hover:bg-yellow-600 focus:border-yellow-600 focus:bg-yellow-600 focus:ring focus:ring-yellow-500/30 active:border-yellow-600 active:bg-yellow-600">
+                                                        <span class="material-icons-outlined text-16 align-middle">
+                                                            report_problem
+                                                        </span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-red-500 bg-red-500 text-white hover:border-red-600 hover:bg-red-600 focus:border-red-600 focus:bg-red-600 focus:ring focus:ring-red-500/30 active:border-red-600 active:bg-red-600">
+                                                        <span class="material-icons-outlined text-16 align-middle">
+                                                            error_outline
+                                                        </span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-neutral-800 bg-neutral-800 text-white hover:border-neutral-900 hover:bg-neutral-900 focus:border-neutral-900 focus:bg-neutral-900 focus:ring focus:ring-neutral-500/30 active:border-neutral-900 active:bg-neutral-900">
+                                                        <span
+                                                            class="material-icons-outlined text-16 animate-spin align-middle">
+                                                            donut_large
+                                                        </span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-gray-50 bg-gray-50 text-black hover:border-gray-300 hover:bg-gray-300 focus:border-gray-300 focus:bg-gray-300 focus:ring focus:ring-gray-500/30 active:border-gray-300 active:bg-gray-300">
+                                                        <span
+                                                            class="material-icons-outlined text-16 animate-spin align-middle">
+                                                            hourglass_empty
+                                                        </span>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!--end inner-grid-->
-                            <div class="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
-                                <div class="sm:col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-1">
-                                    <div class="card relative h-full w-full overflow-hidden">
-                                        <div class="card-header">
-                                            <h4 class="font-medium">Earnings Reports</h4>
-                                        </div>
-                                        <div class="card-body flex flex-col">
-                                            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                                                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                                                    <div class="overflow-hidden">
-                                                        <table class="min-w-full">
-                                                            <thead class="bg-gray-50 dark:bg-gray-700">
-                                                                <tr>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Date
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Item Counts
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Tax
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Earning
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <!-- 1 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        03 March
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        50
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-red-500 dark:text-red-400">
-                                                                        -$40
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                                                        $15,500.00
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 2 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        04 March
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        120
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        -
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                                                        $20,900.00
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 3 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        05 March
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        90
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-red-500 dark:text-red-400">
-                                                                        -$20
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                                                        $10,500.00
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 4 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        06 March
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        160
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        -
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                                                        $35,000.00
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 5 -->
-                                                                <tr class="bg-white dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        07 March
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        80
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-red-500 dark:text-red-400">
-                                                                        -$60
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium text-gray-600 dark:text-gray-400">
-                                                                        $18,880.00
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
+
+                                <div class="grid grid-cols-1">
+                                    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+                                        <div class="grid grid-cols-1 xl:grid-cols-2">
+                                            <div>
+                                                <div class="card-body pb-0">
+                                                    <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                        Icon Buttons with Text
+                                                    </h6>
+                                                </div>
+                                                <div class="card-body flex flex-wrap gap-3">
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-0 bg-violet-500 px-5 text-white">
+                                                        <span class="material-icons-outlined block text-lg">
+                                                            download
+                                                        </span>
+                                                        <span>Download</span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-0 bg-gray-50 px-5 text-black">
+                                                        <span class="material-icons-outlined block text-lg">
+                                                            upload
+                                                        </span>
+                                                        <span>Upload</span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-0 bg-green-600 px-5 text-white">
+                                                        <span class="material-icons-outlined block text-lg">
+                                                            edit
+                                                        </span>
+                                                        <span>Edit</span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-0 bg-red-400 px-5 text-white">
+                                                        <span class="material-icons-outlined block text-lg">
+                                                            delete
+                                                        </span>
+                                                        <span>Delete</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="card-body pb-0">
+                                                    <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                        Block Buttons
+                                                    </h6>
+                                                </div>
+                                                <div class="card-body flex flex-wrap items-center gap-3">
+                                                    <button
+                                                        class="btn block w-full bg-violet-500 py-3 text-white focus:ring focus:ring-violet-500/30 dark:border-zinc-600"
+                                                        type="submit">
+                                                        Block level button
+                                                    </button>
+                                                    <button
+                                                        class="btn block w-full bg-gray-300 py-1 text-white focus:ring focus:ring-gray-500/30 dark:border-zinc-600"
+                                                        type="submit">
+                                                        Block level button
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end inner-grid-->
                                 </div>
-                                <div class="sm:col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-1">
-                                    <div class="card relative h-full w-full overflow-hidden">
-                                        <div class="card-header">
-                                            <h4 class="font-medium">Most Popular Products</h4>
+
+                                <div class="grid grid-cols-1">
+                                    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+                                        <div class="grid grid-cols-1 xl:grid-cols-2">
+                                            <div>
+                                                <div class="card-body pb-0">
+                                                    <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                        Soft Buttons Sizes
+                                                    </h6>
+                                                </div>
+                                                <div class="card-body flex flex-wrap items-center gap-3">
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-violet-50 bg-violet-50 px-3 py-1 text-[11.5px] text-violet-500 hover:border-violet-600 hover:bg-violet-600 hover:text-white focus:border-violet-500/10 focus:bg-violet-600 focus:text-white focus:ring focus:ring-violet-50 active:border-violet-600 active:bg-violet-600 active:text-white dark:border-transparent dark:bg-violet-500/20">
+                                                        Primary
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn text-13 border-violet-50 bg-violet-50 px-4 py-1.5 text-violet-500 hover:border-violet-600 hover:bg-violet-600 hover:text-white focus:border-violet-500/10 focus:bg-violet-600 focus:text-white focus:ring focus:ring-violet-50 active:border-violet-600 active:bg-violet-600 active:text-white dark:border-transparent dark:bg-violet-500/20">
+                                                        Primary
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-violet-50 bg-violet-50 text-violet-500 hover:border-violet-600 hover:bg-violet-600 hover:text-white focus:border-violet-500/10 focus:bg-violet-600 focus:text-white focus:ring focus:ring-violet-50 active:border-violet-600 active:bg-violet-600 active:text-white dark:border-transparent dark:bg-violet-500/20">
+                                                        Primary
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn text-15 border-violet-50 bg-violet-50 px-5 py-2 text-violet-500 hover:border-violet-600 hover:bg-violet-600 hover:text-white focus:border-violet-500/10 focus:bg-violet-600 focus:text-white focus:ring focus:ring-violet-50 active:border-violet-600 active:bg-violet-600 active:text-white dark:border-transparent dark:bg-violet-500/20">
+                                                        Primary
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-violet-50 bg-violet-50 px-6 py-2.5 text-[15.5px] text-violet-500 hover:border-violet-600 hover:bg-violet-600 hover:text-white focus:border-violet-500/10 focus:bg-violet-600 focus:text-white focus:ring focus:ring-violet-50 active:border-violet-600 active:bg-violet-600 active:text-white dark:border-transparent dark:bg-violet-500/20">
+                                                        Primary
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="card-body pb-0">
+                                                    <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                        Soft Buttons Sizes With Color
+                                                    </h6>
+                                                </div>
+                                                <div class="card-body flex flex-wrap items-center gap-3">
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-violet-50 bg-violet-50 px-3 py-1 text-[11.5px] text-violet-500 hover:border-violet-600 hover:bg-violet-600 hover:text-white focus:border-violet-600 focus:bg-violet-600 focus:text-white focus:ring focus:ring-violet-500/30 active:border-violet-600 active:bg-violet-600 active:text-white dark:border-transparent">
+                                                        Primary
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn text-13 border-green-50 bg-green-50 px-4 py-1.5 text-green-500 hover:border-green-600 hover:bg-green-600 hover:text-white focus:border-green-600 focus:bg-green-600 focus:text-white focus:ring focus:ring-green-500/30 active:border-green-600 active:bg-green-600 active:text-white dark:border-transparent">
+                                                        Primary
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-yellow-50 bg-yellow-50 text-yellow-500 hover:border-yellow-600 hover:bg-yellow-600 hover:text-white focus:border-yellow-600 focus:bg-yellow-600 focus:text-white focus:ring focus:ring-yellow-500/30 active:border-yellow-600 active:bg-yellow-600 active:text-white dark:border-transparent">
+                                                        Primary
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn text-15 border-red-50 bg-red-50 px-5 py-2 text-red-500 hover:border-red-600 hover:bg-red-600 hover:text-white focus:border-red-600 focus:bg-red-600 focus:text-white focus:ring focus:ring-red-500/30 active:border-red-600 active:bg-red-600 active:text-white dark:border-transparent">
+                                                        Primary
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-gray-50 bg-gray-50 px-6 py-2.5 text-[15.5px] text-gray-500 hover:border-gray-600 hover:bg-gray-600 hover:text-white focus:border-gray-600 focus:bg-gray-600 focus:text-white focus:ring focus:ring-gray-500/30 active:border-gray-600 active:bg-gray-600 active:text-white dark:border-transparent">
+                                                        Primary
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="card-body flex flex-col">
-                                            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                                                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                                                    <div class="overflow-hidden">
-                                                        <table class="min-w-full">
-                                                            <thead class="bg-gray-50 dark:bg-gray-700">
-                                                                <tr>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Product
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Price
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Sell
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Status
-                                                                    </th>
-                                                                    <th
-                                                                        scope="col"
-                                                                        class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                        Action
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <!-- 1 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
-                                                                        <img
-                                                                            src="/images/products/01.png"
-                                                                            class="mr-2 inline-block h-5" />T-Wind
-                                                                        Camera EDM 5D(White)
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        $50 <del class="text-gray-400">$90</del>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        450<small class="text-gray-400">(500)</small>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <span
-                                                                            class="rounded bg-green-100 px-2 py-1 text-[12px] font-medium text-green-700 focus:outline-none dark:text-green-600">
-                                                                            Stock
-                                                                        </span>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-gray-500 dark:text-gray-400">
-                                                                                mode_edit
-                                                                            </span>
-                                                                        </a>
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-red-500 dark:text-red-400">
-                                                                                delete_outline
-                                                                            </span>
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 2 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
-                                                                        <img
-                                                                            src="/images/products/02.png"
-                                                                            class="mr-2 inline-block h-5" />T-Wind Shoes
-                                                                        Max-Zon
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        $49 <del class="text-gray-400">$88</del>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        850<small class="text-gray-400">(900)</small>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <span
-                                                                            class="rounded bg-green-100 px-2 py-1 text-[12px] font-medium text-green-700 focus:outline-none dark:text-green-600">
-                                                                            Stock
-                                                                        </span>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-gray-500 dark:text-gray-400">
-                                                                                mode_edit
-                                                                            </span>
-                                                                        </a>
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-red-500 dark:text-red-400">
-                                                                                delete_outline
-                                                                            </span>
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 3 -->
-                                                                <tr
-                                                                    class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
-                                                                        <img
-                                                                            src="/images/products/03.png"
-                                                                            class="mr-2 inline-block h-5" />T-Wind VR 5D
-                                                                        (Black)
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        $39 <del class="text-gray-400">$99</del>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        700<small class="text-gray-400">(700)</small>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <span
-                                                                            class="rounded bg-red-100 px-2 py-1 text-[12px] font-medium text-red-700 focus:outline-none dark:text-red-600">
-                                                                            Sold
-                                                                        </span>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-gray-500 dark:text-gray-400">
-                                                                                mode_edit
-                                                                            </span>
-                                                                        </a>
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-red-500 dark:text-red-400">
-                                                                                delete_outline
-                                                                            </span>
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-                                                                <!-- 4 -->
-                                                                <tr class="bg-white dark:bg-gray-800">
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
-                                                                        <img
-                                                                            src="/images/products/04.png"
-                                                                            class="mr-2 inline-block h-5" />T-Wind Mask
-                                                                        N99 [ISI]
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        $5 <del class="text-gray-400">$9</del>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        1850<small class="text-gray-400">(2000)</small>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <span
-                                                                            class="rounded bg-green-100 px-2 py-1 text-[12px] font-medium text-green-700 focus:outline-none dark:text-green-600">
-                                                                            Stock
-                                                                        </span>
-                                                                    </td>
-                                                                    <td
-                                                                        class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-gray-500 dark:text-gray-400">
-                                                                                mode_edit
-                                                                            </span>
-                                                                        </a>
-                                                                        <a href="#">
-                                                                            <span
-                                                                                class="material-icons text-lg text-red-500 dark:text-red-400">
-                                                                                delete_outline
-                                                                            </span>
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1">
+                                    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+                                        <div class="grid grid-cols-1 xl:grid-cols-3">
+                                            <div>
+                                                <div class="card-body pb-0">
+                                                    <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                        Basic Button Groups
+                                                    </h6>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="inline-flex">
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-l rounded-r-none border border-violet-500 bg-white px-4 py-2.5 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-50 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-violet-500 dark:focus:ring-violet-500/40">
+                                                            Left
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-l-none rounded-r-none border-b border-l-0 border-r-0 border-t border-violet-500 bg-white px-4 py-2.5 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-50 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-violet-500 dark:focus:ring-violet-500/40">
+                                                            Middle
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-l-none rounded-r border border-violet-500 bg-white px-4 py-2.5 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-50 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-violet-500 dark:focus:ring-violet-500/40">
+                                                            Right
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="card-body pb-0">
+                                                    <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                        Icon Button Groups
+                                                    </h6>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="inline-flex rounded-md shadow-sm">
+                                                        <button
+                                                            type="button"
+                                                            class="btn inline-flex items-center rounded-l rounded-r-none border border-violet-500 bg-transparent px-4 py-2 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-50 dark:border-zinc-600 dark:text-white dark:hover:bg-violet-300 dark:hover:text-white dark:focus:bg-violet-300 dark:focus:ring-violet-500/40">
+                                                            <span class="material-icons-outlined mr-2 text-lg">
+                                                                people
+                                                            </span>
+                                                            Left
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn inline-flex items-center rounded-l-none rounded-r-none border-b border-l-0 border-r-0 border-t border-violet-500 bg-transparent px-4 py-2 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-50 dark:border-zinc-600 dark:text-white dark:hover:bg-violet-300 dark:hover:text-white dark:focus:bg-violet-300 dark:focus:ring-violet-500/40">
+                                                            <span class="material-icons-outlined mr-2 text-lg">
+                                                                done_all
+                                                            </span>
+                                                            Middle
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn inline-flex items-center rounded-l-none rounded-r border border-violet-500 bg-transparent px-4 py-2 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-50 dark:border-zinc-600 dark:text-white dark:hover:bg-violet-300 dark:hover:text-white dark:focus:bg-violet-300 dark:focus:ring-violet-500/40">
+                                                            <span class="material-icons-outlined mr-2 text-lg">
+                                                                schedule
+                                                            </span>
+                                                            Right
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="card-body pb-0">
+                                                    <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                        Active Button Groups
+                                                    </h6>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="inline-flex rounded-md shadow-sm">
+                                                        <button
+                                                            type="button"
+                                                            class="btn inline-flex items-center rounded-l rounded-r-none border border-violet-500 bg-violet-500 px-4 py-2 text-sm font-medium text-white hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-50 dark:border-zinc-600 dark:text-white dark:hover:bg-violet-500 dark:hover:text-white dark:focus:bg-violet-500 dark:focus:ring-violet-500/40">
+                                                            <span class="material-icons-outlined mr-2 text-lg">
+                                                                people
+                                                            </span>
+                                                            Left
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn inline-flex items-center rounded-l-none rounded-r-none border-b border-l-0 border-r-0 border-t border-violet-500 bg-transparent px-4 py-2 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-50 dark:border-zinc-600 dark:text-white dark:hover:bg-violet-500 dark:hover:text-white dark:focus:bg-violet-500 dark:focus:ring-violet-500/40">
+                                                            <span class="material-icons-outlined mr-2 text-lg">
+                                                                done_all
+                                                            </span>
+                                                            Middle
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn inline-flex items-center rounded-l-none rounded-r border border-violet-500 bg-transparent px-4 py-2 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-50 dark:border-zinc-600 dark:text-white dark:hover:bg-violet-500 dark:hover:text-white dark:focus:bg-violet-500 dark:focus:ring-violet-500/40">
+                                                            <span class="material-icons-outlined mr-2 text-lg">
+                                                                schedule
+                                                            </span>
+                                                            Right
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--end inner-grid-->
+                                </div>
+
+                                <div class="grid grid-cols-1">
+                                    <div class="card dark:border-zinc-600 dark:bg-zinc-800">
+                                        <div class="grid grid-cols-1 xl:grid-cols-2">
+                                            <div>
+                                                <div class="card-body pb-0">
+                                                    <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                        Icon only
+                                                    </h6>
+                                                </div>
+                                                <div class="card-body flex flex-wrap gap-4">
+                                                    <div class="inline-flex">
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-r-none border-b border-r-0 border-t border-violet-500 bg-white px-2 py-1 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-500/30 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-violet-500">
+                                                            <span class="material-icons-outlined text-2xl">
+                                                                chevron_left
+                                                            </span>
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-l-none rounded-r border border-violet-500 bg-white px-2 py-1 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-500/30 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-violet-500">
+                                                            <span class="material-icons-outlined text-2xl">
+                                                                chevron_right
+                                                            </span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="inline-flex">
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-r-none border-b border-r-0 border-t border-green-500 bg-white px-2 py-1 text-sm font-medium text-green-500 hover:bg-green-500 hover:text-white focus:z-10 focus:bg-green-500 focus:text-white focus:ring-2 focus:ring-green-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-green-500">
+                                                            <span class="material-icons-outlined text-2xl">
+                                                                arrow_back
+                                                            </span>
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-l-none rounded-r border border-green-500 bg-white px-2 py-1 text-sm font-medium text-green-500 hover:bg-green-500 hover:text-white focus:z-10 focus:bg-green-500 focus:text-white focus:ring-2 focus:ring-green-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-green-500">
+                                                            <span class="material-icons-outlined text-2xl">
+                                                                arrow_forward
+                                                            </span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="inline-flex">
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-r-none border-b border-r-0 border-t border-yellow-500 bg-white px-2 py-1 text-sm font-medium text-yellow-500 hover:bg-yellow-500 hover:text-white focus:z-10 focus:bg-yellow-500 focus:text-white focus:ring-2 focus:ring-yellow-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-yellow-500">
+                                                            <span class="material-icons-outlined text-2xl">
+                                                                keyboard_double_arrow_left
+                                                            </span>
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-l-none rounded-r border border-yellow-500 bg-white px-2 py-1 text-sm font-medium text-yellow-500 hover:bg-yellow-500 hover:text-white focus:z-10 focus:bg-yellow-500 focus:text-white focus:ring-2 focus:ring-yellow-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-yellow-500">
+                                                            <span class="material-icons-outlined text-2xl">
+                                                                keyboard_double_arrow_right
+                                                            </span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="inline-flex">
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-r-none border-b border-r-0 border-t border-red-500 bg-white px-2 py-1 text-sm font-medium text-red-500 hover:bg-red-500 hover:text-white focus:z-10 focus:bg-red-500 focus:text-white focus:ring-2 focus:ring-red-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-red-500">
+                                                            <span class="material-icons-outlined text-2xl">
+                                                                arrow_left
+                                                            </span>
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-l-none rounded-r border border-red-500 bg-white px-2 py-1 text-sm font-medium text-red-500 hover:bg-red-500 hover:text-white focus:z-10 focus:bg-red-500 focus:text-white focus:ring-2 focus:ring-red-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-red-500">
+                                                            <span class="material-icons-outlined text-2xl">
+                                                                arrow_right
+                                                            </span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="inline-flex">
+                                                        <button
+                                                            type="button"
+                                                            class="btn hover:bg-gray-50/500 rounded-r-none border-b border-r-0 border-t border-gray-500 bg-white px-2 py-1 text-sm font-medium text-gray-500 hover:text-white focus:z-10 focus:bg-gray-500 focus:text-white focus:ring-2 focus:ring-gray-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-gray-500">
+                                                            <span class="material-icons-outlined text-2xl">
+                                                                arrow_circle_left
+                                                            </span>
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn hover:bg-gray-50/500 rounded-l-none rounded-r border border-gray-500 bg-white px-2 py-1 text-sm font-medium text-gray-500 hover:text-white focus:z-10 focus:bg-gray-500 focus:text-white focus:ring-2 focus:ring-gray-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:hover:bg-zinc-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-gray-500">
+                                                            <span class="material-icons-outlined text-2xl">
+                                                                arrow_circle_right
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <div class="card-body pb-0">
+                                                    <h6 class="text-15 mb-1 text-gray-600 dark:text-gray-100">
+                                                        With stat
+                                                    </h6>
+                                                </div>
+                                                <div class="card-body flex flex-wrap gap-4">
+                                                    <div class="inline-flex">
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-r-none border-b border-r-0 border-t border-violet-500 bg-white px-3 py-1.5 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:text-white focus:ring-2 focus:ring-violet-500/30 dark:border-zinc-600 dark:bg-zinc-700 dark:text-violet-500 dark:hover:bg-violet-500 dark:hover:text-white dark:focus:text-white dark:focus:ring-violet-500">
+                                                            <span class="material-icons-outlined align-middle text-2xl">
+                                                                bookmark
+                                                            </span>
+                                                            <span class="ml-2 align-middle">Bookmark</span>
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn focus:ring-violet-50focus:text-white rounded-l-none rounded-r border border-violet-500 bg-white px-3 py-1.5 text-sm font-medium text-violet-500 hover:bg-violet-500 hover:text-white focus:z-10 focus:bg-violet-500 focus:ring-2 dark:border-zinc-600 dark:bg-zinc-700 dark:text-violet-500 dark:hover:bg-violet-500 dark:hover:text-white dark:focus:text-white dark:focus:ring-violet-500">
+                                                            12K
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="inline-flex">
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-r-none border-b border-r-0 border-t border-green-500 bg-white px-3 py-1.5 text-sm font-medium text-green-500 hover:bg-green-500 hover:text-white focus:z-10 focus:bg-green-500 focus:text-white focus:ring-2 focus:ring-green-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-green-500 dark:hover:bg-green-500 dark:hover:text-white dark:focus:text-white dark:focus:ring-green-500">
+                                                            <span class="material-icons-outlined align-middle text-2xl">
+                                                                people
+                                                            </span>
+                                                            <span class="ml-2 align-middle">Account</span>
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-l-none rounded-r border border-green-500 bg-white px-3 py-1.5 text-sm font-medium text-green-500 hover:bg-green-500 hover:text-white focus:z-10 focus:bg-green-500 focus:text-white focus:ring-2 focus:ring-green-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-green-500 dark:hover:bg-green-500 dark:hover:text-white dark:focus:text-white dark:focus:ring-green-500">
+                                                            2.5M
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="inline-flex">
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-r-none border-b border-r-0 border-t border-yellow-500 bg-white px-3 py-1.5 text-sm font-medium text-yellow-500 hover:bg-yellow-500 hover:text-white focus:z-10 focus:bg-yellow-500 focus:text-white focus:ring-2 focus:ring-yellow-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-yellow-500 dark:hover:bg-yellow-500 dark:hover:text-white dark:focus:text-white dark:focus:ring-yellow-500">
+                                                            <span class="material-icons-outlined align-middle text-2xl">
+                                                                done_all
+                                                            </span>
+                                                            <span class="ml-2 align-middle">Check</span>
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-l-none rounded-r border border-yellow-500 bg-white px-3 py-1.5 text-sm font-medium text-yellow-500 hover:bg-yellow-500 hover:text-white focus:z-10 focus:bg-yellow-500 focus:text-white focus:ring-2 focus:ring-yellow-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-yellow-500 dark:hover:bg-yellow-500 dark:hover:text-white dark:focus:text-white dark:focus:ring-yellow-500">
+                                                            20K
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="inline-flex">
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-r-none border-b border-r-0 border-t border-red-500 bg-white px-3 py-1.5 text-sm font-medium text-red-500 hover:bg-red-500 hover:text-white focus:z-10 focus:bg-red-500 focus:text-white focus:ring-2 focus:ring-red-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-red-500 dark:hover:bg-red-500 dark:hover:text-white dark:focus:text-white dark:focus:ring-red-500">
+                                                            <span class="material-icons-outlined align-middle text-2xl">
+                                                                celebration
+                                                            </span>
+                                                            <span class="ml-2 align-middle">Party</span>
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            class="btn rounded-l-none rounded-r border border-red-500 bg-white px-3 py-1.5 text-sm font-medium text-red-500 hover:bg-red-500 hover:text-white focus:z-10 focus:bg-red-500 focus:text-white focus:ring-2 focus:ring-red-200 dark:border-zinc-600 dark:bg-zinc-700 dark:text-red-500 dark:hover:bg-red-500 dark:hover:text-white dark:focus:text-white dark:focus:ring-red-500">
+                                                            65K
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1962,10 +2134,5 @@
                 </div>
             </div>
         </div>
-        <script src="/plugins/jsvectormap/jsvectormap.min.js"></script>
-        <script src="/plugins/jsvectormap/world-maps.js"></script>
-        <script src="/plugins/echarts/echarts.min.js"></script>
-        <script src="/plugins/apexcharts/apexcharts.min.js"></script>
-        <script src="/features/dashboard/ecommerce.init.js"></script>
     </body>
 </html>
