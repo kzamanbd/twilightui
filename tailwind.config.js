@@ -65,9 +65,9 @@ module.exports = {
         require('prettier-plugin-tailwindcss'),
         plugin(function ({ addVariant, e }) {
             // mini sidebar variant
-            addVariant('toggle-sidebar', ({ modifySelectors, separator }) => {
+            addVariant('vertical-menu', ({ modifySelectors, separator }) => {
                 modifySelectors(({ className }) => {
-                    return `.toggle-sidebar .${e(`toggle-sidebar${separator}${className}`)}`;
+                    return `.vertical-menu .${e(`vertical-menu${separator}${className}`)}`;
                 });
             });
         }),

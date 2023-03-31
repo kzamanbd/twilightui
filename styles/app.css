@@ -8,7 +8,7 @@
 /* custom components */
 @import './components/base.css';
 @import './components/header.css';
-@import './components/sidebar.css';
+@import './components/vertical-menu.css';
 @import './components/footer.css';
 @import './components/cards.css';
 @import './components/buttons.css';

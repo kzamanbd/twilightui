@@ -1,28 +1,27 @@
 @layer components {
-    /* start sidebar menu components */
-    .sidebar-menu {
+    .vertical-menu {
         @apply fixed inset-y-0 -left-64 z-30 w-64 border-gray-200 shadow-none duration-300 ease-in-out lg:left-0 lg:shadow-lg;
     }
-    .sidebar-content {
+    .vertical-content {
         @apply h-full bg-white dark:bg-dark-primary;
     }
-    .toggle-sidebar .sidebar-menu,
-    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu {
+    .toggle-menu .vertical-menu,
+    .collapsible-vertical:not(.toggle-menu) .vertical-menu {
         @apply fixed inset-y-0 left-0 z-30 lg:w-[70px] lg:hover:w-64 !important;
     }
-    .toggle-sidebar .sidebar-menu {
+    .toggle-menu .vertical-menu {
         @apply left-0 w-64 shadow-lg !important;
     }
-    .vertical.toggle-sidebar .sidebar-menu {
+    .vertical.toggle-menu .vertical-menu {
         @apply lg:-left-64 lg:shadow-none !important;
     }
-    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu {
+    .collapsible-vertical:not(.toggle-menu) .vertical-menu {
         @apply -left-64 shadow-none lg:left-0 lg:shadow-lg !important;
     }
-    .boxed-layout .sidebar-menu {
+    .boxed-layout .vertical-menu {
         @apply lg:left-auto;
     }
-    .sidebar-shadow {
+    .menu-shadow {
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
     }
     .collapse-icon {
@@ -37,24 +36,24 @@
     .app-name {
         @apply dark--text visible mx-2 text-xl font-semibold opacity-100 transition-opacity duration-500 ease-in-out;
     }
-    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .app-name,
-    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .app-name {
+    .vertical.toggle-menu .vertical-menu:not(:hover) .app-name,
+    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .app-name {
         @apply lg:invisible lg:opacity-0;
     }
     .tw-menu-header {
         @apply dark--text relative w-full truncate pt-2 text-xs font-semibold uppercase text-gray-400;
         @apply px-2 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
     }
-    .sidebar-menu .tw-menu-header .icon {
+    .vertical-menu .tw-menu-header .icon {
         @apply hidden;
     }
-    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-menu-header .label,
-    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-menu-header .label,
-    .sidebar-menu .tw-menu-header .icon {
+    .vertical.toggle-menu .vertical-menu:not(:hover) .tw-menu-header .label,
+    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-menu-header .label,
+    .vertical-menu .tw-menu-header .icon {
         @apply lg:hidden;
     }
-    .vertical.toggle-sidebar .sidebar-menu:not(:hover) .tw-menu-header .icon,
-    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-menu-header .icon {
+    .vertical.toggle-menu .vertical-menu:not(:hover) .tw-menu-header .icon,
+    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-menu-header .icon {
         @apply lg:block;
     }
     .tw-menu-content {
@@ -102,19 +101,19 @@
         @apply tw-link-active dark:hover:text-gray-200;
     }
     /* collapsible-vertical */
-    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .collapse-icon,
-    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-dropdown-menu,
-    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-dropdown-arrow,
-    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .documents-link .btn-label,
-    .collapsible-vertical:not(.toggle-sidebar) .sidebar-menu:not(:hover) .tw-nav-menu .tw-link-label {
+    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .collapse-icon,
+    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-dropdown-menu,
+    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-dropdown-arrow,
+    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .documents-link .btn-label,
+    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-nav-menu .tw-link-label {
         @apply lg:hidden lg:opacity-0;
     }
     /* vertical menu */
-    .vertical.toggle-sidebar .sidebar-menu .collapse-icon,
-    .vertical.toggle-sidebar .sidebar-menu .tw-dropdown-menu,
-    .vertical.toggle-sidebar .sidebar-menu .tw-dropdown-arrow,
-    .vertical.toggle-sidebar .sidebar-menu .documents-link .btn-label,
-    .vertical.toggle-sidebar .sidebar-menu .tw-nav-menu .tw-link-label {
+    .vertical.toggle-menu .vertical-menu .collapse-icon,
+    .vertical.toggle-menu .vertical-menu .tw-dropdown-menu,
+    .vertical.toggle-menu .vertical-menu .tw-dropdown-arrow,
+    .vertical.toggle-menu .vertical-menu .documents-link .btn-label,
+    .vertical.toggle-menu .vertical-menu .tw-nav-menu .tw-link-label {
         @apply lg:block lg:opacity-100 !important;
     }
     .documents-button {

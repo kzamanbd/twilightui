@@ -13,22 +13,22 @@
     <body>
         <div
             x-data="twilightTheme"
-            :class="[ $store.app.sidebar && 'toggle-sidebar', $store.app.theme, $store.app.menu, $store.app.layout]">
+            :class="[ $store.app.sidebar && 'toggle-menu', $store.app.theme, $store.app.menu, $store.app.layout]">
             <div class="twilight">
                 <!-- Loading dialog -->
                 <div class="animate__animated loading duration-300">Loading.....</div>
-                <!-- mobile sidebar shadow -->
-                <div @click="$store.app.toggleSidebar()" class="sidebar-shadow" x-show="$store.app.sidebar"></div>
+                <!-- menu shadow -->
+                <div @click="$store.app.toggleVMenu()" class="menu-shadow" x-show="$store.app.sidebar"></div>
                 <!-- vertical-menu -->
-                <aside class="sidebar-menu">
-                    <div class="sidebar-content">
-                        <!-- Sidebar Logo -->
+                <aside class="vertical-menu">
+                    <div class="vertical-content">
+                        <!-- Menu Logo -->
                         <div id="brand-logo" class="tw-brand-logo">
                             <a href="/index.html" class="flex items-center">
                                 <img class="brand-logo-image" src="/images/logo.png" alt="logo" />
                                 <span class="app-name"> Twilight </span>
                             </a>
-                            <a href="javascript:;" class="collapse-icon" @click="$store.app.toggleSidebar()">
+                            <a href="javascript:;" class="collapse-icon" @click="$store.app.toggleVMenu()">
                                 <svg
                                     class="m-auto h-5 w-5"
                                     width="20"
@@ -788,7 +788,7 @@
                         <div class="ml-6 flex items-center">
                             <button
                                 type="button"
-                                @click="$store.app.toggleSidebar()"
+                                @click="$store.app.toggleVMenu()"
                                 aria-label="Toggle Menu"
                                 class="text-gray-500 focus:outline-none">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

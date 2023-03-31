@@ -16,10 +16,10 @@
     .twilight-body {
         @apply flex h-full flex-1 flex-col transition-all duration-300 lg:ml-64;
     }
-    .collapsible-vertical:not(.toggle-sidebar) .twilight-body {
+    .collapsible-vertical:not(.toggle-menu) .twilight-body {
         @apply lg:ml-[70px];
     }
-    .vertical.toggle-sidebar .twilight-body {
+    .vertical.toggle-menu .twilight-body {
         @apply lg:ml-0;
     }
     .twilight-content {

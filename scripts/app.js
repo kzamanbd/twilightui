@@ -253,7 +253,7 @@ window.ResizeObserver = ResizeObserver;
 
         // sidebar
         sidebar: false,
-        toggleSidebar() {
+        toggleVMenu() {
             this.sidebar = !this.sidebar;
         },
     });
