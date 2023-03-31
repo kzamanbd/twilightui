@@ -898,12 +898,12 @@
                                 <span class="material-icons-outlined"> settings </span>
                             </button>
 
-                            <div class="relative flex" x-data="dropdown" @click.outside="close">
+                            <div class="relative" x-data="dropdown" @click.outside="close">
                                 <button
                                     type="button"
                                     @click="toggle"
                                     aria-label="User Profile"
-                                    class="h-8 w-8 overflow-hidden rounded-md shadow">
+                                    class="flex h-8 w-8 overflow-hidden rounded-md shadow">
                                     <img
                                         class="h-full w-full object-cover"
                                         src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=ffffff"
@@ -1159,7 +1159,7 @@
                                                     </button>
                                                     <button
                                                         type="button"
-                                                        class="btn text-13 bg-primary-50/50 dark:hover:bg-primary-100 border-transparent px-2 py-1 font-medium text-primary-500 hover:bg-primary hover:text-white focus:bg-primary focus:text-white dark:bg-primary/20 dark:text-primary-300 dark:hover:text-primary-500">
+                                                        class="btn text-13 bg-primary-50/50 text-primary-500 dark:hover:text-primary-500 border-transparent px-2 py-1 font-medium hover:bg-primary hover:text-white focus:bg-primary focus:text-white dark:bg-primary/20 dark:text-primary-300 dark:hover:bg-primary-100">
                                                         1M
                                                     </button>
                                                     <button
@@ -1309,7 +1309,7 @@
                                                                 <div class="mt-3">
                                                                     <a
                                                                         href="#"
-                                                                        class="btn shadow-primary-100 focus:ring-primary-50/50 border-transparent bg-primary px-2.5 py-1.5 text-xs text-white shadow-md hover:bg-primary-700 focus:bg-primary-700 focus:ring dark:shadow-zinc-600">
+                                                                        class="btn focus:ring-primary-50/50 border-transparent bg-primary px-2.5 py-1.5 text-xs text-white shadow-md shadow-primary-100 hover:bg-primary-700 focus:bg-primary-700 focus:ring dark:shadow-zinc-600">
                                                                         View more
                                                                         <div class="material-icons text-xs">east</div>
                                                                     </a>
@@ -1323,7 +1323,7 @@
 
                                         <div class="col-span-12 lg:col-span-4">
                                             <div
-                                                class="card shadow-primary-100 relative h-full overflow-hidden border-transparent bg-primary shadow dark:shadow-zinc-800">
+                                                class="card relative h-full overflow-hidden border-transparent bg-primary shadow shadow-primary-100 dark:shadow-zinc-800">
                                                 <div class="card-body text-center">
                                                     <div class="absolute right-0 top-0">
                                                         <span
@@ -1398,7 +1398,7 @@
                                                     <div class="float-right ms-2">
                                                         <h5 class="text-sm text-gray-700 dark:text-zinc-100">
                                                             <span
-                                                                class="material-icons text-16 mr-1 align-middle text-primary-500">
+                                                                class="material-icons text-16 text-primary-500 mr-1 align-middle">
                                                                 wallet
                                                             </span>
                                                             <a
@@ -1418,7 +1418,7 @@
                                                                 Payment method :
                                                             </label>
                                                             <select
-                                                                class="selection:text-10 focus:border-primary-100 focus:ring-primary-50/50 w-full rounded border-gray-100 bg-gray-50/20 py-1.5 focus:ring dark:border-zinc-600 dark:bg-dark-primary dark:text-zinc-100 dark:focus:ring-gray-500/10">
+                                                                class="selection:text-10 focus:ring-primary-50/50 w-full rounded border-gray-100 bg-gray-50/20 py-1.5 focus:border-primary-100 focus:ring dark:border-zinc-600 dark:bg-dark-primary dark:text-zinc-100 dark:focus:ring-gray-500/10">
                                                                 <option>Direct Bank Payment</option>
                                                                 <option>Credit / Debit Card</option>
                                                                 <option>Paypal</option>
@@ -1437,7 +1437,7 @@
                                                                     Amount
                                                                 </label>
                                                                 <select
-                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:border-zinc-600 dark:bg-dark-primary dark:text-zinc-100 dark:focus:ring-gray-500/10"
+                                                                    class="focus:ring-primary-50/60 border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring dark:border-zinc-600 dark:bg-dark-primary dark:text-zinc-100 dark:focus:ring-gray-500/10"
                                                                     style="max-width: 90px">
                                                                     <option value="BT" selected="">BTC</option>
                                                                     <option value="ET">ETH</option>
@@ -1445,7 +1445,7 @@
                                                                 </select>
                                                                 <input
                                                                     type="text"
-                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:focus:ring-gray-500/10"
+                                                                    class="focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring dark:bg-dark-primary dark:focus:ring-gray-500/10"
                                                                     placeholder="0.00121255" />
                                                             </div>
 
@@ -1457,7 +1457,7 @@
                                                                 </label>
                                                                 <input
                                                                     type="text"
-                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:focus:ring-gray-500/10"
+                                                                    class="focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring dark:bg-dark-primary dark:focus:ring-gray-500/10"
                                                                     placeholder="$58,245" />
                                                                 <label
                                                                     class="border-l border-gray-100 bg-gray-50/20 px-3 py-2 dark:border-zinc-600 dark:bg-dark-primary">
@@ -1473,7 +1473,7 @@
                                                                 </label>
                                                                 <input
                                                                     type="text"
-                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:focus:ring-gray-500/10"
+                                                                    class="focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring dark:bg-dark-primary dark:focus:ring-gray-500/10"
                                                                     placeholder="$36,854.25" />
                                                             </div>
                                                         </div>
@@ -1492,7 +1492,7 @@
                                                     <div class="float-right ms-2">
                                                         <h5 class="text-sm text-gray-700 dark:text-zinc-100">
                                                             <span
-                                                                class="material-icons text-16 mr-1 align-middle text-primary-500">
+                                                                class="material-icons text-16 text-primary-500 mr-1 align-middle">
                                                                 wallet
                                                             </span>
                                                             <a
@@ -1529,7 +1529,7 @@
                                                                     Amount
                                                                 </label>
                                                                 <select
-                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:border-zinc-600 dark:bg-dark-primary dark:text-gray-100 dark:focus:ring-gray-500/10"
+                                                                    class="focus:ring-primary-50/60 border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring dark:border-zinc-600 dark:bg-dark-primary dark:text-gray-100 dark:focus:ring-gray-500/10"
                                                                     style="max-width: 90px">
                                                                     <option value="BT" selected="">BTC</option>
                                                                     <option value="ET">ETH</option>
@@ -1537,7 +1537,7 @@
                                                                 </select>
                                                                 <input
                                                                     type="text"
-                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:placeholder:text-gray-200 dark:focus:ring-gray-500/10"
+                                                                    class="focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring dark:bg-dark-primary dark:placeholder:text-gray-200 dark:focus:ring-gray-500/10"
                                                                     placeholder="0.00121255" />
                                                             </div>
 
@@ -1549,7 +1549,7 @@
                                                                 </label>
                                                                 <input
                                                                     type="text"
-                                                                    class="focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:placeholder:text-gray-200 dark:focus:ring-gray-500/10"
+                                                                    class="focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring dark:bg-dark-primary dark:placeholder:text-gray-200 dark:focus:ring-gray-500/10"
                                                                     placeholder="$58,245" />
                                                                 <label
                                                                     class="border-l border-gray-100 bg-gray-50/20 px-3 py-2 dark:border-zinc-600 dark:bg-dark-primary dark:text-gray-100">
@@ -1565,7 +1565,7 @@
                                                                 </label>
                                                                 <input
                                                                     type="text"
-                                                                    class="ark:border-zinc-600 focus:border-primary-100 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:ring dark:bg-dark-primary dark:placeholder:text-gray-200"
+                                                                    class="ark:border-zinc-600 focus:ring-primary-50/60 w-full border-0 bg-gray-50/20 py-1.5 focus:z-40 focus:border-primary-100 focus:ring dark:bg-dark-primary dark:placeholder:text-gray-200"
                                                                     placeholder="$36,854.25" />
                                                             </div>
                                                         </div>
@@ -2781,7 +2781,7 @@
                                                     <div class="absolute left-0 z-40">
                                                         <div class="bg-primary-50 h-10 w-10 rounded-full text-center">
                                                             <span
-                                                                class="material-icons text-2xl leading-relaxed text-primary-500">
+                                                                class="material-icons text-primary-500 text-2xl leading-relaxed">
                                                                 currency_lira
                                                             </span>
                                                         </div>
@@ -2927,7 +2927,7 @@
                                                     <div class="absolute left-0 z-40">
                                                         <div class="bg-primary-50 h-10 w-10 rounded-full text-center">
                                                             <span
-                                                                class="material-icons text-2xl leading-relaxed text-primary-500">
+                                                                class="material-icons text-primary-500 text-2xl leading-relaxed">
                                                                 currency_franc
                                                             </span>
                                                         </div>
@@ -3156,7 +3156,7 @@
                                                 <div class="ml-auto flex gap-1">
                                                     <button
                                                         type="button"
-                                                        class="btn text-13 bg-primary-50/50 border-transparent px-2 py-1 text-primary-500 hover:bg-primary hover:text-white focus:bg-primary focus:text-white dark:bg-primary/20 dark:text-primary-200 dark:hover:bg-primary dark:hover:text-white">
+                                                        class="btn text-13 bg-primary-50/50 text-primary-500 border-transparent px-2 py-1 hover:bg-primary hover:text-white focus:bg-primary focus:text-white dark:bg-primary/20 dark:text-primary-200 dark:hover:bg-primary dark:hover:text-white">
                                                         ALL
                                                     </button>
                                                     <button

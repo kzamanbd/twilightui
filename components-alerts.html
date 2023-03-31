@@ -895,12 +895,12 @@
                                 <span class="material-icons-outlined"> settings </span>
                             </button>
 
-                            <div class="relative flex" x-data="dropdown" @click.outside="close">
+                            <div class="relative" x-data="dropdown" @click.outside="close">
                                 <button
                                     type="button"
                                     @click="toggle"
                                     aria-label="User Profile"
-                                    class="h-8 w-8 overflow-hidden rounded-md shadow">
+                                    class="flex h-8 w-8 overflow-hidden rounded-md shadow">
                                     <img
                                         class="h-full w-full object-cover"
                                         src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=ffffff"
