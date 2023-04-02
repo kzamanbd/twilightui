@@ -8,6 +8,9 @@
     body:has(> .dark) {
         color-scheme: dark;
     }
+    body:has(> .toggle-menu) {
+        @apply overflow-hidden lg:overflow-auto;
+    }
     /* typography */
     h1 {
         @apply text-4xl font-semibold;

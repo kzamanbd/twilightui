@@ -68,7 +68,7 @@ window.ResizeObserver = ResizeObserver;
         locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
         theme: 'light', // light, dark, system
         rtlClass: 'ltr', // rtl, ltr
-        menu: 'collapsible-vertical', // vertical, collapsible-vertical, horizontal
+        menu: 'vertical', // vertical, collapsible-vertical, horizontal
         layout: 'full', // full, boxed-layout
         animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
         navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
