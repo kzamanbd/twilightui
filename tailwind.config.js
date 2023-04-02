@@ -51,7 +51,7 @@ module.exports = {
                 },
             },
             height: {
-                sidebar: 'calc(100vh - 68px)',
+                sidebar: 'calc(100vh - 70px)',
             },
             fontFamily: {
                 sans: ['Inter, Helvetica, "sans-serif"', ...defaultTheme.fontFamily.sans],

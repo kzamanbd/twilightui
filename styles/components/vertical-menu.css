@@ -57,7 +57,7 @@
         @apply lg:block;
     }
     .tw-menu-content {
-        @apply h-[calc(100vh_-_118px)] overflow-y-auto overflow-x-hidden;
+        @apply h-[calc(100vh_-_70px)] overflow-y-auto overflow-x-hidden;
     }
     .tw-nav-menu {
         @apply mt-2 space-y-1 px-4 pb-2;
@@ -117,7 +117,7 @@
         @apply lg:block lg:opacity-100 !important;
     }
     .documents-button {
-        @apply flex h-12 items-center px-4;
+        @apply flex h-12 items-center;
     }
     .documents-link {
         @apply btn-primary mb-0 flex w-full items-center justify-center justify-items-end py-2;
