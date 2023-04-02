@@ -1020,11 +1020,9 @@
                                                 class="flex w-full items-center p-4 hover:bg-gray-100 dark:hover:bg-[#192A3A]"
                                                 :class="{'bg-gray-100 dark:bg-[#192A3A]' : selectedCoinObj.title === item.title}"
                                                 @click="selectBitCoin(item)">
-                                                <div class="ltr:pr-4 rtl:pl-4">
+                                                <div class="pr-4">
                                                     <div class="flex items-baseline font-semibold">
-                                                        <div
-                                                            class="text-md ltr:mr-1 rtl:ml-1"
-                                                            x-text="item.title"></div>
+                                                        <div class="text-md mr-1" x-text="item.title"></div>
                                                         <div
                                                             class="text-white-dark text-xs uppercase"
                                                             x-text="`(${item.alias})`"></div>
@@ -1033,7 +1031,7 @@
                                                         class="mt-2 flex items-center"
                                                         :class="[item.isUp ? 'text-success' : 'text-danger']">
                                                         <div
-                                                            class="min-w-20 text-xl ltr:mr-3 rtl:ml-3"
+                                                            class="min-w-20 mr-3 text-xl"
                                                             x-text="`$${item.value}`"></div>
                                                         <span>
                                                             <svg
@@ -1066,10 +1064,10 @@
                                     <div class="card flex-1 p-0">
                                         <div
                                             class="flex-wrap items-center border-b border-[#ebedf2] p-4 dark:border-[#191e3a] md:flex">
-                                            <div class="flex flex-1 items-start ltr:pr-4 rtl:pl-4">
+                                            <div class="flex flex-1 items-start pr-4">
                                                 <button
                                                     type="button"
-                                                    class="block hover:text-primary ltr:mr-5 rtl:ml-5 xl:hidden"
+                                                    class="mr-5 block hover:text-primary xl:hidden"
                                                     @click="isShowCryptoMenu = !isShowCryptoMenu">
                                                     <svg
                                                         width="24"
@@ -1099,7 +1097,7 @@
                                                 <div>
                                                     <div class="flex items-center">
                                                         <div
-                                                            class="text-md font-semibold ltr:mr-1 rtl:ml-1"
+                                                            class="text-md mr-1 font-semibold"
                                                             x-text="selectedCoinObj.title">
                                                             Bitcoin
                                                         </div>
@@ -1113,7 +1111,7 @@
                                                         class="mt-2 flex items-center text-success"
                                                         :class="selectedCoinObj.isUp ? 'text-success' : 'text-danger'">
                                                         <div
-                                                            class="min-w-20 text-2xl ltr:mr-3 rtl:ml-3"
+                                                            class="min-w-20 mr-3 text-2xl"
                                                             x-text="`$${selectedCoinObj.value}`">
                                                             $170.46
                                                         </div>
@@ -1137,22 +1135,22 @@
                                                 </div>
                                             </div>
                                             <ul
-                                                class="text-white-dark mt-5 grid grid-cols-2 divide-[#ebedf2] font-semibold rtl:divide-x-reverse dark:divide-[#253b5c] sm:mt-0 sm:grid-cols-4 sm:divide-x ltr:md:ml-auto rtl:md:mr-auto">
+                                                class="text-white-dark mt-5 grid grid-cols-2 divide-[#ebedf2] font-semibold dark:divide-[#253b5c] sm:mt-0 sm:grid-cols-4 sm:divide-x md:ml-auto">
                                                 <li class="px-4 py-1">
                                                     Market Cap
                                                     <span
                                                         class="dark:text-white-light mt-1.5 block text-lg text-black"
-                                                        x-text="`$${selectedCoinObj.marketcap}B`"
-                                                        >$148.75B</span
-                                                    >
+                                                        x-text="`$${selectedCoinObj.marketcap}B`">
+                                                        $148.75B
+                                                    </span>
                                                 </li>
                                                 <li class="px-4 py-1">
                                                     Volume
                                                     <span
                                                         class="dark:text-white-light mt-1.5 block text-lg text-black"
-                                                        x-text="`$${selectedCoinObj.volume}B`"
-                                                        >$22.9B</span
-                                                    >
+                                                        x-text="`$${selectedCoinObj.volume}B`">
+                                                        $22.9B
+                                                    </span>
                                                 </li>
                                                 <li class="px-4 py-1">
                                                     Supply
@@ -1199,13 +1197,13 @@
                                                     <input
                                                         type="text"
                                                         placeholder
-                                                        class="form-input ltr:rounded-r-none ltr:border-r-0 rtl:rounded-l-none rtl:border-l-0" />
+                                                        class="form-input rounded-r-none border-r-0" />
                                                     <div
                                                         x-data="dropdown"
                                                         @click.outside="open = false"
                                                         class="dropdown">
                                                         <div
-                                                            class="flex cursor-pointer items-center justify-center gap-1 rounded-none border bg-[#f1f2f3] px-3 py-2 font-semibold ltr:rounded-r-md rtl:rounded-l-md dark:border-[#253b5c] dark:bg-[#1b2e4b]"
+                                                            class="flex cursor-pointer items-center justify-center gap-1 rounded-none rounded-r-md border bg-[#f1f2f3] px-3 py-2 font-semibold dark:border-[#253b5c] dark:bg-[#1b2e4b]"
                                                             @click="toggle">
                                                             BTC
 
@@ -1224,38 +1222,26 @@
                                                                     stroke-linejoin="round"></path>
                                                             </svg>
                                                         </div>
-                                                        <ul
-                                                            x-show="open"
-                                                            x-transition
-                                                            x-transition.duration.300ms
-                                                            class="absolute right-0 z-40 mt-1 min-w-[120px] rounded bg-white px-2 shadow"
-                                                            style="display: none">
-                                                            <li
-                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                        <ul x-show="open" x-transition x-transition.duration.300ms>
+                                                            <li>
                                                                 <a href="javascript:;" @click="toggle">BTC</a>
                                                             </li>
-                                                            <li
-                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                            <li>
                                                                 <a href="javascript:;" @click="toggle">ETH</a>
                                                             </li>
-                                                            <li
-                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                            <li>
                                                                 <a href="javascript:;" @click="toggle">ZEC</a>
                                                             </li>
-                                                            <li
-                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                            <li>
                                                                 <a href="javascript:;" @click="toggle">LTC</a>
                                                             </li>
-                                                            <li
-                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                            <li>
                                                                 <a href="javascript:;" @click="toggle">BNB</a>
                                                             </li>
-                                                            <li
-                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                            <li>
                                                                 <a href="javascript:;" @click="toggle">SOL</a>
                                                             </li>
-                                                            <li
-                                                                class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
+                                                            <li>
                                                                 <a href="javascript:;" @click="toggle">USDT</a>
                                                             </li>
                                                         </ul>

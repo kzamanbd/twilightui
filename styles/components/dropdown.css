@@ -1,0 +1,26 @@
+@layer components {
+    .dropdown {
+        @apply relative;
+    }
+    .dropdown > button {
+        @apply flex;
+    }
+    .dropdown ul {
+        @apply absolute right-0 z-10 mt-1 w-32 rounded-md border border-gray-200 bg-white py-2 shadow-lg outline-none;
+    }
+    .dark .dropdown ul {
+        background-color: rgb(27 46 75 / 1);
+        color: rgb(136 142 168 / 1);
+    }
+    .dropdown ul li > a,
+    .dropdown ul li > button {
+        @apply flex items-center px-4 py-2 text-sm;
+    }
+    .dropdown ul li > a:hover,
+    .dropdown ul li > button:hover {
+        @apply bg-[#4361ee1a] text-primary;
+    }
+    .dropdown ul li > button {
+        @apply w-full;
+    }
+}

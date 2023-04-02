@@ -16,6 +16,7 @@
 @import './components/forms.css';
 @import './components/alerts.css';
 @import './components/breadcrumb.css';
+@import './components/dropdown.css';
 
 /* Start Pages */
 @import './components/pages/dashboard.css';
