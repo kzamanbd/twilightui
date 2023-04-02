@@ -2,10 +2,16 @@
     .dropdown {
         @apply relative;
     }
+    .dropdown-toggle,
     .dropdown > button {
-        @apply flex;
+        @apply flex items-center justify-center;
     }
-    .dropdown ul {
+    .dropdown > button .material-icons-outlined,
+    .dropdown > .dropdown-toggle .material-icons-outlined {
+        @apply text-lg/none;
+    }
+    .dropdown ul,
+    .dorpdown-menu {
         @apply absolute right-0 z-10 mt-1 w-32 rounded-md border border-gray-200 bg-white py-2 shadow-lg outline-none;
     }
     .dark .dropdown ul {
@@ -18,7 +24,7 @@
     }
     .dropdown ul li > a:hover,
     .dropdown ul li > button:hover {
-        @apply bg-[#4361ee1a] text-primary;
+        @apply bg-gray-100 text-primary dark:bg-gray-700;
     }
     .dropdown ul li > button {
         @apply w-full;
