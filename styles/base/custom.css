@@ -1,8 +1,4 @@
 @layer base {
-    html,
-    body {
-        @apply h-screen overflow-x-hidden;
-    }
     body:has(> .boxed-layout) {
         @apply bg-gray-50;
     }
