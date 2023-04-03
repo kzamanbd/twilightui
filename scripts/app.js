@@ -376,21 +376,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /********* dropdown common js *********/
-    var dropdownElem = document.querySelectorAll('.dropdown');
-    var dropupElem = document.querySelectorAll('.dropup');
-    var dropStartElem = document.querySelectorAll('.dropstart');
-    var dropendElem = document.querySelectorAll('.dropend');
-    var isShowDropMenu = false;
-    var isMenuInside = false;
-    // dropdown event
-    dropdownEvent(dropdownElem, 'bottom-start');
-    // dropup event
-    dropdownEvent(dropupElem, 'top-start');
-    // dropstart event
-    dropdownEvent(dropStartElem, 'left-start');
-    // dropend event
-    dropdownEvent(dropendElem, 'right-start');
-
     function dropdownEvent(elem, place) {
         Array.from(elem).forEach(function (item) {
             item.querySelectorAll('.dropdown-toggle').forEach(function (subitem) {
@@ -420,6 +405,21 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    var dropdownElem = document.querySelectorAll('.dropdown');
+    var dropupElem = document.querySelectorAll('.dropup');
+    var dropStartElem = document.querySelectorAll('.dropstart');
+    var dropendElem = document.querySelectorAll('.dropend');
+    var isShowDropMenu = false;
+    var isMenuInside = false;
+    // dropdown event
+    dropdownEvent(dropdownElem, 'bottom-start');
+    // dropup event
+    dropdownEvent(dropupElem, 'top-start');
+    // dropstart event
+    dropdownEvent(dropStartElem, 'left-start');
+    // dropend event
+    dropdownEvent(dropendElem, 'right-start');
 
     function dismissDropdownMenu() {
         Array.from(document.querySelectorAll('.dropdown-menu')).forEach(function (item) {
@@ -476,6 +476,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // specific actions, miming bootstraps attributes
     const triggers = Array.from(document.querySelectorAll('[data-toggle="collapse"]'));
 
+    const fnMap = {
+        show: 'add',
+        hide: 'remove',
+        toggle: 'toggle',
+    };
+    const collapse = (selector, cmd) => {
+        const targets = Array.from(document.querySelectorAll(selector));
+        targets.forEach(target => {
+            target.classList[fnMap[cmd]]('show');
+        });
+    };
+
     window.addEventListener(
         'click',
         ev => {
@@ -487,18 +499,6 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         false,
     );
-
-    const fnmap = {
-        toggle: 'toggle',
-        show: 'add',
-        hide: 'remove',
-    };
-    const collapse = (selector, cmd) => {
-        const targets = Array.from(document.querySelectorAll(selector));
-        targets.forEach(target => {
-            target.classList[fnmap[cmd]]('show');
-        });
-    };
 
     /********* modal common js *********/
     // openModal
