@@ -15,6 +15,10 @@ module.exports = {
                     primary: '#1E1E2D',
                     secondary: '#151521',
                 },
+                white: {
+                    DEFAULT: '#FFFFFF',
+                    light: '#E0E6ED',
+                },
                 light: {
                     gray: '#F5F8FA',
                 },
