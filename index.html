@@ -21,7 +21,7 @@
                 <div @click="$store.app.toggleVMenu()" class="menu-shadow" x-show="$store.app.sidebar"></div>
                 <!-- vertical-menu -->
                 <aside class="vertical-menu">
-                    <div class="vertical-content">
+                    <div class="vertical-content" :class="[$store.app.semiDark && 'semi-dark']">
                         <!-- Menu Logo -->
                         <div id="brand-logo" class="tw-brand-logo">
                             <a href="/index.html" class="flex items-center">

@@ -26,6 +26,9 @@
 @import 'tailwindcss/utilities';
 
 @layer utilities {
+    :root {
+        --color-primary: #009ef7;
+    }
     /* Chrome, Safari and Opera */
     .no-scrollbar::-webkit-scrollbar {
         display: none;
