@@ -12,7 +12,7 @@
     }
     .dropdown ul,
     .dorpdown-menu {
-        @apply absolute right-0 z-10 mt-1 w-32 rounded-md border border-gray-200 bg-white py-2 shadow-lg outline-none;
+        @apply absolute right-0 z-10 mt-1 min-w-[130px] rounded-md border border-gray-200 bg-white py-2 shadow-lg outline-none;
     }
     .dark .dropdown ul {
         background-color: rgb(27 46 75 / 1);
