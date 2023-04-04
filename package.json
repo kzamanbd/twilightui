@@ -11,6 +11,7 @@
     "license": "MIT",
     "devDependencies": {
         "@alpinejs/collapse": "^3.12.0",
+        "@alpinejs/focus": "^3.12.0",
         "@alpinejs/persist": "^3.12.0",
         "@popperjs/core": "^2.11.7",
         "@tailwindcss/aspect-ratio": "^0.4.0",
