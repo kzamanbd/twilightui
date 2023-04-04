@@ -779,7 +779,7 @@
             <div class="twilight-body">
                 <header class="top-header" :class="[$store.app.navbar]">
                     <!-- sidebar toggle button -->
-                    <div class="ml-6 flex items-center">
+                    <div class="flex items-center">
                         <button
                             type="button"
                             @click="$store.app.toggleVMenu()"
@@ -796,7 +796,7 @@
                         </button>
                     </div>
 
-                    <div class="flex items-center space-x-4 pr-6">
+                    <div class="flex items-center space-x-2">
                         <button type="button" @click="$store.app.toggleTheme()" class="header-item" aria-label="Themes">
                             <span x-show="$store.app.theme == 'dark'" class="material-icons-outlined"> dark_mode </span>
                             <span x-show="$store.app.theme == 'light'" class="material-icons-outlined">
@@ -966,27 +966,25 @@
                     </div>
                 </header>
 
-                <main class="animate__animated flex-auto" :class="[$store.app.animation]">
-                    <div class="twilight-content">
-                        <!-- Start:Breadcrumb -->
-                        <nav class="breadcrumb">
-                            <div class="left-link">
-                                <ol class="breadcrumb-nav">
-                                    <li class="inline-flex items-center">
-                                        <a href="/" class="breadcrumb-item"> Dashboard </a>
-                                    </li>
+                <main class="animate__animated twilight-content" :class="[$store.app.animation]">
+                    <!-- Start:Breadcrumb -->
+                    <nav class="breadcrumb">
+                        <div class="left-link">
+                            <ol class="breadcrumb-nav">
+                                <li class="inline-flex items-center">
+                                    <a href="/" class="breadcrumb-item"> Dashboard </a>
+                                </li>
 
-                                    <li aria-current="page">
-                                        <div class="flex items-center">
-                                            <div class="material-icons rotate-180 text-lg">navigate_before</div>
-                                            <span class="breadcrumb-item-current"> Default </span>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                        </nav>
-                        <!-- End:Breadcrumb -->
-                    </div>
+                                <li aria-current="page">
+                                    <div class="flex items-center">
+                                        <div class="material-icons rotate-180 text-lg">navigate_before</div>
+                                        <span class="breadcrumb-item-current"> Default </span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </nav>
+                    <!-- End:Breadcrumb -->
                 </main>
 
                 <footer class="footer">

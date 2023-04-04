@@ -794,7 +794,7 @@
             <div class="twilight-body">
                 <header class="top-header" :class="[$store.app.navbar]">
                     <!-- sidebar toggle button -->
-                    <div class="ml-6 flex items-center">
+                    <div class="flex items-center">
                         <button
                             type="button"
                             @click="$store.app.toggleVMenu()"
@@ -811,7 +811,7 @@
                         </button>
                     </div>
 
-                    <div class="flex items-center space-x-4 pr-6">
+                    <div class="flex items-center space-x-2">
                         <button type="button" @click="$store.app.toggleTheme()" class="header-item" aria-label="Themes">
                             <span x-show="$store.app.theme == 'dark'" class="material-icons-outlined"> dark_mode </span>
                             <span x-show="$store.app.theme == 'light'" class="material-icons-outlined">
@@ -981,297 +981,291 @@
                     </div>
                 </header>
 
-                <main class="animate__animated flex-auto" :class="[$store.app.animation]">
-                    <div class="twilight-content">
-                        <!-- Start:Breadcrumb -->
-                        <nav class="breadcrumb">
-                            <div class="left-link">
-                                <ol class="breadcrumb-nav">
-                                    <li class="inline-flex items-center">
-                                        <a href="/" class="breadcrumb-item"> Dashboard </a>
-                                    </li>
+                <main class="animate__animated twilight-content" :class="[$store.app.animation]">
+                    <!-- Start:Breadcrumb -->
+                    <nav class="breadcrumb">
+                        <div class="left-link">
+                            <ol class="breadcrumb-nav">
+                                <li class="inline-flex items-center">
+                                    <a href="/" class="breadcrumb-item"> Dashboard </a>
+                                </li>
 
-                                    <li aria-current="page">
-                                        <div class="flex items-center">
-                                            <div class="material-icons rotate-180 text-lg">navigate_before</div>
-                                            <span class="breadcrumb-item-current"> Default </span>
-                                        </div>
-                                    </li>
-                                </ol>
-                            </div>
-                        </nav>
-                        <!-- End:Breadcrumb -->
-
-                        <div class="grid grid-cols-1 gap-6 xl:grid-cols-2">
-                            <div class="grid gap-6 xl:grid-flow-row">
-                                <!-- Previous Statement -->
-                                <div class="card card-body overflow-hidden">
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <div class="text-lg font-bold">Previous Statement</div>
-                                            <div class="text-success">Paid on June 27, 2022</div>
-                                        </div>
-                                        <div x-data="dropdown" @click.outside="open = false" class="dropdown">
-                                            <a href="javascript:;" @click="toggle">
-                                                <svg
-                                                    width="24"
-                                                    height="24"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-5 w-5 opacity-70 hover:opacity-80">
-                                                    <circle
-                                                        cx="5"
-                                                        cy="12"
-                                                        r="2"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"></circle>
-                                                    <circle
-                                                        opacity="0.5"
-                                                        cx="12"
-                                                        cy="12"
-                                                        r="2"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"></circle>
-                                                    <circle
-                                                        cx="19"
-                                                        cy="12"
-                                                        r="2"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"></circle>
-                                                </svg>
-                                            </a>
-                                            <ul
-                                                x-show="open"
-                                                x-transition
-                                                x-transition.duration.300ms
-                                                class="right-0"
-                                                style="display: none">
-                                                <li><a href="javascript:;" @click="toggle">View Report</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Edit Report</a></li>
-                                            </ul>
-                                        </div>
+                                <li aria-current="page">
+                                    <div class="flex items-center">
+                                        <div class="material-icons rotate-180 text-lg">navigate_before</div>
+                                        <span class="breadcrumb-item-current"> Default </span>
                                     </div>
-                                    <div class="relative mt-10">
-                                        <div class="absolute -bottom-12 -right-12 h-24 w-24">
+                                </li>
+                            </ol>
+                        </div>
+                    </nav>
+                    <!-- End:Breadcrumb -->
+
+                    <div class="grid grid-cols-1 gap-6 xl:grid-cols-2">
+                        <div class="grid gap-6 xl:grid-flow-row">
+                            <!-- Previous Statement -->
+                            <div class="card card-body overflow-hidden">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <div class="text-lg font-bold">Previous Statement</div>
+                                        <div class="text-success">Paid on June 27, 2022</div>
+                                    </div>
+                                    <div x-data="dropdown" @click.outside="open = false" class="dropdown">
+                                        <a href="javascript:;" @click="toggle">
                                             <svg
                                                 width="24"
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                class="h-full w-full text-success opacity-20">
+                                                class="h-5 w-5 opacity-70 hover:opacity-80">
+                                                <circle
+                                                    cx="5"
+                                                    cy="12"
+                                                    r="2"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"></circle>
                                                 <circle
                                                     opacity="0.5"
                                                     cx="12"
                                                     cy="12"
-                                                    r="10"
+                                                    r="2"
                                                     stroke="currentColor"
                                                     stroke-width="1.5"></circle>
-                                                <path
-                                                    d="M8.5 12.5L10.5 14.5L15.5 9.5"
+                                                <circle
+                                                    cx="19"
+                                                    cy="12"
+                                                    r="2"
                                                     stroke="currentColor"
-                                                    stroke-width="1.5"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"></path>
+                                                    stroke-width="1.5"></circle>
                                             </svg>
+                                        </a>
+                                        <ul
+                                            x-show="open"
+                                            x-transition
+                                            x-transition.duration.300ms
+                                            class="right-0"
+                                            style="display: none">
+                                            <li><a href="javascript:;" @click="toggle">View Report</a></li>
+                                            <li><a href="javascript:;" @click="toggle">Edit Report</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="relative mt-10">
+                                    <div class="absolute -bottom-12 -right-12 h-24 w-24">
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-full w-full text-success opacity-20">
+                                            <circle
+                                                opacity="0.5"
+                                                cx="12"
+                                                cy="12"
+                                                r="10"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"></circle>
+                                            <path
+                                                d="M8.5 12.5L10.5 14.5L15.5 9.5"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
+                                        <div>
+                                            <div class="text-primary">Card Limit</div>
+                                            <div class="mt-2 text-2xl font-semibold">$50,000.00</div>
                                         </div>
-                                        <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
-                                            <div>
-                                                <div class="text-primary">Card Limit</div>
-                                                <div class="mt-2 text-2xl font-semibold">$50,000.00</div>
-                                            </div>
-                                            <div>
-                                                <div class="text-primary">Spent</div>
-                                                <div class="mt-2 text-2xl font-semibold">$15,000.00</div>
-                                            </div>
-                                            <div>
-                                                <div class="text-primary">Minimum</div>
-                                                <div class="mt-2 text-2xl font-semibold">$2,500.00</div>
-                                            </div>
+                                        <div>
+                                            <div class="text-primary">Spent</div>
+                                            <div class="mt-2 text-2xl font-semibold">$15,000.00</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-primary">Minimum</div>
+                                            <div class="mt-2 text-2xl font-semibold">$2,500.00</div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <!-- Current Statement -->
-                                <div class="card card-body overflow-hidden">
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <div class="text-lg font-bold">Current Statement</div>
-                                            <div class="text-danger">Must be paid before July 27, 2022</div>
-                                        </div>
-                                        <div x-data="dropdown" @click.outside="open = false" class="dropdown">
-                                            <a href="javascript:;" @click="toggle">
-                                                <svg
-                                                    width="24"
-                                                    height="24"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-5 w-5 opacity-70 hover:opacity-80">
-                                                    <circle
-                                                        cx="5"
-                                                        cy="12"
-                                                        r="2"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"></circle>
-                                                    <circle
-                                                        opacity="0.5"
-                                                        cx="12"
-                                                        cy="12"
-                                                        r="2"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"></circle>
-                                                    <circle
-                                                        cx="19"
-                                                        cy="12"
-                                                        r="2"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"></circle>
-                                                </svg>
-                                            </a>
-                                            <ul
-                                                x-show="open"
-                                                x-transition
-                                                x-transition.duration.300ms
-                                                class="right-0"
-                                                style="display: none">
-                                                <li><a href="javascript:;" @click="toggle">View Report</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Edit Report</a></li>
-                                            </ul>
-                                        </div>
+                            <!-- Current Statement -->
+                            <div class="card card-body overflow-hidden">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <div class="text-lg font-bold">Current Statement</div>
+                                        <div class="text-danger">Must be paid before July 27, 2022</div>
                                     </div>
-                                    <div class="relative mt-10">
-                                        <div class="absolute -bottom-12 -right-12 h-24 w-24">
+                                    <div x-data="dropdown" @click.outside="open = false" class="dropdown">
+                                        <a href="javascript:;" @click="toggle">
                                             <svg
                                                 width="24"
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                class="h-full w-24 text-danger opacity-20">
+                                                class="h-5 w-5 opacity-70 hover:opacity-80">
+                                                <circle
+                                                    cx="5"
+                                                    cy="12"
+                                                    r="2"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"></circle>
                                                 <circle
                                                     opacity="0.5"
                                                     cx="12"
                                                     cy="12"
-                                                    r="10"
+                                                    r="2"
                                                     stroke="currentColor"
                                                     stroke-width="1.5"></circle>
-                                                <path
-                                                    d="M12 7V13"
+                                                <circle
+                                                    cx="19"
+                                                    cy="12"
+                                                    r="2"
                                                     stroke="currentColor"
-                                                    stroke-width="1.5"
-                                                    stroke-linecap="round"></path>
-                                                <circle cx="12" cy="16" r="1" fill="currentColor"></circle>
+                                                    stroke-width="1.5"></circle>
                                             </svg>
-                                        </div>
+                                        </a>
+                                        <ul
+                                            x-show="open"
+                                            x-transition
+                                            x-transition.duration.300ms
+                                            class="right-0"
+                                            style="display: none">
+                                            <li><a href="javascript:;" @click="toggle">View Report</a></li>
+                                            <li><a href="javascript:;" @click="toggle">Edit Report</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="relative mt-10">
+                                    <div class="absolute -bottom-12 -right-12 h-24 w-24">
+                                        <svg
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-full w-24 text-danger opacity-20">
+                                            <circle
+                                                opacity="0.5"
+                                                cx="12"
+                                                cy="12"
+                                                r="10"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"></circle>
+                                            <path
+                                                d="M12 7V13"
+                                                stroke="currentColor"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"></path>
+                                            <circle cx="12" cy="16" r="1" fill="currentColor"></circle>
+                                        </svg>
+                                    </div>
 
-                                        <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
-                                            <div>
-                                                <div class="text-primary">Card Limit</div>
-                                                <div class="mt-2 text-2xl font-semibold">$50,000.00</div>
-                                            </div>
-                                            <div>
-                                                <div class="text-primary">Spent</div>
-                                                <div class="mt-2 text-2xl font-semibold">$30,500.00</div>
-                                            </div>
-                                            <div>
-                                                <div class="text-primary">Minimum</div>
-                                                <div class="mt-2 text-2xl font-semibold">$8,000.00</div>
-                                            </div>
+                                    <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
+                                        <div>
+                                            <div class="text-primary">Card Limit</div>
+                                            <div class="mt-2 text-2xl font-semibold">$50,000.00</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-primary">Spent</div>
+                                            <div class="mt-2 text-2xl font-semibold">$30,500.00</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-primary">Minimum</div>
+                                            <div class="mt-2 text-2xl font-semibold">$8,000.00</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Recent Transactions -->
-                            <div class="card card-body">
-                                <div class="mb-5 text-lg font-bold">Recent Transactions</div>
-                                <div class="table-responsive">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th class="rounded-l-md">ID</th>
-                                                <th>DATE</th>
-                                                <th>NAME</th>
-                                                <th>AMOUNT</th>
-                                                <th class="rounded-r-md text-center">STATUS</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="font-semibold">#01</td>
-                                                <td class="whitespace-nowrap">Oct 08, 2021</td>
-                                                <td class="whitespace-nowrap">Eric Page</td>
-                                                <td>$1,358.75</td>
-                                                <td class="text-center">
-                                                    <span
-                                                        class="badge rounded-full bg-success/20 text-success hover:top-0"
-                                                        >Completed</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="font-semibold">#02</td>
-                                                <td class="whitespace-nowrap">Dec 18, 2021</td>
-                                                <td class="whitespace-nowrap">Nita Parr</td>
-                                                <td>-$1,042.82</td>
-                                                <td class="text-center">
-                                                    <span class="badge rounded-full bg-info/20 text-info hover:top-0"
-                                                        >In Process</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="font-semibold">#03</td>
-                                                <td class="whitespace-nowrap">Dec 25, 2021</td>
-                                                <td class="whitespace-nowrap">Carl Bell</td>
-                                                <td>$1,828.16</td>
-                                                <td class="text-center">
-                                                    <span
-                                                        class="badge rounded-full bg-danger/20 text-danger hover:top-0"
-                                                        >Pending</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="font-semibold">#04</td>
-                                                <td class="whitespace-nowrap">Nov 29, 2021</td>
-                                                <td class="whitespace-nowrap">Dan Hart</td>
-                                                <td>$1,647.55</td>
-                                                <td class="text-center">
-                                                    <span
-                                                        class="badge rounded-full bg-success/20 text-success hover:top-0"
-                                                        >Completed</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="font-semibold">#05</td>
-                                                <td class="whitespace-nowrap">Nov 24, 2021</td>
-                                                <td class="whitespace-nowrap">Jake Ross</td>
-                                                <td>$927.43</td>
-                                                <td class="text-center">
-                                                    <span
-                                                        class="badge rounded-full bg-success/20 text-success hover:top-0"
-                                                        >Completed</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="font-semibold">#06</td>
-                                                <td class="whitespace-nowrap">Jan 26, 2022</td>
-                                                <td class="whitespace-nowrap">Anna Bell</td>
-                                                <td>$250.00</td>
-                                                <td class="text-center">
-                                                    <span class="badge rounded-full bg-info/20 text-info hover:top-0"
-                                                        >In Process</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                        <!-- Recent Transactions -->
+                        <div class="card card-body">
+                            <div class="mb-5 text-lg font-bold">Recent Transactions</div>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="rounded-l-md">ID</th>
+                                            <th>DATE</th>
+                                            <th>NAME</th>
+                                            <th>AMOUNT</th>
+                                            <th class="rounded-r-md text-center">STATUS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="font-semibold">#01</td>
+                                            <td class="whitespace-nowrap">Oct 08, 2021</td>
+                                            <td class="whitespace-nowrap">Eric Page</td>
+                                            <td>$1,358.75</td>
+                                            <td class="text-center">
+                                                <span class="badge rounded-full bg-success/20 text-success hover:top-0"
+                                                    >Completed</span
+                                                >
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-semibold">#02</td>
+                                            <td class="whitespace-nowrap">Dec 18, 2021</td>
+                                            <td class="whitespace-nowrap">Nita Parr</td>
+                                            <td>-$1,042.82</td>
+                                            <td class="text-center">
+                                                <span class="badge rounded-full bg-info/20 text-info hover:top-0"
+                                                    >In Process</span
+                                                >
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-semibold">#03</td>
+                                            <td class="whitespace-nowrap">Dec 25, 2021</td>
+                                            <td class="whitespace-nowrap">Carl Bell</td>
+                                            <td>$1,828.16</td>
+                                            <td class="text-center">
+                                                <span class="badge rounded-full bg-danger/20 text-danger hover:top-0"
+                                                    >Pending</span
+                                                >
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-semibold">#04</td>
+                                            <td class="whitespace-nowrap">Nov 29, 2021</td>
+                                            <td class="whitespace-nowrap">Dan Hart</td>
+                                            <td>$1,647.55</td>
+                                            <td class="text-center">
+                                                <span class="badge rounded-full bg-success/20 text-success hover:top-0"
+                                                    >Completed</span
+                                                >
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-semibold">#05</td>
+                                            <td class="whitespace-nowrap">Nov 24, 2021</td>
+                                            <td class="whitespace-nowrap">Jake Ross</td>
+                                            <td>$927.43</td>
+                                            <td class="text-center">
+                                                <span class="badge rounded-full bg-success/20 text-success hover:top-0"
+                                                    >Completed</span
+                                                >
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="font-semibold">#06</td>
+                                            <td class="whitespace-nowrap">Jan 26, 2022</td>
+                                            <td class="whitespace-nowrap">Anna Bell</td>
+                                            <td>$250.00</td>
+                                            <td class="text-center">
+                                                <span class="badge rounded-full bg-info/20 text-info hover:top-0"
+                                                    >In Process</span
+                                                >
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

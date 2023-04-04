@@ -24,7 +24,7 @@
         @apply lg:ml-0;
     }
     .twilight-content {
-        @apply relative mx-auto bg-light-gray px-6 pb-4 pt-2 dark:bg-dark-secondary dark:text-gray-300 md:pt-4;
+        @apply relative flex-auto overflow-x-hidden bg-light-gray px-6 pb-4 pt-2 dark:bg-dark-secondary dark:text-gray-300 md:pt-4;
     }
 
     .app-customizer {
