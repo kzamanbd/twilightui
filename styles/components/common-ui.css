@@ -1,0 +1,8 @@
+@layer components {
+    .modal {
+        @apply absolute inset-0 z-[999] hidden overflow-y-auto bg-[black]/60;
+    }
+    .modal-dialog {
+        @apply flex items-start justify-center px-4;
+    }
+}

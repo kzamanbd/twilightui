@@ -7,6 +7,7 @@
 @import 'tailwindcss/components';
 /* custom components */
 @import './components/base.css';
+@import './components/common-ui.css';
 @import './components/header.css';
 @import './components/vertical-menu.css';
 @import './components/footer.css';
