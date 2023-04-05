@@ -86,7 +86,7 @@
         @apply dark--text flex items-center rounded-md hover:text-gray-900 dark:hover:text-gray-100;
     }
     .menu-bullet-dot {
-        @apply ml-2 mr-1 h-1.5 w-1.5 rounded-full bg-primary;
+        @apply ml-2 mr-0.5 h-0.5 w-2 bg-primary;
     }
     .tw-dropdown-circle {
         @apply flex h-4 w-4 items-center justify-center text-[10px] leading-[unset];
