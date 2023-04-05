@@ -7,19 +7,16 @@
     }
     .toggle-menu .vertical-menu,
     .collapsible-vertical:not(.toggle-menu) .vertical-menu {
-        @apply fixed inset-y-0 left-0 z-30 lg:w-[70px] lg:hover:w-64 !important;
+        @apply fixed inset-y-0 left-0 z-30 lg:w-[70px] lg:hover:w-64;
     }
     .toggle-menu .vertical-menu {
-        @apply left-0 w-64 shadow-lg !important;
+        @apply left-0 w-64 shadow-lg;
     }
     .vertical.toggle-menu .vertical-menu {
         @apply lg:-left-64 lg:shadow-none !important;
     }
     .collapsible-vertical:not(.toggle-menu) .vertical-menu {
-        @apply -left-64 shadow-none lg:left-0 lg:shadow-lg !important;
-    }
-    .boxed-layout .vertical-menu {
-        @apply lg:left-auto;
+        @apply -left-64 shadow-none lg:left-0 lg:shadow-lg;
     }
     .menu-shadow {
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
@@ -130,6 +127,10 @@
     .vertical.toggle-menu .vertical-menu .documents-link .btn-label,
     .vertical.toggle-menu .vertical-menu .tw-nav-menu .tw-link-label {
         @apply lg:block lg:opacity-100 !important;
+    }
+    /* boxed layout */
+    .boxed-layout .vertical-menu {
+        @apply lg:left-auto !important;
     }
     .documents-button {
         @apply flex h-12 items-center;
