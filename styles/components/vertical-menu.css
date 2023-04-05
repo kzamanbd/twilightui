@@ -3,7 +3,7 @@
         @apply fixed inset-y-0 -left-64 z-30 w-64 border-gray-200 shadow-none duration-300 ease-in-out lg:left-0 lg:shadow-lg;
     }
     .vertical-content {
-        @apply h-full bg-white dark:bg-dark-primary;
+        @apply h-full bg-white dark:bg-dark-primary [&.semi-dark]:bg-dark-primary;
     }
     .toggle-menu .vertical-menu,
     .collapsible-vertical:not(.toggle-menu) .vertical-menu {
@@ -27,14 +27,23 @@
     .collapse-icon {
         @apply flex h-8 w-8 items-center rounded-full transition duration-300 hover:bg-gray-500/10 rtl:rotate-180;
     }
+    .semi-dark .collapse-icon svg {
+        @apply fill-gray-300;
+    }
     .tw-brand-logo {
         @apply relative flex h-[70px] items-center justify-between border-b px-4 py-2 dark:border-b-gray-700;
+    }
+    .semi-dark .tw-brand-logo {
+        @apply border-b-gray-700;
     }
     .brand-logo-image {
         @apply h-10 w-10;
     }
     .app-name {
         @apply dark--text visible mx-2 text-xl font-semibold opacity-100 transition-opacity duration-500 ease-in-out;
+    }
+    .semi-dark .app-name {
+        @apply text-gray-400;
     }
     .vertical.toggle-menu .vertical-menu:not(:hover) .app-name,
     .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .app-name {
@@ -70,11 +79,17 @@
         @apply flex items-center p-2.5 hover:bg-light-gray hover:text-primary;
         @apply rounded-md font-normal dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
+    .semi-dark .tw-menu-link {
+        @apply text-gray-400 hover:bg-gray-700 hover:text-gray-100;
+    }
     .tw-link-active {
         @apply bg-light-gray text-primary dark:bg-gray-700 dark:text-gray-300;
     }
     .tw-menu-link.active {
         @apply tw-link-active dark:hover:text-gray-200;
+    }
+    .semi-dark .tw-menu-link.active {
+        @apply bg-gray-700 text-gray-100;
     }
     .tw-link-label {
         @apply mx-2 truncate text-sm font-medium;
