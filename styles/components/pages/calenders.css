@@ -1,0 +1,8 @@
+@layer components {
+    .fc-button-group {
+        @apply space-x-2;
+    }
+    button.fc-next-button.fc-button.fc-button-primary {
+        @apply bg-blue-500 hover:bg-blue-700;
+    }
+}

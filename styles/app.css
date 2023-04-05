@@ -22,6 +22,7 @@
 /* Start Pages */
 @import './components/pages/dashboard.css';
 @import './components/pages/login.css';
+@import './components/pages/calenders.css';
 
 /* utilities */
 @import 'tailwindcss/utilities';
