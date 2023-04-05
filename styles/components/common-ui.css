@@ -1,8 +1,8 @@
 @layer components {
     .modal {
-        @apply absolute inset-0 z-[999] hidden overflow-y-auto bg-[black]/60;
+        @apply fixed inset-0 z-[999] overflow-y-auto bg-white/60 supports-[backdrop-filter]:bg-black/60 supports-[backdrop-filter]:backdrop-blur;
     }
     .modal-dialog {
-        @apply flex items-start justify-center px-4;
+        @apply flex min-h-full items-start justify-center px-4;
     }
 }
