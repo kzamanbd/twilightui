@@ -85,37 +85,34 @@
                         <form class="mt-4">
                             <label class="block">
                                 <span class="form-label">Email</span>
-                                <input type="email" name="email" class="form-control" placeholder="Email Address" />
+                                <input type="email" name="email" class="form-input" placeholder="Email Address" />
                             </label>
 
                             <label class="mt-3 block">
                                 <span class="form-label">Password</span>
-                                <input type="password" name="password" class="form-control" placeholder="********" />
+                                <input type="password" name="password" class="form-input" placeholder="********" />
                             </label>
 
                             <div class="mt-4 flex items-center justify-between">
                                 <label class="inline-flex items-center">
-                                    <input type="checkbox" name="remember" class="form-check" />
+                                    <input type="checkbox" name="remember" class="form-checkbox" />
                                     <span class="dark--text mx-2 text-sm">Remember me</span>
                                 </label>
 
                                 <a
                                     class="fontme block text-sm text-primary-600 hover:underline"
-                                    href="/forgot-password">
+                                    href="/auth-forgot-password.html">
                                     Forgot your password?
                                 </a>
                             </div>
 
                             <div class="mt-6">
-                                <a
-                                    href="/index.html"
-                                    class="mt-6 flex w-full items-center justify-center rounded-md bg-primary-600 px-4 py-2.5 text-center text-sm text-white hover:bg-primary-700 focus:outline-none">
-                                    Sign in to your account
-                                </a>
+                                <a href="/index.html" class="btn btn-primary block"> Sign in to your account </a>
                             </div>
                         </form>
                         <p class="dark--text mt-4">
-                            Don’t have an account yet? <a href="/register.html" class="text-primary">Sign up here</a>
+                            Don’t have an account yet?
+                            <a href="/auth-register.html" class="text-primary">Sign up here</a>
                         </p>
                     </div>
                 </div>
