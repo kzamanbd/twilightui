@@ -76,6 +76,9 @@
         @apply flex items-center p-2.5 hover:bg-light-gray hover:text-primary;
         @apply rounded-md font-normal dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
+    .tw-menu-link:hover .material-icons-outlined {
+        @apply text-primary;
+    }
     .semi-dark .tw-menu-link {
         @apply text-gray-400 hover:bg-gray-700 hover:text-gray-100;
     }
@@ -98,7 +101,7 @@
         @apply dark--text flex items-center rounded-md hover:text-gray-900 dark:hover:text-gray-100;
     }
     .menu-bullet-dot {
-        @apply ml-2 mr-0.5 h-0.5 w-2 bg-primary;
+        @apply ml-2 mr-0.5 h-0.5 w-2 bg-gray-500;
     }
     .tw-dropdown-circle {
         @apply flex h-4 w-4 items-center justify-center text-[10px] leading-[unset];
@@ -109,8 +112,11 @@
     .tw-dropdown-link {
         @apply tw-menu-link w-full truncate;
     }
+    .tw-dropdown-link:hover .menu-bullet-dot {
+        @apply bg-primary;
+    }
     .tw-dropdown-link.active {
-        @apply tw-link-active dark:hover:text-gray-200;
+        @apply tw-link-active bg-transparent hover:bg-light-gray dark:hover:text-gray-200;
     }
     /* collapsible-vertical */
     .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .collapse-icon,
