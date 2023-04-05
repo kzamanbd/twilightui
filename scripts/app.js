@@ -160,6 +160,7 @@ window.ResizeObserver = ResizeObserver;
     });
 
     Alpine.store('app', {
+        name: 'TwilightUI',
         // theme
         theme: Alpine.$persist($themeConfig.theme),
         toggleTheme(val) {
