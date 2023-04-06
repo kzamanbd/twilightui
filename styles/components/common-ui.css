@@ -66,4 +66,7 @@
     .mailbox-detail-icon {
         @apply rounded-md border border-gray-200 bg-white p-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:text-primary-700 focus:ring-2 focus:ring-primary-700 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:hover:text-white dark:focus:text-white dark:focus:ring-primary;
     }
+    .mailbox-detail-item {
+        @apply rounded-md p-3 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700 dark:hover:text-slate-200;
+    }
 }
