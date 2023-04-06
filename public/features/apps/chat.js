@@ -6,14 +6,14 @@ document.addEventListener('alpine:init', () => {
         loginUser: {
             id: 0,
             name: 'Jon Doe',
-            path: 'profile-9.jpeg',
+            path: 'avatar-1.png',
             designation: 'Software Developer',
         },
         contactList: [
             {
                 userId: 1,
                 name: 'Nia Hillyer',
-                path: 'profile-10.jpeg',
+                path: 'avatar-2.png',
                 time: '2:09 PM',
                 preview: 'How do you do?',
                 messages: [
@@ -48,7 +48,7 @@ document.addEventListener('alpine:init', () => {
             {
                 userId: 2,
                 name: 'Sean Freeman',
-                path: 'profile-6.jpeg',
+                path: 'avatar-3.png',
                 time: '12:09 PM',
                 preview: 'I was wondering...',
                 messages: [
@@ -73,7 +73,7 @@ document.addEventListener('alpine:init', () => {
             {
                 userId: 3,
                 name: 'Alma Clarke',
-                path: 'profile-7.jpeg',
+                path: 'avatar-4.png',
                 time: '1:44 PM',
                 preview: 'I’ve forgotten how it felt before',
                 messages: [
@@ -103,7 +103,7 @@ document.addEventListener('alpine:init', () => {
             {
                 userId: 4,
                 name: 'Alan Green',
-                path: 'profile-8.jpeg',
+                path: 'avatar-5.png',
                 time: '2:06 PM',
                 preview: 'But we’re probably gonna need a new carpet.',
                 messages: [
@@ -123,7 +123,7 @@ document.addEventListener('alpine:init', () => {
             {
                 userId: 5,
                 name: 'Shaun Park',
-                path: 'profile-9.jpeg',
+                path: 'avatar-6.png',
                 time: '2:05 PM',
                 preview: 'It’s not that bad...',
                 messages: [
@@ -158,7 +158,7 @@ document.addEventListener('alpine:init', () => {
             {
                 userId: 6,
                 name: 'Roxanne',
-                path: 'profile-10.jpeg',
+                path: 'avatar-7.png',
                 time: '2:00 PM',
                 preview: 'Wasup for the third time like is you bling bitch',
                 messages: [
@@ -178,7 +178,7 @@ document.addEventListener('alpine:init', () => {
             {
                 userId: 7,
                 name: 'Ernest Reeves',
-                path: 'profile-6.jpeg',
+                path: 'avatar-8.png',
                 time: '2:09 PM',
                 preview: 'Wasup for the third time like is you bling bitch',
                 messages: [],
@@ -187,7 +187,7 @@ document.addEventListener('alpine:init', () => {
             {
                 userId: 8,
                 name: 'Laurie Fox',
-                path: 'profile-7.jpeg',
+                path: 'avatar-8.png',
                 time: '12:09 PM',
                 preview: 'Wasup for the third time like is you bling bitch',
                 messages: [],
@@ -196,7 +196,7 @@ document.addEventListener('alpine:init', () => {
             {
                 userId: 9,
                 name: 'Xavier',
-                path: 'profile-8.jpeg',
+                path: 'avatar-9.png',
                 time: '4:09 PM',
                 preview: 'Wasup for the third time like is you bling bitch',
                 messages: [],
@@ -205,7 +205,7 @@ document.addEventListener('alpine:init', () => {
             {
                 userId: 10,
                 name: 'Susan Phillips',
-                path: 'profile-9.jpeg',
+                path: 'avatar-10.png',
                 time: '9:00 PM',
                 preview: 'Wasup for the third time like is you bling bitch',
                 messages: [],
@@ -214,7 +214,7 @@ document.addEventListener('alpine:init', () => {
             {
                 userId: 11,
                 name: 'Dale Butler',
-                path: 'profile-10.jpeg',
+                path: 'avatar-12.png',
                 time: '5:09 PM',
                 preview: 'Wasup for the third time like is you bling bitch',
                 messages: [],
@@ -223,7 +223,7 @@ document.addEventListener('alpine:init', () => {
             {
                 userId: 12,
                 name: 'Grace Roberts',
-                path: 'profile-8.jpeg',
+                path: 'avatar-13.png',
                 time: '8:01 PM',
                 preview: 'Wasup for the third time like is you bling bitch',
                 messages: [],
