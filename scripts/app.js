@@ -19,6 +19,10 @@ import { createPopper } from '@popperjs/core';
 import ResizeObserver from 'resize-observer-polyfill';
 window.ResizeObserver = ResizeObserver;
 
+// tippy.js for tooltip
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css'; // optional for styling
+
 // app config
 (function () {
     'use strict';
