@@ -1101,13 +1101,13 @@
                         <div class="left-link">
                             <ol class="breadcrumb-nav">
                                 <li class="inline-flex items-center">
-                                    <a href="/" class="breadcrumb-item"> Dashboard </a>
+                                    <a href="/" class="breadcrumb-item"> Apps </a>
                                 </li>
 
                                 <li aria-current="page">
                                     <div class="flex items-center">
                                         <div class="material-icons rotate-180 text-lg">navigate_before</div>
-                                        <span class="breadcrumb-item-current"> Default </span>
+                                        <span class="breadcrumb-item-current"> Chats </span>
                                     </div>
                                 </li>
                             </ol>
@@ -1116,12 +1116,8 @@
                     <!-- End:Breadcrumb -->
 
                     <div x-data="chat">
-                        <div
-                            class="relative flex h-full gap-5 sm:h-[calc(100vh_-_200px)] sm:min-h-0"
-                            :class="{'min-h-[999px]' : isShowChatMenu}">
-                            <div
-                                class="card absolute z-10 hidden w-full max-w-[20rem] flex-none space-y-4 overflow-hidden p-4 xl:relative xl:block xl:h-full"
-                                :class="isShowChatMenu && '!block'">
+                        <div class="chat-wrapper" :class="{'min-h-[999px]' : isShowChatMenu}">
+                            <div class="card chat-sidebar" :class="isShowChatMenu && '!block'">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <div class="flex-none">
@@ -1172,8 +1168,7 @@
                                             x-show="open"
                                             x-transition
                                             x-transition.duration.300ms
-                                            class="right-0 whitespace-nowrap"
-                                            style="display: none">
+                                            class="right-0 whitespace-nowrap">
                                             <li>
                                                 <a href="javascript:;" @click="toggle">
                                                     <svg
@@ -1377,13 +1372,11 @@
                                 </div>
                                 <div class="h-px w-full border-b border-[#e0e6ed] dark:border-[#1b2e4b]"></div>
                                 <div class="!mt-0">
-                                    <div
-                                        data-simplebar
-                                        class="chat-users relative -mr-3.5 h-full min-h-[100px] space-y-0.5 pr-3.5 sm:h-[calc(100vh_-_380px)]">
+                                    <div data-simplebar class="chat-users">
                                         <template x-for="person in searchUsers">
                                             <button
                                                 type="button"
-                                                class="flex w-full items-center justify-between rounded-md p-2 hover:bg-gray-100 hover:text-primary dark:hover:bg-[#050b14] dark:hover:text-primary"
+                                                class="chat-user-item"
                                                 :class="{'bg-gray-100 dark:bg-[#050b14] dark:text-primary text-primary': selectedUser.userId === person.userId}"
                                                 @click="selectUser(person)">
                                                 <div class="flex-1">
@@ -1452,8 +1445,7 @@
                                         </button>
 
                                         <div class="flex flex-col items-center justify-center py-8">
-                                            <div
-                                                class="mb-8 h-[calc(100vh_-_320px)] min-h-[120px] w-[280px] text-white dark:text-[#0e1726] md:w-[430px]">
+                                            <div class="chat-empty-wrapper">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     data-name="Layer 1"
@@ -1891,9 +1883,8 @@
                                         <div class="h-px w-full border-b border-[#e0e6ed] dark:border-[#1b2e4b]"></div>
                                         <div
                                             data-simplebar
-                                            class="relative h-full overflow-auto sm:h-[calc(100vh_-_300px)]">
-                                            <div
-                                                class="chat-conversation-box min-h-[400px] space-y-5 p-4 pb-[68px] sm:min-h-[300px] sm:pb-0">
+                                            class="relative h-full overflow-auto sm:h-[calc(100vh_-_340px)]">
+                                            <div class="chat-conversation-box">
                                                 <div class="m-6 mt-0 block">
                                                     <h4
                                                         class="relative border-b border-[#f4f4f4] text-center text-xs dark:border-gray-800">
@@ -2205,10 +2196,7 @@
 
             <!-- Theme customizer -->
             <div class="theme-customizer">
-                <div
-                    class="customizer-shadow"
-                    :class="{'!block': showCustomizer}"
-                    @click="showCustomizer = false"></div>
+                <div x-show="showCustomizer" @click="showCustomizer = false" class="customizer-shadow"></div>
 
                 <nav class="app-customizer" :class="{'!right-0' : showCustomizer}">
                     <div data-simplebar class="h-full overflow-y-auto overflow-x-hidden p-4">

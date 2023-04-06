@@ -1647,10 +1647,7 @@
 
             <!-- Theme customizer -->
             <div class="theme-customizer">
-                <div
-                    class="customizer-shadow"
-                    :class="{'!block': showCustomizer}"
-                    @click="showCustomizer = false"></div>
+                <div x-show="showCustomizer" @click="showCustomizer = false" class="customizer-shadow"></div>
 
                 <nav class="app-customizer" :class="{'!right-0' : showCustomizer}">
                     <div data-simplebar class="h-full overflow-y-auto overflow-x-hidden p-4">
