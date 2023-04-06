@@ -27,4 +27,19 @@
     .chat-conversation-box {
         @apply min-h-[400px] space-y-5 p-4 pb-[68px] sm:min-h-[300px] sm:pb-0;
     }
+
+    /* mailbox */
+
+    .mailbox-wrapper {
+        @apply grid h-[calc(100vh_-_200px)] gap-4 overflow-hidden lg:grid-cols-12;
+    }
+    .mailbox-header {
+        @apply flex flex-wrap justify-center border-b border-dashed border-gray-200 dark:border-gray-700;
+    }
+    .mailbox-tabs {
+        @apply -mb-px grid w-full grid-cols-3 place-content-stretch space-x-2;
+    }
+    .mailbox-tab {
+        @apply flex w-full items-center rounded-t-lg border-b-2 border-gray-100 border-transparent px-4 py-3 text-center text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-600 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-300;
+    }
 }
