@@ -328,6 +328,12 @@
                                         </a>
                                     </li>
                                     <li class="tw-dropdown-item group">
+                                        <a href="/elements-tooltips.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Tooltips</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
                                         <a href="/elements-treeview.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Treeview</span>
@@ -1143,35 +1149,38 @@
                                 <div class="flex w-full flex-wrap justify-center gap-4">
                                     <button
                                         type="button"
+                                        role="tooltip"
                                         x-tooltip="Tooltip on top"
                                         data-placement="top"
-                                        role="tooltip"
-                                        class="btn btn-info">
+                                        data-theme="primary"
+                                        class="btn btn-primary">
                                         Tooltip on top
                                     </button>
                                     <button
                                         type="button"
+                                        role="tooltip"
                                         x-tooltip="Tooltip on left"
                                         :data-placement="$store.app.rtlClass === 'rtl' ? 'right' : 'left'"
-                                        class="btn btn-secondary"
-                                        data-placement="left">
+                                        data-theme="secondary"
+                                        class="btn btn-secondary">
                                         Tooltip on left
                                     </button>
                                     <button
                                         type="button"
+                                        role="tooltip"
                                         x-tooltip="Tooltip on bottom"
                                         data-placement="bottom"
-                                        role="tooltip"
+                                        data-theme="warning"
                                         class="btn btn-warning">
                                         Tooltip on bottom
                                     </button>
                                     <button
                                         type="button"
+                                        role="tooltip"
                                         x-tooltip="Tooltip on right"
                                         :data-placement="$store.app.rtlClass === 'rtl' ? 'left' : 'right'"
-                                        role="tooltip"
-                                        class="btn btn-danger"
-                                        data-placement="right">
+                                        data-theme="danger"
+                                        class="btn btn-danger">
                                         Tooltip on right
                                     </button>
                                 </div>

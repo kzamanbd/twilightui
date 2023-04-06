@@ -28,6 +28,8 @@
     h6 {
         @apply text-sm font-semibold;
     }
+
+    /* tables */
     table {
         width: 100%;
         border-collapse: collapse !important;

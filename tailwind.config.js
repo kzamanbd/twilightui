@@ -50,8 +50,8 @@ module.exports = {
                     DEFAULT: colors.yellow[500],
                 },
                 secondary: {
-                    light: colors.purple[50],
-                    DEFAULT: colors.purple[500],
+                    light: colors.gray[50],
+                    DEFAULT: colors.gray[400],
                 },
             },
             height: {
