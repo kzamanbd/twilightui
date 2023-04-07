@@ -39,6 +39,12 @@
     .customizer-card {
         @apply mb-3 rounded-md border border-dashed border-[#e0e6ed] p-3 dark:border-[#1b2e4b];
     }
+    .customizer-header {
+        @apply mb-1 text-base leading-none dark:text-white;
+    }
+    .customizer-close {
+        @apply absolute right-3 top-3 opacity-30 hover:opacity-100 dark:text-white;
+    }
 
     .text-10 {
         font-size: 0.625rem !important;
