@@ -945,73 +945,15 @@
                             </span>
                         </button>
 
-                        <div class="relative" x-data="dropdown" @click.outside="close">
-                            <button type="button" @click="toggle" class="header-item" aria-label="Notification">
-                                <span class="material-icons-outlined"> notifications </span>
-                            </button>
-
-                            <div
-                                x-show="open"
-                                x-transition:enter.duration.500ms
-                                x-transition:leave.duration.400ms
-                                class="absolute right-0 z-20 mt-5 w-72 overflow-hidden rounded-md bg-white py-2 shadow-lg">
-                                <div class="py-2">
-                                    <a href="/" class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
-                                        <img
-                                            class="mx-1 h-8 w-8 rounded-full object-cover"
-                                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                                            alt="avatar" />
-                                        <p class="mx-2 text-sm text-gray-600">
-                                            <span class="font-bold" href="#"> Sara Salah </span>
-                                            replied on the
-                                            <span class="font-bold text-blue-500" href="#"> Upload Image </span>
-                                            article . 2m
-                                        </p>
-                                    </a>
-                                    <a href="/" class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
-                                        <img
-                                            class="mx-1 h-8 w-8 rounded-full object-cover"
-                                            src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                                            alt="avatar" />
-                                        <p class="mx-2 text-sm text-gray-600">
-                                            <span class="font-bold" href="#"> Slick Net </span>
-                                            start following you . 45m
-                                        </p>
-                                    </a>
-                                    <a href="/" class="-mx-2 flex items-center border-b px-4 py-3 hover:bg-gray-100">
-                                        <img
-                                            class="mx-1 h-8 w-8 rounded-full object-cover"
-                                            src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                                            alt="avatar" />
-                                        <p class="mx-2 text-sm text-gray-600">
-                                            <span class="font-bold" href="#"> Jane Doe </span>
-                                            Like Your reply on
-                                            <span class="font-bold text-blue-500" href="#"> Test with TDD </span>article
-                                            . 1h
-                                        </p>
-                                    </a>
-                                    <a href="/" class="-mx-2 flex items-center px-4 py-3 hover:bg-gray-100">
-                                        <img
-                                            class="mx-1 h-8 w-8 rounded-full object-cover"
-                                            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=398&q=80"
-                                            alt="avatar" />
-                                        <p class="mx-2 text-sm text-gray-600">
-                                            <span class="font-bold" href="#"> Abigail Bennett </span>
-                                            start following you . 3h
-                                        </p>
-                                    </a>
-                                </div>
-                                <a href="/" class="mx-4 block bg-gray-800 py-2 text-center font-bold text-white">
-                                    See all notifications
-                                </a>
-                            </div>
-                        </div>
+                        <button type="button" class="header-item" aria-label="Notification">
+                            <span class="material-icons-outlined"> notifications </span>
+                        </button>
 
                         <button @click="showCustomizer = true" class="header-item" type="button" aria-label="setting">
                             <span class="material-icons-outlined"> settings </span>
                         </button>
 
-                        <div class="relative" x-data="dropdown" @click.outside="close">
+                        <div class="dropdown" x-data="dropdown" @click.outside="close">
                             <button
                                 type="button"
                                 @click="toggle"
@@ -1022,13 +964,12 @@
                                     src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=ffffff"
                                     alt="Your avatar" />
                             </button>
-
-                            <div
+                            <ul
                                 x-show="open"
                                 x-transition:enter.duration.500ms
                                 x-transition:leave.duration.400ms
-                                class="absolute right-0 z-20 mt-5 w-64 rounded-md bg-white py-2 shadow-2xl dark:bg-dark-primary">
-                                <div class="flex items-center border-b px-4 py-2 dark:border-gray-700">
+                                class="!mt-4 w-64 py-2 shadow-2xl dark:bg-dark-primary">
+                                <li class="flex items-center border-b px-4 py-2 dark:border-gray-700">
                                     <div class="flex-shrink-0">
                                         <img
                                             class="h-8 w-8 rounded-full object-cover"
@@ -1043,8 +984,8 @@
                                             Software Engineer
                                         </p>
                                     </div>
-                                </div>
-                                <div class="border-b py-2 dark:border-gray-700">
+                                </li>
+                                <li class="border-b py-2 dark:border-gray-700">
                                     <div class="user-menu-item">
                                         <a href="#" class="user-menu-link"> My Profile </a>
                                     </div>
@@ -1060,8 +1001,8 @@
                                     <div class="user-menu-item">
                                         <a href="#" class="user-menu-link"> My Subscription </a>
                                     </div>
-                                </div>
-                                <div class="relative py-2">
+                                </li>
+                                <li class="relative py-2">
                                     <div class="user-menu-item group">
                                         <a href="#" class="user-menu-link">
                                             Language
@@ -1098,8 +1039,8 @@
                                     <div class="user-menu-item">
                                         <a href="./login.html" class="user-menu-link"> Log out </a>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </header>
