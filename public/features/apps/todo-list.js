@@ -10,7 +10,7 @@ const defaultParams = {
 };
 document.addEventListener('alpine:init', () => {
     //todo list
-    Alpine.data('todolist', () => ({
+    Alpine.data('todos', () => ({
         selectedTab: '',
         isShowTaskMenu: false,
         addTaskModal: false,
@@ -417,6 +417,9 @@ document.addEventListener('alpine:init', () => {
             this.$nextTick(() => {
                 this.initEditor();
             });
+        },
+        get pageCount() {
+            return `${this.pager.startIndex + 1} - ${this.pager.endIndex + 1} of ${this.filteredTasks.length}`;
         },
         initEditor() {
             this.quillEditor = new Quill(this.$refs.editor, {

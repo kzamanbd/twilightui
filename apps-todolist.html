@@ -1121,7 +1121,7 @@
                     </nav>
                     <!-- End:Breadcrumb -->
 
-                    <div x-data="todolist">
+                    <div x-data="todos">
                         <div class="relative flex h-full gap-5 sm:h-[calc(100vh_-_200px)]">
                             <div class="todo-list-wrapper" :class="{'!block':isShowTaskMenu}">
                                 <div class="flex h-full flex-col pb-16">
@@ -1337,9 +1337,7 @@
                                         </div>
                                         <div
                                             class="flex flex-1 items-center justify-center sm:flex-auto sm:justify-end">
-                                            <p
-                                                class="mr-3"
-                                                x-text="pager.startIndex+1 + '-' +( pager.endIndex+1) + ' of ' + filteredTasks.length"></p>
+                                            <p class="mr-3" x-text="pageCount"></p>
                                             <button
                                                 type="button"
                                                 :disabled="pager.currentPage == 1"
