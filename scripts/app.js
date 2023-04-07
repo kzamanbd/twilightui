@@ -31,6 +31,11 @@ window.Swal = Swal;
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
 window.Quill = Quill;
+
+// initialize sortablejs
+import Sortable from 'sortablejs';
+window.Sortable = Sortable;
+
 // app config
 (function () {
     'use strict';

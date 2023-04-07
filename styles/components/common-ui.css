@@ -6,6 +6,9 @@
     .modal-dialog {
         @apply flex min-h-full items-start justify-center px-4;
     }
+    .modal-dialog-center {
+        @apply items-center justify-center;
+    }
 
     /* chats */
     .chat-wrapper {
