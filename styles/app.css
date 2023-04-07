@@ -8,6 +8,7 @@
 /* custom components */
 @import './components/base.css';
 @import './components/common-ui.css';
+@import './components/badges.css';
 @import './components/header.css';
 @import './components/vertical-menu.css';
 @import './components/footer.css';
@@ -159,4 +160,11 @@
 }
 .tippy-box[data-theme~='dark'][data-placement^='right'] > .tippy-arrow::before {
     @apply border-r-dark-primary;
+}
+/* end tooltip */
+
+/* quill editor */
+.ql-snow .ql-editor {
+    min-height: 200px;
+    overflow: auto;
 }

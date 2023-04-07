@@ -23,6 +23,14 @@ window.ResizeObserver = ResizeObserver;
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css'; // optional for styling
 
+// sweetalert2
+import Swal from 'sweetalert2';
+window.Swal = Swal;
+
+// initialize quill editor
+import Quill from 'quill';
+import 'quill/dist/quill.snow.css';
+window.Quill = Quill;
 // app config
 (function () {
     'use strict';
