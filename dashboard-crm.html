@@ -72,13 +72,7 @@
                                 </div>
                                 <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
-                                        <a href="/index.html" class="tw-dropdown-link" data-ripple>
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Default</span>
-                                        </a>
-                                    </li>
-                                    <li class="tw-dropdown-item group">
-                                        <a href="/dashboard-analytics.html" class="tw-dropdown-link">
+                                        <a href="/index.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Analytics</span>
                                         </a>
@@ -98,7 +92,7 @@
                                     <li class="tw-dropdown-item group">
                                         <a href="/dashboard-ecommerce.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">eCommerce</span>
+                                            <span class="tw-link-label">ECommerce</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -145,53 +139,12 @@
                                     <span class="tw-link-label">Scrumboard</span>
                                 </a>
                             </li>
-
-                            <!-- project start -->
-                            <li class="tw-menu-item" x-data="accordionItem('projects')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <a href="/apps-projects.html" class="tw-menu-link">
                                     <span class="material-icons-outlined">fence</span>
                                     <span class="tw-link-label">Projects</span>
-                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
-                                </div>
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
-                                    <li class="tw-dropdown-item group">
-                                        <a href="/apps-projects.html" class="tw-dropdown-link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">My Project</span>
-                                        </a>
-                                    </li>
-                                    <li class="tw-dropdown-item group">
-                                        <a href="./apps/view-project.html" class="tw-dropdown-link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">View Project</span>
-                                        </a>
-                                    </li>
-                                    <li class="tw-dropdown-item group">
-                                        <a href="./apps/users.html" class="tw-dropdown-link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Users</span>
-                                        </a>
-                                    </li>
-                                    <li class="tw-dropdown-item group">
-                                        <a href="./apps/files.html" class="tw-dropdown-link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Files</span>
-                                        </a>
-                                    </li>
-                                    <li class="tw-dropdown-item group">
-                                        <a href="./apps/settings.html" class="tw-dropdown-link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Settings</span>
-                                        </a>
-                                    </li>
-                                </ul>
+                                </a>
                             </li>
-                            <!-- project end -->
 
                             <!-- page header -->
                             <li class="tw-menu-header">
@@ -739,7 +692,7 @@
                                     @click="handleClick"
                                     :class="activeDropdown">
                                     <span class="material-icons-outlined">shopping_basket</span>
-                                    <span class="tw-link-label">eCommerce</span>
+                                    <span class="tw-link-label">ECommerce</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
                                 <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
