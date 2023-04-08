@@ -59,7 +59,7 @@
         @apply rounded-lg px-5 py-2.5 text-sm font-medium dark:border-gray-900 dark:hover:bg-gray-900 dark:hover:text-white dark:focus:ring-gray-900;
     }
     .btn-sm {
-        @apply rounded-lg px-5 py-2.5 text-sm font-medium;
+        @apply rounded-lg px-2.5 py-1.5 text-xs font-medium;
     }
     .btn-lg {
         @apply rounded-lg px-5 py-2.5 text-lg font-medium;
