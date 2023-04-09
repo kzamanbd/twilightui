@@ -1,7 +1,7 @@
 @layer components {
     /* Alert components */
     .alert {
-        @apply rounded border-2 px-5 py-3;
+        @apply rounded border px-5 py-3;
     }
     .alert-icon {
         @apply flex items-center space-x-3;
