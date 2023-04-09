@@ -1,82 +1,203 @@
-// get colors array from the string
-function getChartColorsArray(chartId) {
-    var colors = document.querySelector(chartId).dataset.colors;
-    var colors = JSON.parse(colors);
-    return colors.map(function (value) {
-        var newValue = value.replace(' ', '');
-        if (newValue.indexOf('--') != -1) {
-            var color = getComputedStyle(document.documentElement).getPropertyValue(newValue);
-            if (color) return color;
-        } else {
-            return newValue;
-        }
-    });
-}
-var app = {};
+var chartDom = document.getElementById('line_1');
+var myChart = echarts.init(chartDom);
+var option;
 
-// line chart
-var lineColors = getChartColorsArray('#line-chart');
-var lineDom = document.getElementById('line-chart');
-var lineChart = echarts.init(lineDom);
-var option = null;
+const colors = ['#5470C6', '#EE6666'];
 option = {
-    // Setup grid
+    color: colors,
+    tooltip: {
+        trigger: 'none',
+        axisPointer: {
+            type: 'cross',
+        },
+    },
+    legend: {},
     grid: {
-        left: '0%',
-        right: '0%',
-        bottom: '0%',
-        top: '4%',
-        containLabel: true,
+        top: 70,
+        bottom: 50,
+    },
+    xAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                alignWithLabel: true,
+            },
+            axisLine: {
+                onZero: false,
+                lineStyle: {
+                    color: colors[1],
+                },
+            },
+            axisPointer: {
+                label: {
+                    formatter: function (params) {
+                        return (
+                            'Precipitation  ' +
+                            params.value +
+                            (params.seriesData.length ? 'ï¼š' + params.seriesData[0].data : '')
+                        );
+                    },
+                },
+            },
+            // prettier-ignore
+            data: ['2016-1', '2016-2', '2016-3', '2016-4', '2016-5', '2016-6', '2016-7', '2016-8', '2016-9', '2016-10', '2016-11', '2016-12'],
+        },
+        {
+            type: 'category',
+            axisTick: {
+                alignWithLabel: true,
+            },
+            axisLine: {
+                onZero: false,
+                lineStyle: {
+                    color: colors[0],
+                },
+            },
+            axisPointer: {
+                label: {
+                    formatter: function (params) {
+                        return (
+                            'Precipitation  ' +
+                            params.value +
+                            (params.seriesData.length ? 'ï¼š' + params.seriesData[0].data : '')
+                        );
+                    },
+                },
+            },
+            // prettier-ignore
+            data: ['2015-1', '2015-2', '2015-3', '2015-4', '2015-5', '2015-6', '2015-7', '2015-8', '2015-9', '2015-10', '2015-11', '2015-12'],
+        },
+    ],
+    yAxis: [
+        {
+            type: 'value',
+        },
+    ],
+    series: [
+        {
+            name: 'Precipitation(2015)',
+            type: 'line',
+            xAxisIndex: 1,
+            smooth: true,
+            emphasis: {
+                focus: 'series',
+            },
+            data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+        },
+        {
+            name: 'Precipitation(2016)',
+            type: 'line',
+            smooth: true,
+            emphasis: {
+                focus: 'series',
+            },
+            data: [3.9, 5.9, 11.1, 18.7, 48.3, 69.2, 231.6, 46.6, 55.4, 18.4, 10.3, 0.7],
+        },
+    ],
+};
+
+option && myChart.setOption(option);
+
+var chartDom = document.getElementById('line_2');
+var myChart = echarts.init(chartDom);
+var option;
+
+let base = +new Date(1968, 9, 3);
+let oneDay = 24 * 3600 * 1000;
+let date = [];
+let data = [Math.random() * 300];
+for (let i = 1; i < 20000; i++) {
+    var now = new Date((base += oneDay));
+    date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+    data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
+}
+option = {
+    tooltip: {
+        trigger: 'axis',
+        position: function (pt) {
+            return [pt[0], '10%'];
+        },
     },
     xAxis: {
         type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        axisLine: {
-            lineStyle: {
-                color: '#858d98',
-            },
-        },
+        boundaryGap: false,
+        data: date,
     },
     yAxis: {
         type: 'value',
-        axisLine: {
-            lineStyle: {
-                color: '#858d98',
-            },
+        boundaryGap: [0, '100%'],
+    },
+    dataZoom: [
+        {
+            type: 'inside',
+            start: 0,
+            end: 10,
         },
-        splitLine: {
-            lineStyle: {
-                color: 'rgba(133, 141, 152, 0.1)',
-            },
+        {
+            start: 0,
+            end: 10,
         },
+    ],
+    series: [
+        {
+            name: 'Fake Data',
+            type: 'line',
+            symbol: 'none',
+            sampling: 'lttb',
+            itemStyle: {
+                color: 'rgb(255, 70, 131)',
+            },
+            areaStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                    {
+                        offset: 0,
+                        color: 'rgb(255, 158, 68)',
+                    },
+                    {
+                        offset: 1,
+                        color: 'rgb(255, 70, 131)',
+                    },
+                ]),
+            },
+            data: data,
+        },
+    ],
+};
+
+option && myChart.setOption(option);
+
+// Bar
+var chartDom = document.getElementById('bar_1');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+    xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    },
+    yAxis: {
+        type: 'value',
     },
     series: [
         {
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
-            type: 'line',
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: 'bar',
+            showBackground: true,
+            backgroundStyle: {
+                color: 'rgba(180, 180, 180, 0.2)',
+            },
         },
     ],
-    color: lineColors, //['#2ab57d'],
 };
-lineChart.setOption(option);
 
-// mix line & bar
-var mixlinebarColors = getChartColorsArray('#mix-line-bar');
-var mixLineDom = document.getElementById('mix-line-bar');
-var mixLineChart = echarts.init(mixLineDom);
-var app = {};
-option = null;
-app.title = 'Data view';
+option && myChart.setOption(option);
+
+var chartDom = document.getElementById('bar_2');
+var myChart = echarts.init(chartDom);
+var option;
 
 option = {
-    // Setup grid
-    grid: {
-        left: '1%',
-        right: '0%',
-        bottom: '0%',
-        top: '4%',
-        containLabel: true,
-    },
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -86,43 +207,33 @@ option = {
             },
         },
     },
-    color: mixlinebarColors, //['#2ab57d', '#5156be', '#fd625e'],
+    toolbox: {
+        feature: {
+            dataView: { show: true, readOnly: false },
+            magicType: { show: true, type: ['line', 'bar'] },
+            restore: { show: true },
+            saveAsImage: { show: true },
+        },
+    },
     legend: {
-        top: '0',
-        data: ['Evaporation', 'Precipitation', 'Average temperature'],
-        textStyle: { color: '#858d98' },
+        data: ['Evaporation', 'Precipitation', 'Temperature'],
     },
     xAxis: [
         {
             type: 'category',
-            data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
             axisPointer: {
                 type: 'shadow',
-            },
-            axisLine: {
-                lineStyle: {
-                    color: '#858d98',
-                },
             },
         },
     ],
     yAxis: [
         {
             type: 'value',
-            name: 'Water volume',
+            name: 'Precipitation',
             min: 0,
             max: 250,
             interval: 50,
-            axisLine: {
-                lineStyle: {
-                    color: '#858d98',
-                },
-            },
-            splitLine: {
-                lineStyle: {
-                    color: 'rgba(133, 141, 152, 0.1)',
-                },
-            },
             axisLabel: {
                 formatter: '{value} ml',
             },
@@ -133,18 +244,8 @@ option = {
             min: 0,
             max: 25,
             interval: 5,
-            axisLine: {
-                lineStyle: {
-                    color: '#858d98',
-                },
-            },
-            splitLine: {
-                lineStyle: {
-                    color: 'rgba(133, 141, 152, 0.1)',
-                },
-            },
             axisLabel: {
-                formatter: '{value} Ã‚Â°C',
+                formatter: '{value} Â°C',
             },
         },
     ],
@@ -152,113 +253,174 @@ option = {
         {
             name: 'Evaporation',
             type: 'bar',
-            data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2],
+            tooltip: {
+                valueFormatter: function (value) {
+                    return value + ' ml';
+                },
+            },
+            data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
         },
         {
             name: 'Precipitation',
             type: 'bar',
-            data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2],
+            tooltip: {
+                valueFormatter: function (value) {
+                    return value + ' ml';
+                },
+            },
+            data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
         },
         {
-            name: 'Average Temperature',
+            name: 'Temperature',
             type: 'line',
             yAxisIndex: 1,
-            data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4],
+            tooltip: {
+                valueFormatter: function (value) {
+                    return value + ' Â°C';
+                },
+            },
+            data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2],
         },
     ],
 };
 
-mixLineChart.setOption(option);
+option && myChart.setOption(option);
 
-// Doughnut Chart
-var doughnutColors = getChartColorsArray('#doughnut-chart');
-var doughnutDom = document.getElementById('doughnut-chart');
-var doughnutChart = echarts.init(doughnutDom);
-var app = {};
-option = null;
+var chartDom = document.getElementById('bar_3');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+    legend: {},
+    tooltip: {},
+    dataset: {
+        source: [
+            ['product', '2015', '2016', '2017'],
+            ['Matcha Latte', 43.3, 85.8, 93.7],
+            ['Milk Tea', 83.1, 73.4, 55.1],
+            ['Cheese Cocoa', 86.4, 65.2, 82.5],
+            ['Walnut Brownie', 72.4, 53.9, 39.1],
+        ],
+    },
+    xAxis: { type: 'category' },
+    yAxis: {},
+    // Declare several bar series, each will be mapped
+    // to a column of dataset.source by default.
+    series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }],
+};
+
+option && myChart.setOption(option);
+
+var chartDom = document.getElementById('bar_4');
+var myChart = echarts.init(chartDom);
+var option;
 
 option = {
     tooltip: {
-        trigger: 'item',
-        formatter: '{a} <br/>{b}: {c} ({d}%)',
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow',
+        },
     },
     legend: {
-        orient: 'vertical',
-        x: 'left',
-        data: ['Laptop', 'Tablet', 'Mobile', 'Others', 'Desktop'],
-        textStyle: { color: '#858d98' },
+        data: ['Profit', 'Expenses', 'Income'],
     },
-    color: doughnutColors, //['#5156be', '#ffbf53', '#fd625e', '#4ba6ef', '#2ab57d'],
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true,
+    },
+    xAxis: [
+        {
+            type: 'value',
+        },
+    ],
+    yAxis: [
+        {
+            type: 'category',
+            axisTick: {
+                show: false,
+            },
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        },
+    ],
     series: [
         {
-            name: 'Total sales',
-            type: 'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
+            name: 'Profit',
+            type: 'bar',
             label: {
-                normal: {
-                    show: false,
-                    position: 'center',
-                },
-                emphasis: {
-                    show: true,
-                    textStyle: {
-                        fontSize: '30',
-                        fontWeight: 'bold',
-                    },
-                },
+                show: true,
+                position: 'inside',
             },
-            labelLine: {
-                normal: {
-                    show: false,
-                },
+            emphasis: {
+                focus: 'series',
             },
-            data: [
-                { value: 335, name: 'Laptop' },
-                { value: 310, name: 'Tablet' },
-                { value: 234, name: 'Mobile' },
-                { value: 135, name: 'Others' },
-                { value: 1548, name: 'Desktop' },
-            ],
+            data: [200, 170, 240, 244, 200, 220, 210],
+        },
+        {
+            name: 'Income',
+            type: 'bar',
+            stack: 'Total',
+            label: {
+                show: true,
+            },
+            emphasis: {
+                focus: 'series',
+            },
+            data: [320, 302, 341, 374, 390, 450, 420],
+        },
+        {
+            name: 'Expenses',
+            type: 'bar',
+            stack: 'Total',
+            label: {
+                show: true,
+                position: 'left',
+            },
+            emphasis: {
+                focus: 'series',
+            },
+            data: [-120, -132, -101, -134, -190, -230, -210],
         },
     ],
 };
 
-doughnutChart.setOption(option);
+option && myChart.setOption(option);
 
-// pie chart
-var pieColors = getChartColorsArray('#pie-chart');
-var pieDom = document.getElementById('pie-chart');
-var pieChart = echarts.init(pieDom);
-var app = {};
-option = null;
+// pie
+
+var chartDom = document.getElementById('pie_1');
+var myChart = echarts.init(chartDom);
+var option;
+
 option = {
+    title: {
+        text: 'Referer of a Website',
+        subtext: 'Fake Data',
+        left: 'center',
+    },
     tooltip: {
         trigger: 'item',
-        formatter: '{a} <br/>{b} : {c} ({d}%)',
     },
     legend: {
         orient: 'vertical',
         left: 'left',
-        data: ['Laptop', 'Tablet', 'Mobile', 'Others', 'Desktop'],
-        textStyle: { color: '#858d98' },
     },
-    color: pieColors, //['#fd625e', '#2ab57d', '#4ba6ef', '#ffbf53', '#5156be'],
     series: [
         {
-            name: 'Total sales',
+            name: 'Access From',
             type: 'pie',
-            radius: '55%',
-            center: ['50%', '60%'],
+            radius: '50%',
             data: [
-                { value: 335, name: 'Laptop' },
-                { value: 310, name: 'Tablet' },
-                { value: 234, name: 'Mobile' },
-                { value: 135, name: 'Others' },
-                { value: 1548, name: 'Desktop' },
+                { value: 1048, name: 'Search Engine' },
+                { value: 735, name: 'Direct' },
+                { value: 580, name: 'Email' },
+                { value: 484, name: 'Union Ads' },
+                { value: 300, name: 'Video Ads' },
             ],
-            itemStyle: {
-                emphasis: {
+            emphasis: {
+                itemStyle: {
                     shadowBlur: 10,
                     shadowOffsetX: 0,
                     shadowColor: 'rgba(0, 0, 0, 0.5)',
@@ -267,356 +429,98 @@ option = {
         },
     ],
 };
-if (option && typeof option === 'object') {
-    pieChart.setOption(option, true);
-}
 
-// scatter chart
-var scatterColors = getChartColorsArray('#scatter-chart');
-var scatterDom = document.getElementById('scatter-chart');
-var scatterChart = echarts.init(scatterDom);
-var app = {};
-option = null;
-option = {
-    // Setup grid
-    grid: {
-        left: '0%',
-        right: '0%',
-        bottom: '0%',
-        top: '4%',
-        containLabel: true,
-    },
-    xAxis: {
-        axisLine: {
-            lineStyle: {
-                color: '#858d98',
-            },
-        },
-        splitLine: {
-            lineStyle: {
-                color: 'rgba(133, 141, 152, 0.1)',
-            },
-        },
-    },
-    yAxis: {
-        axisLine: {
-            lineStyle: {
-                color: '#858d98',
-            },
-        },
-        splitLine: {
-            lineStyle: {
-                color: 'rgba(133, 141, 152, 0.1)',
-            },
-        },
-    },
-    series: [
-        {
-            symbolSize: 10,
-            data: [
-                [10.0, 8.04],
-                [8.0, 6.95],
-                [13.0, 7.58],
-                [9.0, 8.81],
-                [11.0, 8.33],
-                [14.0, 9.96],
-                [6.0, 7.24],
-                [4.0, 4.26],
-                [12.0, 10.84],
-                [7.0, 4.82],
-                [5.0, 5.68],
-            ],
-            type: 'scatter',
-        },
-    ],
-    color: scatterColors, //['#2ab57d']
-};
-if (option && typeof option === 'object') {
-    scatterChart.setOption(option, true);
-}
+option && myChart.setOption(option);
 
-// bubble chart
-var bubbleColors = getChartColorsArray('#bubble-chart');
-var bubbleDom = document.getElementById('bubble-chart');
-var bubbleChart = echarts.init(bubbleDom);
-var app = {};
-option = null;
+var chartDom = document.getElementById('pie_2');
+var myChart = echarts.init(chartDom);
+var option;
 
-var data = [
-    [
-        [28604, 77, 17096869, 'Australia', 1990],
-        [31163, 77.4, 27662440, 'Canada', 1990],
-        [1516, 68, 1154605773, 'China', 1990],
-        [13670, 74.7, 10582082, 'Cuba', 1990],
-        [28599, 75, 4986705, 'Finland', 1990],
-        [29476, 77.1, 56943299, 'France', 1990],
-        [31476, 75.4, 78958237, 'Germany', 1990],
-        [28666, 78.1, 254830, 'Iceland', 1990],
-        [1777, 57.7, 870601776, 'India', 1990],
-        [29550, 79.1, 122249285, 'Japan', 1990],
-        [2076, 67.9, 20194354, 'North Korea', 1990],
-        [12087, 72, 42972254, 'South Korea', 1990],
-        [24021, 75.4, 3397534, 'New Zealand', 1990],
-        [43296, 76.8, 4240375, 'Norway', 1990],
-        [10088, 70.8, 38195258, 'Poland', 1990],
-        [19349, 69.6, 147568552, 'Russia', 1990],
-        [10670, 67.3, 53994605, 'Turkey', 1990],
-        [26424, 75.7, 57110117, 'United Kingdom', 1990],
-        [37062, 75.4, 252847810, 'United States', 1990],
-    ],
-    [
-        [44056, 81.8, 23968973, 'Australia', 2015],
-        [43294, 81.7, 35939927, 'Canada', 2015],
-        [13334, 76.9, 1376048943, 'China', 2015],
-        [21291, 78.5, 11389562, 'Cuba', 2015],
-        [38923, 80.8, 5503457, 'Finland', 2015],
-        [37599, 81.9, 64395345, 'France', 2015],
-        [44053, 81.1, 80688545, 'Germany', 2015],
-        [42182, 82.8, 329425, 'Iceland', 2015],
-        [5903, 66.8, 1311050527, 'India', 2015],
-        [36162, 83.5, 126573481, 'Japan', 2015],
-        [1390, 71.4, 25155317, 'North Korea', 2015],
-        [34644, 80.7, 50293439, 'South Korea', 2015],
-        [34186, 80.6, 4528526, 'New Zealand', 2015],
-        [64304, 81.6, 5210967, 'Norway', 2015],
-        [24787, 77.3, 38611794, 'Poland', 2015],
-        [23038, 73.13, 143456918, 'Russia', 2015],
-        [19360, 76.5, 78665830, 'Turkey', 2015],
-        [38225, 81.4, 64715810, 'United Kingdom', 2015],
-        [53354, 79.1, 321773631, 'United States', 2015],
-    ],
-];
-
-option = {
-    grid: {
-        left: '0%',
-        right: '0%',
-        bottom: '0%',
-        top: '4%',
-        containLabel: true,
-    },
-    legend: {
-        right: 10,
-        data: ['2018', '2019'],
-    },
-    xAxis: {
-        axisLine: {
-            lineStyle: {
-                color: '#858d98',
-            },
-        },
-        splitLine: {
-            lineStyle: {
-                type: 'dashed',
-                color: 'rgba(133, 141, 152, 0.1)',
-            },
-        },
-    },
-    yAxis: {
-        axisLine: {
-            lineStyle: {
-                color: '#858d98',
-            },
-        },
-        splitLine: {
-            lineStyle: {
-                type: 'dashed',
-                color: 'rgba(133, 141, 152, 0.1)',
-            },
-        },
-        scale: true,
-    },
-    series: [
-        {
-            name: '2018',
-            data: data[0],
-            type: 'scatter',
-            symbolSize: function (data) {
-                return Math.sqrt(data[2]) / 5e2;
-            },
-            label: {
-                emphasis: {
-                    show: true,
-                    formatter: function (param) {
-                        return param.data[3];
-                    },
-                    position: 'top',
-                },
-            },
-            itemStyle: {
-                normal: {
-                    shadowBlur: 10,
-                    shadowColor: bubbleColors[2],
-                    shadowOffsetY: 5,
-                    color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [
-                        {
-                            offset: 0,
-                            color: bubbleColors[1],
-                        },
-                        {
-                            offset: 1,
-                            color: bubbleColors[0],
-                        },
-                    ]),
-                },
-            },
-        },
-        {
-            name: '2019',
-            data: data[1],
-            type: 'scatter',
-            symbolSize: function (data) {
-                return Math.sqrt(data[2]) / 5e2;
-            },
-            label: {
-                emphasis: {
-                    show: true,
-                    formatter: function (param) {
-                        return param.data[3];
-                    },
-                    position: 'top',
-                },
-            },
-            itemStyle: {
-                normal: {
-                    shadowBlur: 10,
-                    shadowColor: bubbleColors[5],
-                    shadowOffsetY: 5,
-                    color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [
-                        {
-                            offset: 0,
-                            color: bubbleColors[4],
-                        },
-                        {
-                            offset: 1,
-                            color: bubbleColors[3],
-                        },
-                    ]),
-                },
-            },
-        },
-    ],
-};
-if (option && typeof option === 'object') {
-    bubbleChart.setOption(option, true);
-}
-
-// candlestick chart
-var candlestickColors = getChartColorsArray('#candlestick-chart');
-var candlestickDom = document.getElementById('candlestick-chart');
-var candlestickChart = echarts.init(candlestickDom);
-var app = {};
-option = null;
-option = {
-    grid: {
-        left: '0%',
-        right: '0%',
-        bottom: '0%',
-        top: '4%',
-        containLabel: true,
-    },
-    xAxis: {
-        data: ['2017-10-24', '2017-10-25', '2017-10-26', '2017-10-27'],
-        axisLine: {
-            lineStyle: {
-                color: '#858d98',
-            },
-        },
-        splitLine: {
-            lineStyle: {
-                color: 'rgba(133, 141, 152, 0.1)',
-            },
-        },
-    },
-    yAxis: {
-        axisLine: {
-            lineStyle: {
-                color: '#858d98',
-            },
-        },
-        splitLine: {
-            lineStyle: {
-                color: 'rgba(133, 141, 152, 0.1)',
-            },
-        },
-    },
-    series: [
-        {
-            type: 'k',
-            data: [
-                [20, 30, 10, 35],
-                [40, 35, 30, 55],
-                [33, 38, 33, 40],
-                [40, 40, 32, 42],
-            ],
-
-            itemStyle: {
-                normal: {
-                    color: candlestickColors[0],
-                    color0: candlestickColors[1],
-                    borderColor: candlestickColors[0],
-                    borderColor0: candlestickColors[1],
-                },
-            },
-        },
-    ],
-};
-if (option && typeof option === 'object') {
-    candlestickChart.setOption(option, true);
-}
-
-// gauge chart
-var gaugeColors = getChartColorsArray('#gauge-chart');
-var gaugeDom = document.getElementById('gauge-chart');
-var guageChart = echarts.init(gaugeDom);
-var app = {};
-option = null;
 option = {
     tooltip: {
-        formatter: '{a} <br/>{b} : {c}%',
+        trigger: 'item',
     },
-    toolbox: {
-        feature: {
-            restore: { title: 'Refresh' },
-            saveAsImage: { title: 'Download Image' },
-        },
+    legend: {
+        top: '5%',
+        left: 'center',
     },
     series: [
         {
-            name: 'Business indicator',
-            type: 'gauge',
-            detail: { formatter: '{value}%' },
-            axisLine: {
-                lineStyle: {
-                    color: [
-                        [0.2, gaugeColors[0]],
-                        [0.8, gaugeColors[1]],
-                        [1, gaugeColors[2]],
-                    ],
-                    width: 20,
+            name: 'Access From',
+            type: 'pie',
+            radius: ['40%', '70%'],
+            avoidLabelOverlap: false,
+            itemStyle: {
+                borderRadius: 10,
+                borderColor: '#fff',
+                borderWidth: 2,
+            },
+            label: {
+                show: false,
+                position: 'center',
+            },
+            emphasis: {
+                label: {
+                    show: true,
+                    fontSize: '40',
+                    fontWeight: 'bold',
                 },
             },
-            data: [{ value: 50, name: 'Completion rate' }],
+            labelLine: {
+                show: false,
+            },
+            data: [
+                { value: 1048, name: 'Search Engine' },
+                { value: 735, name: 'Direct' },
+                { value: 580, name: 'Email' },
+                { value: 484, name: 'Union Ads' },
+                { value: 300, name: 'Video Ads' },
+            ],
         },
     ],
 };
 
-setInterval(function () {
-    option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
-    guageChart.setOption(option, true);
-}, 2000);
+option && myChart.setOption(option);
 
-if (option && typeof option === 'object') {
-    guageChart.setOption(option, true);
-}
+var chartDom = document.getElementById('pie_3');
+var myChart = echarts.init(chartDom);
+var option;
 
-window.addEventListener('resize', function () {
-    lineChart.resize();
-    mixLineChart.resize();
-    doughnutChart.resize();
-    pieChart.resize();
-    scatterChart.resize();
-    bubbleChart.resize();
-    candlestickChart.resize();
-    guageChart.resize();
-});
+option = {
+    legend: {
+        top: 'bottom',
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            mark: { show: true },
+            dataView: { show: true, readOnly: false },
+            restore: { show: true },
+            saveAsImage: { show: true },
+        },
+    },
+    series: [
+        {
+            name: 'Nightingale Chart',
+            type: 'pie',
+            radius: [50, 120],
+            center: ['50%', '50%'],
+            roseType: 'area',
+            itemStyle: {
+                borderRadius: 8,
+            },
+            data: [
+                { value: 40, name: 'rose 1' },
+                { value: 38, name: 'rose 2' },
+                { value: 32, name: 'rose 3' },
+                { value: 30, name: 'rose 4' },
+                { value: 28, name: 'rose 5' },
+                { value: 26, name: 'rose 6' },
+                { value: 22, name: 'rose 7' },
+                { value: 18, name: 'rose 8' },
+            ],
+        },
+    ],
+};
+
+option && myChart.setOption(option);
