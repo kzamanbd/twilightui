@@ -50,7 +50,6 @@ window.Swiper = Swiper;
     Alpine.data('twilightTheme', () => ({
         init() {
             const selector = document.querySelector(`ul.tw-nav-menu a[href="${window.location.pathname}"]`);
-            console.log(selector);
             if (selector) {
                 selector.classList.add('active');
                 const ul = selector.closest('ul.tw-dropdown-menu');
