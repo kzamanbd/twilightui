@@ -1,4 +1,4 @@
-// Ecommerce Dashboard
+// E commerce Dashboard
 // -----------------------------------
 var chart = new ApexCharts(document.querySelector('#revenue-status'), {
     chart: {
