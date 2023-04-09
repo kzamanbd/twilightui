@@ -1,9 +1,9 @@
 @layer components {
     .card {
-        @apply rounded-md bg-white shadow-sm dark:bg-dark-primary;
+        @apply rounded-md bg-white shadow-sm dark:bg-dark-primary !important;
     }
     .card-header {
-        @apply dark--text border-b border-dashed border-gray-200 p-4 dark:border-gray-700;
+        @apply dark--text border-b border-dashed border-gray-200 p-4 dark:border-gray-700 !important;
     }
     .card-body {
         @apply p-4;
