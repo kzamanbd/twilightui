@@ -12,13 +12,13 @@ function getChartColorsArray(chartId) {
         }
     });
 }
+var app = {};
 
 // line chart
 var lineColors = getChartColorsArray('#line-chart');
 var lineDom = document.getElementById('line-chart');
 var lineChart = echarts.init(lineDom);
-var app = {};
-option = null;
+var option = null;
 option = {
     // Setup grid
     grid: {
@@ -58,7 +58,7 @@ option = {
     ],
     color: lineColors, //['#2ab57d'],
 };
-lineChart.setOption(option, true);
+lineChart.setOption(option);
 
 // mix line & bar
 var mixlinebarColors = getChartColorsArray('#mix-line-bar');
@@ -168,7 +168,7 @@ option = {
     ],
 };
 
-mixLineChart.setOption(option, true);
+mixLineChart.setOption(option);
 
 // Doughnut Chart
 var doughnutColors = getChartColorsArray('#doughnut-chart');
@@ -224,7 +224,7 @@ option = {
     ],
 };
 
-doughnutChart.setOption(option, true);
+doughnutChart.setOption(option);
 
 // pie chart
 var pieColors = getChartColorsArray('#pie-chart');

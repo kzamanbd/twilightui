@@ -36,12 +36,6 @@ window.Quill = Quill;
 import Sortable from 'sortablejs';
 window.Sortable = Sortable;
 
-// import Swiper JS
-import Swiper from 'swiper/bundle';
-// import styles bundle
-import 'swiper/css/bundle';
-window.Swiper = Swiper;
-
 // app config
 (function () {
     'use strict';
