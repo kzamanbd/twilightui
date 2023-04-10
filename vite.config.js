@@ -15,15 +15,13 @@ export default defineConfig({
             minify: true,
         }),
         VitePWA({
-            mode: 'development',
-            base: '/',
             includeAssets: ['favicon.svg'],
             injectRegister,
             selfDestroying,
             manifest: {
-                name: 'PWA Router',
-                short_name: 'PWA Router',
-                theme_color: '#ffffff',
+                name: 'TwilightUI',
+                short_name: 'TwilightUI',
+                theme_color: '#009EF7',
                 icons: [
                     {
                         src: 'pwa-192x192.png', // <== don't add slash, for testing
