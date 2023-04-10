@@ -24,4 +24,13 @@
     .form-input.is-valid {
         @apply border-green-500 focus:border-green-300 focus:ring focus:ring-green-200;
     }
+
+    /* form input sm */
+    .form-input-sm {
+        @apply h-8 px-2 text-sm;
+    }
+    /* form input large */
+    .form-input-lg {
+        @apply px-2 text-2xl;
+    }
 }

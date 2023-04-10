@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Forms Elements - Twilight Dashboard</title>
+        <link rel="icon" href="/favicon.png" />
+        <!-- start:Core Style and Script -->
+        <link rel="stylesheet" href="/styles/app.css" />
+        <script type="module" src="/scripts/app.js"></script>
+    </head>
+
+    <body>
+        <div
+            class="twilight"
+            x-data="twilightTheme"
+            :class="[ $store.app.sidebar && 'toggle-menu', $store.app.theme, $store.app.menu, $store.app.layout]">
+            <!-- Loading dialog -->
+            <div class="animate__animated loading duration-300">Loading.....</div>
+            <!-- menu shadow -->
+            <div @click="$store.app.toggleVMenu()" class="menu-shadow" x-show="$store.app.sidebar"></div>
+            <!-- vertical-menu -->
+            <aside class="vertical-menu">
+                <div class="vertical-content" :class="[$store.app.semiDark && 'semi-dark']">
+                    <!-- Menu Logo -->
+                    <div id="brand-logo" class="tw-brand-logo">
+                        <a href="/index.html" class="flex items-center">
+                            <img class="brand-logo-image" src="/images/logo.png" alt="logo" />
+                            <span class="app-name" x-text="$store.app.name"></span>
+                        </a>
+                        <a href="javascript:;" class="collapse-icon" @click="$store.app.toggleVMenu()">
+                            <svg
+                                class="m-auto h-5 w-5"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13 19L7 12L13 5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path
+                                    opacity="0.5"
+                                    d="M16.9998 19L10.9998 12L16.9998 5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <!-- Menu Content -->
+                    <nav data-simplebar class="tw-menu-content no-scrollbar">
+                        <ul class="tw-nav-menu">
+                            <!-- dashboard start -->
+                            <li class="tw-menu-item" x-data="accordionItem('dashboard')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined"> home </span>
+                                    <span class="tw-link-label">Dashboards</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/index.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Analytics</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-crypto.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Crypto</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-crm.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">CRM</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-ecommerce.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">ECommerce</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- dashboard end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
+                                <span class="label">APPS</span>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-calendars.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">event</span>
+                                    <span class="tw-link-label">Calendars</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-chats.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">message</span>
+                                    <span class="tw-link-label">Chat Box</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-mailbox.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">email</span>
+                                    <span class="tw-link-label">Mailbox</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-todolist.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">fact_check</span>
+                                    <span class="tw-link-label">Todo List</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-scrumboard.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">add_box</span>
+                                    <span class="tw-link-label">Scrumboard</span>
+                                </a>
+                            </li>
+                            <li class="tw-menu-item">
+                                <a href="/apps-projects.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">fence</span>
+                                    <span class="tw-link-label">Projects</span>
+                                </a>
+                            </li>
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
+                                <span class="label">USER INTERFACE</span>
+                            </li>
+
+                            <!-- components start -->
+                            <li class="tw-menu-item" x-data="accordionItem('components')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">layers</span>
+                                    <span class="tw-link-label">Components</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-accordions.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Accordion</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-cards.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Cards</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-carousel.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Carousel</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-lightbox.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Lightbox</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-modals.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Modals</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-progress.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Progress</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-sweet-alerts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sweet Alerts</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-tabs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Tabs</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-toasts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Toasts</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- ui-elements start -->
+                            <li class="tw-menu-item" x-data="accordionItem('ui-elements')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">hexagon</span>
+                                    <span class="tw-link-label">UI Elements</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-alerts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Alerts</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-avatars.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Avatars</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-badges.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Badges</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-breadcrumbs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Breadcrumbs</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-buttons.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Buttons</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-countdown.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Countdown</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-dropdowns.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Dropdowns</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-popovers.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Popovers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-tooltips.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Tooltips</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-treeview.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Treeview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-typography.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Typography</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="tw-menu-item" x-data="accordionItem('charts')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">analytics</span>
+                                    <span class="tw-link-label">Charts</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/charts-apexcharts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">ApexChart</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/charts-chartjs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">ChartJs</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/charts-echarts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">E Charts</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/widgets.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">widgets</span>
+                                    <span class="tw-link-label">Widgets</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/drag-drop.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">zoom_out_map</span>
+                                    <span class="tw-link-label">Drag & Drop</span>
+                                </a>
+                            </li>
+                            <!-- form elements end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
+                                <span class="label">TABLES AND FORMS</span>
+                            </li>
+                            <!-- page header end -->
+
+                            <li class="tw-menu-item">
+                                <a href="/table-layout.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">table_chart</span>
+                                    <span class="tw-link-label">Tables</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/data-tables.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">insert_chart</span>
+                                    <span class="tw-link-label">Data Tables</span>
+                                </a>
+                            </li>
+
+                            <!-- form elements start -->
+                            <li class="tw-menu-item" x-data="accordionItem('form')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">hexagon</span>
+                                    <span class="tw-link-label">Form Elements</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-elements.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Basic Elements</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-input-group.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Input Group</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-select.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Select</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-radio.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Radio</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-checkbox.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Checkbox</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-textarea.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Textarea</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- form elements end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
+                                <span class="label">USER AND PAGES</span>
+                            </li>
+                            <!-- page header end -->
+                            <!-- user profile start -->
+                            <li class="tw-menu-item" x-data="accordionItem('profile')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">perm_contact_calendar</span>
+                                    <span class="tw-link-label">User Profile</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/overview.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Overview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/documents.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Documents</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/followers.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Followers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/activities.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Activities</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- user profile end -->
+
+                            <!-- accounts start -->
+                            <li class="tw-menu-item" x-data="accordionItem('accounts')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">badge</span>
+                                    <span class="tw-link-label">Accounts</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/overview.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Overview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/statements.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Statements</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/activities.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Activities</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/logs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Logs</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- accounts end -->
+
+                            <!-- Authentication start -->
+                            <li class="tw-menu-item" x-data="accordionItem('authentication')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">logout</span>
+                                    <span class="tw-link-label">Authentication</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/login.html" class="tw-dropdown-link" target="_blank">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Login</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/register.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Register</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/reset-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Reset Password</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/forget-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Forget Password</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/new-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">New Password</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Authentication end -->
+
+                            <!-- corporate start -->
+                            <li class="tw-menu-item" x-data="accordionItem('corporate')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">corporate_fare</span>
+                                    <span class="tw-link-label">Corporate</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/about.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">About</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/our-team.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Our Team</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/contact-us.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Contact Us</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/licenses.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Licenses</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/sitemap.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sitemap</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- corporate end -->
+
+                            <!-- utilities start -->
+                            <li class="tw-menu-item" x-data="accordionItem('utilities')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">construction</span>
+                                    <span class="tw-link-label">Utilities</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/modals.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Modals</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/search.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Search</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/wizards.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Wizards</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- utilities end -->
+
+                            <!-- Careers pages start -->
+                            <li class="tw-menu-item" x-data="accordionItem('careers')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">work</span>
+                                    <span class="tw-link-label">Careers</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./careers/careers-list.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Careers List</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./careers/apply.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Careers Apply</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Careers pages end -->
+
+                            <!-- eCommerce start -->
+                            <li class="tw-menu-item" x-data="accordionItem('eCommerce')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">shopping_basket</span>
+                                    <span class="tw-link-label">ECommerce</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/category.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Category</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/sales.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sales</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/customers.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/reports.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Reports</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- eCommerce end -->
+
+                            <!-- contacts start -->
+                            <li class="tw-menu-item" x-data="accordionItem('contacts')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">interests</span>
+                                    <span class="tw-link-label">Contacts</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/getting-started.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Getting Started</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/add-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Add Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/edit-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Edit Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/view-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">View Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- contacts end -->
+
+                            <!-- user management start -->
+                            <li class="tw-menu-item" x-data="accordionItem('user')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">workspaces</span>
+                                    <span class="tw-link-label">User Management</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/users.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Users</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/roles.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Roles</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/permissions.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Permissions</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- user management end -->
+
+                            <!-- customers start -->
+                            <li class="tw-menu-item" x-data="accordionItem('customers')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">change_history</span>
+                                    <span class="tw-link-label">Customers</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/getting-started.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Getting Started</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/customer-listing.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customer Listing</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/customer-details.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customer Details</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- customers end -->
+
+                            <!-- documentation -->
+                            <li>
+                                <div class="documents-button">
+                                    <a
+                                        data-ripple
+                                        href="https://github.com/kzamaan/twilight"
+                                        target="_blank"
+                                        class="documents-link"
+                                        data-ripple>
+                                        <span class="material-icons-outlined">description</span>
+                                        <span class="btn-label ml-2">Documentation</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="twilight-body">
+                <header class="top-header" :class="[$store.app.navbar]">
+                    <!-- sidebar toggle button -->
+                    <div class="flex items-center">
+                        <button
+                            type="button"
+                            @click="$store.app.toggleVMenu()"
+                            aria-label="Toggle Menu"
+                            class="text-gray-500 focus:outline-none">
+                            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4 6H20M4 12H20M4 18H11"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <button type="button" @click="$store.app.toggleTheme()" class="header-item" aria-label="Themes">
+                            <span x-show="$store.app.theme == 'dark'" class="material-icons-outlined"> dark_mode </span>
+                            <span x-show="$store.app.theme == 'light'" class="material-icons-outlined">
+                                light_mode
+                            </span>
+                            <span x-show="$store.app.theme == 'system'" class="material-icons-outlined">
+                                brightness_auto
+                            </span>
+                        </button>
+
+                        <button type="button" class="header-item" aria-label="Notification">
+                            <span class="material-icons-outlined"> notifications </span>
+                        </button>
+
+                        <button @click="showCustomizer = true" class="header-item" type="button" aria-label="setting">
+                            <span class="material-icons-outlined"> settings </span>
+                        </button>
+
+                        <div class="dropdown" x-data="dropdown" @click.outside="close">
+                            <button
+                                type="button"
+                                @click="toggle"
+                                aria-label="User Profile"
+                                class="flex h-8 w-8 overflow-hidden rounded-md shadow">
+                                <img
+                                    class="h-full w-full object-cover"
+                                    src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=ffffff"
+                                    alt="Your avatar" />
+                            </button>
+                            <ul
+                                x-show="open"
+                                x-transition:enter.duration.500ms
+                                x-transition:leave.duration.400ms
+                                class="!mt-4 w-64 py-2 shadow-2xl dark:bg-dark-primary">
+                                <li class="flex items-center border-b px-4 py-2 dark:border-gray-700">
+                                    <div class="flex-shrink-0">
+                                        <img
+                                            class="h-8 w-8 rounded-full object-cover"
+                                            src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=F5F8FA"
+                                            alt="Your avatar" />
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
+                                            Kamruzzaman
+                                        </p>
+                                        <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
+                                            Software Engineer
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="border-b py-2 dark:border-gray-700">
+                                    <div class="user-menu-item">
+                                        <a href="#" class="user-menu-link"> My Profile </a>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <a href="#" class="user-menu-link">
+                                            My Projects
+                                            <span
+                                                class="ml-1 inline-flex items-center justify-center rounded-full bg-primary px-2 py-1 text-xs font-bold leading-none text-white">
+                                                9
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <a href="#" class="user-menu-link"> My Subscription </a>
+                                    </div>
+                                </li>
+                                <li class="relative py-2">
+                                    <div class="user-menu-item group">
+                                        <a href="#" class="user-menu-link">
+                                            Language
+                                            <span class="flex items-center text-xs font-bold leading-none">
+                                                <img
+                                                    src="/images/flags/united-states.svg"
+                                                    class="mr-2 h-4 w-4 rounded-full"
+                                                    alt="English" />
+                                                English
+                                            </span>
+                                            <!-- language dropdown -->
+                                            <div class="language-dropdown">
+                                                <div class="language-dropdown-item">
+                                                    <img
+                                                        src="/images/flags/united-states.svg"
+                                                        class="mr-2 h-4 w-4 rounded-full"
+                                                        alt="English" />
+                                                    <span class="text-xs leading-none">English</span>
+                                                </div>
+                                                <div class="language-dropdown-item">
+                                                    <img
+                                                        src="/images/flags/france.svg"
+                                                        class="mr-2 h-4 w-4 rounded-full"
+                                                        alt="france" />
+                                                    <span class="text-xs leading-none">France</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="user-menu-item">
+                                        <a href="#" class="user-menu-link"> Account Settings </a>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <a href="./login.html" class="user-menu-link"> Log out </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="animate__animated twilight-content" :class="[$store.app.animation]">
+                    <!-- Start:Breadcrumb -->
+                    <nav class="breadcrumb">
+                        <div class="left-link">
+                            <ol class="breadcrumb-nav">
+                                <li class="inline-flex items-center">
+                                    <a href="/" class="breadcrumb-item"> Forms </a>
+                                </li>
+
+                                <li aria-current="page">
+                                    <div class="flex items-center">
+                                        <div class="material-icons rotate-180 text-lg">navigate_before</div>
+                                        <span class="breadcrumb-item-current"> Basic Elements </span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </nav>
+                    <!-- End:Breadcrumb -->
+
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 space-y-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Textual inputs</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="grid grid-cols-12 gap-5">
+                                        <div class="col-span-12 lg:col-span-6">
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Text</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="text"
+                                                    placeholder="Artisanal kale"
+                                                    id="example-text-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Search</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="search"
+                                                    value="How do I shoot web"
+                                                    id="example-search-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Email</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="email"
+                                                    value="bootstrap@example.com"
+                                                    id="example-email-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">URL</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="url"
+                                                    value="https://getbootstrap.com"
+                                                    id="example-email-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Telephone</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="tel"
+                                                    value="1-(555)-555-5555"
+                                                    id="example-email-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Password</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="password"
+                                                    value="hunter2"
+                                                    id="example-email-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Number</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="number"
+                                                    value="42"
+                                                    id="example-email-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Date and time</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="datetime-local"
+                                                    value="2019-08-19T13:45:00"
+                                                    id="example-email-input" />
+                                            </div>
+                                        </div>
+                                        <div class="col-span-12 lg:col-span-6">
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Date</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="date"
+                                                    value="2019-08-19"
+                                                    id="example-date-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Month</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="month"
+                                                    value="2019-08"
+                                                    id="example-month-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Week</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="week"
+                                                    value="2019-W33"
+                                                    id="example-week-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Time</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="time"
+                                                    value="13:45:00"
+                                                    id="example-time-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Color picker</label>
+                                                <input
+                                                    class="form-input h-10 w-20"
+                                                    type="color"
+                                                    value="#5156be"
+                                                    id="example-color-input" />
+                                            </div>
+                                            <div class="mb-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Select</label>
+                                                    <select class="form-select">
+                                                        <option>Select</option>
+                                                        <option>Large select</option>
+                                                        <option>Small select</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="example-text-input" class="form-label">Date and time</label>
+                                                <input
+                                                    class="form-input"
+                                                    type="datetime-local"
+                                                    value="2019-08-19T13:45:00"
+                                                    id="example-email-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-12 gap-5">
+                                <div class="col-span-12 lg:col-span-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6>Sizing</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="mb-4">
+                                                    <label class="form-label" for="default-input">Default input</label>
+                                                    <input
+                                                        class="form-input"
+                                                        type="text"
+                                                        id="default-input"
+                                                        placeholder="Default input" />
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label" for="form-sm-input">
+                                                        Form Small input
+                                                    </label>
+                                                    <input
+                                                        class="form-input-sm form-input"
+                                                        type="text"
+                                                        id="form-sm-input"
+                                                        placeholder=".form-control-sm" />
+                                                </div>
+                                                <div>
+                                                    <label class="form-label" for="form-lg-input">
+                                                        Form Large input
+                                                    </label>
+                                                    <input
+                                                        class="form-input-lg form-input"
+                                                        type="text"
+                                                        id="form-lg-input"
+                                                        placeholder=".form-control-lg" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-span-12 lg:col-span-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6>Range Inputs</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <form>
+                                                <div class="mb-4">
+                                                    <label class="form-label" for="customRange1">Example range </label>
+                                                    <input class="form-range w-full" type="range" id="customRange1" />
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label class="form-label" for="customRange2">Min and max </label>
+                                                    <input
+                                                        class="form-range w-full"
+                                                        min="0"
+                                                        max="5"
+                                                        type="range"
+                                                        id="customRange2" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="card col-span-12 lg:col-span-1">
+                                    <div class="card-header">
+                                        <h6>Range Inputs</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form class="mt-6">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="formrow-firstname-input">
+                                                    First name
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    class="form-input"
+                                                    id="formrow-firstname-input"
+                                                    placeholder="Enter Name" />
+                                            </div>
+
+                                            <div class="grid grid-cols-12 gap-5">
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="formrow-email-input">
+                                                            Email
+                                                        </label>
+                                                        <input
+                                                            type="email"
+                                                            class="form-input"
+                                                            id="formrow-email-input"
+                                                            placeholder="Enter your Email" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label" for="formrow-password-input">
+                                                            Password
+                                                        </label>
+                                                        <input
+                                                            type="password"
+                                                            class="form-input"
+                                                            id="formrow-password-input"
+                                                            placeholder="Enter your password" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-check flex items-center">
+                                                    <input
+                                                        type="checkbox"
+                                                        class="form-checkbox"
+                                                        id="formrow-customCheck" />
+                                                    <label class="form-label ml-2" for="formrow-customCheck">
+                                                        Check me out
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="mt-6">
+                                                <button type="submit" class="btn btn-primary w-28">Submit</button>
+                                            </div>
+                                        </form>
+
+                                        <div class="mt-10">
+                                            <h5 class="text-sm text-gray-700 dark:text-gray-100">
+                                                <i class="mdi mdi-arrow-right mr-1 text-primary"></i> Inline forms
+                                                layout
+                                            </h5>
+
+                                            <form class="mt-5">
+                                                <div class="grid grid-cols-12 items-center gap-4">
+                                                    <div class="col-span-12 lg:col-span-4">
+                                                        <input
+                                                            type="text"
+                                                            class="w-full rounded border-gray-100 placeholder:text-sm dark:border-zinc-600 dark:bg-zinc-700/50 dark:text-zinc-100 dark:placeholder:text-zinc-100/60"
+                                                            id="specificSizeInputName"
+                                                            placeholder="Enter Name" />
+                                                    </div>
+                                                    <div class="col-span-12 lg:col-span-4">
+                                                        <div
+                                                            class="flex items-center rounded border bg-gray-50 dark:border-zinc-600 dark:bg-zinc-600">
+                                                            <div class="input-group-text px-4 dark:text-zinc-100">
+                                                                @
+                                                            </div>
+                                                            <input
+                                                                type="text"
+                                                                class="w-full border-0 border-l border-gray-100 placeholder:text-sm dark:border-zinc-600 dark:bg-zinc-700 dark:text-zinc-100 dark:placeholder:text-zinc-100/60"
+                                                                id="specificSizeInputGroupUsername"
+                                                                placeholder="Username" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-span-2">
+                                                        <div class="form-check">
+                                                            <input
+                                                                type="checkbox"
+                                                                class="form-checkbox"
+                                                                id="formrow-customCheck" />
+                                                            <label
+                                                                class="text-gray-700 dark:text-zinc-100"
+                                                                for="autoSizingCheck2">
+                                                                Remember me</label
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-span-2">
+                                                        <button
+                                                            type="submit"
+                                                            class="btn border-transparent bg-primary text-white hover:bg-violet-700 focus:bg-violet-700 focus:ring focus:ring-violet-50">
+                                                            Submit
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="mt-10">
+                                            <h5 class="text-sm text-gray-700 dark:text-gray-100">
+                                                <i class="mdi mdi-arrow-right mr-1 text-primary"></i> Inline forms
+                                                layout used by hstack
+                                            </h5>
+
+                                            <form class="mt-5">
+                                                <div class="flex gap-3">
+                                                    <input
+                                                        class="w-full rounded border-gray-100 placeholder:text-sm dark:border-zinc-600 dark:bg-zinc-700/50 dark:text-zinc-100 dark:placeholder:text-zinc-100/60"
+                                                        type="text"
+                                                        placeholder="Add your item here..." />
+                                                    <button
+                                                        type="button"
+                                                        class="btn border-transparent bg-gray-500 text-white focus:bg-gray-600 focus:ring focus:ring-gray-100">
+                                                        Submit
+                                                    </button>
+                                                    <div class="border-l dark:border-zinc-600"></div>
+                                                    <button
+                                                        type="reset"
+                                                        class="btn border-red-500 text-red-500 hover:bg-red-500 hover:text-white focus:bg-red-500 focus:text-white focus:ring focus:ring-red-100">
+                                                        Reset
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col-span-12 lg:col-span-1">
+                                    <div class="card-header">
+                                        <h6>Horizontal form</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div>
+                                            <form class="mt-6">
+                                                <div class="mb-4 grid grid-cols-12">
+                                                    <label
+                                                        for="horizontal-firstname-input"
+                                                        class="col-span-12 font-medium text-gray-700 dark:text-zinc-100 lg:col-span-3"
+                                                        >First name</label
+                                                    >
+                                                    <div class="col-span-12 lg:col-span-9">
+                                                        <input
+                                                            type="text"
+                                                            class="w-full rounded border-gray-100 py-1.5 placeholder:text-sm dark:border-zinc-600 dark:bg-zinc-700/50 dark:placeholder:text-zinc-100/60"
+                                                            id="horizontal-firstname-input"
+                                                            placeholder="Enter your First Name" />
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 grid grid-cols-12">
+                                                    <label
+                                                        for="horizontal-email-input"
+                                                        class="col-span-12 font-medium text-gray-700 dark:text-zinc-100 lg:col-span-3"
+                                                        >Email</label
+                                                    >
+                                                    <div class="col-span-12 lg:col-span-9">
+                                                        <input
+                                                            type="email"
+                                                            class="w-full rounded border-gray-100 py-1.5 placeholder:text-sm dark:border-zinc-600 dark:bg-zinc-700/50 dark:placeholder:text-zinc-100/60"
+                                                            id="horizontal-email-input"
+                                                            placeholder="Enter your Email" />
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 grid grid-cols-12">
+                                                    <label
+                                                        for="horizontal-password-input"
+                                                        class="col-span-12 font-medium text-gray-700 dark:text-zinc-100 lg:col-span-3"
+                                                        >Password</label
+                                                    >
+                                                    <div class="col-span-12 lg:col-span-9">
+                                                        <input
+                                                            type="password"
+                                                            class="w-full rounded border-gray-100 py-1.5 placeholder:text-sm dark:border-zinc-600 dark:bg-zinc-700/50 dark:placeholder:text-zinc-100/60"
+                                                            id="horizontal-password-input"
+                                                            placeholder="Enter your password" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="justify-content-end grid grid-cols-12">
+                                                    <div class="col-span-12 lg:col-span-9">
+                                                        <div class="form-check">
+                                                            <input
+                                                                type="checkbox"
+                                                                class="form-checkbox"
+                                                                id="formrow-customCheck" />
+                                                            <label
+                                                                class="ml-2 font-medium text-gray-700 dark:text-zinc-100"
+                                                                for="formrow-customCheck"
+                                                                >Check me out</label
+                                                            >
+                                                        </div>
+
+                                                        <div class="mt-6">
+                                                            <button
+                                                                type="submit"
+                                                                class="btn w-28 border-transparent bg-primary font-medium text-white hover:bg-violet-700 focus:bg-violet-700 focus:ring focus:ring-violet-50">
+                                                                Submit
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="mt-10">
+                                            <h5 class="text-sm text-gray-700 dark:text-gray-100">
+                                                <i class="mdi mdi-arrow-right mr-1 text-primary"></i>
+                                                Floating Label
+                                            </h5>
+
+                                            <form class="mt-5">
+                                                <div class="grid grid-cols-12 items-center gap-4">
+                                                    <div class="col-span-12 lg:col-span-6">
+                                                        <div class="relative z-0">
+                                                            <input
+                                                                type="text"
+                                                                id="floating_standard"
+                                                                class="peer block w-full appearance-none rounded border-gray-100 bg-transparent px-2.5 pb-3 pt-5 text-sm text-gray-900 focus:border-violet-200 focus:outline-none focus:ring-0 dark:border-zinc-600 dark:text-white dark:focus:border-gray-500"
+                                                                placeholder=" " />
+                                                            <label
+                                                                for="floating_standard"
+                                                                class="absolute top-4 z-20 origin-[0] -translate-y-6 scale-95 transform px-4 text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:py-1 peer-focus:text-gray-500 dark:text-gray-400 peer-focus:dark:text-gray-500"
+                                                                >Floating standard</label
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-span-12 lg:col-span-6">
+                                                        <div class="relative z-0">
+                                                            <input
+                                                                type="Password"
+                                                                id="floating_standard"
+                                                                class="peer block w-full appearance-none rounded border-gray-100 bg-transparent px-2.5 pb-3 pt-5 text-sm text-gray-900 focus:border-violet-200 focus:outline-none focus:ring-0 dark:border-zinc-600 dark:text-white dark:focus:border-gray-500"
+                                                                placeholder=" " />
+                                                            <label
+                                                                for="floating_standard"
+                                                                class="absolute top-4 z-20 origin-[0] -translate-y-6 scale-95 transform px-4 text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:py-1 peer-focus:text-gray-500 dark:text-gray-400 peer-focus:dark:text-gray-500"
+                                                                >Password</label
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-12 gap-5">
+                                <div class="col-span-12 lg:col-span-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6>Checkboxes</h6>
+                                        </div>
+                                        <div>
+                                            <div class="grid grid-cols-12">
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="card-body">
+                                                        <div>
+                                                            <h5 class="text-sm text-gray-700 dark:text-gray-100">
+                                                                <i class="mdi mdi-arrow-right mr-1 text-primary"></i>
+                                                                Form Checkboxes
+                                                            </h5>
+                                                            <form class="mt-5">
+                                                                <div class="form-check">
+                                                                    <input
+                                                                        type="checkbox"
+                                                                        class="form-checkbox"
+                                                                        id="formrow-customCheck" />
+                                                                    <label
+                                                                        class="ml-2 font-medium text-gray-700 dark:text-zinc-100"
+                                                                        for="formrow-customCheck"
+                                                                        >Form Checkbox</label
+                                                                    >
+                                                                </div>
+                                                                <div class="form-check mt-4">
+                                                                    <input
+                                                                        type="checkbox"
+                                                                        class="form-checkbox"
+                                                                        checked=""
+                                                                        id="formrow-customCheck" />
+                                                                    <label
+                                                                        class="ml-2 font-medium text-gray-700 dark:text-zinc-100"
+                                                                        for="formrow-customCheck"
+                                                                        >Form Checkbox checked</label
+                                                                    >
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="card-body">
+                                                        <div>
+                                                            <h5 class="text-sm text-gray-700 dark:text-gray-100">
+                                                                <i class="mdi mdi-arrow-right mr-1 text-primary"></i>
+                                                                Form Checkboxes
+                                                            </h5>
+                                                            <form class="mt-5">
+                                                                <div class="form-check">
+                                                                    <label
+                                                                        class="mr-2 font-medium text-gray-700 dark:text-zinc-100"
+                                                                        for="formrow-customCheck"
+                                                                        >Form Checkbox Right</label
+                                                                    >
+                                                                    <input
+                                                                        type="checkbox"
+                                                                        class="form-checkbox"
+                                                                        id="formrow-customCheck" />
+                                                                </div>
+                                                                <div class="form-check mt-4">
+                                                                    <label
+                                                                        class="mr-2 font-medium text-gray-700 dark:text-zinc-100"
+                                                                        for="formrow-customCheck"
+                                                                        >Form Checkbox Right checked</label
+                                                                    >
+                                                                    <input
+                                                                        type="checkbox"
+                                                                        class="form-checkbox"
+                                                                        checked=""
+                                                                        id="formrow-customCheck" />
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-span-12 lg:col-span-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h6>Radios</h6>
+                                        </div>
+                                        <div>
+                                            <div class="grid grid-cols-12">
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="card-body">
+                                                        <div>
+                                                            <h5 class="text-sm text-gray-700 dark:text-gray-100">
+                                                                <i class="mdi mdi-arrow-right mr-1 text-primary"></i
+                                                                >Form Radios
+                                                            </h5>
+                                                            <form class="mt-5">
+                                                                <div class="mb-4 flex items-center">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="default-radio"
+                                                                        class="form-radio" />
+                                                                    <label
+                                                                        for="default-radio-1"
+                                                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                                        >Form Radio</label
+                                                                    >
+                                                                </div>
+                                                                <div class="flex items-center">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="default-radio"
+                                                                        class="form-radio"
+                                                                        checked="" />
+                                                                    <label
+                                                                        for="default-radio-2"
+                                                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                                        >Form Radio checked</label
+                                                                    >
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="card-body">
+                                                        <div>
+                                                            <h5 class="text-sm text-gray-700 dark:text-gray-100">
+                                                                <i class="mdi mdi-arrow-right mr-1 text-primary"></i
+                                                                >Form Radios
+                                                            </h5>
+                                                            <form class="mt-5">
+                                                                <div class="mb-4 flex items-center">
+                                                                    <label
+                                                                        for="default-radio-1"
+                                                                        class="mr-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                                        >Form Radio Right</label
+                                                                    >
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="default-radio"
+                                                                        class="form-radio" />
+                                                                </div>
+                                                                <div class="flex items-center">
+                                                                    <label
+                                                                        for="default-radio-2"
+                                                                        class="mr-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                                                        >Form Radio Right checke</label
+                                                                    >
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="default-radio"
+                                                                        class="form-radio"
+                                                                        checked="" />
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-zinc-100">Switches</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="grid grid-cols-12">
+                                            <div class="col-span-12 lg:col-span-4">
+                                                <h5 class="text-sm text-gray-700 dark:text-gray-100">
+                                                    <i class="mdi mdi-arrow-right mr-1 text-primary"></i>Switch examples
+                                                </h5>
+
+                                                <div class="mt-5">
+                                                    <div class="block">
+                                                        <label class="relative inline-flex cursor-pointer items-center">
+                                                            <input type="checkbox" class="peer sr-only" />
+                                                            <div
+                                                                class="peer h-5 w-10 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-500 peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-100"
+                                                                >Toggle this switch element</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                    <div class="mt-3 block">
+                                                        <label class="relative inline-flex cursor-pointer items-center">
+                                                            <input
+                                                                type="checkbox"
+                                                                value=""
+                                                                class="peer sr-only"
+                                                                checked="" />
+                                                            <div
+                                                                class="peer h-5 w-10 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-0.5 after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-100"
+                                                                >Checked toggle</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                    <div class="mt-3 block">
+                                                        <label
+                                                            class="pointer-events-none relative inline-flex items-center">
+                                                            <input type="checkbox" class="peer sr-only" />
+                                                            <div
+                                                                class="peer h-5 w-10 rounded-full bg-gray-50 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-50 after:bg-white/80 after:transition-all after:content-[''] peer-checked:bg-blue-500 peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-400"
+                                                                >Disabled switch element</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-span-12 lg:col-span-4">
+                                                <h5 class="text-sm text-gray-700 dark:text-gray-100">
+                                                    <i class="mdi mdi-arrow-right mr-1 text-primary"></i>Sizes
+                                                </h5>
+
+                                                <div class="mt-5">
+                                                    <div class="block">
+                                                        <label class="relative inline-flex cursor-pointer items-center">
+                                                            <input type="checkbox" class="peer sr-only" checked="" />
+                                                            <div
+                                                                class="peer h-4 w-8 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[4px] after:h-3 after:w-3 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-100"
+                                                                >Small Size Switch</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                    <div class="mt-3 block">
+                                                        <label class="relative inline-flex cursor-pointer items-center">
+                                                            <input type="checkbox" value="" class="peer sr-only" />
+                                                            <div
+                                                                class="peer h-5 w-10 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-0.5 after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-100"
+                                                                >Medium Size Switch</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                    <div class="mt-3 block">
+                                                        <label class="relative inline-flex cursor-pointer items-center">
+                                                            <input
+                                                                type="checkbox"
+                                                                value=""
+                                                                class="peer sr-only"
+                                                                checked="" />
+                                                            <div
+                                                                class="peer h-6 w-12 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-0.5 after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-100"
+                                                                >Large Size Switch</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-span-12 lg:col-span-4">
+                                                <h5 class="text-sm text-gray-700 dark:text-gray-100">
+                                                    <i class="mdi mdi-arrow-right mr-1 text-primary"></i>Color Switcher
+                                                </h5>
+
+                                                <div class="mt-5">
+                                                    <div class="block">
+                                                        <label class="relative inline-flex cursor-pointer items-center">
+                                                            <input type="checkbox" class="peer sr-only" checked="" />
+                                                            <div
+                                                                class="peer h-5 w-10 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-100"
+                                                                >Primary</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                    <div class="mt-3 block">
+                                                        <label class="relative inline-flex cursor-pointer items-center">
+                                                            <input type="checkbox" class="peer sr-only" checked="" />
+                                                            <div
+                                                                class="peer h-5 w-10 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-gray-500 peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-100"
+                                                                >Secondary</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                    <div class="mt-3 block">
+                                                        <label class="relative inline-flex cursor-pointer items-center">
+                                                            <input type="checkbox" class="peer sr-only" checked="" />
+                                                            <div
+                                                                class="peer h-5 w-10 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-green-500 peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-100"
+                                                                >Success</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                    <div class="mt-3 block">
+                                                        <label class="relative inline-flex cursor-pointer items-center">
+                                                            <input type="checkbox" class="peer sr-only" checked="" />
+                                                            <div
+                                                                class="peer h-5 w-10 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-sky-500 peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-100"
+                                                                >Info</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                    <div class="mt-3 block">
+                                                        <label class="relative inline-flex cursor-pointer items-center">
+                                                            <input type="checkbox" class="peer sr-only" checked="" />
+                                                            <div
+                                                                class="peer h-5 w-10 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-yellow-500 peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-100"
+                                                                >Warning</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                    <div class="mt-3 block">
+                                                        <label class="relative inline-flex cursor-pointer items-center">
+                                                            <input type="checkbox" class="peer sr-only" checked="" />
+                                                            <div
+                                                                class="peer h-5 w-10 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-red-500 peer-checked:after:left-1.5 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-zinc-600"></div>
+                                                            <span
+                                                                class="ml-3 text-sm font-medium text-gray-700 dark:text-zinc-100"
+                                                                >Danger</span
+                                                            >
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <footer class="footer">
+                    <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
+                        © <span id="footer-year"></span> <a href="#" class="hover:underline">Twilight™</a>. All Rights
+                        Reserved.
+                    </span>
+                    <ul class="mt-3 flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                        <li>
+                            <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/kzamaan/twilight" class="hover:underline" target="_blank">
+                                Github
+                            </a>
+                        </li>
+                    </ul>
+                </footer>
+            </div>
+
+            <!-- Theme customizer -->
+            <div class="theme-customizer">
+                <div x-show="showCustomizer" @click="showCustomizer = false" class="customizer-shadow"></div>
+
+                <nav class="app-customizer" :class="{'!right-0' : showCustomizer}">
+                    <div data-simplebar class="h-full overflow-y-auto overflow-x-hidden p-4">
+                        <div class="text-center">
+                            <a href="javascript:;" class="customizer-close" @click="showCustomizer = false">
+                                <span class="material-icons-outlined text-xl/none"> close </span>
+                            </a>
+                            <h4 class="mb-1 dark:text-white">TEMPLATE CUSTOMIZER</h4>
+                            <p class="text-white-dark">
+                                Set preferences that will be cookies for your live preview demonstration.
+                            </p>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Color Scheme</h5>
+                            <p class="text-white-dark text-xs">Overall light or dark presentation.</p>
+                            <div class="mt-3 grid grid-cols-3 gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.theme === 'light' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleTheme('light')">
+                                    <span class="material-icons-outlined"> light_mode </span>
+                                    Light
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.theme === 'dark' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleTheme('dark')">
+                                    <span class="material-icons-outlined"> dark_mode </span>
+                                    Dark
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.theme === 'system' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleTheme('system')">
+                                    <span class="material-icons-outlined"> settings_suggest </span>
+                                    System
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Navigation Position</h5>
+                            <p class="text-white-dark text-xs">Select the primary navigation paradigm for your app.</p>
+                            <div class="mt-3 grid grid-cols-3 gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.menu === 'horizontal' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleMenu('horizontal')">
+                                    Horizontal
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4 text-center"
+                                    :class="[$store.app.menu === 'vertical' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleMenu('vertical')">
+                                    Vertical
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4 text-center"
+                                    :class="[$store.app.menu === 'collapsible-vertical' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleMenu('collapsible-vertical')">
+                                    Collapsible
+                                </button>
+                            </div>
+                            <div class="mt-5 text-primary">
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.semiDark"
+                                        type="checkbox"
+                                        :value="true"
+                                        class="form-checkbox"
+                                        @change="$store.app.toggleSemiDark()" />
+                                    <span class="ml-2">Semi Dark (Sidebar &amp; Header)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Layout Style</h5>
+                            <p class="text-white-dark text-xs">Select the primary layout style for your app.</p>
+                            <div class="mt-3 flex gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.layout === 'boxed-layout' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleLayout('boxed-layout')">
+                                    Box
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.layout === 'full' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleLayout('full')">
+                                    Full
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Direction</h5>
+                            <p class="text-white-dark text-xs">Select the direction for your app.</p>
+                            <div class="mt-3 flex gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.rtlClass === 'ltr' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleRTL('ltr')">
+                                    LTR
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.rtlClass === 'rtl' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleRTL('rtl')">
+                                    RTL
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Navbar Type</h5>
+                            <p class="text-white-dark text-xs">Sticky or Floating.</p>
+                            <div class="mt-3 flex items-center gap-3 text-primary">
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.navbar"
+                                        type="radio"
+                                        value="navbar-sticky"
+                                        class="form-radio"
+                                        @change="$store.app.toggleNavbar()"
+                                        name="$store.app.navbar" />
+                                    <span class="ml-2">Sticky</span>
+                                </label>
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.navbar"
+                                        type="radio"
+                                        value="navbar-floating"
+                                        class="form-radio"
+                                        @change="$store.app.toggleNavbar()"
+                                        name="$store.app.navbar" />
+                                    <span class="ml-2">Floating</span>
+                                </label>
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.navbar"
+                                        type="radio"
+                                        value="navbar-static"
+                                        class="form-radio"
+                                        @change="$store.app.toggleNavbar()"
+                                        name="$store.app.navbar" />
+                                    <span class="ml-2">Static</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Router Transition</h5>
+                            <p class="text-white-dark text-xs">Animation of main content.</p>
+                            <div class="mt-3">
+                                <select
+                                    x-model="$store.app.animation"
+                                    class="form-select w-full border-primary text-primary"
+                                    @change="$store.app.toggleAnimation()">
+                                    <option value>Select Animation</option>
+                                    <option value="animate__fadeIn">Fade</option>
+                                    <option value="animate__fadeInDown">Fade Down</option>
+                                    <option value="animate__fadeInUp">Fade Up</option>
+                                    <option value="animate__fadeInLeft">Fade Left</option>
+                                    <option value="animate__fadeInRight">Fade Right</option>
+                                    <option value="animate__slideInDown">Slide Down</option>
+                                    <option value="animate__slideInLeft">Slide Left</option>
+                                    <option value="animate__slideInRight">Slide Right</option>
+                                    <option value="animate__zoomIn">Zoom In</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </body>
+</html>
