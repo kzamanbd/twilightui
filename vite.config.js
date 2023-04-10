@@ -4,12 +4,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
     plugins: [
         createHtmlPlugin({
             minify: true,
         }),
+        VitePWA()
     ],
     build: {
         outDir: 'build',
