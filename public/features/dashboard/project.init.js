@@ -106,7 +106,7 @@ var chart = new ApexCharts(document.querySelector('#budgets'), {
             },
         },
     },
-    colors: ['#FF5FB4'],
+    colors: ['#009ef7'],
     dataLabels: {
         enabled: true,
         formatter: function (val) {
@@ -114,9 +114,9 @@ var chart = new ApexCharts(document.querySelector('#budgets'), {
         },
         offsetY: -20,
         style: {
-            fontSize: '13px',
+            fontSize: '14px',
             fontWeight: 'normal',
-            colors: ['#FF5FB4'],
+            colors: ['#000'],
         },
     },
 
@@ -149,3 +149,22 @@ var chart = new ApexCharts(document.querySelector('#budgets'), {
     },
 });
 chart.render();
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('projects', () => ({
+        init() {
+            setTimeout(() => {
+                //sortable js
+                const sortable = document.querySelectorAll('.sortable-list');
+                sortable.forEach((item, i) => {
+                    window.Sortable.create(item, {
+                        animation: 200,
+                        group: { name: 'shared' },
+                        ghostClass: 'sortable-ghost',
+                        dragClass: 'sortable-drag',
+                    });
+                });
+            });
+        },
+    }));
+});
