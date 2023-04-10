@@ -384,9 +384,9 @@
                                 </div>
                                 <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
-                                        <a href="/forms-input.html" class="tw-dropdown-link">
+                                        <a href="/forms-basic.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Input</span>
+                                            <span class="tw-link-label">Basic Elements</span>
                                         </a>
                                     </li>
                                     <li class="tw-dropdown-item group">
@@ -915,6 +915,7 @@
                                     alt="Your avatar" />
                             </button>
                             <ul
+                                x-cloak
                                 x-show="open"
                                 x-transition:enter.duration.500ms
                                 x-transition:leave.duration.400ms
@@ -1488,7 +1489,7 @@
                                         :value="true"
                                         class="form-checkbox"
                                         @change="$store.app.toggleSemiDark()" />
-                                    <span class="ml-2">Semi Dark (Sidebar &amp; Header)</span>
+                                    <span>Semi Dark (Sidebar &amp; Header)</span>
                                 </label>
                             </div>
                         </div>
@@ -1547,7 +1548,7 @@
                                         class="form-radio"
                                         @change="$store.app.toggleNavbar()"
                                         name="$store.app.navbar" />
-                                    <span class="ml-2">Sticky</span>
+                                    <span>Sticky</span>
                                 </label>
                                 <label class="mb-0 inline-flex items-center">
                                     <input
@@ -1557,7 +1558,7 @@
                                         class="form-radio"
                                         @change="$store.app.toggleNavbar()"
                                         name="$store.app.navbar" />
-                                    <span class="ml-2">Floating</span>
+                                    <span>Floating</span>
                                 </label>
                                 <label class="mb-0 inline-flex items-center">
                                     <input
@@ -1567,7 +1568,7 @@
                                         class="form-radio"
                                         @change="$store.app.toggleNavbar()"
                                         name="$store.app.navbar" />
-                                    <span class="ml-2">Static</span>
+                                    <span>Static</span>
                                 </label>
                             </div>
                         </div>
