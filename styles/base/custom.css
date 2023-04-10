@@ -35,13 +35,13 @@
         border-collapse: collapse !important;
     }
 
-    table tfoot tr,
-    table thead tr {
+    table tfoot,
+    table thead {
         @apply bg-gray-100;
     }
 
-    .dark table tfoot tr,
-    .dark table thead tr {
+    .dark table tfoot,
+    .dark table thead {
         @apply bg-gray-800;
     }
 
@@ -54,26 +54,5 @@
     table tfoot tr th,
     table thead tr th {
         font-weight: 600;
-    }
-
-    table tbody tr {
-        border-bottom-width: 1px;
-        border-color: #e0e6ed66 !important;
-    }
-
-    table.table-hover tbody tr:hover {
-        background-color: #e0e6ed33 !important;
-    }
-
-    .dark table.table-hover tbody tr:hover {
-        background-color: #1a294166 !important;
-    }
-
-    table.table-striped tbody tr:nth-child(odd) {
-        background-color: #e0e6ed33 !important;
-    }
-
-    .dark table.table-striped tbody tr:nth-child(odd) {
-        background-color: #1a294166 !important;
     }
 }
