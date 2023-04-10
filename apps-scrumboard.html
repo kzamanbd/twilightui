@@ -1089,64 +1089,72 @@
                                             <div class="card-body sortable-list min-h-[150px]" :data-id="project.id">
                                                 <template x-for="task in project.tasks">
                                                     <div
-                                                        :key="project.id + '' + task.id"
-                                                        :data-id="project.id + '' + task.id"
-                                                        class="mb-5 cursor-move space-y-3 rounded-md bg-[#f4f4f4] p-3 pb-5 shadow dark:bg-[#262e40]">
-                                                        <template x-if="task.image">
-                                                            <img
-                                                                src="/images/carousel1.jpeg"
-                                                                alt="images"
-                                                                class="h-32 w-full rounded-md object-cover" />
-                                                        </template>
-                                                        <div class="text-base font-medium" x-text="task.title"></div>
-                                                        <p class="break-all" x-text="task.description"></p>
-                                                        <div class="flex flex-wrap items-center gap-2">
-                                                            <template x-if="task.tags?.length">
-                                                                <template x-for="(tag , i) in task.tags" :key="i">
-                                                                    <div class="btn btn-outline-primary flex px-2 py-1">
+                                                        :key="`${project.id}${task.id}`"
+                                                        :data-id="`${project.id}${task.id}`"
+                                                        class="mb-5 cursor-move space-y-3">
+                                                        <div class="sortable-item-card">
+                                                            <template x-if="task.image">
+                                                                <img
+                                                                    src="/images/carousel1.jpeg"
+                                                                    alt="images"
+                                                                    class="h-32 w-full rounded-md object-cover" />
+                                                            </template>
+                                                            <div
+                                                                class="text-base font-medium"
+                                                                x-text="task.title"></div>
+                                                            <p class="break-all" x-text="task.description"></p>
+                                                            <div class="flex flex-wrap items-center gap-2">
+                                                                <template x-if="task.tags?.length">
+                                                                    <template x-for="(tag , i) in task.tags" :key="i">
+                                                                        <div
+                                                                            class="btn btn-outline-primary flex px-2 py-1">
+                                                                            <span
+                                                                                class="material-icons-outlined text-lg/none">
+                                                                                local_offer
+                                                                            </span>
+                                                                            <span class="ml-2" x-text="tag"></span>
+                                                                        </div>
+                                                                    </template>
+                                                                </template>
+                                                                <template x-if="!task.tags?.length">
+                                                                    <div
+                                                                        class="btn text-white-dark dark:border-white-dark/50 flex px-2 py-1 shadow-none">
                                                                         <span
                                                                             class="material-icons-outlined text-lg/none">
                                                                             local_offer
                                                                         </span>
-                                                                        <span class="ml-2" x-text="tag"></span>
+                                                                        <span class="ml-2">No Tags</span>
                                                                     </div>
                                                                 </template>
-                                                            </template>
-                                                            <template x-if="!task.tags?.length">
-                                                                <div
-                                                                    class="btn text-white-dark dark:border-white-dark/50 flex px-2 py-1 shadow-none">
-                                                                    <span class="material-icons-outlined text-lg/none">
-                                                                        local_offer
-                                                                    </span>
-                                                                    <span class="ml-2">No Tags</span>
-                                                                </div>
-                                                            </template>
-                                                        </div>
-                                                        <div class="flex items-center justify-between">
-                                                            <div
-                                                                class="flex items-center font-medium hover:text-primary">
-                                                                <span class="material-icons-outlined text-lg/none">
-                                                                    today
-                                                                </span>
-                                                                <span class="ml-2" x-text="task.date"></span>
                                                             </div>
-                                                            <div class="flex items-center">
-                                                                <button
-                                                                    type="button"
-                                                                    class="hover:text-info"
-                                                                    @click="addEditTask(project.id, task)">
+                                                            <div class="flex items-center justify-between">
+                                                                <div
+                                                                    class="flex items-center font-medium hover:text-primary">
                                                                     <span class="material-icons-outlined text-lg/none">
-                                                                        edit_note
+                                                                        today
                                                                     </span>
-                                                                </button>
-                                                                <button
-                                                                    type="button"
-                                                                    class="hover:text-danger"
-                                                                    @click="deleteConfirmModal(project.id, task)">
-                                                                    <span class="material-icons-outlined text-lg/none">
-                                                                        remove_circle_outline
-                                                                    </span>
-                                                                </button>
+                                                                    <span class="ml-2" x-text="task.date"></span>
+                                                                </div>
+                                                                <div class="flex items-center">
+                                                                    <button
+                                                                        type="button"
+                                                                        class="hover:text-info"
+                                                                        @click="addEditTask(project.id, task)">
+                                                                        <span
+                                                                            class="material-icons-outlined text-lg/none">
+                                                                            edit_note
+                                                                        </span>
+                                                                    </button>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="hover:text-danger"
+                                                                        @click="deleteConfirmModal(project.id, task)">
+                                                                        <span
+                                                                            class="material-icons-outlined text-lg/none">
+                                                                            remove_circle_outline
+                                                                        </span>
+                                                                    </button>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -168,3 +168,10 @@
     min-height: 200px;
     overflow: auto;
 }
+.sortable-drag .sortable-item-card {
+    transform: rotate(-5deg) !important;
+}
+/* sortable-ghost opacity */
+.sortable-chosen.sortable-ghost {
+    @apply opacity-100 !important;
+}

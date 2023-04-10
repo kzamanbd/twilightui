@@ -95,14 +95,14 @@ document.addEventListener('alpine:init', () => {
             setTimeout(() => {
                 //sortable js
                 const sortable = document.querySelectorAll('.sortable-list');
-                for (let i = 0; i < sortable.length; i++) {
-                    window.Sortable.create(sortable[i], {
+                sortable.forEach((item, i) => {
+                    window.Sortable.create(item, {
                         animation: 200,
-                        group: 'name',
+                        group: { name: 'shared' },
                         ghostClass: 'sortable-ghost',
                         dragClass: 'sortable-drag',
                     });
-                }
+                });
             });
         },
 
