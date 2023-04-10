@@ -11,7 +11,7 @@
         @apply lg:container lg:mx-auto lg:shadow-lg;
     }
     .twilight {
-        @apply dark--text bg-light-gray dark:bg-dark-secondary;
+        @apply dark--text bg-light-gray text-sm font-normal antialiased dark:bg-dark-secondary;
     }
     .twilight-body {
         @apply relative flex min-h-screen flex-col transition-all duration-300 lg:ml-64;
@@ -72,5 +72,8 @@
     }
     .text-22 {
         font-size: 1.375rem !important;
+    }
+    .material-icons-outlined {
+        @apply text-xl/none;
     }
 }
