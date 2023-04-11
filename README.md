@@ -1,6 +1,6 @@
 # TwiLight Dashboard
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/916d954d-3f57-432c-80ca-9584f3e4c8b2/deploy-status)](https://app.netlify.com/sites/twilighti/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/916d954d-3f57-432c-80ca-9584f3e4c8b2/deploy-status)](https://app.netlify.com/sites/twilightui/deploys)
 
 A multi theme, completely accessible, with components and pages examples, ready for production dashboard.
 
@@ -33,8 +33,8 @@ There is a `tailwind.config.js` file with `content` instructions and extra color
 
 (TODO: add links)
 
--   Tailwind CSS
--   Tailwind Forms
--   PostCSS
--   Alpine.js
--   Chart.js (charts)
+- Tailwind CSS
+- Tailwind Forms
+- PostCSS
+- Alpine.js
+- Chart.js (charts)
