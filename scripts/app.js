@@ -38,6 +38,11 @@ window.Quill = Quill;
 import Sortable from 'sortablejs';
 window.Sortable = Sortable;
 
+// file upload with preview
+import { FileUploadWithPreview } from 'file-upload-with-preview';
+// import 'file-upload-with-preview/dist/style.css';
+window.FileUploadWithPreview = FileUploadWithPreview;
+
 // app config
 (function () {
     'use strict';

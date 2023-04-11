@@ -22,6 +22,7 @@
         "animate.css": "^4.1.1",
         "autoprefixer": "^10.4.2",
         "cssnano": "^5.1.15",
+        "file-upload-with-preview": "^6.0.2",
         "material-icons": "^1.13.3",
         "postcss": "^8.4.8",
         "postcss-import": "^15.1.0",
