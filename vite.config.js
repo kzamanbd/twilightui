@@ -62,6 +62,7 @@ export default defineConfig({
                 ]),
             ),
         },
+        chunkSizeWarningLimit: 1000, // 1000kb
     },
     server: {
         port: 5000,
