@@ -1,12 +1,14 @@
 // alpine.js config
 import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
+import mask from '@alpinejs/mask';
 import persist from '@alpinejs/persist';
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 Alpine.plugin(collapse);
 Alpine.plugin(persist);
 Alpine.plugin(focus);
+Alpine.plugin(mask);
 
 import 'animate.css';
 // simplebar

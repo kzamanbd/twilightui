@@ -34,4 +34,18 @@
     .form-input-lg {
         @apply px-2 text-2xl;
     }
+    .has-success .form-input,
+    .has-success .form-input,
+    .has-success .form-select,
+    .has-success .form-multiselect,
+    .has-success .form-textarea {
+        @apply border-success bg-green-100 focus:border-green-300 focus:ring focus:ring-green-200;
+    }
+    .has-error .form-input,
+    .has-error .form-input,
+    .has-error .form-select,
+    .has-error .form-multiselect,
+    .has-error .form-textarea {
+        @apply border-danger bg-red-100 focus:border-red-300 focus:ring focus:ring-red-200;
+    }
 }
