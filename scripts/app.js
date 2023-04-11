@@ -58,7 +58,10 @@ window.flatpickr = flatpickr;
     //? alpine data
     Alpine.data('twilightTheme', () => ({
         init() {
-            const selector = document.querySelector(`ul.tw-nav-menu a[href="${window.location.pathname}"]`);
+            let pathName = window.location.pathname;
+            if (pathName == '/') pathName = '/index.html';
+
+            const selector = document.querySelector(`ul.tw-nav-menu a[href="${pathName}"]`);
             if (selector) {
                 selector.classList.add('active');
                 const ul = selector.closest('ul.tw-dropdown-menu');
