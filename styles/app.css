@@ -345,3 +345,9 @@ input[type='range']:active::-webkit-slider-thumb {
     display: block;
     margin-top: -2px;
 }
+
+/* choose js */
+.choices__input {
+    border-radius: 4px;
+    background: transparent;
+}

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Clipboard - Twilight Dashboard</title>
+        <title>Select2 - Twilight Dashboard</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/pwa-192x192.png" />
         <link rel="mask-icon" href="/favicon.png" color="#FFFFFF" />
@@ -12,6 +12,10 @@
         <!-- start:Core Style and Script -->
         <link rel="stylesheet" href="/styles/app.css" />
         <script type="module" src="/scripts/app.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css" />
     </head>
 
     <body>
@@ -1048,136 +1052,104 @@
                                 <li aria-current="page">
                                     <div class="flex items-center">
                                         <div class="material-icons rotate-180 text-lg">navigate_before</div>
-                                        <span class="breadcrumb-item-current"> Clipboard </span>
+                                        <span class="breadcrumb-item-current"> Select2 </span>
                                     </div>
                                 </li>
                             </ol>
                         </div>
                     </nav>
                     <!-- End:Breadcrumb -->
-                    <div x-data="form" class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                        <!-- Copy from input -->
+                    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                        <!-- Basic -->
                         <div class="card">
                             <div class="card-header">
-                                <h6>Copy from input</h6>
+                                <h6>Basic</h6>
                             </div>
                             <div class="card-body">
-                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
-                                    <form>
-                                        <input type="text" class="form-input" x-model="message1" id="message1" />
-                                        <div class="mt-5 flex flex-wrap gap-2">
-                                            <button
-                                                type="button"
-                                                class="btn btn-primary"
-                                                data-clipboard-target="#message1">
-                                                <span class="material-icons-outlined mr-2"> content_copy </span>
-                                                Copy from Input
-                                            </button>
-                                            <button
-                                                type="button"
-                                                class="btn btn-dark"
-                                                data-clipboard-action="cut"
-                                                data-clipboard-target="#message1">
-                                                <span class="material-icons-outlined mr-2"> content_cut </span>
-                                                Cut from Input
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
+                                <select class="selectize">
+                                    <option selected="" value="orange">Orange</option>
+                                    <option value="White">White</option>
+                                    <option value="Purple">Purple</option>
+                                </select>
                             </div>
                         </div>
-                        <!-- Copy form Textarea -->
+
+                        <!-- Nested -->
                         <div class="card">
                             <div class="card-header">
-                                <h6>Copy form Textarea</h6>
+                                <h6>Nested</h6>
                             </div>
                             <div class="card-body">
-                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
-                                    <form>
-                                        <textarea
-                                            rows="3"
-                                            wrap="soft"
-                                            class="form-textarea"
-                                            x-model="message2"
-                                            id="message2"
-                                            spellcheck="true"></textarea>
-                                        <div class="mt-5 flex flex-wrap gap-2">
-                                            <button
-                                                type="button"
-                                                class="btn btn-primary"
-                                                data-clipboard-target="#message2">
-                                                <span class="material-icons-outlined mr-2"> content_copy </span>
-                                                Copy from Input
-                                            </button>
-                                            <button
-                                                type="button"
-                                                class="btn btn-dark"
-                                                data-clipboard-action="cut"
-                                                data-clipboard-target="#message2">
-                                                <span class="material-icons-outlined mr-2"> content_cut </span>
-                                                Cut from Input
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
+                                <select class="selectize">
+                                    <option disabled="">Group 1</option>
+                                    <option selected="" value="orange">Orange</option>
+                                    <option value="White">White</option>
+                                    <option value="Purple">Purple</option>
+                                    <option disabled="">Group 2</option>
+                                    <option>Yellow</option>
+                                    <option value="Red">Red</option>
+                                    <option value="Green">Green</option>
+                                    <option disabled="">Group 3</option>
+                                    <option>Aqua</option>
+                                    <option value="Black">Black</option>
+                                    <option value="Blue">Blue</option>
+                                </select>
                             </div>
                         </div>
-                        <!-- Copy Text from Paragraph -->
+
+                        <!-- Disabling options -->
                         <div class="card">
                             <div class="card-header">
-                                <h6>Copy Text from Paragraph</h6>
+                                <h6>Disabling options</h6>
                             </div>
                             <div class="card-body">
-                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
-                                    <form>
-                                        <p class="mb-3 font-semibold">
-                                            Here is your OTP <span class="text-2xl" id="copyOTP">878954</span>.
-                                        </p>
-                                        <p class="font-semibold">Please do not share it to anyone</p>
-                                        <div class="mt-5 flex flex-wrap gap-2">
-                                            <button
-                                                type="button"
-                                                class="btn btn-primary"
-                                                data-clipboard-target="#copyOTP">
-                                                <span class="material-icons-outlined mr-2"> content_copy </span>
-                                                Copy from Paragraph
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
+                                <select class="selectize">
+                                    <option selected="" value="orange">Orange</option>
+                                    <option disabled="" value="White">White</option>
+                                    <option value="Purple">Purple</option>
+                                </select>
                             </div>
                         </div>
-                        <!-- Advanced -->
-                        <div class="card">
+
+                        <!-- Placeholder -->
+                        <div class="card lg:row-start-3">
                             <div class="card-header">
-                                <h6>Copy Hidden Text (Advanced)</h6>
+                                <h6>Placeholder</h6>
                             </div>
                             <div class="card-body">
-                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
-                                    <form>
-                                        <p class="mb-3 font-semibold">
-                                            <span> Link -&gt; </span>
-                                            <span id="copyLink"> http://www.admin-dashboard.com/code</span>
-                                        </p>
-                                        <span class="absolute opacity-0" id="copyHiddenCode">542458</span>
-                                        <div class="mt-5 flex flex-wrap gap-2">
-                                            <button
-                                                type="button"
-                                                class="btn btn-primary"
-                                                data-clipboard-target="#copyLink">
-                                                <span class="material-icons-outlined mr-2"> content_copy </span>
-                                                Copy Link
-                                            </button>
-                                            <button
-                                                type="button"
-                                                class="btn btn-dark"
-                                                data-clipboard-target="#copyHiddenCode">
-                                                <span class="material-icons-outlined mr-2"> content_copy </span>
-                                                Copy Hidden Code
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
+                                <select class="selectize" placeholder="Choose...">
+                                    <option value="orange">Orange</option>
+                                    <option value="White">White</option>
+                                    <option value="Purple">Purple</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Searchable -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Searchable</h6>
+                            </div>
+                            <div class="card-body">
+                                <select class="selectize">
+                                    <option value="orange">Orange</option>
+                                    <option value="White">White</option>
+                                    <option value="Purple">Purple</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Multiple -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Multiple select</h6>
+                            </div>
+                            <div class="card-body">
+                                <select class="selectize-multiple" multiple="multiple">
+                                    <option value="orange" selected="true">Orange</option>
+                                    <option value="White">White</option>
+                                    <option value="Purple">Purple</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -1397,16 +1369,29 @@
                 </nav>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
         <script>
-            document.addEventListener('alpine:init', function () {
-                // content section
-                Alpine.data('form', () => ({
-                    init() {
-                        new ClipboardJS('.btn');
+            document.addEventListener('DOMContentLoaded', function () {
+                const elements = document.querySelectorAll('.selectize');
+
+                elements.forEach(function (element) {
+                    new Choices(element, {
+                        searchEnabled: true,
+                        itemSelectText: 'Search...',
+                        classNames: {
+                            containerInner: 'form-input',
+                        },
+                    });
+                });
+                // multiple select
+                new Choices(document.querySelector('.selectize-multiple'), {
+                    searchEnabled: true,
+                    itemSelectText: 'Search...',
+                    classNames: {
+                        containerInner: 'form-input',
                     },
-                    message1: 'http://www.admin-dashboard.com',
-                    message2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
-                }));
+                    removeItemButton: true,
+                });
             });
         </script>
     </body>
