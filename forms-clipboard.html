@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Date Picker - Twilight Dashboard</title>
+        <title>Clipboard - Twilight Dashboard</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/pwa-192x192.png" />
         <link rel="mask-icon" href="/favicon.png" color="#FFFFFF" />
@@ -12,9 +12,7 @@
         <!-- start:Core Style and Script -->
         <link rel="stylesheet" href="/styles/app.css" />
         <script type="module" src="/scripts/app.js"></script>
-
-        <!-- date picker -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css" />
     </head>
 
     <body>
@@ -1051,257 +1049,135 @@
                                 <li aria-current="page">
                                     <div class="flex items-center">
                                         <div class="material-icons rotate-180 text-lg">navigate_before</div>
-                                        <span class="breadcrumb-item-current"> Date Picker </span>
+                                        <span class="breadcrumb-item-current"> Clipboard </span>
                                     </div>
                                 </li>
                             </ol>
                         </div>
                     </nav>
                     <!-- End:Breadcrumb -->
-
-                    <div class="space-y-4" x-data="form">
-                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                            <!-- Basic -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h6>Basic</h6>
-                                </div>
-                                <div class="card-body">
-                                    <input
-                                        id="basic"
-                                        x-model="date1"
-                                        class="flatpickr-input form-input"
-                                        type="text"
-                                        readonly="readonly" />
-                                </div>
+                    <div x-data="form" class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                        <!-- Copy from input -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Copy from input</h6>
                             </div>
-
-                            <!-- Date & time -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h6>Date Time</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="mb-2.5">
-                                        Use
-                                        <code class="text-danger">{enableTime: true, dateFormat: 'Y-m-d H:i'}</code>
-                                        option to enable time support
-                                    </div>
-                                    <input
-                                        id="dateTime"
-                                        x-model="date2"
-                                        class="flatpickr-input form-input"
-                                        type="text"
-                                        readonly="readonly" />
-                                </div>
-                            </div>
-
-                            <!-- range-calendar -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h6>Range Calendar</h6>
-                                </div>
-
-                                <div class="card-body">
-                                    <div class="mb-2.5">
-                                        Use <code class="text-danger">{mode: 'range'}</code> select the date with range.
-                                    </div>
-                                    <input
-                                        id="range-calendar"
-                                        x-model="date3"
-                                        class="flatpickr-input form-input"
-                                        type="text"
-                                        readonly="readonly" />
-                                </div>
-                            </div>
-
-                            <!-- preloading time -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h6>Preloading Time</h6>
-                                </div>
-
-                                <div class="card-body">
-                                    <div class="mb-2.5">
-                                        Use
-                                        <code class="text-danger">
-                                            {noCalendar: true, enableTime: true, dateFormat: 'H:i'}
-                                        </code>
-                                        with Date Time options to disable calendar and show time picker only.
-                                    </div>
-                                    <input
-                                        id="preloading-time"
-                                        x-model="date4"
-                                        class="flatpickr-input form-input"
-                                        type="text"
-                                        readonly="readonly" />
+                            <div class="card-body">
+                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
+                                    <form>
+                                        <input type="text" class="form-input" x-model="message1" id="message1" />
+                                        <div class="mt-5 flex flex-wrap gap-2">
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                                data-clipboard-target="#message1">
+                                                <span class="material-icons-outlined mr-2"> content_copy </span>
+                                                Copy from Input
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-dark"
+                                                data-clipboard-action="cut"
+                                                data-clipboard-target="#message1">
+                                                <span class="material-icons-outlined mr-2"> content_cut </span>
+                                                Cut from Input
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- range picker -->
-                        <div class="inline-block rounded bg-[#009688]/[.26] px-2 py-1 text-base text-[#009688]">
-                            Javascript Range Slider
-                        </div>
-                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                            <!-- Top-Left -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h6>Position : Top-Left</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="font-bold">
-                                        <span
-                                            x-text="slider1"
-                                            class="dark:border-dark inline-block rounded border border-white-light px-2 py-1 text-primary">
-                                        </span>
-                                        <span>%</span>
-                                    </div>
-                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider1" />
-                                </div>
+                        <!-- Copy form Textarea -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Copy form Textarea</h6>
                             </div>
-
-                            <!-- Top-right -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h6>Position : Top-right</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-right font-bold rtl:text-left">
-                                        <span
-                                            x-text="slider2"
-                                            class="dark:border-dark inline-block rounded border border-white-light px-2 py-1 text-primary">
-                                        </span>
-                                        <span>%</span>
-                                    </div>
-                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider2" />
-                                </div>
-                            </div>
-
-                            <!-- bottom-left -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h6>Position : Bottom-Left</h6>
-                                </div>
-                                <div class="card-body">
-                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider3" />
-                                    <div class="font-bold">
-                                        <span
-                                            x-text="slider3"
-                                            class="dark:border-dark inline-block rounded border border-white-light px-2 py-1 text-primary">
-                                        </span>
-                                        <span>%</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Bottom-right -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h6>Position : Bottom-right</h6>
-                                </div>
-                                <div class="card-body">
-                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider4" />
-                                    <div class="text-right font-bold rtl:text-left">
-                                        <span
-                                            x-text="slider4"
-                                            class="dark:border-dark inline-block rounded border border-white-light px-2 py-1 text-primary">
-                                        </span>
-                                        <span>%</span>
-                                    </div>
+                            <div class="card-body">
+                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
+                                    <form>
+                                        <textarea
+                                            rows="3"
+                                            wrap="soft"
+                                            class="form-textarea"
+                                            x-model="message2"
+                                            id="message2"
+                                            spellcheck="true"></textarea>
+                                        <div class="mt-5 flex flex-wrap gap-2">
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                                data-clipboard-target="#message2">
+                                                <span class="material-icons-outlined mr-2"> content_copy </span>
+                                                Copy from Input
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-dark"
+                                                data-clipboard-action="cut"
+                                                data-clipboard-target="#message2">
+                                                <span class="material-icons-outlined mr-2"> content_cut </span>
+                                                Cut from Input
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Noui slider -->
-                        <div class="inline-block rounded bg-[#009688]/[.26] px-2 py-1 text-base text-[#009688]">
-                            noUI Slider
+                        <!-- Copy Text from Paragraph -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Copy Text from Paragraph</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
+                                    <form>
+                                        <p class="mb-3 font-semibold">
+                                            Here is your OTP <span class="text-2xl" id="copyOTP">22991</span>.
+                                        </p>
+                                        <p class="font-semibold">Please do not share it to anyone</p>
+                                        <div class="mt-5 flex flex-wrap gap-2">
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                                data-clipboard-target="#copyOTP">
+                                                <span class="material-icons-outlined mr-2"> content_copy </span>
+                                                Copy from Paragraph
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                            <!-- Using HTML5 input elements -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h6>Using HTML5 input elements</h6>
-                                </div>
-                                <div class="card-body pt-5">
-                                    <div class="mt-5" id="noui_slider1"></div>
-                                    <div class="my-4 grid grid-cols-1 gap-8 lg:grid-cols-2">
-                                        <div class="mb-3">
-                                            <select
-                                                x-model="nouiMin1"
-                                                class="form-select w-full"
-                                                id="select"
-                                                @change="selectUpdateValue()">
-                                                <template x-for="(i, index) in 100" x-model="nouiMin1">
-                                                    <option :key="i" x-text="index"></option>
-                                                </template>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <input
-                                                type="number"
-                                                id="input"
-                                                x-model="nouiMax1"
-                                                class="form-input"
-                                                :min="-20"
-                                                :max="100"
-                                                step="1"
-                                                @change="selectUpdateValue()"
-                                                min="-20"
-                                                max="100" />
-                                        </div>
-                                    </div>
-                                </div>
+                        <!-- Advanced -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Copy Hidden Text (Advanced)</h6>
                             </div>
-
-                            <!-- Non linear slider -->
-                            <div class="card">
-                                <div class="card-header">
-                                    <h6>Non linear slider</h6>
-                                </div>
-                                <div class="card-body pt-5">
-                                    <div class="mt-5" id="noui_slider2"></div>
-
-                                    <div class="my-5 grid grid-cols-1 gap-8 font-bold lg:grid-cols-2">
-                                        <div>
-                                            <span class="mr-2 text-primary" id="nouiMin2" x-text="nouiMin2">500</span>
-                                            <span
-                                                class="text-dark dark:border-dark dark:text-white-dark rounded border border-white-light px-2 py-1"
-                                                id="nouiMin2Perc"
-                                                x-text="nouiMin2Perc">
-                                            </span>
+                            <div class="card-body">
+                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
+                                    <form>
+                                        <p class="mb-3 font-semibold">
+                                            <span> Link -&gt; </span>
+                                            <span id="copyLink"> http://www.admin-dashboard.com/code</span>
+                                        </p>
+                                        <span class="absolute opacity-0" id="copyHiddenCode">2291</span>
+                                        <div class="mt-5 flex flex-wrap gap-2">
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                                data-clipboard-target="#copyLink">
+                                                <span class="material-icons-outlined mr-2"> content_copy </span>
+                                                Copy Link
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-dark"
+                                                data-clipboard-target="#copyHiddenCode">
+                                                <span class="material-icons-outlined mr-2"> content_copy </span>
+                                                Copy Hidden Code
+                                            </button>
                                         </div>
-                                        <div class="text-right rtl:text-left">
-                                            <span class="mr-2 text-primary" id="nouiMax2" x-text="nouiMax2">4000</span>
-                                            <span
-                                                class="text-dark dark:border-dark dark:text-white-dark rounded border border-white-light px-2 py-1"
-                                                id="nouiMax2Perc"
-                                                x-text="nouiMax2Perc">
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Locking slider -->
-                            <div class="card lg:col-span-2">
-                                <div class="card-header">
-                                    <h6>Locking sliders together</h6>
-                                </div>
-                                <div class="card-body pt-5">
-                                    <div class="my-5" id="locking_slider1"></div>
-                                    <div class="mb-10 font-bold text-primary" id="locking_slider1_value">60.00</div>
-                                    <div class="my-5" id="locking_slider2"></div>
-                                    <div class="mb-10 font-bold text-primary" id="locking_slider2_value">80.00</div>
-                                    <div class="text-right rtl:text-left">
-                                        <button
-                                            type="button"
-                                            class="btn btn-primary"
-                                            id="lockbutton"
-                                            @click="lockedState = !lockedState"
-                                            x-text="lockedState ? 'Unlock':'Lock'"></button>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -1522,159 +1398,15 @@
                 </nav>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
         <script>
             document.addEventListener('alpine:init', function () {
                 // content section
-                window.Alpine.data('form', () => ({
-                    date1: '2022-07-05',
-                    date2: '2022-07-05 12:00',
-                    date3: '2022-07-05 to 2022-07-10',
-                    date4: '13:45',
-                    slider1: '0',
-                    slider2: '0',
-                    slider3: '0',
-                    slider4: '0',
-                    nouiMin1: 20,
-                    nouiMax1: 40,
-                    nouiMin2: 500,
-                    nouiMax2: 4000,
-                    nouiMin2Perc: 0,
-                    nouiMax2Perc: 0,
-                    lockedState: false,
+                Alpine.data('form', () => ({
                     init() {
-                        this.initDatePicker();
-                        // noui slider 1
-                        noUiSlider1 = noUiSlider.create(document.getElementById('noui_slider1'), {
-                            start: [this.nouiMin1, this.nouiMax1],
-                            connect: true,
-                            tooltips: true,
-                            range: {
-                                min: 0,
-                                max: 100,
-                            },
-                            direction: this.$store.app.rtlClass === 'rtl' ? 'rtl' : 'ltr',
-                        });
-                        this.$nextTick(() => {
-                            document.getElementById('select').value = this.nouiMin1;
-                        });
-
-                        noUiSlider1.on('update', function (values, handle) {
-                            document.getElementById('select').value = Math.round(noUiSlider1.get()[0]);
-                            document.getElementById('input').value = Math.round(noUiSlider1.get()[1]);
-                        });
-
-                        // noui slider 2
-                        noUiSlider2 = noUiSlider.create(document.getElementById('noui_slider2'), {
-                            start: [this.nouiMin2, this.nouiMax2],
-                            connect: true,
-                            tooltips: true,
-                            range: {
-                                min: 0,
-                                max: 10000,
-                                '10%': [500, 500],
-                                '50%': [4000, 1000],
-                            },
-                            direction: this.$store.app.rtlClass === 'rtl' ? 'rtl' : 'ltr',
-                        });
-                        noUiSlider2.on('update', function (values, handle, unencoded, isTap, positions) {
-                            document.getElementById('nouiMin2').innerHTML = parseInt(values[0]).toFixed(2);
-                            document.getElementById('nouiMax2').innerHTML = parseInt(values[1]).toFixed(2);
-                            document.getElementById('nouiMin2Perc').innerHTML = parseInt(positions[0]).toFixed(2) + '%';
-                            document.getElementById('nouiMax2Perc').innerHTML = parseInt(positions[1]).toFixed(2) + '%';
-                        });
-
-                        // locking slider
-                        lockButton = document.getElementById('lockbutton');
-                        // locking slider1
-                        lockingSlider1 = noUiSlider.create(document.getElementById('locking_slider1'), {
-                            start: 60,
-                            animate: false,
-                            range: {
-                                min: 0,
-                                max: 100,
-                            },
-                            direction: this.$store.app.rtlClass === 'rtl' ? 'rtl' : 'ltr',
-                        });
-
-                        // locking slider2
-                        lockingSlider2 = noUiSlider.create(document.getElementById('locking_slider2'), {
-                            start: 80,
-                            animate: false,
-                            range: {
-                                min: 0,
-                                max: 100,
-                            },
-                            direction: this.$store.app.rtlClass === 'rtl' ? 'rtl' : 'ltr',
-                        });
-
-                        lockingSlider1.on('update', function (values, handle) {
-                            locking_slider1_value.innerHTML = values[handle];
-                        });
-
-                        lockingSlider2.on('update', function (values, handle) {
-                            locking_slider2_value.innerHTML = values[handle];
-                        });
-
-                        this.$nextTick(() => {
-                            let lockedState = this.lockedState;
-                            this.$watch('lockedState', value => {
-                                lockedState = value;
-                            });
-                            lockingSlider1.on('slide', function (values, handle) {
-                                if (!lockedState) return;
-                                lockingSlider2.set(
-                                    values[handle] - (Number(lockingSlider2.get()) - Number(lockingSlider1.get())),
-                                );
-                            });
-
-                            lockingSlider2.on('slide', function (values, handle) {
-                                if (!lockedState) return;
-                                lockingSlider1.set(
-                                    values[handle] - (Number(lockingSlider2.get()) - Number(lockingSlider1.get())),
-                                );
-                            });
-                        });
-
-                        this.$watch('$store.app.rtlClass', () => {
-                            this.initDatePicker();
-                        });
+                        new ClipboardJS('.btn');
                     },
-
-                    initDatePicker() {
-                        // basic
-                        flatpickr(document.getElementById('basic'), {
-                            dateFormat: 'Y-m-d',
-                            defaultDate: this.date1,
-                            position: this.$store.app.rtlClass === 'rtl' ? 'auto right' : 'auto left',
-                        });
-                        // date-time
-                        flatpickr(document.getElementById('dateTime'), {
-                            defaultDate: this.date2,
-                            enableTime: true,
-                            dateFormat: 'Y-m-d H:i',
-                            position: this.$store.app.rtlClass === 'rtl' ? 'auto right' : 'auto left',
-                        });
-                        // range calendar
-                        flatpickr(document.getElementById('range-calendar'), {
-                            defaultDate: this.date3,
-                            dateFormat: 'Y-m-d',
-                            mode: 'range',
-                            position: this.$store.app.rtlClass === 'rtl' ? 'auto right' : 'auto left',
-                        });
-                        // Preloading time
-                        flatpickr(document.getElementById('preloading-time'), {
-                            defaultDate: this.date4,
-                            noCalendar: true,
-                            enableTime: true,
-                            dateFormat: 'H:i',
-                            position: this.$store.app.rtlClass === 'rtl' ? 'auto right' : 'auto left',
-                        });
-                    },
-
-                    selectUpdateValue() {
-                        noUiSlider1.set([this.nouiMin1, this.nouiMax1]);
-                    },
+                    message1: 'http://www.admin-dashboard.com',
+                    message2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
                 }));
             });
         </script>

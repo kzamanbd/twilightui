@@ -40,8 +40,16 @@ window.Sortable = Sortable;
 
 // file upload with preview
 import { FileUploadWithPreview } from 'file-upload-with-preview';
-// import 'file-upload-with-preview/dist/style.css';
 window.FileUploadWithPreview = FileUploadWithPreview;
+
+// clipboard
+import ClipboardJS from 'clipboard';
+window.ClipboardJS = ClipboardJS;
+
+// flatpickr
+import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.css';
+window.flatpickr = flatpickr;
 
 // app config
 (function () {
