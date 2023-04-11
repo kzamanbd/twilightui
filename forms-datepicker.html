@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Wizards- Twilight Dashboard</title>
+        <title>Date Picker - Twilight Dashboard</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/pwa-192x192.png" />
         <link rel="mask-icon" href="/favicon.png" color="#FFFFFF" />
@@ -12,6 +12,10 @@
         <!-- start:Core Style and Script -->
         <link rel="stylesheet" href="/styles/app.css" />
         <script type="module" src="/scripts/app.js"></script>
+
+        <!-- date picker -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" />
     </head>
 
     <body>
@@ -1048,613 +1052,256 @@
                                 <li aria-current="page">
                                     <div class="flex items-center">
                                         <div class="material-icons rotate-180 text-lg">navigate_before</div>
-                                        <span class="breadcrumb-item-current"> Wizards </span>
+                                        <span class="breadcrumb-item-current"> Date Picker </span>
                                     </div>
                                 </li>
                             </ol>
                         </div>
                     </nav>
                     <!-- End:Breadcrumb -->
-                    <div x-data="form">
-                        <div class="space-y-4">
-                            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                                <!-- Basic -->
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h6>Text Only (Pills)</h6>
-                                    </div>
-                                    <div class="card-body" x-data="{ activeTab: 1}">
-                                        <div class="inline-block w-full">
-                                            <ul class="mb-5 grid grid-cols-3 text-center">
-                                                <li>
-                                                    <a
-                                                        href="javascript:;"
-                                                        class="block rounded-full bg-[#f3f2ee] p-2.5 text-white dark:bg-[#1b2e4b]"
-                                                        :class="{'!bg-primary text-white': activeTab === 1}"
-                                                        @click="activeTab = 1">
-                                                        1 Home
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        href="javascript:;"
-                                                        class="block rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
-                                                        :class="{'!bg-primary text-white': activeTab === 2}"
-                                                        @click="activeTab = 2">
-                                                        2 About
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        href="javascript:;"
-                                                        class="block rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
-                                                        :class="{'!bg-primary text-white': activeTab === 3}"
-                                                        @click="activeTab = 3">
-                                                        3 Success
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div>
-                                                <template x-if="activeTab === 1">
-                                                    <p class="mb-5">
-                                                        Try the keyboard navigation by clicking arrow left or right!
-                                                    </p>
-                                                </template>
-                                                <p class="mb-5">
-                                                    Try the keyboard navigation by clicking arrow left or right!
-                                                </p>
-                                                <template x-if="activeTab === 2">
-                                                    <p class="mb-5">
-                                                        The next and previous buttons help you to navigate through your
-                                                        content.
-                                                    </p>
-                                                </template>
-                                                <template x-if="activeTab === 3">
-                                                    <p class="mb-5">Wonderful transition effects.</p>
-                                                </template>
-                                            </div>
-                                            <div class="flex justify-between">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 1"
-                                                    @click="activeTab--"
-                                                    disabled="disabled">
-                                                    Back
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 3"
-                                                    @click="activeTab++">
-                                                    Next
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                    <div class="space-y-4" x-data="form">
+                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                            <!-- Basic -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Basic</h6>
                                 </div>
-                                <!-- icon only -->
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h6>Icon Only (Pills)</h6>
-                                    </div>
-                                    <div class="card-body" x-data="{ activeTab: 1}">
-                                        <div class="inline-block w-full">
-                                            <ul class="mb-5 grid grid-cols-3">
-                                                <li>
-                                                    <a
-                                                        href="javascript:;"
-                                                        class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 text-white dark:bg-[#1b2e4b]"
-                                                        :class="{'!bg-primary text-white': activeTab === 1}"
-                                                        @click="activeTab = 1">
-                                                        <span class="material-icons-outlined"> home </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        href="javascript:;"
-                                                        class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
-                                                        :class="{'!bg-primary text-white': activeTab === 2}"
-                                                        @click="activeTab = 2">
-                                                        <span class="material-icons-outlined"> person </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        href="javascript:;"
-                                                        class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
-                                                        :class="{'!bg-primary text-white': activeTab === 3}"
-                                                        @click="activeTab = 3">
-                                                        <span class="material-icons-outlined"> thumb_up </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div>
-                                                <template x-if="activeTab === 1">
-                                                    <p class="mb-5">
-                                                        Try the keyboard navigation by clicking arrow left or right!
-                                                    </p>
-                                                </template>
-                                                <p class="mb-5">
-                                                    Try the keyboard navigation by clicking arrow left or right!
-                                                </p>
-                                                <template x-if="activeTab === 2">
-                                                    <p class="mb-5">
-                                                        The next and previous buttons help you to navigate through your
-                                                        content.
-                                                    </p>
-                                                </template>
-                                                <template x-if="activeTab === 3">
-                                                    <p class="mb-5">Wonderful transition effects.</p>
-                                                </template>
-                                            </div>
-                                            <div class="flex justify-between">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 1"
-                                                    @click="activeTab--"
-                                                    disabled="disabled">
-                                                    Back
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 3"
-                                                    @click="activeTab++">
-                                                    Next
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="card-body">
+                                    <input
+                                        id="basic"
+                                        x-model="date1"
+                                        class="flatpickr-input form-input"
+                                        type="text"
+                                        readonly="readonly" />
                                 </div>
-                                <!-- Text & Icon -->
-                                <div class="card lg:col-span-2">
-                                    <div class="card-header">
-                                        <h6>Text &amp; Icon (Pills)</h6>
+                            </div>
+
+                            <!-- Date & time -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Date Time</h6>
+                                </div>
+                                <div class="mb-2.5">
+                                    Use
+                                    <code class="text-danger">{enableTime: true, dateFormat: 'Y-m-d H:i'}</code> option
+                                    to enable time support
+                                </div>
+                                <div class="card-body">
+                                    <input
+                                        id="dateTime"
+                                        x-model="date2"
+                                        class="flatpickr-input form-input"
+                                        type="text"
+                                        readonly="readonly" />
+                                </div>
+                            </div>
+
+                            <!-- range-calendar -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Range Calendar</h6>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="mb-2.5">
+                                        Use <code class="text-danger">{mode: 'range'}</code> select the date with range.
                                     </div>
-                                    <div class="card-body" x-data="{ activeTab: 1}">
-                                        <div class="inline-block w-full">
-                                            <ul class="mb-5 grid grid-cols-3">
-                                                <li>
-                                                    <a
-                                                        href="javascript:;"
-                                                        :class="{'text-primary': activeTab === 1}"
-                                                        @click="activeTab = 1"
-                                                        class="text-primary">
-                                                        <div
-                                                            class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 text-white dark:bg-[#1b2e4b]"
-                                                            :class="{'!bg-primary text-white': activeTab === 1}"
-                                                            @click="activeTab = 1">
-                                                            <span class="material-icons-outlined"> home </span>
-                                                        </div>
-                                                        <span class="mt-2 block text-center">Home</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        href="javascript:;"
-                                                        :class="{'text-primary': activeTab === 2}"
-                                                        @click="activeTab = 2">
-                                                        <div
-                                                            class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
-                                                            :class="{'!bg-primary text-white': activeTab === 2}"
-                                                            @click="activeTab = 2">
-                                                            <span class="material-icons-outlined"> person </span>
-                                                        </div>
-                                                        <span class="mt-2 block text-center">About</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        href="javascript:;"
-                                                        :class="{'text-primary': activeTab === 3}"
-                                                        @click="activeTab = 3">
-                                                        <div
-                                                            class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
-                                                            :class="{'!bg-primary text-white': activeTab === 3}"
-                                                            @click="activeTab = 3">
-                                                            <span class="material-icons-outlined"> thumb_up </span>
-                                                        </div>
-                                                        <span class="mt-2 block text-center">Success</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div>
-                                                <template x-if="activeTab === 1">
-                                                    <p class="mb-5">
-                                                        Try the keyboard navigation by clicking arrow left or right!
-                                                    </p>
-                                                </template>
-                                                <p class="mb-5">
-                                                    Try the keyboard navigation by clicking arrow left or right!
-                                                </p>
-                                                <template x-if="activeTab === 2">
-                                                    <p class="mb-5">
-                                                        The next and previous buttons help you to navigate through your
-                                                        content.
-                                                    </p>
-                                                </template>
-                                                <template x-if="activeTab === 3">
-                                                    <p class="mb-5">Wonderful transition effects.</p>
-                                                </template>
-                                            </div>
-                                            <div class="flex justify-between">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 1"
-                                                    @click="activeTab--"
-                                                    disabled="disabled">
-                                                    Back
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 3"
-                                                    @click="activeTab++">
-                                                    Next
-                                                </button>
-                                            </div>
-                                        </div>
+                                    <input
+                                        id="range-calendar"
+                                        x-model="date3"
+                                        class="flatpickr-input form-input"
+                                        type="text"
+                                        readonly="readonly" />
+                                </div>
+                            </div>
+
+                            <!-- preloading time -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Preloading Time</h6>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="mb-2.5">
+                                        Use
+                                        <code class="text-danger">
+                                            {noCalendar: true, enableTime: true, dateFormat: 'H:i'}
+                                        </code>
+                                        with Date Time options to disable calendar and show time picker only.
+                                    </div>
+                                    <input
+                                        id="preloading-time"
+                                        x-model="date4"
+                                        class="flatpickr-input form-input"
+                                        type="text"
+                                        readonly="readonly" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- range picker -->
+                        <div class="inline-block rounded bg-[#009688]/[.26] px-2 py-1 text-base text-[#009688]">
+                            Javascript Range Slider
+                        </div>
+                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                            <!-- Top-Left -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Position : Top-Left</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="font-bold">
+                                        <span
+                                            x-text="slider1"
+                                            class="dark:border-dark inline-block rounded border border-white-light px-2 py-1 text-primary">
+                                        </span>
+                                        <span>%</span>
+                                    </div>
+                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider1" />
+                                </div>
+                            </div>
+
+                            <!-- Top-right -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Position : Top-right</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-right font-bold rtl:text-left">
+                                        <span
+                                            x-text="slider2"
+                                            class="dark:border-dark inline-block rounded border border-white-light px-2 py-1 text-primary">
+                                        </span>
+                                        <span>%</span>
+                                    </div>
+                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider2" />
+                                </div>
+                            </div>
+
+                            <!-- bottom-left -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Position : Bottom-Left</h6>
+                                </div>
+                                <div class="card-body">
+                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider3" />
+                                    <div class="font-bold">
+                                        <span
+                                            x-text="slider3"
+                                            class="dark:border-dark inline-block rounded border border-white-light px-2 py-1 text-primary">
+                                        </span>
+                                        <span>%</span>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Circle -->
-                            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                                <!-- icon only -->
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h6>Icon Only (Circle)</h6>
-                                    </div>
-                                    <div class="card-body" x-data="{ activeTab: 1}">
-                                        <div class="inline-block w-full">
-                                            <div class="relative z-[1]">
-                                                <div
-                                                    class="absolute top-[30px] -z-[1] m-auto h-1 w-[15%] bg-primary transition-[width] ltr:left-0 rtl:right-0"
-                                                    :class="{'w-[15%]' : activeTab === 1, 'w-[48%]' : activeTab === 2, 'w-[81%]' : activeTab === 3}"></div>
-                                                <ul class="mb-5 grid grid-cols-3">
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white text-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 1}"
-                                                            @click="activeTab = 1">
-                                                            <span class="material-icons-outlined"> home </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 2}"
-                                                            @click="activeTab = 2">
-                                                            <span class="material-icons-outlined"> person </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 3}"
-                                                            @click="activeTab = 3">
-                                                            <span class="material-icons-outlined"> thumb_up </span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <template x-if="activeTab === 1">
-                                                    <p class="mb-5">
-                                                        Try the keyboard navigation by clicking arrow left or right!
-                                                    </p>
-                                                </template>
-                                                <p class="mb-5">
-                                                    Try the keyboard navigation by clicking arrow left or right!
-                                                </p>
-                                                <template x-if="activeTab === 2">
-                                                    <p class="mb-5">
-                                                        The next and previous buttons help you to navigate through your
-                                                        content.
-                                                    </p>
-                                                </template>
-                                                <template x-if="activeTab === 3">
-                                                    <p class="mb-5">Wonderful transition effects.</p>
-                                                </template>
-                                            </div>
-                                            <div class="flex justify-between">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 1"
-                                                    @click="activeTab--"
-                                                    disabled="disabled">
-                                                    Back
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 3"
-                                                    @click="activeTab++">
-                                                    Next
-                                                </button>
-                                            </div>
-                                        </div>
+
+                            <!-- Bottom-right -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Position : Bottom-right</h6>
+                                </div>
+                                <div class="card-body">
+                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider4" />
+                                    <div class="text-right font-bold rtl:text-left">
+                                        <span
+                                            x-text="slider4"
+                                            class="dark:border-dark inline-block rounded border border-white-light px-2 py-1 text-primary">
+                                        </span>
+                                        <span>%</span>
                                     </div>
                                 </div>
-                                <!-- Text & Icon -->
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h6>Text &amp; Icon (Circle)</h6>
-                                    </div>
-                                    <div class="card-body" x-data="{ activeTab: 1}">
-                                        <div class="inline-block w-full">
-                                            <div class="relative z-[1]">
-                                                <div
-                                                    class="absolute top-[30px] -z-[1] m-auto h-1 w-[15%] bg-primary transition-[width] ltr:left-0 rtl:right-0"
-                                                    :class="{'w-[15%]' : activeTab === 1, 'w-[48%]' : activeTab === 2, 'w-[81%]' : activeTab === 3}"></div>
-                                                <ul class="mb-5 grid grid-cols-3">
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white text-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 1}"
-                                                            @click="activeTab = 1">
-                                                            <span class="material-icons-outlined"> home </span>
-                                                        </a>
-                                                        <span
-                                                            class="mt-2 block text-center text-primary"
-                                                            :class="{'text-primary' : activeTab === 1}">
-                                                            Home
-                                                        </span>
-                                                    </li>
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 2}"
-                                                            @click="activeTab = 2">
-                                                            <span class="material-icons-outlined"> person </span>
-                                                        </a>
-                                                        <span
-                                                            class="mt-2 block text-center"
-                                                            :class="{'text-primary' : activeTab === 2}">
-                                                            About
-                                                        </span>
-                                                    </li>
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 3}"
-                                                            @click="activeTab = 3">
-                                                            <span class="material-icons-outlined"> thumb_up </span>
-                                                        </a>
-                                                        <span
-                                                            class="mt-2 block text-center"
-                                                            :class="{'text-primary' : activeTab === 3}">
-                                                            Success
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <template x-if="activeTab === 1">
-                                                    <p class="mb-5">
-                                                        Try the keyboard navigation by clicking arrow left or right!
-                                                    </p>
+                            </div>
+                        </div>
+
+                        <!-- Noui slider -->
+                        <div class="inline-block rounded bg-[#009688]/[.26] px-2 py-1 text-base text-[#009688]">
+                            noUI Slider
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                            <!-- Using HTML5 input elements -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Using HTML5 input elements</h6>
+                                </div>
+                                <div class="card-body pt-5">
+                                    <div class="mt-5" id="noui_slider1"></div>
+                                    <div class="my-4 grid grid-cols-1 gap-8 lg:grid-cols-2">
+                                        <div class="mb-3">
+                                            <select
+                                                x-model="nouiMin1"
+                                                class="form-select w-full"
+                                                id="select"
+                                                @change="selectUpdateValue()">
+                                                <template x-for="(i, index) in 100" x-model="nouiMin1">
+                                                    <option :key="i" x-text="index"></option>
                                                 </template>
-                                                <p class="mb-5">
-                                                    Try the keyboard navigation by clicking arrow left or right!
-                                                </p>
-                                                <template x-if="activeTab === 2">
-                                                    <p class="mb-5">
-                                                        The next and previous buttons help you to navigate through your
-                                                        content.
-                                                    </p>
-                                                </template>
-                                                <template x-if="activeTab === 3">
-                                                    <p class="mb-5">Wonderful transition effects.</p>
-                                                </template>
-                                            </div>
-                                            <div class="flex justify-between">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 1"
-                                                    @click="activeTab--"
-                                                    disabled="disabled">
-                                                    Back
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 3"
-                                                    @click="activeTab++">
-                                                    Next
-                                                </button>
-                                            </div>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <input
+                                                type="number"
+                                                id="input"
+                                                x-model="nouiMax1"
+                                                class="form-input"
+                                                :min="-20"
+                                                :max="100"
+                                                step="1"
+                                                @change="selectUpdateValue()"
+                                                min="-20"
+                                                max="100" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Square -->
-                            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                                <!-- icon only -->
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h6>Icon Only (Square)</h6>
-                                    </div>
-                                    <div class="card-body" x-data="{ activeTab: 1}">
-                                        <div class="inline-block w-full">
-                                            <div class="relative z-[1]">
-                                                <div
-                                                    class="absolute top-[30px] -z-[1] m-auto h-1 w-[15%] bg-primary transition-[width] ltr:left-0 rtl:right-0"
-                                                    :class="{'w-[15%]' : activeTab === 1, 'w-[48%]' : activeTab === 2, 'w-[81%]' : activeTab === 3}"></div>
-                                                <ul class="mb-5 grid grid-cols-3">
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 1}"
-                                                            @click="activeTab = 1">
-                                                            <span class="material-icons-outlined"> home </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 2}"
-                                                            @click="activeTab = 2">
-                                                            <span class="material-icons-outlined"> person </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 3}"
-                                                            @click="activeTab = 3">
-                                                            <span class="material-icons-outlined"> thumb_up </span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <template x-if="activeTab === 1">
-                                                    <p class="mb-5">
-                                                        Try the keyboard navigation by clicking arrow left or right!
-                                                    </p>
-                                                </template>
-                                                <p class="mb-5">
-                                                    Try the keyboard navigation by clicking arrow left or right!
-                                                </p>
-                                                <template x-if="activeTab === 2">
-                                                    <p class="mb-5">
-                                                        The next and previous buttons help you to navigate through your
-                                                        content.
-                                                    </p>
-                                                </template>
-                                                <template x-if="activeTab === 3">
-                                                    <p class="mb-5">Wonderful transition effects.</p>
-                                                </template>
-                                            </div>
-                                            <div class="flex justify-between">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 1"
-                                                    @click="activeTab--"
-                                                    disabled="disabled">
-                                                    Back
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 3"
-                                                    @click="activeTab++">
-                                                    Next
-                                                </button>
-                                            </div>
+                            <!-- Non linear slider -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Non linear slider</h6>
+                                </div>
+                                <div class="card-body pt-5">
+                                    <div class="mt-5" id="noui_slider2"></div>
+
+                                    <div class="my-5 grid grid-cols-1 gap-8 font-bold lg:grid-cols-2">
+                                        <div>
+                                            <span class="mr-2 text-primary" id="nouiMin2" x-text="nouiMin2">500</span>
+                                            <span
+                                                class="text-dark dark:border-dark dark:text-white-dark rounded border border-white-light px-2 py-1"
+                                                id="nouiMin2Perc"
+                                                x-text="nouiMin2Perc">
+                                            </span>
+                                        </div>
+                                        <div class="text-right rtl:text-left">
+                                            <span class="mr-2 text-primary" id="nouiMax2" x-text="nouiMax2">4000</span>
+                                            <span
+                                                class="text-dark dark:border-dark dark:text-white-dark rounded border border-white-light px-2 py-1"
+                                                id="nouiMax2Perc"
+                                                x-text="nouiMax2Perc">
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <!-- Text & Icon -->
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h6>Text &amp; Icon (Square)</h6>
-                                    </div>
-                                    <div class="card-body" x-data="{ activeTab: 1}">
-                                        <div class="inline-block w-full">
-                                            <div class="relative z-[1]">
-                                                <div
-                                                    class="absolute top-[30px] -z-[1] m-auto h-1 w-[15%] bg-primary transition-[width] ltr:left-0 rtl:right-0"
-                                                    :class="{'w-[15%]' : activeTab === 1, 'w-[48%]' : activeTab === 2, 'w-[81%]' : activeTab === 3}"></div>
-                                                <ul class="mb-5 grid grid-cols-3">
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 1}"
-                                                            @click="activeTab = 1">
-                                                            <span class="material-icons-outlined"> home </span>
-                                                        </a>
-                                                        <span
-                                                            class="mt-2 block text-center text-primary"
-                                                            :class="{'text-primary' : activeTab === 1}">
-                                                            Home
-                                                        </span>
-                                                    </li>
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 2}"
-                                                            @click="activeTab = 2">
-                                                            <span class="material-icons-outlined"> person </span>
-                                                        </a>
-                                                        <span
-                                                            class="mt-2 block text-center"
-                                                            :class="{'text-primary' : activeTab === 2}">
-                                                            About
-                                                        </span>
-                                                    </li>
-                                                    <li class="mx-auto">
-                                                        <a
-                                                            href="javascript:;"
-                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
-                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 3}"
-                                                            @click="activeTab = 3">
-                                                            <span class="material-icons-outlined"> thumb_up </span>
-                                                        </a>
-                                                        <span
-                                                            class="mt-2 block text-center"
-                                                            :class="{'text-primary' : activeTab === 3}">
-                                                            Success
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div>
-                                                <template x-if="activeTab === 1">
-                                                    <p class="mb-5">
-                                                        Try the keyboard navigation by clicking arrow left or right!
-                                                    </p>
-                                                </template>
-                                                <p class="mb-5">
-                                                    Try the keyboard navigation by clicking arrow left or right!
-                                                </p>
-                                                <template x-if="activeTab === 2">
-                                                    <p class="mb-5">
-                                                        The next and previous buttons help you to navigate through your
-                                                        content.
-                                                    </p>
-                                                </template>
-                                                <template x-if="activeTab === 3">
-                                                    <p class="mb-5">Wonderful transition effects.</p>
-                                                </template>
-                                            </div>
-                                            <div class="flex justify-between">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 1"
-                                                    @click="activeTab--"
-                                                    disabled="disabled">
-                                                    Back
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary"
-                                                    :disabled="activeTab === 3"
-                                                    @click="activeTab++">
-                                                    Next
-                                                </button>
-                                            </div>
-                                        </div>
+                            <!-- Locking slider -->
+                            <div class="card lg:col-span-2">
+                                <div class="card-header">
+                                    <h6>Locking sliders together</h6>
+                                </div>
+                                <div class="card-body pt-5">
+                                    <div class="my-5" id="locking_slider1"></div>
+                                    <div class="mb-10 font-bold text-primary" id="locking_slider1_value">60.00</div>
+                                    <div class="my-5" id="locking_slider2"></div>
+                                    <div class="mb-10 font-bold text-primary" id="locking_slider2_value">80.00</div>
+                                    <div class="text-right rtl:text-left">
+                                        <button
+                                            type="button"
+                                            class="btn btn-primary"
+                                            id="lockbutton"
+                                            @click="lockedState = !lockedState"
+                                            x-text="lockedState ? 'Unlock':'Lock'"></button>
                                     </div>
                                 </div>
                             </div>
@@ -1876,5 +1523,162 @@
                 </nav>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
+        <script>
+            document.addEventListener('alpine:init', function () {
+                // content section
+                window.Alpine.data('form', () => ({
+                    date1: '2022-07-05',
+                    date2: '2022-07-05 12:00',
+                    date3: '2022-07-05 to 2022-07-10',
+                    date4: '13:45',
+                    slider1: '0',
+                    slider2: '0',
+                    slider3: '0',
+                    slider4: '0',
+                    nouiMin1: 20,
+                    nouiMax1: 40,
+                    nouiMin2: 500,
+                    nouiMax2: 4000,
+                    nouiMin2Perc: 0,
+                    nouiMax2Perc: 0,
+                    lockedState: false,
+                    init() {
+                        this.initDatePicker();
+                        // noui slider 1
+                        noUiSlider1 = noUiSlider.create(document.getElementById('noui_slider1'), {
+                            start: [this.nouiMin1, this.nouiMax1],
+                            connect: true,
+                            tooltips: true,
+                            range: {
+                                min: 0,
+                                max: 100,
+                            },
+                            direction: this.$store.app.rtlClass === 'rtl' ? 'rtl' : 'ltr',
+                        });
+                        this.$nextTick(() => {
+                            document.getElementById('select').value = this.nouiMin1;
+                        });
+
+                        noUiSlider1.on('update', function (values, handle) {
+                            document.getElementById('select').value = Math.round(noUiSlider1.get()[0]);
+                            document.getElementById('input').value = Math.round(noUiSlider1.get()[1]);
+                        });
+
+                        // noui slider 2
+                        noUiSlider2 = noUiSlider.create(document.getElementById('noui_slider2'), {
+                            start: [this.nouiMin2, this.nouiMax2],
+                            connect: true,
+                            tooltips: true,
+                            range: {
+                                min: 0,
+                                max: 10000,
+                                '10%': [500, 500],
+                                '50%': [4000, 1000],
+                            },
+                            direction: this.$store.app.rtlClass === 'rtl' ? 'rtl' : 'ltr',
+                        });
+                        noUiSlider2.on('update', function (values, handle, unencoded, isTap, positions) {
+                            document.getElementById('nouiMin2').innerHTML = parseInt(values[0]).toFixed(2);
+                            document.getElementById('nouiMax2').innerHTML = parseInt(values[1]).toFixed(2);
+                            document.getElementById('nouiMin2Perc').innerHTML = parseInt(positions[0]).toFixed(2) + '%';
+                            document.getElementById('nouiMax2Perc').innerHTML = parseInt(positions[1]).toFixed(2) + '%';
+                        });
+
+                        // locking slider
+                        lockButton = document.getElementById('lockbutton');
+                        // locking slider1
+                        lockingSlider1 = noUiSlider.create(document.getElementById('locking_slider1'), {
+                            start: 60,
+                            animate: false,
+                            range: {
+                                min: 0,
+                                max: 100,
+                            },
+                            direction: this.$store.app.rtlClass === 'rtl' ? 'rtl' : 'ltr',
+                        });
+
+                        // locking slider2
+                        lockingSlider2 = noUiSlider.create(document.getElementById('locking_slider2'), {
+                            start: 80,
+                            animate: false,
+                            range: {
+                                min: 0,
+                                max: 100,
+                            },
+                            direction: this.$store.app.rtlClass === 'rtl' ? 'rtl' : 'ltr',
+                        });
+
+                        lockingSlider1.on('update', function (values, handle) {
+                            locking_slider1_value.innerHTML = values[handle];
+                        });
+
+                        lockingSlider2.on('update', function (values, handle) {
+                            locking_slider2_value.innerHTML = values[handle];
+                        });
+
+                        this.$nextTick(() => {
+                            let lockedState = this.lockedState;
+                            this.$watch('lockedState', value => {
+                                lockedState = value;
+                            });
+                            lockingSlider1.on('slide', function (values, handle) {
+                                if (!lockedState) return;
+                                lockingSlider2.set(
+                                    values[handle] - (Number(lockingSlider2.get()) - Number(lockingSlider1.get())),
+                                );
+                            });
+
+                            lockingSlider2.on('slide', function (values, handle) {
+                                if (!lockedState) return;
+                                lockingSlider1.set(
+                                    values[handle] - (Number(lockingSlider2.get()) - Number(lockingSlider1.get())),
+                                );
+                            });
+                        });
+
+                        this.$watch('$store.app.rtlClass', () => {
+                            this.initDatePicker();
+                        });
+                    },
+
+                    initDatePicker() {
+                        // basic
+                        flatpickr(document.getElementById('basic'), {
+                            dateFormat: 'Y-m-d',
+                            defaultDate: this.date1,
+                            position: this.$store.app.rtlClass === 'rtl' ? 'auto right' : 'auto left',
+                        });
+                        // date-time
+                        flatpickr(document.getElementById('dateTime'), {
+                            defaultDate: this.date2,
+                            enableTime: true,
+                            dateFormat: 'Y-m-d H:i',
+                            position: this.$store.app.rtlClass === 'rtl' ? 'auto right' : 'auto left',
+                        });
+                        // range calendar
+                        flatpickr(document.getElementById('range-calendar'), {
+                            defaultDate: this.date3,
+                            dateFormat: 'Y-m-d',
+                            mode: 'range',
+                            position: this.$store.app.rtlClass === 'rtl' ? 'auto right' : 'auto left',
+                        });
+                        // Preloading time
+                        flatpickr(document.getElementById('preloading-time'), {
+                            defaultDate: this.date4,
+                            noCalendar: true,
+                            enableTime: true,
+                            dateFormat: 'H:i',
+                            position: this.$store.app.rtlClass === 'rtl' ? 'auto right' : 'auto left',
+                        });
+                    },
+
+                    selectUpdateValue() {
+                        noUiSlider1.set([this.nouiMin1, this.nouiMax1]);
+                    },
+                }));
+            });
+        </script>
     </body>
 </html>
