@@ -1330,9 +1330,9 @@
                         <div class="grid grid-cols-1 gap-5 xl:grid-cols-12">
                             <!-- start col -->
                             <div class="col-span-12 xl:col-span-6">
-                                <div class="card">
+                                <div class="card h-full">
                                     <div class="card-body">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">Custom progress</h6>
+                                        <h6>Custom progress</h6>
                                     </div>
                                     <div class="card-body">
                                         <div class="relative">
@@ -1388,9 +1388,9 @@
 
                             <!-- start col -->
                             <div class="col-span-12 xl:col-span-6">
-                                <div class="card">
+                                <div class="card h-full">
                                     <div class="card-body pb-0">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">Progress Example</h6>
+                                        <h6>Progress Example</h6>
                                     </div>
                                     <div class="card-body">
                                         <div class="relative p-5">
@@ -1423,6 +1423,141 @@
                             <!-- end col -->
                         </div>
                         <!-- end grid -->
+                        <div class="grid grid-cols-12 gap-5">
+                            <div class="col-span-12 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6>Border Spinner</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="spinner-border inline-block h-8 w-8 animate-spin rounded-full border-[3px] border-violet-500 border-l-transparent">
+                                                <span class="hidden">Loading...</span>
+                                            </div>
+                                            <div
+                                                class="spinner-border inline-block h-8 w-8 animate-spin rounded-full border-[3px] border-gray-500 border-l-transparent">
+                                                <span class="hidden">Loading...</span>
+                                            </div>
+                                            <div
+                                                class="spinner-border inline-block h-8 w-8 animate-spin rounded-full border-[3px] border-green-500 border-l-transparent">
+                                                <span class="hidden">Loading...</span>
+                                            </div>
+                                            <div
+                                                class="spinner-border inline-block h-8 w-8 animate-spin rounded-full border-[3px] border-sky-500 border-l-transparent">
+                                                <span class="hidden">Loading...</span>
+                                            </div>
+                                            <div
+                                                class="spinner-border inline-block h-8 w-8 animate-spin rounded-full border-[3px] border-yellow-500 border-l-transparent">
+                                                <span class="hidden">Loading...</span>
+                                            </div>
+                                            <div
+                                                class="spinner-border inline-block h-8 w-8 animate-spin rounded-full border-[3px] border-red-400 border-l-transparent">
+                                                <span class="hidden">Loading...</span>
+                                            </div>
+                                            <div
+                                                class="spinner-border inline-block h-8 w-8 animate-spin rounded-full border-[3px] border-gray-700 border-l-transparent">
+                                                <span class="hidden">Loading...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-span-12 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6>Ping</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="flex items-center gap-8">
+                                            <span class="relative h-5 w-5">
+                                                <span
+                                                    class="inline-flex h-full w-full animate-ping rounded-full bg-violet-500/75"></span>
+                                            </span>
+                                            <span class="relative h-5 w-5">
+                                                <span
+                                                    class="inline-flex h-full w-full animate-ping rounded-full bg-gray-500/75"></span>
+                                            </span>
+                                            <span class="relative h-5 w-5">
+                                                <span
+                                                    class="inline-flex h-full w-full animate-ping rounded-full bg-green-500/75"></span>
+                                            </span>
+                                            <span class="relative h-5 w-5">
+                                                <span
+                                                    class="inline-flex h-full w-full animate-ping rounded-full bg-sky-500/75"></span>
+                                            </span>
+                                            <span class="relative h-5 w-5">
+                                                <span
+                                                    class="inline-flex h-full w-full animate-ping rounded-full bg-yellow-500/75"></span>
+                                            </span>
+                                            <span class="relative h-5 w-5">
+                                                <span
+                                                    class="inline-flex h-full w-full animate-ping rounded-full bg-red-500/75"></span>
+                                            </span>
+                                            <span class="relative h-5 w-5">
+                                                <span
+                                                    class="inline-flex h-full w-full animate-ping rounded-full bg-gray-800/75 dark:bg-zinc-700"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 gap-7 lg:grid-cols-2">
+                            <div class="card h-full">
+                                <div class="card-header">
+                                    <h6>Custom Spinner</h6>
+                                </div>
+                                <div class="card-body flex flex-wrap items-center justify-center gap-10">
+                                    <div
+                                        class="inline-block h-14 w-14 animate-spin rounded-full border-8 border-black/10 border-l-indigo-500 align-middle dark:border-white/10 dark:border-l-indigo-500"></div>
+                                    <div
+                                        class="border-r-lightred dark:border-r-lightred inline-block h-14 w-14 animate-[spin_2s_linear_infinite] rounded-full border-8 border-black/10 border-l-indigo-500 align-middle dark:border-white/10 dark:border-l-indigo-500"></div>
+                                    <div
+                                        class="border-t-lightred inline-block h-14 w-14 animate-[spin_3s_linear_infinite] rounded-full border-8 border-b-green-500 border-l-indigo-500 border-r-yellow-500 align-middle"></div>
+                                </div>
+                            </div>
+                            <div class="card h-full">
+                                <div class="card-header">
+                                    <h6>Button loader</h6>
+                                </div>
+                                <div class="card-body flex flex-wrap items-center gap-4">
+                                    <button type="button" class="btn bg-black/10">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            width="24"
+                                            height="24"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            fill="none"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="mr-2 inline-block h-5 w-5 animate-[spin_2s_linear_infinite] align-middle">
+                                            <line x1="12" y1="2" x2="12" y2="6"></line>
+                                            <line x1="12" y1="18" x2="12" y2="22"></line>
+                                            <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                                            <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                                            <line x1="2" y1="12" x2="6" y2="12"></line>
+                                            <line x1="18" y1="12" x2="22" y2="12"></line>
+                                            <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                                            <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                                        </svg>
+                                        Loading
+                                    </button>
+                                    <button type="button" class="btn group bg-black/10">
+                                        <span
+                                            class="mr-2 inline-block h-5 w-5 animate-spin rounded-full border-2 border-black border-l-transparent align-middle group-hover:border-white group-hover:border-l-black dark:border-white dark:border-l-transparent dark:group-hover:border-black dark:group-hover:border-l-white"></span>
+                                        Loading
+                                    </button>
+                                    <button type="button" class="btn group bg-black/10">
+                                        <span
+                                            class="mr-4 inline-block h-3 w-3 animate-ping rounded-full bg-black/30 group-hover:bg-white dark:bg-white/30 dark:group-hover:bg-black"></span>
+                                        Loading
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </main>
 
