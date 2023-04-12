@@ -36,8 +36,10 @@ import 'quill/dist/quill.snow.css';
 window.Quill = Quill;
 
 // initialize sortablejs
-import Sortable from 'sortablejs';
+import { MultiDrag, Sortable, Swap } from 'sortablejs';
 window.Sortable = Sortable;
+Sortable.mount(new MultiDrag());
+Sortable.mount(new Swap());
 
 // file upload with preview
 import { FileUploadWithPreview } from 'file-upload-with-preview';
