@@ -75,7 +75,7 @@
 
     /* todo list */
     .todo-list-wrapper {
-        @apply card absolute z-10 hidden h-full w-[240px] max-w-full flex-none space-y-4 rounded-r-none p-4 xl:relative xl:block xl:h-auto xl:rounded-r-md;
+        @apply card absolute z-10 hidden h-full w-[20rem] max-w-full flex-none space-y-4 rounded-r-none p-4 xl:relative xl:block xl:h-auto xl:rounded-r-md;
     }
 
     /* sortable */

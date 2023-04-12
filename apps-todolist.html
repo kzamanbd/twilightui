@@ -1030,11 +1030,11 @@
                     </nav>
                     <!-- End:Breadcrumb -->
 
-                    <div x-data="todos">
+                    <div x-data="todos" class="text-sm">
                         <div class="relative flex h-full gap-5 sm:h-[calc(100vh_-_200px)]">
                             <div class="todo-list-wrapper" :class="{'!block':isShowTaskMenu}">
                                 <div class="flex h-full flex-col pb-16">
-                                    <div class="pb-5">
+                                    <div class="pb-8">
                                         <div class="flex items-center text-center">
                                             <span class="material-icons-outlined">fact_check</span>
                                             <h3 class="ml-3 text-lg font-semibold">Todo list</h3>
@@ -1711,7 +1711,7 @@
                                             x-transition
                                             x-transition.duration.300
                                             @click.outside="addTaskModal = false"
-                                            class="card my-8 w-[90%] max-w-lg overflow-hidden rounded-lg border-0 p-0 md:w-full">
+                                            class="card relative my-8 w-[90%] max-w-lg overflow-hidden rounded-lg border-0 p-0 md:w-full">
                                             <button
                                                 type="button"
                                                 class="text-white-dark hover:text-dark absolute right-4 top-4"
@@ -1811,7 +1811,7 @@
                                             x-show="viewTaskModal"
                                             x-transition
                                             x-transition.duration.300
-                                            class="card my-8 w-[90%] max-w-lg overflow-hidden rounded-lg border-0 p-0 md:w-full">
+                                            class="card relative my-8 w-[90%] max-w-lg overflow-hidden rounded-lg border-0 p-0 md:w-full">
                                             <button
                                                 type="button"
                                                 class="text-white-dark hover:text-dark absolute right-4 top-4"
