@@ -22,10 +22,13 @@
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
     }
     .collapse-icon {
-        @apply flex h-8 w-8 items-center rounded-full transition duration-300 hover:bg-gray-500/10 rtl:rotate-180;
+        @apply h-4 w-4 cursor-pointer rounded-full border-[1.5px] border-slate-900 transition-all duration-150 dark:border-slate-700;
     }
-    .semi-dark .collapse-icon svg {
-        @apply fill-gray-300;
+    .toggle-menu .collapse-icon {
+        @apply bg-slate-900 ring-2 ring-inset ring-gray-900 ring-offset-4 dark:bg-slate-400 dark:ring-slate-400 dark:ring-offset-slate-700;
+    }
+    .semi-dark .collapse-icon {
+        @apply border-gray-300 bg-gray-300 ring-gray-300;
     }
     .tw-brand-logo {
         @apply relative flex h-[70px] items-center justify-between border-b px-4 py-2 dark:border-b-gray-700;
