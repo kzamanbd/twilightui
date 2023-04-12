@@ -27,6 +27,7 @@ import 'tippy.js/dist/tippy.css'; // optional for styling
 
 // sweetalert2
 import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.css';
 window.Swal = Swal;
 
 // initialize quill editor
@@ -75,6 +76,7 @@ window.flatpickr = flatpickr;
                     }
                 }
             }
+            this.$store.app.setRTLLayout();
         },
         showCustomizer: false,
     }));
@@ -98,18 +100,6 @@ window.flatpickr = flatpickr;
             return this.$store.accordion.item == this.idx;
         },
     }));
-
-    // theme config
-    const $themeConfig = {
-        locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
-        theme: 'light', // light, dark, system
-        rtlClass: 'ltr', // rtl, ltr
-        menu: 'vertical', // vertical, collapsible-vertical, horizontal
-        layout: 'full', // full, boxed-layout
-        animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
-        navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
-        semiDark: false,
-    };
 
     // set current year in footer
     const yearEle = document.querySelector('#footer-year');
@@ -192,6 +182,18 @@ window.flatpickr = flatpickr;
 
         instance.show();
     });
+
+    // theme config
+    const $themeConfig = {
+        locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
+        theme: 'light', // light, dark, system
+        rtlClass: 'ltr', // rtl, ltr
+        menu: 'vertical', // vertical, collapsible-vertical, horizontal
+        layout: 'full', // full, boxed-layout
+        animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
+        navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
+        semiDark: false,
+    };
 
     Alpine.store('app', {
         name: 'TwilightUI',
