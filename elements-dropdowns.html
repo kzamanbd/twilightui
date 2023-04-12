@@ -341,12 +341,89 @@
                                 </a>
                             </li>
 
-                            <li class="tw-menu-item">
-                                <a href="/data-tables.html" class="tw-menu-link">
+                            <!-- data table -->
+                            <li class="tw-menu-item" x-data="accordionItem('table')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
                                     <span class="material-icons-outlined">insert_chart</span>
                                     <span class="tw-link-label">Data Tables</span>
-                                </a>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-basic.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Basic</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-advanced.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Advanced</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-order-sorting.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Order Sorting</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-multi-column.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Multi Column</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-checkbox.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Checkbox</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="datatables-range-search.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Range Search</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="datatables-export.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Export</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-sticky-header.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sticky Header</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-sticky-header.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sticky Header</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-clone-header.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Clone Header</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-column-chooser.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Column Chooser</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
+                            <!-- end data table -->
 
                             <!-- form elements start -->
                             <li class="tw-menu-item" x-data="accordionItem('form')">
