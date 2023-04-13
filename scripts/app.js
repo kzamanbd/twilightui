@@ -73,12 +73,12 @@ window.DataTableExportTXT = exportTXT;
             if (pathName == '/') pathName = '/index.html';
 
             const selector = document.querySelector(`ul.tw-nav-menu a[href="${pathName}"]`);
-            console.log(pathName, selector);
+            const dropdownMenu = selector?.closest('ul.tw-dropdown-menu');
+
             if (selector) {
                 selector.classList.add('active');
-                const ul = selector.closest('ul.tw-dropdown-menu');
-                if (ul) {
-                    let elements = ul.closest('li.tw-menu-item').querySelectorAll('.tw-menu-link');
+                if (dropdownMenu) {
+                    let elements = dropdownMenu.closest('li.tw-menu-item').querySelectorAll('.tw-menu-link');
                     if (elements) {
                         elements = elements[0];
                         setTimeout(() => {
@@ -88,6 +88,14 @@ window.DataTableExportTXT = exportTXT;
                 }
             }
             this.$store.app.setRTLLayout();
+
+            this.$nextTick(() => {
+                const scrollableEl = document.querySelector('.tw-menu-content .simplebar-content-wrapper');
+                if (scrollableEl) {
+                    if (dropdownMenu) scrollableEl.scrollTop = dropdownMenu.offsetTop;
+                    else scrollableEl.scrollTop = selector.offsetTop;
+                }
+            });
         },
         showCustomizer: false,
     }));
