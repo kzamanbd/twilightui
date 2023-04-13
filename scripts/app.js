@@ -95,7 +95,7 @@ window.DataTableExportTXT = exportTXT;
                 const scrollableEl = document.querySelector('.tw-menu-content .simplebar-content-wrapper');
                 if (scrollableEl) {
                     if (dropdownMenu) scrollableEl.scrollTop = dropdownMenu.offsetTop - 100;
-                    else scrollableEl.scrollTop = selector.offsetTop - 100;
+                    else scrollableEl.scrollTop = selector?.offsetTop ? selector?.offsetTop - 100 : 0;
                 }
             });
         },
