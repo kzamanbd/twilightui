@@ -54,6 +54,14 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.css';
 window.flatpickr = flatpickr;
 
+// simple datatables
+import { DataTable, exportCSV, exportJSON, exportTXT } from 'simple-datatables';
+import 'simple-datatables/dist/style.css';
+window.DataTable = DataTable;
+window.DataTableExportCSV = exportCSV;
+window.DataTableExportJSON = exportJSON;
+window.DataTableExportTXT = exportTXT;
+
 // app config
 (function () {
     'use strict';
@@ -65,6 +73,7 @@ window.flatpickr = flatpickr;
             if (pathName == '/') pathName = '/index.html';
 
             const selector = document.querySelector(`ul.tw-nav-menu a[href="${pathName}"]`);
+            console.log(pathName, selector);
             if (selector) {
                 selector.classList.add('active');
                 const ul = selector.closest('ul.tw-dropdown-menu');

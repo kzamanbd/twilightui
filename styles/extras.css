@@ -380,3 +380,30 @@ input[type='range']:active::-webkit-slider-thumb {
 .fc-button.fc-button-primary.fc-button-active {
     @apply btn btn-outline-primary rounded-md !border-primary !bg-primary text-white focus:border-none active:bg-primary active:text-white;
 }
+
+/* data table */
+.datatable-dropdown .datatable-selector {
+    @apply ml-4 min-w-[100px] rounded-md border border-gray-300 bg-white px-4 py-1.5 text-gray-500;
+}
+
+.datatable-pagination .datatable-pagination-list li a {
+    @apply dark--text flex h-9 w-9 items-center justify-center rounded bg-white-light font-semibold transition hover:bg-primary hover:text-white dark:bg-[#191e3a] dark:text-white-light dark:hover:bg-primary;
+}
+
+.datatable-pagination .datatable-pagination-list li.active a {
+    @apply bg-primary text-white dark:bg-primary dark:text-white-light;
+}
+
+.datatable-top {
+    @apply px-0 pt-0 !important;
+}
+.datatable-search .datatable-input {
+    @apply rounded-md border border-gray-300 bg-white px-4 py-1.5 text-gray-500;
+}
+
+.sticky-header .datatable-container {
+    @apply h-[500px] overflow-y-auto;
+}
+.sticky-header .datatable-table thead {
+    @apply sticky top-0 z-10;
+}

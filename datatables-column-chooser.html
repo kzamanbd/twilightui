@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Show/Hide Columns - Twilight Dashboard</title>
+        <link rel="icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/pwa-192x192.png" />
+        <link rel="mask-icon" href="/favicon.png" color="#FFFFFF" />
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="theme-color" content="#ffffff" />
+        <!-- start:Core Style and Script -->
+        <link rel="stylesheet" href="/styles/app.css" />
+        <script type="module" src="/scripts/app.js"></script>
+    </head>
+
+    <body>
+        <div
+            class="twilight"
+            x-data="twilightTheme"
+            :class="[ $store.app.sidebar && 'toggle-menu', $store.app.theme, $store.app.menu, $store.app.layout]">
+            <!-- Loading dialog -->
+            <div class="animate__animated loading duration-300">Loading.....</div>
+            <!-- menu shadow -->
+            <div @click="$store.app.toggleVMenu()" class="menu-shadow" x-show="$store.app.sidebar"></div>
+            <!-- vertical-menu -->
+            <aside class="vertical-menu">
+                <div class="vertical-content" :class="[$store.app.semiDark && 'semi-dark']">
+                    <!-- Menu Logo -->
+                    <div id="brand-logo" class="tw-brand-logo">
+                        <a href="/index.html" class="flex items-center">
+                            <img class="brand-logo-image" src="/images/logo.png" alt="logo" />
+                            <span class="app-name" x-text="$store.app.name"></span>
+                        </a>
+                        <div class="collapse-icon" @click="$store.app.toggleVMenu()"></div>
+                    </div>
+                    <!-- Menu Content -->
+                    <nav data-simplebar class="tw-menu-content no-scrollbar">
+                        <ul class="tw-nav-menu">
+                            <!-- dashboard start -->
+                            <li class="tw-menu-item" x-data="accordionItem('dashboard')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined"> home </span>
+                                    <span class="tw-link-label">Dashboards</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/index.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Analytics</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-crypto.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Crypto</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-crm.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">CRM</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-ecommerce.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">ECommerce</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- dashboard end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
+                                <span class="label">APPS</span>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-calendars.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">event</span>
+                                    <span class="tw-link-label">Calendars</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-chats.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">message</span>
+                                    <span class="tw-link-label">Chat Box</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-mailbox.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">email</span>
+                                    <span class="tw-link-label">Mailbox</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-todolist.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">fact_check</span>
+                                    <span class="tw-link-label">Todo List</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-scrumboard.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">add_box</span>
+                                    <span class="tw-link-label">Scrumboard</span>
+                                </a>
+                            </li>
+                            <li class="tw-menu-item">
+                                <a href="/apps-projects.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">fence</span>
+                                    <span class="tw-link-label">Projects</span>
+                                </a>
+                            </li>
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
+                                <span class="label">USER INTERFACE</span>
+                            </li>
+
+                            <!-- components start -->
+                            <li class="tw-menu-item" x-data="accordionItem('components')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">layers</span>
+                                    <span class="tw-link-label">Components</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-accordions.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Accordion</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-cards.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Cards</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-carousel.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Carousel</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-lightbox.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Lightbox</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-modals.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Modals</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-progress.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Progress</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-sweetalert.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">SweetAlert2</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-tabs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Tabs</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-toasts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Toasts</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- ui-elements start -->
+                            <li class="tw-menu-item" x-data="accordionItem('ui-elements')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">hexagon</span>
+                                    <span class="tw-link-label">UI Elements</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-alerts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Alerts</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-avatars.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Avatars</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-badges.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Badges</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-breadcrumbs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Breadcrumbs</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-buttons.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Buttons</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-countdown.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Countdown</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-dropdowns.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Dropdowns</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-popovers.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Popovers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-tooltips.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Tooltips</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-treeview.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Treeview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-typography.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Typography</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="tw-menu-item" x-data="accordionItem('charts')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">analytics</span>
+                                    <span class="tw-link-label">Charts</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/charts-apexcharts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">ApexChart</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/charts-chartjs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">ChartJs</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/charts-echarts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">E Charts</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/widgets.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">widgets</span>
+                                    <span class="tw-link-label">Widgets</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/dragndrop.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">zoom_out_map</span>
+                                    <span class="tw-link-label">Drag & Drop</span>
+                                </a>
+                            </li>
+                            <!-- form elements end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
+                                <span class="label">TABLES AND FORMS</span>
+                            </li>
+                            <!-- page header end -->
+
+                            <li class="tw-menu-item">
+                                <a href="/table-layout.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">table_chart</span>
+                                    <span class="tw-link-label">Tables</span>
+                                </a>
+                            </li>
+
+                            <!-- data table -->
+                            <li class="tw-menu-item" x-data="accordionItem('table')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">insert_chart</span>
+                                    <span class="tw-link-label">Data Tables</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-basic.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Basic</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-advanced.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Advanced</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-order-sorting.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Order Sorting</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-multi-column.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Multi Column</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-checkbox.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Checkbox</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="datatables-range-search.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Range Search</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="datatables-export.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Export</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-sticky-header.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sticky Header</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-sticky-header.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sticky Header</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-clone-header.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Clone Header</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-column-chooser.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Column Chooser</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- end data table -->
+
+                            <!-- form elements start -->
+                            <li class="tw-menu-item" x-data="accordionItem('form')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">hexagon</span>
+                                    <span class="tw-link-label">Form Elements</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-basic.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Basic Elements</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-input-group.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Input Group</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-layouts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Layouts</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-validation.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Validation</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-input-mask.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Input Mask</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-checkbox-radio.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Checkbox & Radio</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-switches.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Switches</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-wizards.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Wizards</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-uploads.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">File Upload</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-editors.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Editors</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-datepicker.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Date Picker</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-clipboard.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Clipboard</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- form elements end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
+                                <span class="label">USER AND PAGES</span>
+                            </li>
+                            <!-- page header end -->
+                            <!-- user profile start -->
+                            <li class="tw-menu-item" x-data="accordionItem('profile')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">perm_contact_calendar</span>
+                                    <span class="tw-link-label">User Profile</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/overview.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Overview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/documents.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Documents</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/followers.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Followers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/activities.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Activities</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- user profile end -->
+
+                            <!-- accounts start -->
+                            <li class="tw-menu-item" x-data="accordionItem('accounts')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">badge</span>
+                                    <span class="tw-link-label">Accounts</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/overview.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Overview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/statements.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Statements</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/activities.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Activities</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/logs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Logs</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- accounts end -->
+
+                            <!-- Authentication start -->
+                            <li class="tw-menu-item" x-data="accordionItem('authentication')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">logout</span>
+                                    <span class="tw-link-label">Authentication</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/login.html" class="tw-dropdown-link" target="_blank">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Login</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/register.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Register</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/reset-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Reset Password</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/forget-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Forget Password</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/new-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">New Password</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Authentication end -->
+
+                            <!-- corporate start -->
+                            <li class="tw-menu-item" x-data="accordionItem('corporate')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">corporate_fare</span>
+                                    <span class="tw-link-label">Corporate</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/about.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">About</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/our-team.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Our Team</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/contact-us.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Contact Us</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/licenses.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Licenses</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/sitemap.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sitemap</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- corporate end -->
+
+                            <!-- utilities start -->
+                            <li class="tw-menu-item" x-data="accordionItem('utilities')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">construction</span>
+                                    <span class="tw-link-label">Utilities</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/modals.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Modals</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/search.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Search</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/wizards.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Wizards</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- utilities end -->
+
+                            <!-- Careers pages start -->
+                            <li class="tw-menu-item" x-data="accordionItem('careers')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">work</span>
+                                    <span class="tw-link-label">Careers</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./careers/careers-list.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Careers List</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./careers/apply.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Careers Apply</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Careers pages end -->
+
+                            <!-- eCommerce start -->
+                            <li class="tw-menu-item" x-data="accordionItem('eCommerce')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">shopping_basket</span>
+                                    <span class="tw-link-label">ECommerce</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/category.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Category</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/sales.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sales</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/customers.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/reports.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Reports</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- eCommerce end -->
+
+                            <!-- contacts start -->
+                            <li class="tw-menu-item" x-data="accordionItem('contacts')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">interests</span>
+                                    <span class="tw-link-label">Contacts</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/getting-started.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Getting Started</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/add-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Add Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/edit-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Edit Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/view-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">View Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- contacts end -->
+
+                            <!-- user management start -->
+                            <li class="tw-menu-item" x-data="accordionItem('user')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">workspaces</span>
+                                    <span class="tw-link-label">User Management</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/users.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Users</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/roles.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Roles</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/permissions.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Permissions</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- user management end -->
+
+                            <!-- customers start -->
+                            <li class="tw-menu-item" x-data="accordionItem('customers')">
+                                <div
+                                    data-ripple
+                                    role="button"
+                                    class="tw-menu-link group"
+                                    @click="handleClick"
+                                    :class="activeDropdown">
+                                    <span class="material-icons-outlined">change_history</span>
+                                    <span class="tw-link-label">Customers</span>
+                                    <span class="material-icons tw-dropdown-arrow"> expand_more </span>
+                                </div>
+
+                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/getting-started.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Getting Started</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/customer-listing.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customer Listing</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/customer-details.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customer Details</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- customers end -->
+
+                            <!-- documentation -->
+                            <li>
+                                <div class="documents-button">
+                                    <a
+                                        data-ripple
+                                        href="https://github.com/kzamaan/twilight"
+                                        target="_blank"
+                                        class="documents-link"
+                                        data-ripple>
+                                        <span class="material-icons-outlined">description</span>
+                                        <span class="btn-label ml-2">Documentation</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="twilight-body">
+                <header class="top-header" :class="[$store.app.navbar]">
+                    <!-- sidebar toggle button -->
+                    <div class="flex items-center">
+                        <button
+                            type="button"
+                            @click="$store.app.toggleVMenu()"
+                            aria-label="Toggle Menu"
+                            class="text-gray-500 focus:outline-none">
+                            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4 6H20M4 12H20M4 18H11"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <button type="button" @click="$store.app.toggleTheme()" class="header-item" aria-label="Themes">
+                            <span x-show="$store.app.theme == 'dark'" class="material-icons-outlined"> dark_mode </span>
+                            <span x-show="$store.app.theme == 'light'" class="material-icons-outlined">
+                                light_mode
+                            </span>
+                            <span x-show="$store.app.theme == 'system'" class="material-icons-outlined">
+                                brightness_auto
+                            </span>
+                        </button>
+
+                        <button type="button" class="header-item" aria-label="Notification">
+                            <span class="material-icons-outlined"> notifications </span>
+                        </button>
+
+                        <button @click="showCustomizer = true" class="header-item" type="button" aria-label="setting">
+                            <span class="material-icons-outlined"> settings </span>
+                        </button>
+
+                        <div class="dropdown" x-data="dropdown" @click.outside="close">
+                            <button
+                                type="button"
+                                @click="toggle"
+                                aria-label="User Profile"
+                                class="flex h-8 w-8 overflow-hidden rounded-md shadow">
+                                <img
+                                    class="h-full w-full object-cover"
+                                    src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=ffffff"
+                                    alt="Your avatar" />
+                            </button>
+                            <ul
+                                x-cloak
+                                x-show="open"
+                                x-transition:enter.duration.500ms
+                                x-transition:leave.duration.400ms
+                                class="!mt-4 w-64 py-2 shadow-2xl dark:bg-dark-primary">
+                                <li class="flex items-center border-b px-4 py-2 dark:border-gray-700">
+                                    <div class="flex-shrink-0">
+                                        <img
+                                            class="h-8 w-8 rounded-full object-cover"
+                                            src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=F5F8FA"
+                                            alt="Your avatar" />
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
+                                            Kamruzzaman
+                                        </p>
+                                        <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
+                                            Software Engineer
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="border-b py-2 dark:border-gray-700">
+                                    <div class="user-menu-item">
+                                        <a href="#" class="user-menu-link"> My Profile </a>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <a href="#" class="user-menu-link">
+                                            My Projects
+                                            <span
+                                                class="ml-1 inline-flex items-center justify-center rounded-full bg-primary px-2 py-1 text-xs font-bold leading-none text-white">
+                                                9
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <a href="#" class="user-menu-link"> My Subscription </a>
+                                    </div>
+                                </li>
+                                <li class="relative py-2">
+                                    <div class="user-menu-item group">
+                                        <a href="#" class="user-menu-link">
+                                            Language
+                                            <span class="flex items-center text-xs font-bold leading-none">
+                                                <img
+                                                    src="/images/flags/united-states.svg"
+                                                    class="mr-2 h-4 w-4 rounded-full"
+                                                    alt="English" />
+                                                English
+                                            </span>
+                                            <!-- language dropdown -->
+                                            <div class="language-dropdown">
+                                                <div class="language-dropdown-item">
+                                                    <img
+                                                        src="/images/flags/united-states.svg"
+                                                        class="mr-2 h-4 w-4 rounded-full"
+                                                        alt="English" />
+                                                    <span class="text-xs leading-none">English</span>
+                                                </div>
+                                                <div class="language-dropdown-item">
+                                                    <img
+                                                        src="/images/flags/france.svg"
+                                                        class="mr-2 h-4 w-4 rounded-full"
+                                                        alt="france" />
+                                                    <span class="text-xs leading-none">France</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="user-menu-item">
+                                        <a href="#" class="user-menu-link"> Account Settings </a>
+                                    </div>
+                                    <div class="user-menu-item">
+                                        <a href="./login.html" class="user-menu-link"> Log out </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="animate__animated twilight-content" :class="[$store.app.animation]">
+                    <!-- Start:Breadcrumb -->
+                    <nav class="breadcrumb">
+                        <div class="left-link">
+                            <ol class="breadcrumb-nav">
+                                <li class="inline-flex items-center">
+                                    <a href="/" class="breadcrumb-item"> DataTables </a>
+                                </li>
+
+                                <li aria-current="page">
+                                    <div class="flex items-center">
+                                        <div class="material-icons rotate-180 text-lg">navigate_before</div>
+                                        <span class="breadcrumb-item-current"> Show/Hide Columns </span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </nav>
+                    <!-- End:Breadcrumb -->
+                    <div x-data="miscellaneous">
+                        <div class="card">
+                            <h6 class="card-header">Show/Hide Columns</h6>
+                            <div class="card-body relative">
+                                <div class="sm:absolute sm:right-32 sm:top-4 sm:mb-0">
+                                    <div class="flex items-center">
+                                        <div
+                                            class="theme-dropdown relative"
+                                            x-data="{ columnDropdown: false }"
+                                            @click.outside="columnDropdown = false">
+                                            <a
+                                                href="javascript:;"
+                                                class="dark:text-white-dark flex items-center rounded-md border border-[#e0e6ed] px-4 py-2 text-sm font-semibold dark:border-[#253b5c] dark:bg-[#1b2e4b]"
+                                                @click="columnDropdown = ! columnDropdown">
+                                                <span class="ltr:mr-1 rtl:ml-1">Columns</span>
+                                                <svg
+                                                    class="h-5 w-5"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M19 9L12 15L5 9"
+                                                        stroke="currentColor"
+                                                        stroke-width="1.5"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </a>
+                                            <div
+                                                class="text-dark absolute top-11 z-[10] hidden w-[100px] min-w-[150px] rounded bg-white py-2 shadow ltr:left-0 rtl:right-0 dark:bg-[#1b2e4b] dark:text-white-light"
+                                                :class="columnDropdown && '!block'">
+                                                <ul class="space-y-2 px-4 font-semibold">
+                                                    <template x-for="(col,i) in columns" :key="i">
+                                                        <li>
+                                                            <div>
+                                                                <label class="cursor-pointer">
+                                                                    <input
+                                                                        type="checkbox"
+                                                                        class="form-checkbox"
+                                                                        :id="`chk-${i}`"
+                                                                        :value="(i)"
+                                                                        @change="col.hidden=  $event.target.checked,showHideColumns(i,$event.target.checked)"
+                                                                        :checked="col.hidden" />
+                                                                    <span
+                                                                        :for="`chk-${i}`"
+                                                                        class="ltr:ml-2 rtl:mr-2"
+                                                                        x-text="col.name"></span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    </template>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table id="myTable" class="table-hover whitespace-nowrap"></table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <footer class="footer">
+                    <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
+                        © <span id="footer-year"></span> <a href="#" class="hover:underline">Twilight™</a>. All Rights
+                        Reserved.
+                    </span>
+                    <ul class="mt-3 flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                        <li>
+                            <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/kzamaan/twilight" class="hover:underline" target="_blank">
+                                Github
+                            </a>
+                        </li>
+                    </ul>
+                </footer>
+            </div>
+
+            <!-- Theme customizer -->
+            <div class="theme-customizer">
+                <div x-show="showCustomizer" @click="showCustomizer = false" class="customizer-shadow"></div>
+
+                <nav class="app-customizer" :class="{'!right-0' : showCustomizer}">
+                    <div data-simplebar class="h-full overflow-y-auto overflow-x-hidden p-4">
+                        <div class="text-center">
+                            <a href="javascript:;" class="customizer-close" @click="showCustomizer = false">
+                                <span class="material-icons-outlined text-xl/none"> close </span>
+                            </a>
+                            <h4 class="mb-1 dark:text-white">TEMPLATE CUSTOMIZER</h4>
+                            <p class="text-white-dark">
+                                Set preferences that will be cookies for your live preview demonstration.
+                            </p>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Color Scheme</h5>
+                            <p class="text-white-dark text-xs">Overall light or dark presentation.</p>
+                            <div class="mt-3 grid grid-cols-3 gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.theme === 'light' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleTheme('light')">
+                                    <span class="material-icons-outlined"> light_mode </span>
+                                    Light
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.theme === 'dark' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleTheme('dark')">
+                                    <span class="material-icons-outlined"> dark_mode </span>
+                                    Dark
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.theme === 'system' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleTheme('system')">
+                                    <span class="material-icons-outlined"> settings_suggest </span>
+                                    System
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Navigation Position</h5>
+                            <p class="text-white-dark text-xs">Select the primary navigation paradigm for your app.</p>
+                            <div class="mt-3 grid grid-cols-3 gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.menu === 'horizontal' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleMenu('horizontal')">
+                                    Horizontal
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4 text-center"
+                                    :class="[$store.app.menu === 'vertical' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleMenu('vertical')">
+                                    Vertical
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4 text-center"
+                                    :class="[$store.app.menu === 'collapsible-vertical' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleMenu('collapsible-vertical')">
+                                    Collapsible
+                                </button>
+                            </div>
+                            <div class="mt-5 text-primary">
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.semiDark"
+                                        type="checkbox"
+                                        :value="true"
+                                        class="form-checkbox"
+                                        @change="$store.app.toggleSemiDark()" />
+                                    <span>Semi Dark (Sidebar &amp; Header)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Layout Style</h5>
+                            <p class="text-white-dark text-xs">Select the primary layout style for your app.</p>
+                            <div class="mt-3 flex gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.layout === 'boxed-layout' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleLayout('boxed-layout')">
+                                    Box
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.layout === 'full' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleLayout('full')">
+                                    Full
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Direction</h5>
+                            <p class="text-white-dark text-xs">Select the direction for your app.</p>
+                            <div class="mt-3 flex gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.rtlClass === 'ltr' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleRTL('ltr')">
+                                    LTR
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.rtlClass === 'rtl' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleRTL('rtl')">
+                                    RTL
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Navbar Type</h5>
+                            <p class="text-white-dark text-xs">Sticky or Floating.</p>
+                            <div class="mt-3 flex items-center gap-3 text-primary">
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.navbar"
+                                        type="radio"
+                                        value="navbar-sticky"
+                                        class="form-radio"
+                                        @change="$store.app.toggleNavbar()"
+                                        name="$store.app.navbar" />
+                                    <span>Sticky</span>
+                                </label>
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.navbar"
+                                        type="radio"
+                                        value="navbar-floating"
+                                        class="form-radio"
+                                        @change="$store.app.toggleNavbar()"
+                                        name="$store.app.navbar" />
+                                    <span>Floating</span>
+                                </label>
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.navbar"
+                                        type="radio"
+                                        value="navbar-static"
+                                        class="form-radio"
+                                        @change="$store.app.toggleNavbar()"
+                                        name="$store.app.navbar" />
+                                    <span>Static</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Router Transition</h5>
+                            <p class="text-white-dark text-xs">Animation of main content.</p>
+                            <div class="mt-3">
+                                <select
+                                    x-model="$store.app.animation"
+                                    class="form-select w-full border-primary text-primary"
+                                    @change="$store.app.toggleAnimation()">
+                                    <option value>Select Animation</option>
+                                    <option value="animate__fadeIn">Fade</option>
+                                    <option value="animate__fadeInDown">Fade Down</option>
+                                    <option value="animate__fadeInUp">Fade Up</option>
+                                    <option value="animate__fadeInLeft">Fade Left</option>
+                                    <option value="animate__fadeInRight">Fade Right</option>
+                                    <option value="animate__slideInDown">Slide Down</option>
+                                    <option value="animate__slideInLeft">Slide Left</option>
+                                    <option value="animate__slideInRight">Slide Right</option>
+                                    <option value="animate__zoomIn">Zoom In</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <script src="/features/tables/column-chooser.js"></script>
+    </body>
+</html>

@@ -13,24 +13,30 @@
     .dark table thead {
         @apply bg-gray-800 !important;
     }
-
+    table thead tr th,
+    table tbody tr th,
     table tbody tr td,
     table tfoot tr th,
-    table thead tr th {
-        @apply border-b px-4 py-3 last:border-none dark:border-gray-800 !important;
+    table tfoot tr td {
+        @apply border-b border-gray-300 px-4 py-3 dark:border-gray-800 !important;
     }
 
     table tfoot tr th,
-    table thead tr th {
+    table thead tr th,
+    table tbody tr th {
         @apply font-semibold !important;
+    }
+    table tbody tr:last-child td,
+    table tfoot tr:last-child td,
+    table tbody tr:last-child th {
+        @apply border-gray-100 dark:border-gray-800 !important;
     }
     .table-hover tbody tr:hover td,
     .table-hover tbody tr:hover th {
-        @apply bg-gray-100 !important;
+        @apply bg-gray-200 dark:bg-gray-700 !important;
     }
-    .dark table.table-hover tbody tr:hover td,
-    .dark table.table-hover tbody tr:hover th {
-        @apply bg-gray-800 !important;
+    .table-striped tbody tr:nth-of-type(odd) {
+        @apply bg-gray-100 !important;
     }
     .table-striped tbody tr:nth-of-type(odd) {
         @apply bg-gray-100 !important;
@@ -47,6 +53,6 @@
     .table-bordered tbody tr td,
     .table-bordered tfoot tr th,
     .table-bordered thead tr th {
-        @apply border-b !important;
+        @apply border border-gray-300 dark:border-gray-700 !important;
     }
 }
