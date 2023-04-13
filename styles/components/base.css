@@ -76,4 +76,7 @@
     .material-icons-outlined {
         @apply text-xl/none;
     }
+    .scroll-top-btn {
+        @apply animate-pulse rounded-full bg-[#fafafa] p-2 dark:bg-[#060818] dark:hover:bg-primary !important;
+    }
 }

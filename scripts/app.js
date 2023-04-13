@@ -68,7 +68,9 @@ window.DataTableExportTXT = exportTXT;
 
     //? alpine data
     Alpine.data('twilightTheme', () => ({
-        init() {
+        showCustomizer: false,
+        showTopButton: false,
+        showCurrentMenu() {
             let pathName = window.location.pathname;
             if (pathName == '/') pathName = '/index.html';
 
@@ -97,7 +99,23 @@ window.DataTableExportTXT = exportTXT;
                 }
             });
         },
-        showCustomizer: false,
+        scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                this.showTopButton = true;
+            } else {
+                this.showTopButton = false;
+            }
+        },
+        goToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        },
+        init() {
+            this.showCurrentMenu();
+            window.onscroll = () => {
+                this.scrollFunction();
+            };
+        },
     }));
 
     Alpine.store('accordion', {

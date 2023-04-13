@@ -22,11 +22,11 @@
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
     }
     .collapse-icon {
-        @apply h-4 w-4 cursor-pointer rounded-full border-[1.5px] border-slate-900 transition-all duration-150 dark:border-slate-700;
+        @apply h-4 w-4 cursor-pointer rounded-full border-[1.5px] border-gray-800 transition-all duration-150 dark:border-slate-700;
     }
     .vertical:not(.toggle-menu) .collapse-icon,
     .collapsible-vertical.toggle-menu .collapse-icon {
-        @apply bg-slate-900 ring-2 ring-inset ring-gray-900 ring-offset-4 dark:bg-slate-400 dark:ring-slate-400 dark:ring-offset-slate-700;
+        @apply bg-gray-800 ring-2 ring-inset ring-gray-800 ring-offset-4 dark:bg-slate-400 dark:ring-slate-400 dark:ring-offset-slate-700;
     }
     .semi-dark .collapse-icon {
         @apply border-gray-300 bg-gray-300 ring-gray-300;
