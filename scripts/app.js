@@ -10,10 +10,8 @@ Alpine.plugin(persist);
 Alpine.plugin(focus);
 Alpine.plugin(mask);
 
-import 'animate.css';
 // simplebar
 import 'simplebar'; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
-import 'simplebar/dist/simplebar.css';
 
 import { createPopper } from '@popperjs/core';
 
@@ -23,16 +21,14 @@ window.ResizeObserver = ResizeObserver;
 
 // tippy.js for tooltip
 import tippy from 'tippy.js';
-import 'tippy.js/dist/tippy.css'; // optional for styling
+window.tippy = tippy;
 
-// sweetalert2
+// sweet alert2
 import Swal from 'sweetalert2';
-import 'sweetalert2/dist/sweetalert2.css';
 window.Swal = Swal;
 
 // initialize quill editor
 import Quill from 'quill';
-import 'quill/dist/quill.snow.css';
 window.Quill = Quill;
 
 // initialize sortablejs
@@ -51,12 +47,10 @@ window.ClipboardJS = ClipboardJS;
 
 // flatpickr
 import flatpickr from 'flatpickr';
-import 'flatpickr/dist/flatpickr.css';
 window.flatpickr = flatpickr;
 
 // simple datatables
 import { DataTable, exportCSV, exportJSON, exportTXT } from 'simple-datatables';
-import 'simple-datatables/dist/style.css';
 window.DataTable = DataTable;
 window.DataTableExportCSV = exportCSV;
 window.DataTableExportJSON = exportJSON;
