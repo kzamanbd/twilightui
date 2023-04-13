@@ -414,11 +414,10 @@ document.addEventListener('alpine:init', () => {
                     {
                         select: 2,
                         render: (data, cell, row) => {
+                            const country = this.getCountry();
                             return `<div class="flex items-center gap-2">
-                                <img width="24" src="/images/flags/${
-                                    this.getCountry().code
-                                }.svg" class="max-w-none" alt="user profile" />
-                                <div>${this.getCountry().name}</div>
+                                <img width="24" src="/images/flags/${country.code}.svg" class="max-w-none" alt="user profile" />
+                                <div>${country.name}</div>
                             </div>`;
                         },
                         sortable: false,
