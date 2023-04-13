@@ -405,7 +405,7 @@ document.addEventListener('alpine:init', () => {
                             return `<div class="flex items-center gap-2">
                                     <img src="/images/users/avatar-${this.getRandomNumber(
                                         1,
-                                        20,
+                                        10,
                                     )}.png" class="w-9 h-9 rounded-full max-w-none" alt="user-profile" />
                                     <div class="font-semibold">${data}</div>
                             </div>`;
