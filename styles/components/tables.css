@@ -1,0 +1,52 @@
+@layer components {
+    /* tables */
+    table {
+        @apply w-full border-collapse;
+    }
+
+    table tfoot,
+    table thead {
+        @apply bg-gray-100 !important;
+    }
+
+    .dark table tfoot,
+    .dark table thead {
+        @apply bg-gray-800 !important;
+    }
+
+    table tbody tr td,
+    table tfoot tr th,
+    table thead tr th {
+        @apply border-b px-4 py-3 last:border-none dark:border-gray-800 !important;
+    }
+
+    table tfoot tr th,
+    table thead tr th {
+        @apply font-semibold !important;
+    }
+    .table-hover tbody tr:hover td,
+    .table-hover tbody tr:hover th {
+        @apply bg-gray-100 !important;
+    }
+    .dark table.table-hover tbody tr:hover td,
+    .dark table.table-hover tbody tr:hover th {
+        @apply bg-gray-800 !important;
+    }
+    .table-striped tbody tr:nth-of-type(odd) {
+        @apply bg-gray-100 !important;
+    }
+    .dark .table-striped tbody tr:nth-of-type(odd) {
+        @apply bg-gray-800 !important;
+    }
+    .table-bordered {
+        @apply border border-gray-300 !important;
+    }
+    .dark .table-bordered {
+        @apply border border-gray-700 !important;
+    }
+    .table-bordered tbody tr td,
+    .table-bordered tfoot tr th,
+    .table-bordered thead tr th {
+        @apply border-b !important;
+    }
+}

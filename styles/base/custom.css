@@ -28,31 +28,4 @@
     h6 {
         @apply text-sm font-semibold;
     }
-
-    /* tables */
-    table {
-        width: 100%;
-        border-collapse: collapse !important;
-    }
-
-    table tfoot,
-    table thead {
-        @apply bg-gray-100;
-    }
-
-    .dark table tfoot,
-    .dark table thead {
-        @apply bg-gray-800;
-    }
-
-    table tbody tr td,
-    table tfoot tr th,
-    table thead tr th {
-        padding: 0.75rem 1rem;
-    }
-
-    table tfoot tr th,
-    table thead tr th {
-        font-weight: 600;
-    }
 }
