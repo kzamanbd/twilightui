@@ -8,6 +8,8 @@
         <!-- start:Core Style and Script -->
         <link rel="stylesheet" href="/styles/app.css" />
         <script type="module" src="/scripts/app.js"></script>
+        <!-- Swiper -->
+        <link rel="stylesheet" href="/plugins/swiper/swiper-bundle.min.css" />
     </head>
 
     <body>
@@ -3288,5 +3290,22 @@
                 </template>
             </div>
         </div>
+        <script src="/plugins/swiper/swiper-bundle.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const swiper = new window.Swiper('#slider1', {
+                    slidesPerView: 1,
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next-ex',
+                        prevEl: '.swiper-button-prev-ex',
+                    },
+                });
+            });
+        </script>
     </body>
 </html>
