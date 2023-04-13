@@ -92,8 +92,8 @@ window.DataTableExportTXT = exportTXT;
             this.$nextTick(() => {
                 const scrollableEl = document.querySelector('.tw-menu-content .simplebar-content-wrapper');
                 if (scrollableEl) {
-                    if (dropdownMenu) scrollableEl.scrollTop = dropdownMenu.offsetTop;
-                    else scrollableEl.scrollTop = selector.offsetTop;
+                    if (dropdownMenu) scrollableEl.scrollTop = dropdownMenu.offsetTop - 100;
+                    else scrollableEl.scrollTop = selector.offsetTop - 100;
                 }
             });
         },

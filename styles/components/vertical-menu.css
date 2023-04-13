@@ -120,7 +120,7 @@
         @apply bg-primary;
     }
     .tw-dropdown-link.active {
-        @apply tw-link-active bg-transparent hover:bg-light-gray dark:hover:text-gray-200;
+        @apply tw-link-active bg-transparent hover:bg-light-gray dark:hover:bg-gray-700 dark:hover:text-gray-200;
     }
     /* collapsible-vertical */
     .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .collapse-icon,
