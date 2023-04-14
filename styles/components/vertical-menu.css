@@ -1,6 +1,6 @@
 @layer components {
     .vertical-menu {
-        @apply fixed inset-y-0 -left-64 z-30 w-64 border-gray-200 shadow-none duration-300 ease-in-out lg:left-0 lg:shadow-lg;
+        @apply fixed inset-y-0 -left-64 z-30 w-64 border-gray-200 duration-300 ease-in-out lg:left-0;
     }
     .vertical-content {
         @apply h-full bg-white dark:bg-dark-primary [&.semi-dark]:bg-dark-primary;
@@ -10,13 +10,13 @@
         @apply fixed inset-y-0 left-0 z-30 lg:w-[70px] lg:hover:w-64;
     }
     .toggle-menu .vertical-menu {
-        @apply left-0 w-64 shadow-lg;
+        @apply left-0 w-64;
     }
     .vertical.toggle-menu .vertical-menu {
-        @apply lg:-left-64 lg:shadow-none !important;
+        @apply lg:-left-64 !important;
     }
     .collapsible-vertical:not(.toggle-menu) .vertical-menu {
-        @apply -left-64 shadow-none lg:left-0 lg:shadow-lg;
+        @apply -left-64 lg:left-0;
     }
     .menu-shadow {
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
@@ -41,7 +41,7 @@
         @apply h-10 w-10;
     }
     .app-name {
-        @apply dark--text visible mx-2 text-xl font-semibold opacity-100 transition-opacity duration-500 ease-in-out;
+        @apply visible mx-2 text-xl font-semibold opacity-100 transition-opacity duration-500 ease-in-out dark:text-gray-200;
     }
     .semi-dark .app-name {
         @apply text-gray-400;

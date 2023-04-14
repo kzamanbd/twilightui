@@ -1314,7 +1314,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card h-full flex-1 overflow-auto p-0">
+                            <div class="card h-full flex-1 overflow-auto p-0 lg:overflow-hidden">
                                 <div x-show="!selectedMail && !isEdit" class="flex h-full flex-col">
                                     <div class="flex flex-wrap-reverse items-center justify-between gap-4 p-4">
                                         <div class="flex w-full items-center sm:w-auto">
@@ -1649,7 +1649,7 @@
                                                 </tbody>
                                             </table>
                                             <div
-                                                class="sticky bottom-0 flex flex-col flex-wrap items-center justify-between bg-white px-4 pb-4 md:flex-row xl:w-auto">
+                                                class="sticky bottom-0 flex flex-col flex-wrap items-center justify-between bg-white px-4 pb-4 dark:bg-gray-800 md:flex-row xl:w-auto">
                                                 <div class="mt-4 flex-1 md:flex-auto">
                                                     <div class="flex items-center justify-center md:justify-end">
                                                         <div
@@ -1704,7 +1704,7 @@
                                             </button>
                                         </div>
                                         <div class="h-px border-b border-[#e0e6ed] dark:border-[#1b2e4b]"></div>
-                                        <div class="relative p-4">
+                                        <div data-simplebar class="relative h-full p-4 sm:h-[calc(100vh_-_260px)]">
                                             <div class="flex flex-wrap">
                                                 <div class="mr-2 flex-shrink-0">
                                                     <img
