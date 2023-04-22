@@ -19,10 +19,7 @@
     </head>
 
     <body>
-        <div
-            class="twilight"
-            x-data="twilightTheme"
-            :class="[ $store.app.sidebar && 'toggle-menu', $store.app.theme, $store.app.menu, $store.app.layout]">
+        <div class="twilight" x-data="twilightTheme" :class="appConfig">
             <!-- Loading dialog -->
             <div class="animate__animated loading duration-300">Loading.....</div>
             <!-- menu shadow -->
@@ -1002,10 +999,7 @@
                                 @click="toggle"
                                 aria-label="User Profile"
                                 class="flex h-8 w-8 overflow-hidden rounded-md shadow">
-                                <img
-                                    class="h-full w-full object-cover"
-                                    src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=ffffff"
-                                    alt="Your avatar" />
+                                <img class="h-full w-full object-cover" src="/images/author.png" alt="Author" />
                             </button>
                             <ul
                                 x-cloak
@@ -1017,8 +1011,8 @@
                                     <div class="flex-shrink-0">
                                         <img
                                             class="h-8 w-8 rounded-full object-cover"
-                                            src="https://ui-avatars.com/api/?name=TL&color=009ef7&background=F5F8FA"
-                                            alt="Your avatar" />
+                                            src="/images/author.png"
+                                            alt="Author" />
                                     </div>
                                     <div class="ml-3">
                                         <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">

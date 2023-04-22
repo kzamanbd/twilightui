@@ -110,6 +110,11 @@ window.DataTableExportTXT = exportTXT;
                 this.scrollFunction();
             };
         },
+        get appConfig() {
+            const app = this.$store.app;
+            const sidebar = app.sidebar && 'toggle-menu';
+            return [sidebar, app.theme, app.menu, app.layout];
+        },
     }));
 
     Alpine.store('accordion', {
