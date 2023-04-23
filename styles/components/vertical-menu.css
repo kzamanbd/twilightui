@@ -32,10 +32,7 @@
         @apply border-gray-300 bg-gray-300 ring-gray-300;
     }
     .tw-brand-logo {
-        @apply relative flex h-[70px] items-center justify-between border-b px-4 py-2 dark:border-b-gray-700;
-    }
-    .semi-dark .tw-brand-logo {
-        @apply border-b-gray-700;
+        @apply relative flex h-[70px] items-center justify-between px-4 py-2;
     }
     .brand-logo-image {
         @apply h-10 w-10;
@@ -93,7 +90,7 @@
         @apply tw-link-active dark:hover:text-gray-200;
     }
     .semi-dark .tw-menu-link.active {
-        @apply bg-gray-700 text-gray-100;
+        @apply bg-gray-700 text-gray-100 dark:hover:bg-gray-700;
     }
     .tw-link-label {
         @apply mx-2 truncate text-sm font-medium;
@@ -121,6 +118,9 @@
     }
     .tw-dropdown-link.active {
         @apply tw-link-active bg-transparent hover:bg-light-gray dark:hover:bg-gray-700 dark:hover:text-gray-200;
+    }
+    .semi-dark .tw-dropdown-link.active {
+        @apply hover:bg-gray-700 dark:hover:bg-gray-700;
     }
     /* collapsible-vertical */
     .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .collapse-icon,
