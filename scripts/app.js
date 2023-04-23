@@ -94,6 +94,15 @@ window.DataTableExportTXT = exportTXT;
             });
         },
         scrollFunction() {
+            const header = document.querySelector('.top-header');
+            if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+                // do something
+                header.classList.add('scrollable');
+            } else {
+                // do something
+                header.classList.remove('scrollable');
+            }
+            // scroll top button
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
                 this.showTopButton = true;
             } else {
