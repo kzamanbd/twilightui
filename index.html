@@ -1122,7 +1122,7 @@
                     <!-- End:Breadcrumb -->
 
                     <div class="mb-5 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-                        <div class="card dark:border-zinc-600 dark:bg-dark-primary">
+                        <div class="card">
                             <div class="card-body">
                                 <div>
                                     <div class="grid grid-cols-12 items-center gap-5">
@@ -1154,7 +1154,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card dark:border-zinc-600 dark:bg-dark-primary">
+                        <div class="card">
                             <div class="card-body">
                                 <div>
                                     <div class="grid grid-cols-12 items-center gap-5">
@@ -1184,7 +1184,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card dark:border-zinc-600 dark:bg-dark-primary">
+                        <div class="card">
                             <div class="card-body">
                                 <div>
                                     <div class="grid grid-cols-12 items-center gap-5">
@@ -1216,7 +1216,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card dark:border-zinc-600 dark:bg-dark-primary">
+                        <div class="card">
                             <div class="card-body">
                                 <div>
                                     <div class="grid grid-cols-12 items-center gap-5">
@@ -1248,10 +1248,10 @@
 
                     <div class="mb-5 grid grid-cols-1 gap-5 xl:grid-cols-12">
                         <div class="col-span-12 xl:col-span-5">
-                            <div class="card h-full dark:border-zinc-600 dark:bg-dark-primary">
+                            <div class="card h-full">
                                 <div class="card-body">
+                                    <h6>Wallet Balance</h6>
                                     <div class="mb-2 flex flex-wrap items-center">
-                                        <h5 class="text-15 mr-2 text-gray-800 dark:text-gray-100">Wallet Balance</h5>
                                         <div class="ml-auto flex gap-1">
                                             <button
                                                 type="button"
@@ -1342,23 +1342,18 @@
                         <div class="col-span-12 xl:col-span-7">
                             <div class="grid h-full grid-cols-12 gap-5">
                                 <div class="col-span-12 lg:col-span-8">
-                                    <div class="card h-full dark:border-zinc-600 dark:bg-dark-primary">
+                                    <div class="card h-full">
                                         <div class="card-body">
-                                            <div class="mb-2 flex flex-wrap items-center">
-                                                <h5 class="text-15 mr-2 text-gray-800 dark:text-gray-100">
-                                                    Invested Overview
-                                                </h5>
-                                                <div class="ml-auto">
-                                                    <select
-                                                        class="form-select-sm form-select border-gray-50 bg-gray-50/20 py-0 pl-4 dark:border-zinc-600 dark:bg-dark-primary dark:text-gray-100">
-                                                        <option value="MAY" selected="">May</option>
-                                                        <option value="AP">April</option>
-                                                        <option value="MA">March</option>
-                                                        <option value="FE">February</option>
-                                                        <option value="JA">January</option>
-                                                        <option value="DE">December</option>
-                                                    </select>
-                                                </div>
+                                            <div class="flex items-center justify-between">
+                                                <h6>Invested Overview</h6>
+                                                <select class="form-select-sm form-select w-max">
+                                                    <option value="MAY" selected="">May</option>
+                                                    <option value="AP">April</option>
+                                                    <option value="MA">March</option>
+                                                    <option value="FE">February</option>
+                                                    <option value="JA">January</option>
+                                                    <option value="DE">December</option>
+                                                </select>
                                             </div>
                                             <div class="grid grid-cols-12 gap-5">
                                                 <div class="col-span-6 justify-self-center">
@@ -1454,9 +1449,9 @@
                     </div>
 
                     <div class="mb-5 grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3">
-                        <div class="card dark:border-zinc-600 dark:bg-dark-primary">
+                        <div class="card">
                             <div class="nav-tabs border-b-tabs">
-                                <div class="card-body flex border-b border-gray-50 pb-0 dark:border-zinc-700">
+                                <div class="card-header flex border-b border-gray-50 pb-0 dark:border-zinc-700">
                                     <h5 class="text-15 mr-2 flex-grow text-gray-800 dark:text-gray-100">Trading</h5>
                                     <div class="flex-shrink-0">
                                         <ul class="d-nav" role="tablist">
@@ -1662,9 +1657,9 @@
                             </div>
                         </div>
 
-                        <div class="card dark:border-zinc-600 dark:bg-dark-primary">
+                        <div class="card">
                             <div class="nav-tabs border-b-tabs">
-                                <div class="card-body flex border-b border-gray-50 pb-0 dark:border-zinc-700">
+                                <div class="card-header flex border-b border-gray-50 pb-0 dark:border-zinc-700">
                                     <h5 class="text-15 mr-2 flex-grow text-gray-800 dark:text-gray-100">
                                         Transactions
                                     </h5>
@@ -2762,13 +2757,12 @@
                             </div>
                         </div>
 
-                        <div class="card dark:border-zinc-600 dark:bg-dark-primary">
-                            <div class="card-body pb-0">
+                        <div class="card">
+                            <div class="card-header pb-0">
                                 <div class="mb-2 flex flex-wrap items-center">
                                     <h5 class="text-15 mr-2 text-gray-800 dark:text-gray-100">Recent Activity</h5>
                                     <div class="ml-auto">
-                                        <select
-                                            class="form-select-md form-select rounded border-gray-50 bg-gray-50/20 py-0.5 pl-3 dark:border-zinc-600 dark:bg-dark-primary dark:text-gray-100">
+                                        <select class="form-select-sm form-select">
                                             <option value="Today" selected="">Today</option>
                                             <option value="Yesterday">Yesterday</option>
                                             <option value="Last Week">Last Week</option>
@@ -3192,8 +3186,8 @@
 
                     <div class="mb-5 grid grid-cols-12 gap-5">
                         <div class="col-span-12 lg:col-span-8">
-                            <div class="card h-full dark:border-zinc-600 dark:bg-dark-primary">
-                                <div class="card-body pb-0">
+                            <div class="card h-full">
+                                <div class="card-header pb-0">
                                     <div class="mb-2 flex flex-wrap items-center">
                                         <h5 class="text-15 mr-2 text-gray-800 dark:text-gray-100">Market Overview</h5>
                                         <div class="ml-auto flex gap-1">
@@ -3480,46 +3474,21 @@
                                                 <table class="min-w-full">
                                                     <thead class="bg-gray-50 dark:bg-gray-700">
                                                         <tr>
-                                                            <th
-                                                                scope="col"
-                                                                class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                Channel
-                                                            </th>
-                                                            <th
-                                                                scope="col"
-                                                                class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                Sessions
-                                                            </th>
-                                                            <th
-                                                                scope="col"
-                                                                class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                Prev.Period
-                                                            </th>
-                                                            <th
-                                                                scope="col"
-                                                                class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                % Change
-                                                            </th>
+                                                            <th scope="col">Channel</th>
+                                                            <th scope="col">Sessions</th>
+                                                            <th scope="col">Prev.Period</th>
+                                                            <th scope="col">% Change</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <!-- 1 -->
-                                                        <tr
-                                                            class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
+                                                        <tr class="border-dashed">
+                                                            <td>
                                                                 <a href="" class="text-blue-500"> Organic search </a>
                                                             </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                10853<small class="text-gray-400">(52%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                566<small class="text-gray-400">(92%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
+                                                            <td>10853<small class="text-gray-400">(52%)</small></td>
+                                                            <td>566<small class="text-gray-400">(92%)</small></td>
+                                                            <td>
                                                                 52.80%
                                                                 <span class="material-icons text-base text-green-500">
                                                                     arrow_drop_up
@@ -3527,22 +3496,13 @@
                                                             </td>
                                                         </tr>
                                                         <!-- 2 -->
-                                                        <tr
-                                                            class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
+                                                        <tr>
+                                                            <td>
                                                                 <a href="" class="text-blue-500">Direct</a>
                                                             </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                10853<small class="text-gray-400">(52%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                566<small class="text-gray-400">(92%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
+                                                            <td>10853<small class="text-gray-400">(52%)</small></td>
+                                                            <td>566<small class="text-gray-400">(92%)</small></td>
+                                                            <td>
                                                                 52.80%
                                                                 <span class="material-icons text-base text-red-500">
                                                                     arrow_drop_down
@@ -3550,22 +3510,13 @@
                                                             </td>
                                                         </tr>
                                                         <!-- 3 -->
-                                                        <tr
-                                                            class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
+                                                        <tr>
+                                                            <td>
                                                                 <a href="" class="text-blue-500">Referal</a>
                                                             </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                10853<small class="text-gray-400">(52%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                566<small class="text-gray-400">(92%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
+                                                            <td>10853<small class="text-gray-400">(52%)</small></td>
+                                                            <td>566<small class="text-gray-400">(92%)</small></td>
+                                                            <td>
                                                                 52.80%
                                                                 <span class="material-icons text-base text-green-500">
                                                                     arrow_drop_up
@@ -3573,22 +3524,13 @@
                                                             </td>
                                                         </tr>
                                                         <!-- 4 -->
-                                                        <tr
-                                                            class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
+                                                        <tr>
+                                                            <td>
                                                                 <a href="" class="text-blue-500">Email</a>
                                                             </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                10853<small class="text-gray-400">(52%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                566<small class="text-gray-400">(92%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
+                                                            <td>10853<small class="text-gray-400">(52%)</small></td>
+                                                            <td>566<small class="text-gray-400">(92%)</small></td>
+                                                            <td>
                                                                 52.80%
                                                                 <span class="material-icons text-base text-red-500">
                                                                     arrow_drop_down
@@ -3597,20 +3539,12 @@
                                                         </tr>
                                                         <!-- 5 -->
                                                         <tr class="bg-white dark:bg-gray-800">
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
+                                                            <td>
                                                                 <a href="" class="text-blue-500">Social</a>
                                                             </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                10853<small class="text-gray-400">(52%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                566<small class="text-gray-400">(92%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
+                                                            <td>10853<small class="text-gray-400">(52%)</small></td>
+                                                            <td>566<small class="text-gray-400">(92%)</small></td>
+                                                            <td>
                                                                 52.80%
 
                                                                 <span class="material-icons text-base text-green-500">
@@ -3639,137 +3573,67 @@
                                                 <table class="min-w-full">
                                                     <thead class="bg-gray-50 dark:bg-gray-700">
                                                         <tr>
-                                                            <th
-                                                                scope="col"
-                                                                class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                Browser
-                                                            </th>
-                                                            <th
-                                                                scope="col"
-                                                                class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                Sessions
-                                                            </th>
-                                                            <th
-                                                                scope="col"
-                                                                class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                Bounce Rate
-                                                            </th>
-                                                            <th
-                                                                scope="col"
-                                                                class="p-3 text-left text-xs font-medium uppercase tracking-wider text-gray-700 dark:text-gray-400">
-                                                                Transactions
-                                                            </th>
+                                                            <th scope="col" class="">Browser</th>
+                                                            <th scope="col" class="">Sessions</th>
+                                                            <th scope="col" class="">Bounce Rate</th>
+                                                            <th scope="col" class="">Transactions</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <!-- 1 -->
-                                                        <tr
-                                                            class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
+                                                        <tr>
+                                                            <td>
                                                                 <img
                                                                     src="/images/browsers/chrome.png"
                                                                     class="mr-2 inline-block h-5" />Chrome
                                                             </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                10853<small class="text-gray-400">(52%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                52.80%
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                566 <small class="text-gray-400">(92%)</small>
-                                                            </td>
+                                                            <td>10853<small class="text-gray-400">(52%)</small></td>
+                                                            <td>52.80%</td>
+                                                            <td>566 <small class="text-gray-400">(92%)</small></td>
                                                         </tr>
                                                         <!-- 2 -->
-                                                        <tr
-                                                            class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
+                                                        <tr>
+                                                            <td>
                                                                 <img
                                                                     src="/images/browsers/in-explorer.png"
                                                                     class="mr-2 inline-block h-5" />Explorer
                                                             </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                10853<small class="text-gray-400">(52%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                52.80%
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                566 <small class="text-gray-400">(92%)</small>
-                                                            </td>
+                                                            <td>10853<small class="text-gray-400">(52%)</small></td>
+                                                            <td>52.80%</td>
+                                                            <td>566 <small class="text-gray-400">(92%)</small></td>
                                                         </tr>
                                                         <!-- 3 -->
-                                                        <tr
-                                                            class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
+                                                        <tr>
+                                                            <td>
                                                                 <img
                                                                     src="/images/browsers/safari.png"
                                                                     class="mr-2 inline-block h-5" />Safari
                                                             </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                10853<small class="text-gray-400">(52%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                52.80%
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                566 <small class="text-gray-400">(92%)</small>
-                                                            </td>
+                                                            <td>10853<small class="text-gray-400">(52%)</small></td>
+                                                            <td>52.80%</td>
+                                                            <td>566 <small class="text-gray-400">(92%)</small></td>
                                                         </tr>
                                                         <!-- 4 -->
-                                                        <tr
-                                                            class="border-b border-dashed bg-white dark:border-gray-700 dark:bg-gray-800">
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
+                                                        <tr>
+                                                            <td>
                                                                 <img
                                                                     src="/images/browsers/mozilla.png"
                                                                     class="mr-2 inline-block h-5" />Mozilla
                                                             </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                10853<small class="text-gray-400">(52%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                52.80%
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                566 <small class="text-gray-400">(92%)</small>
-                                                            </td>
+                                                            <td>10853<small class="text-gray-400">(52%)</small></td>
+                                                            <td>52.80%</td>
+                                                            <td>566 <small class="text-gray-400">(92%)</small></td>
                                                         </tr>
                                                         <!-- 5 -->
                                                         <tr class="bg-white dark:bg-gray-800">
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm font-medium dark:text-white">
+                                                            <td>
                                                                 <img
                                                                     src="/images/browsers/opera.png"
                                                                     class="mr-2 inline-block h-5" />Opera
                                                             </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                10853<small class="text-gray-400">(52%)</small>
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                52.80%
-                                                            </td>
-                                                            <td
-                                                                class="whitespace-nowrap p-3 text-sm text-gray-500 dark:text-gray-400">
-                                                                566 <small class="text-gray-400">(92%)</small>
-                                                            </td>
+                                                            <td>10853<small class="text-gray-400">(52%)</small></td>
+                                                            <td>52.80%</td>
+                                                            <td>566 <small class="text-gray-400">(92%)</small></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
