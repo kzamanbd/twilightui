@@ -1,13 +1,14 @@
 @layer components {
     /* start top header components */
     .top-header {
-        @apply flex h-[70px] items-center justify-between px-6 py-4;
-        @apply border-b bg-light-gray dark:border-b-gray-700 dark:bg-dark-primary dark:shadow-lg;
-        @apply supports-[backdrop-filter]:bg-light-gray/60 supports-[backdrop-filter]:backdrop-blur lg:backdrop-blur-none lg:backdrop-filter-none;
+        @apply flex h-[70px] items-center justify-between bg-light-gray px-6 py-4 duration-300 dark:bg-dark-primary;
+        @apply supports-[backdrop-filter]:bg-light-gray/60 supports-[backdrop-filter]:backdrop-blur;
     }
     .navbar-sticky {
-        @apply dark--text sticky top-0 z-10 bg-white dark:bg-dark-primary dark:shadow-lg;
-        @apply supports-[backdrop-filter]:bg-light-gray/60 supports-[backdrop-filter]:backdrop-blur;
+        @apply dark--text sticky top-0 z-10 dark:shadow-xl;
+    }
+    .navbar-sticky.scrollable {
+        @apply mx-6 rounded-bl-lg rounded-br-lg shadow-md !important;
     }
     .header-item {
         @apply dark--text relative flex items-center p-1.5 text-xs font-medium;
