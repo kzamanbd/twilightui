@@ -60,6 +60,133 @@ window.DataTableExportTXT = exportTXT;
 (function () {
     'use strict';
 
+    // theme config
+    const $themeConfig = {
+        locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
+        theme: 'light', // light, dark, system
+        rtlClass: 'ltr', // rtl, ltr
+        menu: 'vertical', // vertical, collapsible-vertical, horizontal
+        layout: 'full', // full, boxed-layout
+        animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
+        navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
+        footer: 'footer-static', // footer-sticky, footer-floating, footer-static
+        semiDark: false,
+    };
+
+    // theme config persist with alpinejs
+    Alpine.store('app', {
+        name: 'TwilightUI',
+        // theme
+        theme: Alpine.$persist($themeConfig.theme),
+        toggleTheme(val) {
+            let theme = $themeConfig.theme; // light|dark|system
+            if (val) {
+                theme = val;
+            } else {
+                if (this.theme === 'system') {
+                    theme = 'light';
+                } else if (this.theme === 'light') {
+                    theme = 'dark';
+                } else if (this.theme === 'dark') {
+                    theme = 'system';
+                }
+            }
+
+            this.theme = theme;
+        },
+
+        // navigation menu
+        menu: Alpine.$persist($themeConfig.menu),
+        toggleMenu(val) {
+            if (!val) {
+                val = this.menu || $themeConfig.menu; // vertical, collapsible-vertical, horizontal
+            }
+            this.sidebar = false; // reset sidebar state
+            this.menu = val;
+        },
+
+        // layout
+        layout: Alpine.$persist($themeConfig.layout),
+        toggleLayout(val) {
+            if (!val) {
+                val = this.layout || $themeConfig.layout; // full, boxed-layout
+            }
+
+            this.layout = val;
+        },
+
+        // rtl support
+        rtlClass: Alpine.$persist($themeConfig.rtlClass),
+        toggleRTL(val) {
+            if (!val) {
+                val = this.rtlClass || $themeConfig.rtlClass; // rtl, ltr
+            }
+
+            this.rtlClass = val;
+            this.setRTLLayout();
+        },
+
+        setRTLLayout() {
+            document.querySelector('html').setAttribute('dir', this.rtlClass || $themeConfig.rtlClass);
+        },
+
+        // animation
+        animation: Alpine.$persist($themeConfig.animation),
+        toggleAnimation(val) {
+            if (!val) {
+                val = this.animation || $themeConfig.animation; // animate__fadeIn, animate__fadeInDown, animate__fadeInLeft, animate__fadeInRight
+            }
+            val = val?.trim();
+
+            this.animation = val;
+        },
+
+        // navbar type
+        navbar: Alpine.$persist($themeConfig.navbar),
+        toggleNavbar(val) {
+            if (!val) {
+                val = this.navbar || $themeConfig.navbar; // navbar-sticky, navbar-floating, navbar-static
+            }
+
+            this.navbar = val;
+        },
+        // footer type
+        footer: Alpine.$persist($themeConfig.footer),
+        toggleFooter(val) {
+            if (!val) {
+                val = this.footer || $themeConfig.footer; // footer-sticky, footer-floating, footer-static
+            }
+
+            this.footer = val;
+        },
+
+        // semi dark
+        semiDark: Alpine.$persist($themeConfig.semiDark),
+        toggleSemiDark(val) {
+            if (!val) {
+                val = this.semiDark || $themeConfig.semiDark;
+            }
+
+            this.semiDark = val;
+        },
+
+        // multi language
+        locale: Alpine.$persist($themeConfig.locale),
+        toggleLocale(val) {
+            if (!val) {
+                val = this.locale || $themeConfig.locale;
+            }
+
+            this.locale = val;
+        },
+
+        // sidebar
+        sidebar: false,
+        toggleVMenu() {
+            this.sidebar = !this.sidebar;
+        },
+    });
+
     //? alpine data
     Alpine.data('twilightTheme', () => ({
         showCustomizer: false,
@@ -226,122 +353,6 @@ window.DataTableExportTXT = exportTXT;
         });
 
         instance.show();
-    });
-
-    // theme config
-    const $themeConfig = {
-        locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
-        theme: 'light', // light, dark, system
-        rtlClass: 'ltr', // rtl, ltr
-        menu: 'vertical', // vertical, collapsible-vertical, horizontal
-        layout: 'full', // full, boxed-layout
-        animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
-        navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
-        semiDark: false,
-    };
-
-    Alpine.store('app', {
-        name: 'TwilightUI',
-        // theme
-        theme: Alpine.$persist($themeConfig.theme),
-        toggleTheme(val) {
-            let theme = $themeConfig.theme; // light|dark|system
-            if (val) {
-                theme = val;
-            } else {
-                if (this.theme === 'system') {
-                    theme = 'light';
-                } else if (this.theme === 'light') {
-                    theme = 'dark';
-                } else if (this.theme === 'dark') {
-                    theme = 'system';
-                }
-            }
-
-            this.theme = theme;
-        },
-
-        // navigation menu
-        menu: Alpine.$persist($themeConfig.menu),
-        toggleMenu(val) {
-            if (!val) {
-                val = this.menu || $themeConfig.menu; // vertical, collapsible-vertical, horizontal
-            }
-            this.sidebar = false; // reset sidebar state
-            this.menu = val;
-        },
-
-        // layout
-        layout: Alpine.$persist($themeConfig.layout),
-        toggleLayout(val) {
-            if (!val) {
-                val = this.layout || $themeConfig.layout; // full, boxed-layout
-            }
-
-            this.layout = val;
-        },
-
-        // rtl support
-        rtlClass: Alpine.$persist($themeConfig.rtlClass),
-        toggleRTL(val) {
-            if (!val) {
-                val = this.rtlClass || $themeConfig.rtlClass; // rtl, ltr
-            }
-
-            this.rtlClass = val;
-            this.setRTLLayout();
-        },
-
-        setRTLLayout() {
-            document.querySelector('html').setAttribute('dir', this.rtlClass || $themeConfig.rtlClass);
-        },
-
-        // animation
-        animation: Alpine.$persist($themeConfig.animation),
-        toggleAnimation(val) {
-            if (!val) {
-                val = this.animation || $themeConfig.animation; // animate__fadeIn, animate__fadeInDown, animate__fadeInLeft, animate__fadeInRight
-            }
-            val = val?.trim();
-
-            this.animation = val;
-        },
-
-        // navbar type
-        navbar: Alpine.$persist($themeConfig.navbar),
-        toggleNavbar(val) {
-            if (!val) {
-                val = this.navbar || $themeConfig.navbar; // navbar-sticky, navbar-floating, navbar-static
-            }
-
-            this.navbar = val;
-        },
-
-        // semi dark
-        semiDark: Alpine.$persist($themeConfig.semiDark),
-        toggleSemiDark(val) {
-            if (!val) {
-                val = this.semiDark || $themeConfig.semiDark;
-            }
-
-            this.semiDark = val;
-        },
-
-        // multi language
-        locale: Alpine.$persist($themeConfig.locale),
-        toggleLocale(val) {
-            if (!val) {
-                val = this.locale || $themeConfig.locale;
-            }
-
-            this.locale = val;
-        },
-
-        // sidebar
-        sidebar: false,
-        toggleVMenu() {
-            this.sidebar = !this.sidebar;
-        },
     });
 
     Alpine.start();
