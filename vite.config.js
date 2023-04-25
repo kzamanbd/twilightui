@@ -5,16 +5,16 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
-// import { VitePWA } from 'vite-plugin-pwa';
-// const injectRegister = process.env.SW_INLINE ?? 'auto';
-// const selfDestroying = process.env.SW_DESTROY === 'true';
+import { VitePWA } from 'vite-plugin-pwa';
+const injectRegister = process.env.SW_INLINE ?? 'auto';
+const selfDestroying = process.env.SW_DESTROY === 'true';
 
 export default defineConfig({
     plugins: [
         createHtmlPlugin({
             minify: true,
         }),
-        /**
+
         VitePWA({
             includeAssets: ['favicon.svg'],
             injectRegister,
@@ -48,7 +48,6 @@ export default defineConfig({
                 navigateFallback: 'pages-error404.html',
             },
         }),
-        */
     ],
     build: {
         outDir: 'build',
