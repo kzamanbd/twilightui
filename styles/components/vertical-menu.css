@@ -34,9 +34,6 @@
     .tw-brand-logo {
         @apply relative flex h-[70px] items-center justify-between px-4 py-2;
     }
-    .brand-logo-image {
-        @apply h-10 w-10;
-    }
     .app-name {
         @apply visible mx-2 text-xl font-semibold opacity-100 transition-opacity duration-500 ease-in-out dark:text-gray-200;
     }
