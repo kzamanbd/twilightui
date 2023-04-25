@@ -372,7 +372,7 @@ input[type='range']:active::-webkit-slider-thumb {
 .fc-button.fc-button-primary,
 .fc-prev-button.fc-button.fc-button-primary,
 .fc-next-button.fc-button.fc-button-primary {
-    @apply btn btn-outline-primary rounded-md border-primary bg-transparent duration-300 hover:border-primary focus:border-none active:bg-primary active:text-white;
+    @apply btn btn-outline-primary rounded-md border-primary bg-transparent capitalize duration-300 hover:border-primary focus:border-none active:bg-primary active:text-white;
 }
 .fc-today-button.fc-button.fc-button-primary {
     @apply btn btn-outline-primary inline-block rounded-md bg-primary text-white;
