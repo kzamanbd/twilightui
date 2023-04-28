@@ -82,4 +82,89 @@
     .sortable-item-card {
         @apply rounded-md bg-[#f4f4f4] p-3 pb-5 shadow dark:bg-[#262e40];
     }
+
+    /* avatar */
+
+    .avatar {
+        @apply inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 object-cover dark:bg-gray-700;
+    }
+    /* avatar avatar-sm */
+    .avatar-sm {
+        @apply h-8 w-8 text-sm;
+    }
+
+    .tw-primary-action {
+        @apply btn btn-outline-primary bg-primary-100 p-1.5;
+    }
+    .tw-warning-action {
+        @apply btn btn-outline-warning bg-yellow-50 p-1.5;
+    }
+    .tw-danger-action {
+        @apply btn btn-outline-danger bg-red-50 p-1.5;
+    }
+
+    .timeline-widget {
+        position: relative;
+    }
+
+    .timeline-widget::before {
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        width: 0.125rem;
+        content: var(--tw-content);
+        --tw-bg-opacity: 1;
+        background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+    }
+
+    [dir='ltr'] .timeline-widget::before {
+        content: var(--tw-content);
+        left: 3rem;
+    }
+
+    [dir='rtl'] .timeline-widget::before {
+        content: var(--tw-content);
+        right: 3rem;
+    }
+
+    .dark .timeline-widget::before {
+        content: var(--tw-content);
+        background-color: rgb(0 0 0 / 0.2);
+    }
+    .timeline-widget .timeline-widget-list {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+    .timeline-widget .timeline-widget-list::before {
+        position: absolute;
+        top: 0.25rem;
+        height: 0.75rem;
+        width: 0.75rem;
+        border-radius: 9999px;
+        border-width: 1px;
+        --tw-border-opacity: 1;
+        border-color: rgb(226 232 240 / var(--tw-border-opacity));
+        content: var(--tw-content);
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    }
+    [dir='ltr'] .timeline-widget .timeline-widget-list::before {
+        content: var(--tw-content);
+        left: 2.688rem;
+    }
+    [dir='rtl'] .timeline-widget .timeline-widget-list::before {
+        content: var(--tw-content);
+        right: 2.688rem;
+    }
+    .dark .timeline-widget .timeline-widget-list::before {
+        border-color: rgb(255 255 255 / 0.1);
+        content: var(--tw-content);
+        background-color: rgb(var(--dark-bg));
+    }
+    .timeline-widget .timeline-widget-list:last-child {
+        margin-bottom: 0px;
+    }
+    .timeline-widget .timeline-widget-list .timeline-widget-content {
+        max-width: 20rem;
+    }
 }
