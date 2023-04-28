@@ -164,12 +164,8 @@ window.DataTableExportTXT = exportTXT;
 
         // semi dark
         semiDark: Alpine.$persist($themeConfig.semiDark),
-        toggleSemiDark(val) {
-            if (!val) {
-                val = this.semiDark || $themeConfig.semiDark;
-            }
-
-            this.semiDark = val;
+        toggleSemiDark() {
+            // toggle semi dark
         },
 
         // multi language
