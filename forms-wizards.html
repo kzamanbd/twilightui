@@ -67,9 +67,9 @@
                                 </div>
                                 <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
-                                        <a href="/index.html" class="tw-dropdown-link">
+                                        <a href="/dashboard-sales.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Analytics</span>
+                                            <span class="tw-link-label">Sales</span>
                                         </a>
                                     </li>
                                     <li class="tw-dropdown-item group">
@@ -82,6 +82,18 @@
                                         <a href="/dashboard-crm.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">CRM</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-hrm.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">HRM</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/index.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Analytics</span>
                                         </a>
                                     </li>
                                     <li class="tw-dropdown-item group">
@@ -1004,8 +1016,12 @@
                             <span class="material-icons-outlined"> notifications </span>
                         </button>
 
-                        <button @click="showCustomizer = true" class="header-item" type="button" aria-label="setting">
-                            <span class="material-icons-outlined"> settings </span>
+                        <button type="button" @click="$store.app.fullscreenToggle()" class="header-item" aria-label="fullscreen">
+                            <span class="material-icons-outlined" x-text="isFullscreen"> fullscreen </span>
+                        </button>
+
+                        <button @click="showCustomizer = true" class="header-item" type="button" aria-label="settings">
+                            <span class="material-icons-outlined animate-spin"> settings </span>
                         </button>
 
                         <div class="dropdown" x-data="dropdown" @click.outside="close">

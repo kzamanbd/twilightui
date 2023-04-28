@@ -15,9 +15,7 @@
         @apply rounded-lg border border-gray-200 bg-white hover:bg-gray-100 dark:bg-dark-primary;
         @apply dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-white;
     }
-    .header-item .material-icons-outlined {
-        @apply text-xl/none text-gray-500 dark:text-gray-400;
-    }
+
     /* start user menu components */
     .user-menu-item {
         @apply px-4;

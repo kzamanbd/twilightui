@@ -38,7 +38,7 @@ Sortable.mount(new MultiDrag());
 Sortable.mount(new Swap());
 
 // apexcharts
-import ApexCharts from 'apexcharts'
+import ApexCharts from 'apexcharts';
 window.ApexCharts = ApexCharts;
 
 // file upload with preview
@@ -87,12 +87,10 @@ window.DataTableExportTXT = exportTXT;
             if (val) {
                 theme = val;
             } else {
-                if (this.theme === 'system') {
+                if (this.theme === 'dark') {
                     theme = 'light';
-                } else if (this.theme === 'light') {
+                } else {
                     theme = 'dark';
-                } else if (this.theme === 'dark') {
-                    theme = 'system';
                 }
             }
 
@@ -189,6 +187,17 @@ window.DataTableExportTXT = exportTXT;
         toggleVMenu() {
             this.sidebar = !this.sidebar;
         },
+
+        // window full screen
+        fullscreen: false,
+        fullscreenToggle() {
+            if (this.fullscreen) {
+                document.exitFullscreen();
+            } else {
+                document.documentElement.requestFullscreen();
+            }
+            this.fullscreen = !this.fullscreen;
+        },
     });
 
     //? alpine data
@@ -254,6 +263,9 @@ window.DataTableExportTXT = exportTXT;
             const app = this.$store.app;
             const sidebar = app.sidebar && 'toggle-menu';
             return [sidebar, app.theme, app.menu, app.layout];
+        },
+        get isFullscreen() {
+            return this.$store.app.fullscreen ? 'fullscreen_exit' : 'fullscreen';
         },
     }));
 
