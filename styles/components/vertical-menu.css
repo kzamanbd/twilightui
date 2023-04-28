@@ -48,8 +48,7 @@
         @apply lg:invisible lg:opacity-0;
     }
     .tw-menu-header {
-        @apply dark--text relative w-full truncate pt-2 text-xs font-semibold uppercase text-gray-400;
-        @apply px-2 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
+        @apply dark--text relative w-full truncate p-2 text-xs font-semibold uppercase text-gray-400 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
     }
     .vertical-menu .tw-menu-header .icon {
         @apply hidden;
@@ -74,20 +73,13 @@
         @apply text-xl leading-none;
     }
     .tw-menu-link {
-        @apply flex items-center p-2.5 hover:bg-light-gray hover:text-primary;
-        @apply rounded-md font-normal dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
-    }
-    .tw-menu-link:hover .material-icons-outlined {
-        @apply text-primary;
+        @apply flex items-center rounded-md p-2.5 font-normal text-gray-700 hover:bg-primary hover:text-white dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
     .semi-dark .tw-menu-link {
-        @apply text-gray-400 hover:bg-gray-700 hover:text-gray-100;
-    }
-    .tw-link-active {
-        @apply bg-light-gray text-primary dark:bg-gray-700 dark:text-gray-300;
+        @apply text-gray-400;
     }
     .tw-menu-link.active {
-        @apply tw-link-active bg-primary text-white hover:bg-primary hover:text-white dark:hover:text-gray-200;
+        @apply bg-primary text-white hover:bg-primary hover:text-white dark:hover:text-gray-200;
     }
     .tw-link-label {
         @apply mx-2 truncate text-sm font-medium;
@@ -108,16 +100,16 @@
         @apply ml-auto transform transition-transform group-[.active]:rotate-180;
     }
     .tw-dropdown-link {
-        @apply tw-menu-link w-full truncate;
+        @apply flex w-full items-center truncate rounded-md p-2.5 font-normal text-gray-700 hover:animate-pulse hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
+    }
+    .semi-dark .tw-dropdown-link {
+        @apply text-gray-400;
     }
     .tw-dropdown-link:hover .menu-bullet-dot {
         @apply bg-primary;
     }
     .tw-dropdown-link.active {
-        @apply tw-link-active bg-transparent text-primary hover:bg-light-gray dark:hover:bg-gray-700 dark:hover:text-gray-200;
-    }
-    .semi-dark .tw-dropdown-link.active {
-        @apply text-primary hover:bg-gray-700 dark:hover:bg-gray-700;
+        @apply text-primary;
     }
     /* collapsible-vertical */
     .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .collapse-icon,
