@@ -37,6 +37,10 @@ window.Sortable = Sortable;
 Sortable.mount(new MultiDrag());
 Sortable.mount(new Swap());
 
+// apexcharts
+import ApexCharts from 'apexcharts'
+window.ApexCharts = ApexCharts;
+
 // file upload with preview
 import { FileUploadWithPreview } from 'file-upload-with-preview';
 window.FileUploadWithPreview = FileUploadWithPreview;
@@ -70,7 +74,7 @@ window.DataTableExportTXT = exportTXT;
         animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
         navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
         footer: 'footer-static', // footer-sticky, footer-floating, footer-static
-        semiDark: false,
+        semiDark: true,
     };
 
     // theme config persist with alpinejs
