@@ -76,10 +76,10 @@
         @apply flex items-center rounded-md p-2.5 font-normal text-gray-700 hover:bg-primary hover:text-white dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
     .semi-dark .tw-menu-link {
-        @apply text-gray-400;
+        @apply text-gray-400 hover:text-white !important;
     }
     .tw-menu-link.active {
-        @apply bg-primary text-white hover:bg-primary hover:text-white dark:hover:text-gray-200;
+        @apply bg-primary text-white hover:bg-primary hover:text-white dark:hover:text-gray-200 !important;
     }
     .tw-link-label {
         @apply mx-2 truncate text-sm font-medium;
