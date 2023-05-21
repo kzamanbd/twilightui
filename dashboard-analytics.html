@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dashboard - Twilight Dashboard</title>
+        <title>Analytics - Twilight Dashboard</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/pwa-192x192.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
@@ -67,7 +67,7 @@
                                 </div>
                                 <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
-                                        <a href="/dashboard-sales.html" class="tw-dropdown-link">
+                                        <a href="/index.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Sales</span>
                                         </a>
@@ -91,7 +91,7 @@
                                         </a>
                                     </li>
                                     <li class="tw-dropdown-item group">
-                                        <a href="/index.html" class="tw-dropdown-link">
+                                        <a href="/dashboard-analytics.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Analytics</span>
                                         </a>
@@ -1016,7 +1016,11 @@
                             <span class="material-icons-outlined"> notifications </span>
                         </button>
 
-                        <button type="button" @click="$store.app.fullscreenToggle()" class="header-item" aria-label="fullscreen">
+                        <button
+                            type="button"
+                            @click="$store.app.fullscreenToggle()"
+                            class="header-item"
+                            aria-label="fullscreen">
                             <span class="material-icons-outlined" x-text="isFullscreen"> fullscreen </span>
                         </button>
 
