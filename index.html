@@ -1031,6 +1031,7 @@
                         <div class="dropdown" x-data="dropdown" @click.outside="close">
                             <button
                                 type="button"
+                                @click="toggle"
                                 aria-label="User Profile"
                                 class="flex h-8 w-8 overflow-hidden rounded-md shadow">
                                 <img class="h-full w-full object-cover" src="/images/author.png" alt="Author" />
@@ -1283,9 +1284,13 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Sales Over View</h5>
-                                            <div class="dropdown ti-dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div
+                                                x-data="dropdown"
+                                                @click.outside="close"
+                                                class="dropdown ti-dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
+                                                    @click="toggle"
                                                     aria-label="button"
                                                     class="rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                     <i class="material-icons-outlined text-sm leading-none"
@@ -1348,16 +1353,20 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Sale Value</h5>
-                                            <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div
+                                                x-data="dropdown"
+                                                @click.outside="close"
+                                                class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
+                                                    @click="toggle"
                                                     aria-label="button"
                                                     class="rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                     <i class="material-icons-outlined text-sm leading-none"
                                                         >more_vert</i
                                                     >
                                                 </button>
-                                                <ul class="dark:text-white-dark right-0 text-black">
+                                                <ul x-show="open" class="dark:text-white-dark right-0 text-black">
                                                     <li>
                                                         <a href="javascript:void(0)">Download</a>
                                                     </li>
@@ -1429,16 +1438,20 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Top Customers</h5>
-                                            <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div
+                                                x-data="dropdown"
+                                                @click.outside="close"
+                                                class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
+                                                    @click="toggle"
                                                     aria-label="button"
                                                     class="rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                     <i class="material-icons-outlined text-sm leading-none"
                                                         >more_vert</i
                                                     >
                                                 </button>
-                                                <ul class="dark:text-white-dark right-0 text-black">
+                                                <ul x-show="open" class="dark:text-white-dark right-0 text-black">
                                                     <li>
                                                         <a href="javascript:void(0)">Download</a>
                                                     </li>
@@ -1616,16 +1629,20 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Upcoming Products</h5>
-                                            <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div
+                                                x-data="dropdown"
+                                                @click.outside="close"
+                                                class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
+                                                    @click="toggle"
                                                     aria-label="button"
                                                     class="rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                     <i class="material-icons-outlined text-sm leading-none"
                                                         >more_vert</i
                                                     >
                                                 </button>
-                                                <ul class="dark:text-white-dark right-0 text-black">
+                                                <ul x-show="open" class="dark:text-white-dark right-0 text-black">
                                                     <li>
                                                         <a href="javascript:void(0)">Download</a>
                                                     </li>
@@ -1824,9 +1841,13 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Social Visitors</h5>
-                                            <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div
+                                                x-data="dropdown"
+                                                @click.outside="close"
+                                                class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
+                                                    @click="toggle"
                                                     aria-label="button"
                                                     class="rounded-sm !border border-gray-200 p-1 px-3 text-gray-400 hover:border-gray-200 hover:bg-gray-200 hover:text-gray-500 focus:ring-gray-200 dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                     This Week
@@ -1854,9 +1875,13 @@
                                 <div class="card">
                                     <div class="card-header flex">
                                         <h5 class="card-title my-auto">Top Selling Products</h5>
-                                        <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                        <div
+                                            x-data="dropdown"
+                                            @click.outside="close"
+                                            class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                             <button
                                                 type="button"
+                                                @click="toggle"
                                                 aria-label="button"
                                                 class="rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                 <i class="material-icons-outlined text-sm leading-none">more_vert</i>
@@ -2016,7 +2041,10 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Recent Order Details</h5>
-                                            <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div
+                                                x-data="dropdown"
+                                                @click.outside="close"
+                                                class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
                                                     aria-label="button"
