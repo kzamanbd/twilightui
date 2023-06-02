@@ -1,40 +1,78 @@
-# TwiLight Dashboard
+# TwiLightUI
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/916d954d-3f57-432c-80ca-9584f3e4c8b2/deploy-status)](https://app.netlify.com/sites/twilightui/deploys)
 
-A multi theme, completely accessible, with components and pages examples, ready for production dashboard.
+## 📌 Introduction
 
-Setting up a tailwind css based project needs to install the tailwindcss npm package, postcss and autoprefixer - it also requires to configure a tailwind.config.js as well as postcss.config.js (optional, if you're planning to use postcss) and then configure those files manually.
+**TwilightUI -** is a modern admin dashboard template that comes with a variety of useful features and functionalities. It is built using TailwindCSS, a popular CSS framework that provides a simple and intuitive approach to building responsive UIs. The template includes over 50 pre-built pages, each designed with a focus on usability and user experience. These pages cover a wide range of use cases, including dashboards, analytics, products management, user management, invoice management and more.
 
-And finally for building the production code with tree-shaking (removing unused css from your project and keeping only what is required) you need to configure the purge settings in your tailwind configuration. For someone new to tailwind and for others who regularly use tailwind in their projects, these are boring jobs and you have to do it repeatedly for every project (or learn how to do it if someone is just starting with tailwind)
+In addition to its pre-built pages, **TwilightUI** comes with a wide range of UI components and utility classes. These include icons, buttons, tables, forms, and charts, among others. These components and utility classes are carefully designed to provide a seamless user experience, while also being highly customizable. This allows developers to create unique designs that match their brand identity and project requirements.
 
-So this boilerplate has all the configuration to save your time from this boring configuration tasks (and from googling many things)
+Overall, **TwilightUI** is an excellent choice for developers who are looking for a developer-friendly and highly customizable admin dashboard template. It’s intuitive design, wide range of pre-built pages, useful UI components and utility classes make it the best choice for creating modern and responsive admin dashboards.
 
-Use this boilerplate as the starting point for your **Tailwind CSS** based template.
+## 📌 Features
 
-## start
+- Based on Tailwindcss 3.x+
+- Light & Dark theme support
+- Auto-detect theme from user device preference
+- Pre-built UI components
+- Pre-built apps layout
+- 50+ Pages
+- Responsive layout
+- Easily Customizable
+- Developer friendly
+- Organized codebase
 
-```sh
-git clone https://github.com/kzamanbd/twilight.git
-cd twilight
+## 📌 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/kzamaan/twilightui.git
+```
+
+### 2. Install dependencies
+
+```bash
 npm install
+```
+
+### 3. Start development server
+
+```bash
 npm run dev
 ```
 
-## build
+### 4. Build for production
 
-```sh
+```bash
 npm run build
 ```
 
-## configure tailwind
+### 5. Preview production build
 
-There is a `tailwind.config.js` file with `content` instructions and extra colors, feel free to customize it according to your need
+```bash
+npm run start
+```
 
-(TODO: add links)
+## 📌 Contribution
 
-- Tailwind CSS
-- Tailwind Forms
-- PostCSS
-- Alpine.js
-- Chart.js (charts)
+1. Fork the repository
+2. Clone the repository
+3. Create a new branch `git checkout -b new-branch`
+4. Make changes
+5. Commit and push the changes
+6. Create a pull request
+
+## 📌 License
+
+[MIT](./LICENSE)
+
+## 📌 Todo
+
+- [ ] RTL support
+- [ ] Language Support
+- [ ] React version
+- [ ] Vue version
+- [ ] Angular version
+- [ ] Laravel version
