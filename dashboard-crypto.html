@@ -1054,8 +1054,8 @@
                         <div class="card card-body bg-gradient-to-r from-primary to-violet-400">
                             <div class="flex justify-between">
                                 <div class="text-md mr-1 font-semibold">Sessions</div>
-                                <div x-data="dropdown" @click.outside="open = false" class="dropdown">
-                                    <a href="javascript:;" @click="toggle">
+                                <div class="dropdown">
+                                    <a href="javascript:;" class="dropdown-toggle">
                                         <svg
                                             width="24"
                                             height="24"
@@ -1084,14 +1084,9 @@
                                                 stroke-width="1.5"></circle>
                                         </svg>
                                     </a>
-                                    <ul
-                                        x-show="open"
-                                        x-transition
-                                        x-transition.duration.300ms
-                                        class="dark:text-white-dark right-0 text-black"
-                                        style="display: none">
-                                        <li><a href="javascript:;" @click="toggle">View Report</a></li>
-                                        <li><a href="javascript:;" @click="toggle">Edit Report</a></li>
+                                    <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
+                                        <li><a href="javascript:;" class="dropdown-link">View Report</a></li>
+                                        <li><a href="javascript:;" class="dropdown-link">Edit Report</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1125,8 +1120,8 @@
                         <div class="card card-body bg-gradient-to-r from-info to-blue-400">
                             <div class="flex justify-between">
                                 <div class="text-md mr-1 font-semibold">Time On-Site</div>
-                                <div x-data="dropdown" @click.outside="open = false" class="dropdown">
-                                    <a href="javascript:;" @click="toggle">
+                                <div class="dropdown">
+                                    <a href="javascript:;" class="dropdown-toggle">
                                         <svg
                                             width="24"
                                             height="24"
@@ -1155,14 +1150,9 @@
                                                 stroke-width="1.5"></circle>
                                         </svg>
                                     </a>
-                                    <ul
-                                        x-show="open"
-                                        x-transition
-                                        x-transition.duration.300ms
-                                        class="dark:text-white-dark right-0 text-black"
-                                        style="display: none">
-                                        <li><a href="javascript:;" @click="toggle">View Report</a></li>
-                                        <li><a href="javascript:;" @click="toggle">Edit Report</a></li>
+                                    <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
+                                        <li><a href="javascript:;" class="dropdown-link">View Report</a></li>
+                                        <li><a href="javascript:;" class="dropdown-link">Edit Report</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1196,8 +1186,8 @@
                         <div class="card card-body bg-gradient-to-r from-indigo-500 to-fuchsia-400">
                             <div class="flex justify-between">
                                 <div class="text-md mr-1 font-semibold">Bounce Rate</div>
-                                <div x-data="dropdown" @click.outside="open = false" class="dropdown">
-                                    <a href="javascript:;" @click="toggle">
+                                <div class="dropdown">
+                                    <a href="javascript:;" class="dropdown-toggle">
                                         <svg
                                             width="24"
                                             height="24"
@@ -1226,14 +1216,9 @@
                                                 stroke-width="1.5"></circle>
                                         </svg>
                                     </a>
-                                    <ul
-                                        x-show="open"
-                                        x-transition
-                                        x-transition.duration.300ms
-                                        class="dark:text-white-dark right-0 text-black"
-                                        style="display: none">
-                                        <li><a href="javascript:;" @click="toggle">View Report</a></li>
-                                        <li><a href="javascript:;" @click="toggle">Edit Report</a></li>
+                                    <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
+                                        <li><a href="javascript:;" class="dropdown-link">View Report</a></li>
+                                        <li><a href="javascript:;" class="dropdown-link">Edit Report</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1266,8 +1251,8 @@
                         <div class="card card-body bg-gradient-to-r from-cyan-500 to-cyan-400">
                             <div class="flex justify-between">
                                 <div class="text-md mr-1 font-semibold">Users Visit</div>
-                                <div x-data="dropdown" @click.outside="open = false" class="dropdown">
-                                    <a href="javascript:;" @click="toggle">
+                                <div class="dropdown">
+                                    <a href="javascript:;" class="dropdown-toggle">
                                         <svg
                                             width="24"
                                             height="24"
@@ -1296,14 +1281,9 @@
                                                 stroke-width="1.5"></circle>
                                         </svg>
                                     </a>
-                                    <ul
-                                        x-show="open"
-                                        x-transition
-                                        x-transition.duration.300ms
-                                        class="dark:text-white-dark right-0 text-black"
-                                        style="display: none">
-                                        <li><a href="javascript:;" @click="toggle">View Report</a></li>
-                                        <li><a href="javascript:;" @click="toggle">Edit Report</a></li>
+                                    <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
+                                        <li><a href="javascript:;" class="dropdown-link">View Report</a></li>
+                                        <li><a href="javascript:;" class="dropdown-link">Edit Report</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1829,10 +1809,9 @@
                                                 type="text"
                                                 placeholder
                                                 class="form-input rounded-r-none border-r-0" />
-                                            <div x-data="dropdown" @click.outside="open = false" class="dropdown">
+                                            <div class="dropdown">
                                                 <div
-                                                    class="flex cursor-pointer items-center justify-center gap-1 rounded-none rounded-r-md border bg-[#f1f2f3] px-3 py-2.5 font-semibold dark:border-[#253b5c] dark:bg-[#1b2e4b]"
-                                                    @click="toggle">
+                                                    class="dropdown-toggle flex cursor-pointer items-center justify-center gap-1 rounded-none rounded-r-md border bg-[#f1f2f3] px-3 py-2.5 font-semibold dark:border-[#253b5c] dark:bg-[#1b2e4b]">
                                                     <span x-text="selectedItem"></span>
                                                     <svg
                                                         width="24"
@@ -1849,27 +1828,41 @@
                                                             stroke-linejoin="round"></path>
                                                     </svg>
                                                 </div>
-                                                <ul x-show="open" x-transition x-transition.duration.300ms>
+                                                <ul class="dropdown-menu">
                                                     <li>
-                                                        <button @click="toggle, selectedItem = 'BTC'">BTC</button>
+                                                        <button class="dropdown-link" @click="selectedItem = 'BTC'">
+                                                            BTC
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <button @click="toggle, selectedItem = 'ETH'">ETH</button>
+                                                        <button class="dropdown-link" @click="selectedItem = 'ETH'">
+                                                            ETH
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <button @click="toggle, selectedItem = 'ZEC'">ZEC</button>
+                                                        <button class="dropdown-link" @click="selectedItem = 'ZEC'">
+                                                            ZEC
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <button @click="toggle, selectedItem = 'LTC'">LTC</button>
+                                                        <button class="dropdown-link" @click="selectedItem = 'LTC'">
+                                                            LTC
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <button @click="toggle, selectedItem = 'BNB'">BNB</button>
+                                                        <button class="dropdown-link" @click="selectedItem = 'BNB'">
+                                                            BNB
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <button @click="toggle, selectedItem = 'SOL'">SOL</button>
+                                                        <button class="dropdown-link" @click="selectedItem = 'SOL'">
+                                                            SOL
+                                                        </button>
                                                     </li>
                                                     <li>
-                                                        <button @click="toggle, selectedItem = 'USDT'">USDT</button>
+                                                        <button class="dropdown-link" @click="selectedItem = 'USDT'">
+                                                            USDT
+                                                        </button>
                                                     </li>
                                                 </ul>
                                             </div>
