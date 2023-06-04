@@ -60,24 +60,40 @@ const verticalMenu = {
     },
 
     initScrollBar() {
-        if (this.verticalMenu) {
-            const activeMenu = this.content.querySelector('.sidebar-menu.active');
-            const activeSubmenu = this.content.querySelector('.sidebar-submenu-item.active');
-            window.addEventListener('load', () => {
-                if (activeSubmenu) {
-                    activeSubmenu.scrollIntoView({ block: 'center', behavior: 'smooth' });
-                } else {
-                    activeMenu.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        window.addEventListener('load', () => {
+            let pathName = window.location.pathname;
+            if (pathName == '/') pathName = '/index.html';
+
+            const menuItem = document.querySelector(`ul.tw-nav-menu a[href="${pathName}"]`);
+            const dropdownMenu = menuItem?.closest('ul.tw-dropdown-menu');
+
+            if (menuItem) {
+                menuItem.classList.add('active');
+                if (dropdownMenu) {
+                    let elements = dropdownMenu.closest('li.tw-menu-item').querySelectorAll('.tw-menu-link');
+                    if (elements) {
+                        elements = elements[0];
+                        setTimeout(() => {
+                            elements.click();
+                        });
+                    }
                 }
-            });
-        }
+            }
+            const activeMenu = this.content?.querySelector('.tw-menu-link.active');
+            const activeSubmenu = this.content?.querySelector('.tw-dropdown-link.active');
+            if (activeSubmenu) {
+                activeSubmenu.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            } else {
+                activeMenu.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            }
+        });
     },
 
     init() {
         this.initMenuItems();
         this.initSidebarToggle();
         this.initOverlay();
-        // this.initScrollBar();
+        this.initScrollBar();
     },
 };
 

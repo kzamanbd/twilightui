@@ -202,35 +202,6 @@ window.DataTableExportTXT = exportTXT;
     Alpine.data('twilightTheme', () => ({
         showCustomizer: false,
         showTopButton: false,
-        showCurrentMenu() {
-            let pathName = window.location.pathname;
-            if (pathName == '/') pathName = '/index.html';
-
-            const selector = document.querySelector(`ul.tw-nav-menu a[href="${pathName}"]`);
-            const dropdownMenu = selector?.closest('ul.tw-dropdown-menu');
-
-            if (selector) {
-                selector.classList.add('active');
-                if (dropdownMenu) {
-                    let elements = dropdownMenu.closest('li.tw-menu-item').querySelectorAll('.tw-menu-link');
-                    if (elements) {
-                        elements = elements[0];
-                        setTimeout(() => {
-                            elements.click();
-                        });
-                    }
-                }
-            }
-            this.$store.app.setRTLLayout();
-
-            this.$nextTick(() => {
-                const scrollableEl = document.querySelector('.tw-menu-content .simplebar-content-wrapper');
-                if (scrollableEl) {
-                    if (dropdownMenu) scrollableEl.scrollTop = dropdownMenu.offsetTop - 100;
-                    else scrollableEl.scrollTop = selector?.offsetTop ? selector?.offsetTop - 100 : 0;
-                }
-            });
-        },
         scrollFunction() {
             const header = document.querySelector('.top-header');
             if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
@@ -252,7 +223,7 @@ window.DataTableExportTXT = exportTXT;
             document.documentElement.scrollTop = 0;
         },
         init() {
-            this.showCurrentMenu();
+            this.$store.app.setRTLLayout();
             window.onscroll = () => {
                 this.scrollFunction();
             };
