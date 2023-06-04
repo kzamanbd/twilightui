@@ -1,11 +1,10 @@
-import SimpleBar from 'simplebar';
-
 const sidebar = {
-    wrapper: document.querySelector('.wrapper'),
-    sidebar: document.querySelector('.sidebar'),
+    twilight: document.querySelector('.twilight'),
+    wrapper: document.querySelector('.twilight-body'),
+    sidebar: document.querySelector('.vertical-menu'),
     sidebarToggle: document.querySelector('.sidebar-toggle'),
-    content: document.querySelector('.sidebar-content'),
-    menuItems: document.querySelectorAll('.sidebar-menu'),
+    content: document.querySelector('.tw-nav-menu'),
+    menuItems: document.querySelectorAll('.tw-menu-link'),
 
     toggleHeight(element, height) {
         if (element.style.height === '0px' || element.style.height === '') {
@@ -17,21 +16,22 @@ const sidebar = {
 
     initMenuItems() {
         if (this.menuItems.length) {
+            console.log(this.menuItems.length);
             this.menuItems.forEach(menuItem => {
                 const parent = menuItem.parentElement;
-                const submenu = parent.querySelector('.sidebar-submenu');
-                const arrow = menuItem.querySelector('.sidebar-menu-arrow');
+                const dropdown = parent.querySelector('.tw-dropdown-menu');
+                const arrow = menuItem.querySelector('.tw-dropdown-arrow');
 
-                if (submenu) {
+                if (dropdown) {
                     menuItem.addEventListener('click', e => {
                         e.preventDefault();
-                        this.toggleHeight(submenu, submenu.scrollHeight);
-                        arrow.classList.toggle('rotate');
+                        this.toggleHeight(dropdown, dropdown.scrollHeight);
+                        menuItem.classList.toggle('active');
                     });
                 }
 
-                if (submenu && menuItem.classList.contains('active')) {
-                    this.toggleHeight(submenu, submenu.scrollHeight);
+                if (dropdown && menuItem.classList.contains('active')) {
+                    this.toggleHeight(dropdown, dropdown.scrollHeight);
                     arrow.classList.toggle('rotate');
                 }
             });
@@ -41,6 +41,7 @@ const sidebar = {
     initSidebarToggle() {
         if (this.sidebarToggle) {
             this.sidebarToggle.addEventListener('click', () => this.toggleSidebar());
+            document.querySelector('.collapse-icon').addEventListener('click', () => this.toggleSidebar());
         }
     },
 
@@ -48,12 +49,9 @@ const sidebar = {
         const windowWidth = window.innerWidth;
 
         if (windowWidth < 1024) {
-            this.sidebar.classList.toggle('expanded');
-            document.querySelector('.sidebar-overlay').classList.toggle('active');
-        } else {
-            this.sidebar.classList.toggle('collapsed');
-            this.wrapper.classList.toggle('expanded');
+            document.querySelector('.menu-shadow').classList.toggle('hidden');
         }
+        this.twilight.classList.toggle('toggle-menu');
     },
 
     initWrapper() {
@@ -68,7 +66,7 @@ const sidebar = {
 
     initOverlay() {
         const overlay = document.createElement('div');
-        overlay.classList.add('sidebar-overlay');
+        overlay.classList.add('menu-shadow');
         document.body.appendChild(overlay);
 
         overlay.addEventListener('click', () => {
@@ -108,7 +106,6 @@ const sidebar = {
 
     initScrollBar() {
         if (this.sidebar) {
-            new SimpleBar(this.content);
             const activeMenu = this.content.querySelector('.sidebar-menu.active');
             const activeSubmenu = this.content.querySelector('.sidebar-submenu-item.active');
             window.addEventListener('load', () => {
@@ -128,7 +125,7 @@ const sidebar = {
         this.initOverlay();
         this.handleWindowResize();
         this.initSidebarHover();
-        this.initScrollBar();
+        // this.initScrollBar();
     },
 };
 

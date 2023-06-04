@@ -85,7 +85,7 @@
         @apply mx-2 truncate text-sm font-medium;
     }
     .tw-dropdown-menu {
-        @apply mt-1 space-y-1 overflow-hidden;
+        @apply mt-1 h-0 space-y-1 overflow-hidden transition-all duration-300 ease-in-out;
     }
     .tw-dropdown-item {
         @apply dark--text flex items-center rounded-md hover:text-gray-900 dark:hover:text-gray-100;

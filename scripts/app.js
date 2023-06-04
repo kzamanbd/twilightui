@@ -1,17 +1,19 @@
+// simplebar
+import 'simplebar'; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
 // alpine.js config
 import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
 import mask from '@alpinejs/mask';
 import persist from '@alpinejs/persist';
 import Alpine from 'alpinejs';
+import sidebar from './sidebar';
+
 window.Alpine = Alpine;
 Alpine.plugin(collapse);
 Alpine.plugin(persist);
 Alpine.plugin(focus);
 Alpine.plugin(mask);
-
-// simplebar
-import 'simplebar'; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
+sidebar.init();
 
 import { createPopper } from '@popperjs/core';
 
@@ -31,7 +33,7 @@ window.Swal = Swal;
 import Quill from 'quill';
 window.Quill = Quill;
 
-// initialize sortablejs
+// initialize sortable js
 import { MultiDrag, Sortable, Swap } from 'sortablejs';
 window.Sortable = Sortable;
 Sortable.mount(new MultiDrag());
@@ -53,7 +55,7 @@ window.ClipboardJS = ClipboardJS;
 import flatpickr from 'flatpickr';
 window.flatpickr = flatpickr;
 
-// simple datatables
+// simple data tables
 import { DataTable, exportCSV, exportJSON, exportTXT } from 'simple-datatables';
 window.DataTable = DataTable;
 window.DataTableExportCSV = exportCSV;
@@ -74,7 +76,7 @@ window.DataTableExportTXT = exportTXT;
         animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
         navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
         footer: 'footer-static', // footer-sticky, footer-floating, footer-static
-        semiDark: true,
+        semiDark: false,
     };
 
     // theme config persist with alpinejs

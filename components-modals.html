@@ -50,24 +50,19 @@
                             </svg>
                             <span class="app-name" x-text="$store.app.name"></span>
                         </a>
-                        <div class="collapse-icon" @click="$store.app.toggleVMenu()"></div>
+                        <div class="collapse-icon"></div>
                     </div>
                     <!-- Menu Content -->
                     <nav data-simplebar class="tw-menu-content no-scrollbar">
                         <ul class="tw-nav-menu">
                             <!-- dashboard start -->
-                            <li class="tw-menu-item" x-data="accordionItem('dashboard')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined"> home </span>
-                                    <span class="tw-link-label">Dashboards</span>
+                                    <span class="tw-link-label">Dashboard</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="/index.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -111,69 +106,17 @@
                             <!-- page header -->
                             <li class="tw-menu-header">
                                 <span class="material-icons icon"> remove </span>
-                                <span class="label">APPS</span>
-                            </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/apps-calendars.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">event</span>
-                                    <span class="tw-link-label">Calendars</span>
-                                </a>
-                            </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/apps-chats.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">message</span>
-                                    <span class="tw-link-label">Chat Box</span>
-                                </a>
-                            </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/apps-mailbox.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">email</span>
-                                    <span class="tw-link-label">Mailbox</span>
-                                </a>
-                            </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/apps-todolist.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">fact_check</span>
-                                    <span class="tw-link-label">Todo List</span>
-                                </a>
-                            </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/apps-scrumboard.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">add_box</span>
-                                    <span class="tw-link-label">Scrumboard</span>
-                                </a>
-                            </li>
-                            <li class="tw-menu-item">
-                                <a href="/apps-projects.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">fence</span>
-                                    <span class="tw-link-label">Projects</span>
-                                </a>
-                            </li>
-
-                            <!-- page header -->
-                            <li class="tw-menu-header">
-                                <span class="material-icons icon"> remove </span>
                                 <span class="label">USER INTERFACE</span>
                             </li>
 
                             <!-- components start -->
-                            <li class="tw-menu-item" x-data="accordionItem('components')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">layers</span>
                                     <span class="tw-link-label">Components</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="/components-accordions.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -232,18 +175,13 @@
                             </li>
 
                             <!-- ui-elements start -->
-                            <li class="tw-menu-item" x-data="accordionItem('ui-elements')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">hexagon</span>
                                     <span class="tw-link-label">UI Elements</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="/elements-alerts.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -313,18 +251,13 @@
                                 </ul>
                             </li>
 
-                            <li class="tw-menu-item" x-data="accordionItem('charts')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">analytics</span>
                                     <span class="tw-link-label">Charts</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="/charts-apexcharts.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -376,19 +309,14 @@
                             </li>
 
                             <!-- data table -->
-                            <li class="tw-menu-item" x-data="accordionItem('table')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">insert_chart</span>
                                     <span class="tw-link-label">Data Tables</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
 
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="/datatables-basic.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -454,18 +382,13 @@
                             <!-- end data table -->
 
                             <!-- form elements start -->
-                            <li class="tw-menu-item" x-data="accordionItem('form')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">hexagon</span>
                                     <span class="tw-link-label">Form Elements</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="/forms-basic.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -545,23 +468,64 @@
                             <!-- page header -->
                             <li class="tw-menu-header">
                                 <span class="material-icons icon"> remove </span>
+                                <span class="label">APPS</span>
+                            </li>
+                            <li class="tw-menu-item">
+                                <a href="/apps-chats.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">message</span>
+                                    <span class="tw-link-label">Chat</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-calendars.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">event</span>
+                                    <span class="tw-link-label">Calendars</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-mailbox.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">email</span>
+                                    <span class="tw-link-label">Mailbox</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-todolist.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">fact_check</span>
+                                    <span class="tw-link-label">Todo List</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-scrumboard.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">add_box</span>
+                                    <span class="tw-link-label">Scrumboard</span>
+                                </a>
+                            </li>
+                            <li class="tw-menu-item">
+                                <a href="/apps-projects.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">fence</span>
+                                    <span class="tw-link-label">Projects</span>
+                                </a>
+                            </li>
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="material-icons icon"> remove </span>
                                 <span class="label">USER AND PAGES</span>
                             </li>
                             <!-- page header end -->
                             <!-- user profile start -->
-                            <li class="tw-menu-item" x-data="accordionItem('profile')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">perm_contact_calendar</span>
                                     <span class="tw-link-label">User Profile</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
 
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="./user-profile/overview.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -591,19 +555,14 @@
                             <!-- user profile end -->
 
                             <!-- accounts start -->
-                            <li class="tw-menu-item" x-data="accordionItem('accounts')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">badge</span>
                                     <span class="tw-link-label">Accounts</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
 
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="./accounts/overview.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -639,19 +598,14 @@
                             <!-- accounts end -->
 
                             <!-- Authentication start -->
-                            <li class="tw-menu-item" x-data="accordionItem('authentication')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">logout</span>
                                     <span class="tw-link-label">Authentication</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
 
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="/login.html" class="tw-dropdown-link" target="_blank">
                                             <span class="menu-bullet-dot"></span>
@@ -687,19 +641,14 @@
                             <!-- Authentication end -->
 
                             <!-- corporate start -->
-                            <li class="tw-menu-item" x-data="accordionItem('corporate')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">corporate_fare</span>
                                     <span class="tw-link-label">Corporate</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
 
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="./corporate/about.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -735,19 +684,14 @@
                             <!-- corporate end -->
 
                             <!-- utilities start -->
-                            <li class="tw-menu-item" x-data="accordionItem('utilities')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">construction</span>
                                     <span class="tw-link-label">Utilities</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
 
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="./utilities/modals.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -771,18 +715,13 @@
                             <!-- utilities end -->
 
                             <!-- Careers pages start -->
-                            <li class="tw-menu-item" x-data="accordionItem('careers')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">work</span>
                                     <span class="tw-link-label">Careers</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="./careers/careers-list.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -800,18 +739,13 @@
                             <!-- Careers pages end -->
 
                             <!-- eCommerce start -->
-                            <li class="tw-menu-item" x-data="accordionItem('eCommerce')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">shopping_basket</span>
                                     <span class="tw-link-label">ECommerce</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="./eCommerce/category.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -847,18 +781,13 @@
                             <!-- eCommerce end -->
 
                             <!-- contacts start -->
-                            <li class="tw-menu-item" x-data="accordionItem('contacts')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">interests</span>
                                     <span class="tw-link-label">Contacts</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="./contacts/getting-started.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -894,18 +823,13 @@
                             <!-- contacts end -->
 
                             <!-- user management start -->
-                            <li class="tw-menu-item" x-data="accordionItem('user')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">workspaces</span>
                                     <span class="tw-link-label">User Management</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="./user-management/users.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -929,19 +853,14 @@
                             <!-- user management end -->
 
                             <!-- customers start -->
-                            <li class="tw-menu-item" x-data="accordionItem('customers')">
-                                <div
-                                    data-ripple
-                                    role="button"
-                                    class="tw-menu-link group"
-                                    @click="handleClick"
-                                    :class="activeDropdown">
+                            <li class="tw-menu-item">
+                                <div data-ripple role="button" class="tw-menu-link group">
                                     <span class="material-icons-outlined">change_history</span>
                                     <span class="tw-link-label">Customers</span>
                                     <span class="material-icons tw-dropdown-arrow"> expand_more </span>
                                 </div>
 
-                                <ul x-show="expanded" x-collapse class="tw-dropdown-menu">
+                                <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
                                         <a href="./customers/getting-started.html" class="tw-dropdown-link">
                                             <span class="menu-bullet-dot"></span>
@@ -989,9 +908,8 @@
                     <div class="flex items-center">
                         <button
                             type="button"
-                            @click="$store.app.toggleVMenu()"
                             aria-label="Toggle Menu"
-                            class="text-gray-500 focus:outline-none">
+                            class="sidebar-toggle text-gray-500 focus:outline-none">
                             <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M4 6H20M4 12H20M4 18H11"
