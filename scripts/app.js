@@ -6,7 +6,7 @@ import focus from '@alpinejs/focus';
 import mask from '@alpinejs/mask';
 import persist from '@alpinejs/persist';
 import Alpine from 'alpinejs';
-import sidebar from './sidebar';
+import sidebar from './vertical';
 
 window.Alpine = Alpine;
 Alpine.plugin(collapse);

@@ -20,8 +20,6 @@
         <div class="twilight" x-data="twilightTheme" :class="appConfig">
             <!-- Loading dialog -->
             <div class="animate__animated loading duration-300">Loading.....</div>
-            <!-- menu shadow -->
-            <div @click="$store.app.toggleVMenu()" class="menu-shadow" x-show="$store.app.sidebar"></div>
             <!-- vertical-menu -->
             <aside class="vertical-menu">
                 <div class="vertical-content" :class="[$store.app.semiDark && 'semi-dark']">

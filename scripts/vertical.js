@@ -1,7 +1,6 @@
-const sidebar = {
+const verticalMenu = {
     twilight: document.querySelector('.twilight'),
-    wrapper: document.querySelector('.twilight-body'),
-    sidebar: document.querySelector('.vertical-menu'),
+    verticalMenu: document.querySelector('.vertical-menu'),
     sidebarToggle: document.querySelector('.sidebar-toggle'),
     content: document.querySelector('.tw-nav-menu'),
     menuItems: document.querySelectorAll('.tw-menu-link'),
@@ -16,7 +15,6 @@ const sidebar = {
 
     initMenuItems() {
         if (this.menuItems.length) {
-            console.log(this.menuItems.length);
             this.menuItems.forEach(menuItem => {
                 const parent = menuItem.parentElement;
                 const dropdown = parent.querySelector('.tw-dropdown-menu');
@@ -46,66 +44,23 @@ const sidebar = {
     },
 
     toggleSidebar() {
-        const windowWidth = window.innerWidth;
-
-        if (windowWidth < 1024) {
-            document.querySelector('.menu-shadow').classList.toggle('hidden');
-        }
+        document.querySelector('.menu-shadow').classList.toggle('hidden');
         this.twilight.classList.toggle('toggle-menu');
-    },
-
-    initWrapper() {
-        if (this.sidebar) {
-            if (this.sidebar.classList.contains('collapsed')) {
-                this.wrapper.classList.add('expanded');
-            } else {
-                this.wrapper.classList.remove('expanded');
-            }
-        }
     },
 
     initOverlay() {
         const overlay = document.createElement('div');
-        overlay.classList.add('menu-shadow');
-        document.body.appendChild(overlay);
+        overlay.classList.add('menu-shadow', 'hidden');
+        this.twilight.appendChild(overlay);
 
         overlay.addEventListener('click', () => {
-            this.sidebar.classList.remove('expanded');
-            overlay.classList.remove('active');
+            this.twilight.classList.toggle('toggle-menu');
+            overlay.classList.toggle('hidden');
         });
     },
 
-    handleWindowResize() {
-        if (this.sidebar) {
-            window.addEventListener('resize', () => {
-                if (window.innerWidth < 1024) {
-                    this.sidebar.classList.remove('collapsed');
-                    this.wrapper.classList.remove('expanded');
-                } else {
-                    this.sidebar.classList.remove('expanded');
-                }
-            });
-        }
-    },
-
-    initSidebarHover() {
-        if (this.sidebar) {
-            this.sidebar.addEventListener('mouseenter', () => {
-                if (window.innerWidth > 1024) {
-                    this.sidebar.classList.add('hovered');
-                }
-            });
-
-            this.sidebar.addEventListener('mouseleave', () => {
-                if (window.innerWidth > 1024) {
-                    this.sidebar.classList.remove('hovered');
-                }
-            });
-        }
-    },
-
     initScrollBar() {
-        if (this.sidebar) {
+        if (this.verticalMenu) {
             const activeMenu = this.content.querySelector('.sidebar-menu.active');
             const activeSubmenu = this.content.querySelector('.sidebar-submenu-item.active');
             window.addEventListener('load', () => {
@@ -121,12 +76,9 @@ const sidebar = {
     init() {
         this.initMenuItems();
         this.initSidebarToggle();
-        this.initWrapper();
         this.initOverlay();
-        this.handleWindowResize();
-        this.initSidebarHover();
         // this.initScrollBar();
     },
 };
 
-export default sidebar;
+export default verticalMenu;
