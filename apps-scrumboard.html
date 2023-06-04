@@ -1075,42 +1075,36 @@
                                                             add_circle_outline
                                                         </span>
                                                     </button>
-                                                    <div
-                                                        x-data="dropdown"
-                                                        @click.outside="open = false"
-                                                        class="dropdown">
+                                                    <div class="dropdown">
                                                         <button
                                                             type="button"
-                                                            class="hover:text-primary"
-                                                            @click="toggle">
+                                                            class="dropdown-toggle hover:text-primary">
                                                             <span class="material-icons-outlined text-lg/none">
                                                                 more_horiz
                                                             </span>
                                                         </button>
-                                                        <ul
-                                                            x-cloak
-                                                            x-show="open"
-                                                            x-transition
-                                                            x-transition.duration.300ms
-                                                            class="right-0">
+                                                        <ul class="dropdown-menu right-0">
                                                             <li>
                                                                 <a
                                                                     href="javascript:;"
-                                                                    @click="toggle, addEditProject(project)">
+                                                                    class="dropdown-link"
+                                                                    @click="addEditProject(project)">
                                                                     Edit
                                                                 </a>
                                                             </li>
                                                             <li>
                                                                 <a
                                                                     href="javascript:;"
-                                                                    @click="toggle, deleteProject(project)">
+                                                                    class="dropdown-link"
+                                                                    @click="deleteProject(project)">
                                                                     Delete
                                                                 </a>
                                                             </li>
                                                             <li>
                                                                 <a
                                                                     href="javascript:;"
-                                                                    @click="toggle, clearProjects(project)">
+                                                                    class="dropdown-link"
+                                                                    @click="clearProjects(project)">
                                                                     Clear All
                                                                 </a>
                                                             </li>

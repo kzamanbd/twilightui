@@ -1618,14 +1618,12 @@
                         <div class="card relative h-full">
                             <div class="card-header flex items-center justify-between">
                                 <h6>Transactions</h6>
-                                <div x-data="dropdown" @click.outside="open = false" class="relative">
-                                    <a href="javascript:;" @click="toggle" class="flex">
+                                <div class="dropdown">
+                                    <a href="javascript:;" class="dropdown-toggle flex">
                                         <span class="material-icons text-xl leading-none"> more_vert </span>
                                     </a>
                                     <ul
-                                        x-show="open"
-                                        x-transition.duration.300ms
-                                        class="absolute right-0 min-w-[160px] bg-white shadow-xl">
+                                        class="dropdown-menu min-w-[160px]">
                                         <li
                                             class="hover:bg-primary-50 flex items-center px-4 py-2 text-sm hover:text-primary">
                                             <a href="javascript:;">View Report</a>
