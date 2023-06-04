@@ -944,20 +944,15 @@
                             <span class="material-icons-outlined animate-spin"> settings </span>
                         </button>
 
-                        <div class="dropdown" x-data="dropdown" @click.outside="close">
+                        <div class="dropdown" data-strategy="absolute">
                             <button
                                 type="button"
-                                @click="toggle"
                                 aria-label="User Profile"
-                                class="flex h-8 w-8 overflow-hidden rounded-md shadow">
+                                class="dropdown-toggle flex h-8 w-8 overflow-hidden rounded-md shadow">
                                 <img class="h-full w-full object-cover" src="/images/author.png" alt="Author" />
                             </button>
-                            <ul
-                                x-cloak
-                                x-show="open"
-                                x-transition:enter.duration.500ms
-                                x-transition:leave.duration.400ms
-                                class="!mt-4 w-64 py-2 shadow-2xl dark:bg-dark-primary">
+
+                            <ul class="dropdown-menu w-64 py-2 shadow-2xl dark:bg-dark-primary">
                                 <li class="flex items-center border-b px-4 py-2 dark:border-gray-700">
                                     <div class="flex-shrink-0">
                                         <img
@@ -1200,28 +1195,24 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Sales Over View</h5>
-                                            <div
-                                                x-data="dropdown"
-                                                @click.outside="close"
-                                                class="dropdown ti-dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
-                                                    @click="toggle"
                                                     aria-label="button"
-                                                    class="rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
-                                                    <i class="material-icons-outlined text-sm leading-none"
-                                                        >more_vert</i
-                                                    >
+                                                    class="dropdown-toggle rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                                    <i class="material-icons-outlined text-sm leading-none">
+                                                        more_vert
+                                                    </i>
                                                 </button>
-                                                <ul x-show="open" class="dark:text-white-dark right-0 text-black">
+                                                <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                                     <li>
-                                                        <a href="javascript:void(0)">Download</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Download</a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">Import</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Import</a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">Export</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Export</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1269,28 +1260,24 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Sale Value</h5>
-                                            <div
-                                                x-data="dropdown"
-                                                @click.outside="close"
-                                                class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
-                                                    @click="toggle"
                                                     aria-label="button"
-                                                    class="rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                                    class="dropdown-toggle rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                     <i class="material-icons-outlined text-sm leading-none"
                                                         >more_vert</i
                                                     >
                                                 </button>
-                                                <ul x-show="open" class="dark:text-white-dark right-0 text-black">
+                                                <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                                     <li>
-                                                        <a href="javascript:void(0)">Download</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Download</a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">Import</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Import</a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">Export</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Export</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1354,28 +1341,24 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Top Customers</h5>
-                                            <div
-                                                x-data="dropdown"
-                                                @click.outside="close"
-                                                class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
-                                                    @click="toggle"
                                                     aria-label="button"
-                                                    class="rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                                    class="dropdown-toggle rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                     <i class="material-icons-outlined text-sm leading-none"
                                                         >more_vert</i
                                                     >
                                                 </button>
-                                                <ul x-show="open" class="dark:text-white-dark right-0 text-black">
+                                                <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                                     <li>
-                                                        <a href="javascript:void(0)">Download</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Download</a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">Import</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Import</a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">Export</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Export</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1545,28 +1528,24 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Upcoming Products</h5>
-                                            <div
-                                                x-data="dropdown"
-                                                @click.outside="close"
-                                                class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
-                                                    @click="toggle"
                                                     aria-label="button"
-                                                    class="rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                                    class="dropdown-toggle rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                     <i class="material-icons-outlined text-sm leading-none"
                                                         >more_vert</i
                                                     >
                                                 </button>
-                                                <ul x-show="open" class="dark:text-white-dark right-0 text-black">
+                                                <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                                     <li>
-                                                        <a href="javascript:void(0)">Download</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Download</a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">Import</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Import</a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">Export</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Export</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1757,26 +1736,24 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Social Visitors</h5>
-                                            <div
-                                                x-data="dropdown"
-                                                @click.outside="close"
-                                                class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
-                                                    @click="toggle"
                                                     aria-label="button"
-                                                    class="rounded-sm !border border-gray-200 p-1 px-3 text-gray-400 hover:border-gray-200 hover:bg-gray-200 hover:text-gray-500 focus:ring-gray-200 dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                                    class="dropdown-toggle rounded-sm !border border-gray-200 p-1 px-3 text-gray-400 hover:border-gray-200 hover:bg-gray-200 hover:text-gray-500 focus:ring-gray-200 dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                     This Week
                                                 </button>
-                                                <ul x-show="open" class="dark:text-white-dark right-0 text-black">
+                                                <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                                     <li>
-                                                        <a href="javascript:void(0)">This Week</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">This Week</a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">This Month</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">
+                                                            This Month
+                                                        </a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">This Year</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">This Year</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1791,26 +1768,26 @@
                                 <div class="card">
                                     <div class="card-header flex">
                                         <h5 class="card-title my-auto">Top Selling Products</h5>
-                                        <div
-                                            x-data="dropdown"
-                                            @click.outside="close"
-                                            class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                        <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                             <button
                                                 type="button"
-                                                @click="toggle"
                                                 aria-label="button"
-                                                class="rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                                class="dropdown-toggle rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                 <i class="material-icons-outlined text-sm leading-none">more_vert</i>
                                             </button>
-                                            <ul x-show="open" class="dark:text-white-dark right-0 text-black">
+                                            <ul class="dropdown-menu dark:text-white-dark right-0 w-44 text-black">
                                                 <li>
-                                                    <a href="javascript:void(0)">Action</a>
+                                                    <a class="dropdown-link" href="javascript:void(0)">Action</a>
                                                 </li>
                                                 <li>
-                                                    <a href="javascript:void(0)">Another Action</a>
+                                                    <a class="dropdown-link" href="javascript:void(0)">
+                                                        Another Action
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    <a href="javascript:void(0)">Something else here</a>
+                                                    <a class="dropdown-link" href="javascript:void(0)">
+                                                        Something else
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1957,25 +1934,22 @@
                                     <div class="card-header">
                                         <div class="flex">
                                             <h5 class="card-title my-auto">Recent Order Details</h5>
-                                            <div
-                                                x-data="dropdown"
-                                                @click.outside="close"
-                                                class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
+                                            <div class="dropdown my-auto block ltr:ml-auto rtl:mr-auto">
                                                 <button
                                                     type="button"
                                                     aria-label="button"
-                                                    class="rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                                    class="dropdown-toggle rounded-sm !border border-gray-200 bg-white p-2 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
                                                     View All
                                                 </button>
-                                                <ul x-show="open" class="dark:text-white-dark right-0 text-black">
+                                                <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                                     <li>
-                                                        <a href="javascript:void(0)">Download</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Download</a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">Import</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Import</a>
                                                     </li>
                                                     <li>
-                                                        <a href="javascript:void(0)">Export</a>
+                                                        <a class="dropdown-link" href="javascript:void(0)">Export</a>
                                                     </li>
                                                 </ul>
                                             </div>

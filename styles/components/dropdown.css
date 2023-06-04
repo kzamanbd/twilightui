@@ -1,32 +1,23 @@
 @layer components {
     .dropdown {
-        @apply relative;
+        @apply relative flex flex-col;
     }
-    .dropdown-toggle,
-    .dropdown > button {
-        @apply flex items-center justify-center;
+    .dropdown-toggle {
+        @apply flex cursor-pointer items-center;
     }
-    .dropdown > button .material-icons-outlined,
-    .dropdown > .dropdown-toggle .material-icons-outlined {
-        @apply text-lg/none;
+    .dropdown-menu {
+        @apply absolute right-0 top-0 z-20 hidden w-40 overflow-hidden rounded-md border border-gray-200 bg-white py-2 shadow-lg outline-none dark:border-slate-700 dark:bg-slate-800;
     }
-    .dropdown ul,
-    .dorpdown-menu {
-        @apply absolute right-0 z-10 mt-1 min-w-[130px] rounded-md border border-gray-200 bg-white py-2 shadow-lg outline-none;
+    .dropdown-menu.show {
+        @apply block !important;
     }
-    .dark .dropdown ul {
-        background-color: rgb(27 46 75 / 1);
-        color: rgb(136 142 168 / 1);
+    .dropdown-link {
+        @apply inline-flex w-full cursor-pointer items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700;
     }
-    .dropdown ul li > a,
-    .dropdown ul li > button {
-        @apply flex items-center px-4 py-2 text-sm;
+    .dropdown-btn {
+        @apply inline-flex w-full items-center gap-2 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700;
     }
-    .dropdown ul li > a:hover,
-    .dropdown ul li > button:hover {
-        @apply bg-gray-100 text-primary dark:bg-gray-700;
-    }
-    .dropdown ul li > button {
-        @apply w-full;
+    .dropdown-btn.active {
+        @apply text-primary dark:text-primary;
     }
 }

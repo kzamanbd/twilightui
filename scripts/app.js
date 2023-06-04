@@ -6,6 +6,7 @@ import focus from '@alpinejs/focus';
 import mask from '@alpinejs/mask';
 import persist from '@alpinejs/persist';
 import Alpine from 'alpinejs';
+import dropdown from './dropdown';
 import sidebar from './vertical';
 
 window.Alpine = Alpine;
@@ -14,8 +15,7 @@ Alpine.plugin(persist);
 Alpine.plugin(focus);
 Alpine.plugin(mask);
 sidebar.init();
-
-import { createPopper } from '@popperjs/core';
+dropdown.init();
 
 // You will need a ResizeObserver polyfill for browsers that don't support it! (iOS Safari, Edge, ...)
 import ResizeObserver from 'resize-observer-polyfill';
@@ -456,101 +456,4 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-
-    /********* dropdown common js *********/
-    function dropdownEvent(elem, place) {
-        Array.from(elem).forEach(function (item) {
-            item.querySelectorAll('.dropdown-toggle').forEach(function (subitem) {
-                subitem.addEventListener('click', function (event) {
-                    subitem.classList.toggle('show');
-                    var popper = createPopper(subitem, item.querySelector('.dropdown-menu'), {
-                        placement: place,
-                    });
-
-                    if (subitem.classList.contains('show') != true) {
-                        item.querySelector('.dropdown-menu').classList.remove('block');
-                        item.querySelector('.dropdown-menu').classList.add('hidden');
-                    } else {
-                        dismissDropdownMenu();
-                        item.querySelector('.dropdown-menu').classList.add('block');
-                        item.querySelector('.dropdown-menu').classList.remove('hidden');
-                        if (item.querySelector('.dropdown-menu').classList.contains('block')) {
-                            subitem.classList.add('show');
-                        } else {
-                            subitem.classList.remove('show');
-                        }
-                        event.stopPropagation();
-                    }
-
-                    isMenuInside = false;
-                });
-            });
-        });
-    }
-
-    var dropdownElem = document.querySelectorAll('.dropdown');
-    var dropupElem = document.querySelectorAll('.dropup');
-    var dropStartElem = document.querySelectorAll('.dropstart');
-    var dropendElem = document.querySelectorAll('.dropend');
-    var isShowDropMenu = false;
-    var isMenuInside = false;
-    // dropdown event
-    dropdownEvent(dropdownElem, 'bottom-start');
-    // dropup event
-    dropdownEvent(dropupElem, 'top-start');
-    // dropstart event
-    dropdownEvent(dropStartElem, 'left-start');
-    // dropend event
-    dropdownEvent(dropendElem, 'right-start');
-
-    function dismissDropdownMenu() {
-        Array.from(document.querySelectorAll('.dropdown-menu')).forEach(function (item) {
-            item.classList.remove('block');
-            item.classList.add('hidden');
-        });
-        Array.from(document.querySelectorAll('.dropdown-toggle')).forEach(function (item) {
-            item.classList.remove('show');
-        });
-        isShowDropMenu = false;
-    }
-
-    // dropdown form
-    Array.from(document.querySelectorAll('.dropdown-menu')).forEach(function (item) {
-        if (item.querySelectorAll('form')) {
-            Array.from(item.querySelectorAll('form')).forEach(function (subitem) {
-                subitem.addEventListener('click', function (event) {
-                    if (!isShowDropMenu) {
-                        isShowDropMenu = true;
-                    }
-                });
-            });
-        }
-    });
-    // data-tw-auto-close
-    Array.from(document.querySelectorAll('.dropdown-toggle')).forEach(function (item) {
-        var elem = item.parentElement;
-        if (item.getAttribute('data-tw-auto-close') == 'outside') {
-            elem.querySelector('.dropdown-menu').addEventListener('click', function () {
-                if (!isShowDropMenu) {
-                    isShowDropMenu = true;
-                }
-            });
-        } else if (item.getAttribute('data-tw-auto-close') == 'inside') {
-            item.addEventListener('click', function () {
-                isShowDropMenu = true;
-                isMenuInside = true;
-            });
-            elem.querySelector('.dropdown-menu').addEventListener('click', function () {
-                isShowDropMenu = false;
-                isMenuInside = false;
-            });
-        }
-    });
-
-    window.addEventListener('click', function (e) {
-        if (!isShowDropMenu && !isMenuInside) {
-            dismissDropdownMenu();
-        }
-        isShowDropMenu = false;
-    });
 })();
