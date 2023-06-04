@@ -82,6 +82,6 @@
         @apply fixed bottom-12 z-50 ltr:right-6 rtl:left-6;
     }
     .scroll-top-btn {
-        @apply btn btn-outline-primary animate-pulse rounded-full bg-[#fafafa] p-2 hover:text-primary dark:bg-[#060818] dark:hover:bg-primary !important;
+        @apply btn btn-outline-primary animate-pulse rounded-full p-2 !important;
     }
 }
