@@ -22,7 +22,7 @@
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
     }
     .collapse-icon {
-        @apply h-4 w-4 cursor-pointer rounded-full border-[1.5px] border-gray-800 transition-all duration-150 dark:border-slate-700;
+        @apply h-4 w-4 cursor-pointer border-[1.5px] border-gray-800 transition-all duration-150 dark:border-slate-700 lg:rounded-full;
     }
     .vertical:not(.toggle-menu) .collapse-icon,
     .collapsible-vertical.toggle-menu .collapse-icon {
