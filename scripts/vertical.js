@@ -50,7 +50,7 @@ const verticalMenu = {
 
     initOverlay() {
         const overlay = document.createElement('div');
-        overlay.classList.add('menu-shadow');
+        overlay.classList.add('menu-shadow', 'hidden');
         this.twilight.appendChild(overlay);
 
         overlay.addEventListener('click', () => {
