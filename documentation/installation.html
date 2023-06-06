@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Documentation</title>
+        <link rel="stylesheet" href="/styles/app.css" />
+        <script type="module" src="/scripts/app.js"></script>
+    </head>
+    <body>
+        <div class="font-nunito relative min-h-screen bg-[#fafafa] text-base font-medium text-black antialiased">
+            <div class="flex">
+                <div
+                    class="sidebar fixed -left-[260px] top-0 z-[51] w-[260px] flex-none bg-white shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] duration-500 lg:relative lg:left-0">
+                    <div class="sticky top-0">
+                        <div class="p-3">
+                            <a href="/documentation/index.html" class="inline-flex items-center gap-2">
+                                <img class="ml-[5px] w-8 flex-none" src="/images/logo.svg" alt="image" />
+                                <span class="text-2xl font-semibold">TwilightUI</span>
+                            </a>
+                        </div>
+                        <div class="border-black-light/30 h-[calc(100vh_-_60px)] overflow-auto border-t border-dashed">
+                            <ul class="text-[15px] font-semibold">
+                                <li>
+                                    <a
+                                        href="/documentation/index.html"
+                                        class="router-link-active router-link-exact-active hover:bg-black-light/10 block px-4 py-2 duration-500 hover:pl-6 hover:text-primary"
+                                        aria-current="page"
+                                        >Getting Started</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="/documentation/installation.html"
+                                        class="hover:bg-black-light/10 block px-4 py-2 duration-500 hover:pl-6 hover:text-primary">
+                                        HTML Installation
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/documentation/installation-vue"
+                                        class="hover:bg-black-light/10 block px-4 py-2 duration-500 hover:pl-6 hover:text-primary">
+                                        Vue Installation
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/documentation/installation-adonis"
+                                        class="hover:bg-black-light/10 block px-4 py-2 duration-500 hover:pl-6 hover:text-primary">
+                                        Adonis Installation
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/documentation/intro-layouts"
+                                        class="hover:bg-black-light/10 block px-4 py-2 duration-500 hover:pl-6 hover:text-primary">
+                                        Layouts
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/documentation/attributions"
+                                        class="hover:bg-black-light/10 block px-4 py-2 duration-500 hover:pl-6 hover:text-primary">
+                                        Attributions
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/documentation/support"
+                                        class="hover:bg-black-light/10 block px-4 py-2 duration-500 hover:pl-6 hover:text-primary">
+                                        Support
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/documentation/changelog"
+                                        class="hover:bg-black-light/10 block px-4 py-2 duration-500 hover:pl-6 hover:text-primary">
+                                        Changelog
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!---->
+                <div class="flex-1">
+                    <header class="sticky top-0 z-10 bg-white py-2.5 shadow-md">
+                        <div class="flex items-center justify-between px-4">
+                            <a href="/" class="flex items-center lg:hidden"
+                                ><img class="ml-[5px] w-8 flex-none" src="/images/logo.svg" alt="image"
+                            /></a>
+                            <p class="hidden text-xl font-bold lg:block">Documentation</p>
+                            <div class="flex items-center gap-2">
+                                <a href="https://html.vristo.sbthemes.com" target="_blank" class="btn">Preview</a>
+                                <a href="https://1.envato.market/Jzb2Vq" target="_blank" class="btn btn-success"
+                                    >Buy Now</a
+                                >
+                                <button type="button" class="btn justify-center px-2 lg:hidden">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        viewBox="0 0 24 24"
+                                        stroke-width="2"
+                                        stroke="currentColor"
+                                        fill="none"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M4 6l16 0"></path>
+                                        <path d="M4 12l16 0"></path>
+                                        <path d="M4 18l16 0"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="p-6">
+                        <div class="mx-auto grid max-w-7xl grid-cols-1">
+                            <!--[-->
+                            <div class="space-y-5">
+                                <h2 class="text-2xl font-bold text-primary">Installation process</h2>
+                                <div class="panel">
+                                    <div class="text-black-light space-y-4">
+                                        <p class="text-black">
+                                            <strong
+                                                >The following process will be used to install admin dashboard using
+                                                package manager.</strong
+                                            >
+                                        </p>
+                                        <ul class="list-decimal space-y-2 pl-5">
+                                            <li>
+                                                Install Node.js : Please install latest version of Node.js from
+                                                <a
+                                                    href="https://nodejs.org"
+                                                    class="font-semibold text-success hover:text-black"
+                                                    target="_blank"
+                                                    >https://nodejs.org</a
+                                                >
+                                            </li>
+                                            <li>
+                                                Extract main template : Extract the admin template site to your suitable
+                                                directory or folder.
+                                            </li>
+                                            <li>
+                                                Access Command Prompt : Open node.js command prompt.
+                                                <ul>
+                                                    <li>
+                                                        <strong>Note:-</strong> The process mentioned below can also be
+                                                        excuted with system command prompt.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>In CMD, Navigate to the location where main folder is extracted.</li>
+                                            <li>
+                                                Navigate to the root folder of project where package.json file exist.
+                                            </li>
+                                            <li>
+                                                Install node dependencies : Run<code class="text-black">
+                                                    npm install</code
+                                                >.
+                                            </li>
+                                            <li>To run the project open it in browser.</li>
+                                            <li>
+                                                Run Command <code class="text-black">npm run dev</code>.
+                                                <ul class="space-y-2">
+                                                    <li>
+                                                        <strong>Note:-</strong> Start the Tailwind CLI build process
+                                                        when you make change in site.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Note:-</strong> The CLI tool scan your template files
+                                                        for classes and build your CSS.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Run command <code class="text-black">npm run build</code> to minify your
+                                                CSS.
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            In case if you have any problems or query then please
+                                            <a
+                                                href="/documentation/support"
+                                                rel="noopener noreferrer"
+                                                target="_blank"
+                                                class="font-semibold text-success hover:text-black"
+                                                >contact us</a
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
+                                <h2 class="text-2xl font-bold text-primary">File Sturcture</h2>
+                                <div class="panel">
+                                    <p class="text-black-light mb-4">
+                                        The arrangement below describes our file structure.
+                                    </p>
+                                    <ul class="text-sm">
+                                        <li>
+                                            <span class="inline-flex cursor-pointer items-center gap-2"
+                                                ><span class="text-success"
+                                                    ><svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-6 w-6"
+                                                        viewBox="0 0 24 24"
+                                                        stroke-width="1.5"
+                                                        stroke="currentColor"
+                                                        fill="none"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                        <path
+                                                            d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"></path>
+                                                        <!---->
+                                                        <path d="M9 13l6 0"></path></svg
+                                                ></span>
+                                                Vristo
+                                            </span>
+                                            <ul class="space-y-2 pl-8">
+                                                <li>
+                                                    <span class="inline-flex cursor-pointer items-center gap-2"
+                                                        ><span class="text-success"
+                                                            ><svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-6 w-6"
+                                                                viewBox="0 0 24 24"
+                                                                stroke-width="1.5"
+                                                                stroke="currentColor"
+                                                                fill="none"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                                <path
+                                                                    stroke="none"
+                                                                    d="M0 0h24v24H0z"
+                                                                    fill="none"></path>
+                                                                <path
+                                                                    d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"></path>
+                                                                <!---->
+                                                                <path d="M9 13l6 0"></path></svg
+                                                        ></span>
+                                                        assets
+                                                    </span>
+                                                    <ul class="pl-8">
+                                                        <li>
+                                                            <span class="inline-flex cursor-pointer items-center gap-2"
+                                                                ><span class="text-success"
+                                                                    ><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        class="h-6 w-6"
+                                                                        viewBox="0 0 24 24"
+                                                                        stroke-width="1.5"
+                                                                        stroke="currentColor"
+                                                                        fill="none"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round">
+                                                                        <path
+                                                                            stroke="none"
+                                                                            d="M0 0h24v24H0z"
+                                                                            fill="none"></path>
+                                                                        <path
+                                                                            d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"></path>
+                                                                        <path d="M12 10l0 6"></path>
+                                                                        <path d="M9 13l6 0"></path></svg
+                                                                ></span>
+                                                                css
+                                                            </span>
+                                                            <ul class="text-black-light mb-4 hidden pl-8">
+                                                                <li>all the base css files including build css.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <span class="inline-flex cursor-pointer items-center gap-2"
+                                                                ><span class="text-success"
+                                                                    ><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        class="h-6 w-6"
+                                                                        viewBox="0 0 24 24"
+                                                                        stroke-width="1.5"
+                                                                        stroke="currentColor"
+                                                                        fill="none"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round">
+                                                                        <path
+                                                                            stroke="none"
+                                                                            d="M0 0h24v24H0z"
+                                                                            fill="none"></path>
+                                                                        <path
+                                                                            d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"></path>
+                                                                        <path d="M12 10l0 6"></path>
+                                                                        <path d="M9 13l6 0"></path></svg
+                                                                ></span>
+                                                                images
+                                                            </span>
+                                                            <ul class="text-black-light mb-4 hidden pl-8">
+                                                                <li>all the image files</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <span class="inline-flex cursor-pointer items-center gap-2"
+                                                                ><span class="text-success"
+                                                                    ><svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        class="h-6 w-6"
+                                                                        viewBox="0 0 24 24"
+                                                                        stroke-width="1.5"
+                                                                        stroke="currentColor"
+                                                                        fill="none"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round">
+                                                                        <path
+                                                                            stroke="none"
+                                                                            d="M0 0h24v24H0z"
+                                                                            fill="none"></path>
+                                                                        <path
+                                                                            d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"></path>
+                                                                        <path d="M12 10l0 6"></path>
+                                                                        <path d="M9 13l6 0"></path></svg
+                                                                ></span>
+                                                                js
+                                                            </span>
+                                                            <ul class="text-black-light mb-4 hidden pl-8">
+                                                                <li>all the js files</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>index.html and all other pages</li>
+                                                <li>package.json</li>
+                                                <li>tailwind.config.js</li>
+                                                <li>.editorconfig</li>
+                                                <li>.gitignore</li>
+                                                <li>.prettierrc</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--]-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
