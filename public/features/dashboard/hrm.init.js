@@ -1,5 +1,3 @@
-'use strict';
-
 // Performance Report Chart
 document.addEventListener('DOMContentLoaded', function () {
     var options = {
