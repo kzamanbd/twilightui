@@ -450,3 +450,7 @@ a.datatable-sorter {
 .desc .datatable-sorter {
     @apply before:border-t-[6px] before:border-t-primary before:opacity-100 !important;
 }
+
+code {
+    @apply rounded-md bg-gray-100 dark:bg-gray-800;
+}

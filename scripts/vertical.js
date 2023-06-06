@@ -51,7 +51,7 @@ const verticalMenu = {
     initOverlay() {
         const overlay = document.createElement('div');
         overlay.classList.add('menu-shadow', 'hidden');
-        this.twilight.appendChild(overlay);
+        if (this.twilight) this.twilight.appendChild(overlay);
 
         overlay.addEventListener('click', () => {
             this.twilight.classList.toggle('toggle-menu');
@@ -83,7 +83,7 @@ const verticalMenu = {
             const activeSubmenu = this.content?.querySelector('.tw-dropdown-link.active');
             if (activeSubmenu) {
                 activeSubmenu.scrollIntoView({ block: 'center', behavior: 'smooth' });
-            } else {
+            } else if (activeMenu) {
                 activeMenu.scrollIntoView({ block: 'center', behavior: 'smooth' });
             }
         });
