@@ -1142,11 +1142,11 @@
                                                 </div>
                                             </button>
 
-                                            <div x-data="dropdown" @click.outside="open = false">
+                                            <div x-data="{open: false}">
                                                 <button
                                                     type="button"
                                                     class="hover:bg-white-dark/10 flex h-10 w-full items-center rounded-md p-2 font-medium hover:text-primary dark:hover:bg-[#181F32] dark:hover:text-primary"
-                                                    @click="toggle">
+                                                    @click="open = !open">
                                                     <div :class="{'rotate-180' : open}">
                                                         <span class="material-icons-outlined"> expand_more </span>
                                                     </div>
@@ -1313,63 +1313,55 @@
                                                     </li>
                                                     <li>
                                                         <div
-                                                            x-data="dropdown"
-                                                            @click.outside="open = false"
                                                             x-tooltip="Group"
                                                             data-placement="top"
                                                             role="tooltip"
                                                             class="dropdown">
                                                             <button
                                                                 type="button"
-                                                                class="flex items-center hover:text-primary"
-                                                                @click="toggle">
+                                                                class="dropdown-toggle flex items-center hover:text-primary">
                                                                 <span class="material-icons-outlined">
                                                                     table_view
                                                                 </span>
                                                             </button>
-                                                            <ul
-                                                                x-cloak
-                                                                x-show="open"
-                                                                x-transition
-                                                                x-transition.duration.300ms
-                                                                class="right-0">
+                                                            <ul class="dropdown-menu right-0">
                                                                 <li>
                                                                     <button
                                                                         type="button"
-                                                                        class="w-full"
-                                                                        @click="toggle,setGroup('personal')">
+                                                                        class="dropdown-link w-full"
+                                                                        @click="setGroup('personal')">
                                                                         <div
-                                                                            class="mr-3 h-2 w-2 rounded-full bg-primary"></div>
+                                                                            class="h-2 w-2 rounded-full bg-primary"></div>
                                                                         Personal
                                                                     </button>
                                                                 </li>
                                                                 <li>
                                                                     <button
                                                                         type="button"
-                                                                        class="w-full"
-                                                                        @click="toggle,setGroup('work')">
+                                                                        class="dropdown-link w-full"
+                                                                        @click="setGroup('work')">
                                                                         <div
-                                                                            class="mr-3 h-2 w-2 rounded-full bg-warning"></div>
+                                                                            class="h-2 w-2 rounded-full bg-warning"></div>
                                                                         Work
                                                                     </button>
                                                                 </li>
                                                                 <li>
                                                                     <button
                                                                         type="button"
-                                                                        class="w-full"
-                                                                        @click="toggle,setGroup('social')">
+                                                                        class="dropdown-link w-full"
+                                                                        @click="setGroup('social')">
                                                                         <div
-                                                                            class="mr-3 h-2 w-2 rounded-full bg-success"></div>
+                                                                            class="h-2 w-2 rounded-full bg-success"></div>
                                                                         Social
                                                                     </button>
                                                                 </li>
                                                                 <li>
                                                                     <button
                                                                         type="button"
-                                                                        class="w-full"
-                                                                        @click="toggle,setGroup('private')">
+                                                                        class="dropdown-link w-full"
+                                                                        @click="setGroup('private')">
                                                                         <div
-                                                                            class="mr-3 h-2 w-2 rounded-full bg-danger"></div>
+                                                                            class="h-2 w-2 rounded-full bg-danger"></div>
                                                                         Private
                                                                     </button>
                                                                 </li>
@@ -1377,29 +1369,19 @@
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <div
-                                                            x-data="dropdown"
-                                                            @click.outside="open = false"
-                                                            class="dropdown">
+                                                        <div class="dropdown">
                                                             <button
                                                                 type="button"
-                                                                class="flex items-center hover:text-primary"
-                                                                @click="toggle">
+                                                                class="dropdown-toggle flex items-center hover:text-primary">
                                                                 <span class="material-icons-outlined"> more_vert </span>
                                                             </button>
-                                                            <ul
-                                                                @click="toggle"
-                                                                x-cloak
-                                                                x-show="open"
-                                                                x-transition
-                                                                x-transition.duration.300ms
-                                                                class="right-0 whitespace-nowrap">
+                                                            <ul class="dropdown-menu right-0 whitespace-nowrap">
                                                                 <li>
                                                                     <button
                                                                         type="button"
-                                                                        class="w-full"
+                                                                        class="dropdown-link w-full"
                                                                         @click="setAction('read')">
-                                                                        <span class="material-icons-outlined mr-2">
+                                                                        <span class="material-icons-outlined">
                                                                             library_books
                                                                         </span>
                                                                         Mark as Read
@@ -1408,9 +1390,9 @@
                                                                 <li>
                                                                     <button
                                                                         type="button"
-                                                                        class="w-full"
+                                                                        class="dropdown-link w-full"
                                                                         @click="setAction('unread')">
-                                                                        <span class="material-icons-outlined mr-2">
+                                                                        <span class="material-icons-outlined">
                                                                             book
                                                                         </span>
                                                                         Mark as Unread
@@ -1419,9 +1401,9 @@
                                                                 <li>
                                                                     <button
                                                                         type="button"
-                                                                        class="w-full"
+                                                                        class="dropdown-link w-full"
                                                                         @click="setAction('trash')">
-                                                                        <span class="material-icons-outlined mr-2">
+                                                                        <span class="material-icons-outlined">
                                                                             delete
                                                                         </span>
                                                                         Trash
@@ -1712,21 +1694,13 @@
                                                         <div
                                                             class="mr-1"
                                                             x-text="selectedMail.type === 'sent_mail' ? selectedMail.email : 'to me'"></div>
-                                                        <div
-                                                            x-data="dropdown"
-                                                            @click.outside="open = false"
-                                                            class="dropdown">
-                                                            <button type="button" class="mt-1.5" @click="toggle">
+                                                        <div class="dropdown">
+                                                            <button type="button" class="dropdown-toggle mt-1.5">
                                                                 <span class="material-icons-outlined">
                                                                     expand_more
                                                                 </span>
                                                             </button>
-                                                            <ul
-                                                                x-cloak
-                                                                x-show="open"
-                                                                x-transition
-                                                                x-transition.duration.300ms
-                                                                class="left-0 sm:w-56">
+                                                            <ul class="dropdown-menu left-0 sm:w-56">
                                                                 <li>
                                                                     <div class="flex items-center px-4 py-2">
                                                                         <div class="text-white-dark mr-2 w-1/4">

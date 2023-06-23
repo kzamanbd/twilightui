@@ -1064,11 +1064,10 @@
                                             <p class="text-white-dark text-xs">Software Developer</p>
                                         </div>
                                     </div>
-                                    <div x-data="dropdown" @click.outside="open = false" class="dropdown">
+                                    <div class="dropdown">
                                         <button
                                             type="button"
-                                            class="flex h-8 w-8 items-center justify-center rounded-full bg-[#f4f4f4] hover:bg-primary-light dark:bg-[#1b2e4b]"
-                                            @click="toggle">
+                                            class="dropdown-toggle h-8 w-8 items-center justify-center rounded-full bg-[#f4f4f4] hover:bg-primary-light dark:bg-[#1b2e4b]">
                                             <svg
                                                 width="24"
                                                 height="24"
@@ -1098,13 +1097,9 @@
                                             </svg>
                                         </button>
 
-                                        <ul
-                                            x-show="open"
-                                            x-transition
-                                            x-transition.duration.300ms
-                                            class="right-0 whitespace-nowrap">
+                                        <ul class="dropdown-menu right-0 w-48 whitespace-nowrap">
                                             <li>
-                                                <a href="javascript:;" @click="toggle">
+                                                <a href="javascript:;" class="dropdown-link">
                                                     <svg
                                                         width="24"
                                                         height="24"
@@ -1128,7 +1123,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="javascript:;" @click="toggle">
+                                                <a href="javascript:;" class="dropdown-link">
                                                     <svg
                                                         width="24"
                                                         height="24"
@@ -1154,7 +1149,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="javascript:;" @click="toggle">
+                                                <a href="javascript:;" class="dropdown-link">
                                                     <svg
                                                         width="24"
                                                         height="24"
@@ -1622,11 +1617,10 @@
                                                     </svg>
                                                 </button>
 
-                                                <div x-data="dropdown" @click.outside="open = false" class="dropdown">
+                                                <div class="dropdown">
                                                     <button
                                                         type="button"
-                                                        class="flex h-8 w-8 items-center justify-center rounded-full bg-[#f4f4f4] hover:bg-primary-light hover:text-primary dark:bg-[#1b2e4b]"
-                                                        @click="toggle">
+                                                        class="dropdown-toggle flex h-8 w-8 items-center justify-center rounded-full bg-[#f4f4f4] hover:bg-primary-light hover:text-primary dark:bg-[#1b2e4b]">
                                                         <svg
                                                             width="24"
                                                             height="24"
@@ -1655,14 +1649,9 @@
                                                                 stroke-width="1.5"></circle>
                                                         </svg>
                                                     </button>
-                                                    <ul
-                                                        x-cloak
-                                                        x-show="open"
-                                                        x-transition
-                                                        x-transition.duration.300ms
-                                                        class="right-0">
+                                                    <ul class="dropdown-menu right-0">
                                                         <li>
-                                                            <a href="javascript:;" @click="toggle">
+                                                            <a href="javascript:;" class="dropdown-link">
                                                                 <svg
                                                                     width="24"
                                                                     height="24"
@@ -1687,7 +1676,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="javascript:;" @click="toggle">
+                                                            <a href="javascript:;" class="dropdown-link">
                                                                 <svg
                                                                     width="24"
                                                                     height="24"
@@ -1709,7 +1698,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="javascript:;" @click="toggle">
+                                                            <a href="javascript:;" class="dropdown-link">
                                                                 <svg
                                                                     width="24"
                                                                     height="24"
@@ -1750,7 +1739,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="javascript:;" @click="toggle">
+                                                            <a href="javascript:;" class="dropdown-link">
                                                                 <svg
                                                                     width="24"
                                                                     height="24"
@@ -1787,7 +1776,7 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="javascript:;" @click="toggle">
+                                                            <a href="javascript:;" class="dropdown-link">
                                                                 <svg
                                                                     width="24"
                                                                     height="24"

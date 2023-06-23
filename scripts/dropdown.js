@@ -83,6 +83,18 @@ const dropdown = {
                 new Dropdown(dropdown, dropdown.dataset);
             });
         });
+
+        // watch for new dropdowns
+        const observer = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+                mutation.addedNodes.forEach(node => {
+                    if (node.classList && node.classList.contains('dropdown')) {
+                        new Dropdown(node, node.dataset);
+                    }
+                });
+            });
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
     },
 };
 

@@ -1241,13 +1241,11 @@
                                     <h6>Dropdown Icon</h6>
                                 </div>
                                 <div class="card-body">
-                                    <div x-data="dropdown" class="dropdown mb-5">
+                                    <div class="dropdown mb-5">
                                         <label for="dropdownLeft">Left</label>
                                         <div class="flex">
                                             <div
-                                                class="flex cursor-pointer items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-primary px-3 font-semibold dark:border-[#17263c]"
-                                                @click="toggle"
-                                                @click.outside="open = false">
+                                                class="dropdown-toggle flex cursor-pointer items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-primary px-3 font-semibold dark:border-[#17263c]">
                                                 <span class="material-icons-outlined text-white">settings</span>
                                             </div>
                                             <input
@@ -1256,19 +1254,14 @@
                                                 placeholder="Dropdown"
                                                 class="form-input rounded-l-none" />
                                         </div>
-                                        <ul
-                                            x-show="open"
-                                            x-transition
-                                            x-transition.duration.300ms
-                                            class="left-0"
-                                            @click="toggle">
+                                        <ul class="dropdown-menu left-0">
                                             <li><a href="javascript:;">Action</a></li>
                                             <li><a href="javascript:;">Another action</a></li>
                                             <li><a href="javascript:;">Something else here</a></li>
                                             <li><a href="javascript:;">Separated link</a></li>
                                         </ul>
                                     </div>
-                                    <div x-data="dropdown" class="dropdown">
+                                    <div class="dropdown">
                                         <label for="dropdownRight">Right</label>
                                         <div class="flex">
                                             <input
@@ -1277,18 +1270,11 @@
                                                 placeholder="Dropdown"
                                                 class="form-input rounded-r-none" />
                                             <div
-                                                class="flex cursor-pointer items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-success px-3 font-semibold dark:border-[#17263c]"
-                                                @click="toggle"
-                                                @click.outside="open = false">
+                                                class="dropdown-toggle flex cursor-pointer items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-success px-3 font-semibold dark:border-[#17263c]">
                                                 <span class="material-icons-outlined text-white">settings</span>
                                             </div>
                                         </div>
-                                        <ul
-                                            x-show="open"
-                                            x-transition
-                                            x-transition.duration.300ms
-                                            class="right-0"
-                                            @click="toggle">
+                                        <ul class="dropdown-menu right-0">
                                             <li><a href="javascript:;">Action</a></li>
                                             <li><a href="javascript:;">Another action</a></li>
                                             <li><a href="javascript:;">Something else here</a></li>
@@ -1551,13 +1537,11 @@
                                 </div>
                                 <div class="card-body">
                                     <form>
-                                        <div x-data="dropdown" class="dropdown mb-5">
+                                        <div class="dropdown mb-5">
                                             <label for="dropdownLeftButton">Left</label>
                                             <div class="flex">
                                                 <div
-                                                    class="flex cursor-pointer items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-primary px-3 font-semibold text-white dark:border-[#17263c]"
-                                                    @click="toggle"
-                                                    @click.outside="open = false">
+                                                    class="dropdown-toggle flex cursor-pointer items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-primary px-3 font-semibold text-white dark:border-[#17263c]">
                                                     Dropdown
                                                 </div>
                                                 <input
@@ -1565,14 +1549,16 @@
                                                     type="text"
                                                     class="form-input rounded-l-none" />
                                             </div>
-                                            <ul x-show="open" x-transition x-transition.duration.300ms class="left-0">
-                                                <li><a href="javascript:;" @click="toggle">Action</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Another action</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Something else here</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Separated link</a></li>
+                                            <ul class="dropdown-menu left-0">
+                                                <li><a href="javascript:;" class="dropdown-link">Action</a></li>
+                                                <li><a href="javascript:;" class="dropdown-link">Another action</a></li>
+                                                <li>
+                                                    <a href="javascript:;" class="dropdown-link">Something else here</a>
+                                                </li>
+                                                <li><a href="javascript:;" class="dropdown-link">Separated link</a></li>
                                             </ul>
                                         </div>
-                                        <div x-data="dropdown" class="dropdown">
+                                        <div class="dropdown">
                                             <label for="dropdownRightButton">Right</label>
                                             <div class="flex">
                                                 <input
@@ -1580,17 +1566,17 @@
                                                     type="text"
                                                     class="form-input rounded-r-none" />
                                                 <div
-                                                    class="flex cursor-pointer items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-danger px-3 font-semibold text-white dark:border-[#17263c]"
-                                                    @click="toggle"
-                                                    @click.outside="open = false">
+                                                    class="dropdown-toggle flex cursor-pointer items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-danger px-3 font-semibold text-white dark:border-[#17263c]">
                                                     Dropdown
                                                 </div>
                                             </div>
-                                            <ul x-show="open" x-transition x-transition.duration.300ms class="right-0">
-                                                <li><a href="javascript:;" @click="toggle">Action</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Another action</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Something else here</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Separated link</a></li>
+                                            <ul class="dropdown-menu right-0">
+                                                <li><a href="javascript:;" class="dropdown-link">Action</a></li>
+                                                <li><a href="javascript:;" class="dropdown-link">Another action</a></li>
+                                                <li>
+                                                    <a href="javascript:;" class="dropdown-link">Something else here</a>
+                                                </li>
+                                                <li><a href="javascript:;" class="dropdown-link">Separated link</a></li>
                                             </ul>
                                         </div>
                                     </form>
@@ -1602,7 +1588,7 @@
                                 </div>
                                 <div class="card-body">
                                     <form>
-                                        <div x-data="dropdown" class="dropdown mb-5">
+                                        <div class="dropdown mb-5">
                                             <label for="btnLeft">Left</label>
                                             <div class="flex">
                                                 <button
@@ -1612,9 +1598,7 @@
                                                 </button>
                                                 <button
                                                     type="button"
-                                                    class="flex items-center justify-center rounded-none border border-info bg-white px-3 font-semibold text-info dark:bg-[#1b2e4b]"
-                                                    @click="toggle"
-                                                    @click.outside="open = false">
+                                                    class="dropdown-toggle flex items-center justify-center rounded-none border border-info bg-white px-3 font-semibold text-info dark:bg-[#1b2e4b]">
                                                     <span class="material-icons-outlined">expand_more</span>
                                                 </button>
                                                 <input
@@ -1622,14 +1606,16 @@
                                                     type="text"
                                                     class="form-input rounded-l-none border-l-0" />
                                             </div>
-                                            <ul x-show="open" x-transition x-transition.duration.300ms class="left-0">
-                                                <li><a href="javascript:;" @click="toggle">Action</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Another action</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Something else here</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Separated link</a></li>
+                                            <ul class="dropdown-menu left-0">
+                                                <li><a href="javascript:;" class="dropdown-link">Action</a></li>
+                                                <li><a href="javascript:;" class="dropdown-link">Another action</a></li>
+                                                <li>
+                                                    <a href="javascript:;" class="dropdown-link">Something else here</a>
+                                                </li>
+                                                <li><a href="javascript:;" class="dropdown-link">Separated link</a></li>
                                             </ul>
                                         </div>
-                                        <div x-data="dropdown" class="dropdown">
+                                        <div class="dropdown">
                                             <label for="btnRight">Right</label>
                                             <div class="flex">
                                                 <input
@@ -1638,9 +1624,7 @@
                                                     class="form-input rounded-r-none border-r-0" />
                                                 <button
                                                     type="button"
-                                                    class="flex items-center justify-center rounded-none border border-secondary bg-white px-3 font-semibold text-secondary dark:bg-[#1b2e4b]"
-                                                    @click="toggle"
-                                                    @click.outside="open = false">
+                                                    class="dropdown-toggle flex items-center justify-center rounded-none border border-secondary bg-white px-3 font-semibold text-secondary dark:bg-[#1b2e4b]">
                                                     <span class="material-icons-outlined">expand_more</span>
                                                 </button>
                                                 <button
@@ -1649,11 +1633,13 @@
                                                     Action
                                                 </button>
                                             </div>
-                                            <ul x-show="open" x-transition x-transition.duration.300ms class="right-0">
-                                                <li><a href="javascript:;" @click="toggle">Action</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Another action</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Something else here</a></li>
-                                                <li><a href="javascript:;" @click="toggle">Separated link</a></li>
+                                            <ul class="dropdown-menu right-0">
+                                                <li><a href="javascript:;" class="dropdown-link">Action</a></li>
+                                                <li><a href="javascript:;" class="dropdown-link">Another action</a></li>
+                                                <li>
+                                                    <a href="javascript:;" class="dropdown-link">Something else here</a>
+                                                </li>
+                                                <li><a href="javascript:;" class="dropdown-link">Separated link</a></li>
                                             </ul>
                                         </div>
                                     </form>
