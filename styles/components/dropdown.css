@@ -6,7 +6,7 @@
         @apply flex cursor-pointer items-center;
     }
     .dropdown-menu {
-        @apply absolute right-0 top-0 z-20 hidden w-40 overflow-hidden rounded-md border border-gray-200 bg-white py-2 shadow-lg outline-none dark:border-slate-700 dark:bg-slate-800;
+        @apply absolute right-0 top-0 z-20 hidden w-40 min-w-max overflow-hidden rounded-md border border-gray-200 bg-white py-2 shadow-lg outline-none dark:border-slate-700 dark:bg-slate-800;
     }
     .dropdown-menu.show {
         @apply block !important;
