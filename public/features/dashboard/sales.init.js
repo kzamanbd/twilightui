@@ -330,9 +330,9 @@ document.addEventListener('DOMContentLoaded', function () {
             dashArray: [0, 5],
         },
         grid: {
-            borderColor: 'rgba(107 ,114 ,128,0.1)',
+            borderColor: 'var(--primary-100)',
         },
-        colors: ['rgb(90,102,241)', 'rgb(203,213,225)'],
+        colors: ['var(--primary)', 'rgb(203,213,225)'],
         yaxis: {
             title: {
                 style: {
@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var myCanvas = document.getElementById('sales-donut');
     var myCanvasContext = myCanvas.getContext('2d');
     var myChart;
-    myChart = new Chart(myCanvas, {
+    myChart = new window.Chart(myCanvas, {
         type: 'doughnut',
         data: {
             labels: ['Items', 'Revenue'],
@@ -483,92 +483,4 @@ document.addEventListener('DOMContentLoaded', function () {
             cutout: 90,
         },
     });
-    /* Chartjs (#donut) closed */
-
-    /*  sales overview chart */
-    function salesOverview() {
-        chart.updateOptions({
-            colors: ['rgb(' + myVarVal + ')', 'rgb(203,213,225)'],
-        });
-    }
-    function sparkchart() {
-        function rgbToHex(r, g, b) {
-            return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
-        }
-        spark1.updateOptions({
-            colors: [
-                rgbToHex(myVarVal.split(',')[0], myVarVal.split(',')[1], myVarVal.split(',')[2]),
-                'rgb(203,213,225)',
-            ],
-        });
-    }
-    function sparkchart2() {
-        function rgbToHex(r, g, b) {
-            return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
-        }
-        spark2.updateOptions({
-            colors: [
-                rgbToHex(myVarVal.split(',')[0], myVarVal.split(',')[1], myVarVal.split(',')[2]),
-                'rgb(203,213,225)',
-            ],
-        });
-    }
-    function sparkchart3() {
-        function rgbToHex(r, g, b) {
-            return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
-        }
-        spark3.updateOptions({
-            colors: [
-                rgbToHex(myVarVal.split(',')[0], myVarVal.split(',')[1], myVarVal.split(',')[2]),
-                'rgb(203,213,225)',
-            ],
-        });
-    }
-    function sparkchart4() {
-        function rgbToHex(r, g, b) {
-            return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
-        }
-        spark4.updateOptions({
-            colors: [
-                rgbToHex(myVarVal.split(',')[0], myVarVal.split(',')[1], myVarVal.split(',')[2]),
-                'rgb(203,213,225)',
-            ],
-        });
-    }
-    function visitorschart() {
-        function rgbToHex(r, g, b) {
-            return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
-        }
-        chart1.updateOptions({
-            colors: [rgbToHex(myVarVal.split(',')[0], myVarVal.split(',')[1], myVarVal.split(',')[2])],
-            fill: {
-                type: 'gradient',
-                gradient: {
-                    shadeIntensity: 1,
-                    opacityFrom: 0.7,
-                    opacityTo: 1,
-                    colorStops: [
-                        {
-                            offset: 0,
-                            color: '#60a5fa',
-                            opacity: 1,
-                        },
-                        {
-                            offset: 100,
-                            color: 'rgb(' + myVarVal + ')',
-                            opacity: 1,
-                        },
-                    ],
-                },
-            },
-        });
-    }
-    function salesdonut() {
-        myChart.data.datasets[0] = {
-            data: [50, 30, 30],
-            backgroundColor: ['rgb(' + myVarVal + ')', 'rgb(96, 165, 250)'],
-            borderWidth: 0,
-        };
-        myChart.update();
-    }
 });
