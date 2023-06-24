@@ -14,7 +14,7 @@
 @import './base/colors.css';
 @import 'tailwindcss/components';
 /* custom components */
-@import './components/base.css';
+@import './theme.css';
 @import './components/common-ui.css';
 @import './components/badges.css';
 @import './components/header.css';

@@ -1,4 +1,7 @@
 @layer components {
+    .horizontal .vertical-menu {
+        @apply hidden;
+    }
     .vertical-menu {
         @apply fixed inset-y-0 -left-64 z-30 w-64 border-gray-200 duration-300 ease-in-out lg:left-0;
     }

@@ -20,6 +20,7 @@
     .collapsible-vertical:not(.toggle-menu) .twilight-body {
         @apply lg:ml-[70px];
     }
+    .horizontal .twilight-body,
     .vertical.toggle-menu .twilight-body {
         @apply lg:ml-0;
     }
