@@ -11,6 +11,7 @@
 
 @import 'tailwindcss/base';
 @import './base/custom.css';
+@import './base/colors.css';
 @import 'tailwindcss/components';
 /* custom components */
 @import './components/base.css';
@@ -35,4 +36,3 @@
 /* utilities */
 @import 'tailwindcss/utilities';
 @import './extras.css';
-@import './colors.css';
