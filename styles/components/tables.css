@@ -44,12 +44,6 @@
     .dark .table-striped tbody tr:nth-of-type(odd) {
         @apply bg-gray-800 !important;
     }
-    .table-bordered {
-        @apply border border-gray-300 !important;
-    }
-    .dark .table-bordered {
-        @apply border border-gray-700 !important;
-    }
     .table-bordered tbody tr td,
     .table-bordered tfoot tr th,
     .table-bordered thead tr th {
