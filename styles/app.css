@@ -35,3 +35,4 @@
 /* utilities */
 @import 'tailwindcss/utilities';
 @import './extras.css';
+@import './colors.css';

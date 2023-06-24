@@ -3,7 +3,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
-const primary = colors.sky;
+const primary = colors.purple;
 
 module.exports = {
     content: ['./**/*.html'],
@@ -12,6 +12,7 @@ module.exports = {
         extend: {
             colors: {
                 dark: {
+                    DEFAULT: '#1E293B',
                     primary: '#1E293B',
                     secondary: '#151521',
                 },
@@ -21,37 +22,46 @@ module.exports = {
                 },
                 light: {
                     gray: '#F5F8FA',
+                    DEFAULT: '#F5F8FA',
                 },
                 primary: {
+                    50: primary[50],
                     100: primary[100],
                     200: primary[200],
                     300: primary[300],
                     400: primary[400],
+                    500: primary[500],
                     600: primary[600],
                     700: primary[700],
+                    800: primary[800],
                     900: primary[900],
                     light: primary[50],
-                    DEFAULT: '#009EF7',
+                    DEFAULT: primary[500],
                 },
                 info: {
                     light: colors.blue[50],
                     DEFAULT: colors.blue[500],
+                    dark: colors.blue[700],
                 },
                 danger: {
                     light: colors.red[50],
                     DEFAULT: colors.red[500],
+                    dark: colors.red[700],
                 },
                 success: {
                     light: colors.green[50],
                     DEFAULT: colors.green[500],
+                    dark: colors.green[700],
                 },
                 warning: {
                     light: colors.yellow[50],
                     DEFAULT: colors.yellow[500],
+                    dark: colors.yellow[700],
                 },
                 secondary: {
                     light: colors.gray[50],
                     DEFAULT: colors.gray[400],
+                    dark: colors.gray[700],
                 },
             },
             height: {
