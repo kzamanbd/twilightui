@@ -3,7 +3,7 @@
         @apply fixed inset-y-0 -left-64 z-30 w-64 border-gray-200 duration-300 ease-in-out lg:left-0;
     }
     .vertical-content {
-        @apply h-full bg-white dark:bg-dark-primary [&.semi-dark]:bg-dark-primary;
+        @apply h-full bg-white dark:bg-dark [&.semi-dark]:bg-dark;
     }
     .toggle-menu .vertical-menu,
     .collapsible-vertical:not(.toggle-menu) .vertical-menu {

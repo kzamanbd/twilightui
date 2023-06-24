@@ -21,10 +21,10 @@
         @apply bg-info;
     }
     .badge-light {
-        @apply bg-light-gray;
+        @apply bg-light;
     }
     .badge-dark {
-        @apply bg-dark-primary;
+        @apply bg-dark;
     }
     .badge-pill {
         @apply rounded-full;
@@ -54,10 +54,10 @@
         @apply border border-info bg-transparent text-info;
     }
     .badge-outline-light {
-        @apply border border-light-gray bg-transparent text-light-gray;
+        @apply border border-light bg-transparent text-light;
     }
     .badge-outline-dark {
-        @apply border border-dark-primary bg-transparent text-dark-primary;
+        @apply border border-dark bg-transparent text-dark;
     }
     .badge-outline {
         @apply border border-gray-600 bg-transparent text-gray-600;

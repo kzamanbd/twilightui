@@ -13,7 +13,6 @@ module.exports = {
             colors: {
                 dark: {
                     DEFAULT: '#1E293B',
-                    primary: '#1E293B',
                     secondary: '#151521',
                 },
                 white: {
@@ -21,7 +20,6 @@ module.exports = {
                     light: '#E0E6ED',
                 },
                 light: {
-                    gray: '#F5F8FA',
                     DEFAULT: '#F5F8FA',
                 },
                 primary: {

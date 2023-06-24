@@ -1,8 +1,8 @@
 @layer components {
     /* start top header components */
     .top-header {
-        @apply flex h-[70px] items-center justify-between bg-light-gray px-6 py-4 duration-300 dark:bg-dark-primary;
-        @apply supports-[backdrop-filter]:bg-light-gray/60 supports-[backdrop-filter]:backdrop-blur;
+        @apply flex h-[70px] items-center justify-between bg-light px-6 py-4 duration-300 dark:bg-dark;
+        @apply supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur;
     }
     .navbar-sticky {
         @apply dark--text sticky top-0 z-10 dark:shadow-xl;
@@ -12,7 +12,7 @@
     }
     .header-item {
         @apply dark--text relative flex items-center p-1.5 text-xs font-medium;
-        @apply rounded-lg border border-gray-200 bg-white hover:bg-gray-100 dark:bg-dark-primary;
+        @apply rounded-lg border border-gray-200 bg-white hover:bg-gray-100 dark:bg-dark;
         @apply dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-white;
     }
 
@@ -23,13 +23,13 @@
     .user-menu-link {
         @apply flex items-center justify-between px-4 py-2 text-sm;
         @apply dark--text rounded-md hover:text-primary-600;
-        @apply hover:bg-light-gray hover:dark:bg-dark-secondary;
+        @apply hover:bg-light hover:dark:bg-dark-secondary;
     }
     .language-dropdown {
-        @apply absolute left-0 -m-40 hidden w-40 space-y-2 rounded-md bg-white px-2 py-4 shadow-xl group-hover:block dark:bg-dark-primary;
+        @apply absolute left-0 -m-40 hidden w-40 space-y-2 rounded-md bg-white px-2 py-4 shadow-xl group-hover:block dark:bg-dark;
     }
     .language-dropdown-item {
-        @apply dark--text flex items-center rounded-md px-4 py-2 hover:bg-light-gray hover:text-primary-600;
+        @apply dark--text flex items-center rounded-md px-4 py-2 hover:bg-light hover:text-primary-600;
         @apply hover:dark:bg-dark-secondary dark:hover:text-gray-300;
     }
 }

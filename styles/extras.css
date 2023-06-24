@@ -102,7 +102,7 @@
     @apply bg-info text-white;
 }
 .tippy-box[data-theme~='dark'] {
-    @apply bg-dark-primary text-white;
+    @apply bg-dark text-white;
 }
 
 /* tooltip top */
@@ -126,7 +126,7 @@
     @apply border-t-info;
 }
 .tippy-box[data-theme~='dark'][data-placement^='top'] > .tippy-arrow::before {
-    @apply border-t-dark-primary;
+    @apply border-t-dark;
 }
 
 /* tooltip bottom */
@@ -149,7 +149,7 @@
     @apply border-b-info;
 }
 .tippy-box[data-theme~='dark'][data-placement^='bottom'] > .tippy-arrow::before {
-    @apply border-b-dark-primary;
+    @apply border-b-dark;
 }
 
 /* tooltip left */
@@ -172,7 +172,7 @@
     @apply border-l-info;
 }
 .tippy-box[data-theme~='dark'][data-placement^='left'] > .tippy-arrow::before {
-    @apply border-l-dark-primary;
+    @apply border-l-dark;
 }
 /* tooltip right */
 .tippy-box[data-theme~='primary'][data-placement^='right'] > .tippy-arrow::before {
@@ -194,7 +194,7 @@
     @apply border-r-info;
 }
 .tippy-box[data-theme~='dark'][data-placement^='right'] > .tippy-arrow::before {
-    @apply border-r-dark-primary;
+    @apply border-r-dark;
 }
 /* end tooltip */
 
