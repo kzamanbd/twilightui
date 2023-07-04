@@ -93,7 +93,7 @@
     .tw-dropdown-circle {
         @apply flex h-4 w-4 items-center justify-center text-[10px] leading-[unset];
     }
-    .vertical-menu .tw-dropdown-arrow {
+    .vertical-menu .tw-arrow {
         @apply ml-auto transform transition-transform group-[.active]:rotate-180;
     }
     .vertical-menu .tw-dropdown-link {
@@ -127,7 +127,7 @@
     /* collapsible-vertical */
     .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .collapse-icon,
     .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-dropdown-menu,
-    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-dropdown-arrow,
+    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-arrow,
     .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .documents-link .btn-label,
     .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-nav-menu .tw-link-label {
         @apply lg:hidden lg:opacity-0;
@@ -135,7 +135,7 @@
     /* vertical menu */
     .vertical.toggle-menu .vertical-menu .collapse-icon,
     .vertical.toggle-menu .vertical-menu .tw-dropdown-menu,
-    .vertical.toggle-menu .vertical-menu .tw-dropdown-arrow,
+    .vertical.toggle-menu .vertical-menu .tw-arrow,
     .vertical.toggle-menu .vertical-menu .documents-link .btn-label,
     .vertical.toggle-menu .vertical-menu .tw-nav-menu .tw-link-label {
         @apply lg:block lg:opacity-100 !important;
