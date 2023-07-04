@@ -64,27 +64,27 @@
     .tw-menu-content {
         @apply h-[calc(100vh_-_80px)] overflow-y-auto overflow-x-hidden;
     }
-    .tw-nav-menu {
+    .vertical-menu .tw-nav-menu {
         @apply mt-2 space-y-1 px-4 pb-2;
     }
-    .tw-menu-item .material-icons,
-    .tw-menu-item .material-icons-outlined {
+    .vertical-menu .tw-menu-item .material-icons,
+    .vertical-menu .tw-menu-item .material-icons-outlined {
         @apply text-xl leading-none;
     }
-    .tw-menu-link {
+    .vertical-menu .tw-menu-link {
         @apply flex items-center rounded-md p-2.5 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400;
         @apply hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
-    .tw-menu-link.active {
-        @apply bg-primary-100 text-primary dark:bg-gray-700 dark:hover:text-gray-200;
+    .vertical-menu .tw-menu-link.active {
+        @apply bg-primary-100 text-primary dark:bg-gray-700 dark:hover:text-primary;
     }
     .tw-link-label {
         @apply mx-2 truncate text-sm font-medium;
     }
-    .tw-dropdown-menu {
+    .vertical-menu .tw-dropdown-menu {
         @apply mt-1 h-0 space-y-1 overflow-hidden transition-all duration-300 ease-in-out;
     }
-    .tw-dropdown-item {
+    .vertical-menu .tw-dropdown-item {
         @apply dark--text flex items-center rounded-md hover:text-gray-900 dark:hover:text-gray-100;
     }
     .menu-bullet-dot {
@@ -93,16 +93,16 @@
     .tw-dropdown-circle {
         @apply flex h-4 w-4 items-center justify-center text-[10px] leading-[unset];
     }
-    .tw-dropdown-arrow {
+    .vertical-menu .tw-dropdown-arrow {
         @apply ml-auto transform transition-transform group-[.active]:rotate-180;
     }
-    .tw-dropdown-link {
-        @apply flex w-full items-center truncate rounded-md p-2 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
+    .vertical-menu .tw-dropdown-link {
+        @apply flex w-full items-center truncate rounded-md p-2 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-primary;
     }
-    .tw-dropdown-link:hover .menu-bullet-dot {
+    .vertical-menu .tw-dropdown-link:hover .menu-bullet-dot {
         @apply bg-primary;
     }
-    .tw-dropdown-link.active {
+    .vertical-menu .tw-dropdown-link.active {
         @apply text-primary;
     }
     /* semi dark */
