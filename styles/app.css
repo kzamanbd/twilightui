@@ -18,6 +18,7 @@
 @import './components/common-ui.css';
 @import './components/badges.css';
 @import './components/header.css';
+@import './components/horizontal-menu.css';
 @import './components/vertical-menu.css';
 @import './components/footer.css';
 @import './components/cards.css';

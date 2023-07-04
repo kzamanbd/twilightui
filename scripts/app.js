@@ -272,16 +272,6 @@ window.DataTableExportTXT = exportTXT;
         },
     }));
 
-    Alpine.data('dropdown', (initialOpenState = false) => ({
-        open: initialOpenState,
-
-        toggle() {
-            this.open = !this.open;
-        },
-        close() {
-            this.open = false;
-        },
-    }));
     Alpine.data('modal', (initialOpenState = false) => ({
         open: initialOpenState,
 

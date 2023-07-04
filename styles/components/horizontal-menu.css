@@ -1,0 +1,94 @@
+.vertical .horizontal-menu,
+.vertical .horizontal-logo {
+    @apply hidden;
+}
+
+.horizontal .horizontal-menu {
+    @apply hidden border-t border-[#ebedf2] bg-white px-6 py-1.5 font-semibold text-black rtl:space-x-reverse lg:flex lg:space-x-1.5 xl:space-x-8;
+}
+
+.horizontal .horizontal-logo {
+    @apply flex;
+}
+
+.horizontal .nav-item a div:first-child svg {
+    @apply h-5 w-5 text-[#0e172680];
+}
+
+.dark .horizontal .nav-item a div:first-child svg,
+.dark.horizontal .nav-item a div:first-child svg,
+.horizontal .dark .nav-item a div:first-child svg {
+    @apply text-[#ffffff80];
+}
+
+.horizontal-menu .nav-link {
+    @apply flex items-center justify-between rounded-lg px-2 py-2.5 hover:bg-gray-400 dark:hover:bg-gray-700;
+}
+
+.horizontal-menu .nav-link {
+    @apply hover:bg-primary-100 hover:text-primary xl:px-4;
+}
+
+.horizontal-menu .nav-link.active {
+    @apply bg-primary-100 text-primary dark:bg-gray-700 dark:hover:text-primary;
+}
+
+.horizontal-menu ul.tw-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    z-index: 20;
+    display: none;
+    min-width: 180px;
+    border-radius: 0.25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 0.5rem 0;
+    --tw-text-opacity: 1;
+    color: rgb(59 63 92 / var(--tw-text-opacity));
+    --tw-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.dark .horizontal-menu ul.tw-dropdown-menu {
+    --tw-bg-opacity: 1;
+    background-color: rgb(27 46 75 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(136 142 168 / var(--tw-text-opacity));
+}
+
+.horizontal-menu ul.tw-dropdown-menu a {
+    @apply flex items-center justify-between px-4 py-2;
+}
+
+.horizontal-menu ul.tw-dropdown-menu a:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(67 97 238 / var(--tw-text-opacity));
+}
+
+.dark .horizontal-menu ul.tw-dropdown-menu a:hover {
+    @apply bg-[#4361ee1a];
+}
+
+.horizontal-menu ul.tw-dropdown-menu a.active {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(67 97 238 / var(--tw-text-opacity));
+}
+
+.dark .horizontal-menu ul.tw-dropdown-menu a.active {
+    background-color: #4361ee1a;
+}
+
+.horizontal-menu > li.nav-item:hover > ul.tw-dropdown-menu,
+.horizontal-menu > li.nav-item > ul.tw-dropdown-menu > li:hover > ul {
+    @apply block;
+}
+
+.vertical.toggle-sidebar .collapse-icon,
+.vertical.toggle-sidebar .horizontal-logo {
+    @apply flex;
+}

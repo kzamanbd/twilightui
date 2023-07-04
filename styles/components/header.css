@@ -1,13 +1,22 @@
 @layer components {
     /* start top header components */
     .top-header {
-        @apply flex h-[70px] items-center justify-between bg-light px-6 py-4 duration-300 dark:bg-dark;
-        @apply supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur;
+        @apply z-10 duration-300 bg-white dark:bg-dark supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur;
     }
-    .navbar-sticky {
+    .horizontal .top-header {
+        @apply shadow-md;
+    }
+    .primary-header {
+        @apply px-6 py-2;
+    }
+    .vertical .primary-header {
+        @apply py-4;
+    }
+    .navbar-sticky,
+    .navbar-static {
         @apply dark--text sticky top-0 z-10 dark:shadow-xl;
     }
-    .navbar-sticky.scrollable {
+    .vertical .navbar-sticky.scrollable {
         @apply mx-6 rounded-bl-lg rounded-br-lg shadow-md !important;
     }
     .header-item {
@@ -15,7 +24,9 @@
         @apply rounded-lg border border-gray-200 bg-white hover:bg-gray-100 dark:bg-dark;
         @apply dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-white;
     }
-
+    .horizontal .sidebar-toggle {
+        @apply hidden;
+    }
     /* start user menu components */
     .user-menu-item {
         @apply px-4;
