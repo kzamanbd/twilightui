@@ -1,7 +1,6 @@
 // simplebar
 import 'simplebar'; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
 // alpine.js config
-import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
 import mask from '@alpinejs/mask';
 import persist from '@alpinejs/persist';
@@ -10,7 +9,6 @@ import dropdown from './dropdown';
 import sidebar from './vertical';
 
 window.Alpine = Alpine;
-Alpine.plugin(collapse);
 Alpine.plugin(persist);
 Alpine.plugin(focus);
 Alpine.plugin(mask);
@@ -83,7 +81,9 @@ window.DataTableExportTXT = exportTXT;
         } else {
             scrollTop.classList.add('hidden');
         }
-    }, )
+    });
+
+
 
     // theme config
     const $themeConfig = {
@@ -220,32 +220,8 @@ window.DataTableExportTXT = exportTXT;
     //? alpine data
     Alpine.data('twilightTheme', () => ({
         showCustomizer: false,
-        showTopButton: false,
-        scrollFunction() {
-            const header = document.querySelector('.top-header');
-            if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-                // do something
-                header.classList.add('scrollable');
-            } else {
-                // do something
-                header.classList.remove('scrollable');
-            }
-            // scroll top button
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                this.showTopButton = true;
-            } else {
-                this.showTopButton = false;
-            }
-        },
-        goToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        },
         init() {
             this.$store.app.setRTLLayout();
-            window.onscroll = () => {
-                this.scrollFunction();
-            };
         },
         get appConfig() {
             const app = this.$store.app;
@@ -254,26 +230,6 @@ window.DataTableExportTXT = exportTXT;
         },
         get isFullscreen() {
             return this.$store.app.fullscreen ? 'fullscreen_exit' : 'fullscreen';
-        },
-    }));
-
-    Alpine.store('accordion', {
-        item: undefined,
-    });
-
-    Alpine.data('accordionItem', idx => ({
-        init() {
-            this.idx = idx;
-        },
-        idx: null,
-        handleClick() {
-            this.$store.accordion.item = this.$store.accordion.item != this.idx && this.idx;
-        },
-        activeDropdown() {
-            return this.$store.accordion.item == this.idx && 'active';
-        },
-        expanded() {
-            return this.$store.accordion.item == this.idx;
         },
     }));
 
@@ -362,6 +318,12 @@ document.addEventListener('DOMContentLoaded', function () {
             loading[0].remove();
         }, 200);
     }
+
+    // scroll top
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
     // get all elements with ripple attribute
     const ripples = document.querySelectorAll('[data-ripple]');
 

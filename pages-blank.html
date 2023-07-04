@@ -2158,13 +2158,9 @@
                 </nav>
             </div>
             <!-- scroll to top button -->
-            <div class="scroll-top">
-                <template x-if="showTopButton">
-                    <button type="button" class="scroll-top-btn" @click="goToTop">
-                        <span class="material-icons-outlined"> arrow_upward </span>
-                    </button>
-                </template>
-            </div>
+            <button type="button" class="scroll-top hidden">
+                <span class="material-icons-outlined"> arrow_upward </span>
+            </button>
         </div>
     </body>
 </html>

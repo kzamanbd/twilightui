@@ -10,7 +10,6 @@
     "author": "Kamruzzaman <kzamanbn@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "@alpinejs/collapse": "^3.12.0",
         "@alpinejs/focus": "^3.12.0",
         "@alpinejs/mask": "^3.12.0",
         "@alpinejs/persist": "^3.12.0",
