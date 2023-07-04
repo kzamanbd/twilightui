@@ -66,6 +66,25 @@ window.DataTableExportTXT = exportTXT;
 (function () {
     'use strict';
 
+    // window scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.top-header');
+        const scrollTop = document.querySelector('.scroll-top');
+        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+            // do something
+            header.classList.add('scrollable');
+        } else {
+            // do something
+            header.classList.remove('scrollable');
+        }
+        // scroll top button
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            scrollTop.classList.remove('hidden');
+        } else {
+            scrollTop.classList.add('hidden');
+        }
+    }, )
+
     // theme config
     const $themeConfig = {
         locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh

@@ -80,9 +80,6 @@
         @apply text-xl/none;
     }
     .scroll-top {
-        @apply fixed bottom-12 z-50 ltr:right-6 rtl:left-6;
-    }
-    .scroll-top-btn {
-        @apply btn btn-outline-primary animate-pulse rounded-full p-2 !important;
+        @apply fixed bottom-12 z-50 ltr:right-6 rtl:left-6 btn btn-outline-primary animate-pulse rounded-full p-2 duration-300;
     }
 }
