@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    'use strict';
     var options1 = {
         series: [
             {
