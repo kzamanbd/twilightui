@@ -62,9 +62,6 @@ module.exports = {
                     dark: colors.gray[700],
                 },
             },
-            height: {
-                sidebar: 'calc(100vh - 70px)',
-            },
             fontFamily: {
                 sans: ['Inter, Helvetica, "sans-serif"', ...defaultTheme.fontFamily.sans],
             },
@@ -74,7 +71,6 @@ module.exports = {
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
         require('@tailwindcss/aspect-ratio'),
-        require('prettier-plugin-tailwindcss'),
         plugin(function ({ addVariant, e }) {
             // mini sidebar variant
             addVariant('vertical-menu', ({ modifySelectors, separator }) => {

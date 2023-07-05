@@ -39,7 +39,6 @@ const verticalMenu = {
     initSidebarToggle() {
         if (this.sidebarToggle) {
             this.sidebarToggle.addEventListener('click', () => this.toggleSidebar());
-            document.querySelector('.collapse-icon').addEventListener('click', () => this.toggleSidebar());
         }
     },
 
