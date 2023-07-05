@@ -10,9 +10,11 @@
 
 .horizontal .horizontal-logo,
 .vertical.toggle-menu .horizontal-logo {
-    @apply flex;
+    @apply flex items-center;
 }
-
+.horizontal-logo svg {
+    @apply h-9 w-9;
+}
 .vertical.toggle-menu .horizontal-logo {
     @apply ml-4;
 }

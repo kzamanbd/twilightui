@@ -6,7 +6,7 @@ const colors = require('tailwindcss/colors');
 const primary = colors.green;
 
 module.exports = {
-    content: ['./**/*.html'],
+    content: ['./**/*.html', './scripts/*.js'],
     darkMode: 'class', // or 'media'
     theme: {
         extend: {

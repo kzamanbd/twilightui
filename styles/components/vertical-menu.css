@@ -25,11 +25,11 @@
         @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
     }
     .collapse-icon {
-        @apply h-4 w-4 cursor-pointer border-[1.5px] border-gray-800 transition-all duration-150 dark:border-slate-700 lg:rounded-full;
+        @apply h-4 w-4 cursor-pointer border-[1.5px] border-primary transition-all duration-150 dark:border-primary-700 rounded-full hidden lg:flex;
     }
     .vertical:not(.toggle-menu) .collapse-icon,
     .collapsible.toggle-menu .collapse-icon {
-        @apply bg-gray-800 ring-2 ring-inset ring-gray-800 ring-offset-4 dark:bg-slate-400 dark:ring-slate-400 dark:ring-offset-slate-700;
+        @apply bg-primary ring-2 ring-inset ring-primary ring-offset-4 dark:bg-primary-400 dark:ring-primary-400 dark:ring-offset-primary-700;
     }
 
     .tw-brand-logo {

@@ -112,6 +112,9 @@ window.DataTableExportTXT = exportTXT;
                     theme = 'dark';
                 }
             }
+            if(theme == 'dark'){
+                this.semiDark = false;
+            }
 
             this.theme = theme;
         },
@@ -183,9 +186,6 @@ window.DataTableExportTXT = exportTXT;
 
         // semi dark
         semiDark: Alpine.$persist($themeConfig.semiDark),
-        toggleSemiDark() {
-            // toggle semi dark
-        },
 
         // multi language
         locale: Alpine.$persist($themeConfig.locale),
