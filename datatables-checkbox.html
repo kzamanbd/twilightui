@@ -462,17 +462,18 @@
                                 <span class="material-icons icon"> remove </span>
                                 <span class="label">APPS</span>
                             </li>
-                            <li class="tw-menu-item">
-                                <a href="/apps-chats.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">message</span>
-                                    <span class="tw-link-label">Chat</span>
-                                </a>
-                            </li>
 
                             <li class="tw-menu-item">
                                 <a href="/apps-calendars.html" class="tw-menu-link">
                                     <span class="material-icons-outlined">event</span>
                                     <span class="tw-link-label">Calendars</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-chats.html" class="tw-menu-link">
+                                    <span class="material-icons-outlined">message</span>
+                                    <span class="tw-link-label">Chats</span>
                                 </a>
                             </li>
 
@@ -1094,7 +1095,7 @@
             <div class="theme-customizer">
                 <div x-show="showCustomizer" @click="showCustomizer = false" class="customizer-shadow"></div>
 
-                <nav class="app-customizer" :class="{'!right-0' : showCustomizer}">
+                <nav class="app-drawers theme" :class="{'!right-0' : showCustomizer}">
                     <div class="p-4 text-center">
                         <a href="javascript:void(0)" class="customizer-close" @click="showCustomizer = false">
                             <span class="material-icons-outlined text-xl/none"> close </span>

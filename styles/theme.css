@@ -30,7 +30,7 @@
     .tw-logo {
         @apply h-12 w-12 fill-primary;
     }
-    .app-customizer {
+    .app-drawers {
         @apply fixed -right-[400px] bottom-0 top-0 z-[51] w-full max-w-[400px] bg-white shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-[right] duration-300 dark:bg-[#0e1726];
     }
     .customizer-shadow {
@@ -47,6 +47,9 @@
     }
     .customizer-close {
         @apply absolute right-3 top-3 opacity-30 hover:opacity-100 dark:text-white;
+    }
+    .app-drawers.theme p {
+        @apply dark:text-gray-300;
     }
     .hidden-checkbox {
         @apply absolute z-10 h-full w-full cursor-pointer opacity-0;

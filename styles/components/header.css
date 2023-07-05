@@ -1,13 +1,13 @@
 @layer components {
     /* start top header components */
     .top-header {
-        @apply z-10 duration-300 bg-white dark:bg-dark supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur;
+        @apply z-10 bg-white duration-300 supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur dark:bg-dark;
     }
     .horizontal .top-header {
         @apply shadow-md;
     }
     .primary-header {
-        @apply px-6 py-2;
+        @apply flex items-center justify-between px-6 py-3;
     }
     .navbar-sticky,
     .navbar-static {
