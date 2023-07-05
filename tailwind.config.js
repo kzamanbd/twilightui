@@ -3,7 +3,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
-const primary = colors.purple;
+const primary = colors.green;
 
 module.exports = {
     content: ['./**/*.html'],
@@ -34,7 +34,7 @@ module.exports = {
                     800: primary[800],
                     900: primary[900],
                     light: primary[50],
-                    DEFAULT: primary[500],
+                    DEFAULT: '#00a76f',
                 },
                 info: {
                     light: colors.blue[50],
