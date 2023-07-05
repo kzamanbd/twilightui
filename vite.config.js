@@ -15,7 +15,7 @@ export default defineConfig({
         outDir: 'build',
         rollupOptions: {
             input: Object.fromEntries(
-                glob.sync(['./*.html']).map(file => [
+                glob.sync(['./*.html', './documentation/*.html']).map(file => [
                     // This remove `pages/` as well as the file extension from each
                     // file, so e.g. pages/nested/foo.html becomes nested/foo
                     path.relative(__dirname, file.slice(0, file.length - path.extname(file).length)),
