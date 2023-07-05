@@ -222,6 +222,14 @@ window.DataTableExportTXT = exportTXT;
         showCustomizer: false,
         init() {
             this.$store.app.setRTLLayout();
+            // watch showCustomizer
+            this.$watch('showCustomizer', (value) => {
+                if(value){
+                    document.body.classList.add('overflow-hidden');
+                } else {
+                    document.body.classList.remove('overflow-hidden');
+                }
+            })
         },
         get appConfig() {
             const app = this.$store.app;
