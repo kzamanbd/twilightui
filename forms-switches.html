@@ -887,12 +887,7 @@
                             <!-- documentation -->
                             <li>
                                 <div class="documents-button">
-                                    <a
-                                        data-ripple
-                                        href="/documentation/index.html"
-                                        target="_blank"
-                                        class="documents-link"
-                                        data-ripple>
+                                    <a href="/documentation/index.html" target="_blank" class="documents-link">
                                         <span class="material-icons-outlined">description</span>
                                         <span class="btn-label ml-2">Documentation</span>
                                     </a>
@@ -1291,8 +1286,8 @@
                                 <button
                                     type="button"
                                     class="btn flex items-center px-4 text-center"
-                                    :class="[$store.app.menu === 'collapsible-vertical' ? 'btn-primary' :'btn-outline-primary']"
-                                    @click="$store.app.toggleMenu('collapsible-vertical')">
+                                    :class="[$store.app.menu === 'collapsible' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleMenu('collapsible')">
                                     Collapsible
                                 </button>
                             </div>

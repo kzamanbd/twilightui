@@ -9,9 +9,6 @@
     .primary-header {
         @apply px-6 py-2;
     }
-    .vertical .primary-header {
-        @apply py-4;
-    }
     .navbar-sticky,
     .navbar-static {
         @apply dark--text sticky top-0 z-10 dark:shadow-xl;

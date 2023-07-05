@@ -90,7 +90,7 @@ window.DataTableExportTXT = exportTXT;
         locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
         theme: 'light', // light, dark, system
         rtlClass: 'ltr', // rtl, ltr
-        menu: 'vertical', // vertical, collapsible-vertical, horizontal
+        menu: 'vertical', // vertical, collapsible, horizontal
         layout: 'full', // full, boxed-layout
         animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
         navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
@@ -122,7 +122,7 @@ window.DataTableExportTXT = exportTXT;
         menu: Alpine.$persist($themeConfig.menu),
         toggleMenu(val) {
             if (!val) {
-                val = this.menu || $themeConfig.menu; // vertical, collapsible-vertical, horizontal
+                val = this.menu || $themeConfig.menu; // vertical, collapsible, horizontal
             }
             this.sidebar = false; // reset sidebar state
             this.menu = val;

@@ -17,7 +17,7 @@
         @apply relative flex min-h-screen flex-col transition-all duration-300 dark:bg-dark-secondary lg:ml-64;
         @apply bg-[url('/images/mask.svg')] [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,1))];
     }
-    .collapsible-vertical:not(.toggle-menu) .twilight-body {
+    .collapsible:not(.toggle-menu) .twilight-body {
         @apply lg:ml-[70px];
     }
     .horizontal .twilight-body,

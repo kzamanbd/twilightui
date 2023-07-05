@@ -9,7 +9,7 @@
         @apply h-full bg-white dark:bg-dark [&.semi-dark]:bg-dark;
     }
     .toggle-menu .vertical-menu,
-    .collapsible-vertical:not(.toggle-menu) .vertical-menu {
+    .collapsible:not(.toggle-menu) .vertical-menu {
         @apply fixed inset-y-0 left-0 z-30 lg:w-[70px] lg:hover:w-64;
     }
     .toggle-menu .vertical-menu {
@@ -18,7 +18,7 @@
     .vertical.toggle-menu .vertical-menu {
         @apply lg:-left-64 !important;
     }
-    .collapsible-vertical:not(.toggle-menu) .vertical-menu {
+    .collapsible:not(.toggle-menu) .vertical-menu {
         @apply -left-64 lg:left-0;
     }
     .menu-shadow {
@@ -28,7 +28,7 @@
         @apply h-4 w-4 cursor-pointer border-[1.5px] border-gray-800 transition-all duration-150 dark:border-slate-700 lg:rounded-full;
     }
     .vertical:not(.toggle-menu) .collapse-icon,
-    .collapsible-vertical.toggle-menu .collapse-icon {
+    .collapsible.toggle-menu .collapse-icon {
         @apply bg-gray-800 ring-2 ring-inset ring-gray-800 ring-offset-4 dark:bg-slate-400 dark:ring-slate-400 dark:ring-offset-slate-700;
     }
 
@@ -43,7 +43,7 @@
     }
 
     .vertical.toggle-menu .vertical-menu:not(:hover) .app-name,
-    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .app-name {
+    .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .app-name {
         @apply lg:invisible lg:opacity-0;
     }
     .tw-menu-header {
@@ -53,12 +53,12 @@
         @apply hidden;
     }
     .vertical.toggle-menu .vertical-menu:not(:hover) .tw-menu-header .label,
-    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-menu-header .label,
+    .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .tw-menu-header .label,
     .vertical-menu .tw-menu-header .icon {
         @apply lg:hidden;
     }
     .vertical.toggle-menu .vertical-menu:not(:hover) .tw-menu-header .icon,
-    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-menu-header .icon {
+    .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .tw-menu-header .icon {
         @apply lg:block;
     }
     .tw-menu-content {
@@ -124,12 +124,12 @@
     .semi-dark .tw-dropdown-link {
         @apply hover:bg-gray-700 hover:text-primary !important;
     }
-    /* collapsible-vertical */
-    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .collapse-icon,
-    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-dropdown-menu,
-    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-arrow,
-    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .documents-link .btn-label,
-    .collapsible-vertical:not(.toggle-menu) .vertical-menu:not(:hover) .tw-nav-menu .tw-link-label {
+    /* collapsible */
+    .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .collapse-icon,
+    .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .tw-dropdown-menu,
+    .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .tw-arrow,
+    .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .documents-link .btn-label,
+    .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .tw-nav-menu .tw-link-label {
         @apply lg:hidden lg:opacity-0;
     }
     /* vertical menu */

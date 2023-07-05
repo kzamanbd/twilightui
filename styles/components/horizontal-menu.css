@@ -1,14 +1,20 @@
 .vertical .horizontal-menu,
+.collapsible .horizontal-logo,
 .vertical .horizontal-logo {
     @apply hidden;
 }
 
 .horizontal .horizontal-menu {
-    @apply hidden border-t border-[#ebedf2] bg-white px-6 py-1.5 font-semibold text-black rtl:space-x-reverse lg:flex lg:space-x-1.5 xl:space-x-8;
+    @apply hidden items-center border-t border-[#ebedf2] bg-white px-6 py-1.5 font-semibold text-black rtl:space-x-reverse lg:flex lg:space-x-1.5 xl:space-x-8;
 }
 
-.horizontal .horizontal-logo {
+.horizontal .horizontal-logo,
+.vertical.toggle-menu .horizontal-logo {
     @apply flex;
+}
+
+.vertical.toggle-menu .horizontal-logo {
+    @apply ml-4;
 }
 
 .horizontal .nav-item a div:first-child svg {
