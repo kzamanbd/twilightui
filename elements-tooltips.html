@@ -43,6 +43,9 @@
                             <span class="app-name" x-text="$store.app.name"></span>
                         </a>
                         <div class="collapse-icon" @click="$store.app.collapsibleMenu()"></div>
+                        <button type="button" class="lg:hidden" @click="$store.app.toggleVMenu()">
+                            <span class="material-icons-outlined"> close </span>
+                        </button>
                     </div>
                     <!-- Menu Content -->
                     <nav data-simplebar class="tw-menu-content no-scrollbar">
@@ -904,10 +907,7 @@
                     <div class="primary-header">
                         <!-- sidebar toggle button -->
                         <div class="flex items-center">
-                            <button
-                                type="button"
-                                aria-label="Toggle Menu"
-                                class="sidebar-toggle text-gray-500 focus:outline-none">
+                            <button type="button" @click="$store.app.toggleVMenu()" aria-label="Menu">
                                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M4 6H20M4 12H20M4 18H11"
@@ -942,34 +942,26 @@
                             <button
                                 type="button"
                                 @click="$store.app.toggleTheme()"
-                                class="header-item"
+                                class="header-icon"
                                 aria-label="Themes">
-                                <span x-show="$store.app.theme == 'dark'" class="material-icons-outlined">
-                                    dark_mode
-                                </span>
-                                <span x-show="$store.app.theme == 'light'" class="material-icons-outlined">
-                                    light_mode
-                                </span>
-                                <span x-show="$store.app.theme == 'system'" class="material-icons-outlined">
-                                    brightness_auto
-                                </span>
+                                <span class="material-icons-outlined" x-text="themeIcon"> brightness_auto </span>
                             </button>
 
-                            <button type="button" class="header-item" aria-label="Notification">
+                            <button type="button" class="header-icon" aria-label="Notification">
                                 <span class="material-icons-outlined"> notifications </span>
                             </button>
 
                             <button
                                 type="button"
                                 @click="$store.app.fullscreenToggle()"
-                                class="header-item"
+                                class="header-icon"
                                 aria-label="fullscreen">
                                 <span class="material-icons-outlined" x-text="isFullscreen"> fullscreen </span>
                             </button>
 
                             <button
                                 @click="showCustomizer = true"
-                                class="header-item"
+                                class="header-icon"
                                 type="button"
                                 aria-label="settings">
                                 <span class="material-icons-outlined animate-spin"> settings </span>
@@ -1430,7 +1422,12 @@
                             <h5 class="customizer-header">Menu Hidden</h5>
                             <div class="mt-3 flex items-center gap-3 text-primary">
                                 <label class="relative h-6 w-12">
-                                    <input type="checkbox" class="hidden-checkbox peer" id="hidden-switch" />
+                                    <input
+                                        x-model="$store.app.navbar"
+                                        type="checkbox"
+                                        class="hidden-checkbox peer"
+                                        id="hidden-switch"
+                                        @change="$store.app.toggleVMenu()" />
                                     <span for="hidden-switch" class="hidden-switch"></span>
                                 </label>
                             </div>

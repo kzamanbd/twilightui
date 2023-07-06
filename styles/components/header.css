@@ -13,10 +13,11 @@
     .navbar-static {
         @apply dark--text sticky top-0 z-10 dark:shadow-xl;
     }
-    .vertical .navbar-sticky.scrollable {
+    .vertical .navbar-sticky.scrollable,
+    .collapsible .navbar-sticky.scrollable {
         @apply mx-6 rounded-bl-lg rounded-br-lg shadow-md !important;
     }
-    .header-item {
+    .header-icon {
         @apply dark--text relative flex items-center p-1.5 text-xs font-medium;
         @apply rounded-lg border border-gray-200 bg-white hover:bg-gray-100 dark:bg-dark;
         @apply dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-white;

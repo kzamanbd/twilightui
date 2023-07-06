@@ -1,7 +1,6 @@
 const verticalMenu = {
     twilight: document.querySelector('.twilight'),
     verticalMenu: document.querySelector('.vertical-menu'),
-    sidebarToggle: document.querySelector('.sidebar-toggle'),
     content: document.querySelector('.tw-nav-menu'),
     menuItems: document.querySelectorAll('.tw-menu-link'),
 
@@ -34,17 +33,6 @@ const verticalMenu = {
                 }
             });
         }
-    },
-
-    initSidebarToggle() {
-        if (this.sidebarToggle) {
-            this.sidebarToggle.addEventListener('click', () => this.toggleSidebar());
-        }
-    },
-
-    toggleSidebar() {
-        document.querySelector('.menu-shadow').classList.toggle('hidden');
-        this.twilight.classList.toggle('toggle-menu');
     },
 
     initOverlay() {
@@ -90,7 +78,6 @@ const verticalMenu = {
 
     init() {
         this.initMenuItems();
-        this.initSidebarToggle();
         this.initOverlay();
         this.initScrollBar();
     },

@@ -94,6 +94,7 @@ window.DataTableExportTXT = exportTXT;
         navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
         footer: 'footer-static', // footer-sticky, footer-floating, footer-static
         semiDark: false,
+        sidebar: false
     };
 
     // theme config persist with alpinejs
@@ -112,7 +113,7 @@ window.DataTableExportTXT = exportTXT;
                     theme = 'dark';
                 }
             }
-            if(theme == 'dark'){
+            if (theme == 'dark') {
                 this.semiDark = false;
             }
 
@@ -198,7 +199,7 @@ window.DataTableExportTXT = exportTXT;
         },
 
         // sidebar
-        sidebar: false,
+        sidebar: Alpine.$persist($themeConfig.sidebar),
         toggleVMenu() {
             this.sidebar = !this.sidebar;
         },
@@ -241,6 +242,9 @@ window.DataTableExportTXT = exportTXT;
         get isFullscreen() {
             return this.$store.app.fullscreen ? 'fullscreen_exit' : 'fullscreen';
         },
+        get themeIcon(){
+            return this.$store.app.theme == 'system' ? 'brightness_auto' : `${this.$store.app.theme}_mode`
+        }
     }));
 
     // set current year in footer
@@ -426,9 +430,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelectorAll('.alert-dismissible')) {
         var alertDismiss = document.querySelectorAll('.alert-dismissible');
 
-        Array.from(alertDismiss).forEach(function (item) {
-            item.querySelector('.alert-dismiss').addEventListener('click', function () {
-                item.classList.add('hidden');
+        Array.from(alertDismiss).forEach(function (elem) {
+            elem.querySelector('.alert-dismiss').addEventListener('click', function () {
+                elem.classList.add('hidden');
             });
         });
     }
