@@ -12,9 +12,10 @@ import sidebar from './vertical';
 
 window.Alpine = Alpine;
 Alpine.plugin(collapse);
-Alpine.plugin(persist);
 Alpine.plugin(focus);
 Alpine.plugin(mask);
+Alpine.plugin(persist);
+
 sidebar.init();
 dropdown.init();
 
@@ -65,8 +66,6 @@ window.DataTableExportTXT = exportTXT;
 
 // app config
 (function () {
-    'use strict';
-
     // window scroll
     window.addEventListener('scroll', () => {
         const header = document.querySelector('.top-header');
