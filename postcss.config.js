@@ -3,8 +3,5 @@ module.exports = {
         'postcss-import': {},
         autoprefixer: {},
         tailwindcss: {},
-        cssnano: {
-            preset: 'default',
-        },
     },
 };
