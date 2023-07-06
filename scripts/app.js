@@ -91,8 +91,8 @@ window.DataTableExportTXT = exportTXT;
         menu: 'vertical', // vertical, collapsible, horizontal
         layout: 'full', // full, boxed-layout
         animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
-        navbar: 'navbar-sticky', // navbar-sticky, navbar-floating, navbar-static
-        footer: 'footer-static', // footer-sticky, footer-floating, footer-static
+        navbar: 'navbar-sticky', // navbar-static, navbar-fixed, navbar-hidden
+        footer: 'footer-static', // footer-static, footer-fixed, footer-hidden
         semiDark: false,
         sidebar: false
     };
@@ -159,7 +159,7 @@ window.DataTableExportTXT = exportTXT;
         animation: Alpine.$persist($themeConfig.animation),
         toggleAnimation(val) {
             if (!val) {
-                val = this.animation || $themeConfig.animation; // animate__fadeIn, animate__fadeInDown, animate__fadeInLeft, animate__fadeInRight
+                val = this.animation || $themeConfig.animation;
             }
             val = val?.trim();
 
@@ -170,7 +170,7 @@ window.DataTableExportTXT = exportTXT;
         navbar: Alpine.$persist($themeConfig.navbar),
         toggleNavbar(val) {
             if (!val) {
-                val = this.navbar || $themeConfig.navbar; // navbar-sticky, navbar-floating, navbar-static
+                val = this.navbar || $themeConfig.navbar;
             }
 
             this.navbar = val;
@@ -179,7 +179,7 @@ window.DataTableExportTXT = exportTXT;
         footer: Alpine.$persist($themeConfig.footer),
         toggleFooter(val) {
             if (!val) {
-                val = this.footer || $themeConfig.footer; // footer-sticky, footer-floating, footer-static
+                val = this.footer || $themeConfig.footer;
             }
 
             this.footer = val;

@@ -35,17 +35,6 @@ const verticalMenu = {
         }
     },
 
-    initOverlay() {
-        const overlay = document.createElement('div');
-        overlay.classList.add('menu-shadow', 'hidden');
-        if (this.twilight) this.twilight.appendChild(overlay);
-
-        overlay.addEventListener('click', () => {
-            this.twilight.classList.toggle('toggle-menu');
-            overlay.classList.toggle('hidden');
-        });
-    },
-
     initScrollBar() {
         window.addEventListener('load', () => {
             let pathName = window.location.pathname;
@@ -78,7 +67,6 @@ const verticalMenu = {
 
     init() {
         this.initMenuItems();
-        this.initOverlay();
         this.initScrollBar();
     },
 };

@@ -1,5 +1,11 @@
 @layer components {
     .footer {
-        @apply bg-white px-6 py-4 shadow dark:bg-dark md:flex md:items-center md:justify-between lg:h-12;
+        @apply px-6 py-5 shadow dark:bg-dark duration-300 md:flex md:items-center md:justify-between;
+    }
+    .footer-fixed {
+        @apply bg-white sticky bottom-0 mx-6 rounded-tl-lg rounded-tr-lg shadow-md;
+    }
+    .footer-hidden {
+        @apply hidden;
     }
 }

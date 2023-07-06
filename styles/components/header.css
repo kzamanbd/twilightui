@@ -9,13 +9,15 @@
     .primary-header {
         @apply flex items-center justify-between px-6 py-3;
     }
-    .navbar-sticky,
-    .navbar-static {
+    .navbar-fixed {
         @apply dark--text sticky top-0 z-10 dark:shadow-xl;
     }
-    .vertical .navbar-sticky.scrollable,
-    .collapsible .navbar-sticky.scrollable {
+    .vertical .navbar-fixed.scrollable,
+    .collapsible .navbar-fixed.scrollable {
         @apply mx-6 rounded-bl-lg rounded-br-lg shadow-md !important;
+    }
+    .navbar-hidden {
+        @apply hidden;
     }
     .header-icon {
         @apply dark--text relative flex items-center p-1.5 text-xs font-medium;

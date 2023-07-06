@@ -22,7 +22,10 @@
         @apply -left-64 lg:left-0;
     }
     .menu-shadow {
-        @apply fixed inset-0 z-20 cursor-pointer bg-black opacity-50 transition-opacity lg:hidden;
+        @apply fixed inset-0 z-20 hidden cursor-pointer bg-black opacity-50 transition-opacity;
+    }
+    .toggle-menu .menu-shadow {
+        @apply flex lg:hidden;
     }
     .collapse-icon {
         @apply hidden h-4 w-4 cursor-pointer rounded-full border-[1.5px] border-primary transition-all duration-150 dark:border-primary-700 lg:flex;
@@ -39,12 +42,12 @@
         @apply h-10 w-10;
     }
     .app-name {
-        @apply visible mx-2 text-xl font-semibold opacity-100 transition-opacity duration-500 ease-in-out dark:text-gray-200;
+        @apply mx-2 flex translate-x-0 scale-100 text-xl font-semibold transition-transform duration-500 ease-in-out dark:text-gray-200;
     }
 
     .vertical.toggle-menu .vertical-menu:not(:hover) .app-name,
     .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .app-name {
-        @apply lg:invisible lg:opacity-0;
+        @apply scale-0 lg:-translate-x-full lg:hidden;
     }
     .tw-menu-header {
         @apply dark--text relative w-full truncate p-2 text-xs font-semibold uppercase text-gray-400 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
