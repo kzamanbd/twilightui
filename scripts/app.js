@@ -1,6 +1,8 @@
 // simplebar
 import 'simplebar'; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
 // alpine.js config
+
+import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
 import mask from '@alpinejs/mask';
 import persist from '@alpinejs/persist';
@@ -9,6 +11,7 @@ import dropdown from './dropdown';
 import sidebar from './vertical';
 
 window.Alpine = Alpine;
+Alpine.plugin(collapse);
 Alpine.plugin(persist);
 Alpine.plugin(focus);
 Alpine.plugin(mask);
@@ -94,7 +97,7 @@ window.DataTableExportTXT = exportTXT;
         navbar: 'navbar-sticky', // navbar-static, navbar-fixed, navbar-hidden
         footer: 'footer-static', // footer-static, footer-fixed, footer-hidden
         semiDark: false,
-        sidebar: false
+        sidebar: false,
     };
 
     // theme config persist with alpinejs
@@ -242,9 +245,9 @@ window.DataTableExportTXT = exportTXT;
         get isFullscreen() {
             return this.$store.app.fullscreen ? 'fullscreen_exit' : 'fullscreen';
         },
-        get themeIcon(){
-            return this.$store.app.theme == 'system' ? 'brightness_auto' : `${this.$store.app.theme}_mode`
-        }
+        get themeIcon() {
+            return this.$store.app.theme == 'system' ? 'brightness_auto' : `${this.$store.app.theme}_mode`;
+        },
     }));
 
     // set current year in footer
