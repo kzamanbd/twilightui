@@ -47,7 +47,7 @@
 
     .vertical.toggle-menu .vertical-menu:not(:hover) .app-name,
     .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .app-name {
-        @apply lg:scale-0 lg:-translate-x-full lg:hidden;
+        @apply lg:hidden lg:-translate-x-full lg:scale-0;
     }
     .tw-menu-header {
         @apply dark--text relative w-full truncate p-2 text-xs font-semibold uppercase text-gray-400 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;

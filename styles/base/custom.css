@@ -8,6 +8,10 @@
     body:has(> .dark) {
         color-scheme: dark;
     }
+    body.overflow-hidden,
+    body.overflow-hidden .top-header {
+        @apply pr-[17px];
+    }
 
     /* typography */
     h1 {
