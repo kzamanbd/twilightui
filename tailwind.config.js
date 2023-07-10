@@ -6,6 +6,7 @@ const colors = require('tailwindcss/colors');
 const forms = require('@tailwindcss/forms');
 const typography = require('@tailwindcss/typography');
 const aspectRatio = require('@tailwindcss/aspect-ratio');
+const { addDynamicIconSelectors } = require('@iconify/tailwind');
 
 const primary = colors.green;
 
@@ -75,6 +76,7 @@ module.exports = {
         forms,
         typography,
         aspectRatio,
+        addDynamicIconSelectors(),
         plugin(function ({ addVariant, e }) {
             // mini sidebar variant
             addVariant('vertical-menu', ({ modifySelectors, separator }) => {
