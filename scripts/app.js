@@ -242,7 +242,11 @@ window.DataTableExportTXT = exportTXT;
         get appConfig() {
             const app = this.$store.app;
             const sidebar = app.sidebar && 'toggle-menu';
-            return [sidebar, app.theme, app.menu, app.layout];
+            let theme = app.theme;
+            if (theme == 'system') {
+                theme = !!window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            return [sidebar, theme, app.menu, app.layout];
         },
         get isFullscreen() {
             return this.$store.app.fullscreen ? 'fullscreen_exit' : 'fullscreen';
