@@ -52,17 +52,17 @@
     .tw-menu-header {
         @apply dark--text relative w-full truncate p-2 text-xs font-semibold uppercase text-gray-400 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
     }
-    .vertical-menu .tw-menu-header .icon {
-        @apply hidden;
+    .vertical-menu .tw-menu-header .minus {
+        @apply hidden h-5 w-5;
     }
     .vertical.toggle-menu .vertical-menu:not(:hover) .tw-menu-header .label,
     .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .tw-menu-header .label,
-    .vertical-menu .tw-menu-header .icon {
+    .vertical-menu .tw-menu-header .minus {
         @apply lg:hidden;
     }
-    .vertical.toggle-menu .vertical-menu:not(:hover) .tw-menu-header .icon,
-    .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .tw-menu-header .icon {
-        @apply lg:block;
+    .vertical.toggle-menu .vertical-menu:not(:hover) .tw-menu-header .minus,
+    .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .tw-menu-header .minus {
+        @apply lg:inline-block;
     }
     .tw-menu-content {
         @apply h-[calc(100vh_-_80px)] overflow-y-auto overflow-x-hidden;
