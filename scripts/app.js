@@ -212,7 +212,7 @@ window.DataTableExportTXT = exportTXT;
 
         // window full screen
         fullscreen: false,
-        fullscreenToggle() {
+        toggleFullscreen() {
             if (this.fullscreen) {
                 document.exitFullscreen();
             } else {

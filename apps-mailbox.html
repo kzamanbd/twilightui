@@ -944,9 +944,15 @@
                                 class="header-icon"
                                 @click="$store.app.toggleTheme()"
                                 aria-label="Themes">
-                                <span x-show="$store.app.theme === 'light'" class="icon-[mdi--brightness-6]"></span>
-                                <span x-show="$store.app.theme === 'dark'" class="icon-[mdi--brightness-2]"></span>
-                                <span x-show="$store.app.theme === 'system'" class="icon-[mdi--brightness-auto]"></span>
+                                <span
+                                    :class="
+                                    {
+                                        'icon-[mdi--brightness-6]': $store.app.theme === 'light',
+                                        'icon-[mdi--brightness-2]': $store.app.theme === 'dark',
+                                        'icon-[mdi--brightness-auto]': $store.app.theme === 'system'
+                                    }
+                                ">
+                                </span>
                             </button>
 
                             <button type="button" class="header-icon" aria-label="Notification">
@@ -956,17 +962,18 @@
                             <button
                                 type="button"
                                 class="header-icon"
-                                @click="$store.app.fullscreenToggle()"
+                                @click="$store.app.toggleFullscreen()"
                                 aria-label="fullscreen">
-                                <span x-show="isFullscreen == 'fullscreen'" class="icon-[mdi--fullscreen]"></span>
-                                <span x-show="isFullscreen !== 'fullscreen'" class="icon-[mdi--fullscreen-exit]"></span>
+                                <span
+                                    :class="
+                                    {
+                                        'icon-[mdi--fullscreen]': isFullscreen == 'fullscreen',
+                                        'icon-[mdi--fullscreen-exit]': isFullscreen !== 'fullscreen'
+                                    }
+                                "></span>
                             </button>
 
-                            <button
-                                type="button"
-                                class="header-icon"
-                                @click="toggleCustomizer"
-                                aria-label="settings">
+                            <button type="button" class="header-icon" @click="toggleCustomizer" aria-label="settings">
                                 <span class="icon-[mdi--cog] animate-spin"></span>
                             </button>
 
@@ -1099,7 +1106,7 @@
                                                 :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': !isEdit && selectedTab === 'inbox' }"
                                                 @click="tabChanged('inbox')">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined">inbox</span>
+                                                    <span class="icon-[mdi--inbox]"></span>
                                                     <div class="ml-3">Inbox</div>
                                                 </div>
                                                 <div
@@ -1115,7 +1122,7 @@
                                                 :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': !isEdit && selectedTab === 'star' }"
                                                 @click="tabChanged('star')">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined"> star_border </span>
+                                                    <span class="icon-[mdi--star]"></span>
                                                     <div class="ml-3">Marked</div>
                                                 </div>
                                             </button>
@@ -1126,7 +1133,7 @@
                                                 :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': !isEdit && selectedTab === 'sent_mail' }"
                                                 @click="tabChanged('sent_mail')">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined"> send </span>
+                                                    <span class="icon-[mdi--send]"> </span>
                                                     <div class="ml-3">Sent</div>
                                                 </div>
                                             </button>
@@ -1137,7 +1144,7 @@
                                                 :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': !isEdit && selectedTab === 'spam' }"
                                                 @click="tabChanged('spam')">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined"> error_outline </span>
+                                                    <span class="icon-[mdi--information-outline]"> </span>
                                                     <div class="ml-3">Spam</div>
                                                 </div>
                                             </button>
@@ -1148,7 +1155,7 @@
                                                 :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': !isEdit && selectedTab === 'draft' }"
                                                 @click="tabChanged('draft')">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined"> drafts </span>
+                                                    <span class="icon-[mdi--email-open-outline]"> </span>
                                                     <div class="ml-3">Drafts</div>
                                                 </div>
                                                 <div
@@ -1164,7 +1171,7 @@
                                                 :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': !isEdit && selectedTab === 'trash' }"
                                                 @click="tabChanged('trash')">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined"> delete </span>
+                                                    <span class="icon-[mdi--delete-outline]"> </span>
                                                     <div class="ml-3">Trash</div>
                                                 </div>
                                             </button>
@@ -1175,7 +1182,7 @@
                                                     class="hover:bg-white-dark/10 flex h-10 w-full items-center rounded-md p-2 font-medium hover:text-primary dark:hover:bg-[#181F32] dark:hover:text-primary"
                                                     @click="open = !open">
                                                     <div :class="{'rotate-180' : open}">
-                                                        <span class="material-icons-outlined"> expand_more </span>
+                                                        <span class="icon-[mdi--chevron-down]"> </span>
                                                     </div>
                                                     <div class="ml-3" x-text="open ? 'Less' : 'More'">More</div>
                                                 </button>
@@ -1186,7 +1193,7 @@
                                                             class="hover:bg-white-dark/10 flex h-10 w-full items-center rounded-md p-2 font-medium hover:text-primary dark:hover:bg-[#181F32] dark:hover:text-primary"
                                                             :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': !isEdit && selectedTab === 'archive' }"
                                                             @click="tabChanged('archive')">
-                                                            <span class="material-icons-outlined"> inventory_2 </span>
+                                                            <span class="icon-[mdi--archive-outline]"></span>
                                                             <div class="ml-3">Archive</div>
                                                         </button>
                                                     </li>
@@ -1196,8 +1203,7 @@
                                                             class="hover:bg-white-dark/10 flex h-10 w-full items-center rounded-md p-2 font-medium hover:text-primary dark:hover:bg-[#181F32] dark:hover:text-primary"
                                                             :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': !isEdit && selectedTab === 'important' }"
                                                             @click="tabChanged('important')">
-                                                            <span class="material-icons-outlined rotate-90">
-                                                                label_important
+                                                            <span class="icon-[mdi--label-variant-outline] rotate-90">
                                                             </span>
                                                             <div class="ml-3">Important</div>
                                                         </button>
@@ -1211,7 +1217,7 @@
                                                 type="button"
                                                 class="hover:bg-white-dark/10 flex h-10 w-full items-center justify-between rounded-md p-2 font-medium hover:text-primary dark:hover:bg-[#181F32] dark:hover:text-primary">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined"> videocam </span>
+                                                    <span class="icon-[mdi--video-outline]"> </span>
                                                     <div class="ml-3">New meeting</div>
                                                 </div>
                                             </button>
@@ -1220,7 +1226,7 @@
                                                 type="button"
                                                 class="hover:bg-white-dark/10 flex h-10 w-full items-center justify-between rounded-md p-2 font-medium hover:text-primary dark:hover:bg-[#181F32] dark:hover:text-primary">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined"> textsms </span>
+                                                    <span class="icon-[mdi--video-account]"> </span>
                                                     <div class="ml-3">Join a meeting</div>
                                                 </div>
                                             </button>
@@ -1232,8 +1238,8 @@
                                                 :class="{ 'pl-3 bg-gray-100 dark:bg-[#181F32]': selectedTab === 'personal' }"
                                                 @click="tabChanged('personal')">
                                                 <span
-                                                    class="material-icons-outlined text-lg text-success"
-                                                    x-text="selectedTab == 'personal' ? 'radio_button_checked': 'radio_button_unchecked'">
+                                                    :class="selectedTab == 'personal' ? 'icon-[mdi--radiobox-marked]' : 'icon-[mdi--radiobox-blank]'"
+                                                    class="text-success">
                                                 </span>
                                                 <div class="ml-3">Personal</div>
                                             </button>
@@ -1244,8 +1250,8 @@
                                                 :class="{ 'pl-3 bg-gray-100 dark:bg-[#181F32]': selectedTab === 'low' }"
                                                 @click="tabChanged('work')">
                                                 <span
-                                                    class="material-icons-outlined text-lg text-warning"
-                                                    x-text="selectedTab == 'work' ? 'radio_button_checked': 'radio_button_unchecked'">
+                                                    :class="selectedTab == 'work' ? 'icon-[mdi--radiobox-marked]' : 'icon-[mdi--radiobox-blank]'"
+                                                    class="text-warning">
                                                 </span>
                                                 <div class="ml-3">Work</div>
                                             </button>
@@ -1256,8 +1262,8 @@
                                                 :class="{ 'pl-3 bg-gray-100 dark:bg-[#181F32]': selectedTab === 'social' }"
                                                 @click="tabChanged('social')">
                                                 <span
-                                                    class="material-icons-outlined text-lg text-primary"
-                                                    x-text="selectedTab == 'social' ? 'radio_button_checked': 'radio_button_unchecked'">
+                                                    :class="selectedTab == 'social' ? 'icon-[mdi--radiobox-marked]' : 'icon-[mdi--radiobox-blank]'"
+                                                    class="text-primary">
                                                 </span>
                                                 <div class="ml-3">Social</div>
                                             </button>
@@ -1268,8 +1274,8 @@
                                                 :class="{ 'pl-3 bg-gray-100 dark:bg-[#181F32]': selectedTab === 'private' }"
                                                 @click="tabChanged('private')">
                                                 <span
-                                                    class="material-icons-outlined text-lg text-danger"
-                                                    x-text="selectedTab == 'private' ? 'radio_button_checked': 'radio_button_unchecked'">
+                                                    :class="selectedTab == 'private' ? 'icon-[mdi--radiobox-marked]' : 'icon-[mdi--radiobox-blank]'"
+                                                    class="text-danger">
                                                 </span>
                                                 <div class="ml-3">Private</div>
                                             </button>
@@ -1280,8 +1286,8 @@
                                                 :class="{ 'pl-3 bg-gray-100 dark:bg-[#181F32]': selectedTab === 'update' }"
                                                 @click="tabChanged('update')">
                                                 <span
-                                                    class="material-icons-outlined text-lg text-info"
-                                                    x-text="selectedTab == 'update' ? 'radio_button_checked': 'radio_button_unchecked'">
+                                                    :class="selectedTab == 'update' ? 'icon-[mdi--radiobox-marked]' : 'icon-[mdi--radiobox-blank]'"
+                                                    class="text-info">
                                                 </span>
                                                 <div class="ml-3">Update</div>
                                             </button>

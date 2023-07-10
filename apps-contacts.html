@@ -944,9 +944,15 @@
                                 class="header-icon"
                                 @click="$store.app.toggleTheme()"
                                 aria-label="Themes">
-                                <span x-show="$store.app.theme === 'light'" class="icon-[mdi--brightness-6]"></span>
-                                <span x-show="$store.app.theme === 'dark'" class="icon-[mdi--brightness-2]"></span>
-                                <span x-show="$store.app.theme === 'system'" class="icon-[mdi--brightness-auto]"></span>
+                                <span
+                                    :class="
+                                    {
+                                        'icon-[mdi--brightness-6]': $store.app.theme === 'light',
+                                        'icon-[mdi--brightness-2]': $store.app.theme === 'dark',
+                                        'icon-[mdi--brightness-auto]': $store.app.theme === 'system'
+                                    }
+                                ">
+                                </span>
                             </button>
 
                             <button type="button" class="header-icon" aria-label="Notification">
@@ -956,17 +962,18 @@
                             <button
                                 type="button"
                                 class="header-icon"
-                                @click="$store.app.fullscreenToggle()"
+                                @click="$store.app.toggleFullscreen()"
                                 aria-label="fullscreen">
-                                <span x-show="isFullscreen == 'fullscreen'" class="icon-[mdi--fullscreen]"></span>
-                                <span x-show="isFullscreen !== 'fullscreen'" class="icon-[mdi--fullscreen-exit]"></span>
+                                <span
+                                    :class="
+                                    {
+                                        'icon-[mdi--fullscreen]': isFullscreen == 'fullscreen',
+                                        'icon-[mdi--fullscreen-exit]': isFullscreen !== 'fullscreen'
+                                    }
+                                "></span>
                             </button>
 
-                            <button
-                                type="button"
-                                class="header-icon"
-                                @click="toggleCustomizer"
-                                aria-label="settings">
+                            <button type="button" class="header-icon" @click="toggleCustomizer" aria-label="settings">
                                 <span class="icon-[mdi--cog] animate-spin"></span>
                             </button>
 
@@ -1075,7 +1082,7 @@
                         </div>
                         <div class="flex items-center space-x-3">
                             <button type="button" class="btn btn-primary flex" @click="editUser">
-                                <span class="material-icons-outlined text-lg/none"> add </span>
+                                <span class="icon-[mdi--plus-outline]"></span>
                                 Add Contact
                             </button>
 
@@ -1084,7 +1091,7 @@
                                 class="btn btn-outline-primary bg-primary p-2 text-white"
                                 :class="{ 'bg-primary text-white': displayType === 'list' }"
                                 @click="setDisplayType('list')">
-                                <span class="material-icons-outlined"> format_list_bulleted </span>
+                                <span class="icon-[mdi--list-box-outline]"></span>
                             </button>
 
                             <button
@@ -1092,7 +1099,7 @@
                                 class="btn btn-outline-primary p-2"
                                 :class="{ 'bg-primary text-white': displayType === 'grid' }"
                                 @click="setDisplayType('grid')">
-                                <span class="material-icons-outlined"> grid_on </span>
+                                <span class="icon-[mdi--grid-large]"></span>
                             </button>
 
                             <div class="relative">
@@ -1103,7 +1110,7 @@
                                     x-model="searchUser"
                                     @keyup="searchContacts" />
                                 <div class="absolute right-[11px] top-1/2 -translate-y-1/2 peer-focus:text-primary">
-                                    <span class="material-icons-outlined"> search </span>
+                                    <span class="icon-[mdi--magnify]"></span>
                                 </div>
                             </div>
                         </div>
