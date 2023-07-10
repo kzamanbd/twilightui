@@ -1312,7 +1312,7 @@
                                                     type="button"
                                                     class="flex items-center hover:text-primary"
                                                     @click="refreshMails()">
-                                                    <span class="material-icons-outlined"> refresh </span>
+                                                    <span class="icon-[mdi--refresh]"> </span>
                                                 </button>
                                             </div>
                                             <template x-if="selectedTab != 'trash'">
@@ -1323,9 +1323,7 @@
                                                                 type="button"
                                                                 class="flex items-center hover:text-primary"
                                                                 @click="setArchive">
-                                                                <span class="material-icons-outlined">
-                                                                    inventory_2
-                                                                </span>
+                                                                <span class="icon-[mdi--archive]"></span>
                                                             </button>
                                                         </div>
                                                     </li>
@@ -1338,9 +1336,7 @@
                                                             <button
                                                                 type="button"
                                                                 class="flex items-center hover:text-primary">
-                                                                <span class="material-icons-outlined">
-                                                                    error_outline
-                                                                </span>
+                                                                <span class="icon-[mdi--information-outline]"> </span>
                                                             </button>
                                                         </div>
                                                     </li>
@@ -1353,9 +1349,7 @@
                                                             <button
                                                                 type="button"
                                                                 class="dropdown-toggle flex items-center hover:text-primary">
-                                                                <span class="material-icons-outlined">
-                                                                    table_view
-                                                                </span>
+                                                                <span class="icon-[mdi--table]"></span>
                                                             </button>
                                                             <ul class="dropdown-menu right-0">
                                                                 <li>
@@ -1406,7 +1400,7 @@
                                                             <button
                                                                 type="button"
                                                                 class="dropdown-toggle flex items-center hover:text-primary">
-                                                                <span class="material-icons-outlined"> more_vert </span>
+                                                                <span class="icon-[mdi--dots-vertical]"> </span>
                                                             </button>
                                                             <ul class="dropdown-menu right-0 whitespace-nowrap">
                                                                 <li>
@@ -1414,9 +1408,7 @@
                                                                         type="button"
                                                                         class="dropdown-link w-full"
                                                                         @click="setAction('read')">
-                                                                        <span class="material-icons-outlined">
-                                                                            library_books
-                                                                        </span>
+                                                                        <span class="icon-[mdi--email-outline]"></span>
                                                                         Mark as Read
                                                                     </button>
                                                                 </li>
@@ -1425,9 +1417,8 @@
                                                                         type="button"
                                                                         class="dropdown-link w-full"
                                                                         @click="setAction('unread')">
-                                                                        <span class="material-icons-outlined">
-                                                                            book
-                                                                        </span>
+                                                                        <span
+                                                                            class="icon-[mdi--email-mark-as-unread]"></span>
                                                                         Mark as Unread
                                                                     </button>
                                                                 </li>
@@ -1436,9 +1427,7 @@
                                                                         type="button"
                                                                         class="dropdown-link w-full"
                                                                         @click="setAction('trash')">
-                                                                        <span class="material-icons-outlined">
-                                                                            delete
-                                                                        </span>
+                                                                        <span class="icon-[mdi--delete]"></span>
                                                                         Trash
                                                                     </button>
                                                                 </li>
@@ -1459,7 +1448,7 @@
                                                                 type="button"
                                                                 class="block hover:text-primary"
                                                                 @click="setAction('delete')">
-                                                                <span class="material-icons-outlined"> delete </span>
+                                                                <span class="icon-[mdi--delete]"> delete </span>
                                                             </button>
                                                         </div>
                                                     </li>
@@ -1470,7 +1459,7 @@
                                                             role="tooltip"
                                                             @click="setAction('restore')">
                                                             <button type="button" class="block hover:text-primary">
-                                                                <span class="material-icons-outlined"> restore </span>
+                                                                <span class="icon-[mdi--restore]"> </span>
                                                             </button>
                                                         </div>
                                                     </li>
@@ -1483,7 +1472,7 @@
                                                     type="button"
                                                     class="mr-3 block hover:text-primary xl:hidden"
                                                     @click="isShowMailMenu = !isShowMailMenu">
-                                                    <span class="material-icons-outlined"> menu </span>
+                                                    <span class="icon-[mdi--menu]"> menu </span>
                                                 </button>
                                                 <div class="group relative">
                                                     <input
@@ -1494,7 +1483,7 @@
                                                         @keyup="searchMails" />
                                                     <div
                                                         class="absolute right-[11px] top-1/2 flex -translate-y-1/2 peer-focus:text-primary">
-                                                        <span class="material-icons-outlined"> search </span>
+                                                        <span class="icon-[mdi--search]"> search </span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1505,12 +1494,12 @@
                                                     data-placement="top"
                                                     role="tooltip">
                                                     <button type="button" class="hover:text-primary">
-                                                        <span class="material-icons-outlined"> settings </span>
+                                                        <span class="icon-[mdi--cog]"> settings </span>
                                                     </button>
                                                 </div>
                                                 <div x-tooltip="Help" data-placement="top" role="tooltip">
                                                     <button type="button" class="hover:text-primary">
-                                                        <span class="material-icons-outlined"> info </span>
+                                                        <span class="icon-[mdi--information-outline]"> </span>
                                                     </button>
                                                 </div>
                                             </div>
@@ -1547,9 +1536,8 @@
                                                                             :class="{ 'text-warning': mail.isStar }"
                                                                             @click.stop="setStar(mail.id)"
                                                                             :disabled="selectedTab === 'trash'">
-                                                                            <span class="material-icons-outlined">
-                                                                                grade
-                                                                            </span>
+                                                                            <span
+                                                                                class="icon-[mdi--star-outline]"></span>
                                                                         </button>
                                                                     </div>
                                                                     <div
@@ -1564,9 +1552,8 @@
                                                                             :class="{ 'text-primary': mail.isImportant }"
                                                                             @click.stop="setImportant(mail.id)"
                                                                             :disabled="selectedTab === 'trash'">
-                                                                            <span class="material-icons-outlined">
-                                                                                label_important
-                                                                            </span>
+                                                                            <span
+                                                                                class="icon-[mdi--label-variant]"></span>
                                                                         </button>
                                                                     </div>
                                                                     <div
@@ -1597,9 +1584,7 @@
                                                                         }"></div>
                                                                     <template x-if="mail.attachments">
                                                                         <div class="ml-4">
-                                                                            <span class="material-icons-outlined">
-                                                                                attachment
-                                                                            </span>
+                                                                            <span class="icon-[mdi--attachment]"></span>
                                                                         </div>
                                                                     </template>
                                                                 </div>
@@ -1624,14 +1609,14 @@
                                                             class="dark:bg-white-dark/20 enabled:dark:hover:bg-white-dark/30 mr-3 flex rounded-md bg-[#f4f4f4] p-1 enabled:hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-60"
                                                             @click="pager.currentPage--,searchMails(false)"
                                                             disabled="disabled">
-                                                            <span class="material-icons-outlined"> chevron_left </span>
+                                                            <span class="icon-[mdi--chevron-left]"> </span>
                                                         </button>
                                                         <button
                                                             type="button"
                                                             :disabled="pager.currentPage == pager.totalPages"
                                                             class="dark:bg-white-dark/20 enabled:dark:hover:bg-white-dark/30 flex rounded-md bg-[#f4f4f4] p-1 enabled:hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-60"
                                                             @click="pager.currentPage++,searchMails(false)">
-                                                            <span class="material-icons-outlined"> chevron_right </span>
+                                                            <span class="icon-[mdi--chevron-right]"> </span>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -1655,7 +1640,7 @@
                                                     type="button"
                                                     class="mr-2 hover:text-primary"
                                                     @click="selectedMail = null">
-                                                    <span class="material-icons-outlined flex"> arrow_back </span>
+                                                    <span class="icon-[mdi--arrow-back] flex"> arrow_back </span>
                                                 </button>
                                                 <h4
                                                     class="mr-2 text-base font-medium md:text-lg"
@@ -1663,7 +1648,7 @@
                                                 <div class="badge bg-info hover:top-0" x-text="selectedMail.type"></div>
                                             </div>
                                             <button x-tooltip="Print" data-placement="top" role="tooltip" type="button">
-                                                <span class="material-icons-outlined"> print </span>
+                                                <span class="icon-[mdi--printer-outline]"> print </span>
                                             </button>
                                         </div>
                                         <div class="h-px border-b border-[#e0e6ed] dark:border-[#1b2e4b]"></div>
@@ -1727,13 +1712,16 @@
                                                         <div
                                                             class="mr-1"
                                                             x-text="selectedMail.type === 'sent_mail' ? selectedMail.email : 'to me'"></div>
-                                                        <div class="dropdown">
-                                                            <button type="button" class="dropdown-toggle mt-1.5">
-                                                                <span class="material-icons-outlined">
-                                                                    expand_more
-                                                                </span>
+                                                        <div class="dropdown" x-data="{open: false}">
+                                                            <button
+                                                                type="button"
+                                                                class="dropdown-toggle mt-1.5"
+                                                                @click="open = !open">
+                                                                <span class="icon-[mdi--chevron-down]"></span>
                                                             </button>
-                                                            <ul class="dropdown-menu left-0 sm:w-56">
+                                                            <ul
+                                                                class="dropdown-menu left-0 sm:w-56"
+                                                                :class="{show: open}">
                                                                 <li>
                                                                     <div class="flex items-center px-4 py-2">
                                                                         <div class="text-white-dark mr-2 w-1/4">
@@ -1760,7 +1748,7 @@
                                                                             Date:
                                                                         </div>
                                                                         <div
-                                                                            class="flex-1"
+                                                                            class="w-52 flex-1"
                                                                             x-text="selectedMail.date + ', ' + selectedMail.time"></div>
                                                                     </div>
                                                                 </li>
@@ -1790,7 +1778,7 @@
                                                             :class="{ 'text-warning': selectedMail.isStar }"
                                                             @click="setStar(selectedMail.id)"
                                                             :disabled="selectedTab === 'trash'">
-                                                            <span class="material-icons-outlined"> star </span>
+                                                            <span class="icon-[mdi--star-outline]"> </span>
                                                         </button>
 
                                                         <button
@@ -1803,9 +1791,7 @@
                                                             :class="{ 'text-primary': selectedMail.isImportant }"
                                                             @click="setImportant(selectedMail.id)"
                                                             :disabled="selectedTab === 'trash'">
-                                                            <span class="material-icons-outlined">
-                                                                label_important
-                                                            </span>
+                                                            <span class="icon-[mdi--label-variant]"></span>
                                                         </button>
 
                                                         <button
@@ -1815,7 +1801,7 @@
                                                             type="button"
                                                             class="flex hover:text-info"
                                                             @click="openMail('reply', selectedMail)">
-                                                            <span class="material-icons-outlined"> reply </span>
+                                                            <span class="icon-[mdi--reply]"> </span>
                                                         </button>
 
                                                         <button
@@ -1825,7 +1811,7 @@
                                                             type="button"
                                                             class="flex hover:text-info"
                                                             @click="openMail('forward', selectedMail)">
-                                                            <span class="material-icons-outlined"> redo </span>
+                                                            <span class="icon-[mdi--redo]"> </span>
                                                         </button>
                                                     </div>
                                                 </div>
