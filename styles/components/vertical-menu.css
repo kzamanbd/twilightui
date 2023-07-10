@@ -53,7 +53,7 @@
         @apply dark--text relative w-full truncate p-2 text-xs font-semibold uppercase text-gray-400 after:absolute after:left-0 after:top-3 after:w-full after:bg-gray-300;
     }
     .vertical-menu .tw-menu-header .minus {
-        @apply hidden h-5 w-5;
+        @apply hidden;
     }
     .vertical.toggle-menu .vertical-menu:not(:hover) .tw-menu-header .label,
     .collapsible:not(.toggle-menu) .vertical-menu:not(:hover) .tw-menu-header .label,
@@ -75,8 +75,7 @@
         @apply text-xl leading-none;
     }
     .vertical-menu .tw-menu-link {
-        @apply flex items-center rounded-md p-2.5 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400;
-        @apply hover:dark:bg-gray-700 dark:hover:text-gray-100;
+        @apply flex w-full items-center rounded-md p-2.5 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
     .vertical-menu .tw-menu-link.active {
         @apply bg-primary-100/75 text-primary hover:bg-primary-100 dark:bg-gray-700 dark:hover:text-primary;

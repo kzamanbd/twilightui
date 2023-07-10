@@ -64,7 +64,7 @@
         @apply text-xl/none;
     }
 
-    [class^='icon-[mdi-'] {
+    [class*='icon-[mdi-'] {
         @apply h-5 w-5 !important;
     }
 }
