@@ -236,6 +236,9 @@ window.DataTableExportTXT = exportTXT;
                 }
             });
         },
+        toggleCustomizer() {
+            this.showCustomizer = !this.showCustomizer;
+        },
         get appConfig() {
             const app = this.$store.app;
             const sidebar = app.sidebar && 'toggle-menu';

@@ -44,7 +44,7 @@
                         </a>
                         <div class="collapse-icon" @click="$store.app.collapsibleMenu()"></div>
                         <button type="button" class="lg:hidden" @click="$store.app.toggleVMenu()">
-                            <span class="material-icons-outlined"> close </span>
+                            <span class="icon-[mdi--close]"></span>
                         </button>
                     </div>
                     <!-- Menu Content -->
@@ -52,11 +52,11 @@
                         <ul class="tw-nav-menu">
                             <!-- dashboard start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined"> home </span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--square-rounded-badge-outline]"></span>
                                     <span class="tw-link-label">Dashboard</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -101,17 +101,17 @@
 
                             <!-- page header -->
                             <li class="tw-menu-header">
-                                <span class="material-icons icon"> remove </span>
+                                <span class="minus icon-[mdi--minus]"></span>
                                 <span class="label">USER INTERFACE</span>
                             </li>
 
                             <!-- components start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">layers</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--layers-outline]"></span>
                                     <span class="tw-link-label">Components</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -173,11 +173,11 @@
 
                             <!-- ui-elements start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">hexagon</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--hexagon-outline]"></span>
                                     <span class="tw-link-label">UI Elements</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -250,11 +250,11 @@
                             </li>
 
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">analytics</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--poll]"></span>
                                     <span class="tw-link-label">Charts</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -280,14 +280,14 @@
 
                             <li class="tw-menu-item">
                                 <a href="/widgets.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">widgets</span>
+                                    <span class="icon-[mdi--widgets-outline]"></span>
                                     <span class="tw-link-label">Widgets</span>
                                 </a>
                             </li>
 
                             <li class="tw-menu-item">
                                 <a href="/dragndrop.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">zoom_out_map</span>
+                                    <span class="icon-[mdi--drag-variant]"></span>
                                     <span class="tw-link-label">Drag & Drop</span>
                                 </a>
                             </li>
@@ -295,25 +295,25 @@
 
                             <!-- page header -->
                             <li class="tw-menu-header">
-                                <span class="material-icons icon"> remove </span>
+                                <span class="minus icon-[mdi--minus]"></span>
                                 <span class="label">TABLES AND FORMS</span>
                             </li>
                             <!-- page header end -->
 
                             <li class="tw-menu-item">
                                 <a href="/table-layout.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">table_chart</span>
+                                    <span class="icon-[mdi--table]"></span>
                                     <span class="tw-link-label">Tables</span>
                                 </a>
                             </li>
 
                             <!-- data table -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">insert_chart</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--table-large-plus]"></span>
                                     <span class="tw-link-label">Data Tables</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -382,11 +382,11 @@
 
                             <!-- form elements start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">hexagon</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--form-textbox-lock]"></span>
                                     <span class="tw-link-label">Form Elements</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -467,64 +467,64 @@
 
                             <!-- page header -->
                             <li class="tw-menu-header">
-                                <span class="material-icons icon"> remove </span>
+                                <span class="minus icon-[mdi--minus]"></span>
                                 <span class="label">APPS</span>
                             </li>
 
                             <li class="tw-menu-item">
                                 <a href="/apps-calendars.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">event</span>
+                                    <span class="icon-[mdi--calendar-blank]"></span>
                                     <span class="tw-link-label">Calendars</span>
                                 </a>
                             </li>
 
                             <li class="tw-menu-item">
                                 <a href="/apps-chats.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">message</span>
+                                    <span class="icon-[mdi--message-text-outline]"></span>
                                     <span class="tw-link-label">Chats</span>
                                 </a>
                             </li>
 
                             <li class="tw-menu-item">
                                 <a href="/apps-mailbox.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">email</span>
+                                    <span class="icon-[mdi--email-outline]"></span>
                                     <span class="tw-link-label">Mailbox</span>
                                 </a>
                             </li>
 
                             <li class="tw-menu-item">
                                 <a href="/apps-todolist.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">fact_check</span>
+                                    <span class="icon-[mdi--list-box-outline]"></span>
                                     <span class="tw-link-label">Todo List</span>
                                 </a>
                             </li>
 
                             <li class="tw-menu-item">
                                 <a href="/apps-scrumboard.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">add_box</span>
-                                    <span class="tw-link-label">Scrumboard</span>
+                                    <span class="icon-[mdi--plus-box-outline]"></span>
+                                    <span class="tw-link-label">ScrumBoard</span>
                                 </a>
                             </li>
                             <li class="tw-menu-item">
                                 <a href="/apps-projects.html" class="tw-menu-link">
-                                    <span class="material-icons-outlined">fence</span>
+                                    <span class="icon-[mdi--fence]"></span>
                                     <span class="tw-link-label">Projects</span>
                                 </a>
                             </li>
 
                             <!-- page header -->
                             <li class="tw-menu-header">
-                                <span class="material-icons icon"> remove </span>
+                                <span class="minus icon-[mdi--minus]"></span>
                                 <span class="label">USER AND PAGES</span>
                             </li>
                             <!-- page header end -->
                             <!-- user profile start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">perm_contact_calendar</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--account-switch]"></span>
                                     <span class="tw-link-label">User Profile</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -557,11 +557,11 @@
 
                             <!-- accounts start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">badge</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--badge-account-horizontal-outline]"></span>
                                     <span class="tw-link-label">Accounts</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -600,11 +600,11 @@
 
                             <!-- Authentication start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">logout</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--logout-variant]"></span>
                                     <span class="tw-link-label">Authentication</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -643,11 +643,11 @@
 
                             <!-- corporate start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">corporate_fare</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--home-group]"></span>
                                     <span class="tw-link-label">Corporate</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -686,11 +686,11 @@
 
                             <!-- utilities start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">construction</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--cog]"></span>
                                     <span class="tw-link-label">Utilities</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -717,11 +717,11 @@
 
                             <!-- Careers pages start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">work</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--briefcase-outline]"></span>
                                     <span class="tw-link-label">Careers</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -742,11 +742,11 @@
 
                             <!-- eCommerce start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">shopping_basket</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--basket-outline]"></span>
                                     <span class="tw-link-label">ECommerce</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -785,11 +785,11 @@
 
                             <!-- contacts start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">interests</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--contacts-outline]"></span>
                                     <span class="tw-link-label">Contacts</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -828,11 +828,11 @@
 
                             <!-- user management start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">workspaces</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--account-key]"></span>
                                     <span class="tw-link-label">User Management</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -859,11 +859,11 @@
 
                             <!-- customers start -->
                             <li class="tw-menu-item">
-                                <a href="javascript:void(0)" data-ripple class="tw-menu-link group">
-                                    <span class="material-icons-outlined">change_history</span>
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--face-agent]">change_history</span>
                                     <span class="tw-link-label">Customers</span>
-                                    <span class="material-icons tw-arrow"> expand_more </span>
-                                </a>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
 
                                 <ul class="tw-dropdown-menu">
                                     <li class="tw-dropdown-item group">
@@ -892,7 +892,7 @@
                             <li>
                                 <div class="documents-button">
                                     <a href="/documentation/index.html" target="_blank" class="documents-link">
-                                        <span class="material-icons-outlined">description</span>
+                                        <span class="icon-[mdi--text-box-search-outline]">description</span>
                                         <span class="btn-label ml-2">Documentation</span>
                                     </a>
                                 </div>
@@ -941,30 +941,33 @@
                         <div class="flex items-center space-x-2">
                             <button
                                 type="button"
-                                @click="$store.app.toggleTheme()"
                                 class="header-icon"
+                                @click="$store.app.toggleTheme()"
                                 aria-label="Themes">
-                                <span class="material-icons-outlined" x-text="themeIcon"> brightness_auto </span>
+                                <span x-show="$store.app.theme === 'light'" class="icon-[mdi--brightness-6]"></span>
+                                <span x-show="$store.app.theme === 'dark'" class="icon-[mdi--brightness-2]"></span>
+                                <span x-show="$store.app.theme === 'system'" class="icon-[mdi--brightness-auto]"></span>
                             </button>
 
                             <button type="button" class="header-icon" aria-label="Notification">
-                                <span class="material-icons-outlined"> notifications </span>
+                                <span class="icon-[mdi--bell-outline]"></span>
                             </button>
 
                             <button
                                 type="button"
+                                class="header-icon"
                                 @click="$store.app.fullscreenToggle()"
-                                class="header-icon"
                                 aria-label="fullscreen">
-                                <span class="material-icons-outlined" x-text="isFullscreen"> fullscreen </span>
+                                <span x-show="isFullscreen == 'fullscreen'" class="icon-[mdi--fullscreen]"></span>
+                                <span x-show="isFullscreen !== 'fullscreen'" class="icon-[mdi--fullscreen-exit]"></span>
                             </button>
 
                             <button
-                                @click="showCustomizer = true"
-                                class="header-icon"
                                 type="button"
+                                class="header-icon"
+                                @click="toggleCustomizer"
                                 aria-label="settings">
-                                <span class="material-icons-outlined animate-spin"> settings </span>
+                                <span class="icon-[mdi--cog] animate-spin"></span>
                             </button>
 
                             <div class="dropdown" data-strategy="absolute">
@@ -1064,7 +1067,7 @@
 
                                 <li aria-current="page">
                                     <div class="flex items-center">
-                                        <div class="material-icons rotate-180 text-lg">navigate_before</div>
+                                        <span class="icon-[mdi--chevron-right]"></span>
                                         <span class="breadcrumb-item-current"> Pricing </span>
                                     </div>
                                 </li>
@@ -1553,13 +1556,13 @@
 
             <!-- Theme customizer -->
             <div class="theme-customizer">
-                <div x-show="showCustomizer" @click="showCustomizer = false" class="customizer-shadow"></div>
+                <div x-show="showCustomizer" @click="toggleCustomizer" class="customizer-shadow"></div>
 
                 <nav class="app-drawers theme" :class="{'!right-0' : showCustomizer}">
                     <div class="p-4 text-center">
-                        <a href="javascript:void(0)" class="customizer-close" @click="showCustomizer = false">
-                            <span class="material-icons-outlined text-xl/none"> close </span>
-                        </a>
+                        <button type="button" class="customizer-close" @click="toggleCustomizer">
+                            <span class="icon-[mdi--close]"></span>
+                        </button>
                         <h4 class="mb-1 dark:text-white">TEMPLATE CUSTOMIZER</h4>
                         <p class="text-white-dark">
                             Set preferences that will be cookies for your live preview demonstration.
@@ -1575,7 +1578,7 @@
                                     class="btn flex items-center px-4"
                                     :class="[$store.app.theme === 'light' ? 'btn-primary' :'btn-outline-primary']"
                                     @click="$store.app.toggleTheme('light')">
-                                    <span class="material-icons-outlined"> light_mode </span>
+                                    <span class="icon-[mdi--brightness-6]"></span>
                                     Light
                                 </button>
                                 <button
@@ -1583,7 +1586,7 @@
                                     class="btn flex items-center px-4"
                                     :class="[$store.app.theme === 'dark' ? 'btn-primary' :'btn-outline-primary']"
                                     @click="$store.app.toggleTheme('dark')">
-                                    <span class="material-icons-outlined"> dark_mode </span>
+                                    <span class="icon-[mdi--brightness-2]"></span>
                                     Dark
                                 </button>
                                 <button
@@ -1591,7 +1594,7 @@
                                     class="btn flex items-center px-4"
                                     :class="[$store.app.theme === 'system' ? 'btn-primary' :'btn-outline-primary']"
                                     @click="$store.app.toggleTheme('system')">
-                                    <span class="material-icons-outlined"> settings_suggest </span>
+                                    <span class="icon-[mdi--brightness-auto]"></span>
                                     System
                                 </button>
                             </div>
@@ -1793,7 +1796,7 @@
             </div>
             <!-- scroll to top button -->
             <button type="button" class="scroll-top hidden">
-                <span class="material-icons-outlined"> arrow_upward </span>
+                <span class="icon[mdi--arrow-up]"></span>
             </button>
         </div>
     </body>
