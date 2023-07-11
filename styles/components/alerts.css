@@ -9,7 +9,4 @@
     .alert-dismiss {
         @apply flex items-center justify-between space-x-3;
     }
-    .alert-dismiss .material-icons-outlined {
-        @apply text-lg;
-    }
 }

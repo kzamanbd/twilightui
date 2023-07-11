@@ -70,10 +70,6 @@
     .vertical-menu .tw-nav-menu {
         @apply mt-2 space-y-1 px-4 pb-2;
     }
-    .vertical-menu .tw-menu-item .material-icons,
-    .vertical-menu .tw-menu-item .material-icons-outlined {
-        @apply text-xl leading-none;
-    }
     .vertical-menu .tw-menu-link {
         @apply flex w-full items-center rounded-md p-2.5 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
