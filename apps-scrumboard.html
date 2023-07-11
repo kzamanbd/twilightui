@@ -1086,7 +1086,7 @@
                     <div x-data="scrumboard">
                         <div>
                             <button type="button" class="btn btn-primary flex" @click="addEditProject()">
-                                <span class="material-icons-outlined mr-2 text-lg/none">add</span>
+                                <span class="icon-[mdi--plus] mr-2 text-lg/none">add</span>
                                 Add Project
                             </button>
                         </div>
@@ -1105,17 +1105,15 @@
                                                         type="button"
                                                         class="mr-2 hover:text-primary rtl:ml-2"
                                                         @click="addEditTask(project.id)">
-                                                        <span class="material-icons-outlined text-lg/none">
-                                                            add_circle_outline
-                                                        </span>
+                                                        <span
+                                                            class="icon-[mdi--add-circle-outline] text-lg/none"></span>
                                                     </button>
                                                     <div class="dropdown">
                                                         <button
                                                             type="button"
                                                             class="dropdown-toggle hover:text-primary">
-                                                            <span class="material-icons-outlined text-lg/none">
-                                                                more_horiz
-                                                            </span>
+                                                            <span
+                                                                class="icon-[mdi--dots-horizontal] text-lg/none"></span>
                                                         </button>
                                                         <ul class="dropdown-menu right-0">
                                                             <li>
@@ -1171,9 +1169,7 @@
                                                                         <div
                                                                             class="btn btn-outline-primary flex px-2 py-1">
                                                                             <span
-                                                                                class="material-icons-outlined text-lg/none">
-                                                                                local_offer
-                                                                            </span>
+                                                                                class="icon-[mdi--tag-outline] text-lg/none"></span>
                                                                             <span class="ml-2" x-text="tag"></span>
                                                                         </div>
                                                                     </template>
@@ -1182,9 +1178,7 @@
                                                                     <div
                                                                         class="btn text-white-dark dark:border-white-dark/50 flex px-2 py-1 shadow-none">
                                                                         <span
-                                                                            class="material-icons-outlined text-lg/none">
-                                                                            local_offer
-                                                                        </span>
+                                                                            class="icon-[mdi--tag-outline] text-lg/none"></span>
                                                                         <span class="ml-2">No Tags</span>
                                                                     </div>
                                                                 </template>
@@ -1192,7 +1186,8 @@
                                                             <div class="flex items-center justify-between">
                                                                 <div
                                                                     class="flex items-center font-medium hover:text-primary">
-                                                                    <span class="material-icons-outlined text-lg/none">
+                                                                    <span
+                                                                        class="icon-[mdi--calendar-today] text-lg/none">
                                                                         today
                                                                     </span>
                                                                     <span class="ml-2" x-text="task.date"></span>
@@ -1203,7 +1198,7 @@
                                                                         class="hover:text-info"
                                                                         @click="addEditTask(project.id, task)">
                                                                         <span
-                                                                            class="material-icons-outlined text-lg/none">
+                                                                            class="icon-[mdi--clock-edit-outline] text-lg/none">
                                                                             edit_note
                                                                         </span>
                                                                     </button>
@@ -1212,7 +1207,7 @@
                                                                         class="hover:text-danger"
                                                                         @click="deleteConfirmModal(project.id, task)">
                                                                         <span
-                                                                            class="material-icons-outlined text-lg/none">
+                                                                            class="icon-[mdi--minus-circle-outline] text-lg/none">
                                                                             remove_circle_outline
                                                                         </span>
                                                                     </button>
@@ -1228,7 +1223,7 @@
                                                     type="button"
                                                     class="btn btn-primary mx-auto flex"
                                                     @click="addEditTask(project.id)">
-                                                    <span class="material-icons-outlined text-lg/none">add</span>
+                                                    <span class="icon-[mdi--add] text-lg/none">add</span>
                                                     Add Task
                                                 </button>
                                             </div>
@@ -1252,7 +1247,7 @@
                                             type="button"
                                             class="text-white-dark absolute right-4 top-4 hover:text-dark rtl:left-4"
                                             @click="isAddProjectModal = false">
-                                            <span class="material-icons-outlined"> close </span>
+                                            <span class="icon-[mdi--close]"> </span>
                                         </button>
                                         <div
                                             class="bg-[#fbfbfb] py-3 pl-5 pr-[50px] text-lg font-medium rtl:pl-[50px] rtl:pr-5 dark:bg-[#121c2c]"
@@ -1303,7 +1298,7 @@
                                             type="button"
                                             class="text-white-dark absolute right-4 top-4 hover:text-dark rtl:left-4"
                                             @click="isAddTaskModal = false">
-                                            <span class="material-icons-outlined"> close </span>
+                                            <span class="icon-[mdi--close]"> close </span>
                                         </button>
                                         <div
                                             x-text="paramsTask.id ? 'Edit Task' : 'Add Task'"
@@ -1373,7 +1368,7 @@
                                             type="button"
                                             class="text-white-dark absolute right-4 top-4 rtl:left-4"
                                             @click="isDeleteModal = false">
-                                            <span class="material-icons-outlined"> close </span>
+                                            <span class="icon-[mdi--close]"> close </span>
                                         </button>
                                         <div
                                             class="bg-[#fbfbfb] py-3 pl-5 pr-[50px] text-lg font-medium rtl:pl-[50px] rtl:pr-5 dark:bg-[#121c2c]">

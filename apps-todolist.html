@@ -1089,7 +1089,7 @@
                                 <div class="flex h-full flex-col pb-16">
                                     <div class="pb-8">
                                         <div class="flex items-center text-center">
-                                            <span class="material-icons-outlined">fact_check</span>
+                                            <span class="icon-[mdi--checkbox-marked-circle-plus-outline]"></span>
                                             <h3 class="ml-3 text-lg font-semibold">Todo list</h3>
                                         </div>
                                     </div>
@@ -1102,7 +1102,7 @@
                                                 :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': selectedTab === 'inbox' }"
                                                 @click="tabChanged('inbox')">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined"> checklist </span>
+                                                    <span class="icon-[mdi--inbox]"> </span>
                                                     <div class="ml-3">Inbox</div>
                                                 </div>
                                                 <div
@@ -1117,7 +1117,7 @@
                                                 :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': selectedTab === 'complete' }"
                                                 @click="tabChanged('complete')">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined"> thumb_up_off_alt </span>
+                                                    <span class="icon-[mdi--thumb-up-outline]"> </span>
                                                     <div class="ml-3">Done</div>
                                                 </div>
                                                 <div
@@ -1132,7 +1132,7 @@
                                                 :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': selectedTab === 'important' }"
                                                 @click="tabChanged('important')">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined"> star_border </span>
+                                                    <span class="icon-[mdi--star]"> </span>
                                                     <div class="ml-3">Important</div>
                                                 </div>
                                                 <div
@@ -1147,7 +1147,7 @@
                                                 :class="{ 'bg-gray-100 dark:text-primary text-primary dark:bg-[#181F32]': selectedTab === 'trash' }"
                                                 @click="tabChanged('trash')">
                                                 <div class="flex items-center">
-                                                    <span class="material-icons-outlined"> delete </span>
+                                                    <span class="icon-[mdi--delete]"> </span>
                                                     <div class="ml-3">Trash</div>
                                                 </div>
                                             </button>
@@ -1160,8 +1160,8 @@
                                                 :class="{ 'pl-3 bg-gray-100 dark:bg-[#181F32]': selectedTab === 'team' }"
                                                 @click="tabChanged('team')">
                                                 <span
-                                                    class="material-icons-outlined text-lg text-success"
-                                                    x-text="selectedTab == 'team' ? 'radio_button_checked': 'radio_button_unchecked'">
+                                                    class="text-lg text-success"
+                                                    :class="selectedTab == 'team' ? 'icon-[mdi--radiobox-marked]' : 'icon-[mdi--radiobox-blank]'">
                                                 </span>
                                                 <div class="ml-3">Team</div>
                                             </button>
@@ -1172,8 +1172,8 @@
                                                 :class="{ 'pl-3 bg-gray-100 dark:bg-[#181F32]': selectedTab === 'low' }"
                                                 @click="tabChanged('low')">
                                                 <span
-                                                    class="material-icons-outlined text-lg text-warning"
-                                                    x-text="selectedTab == 'low' ? 'radio_button_checked': 'radio_button_unchecked'">
+                                                    class="text-lg text-warning"
+                                                    :class="selectedTab == 'low' ? 'icon-[mdi--radiobox-marked]' : 'icon-[mdi--radiobox-blank]'">
                                                 </span>
                                                 <div class="ml-3">Low</div>
                                             </button>
@@ -1184,8 +1184,8 @@
                                                 :class="{ 'pl-3 bg-gray-100 dark:bg-[#181F32]': selectedTab === 'medium' }"
                                                 @click="tabChanged('medium')">
                                                 <span
-                                                    class="material-icons-outlined text-lg text-primary"
-                                                    x-text="selectedTab == 'medium' ? 'radio_button_checked': 'radio_button_unchecked'">
+                                                    class="text-lg text-primary"
+                                                    :class="selectedTab == 'medium' ? 'icon-[mdi--radiobox-marked]' : 'icon-[mdi--radiobox-blank]'">
                                                 </span>
                                                 <div class="ml-3">Medium</div>
                                             </button>
@@ -1196,8 +1196,8 @@
                                                 :class="{ 'pl-3 bg-gray-100 dark:bg-[#181F32]': selectedTab === 'high' }"
                                                 @click="tabChanged('high')">
                                                 <span
-                                                    class="material-icons-outlined text-lg text-danger"
-                                                    x-text="selectedTab == 'high' ? 'radio_button_checked': 'radio_button_unchecked'">
+                                                    class="text-lg text-danger"
+                                                    :class="selectedTab == 'high' ? 'icon-[mdi--radiobox-marked]' : 'icon-[mdi--radiobox-blank]'">
                                                 </span>
                                                 <div class="ml-3">High</div>
                                             </button>
@@ -1208,8 +1208,8 @@
                                                 :class="{ 'pl-3 bg-gray-100 dark:bg-[#181F32]': selectedTab === 'update' }"
                                                 @click="tabChanged('update')">
                                                 <span
-                                                    class="material-icons-outlined text-lg text-info"
-                                                    x-text="selectedTab == 'update' ? 'radio_button_checked': 'radio_button_unchecked'">
+                                                    class="text-lg text-info"
+                                                    :class="selectedTab == 'update' ? 'icon-[mdi--radiobox-marked]' : 'icon-[mdi--radiobox-blank]'">
                                                 </span>
                                                 <div class="ml-3">Update</div>
                                             </button>
@@ -1221,7 +1221,7 @@
                                             class="btn btn-primary flex w-full items-center"
                                             type="button"
                                             @click="addEditTask()">
-                                            <span class="material-icons-outlined text-lg/none"> add </span>
+                                            <span class="icon-[mdi--plus] text-lg/none"> </span>
                                             Add New Task
                                         </button>
                                     </div>
