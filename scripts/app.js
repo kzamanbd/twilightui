@@ -292,7 +292,7 @@ window.DataTableExportTXT = exportTXT;
         instance.show();
     });
 
-    Alpine.directive('dynamictooltip', (el, { expression }, { evaluate }) => {
+    Alpine.directive('d-tooltip', (el, { expression }, { evaluate }) => {
         let string = evaluate(expression);
         tippy(el, {
             content: string.charAt(0).toUpperCase() + string.slice(1),

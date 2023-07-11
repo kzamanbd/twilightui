@@ -391,10 +391,6 @@ document.addEventListener('alpine:init', () => {
                     },
                 ],
                 firstLast: true,
-                firstText: `<span class="material-icons-outlined">keyboard_double_arrow_left</span>`,
-                lastText: `<span class="material-icons-outlined">keyboard_double_arrow_right</span>`,
-                prevText: `<span class="material-icons-outlined">chevron_left</span>`,
-                nextText: `<span class="material-icons-outlined">chevron_right</span>`,
                 labels: {
                     perPage: '{select}',
                 },
@@ -438,10 +434,6 @@ document.addEventListener('alpine:init', () => {
                     },
                 ],
                 firstLast: true,
-                firstText: `<span class="material-icons-outlined">keyboard_double_arrow_left</span>`,
-                lastText: `<span class="material-icons-outlined">keyboard_double_arrow_right</span>`,
-                prevText: `<span class="material-icons-outlined">chevron_left</span>`,
-                nextText: `<span class="material-icons-outlined">chevron_right</span>`,
                 labels: {
                     perPage: '{select}',
                 },
@@ -485,10 +477,6 @@ document.addEventListener('alpine:init', () => {
                     },
                 ],
                 firstLast: true,
-                firstText: `<span class="material-icons-outlined">keyboard_double_arrow_left</span>`,
-                lastText: `<span class="material-icons-outlined">keyboard_double_arrow_right</span>`,
-                prevText: `<span class="material-icons-outlined">chevron_left</span>`,
-                nextText: `<span class="material-icons-outlined">chevron_right</span>`,
                 labels: {
                     perPage: '{select}',
                 },
