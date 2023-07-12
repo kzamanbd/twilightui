@@ -9,8 +9,8 @@ const { addDynamicIconSelectors } = require('@iconify/tailwind');
 
 const primary = colors.green;
 
-module.exports = {
-    content: ['./src/**/*.{html,css,scss,js}'],
+export default {
+    content: ['./src/**/*.{html,js}'],
     darkMode: 'class', // or 'media'
     theme: {
         extend: {
