@@ -1,6 +1,8 @@
 {
     "name": "twilightui",
     "version": "1.0.0",
+    "author": "Kamruzzaman <kzamanbn@gmail.com>",
+    "license": "MIT",
     "description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
     "scripts": {
         "dev": "vite",
@@ -8,8 +10,6 @@
         "start": "vite preview",
         "format": "prettier --write \"src/**/*.{js,css,scss,html}\""
     },
-    "author": "Kamruzzaman <kzamanbn@gmail.com>",
-    "license": "MIT",
     "dependencies": {
         "@alpinejs/collapse": "^3.12.3",
         "@alpinejs/focus": "^3.12.0",
@@ -28,6 +28,7 @@
         "clipboard": "^2.0.11",
         "file-upload-with-preview": "^6.0.2",
         "flatpickr": "^4.6.13",
+        "glob": "^8.1.0",
         "material-icons": "^1.13.3",
         "postcss": "^8.4.8",
         "postcss-import": "^15.1.0",
