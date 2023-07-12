@@ -1,6 +1,6 @@
 # TwiLightUI
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/916d954d-3f57-432c-80ca-9584f3e4c8b2/deploy-status)](https://app.netlify.com/sites/twilightui/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1a418144-2107-4133-8401-a8f143bb53d7/deploy-status)](https://app.netlify.com/sites/twilightui/deploys)
 
 ## 📌 Introduction
 
