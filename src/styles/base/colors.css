@@ -13,25 +13,24 @@
     --primary-900: theme('colors.primary.900');
 
     --secondary: theme('colors.secondary.DEFAULT');
-    --secondary: theme('colors.secondary.DEFAULT');
-    --secondary-light: theme('colors.secondary.light');
-    --secondary-dark: theme('colors.secondary.dark');
+    --secondary-100: theme('colors.secondary.100');
+    --secondary-700: theme('colors.secondary.700');
 
     --success: theme('colors.success.DEFAULT');
-    --success-light: theme('colors.success.light');
-    --success-dark: theme('colors.success.dark');
+    --success-100: theme('colors.success.100');
+    --success-700: theme('colors.success.700');
 
     --danger: theme('colors.danger.DEFAULT');
-    --danger-light: theme('colors.danger.light');
-    --danger-dark: theme('colors.danger.dark');
+    --danger-100: theme('colors.danger.100');
+    --danger-700: theme('colors.danger.700');
 
     --warning: theme('colors.warning.DEFAULT');
-    --warning-light: theme('colors.warning.light');
-    --warning-dark: theme('colors.warning.dark');
+    --warning-100: theme('colors.warning.100');
+    --warning-700: theme('colors.warning.700');
 
     --info: theme('colors.info.DEFAULT');
-    --info-light: theme('colors.info.light');
-    --info-dark: theme('colors.info.dark');
+    --: theme('colors.info.100');
+    --info-700: theme('colors.info.700');
 
     --dark: theme('colors.dark.DEFAULT');
     --dark-secondary: theme('colors.dark.secondary');

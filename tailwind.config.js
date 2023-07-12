@@ -28,33 +28,27 @@ module.exports = {
                 },
                 primary: {
                     ...primary,
-                    light: primary[50],
-                    DEFAULT: '#00a76f',
+                    DEFAULT: '#00A76F',
                 },
                 info: {
-                    light: colors.blue[50],
+                    ...colors.blue,
                     DEFAULT: colors.blue[500],
-                    dark: colors.blue[700],
                 },
                 danger: {
-                    light: colors.red[50],
+                    ...colors.red,
                     DEFAULT: colors.red[500],
-                    dark: colors.red[700],
                 },
                 success: {
-                    light: colors.green[50],
+                    ...colors.green,
                     DEFAULT: colors.green[500],
-                    dark: colors.green[700],
                 },
                 warning: {
-                    light: colors.yellow[50],
+                    ...colors.yellow,
                     DEFAULT: colors.yellow[500],
-                    dark: colors.yellow[700],
                 },
                 secondary: {
-                    light: colors.gray[50],
+                    ...colors.gray,
                     DEFAULT: colors.gray[400],
-                    dark: colors.gray[700],
                 },
             },
             fontFamily: {

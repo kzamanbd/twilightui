@@ -1110,7 +1110,7 @@
                                                     <div class="ml-3">Inbox</div>
                                                 </div>
                                                 <div
-                                                    class="whitespace-nowrap rounded-md bg-primary-light px-2 py-0.5 font-semibold dark:bg-[#060818]"
+                                                    class="whitespace-nowrap rounded-md bg-primary-100 px-2 py-0.5 font-semibold dark:bg-[#060818]"
                                                     x-text="mailList && mailList.filter((d) => d.type == 'inbox').length">
                                                     24
                                                 </div>
@@ -1159,7 +1159,7 @@
                                                     <div class="ml-3">Drafts</div>
                                                 </div>
                                                 <div
-                                                    class="whitespace-nowrap rounded-md bg-primary-light px-2 py-0.5 font-semibold dark:bg-[#060818]"
+                                                    class="whitespace-nowrap rounded-md bg-primary-100 px-2 py-0.5 font-semibold dark:bg-[#060818]"
                                                     x-text="mailList && mailList.filter((d) => !d.type || d.type === 'draft').length">
                                                     2
                                                 </div>
@@ -1606,7 +1606,7 @@
                                                         <button
                                                             type="button"
                                                             :disabled="pager.currentPage == 1"
-                                                            class="dark:bg-white-dark/20 enabled:dark:hover:bg-white-dark/30 mr-3 flex rounded-md bg-[#f4f4f4] p-1 enabled:hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-60"
+                                                            class="dark:bg-white-dark/20 enabled:dark:hover:bg-white-dark/30 mr-3 flex rounded-md bg-[#f4f4f4] p-1 enabled:hover:bg-primary-100 disabled:cursor-not-allowed disabled:opacity-60"
                                                             @click="pager.currentPage--,searchMails(false)"
                                                             disabled="disabled">
                                                             <span class="icon-[mdi--chevron-left]"> </span>
@@ -1614,7 +1614,7 @@
                                                         <button
                                                             type="button"
                                                             :disabled="pager.currentPage == pager.totalPages"
-                                                            class="dark:bg-white-dark/20 enabled:dark:hover:bg-white-dark/30 flex rounded-md bg-[#f4f4f4] p-1 enabled:hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-60"
+                                                            class="dark:bg-white-dark/20 enabled:dark:hover:bg-white-dark/30 flex rounded-md bg-[#f4f4f4] p-1 enabled:hover:bg-primary-100 disabled:cursor-not-allowed disabled:opacity-60"
                                                             @click="pager.currentPage++,searchMails(false)">
                                                             <span class="icon-[mdi--chevron-right]"> </span>
                                                         </button>
