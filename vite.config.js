@@ -1,29 +1,79 @@
-// vite.config.js
 import glob from 'fast-glob';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
+const entries = glob.sync('./src/**/*.html').reduce((acc, path) => {
+    const name = path.split('/').pop().split('.').shift();
+    acc[name] = path;
+    return acc;
+}, {});
+
 export default defineConfig({
+    root: 'src',
+    resolve: {
+        alias: {
+            '@tailwind.config': resolve(__dirname, './tailwind.config.js'),
+            '@': resolve(__dirname, './src'),
+        },
+    },
+    optimizeDeps: {
+        entries: Object.keys(entries),
+    },
     plugins: [
         createHtmlPlugin({
             minify: true,
         }),
     ],
     build: {
-        outDir: 'build',
+        target: 'esnext',
+        outDir: resolve(__dirname, 'build'),
         rollupOptions: {
-            input: Object.fromEntries(
-                glob.sync(['./*.html', './documentation/*.html']).map(file => [
-                    // This remove `pages/` as well as the file extension from each
-                    // file, so e.g. pages/nested/foo.html becomes nested/foo
-                    path.relative(__dirname, file.slice(0, file.length - path.extname(file).length)),
-                    // This expands the relative paths to absolute paths, so e.g.
-                    // pages/nested/foo becomes /project/pages/nested/foo.html
-                    fileURLToPath(new URL(file, import.meta.url)),
-                ]),
-            ),
+            input: entries,
+            output: {
+                assetFileNames: chunkInfo => {
+                    let outDir = '';
+
+                    // Fonts
+                    if (/(ttf|woff|woff2|eot)$/.test(chunkInfo.name)) {
+                        outDir = 'fonts';
+                    }
+
+                    // SVG
+                    if (/svg$/.test(chunkInfo.name)) {
+                        outDir = 'svg';
+                    }
+
+                    // Images
+                    if (/(png|jpg|jpeg|gif|webp)$/.test(chunkInfo.name)) {
+                        outDir = 'images';
+                    }
+
+                    // Media
+                    if (/(mp3|mp4|webm|ogg|wav|flac|aac)$/.test(chunkInfo.name)) {
+                        outDir += 'media';
+                    }
+
+                    // JSON
+                    if (/json$/.test(chunkInfo.name)) {
+                        outDir = 'json';
+                    }
+
+                    // JS
+                    if (/js$/.test(chunkInfo.name)) {
+                        outDir = 'js';
+                    }
+
+                    // CSS
+                    if (/css$/.test(chunkInfo.name)) {
+                        outDir = 'css';
+                    }
+
+                    return `${outDir}/[name][extname]`;
+                },
+                chunkFileNames: 'js/[name]-[hash].js',
+                entryFileNames: 'js/[name]-[hash].js',
+            },
         },
         chunkSizeWarningLimit: 2000, // 2000kb
     },

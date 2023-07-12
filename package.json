@@ -4,8 +4,9 @@
     "description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
     "scripts": {
         "dev": "vite",
-        "build": "vite build",
-        "serve": "vite preview"
+        "build": "vite build --emptyOutDir",
+        "start": "vite preview",
+        "format": "prettier --write \"src/**/*.{js,css,scss,html}\""
     },
     "author": "Kamruzzaman <kzamanbn@gmail.com>",
     "license": "MIT",
