@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
 const defaultTheme = require('tailwindcss/defaultTheme');
-const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
 const forms = require('@tailwindcss/forms');
 const typography = require('@tailwindcss/typography');
@@ -11,7 +10,7 @@ const { addDynamicIconSelectors } = require('@iconify/tailwind');
 const primary = colors.green;
 
 module.exports = {
-    content: ['./**/*.html', './scripts/*.js'],
+    content: ['./src/**/*.{html,css,scss,js}'],
     darkMode: 'class', // or 'media'
     theme: {
         extend: {
@@ -28,16 +27,7 @@ module.exports = {
                     DEFAULT: '#F5F8FA',
                 },
                 primary: {
-                    50: primary[50],
-                    100: primary[100],
-                    200: primary[200],
-                    300: primary[300],
-                    400: primary[400],
-                    500: primary[500],
-                    600: primary[600],
-                    700: primary[700],
-                    800: primary[800],
-                    900: primary[900],
+                    ...primary,
                     light: primary[50],
                     DEFAULT: '#00a76f',
                 },
@@ -72,18 +62,5 @@ module.exports = {
             },
         },
     },
-    plugins: [
-        forms,
-        typography,
-        aspectRatio,
-        addDynamicIconSelectors(),
-        plugin(function ({ addVariant, e }) {
-            // mini sidebar variant
-            addVariant('vertical-menu', ({ modifySelectors, separator }) => {
-                modifySelectors(({ className }) => {
-                    return `.vertical-menu .${e(`vertical-menu${separator}${className}`)}`;
-                });
-            });
-        }),
-    ],
+    plugins: [forms, typography, aspectRatio, addDynamicIconSelectors()],
 };
