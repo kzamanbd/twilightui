@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         },
         grid: {
-            borderColor: 'var(--primary)',
+            borderColor: '#f2f6f7',
         },
         responsive: [
             {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
             },
         ],
-        colors: ['var(--primary)', '#60a5fa', '#d5dde7'],
+        colors: ['#5a66f1', '#60a5fa', '#d5dde7'],
         legend: {
             show: true,
             borderRadius: 5,
