@@ -1083,408 +1083,593 @@
                     </nav>
                     <!-- End:Breadcrumb -->
 
-                    <div class="space-y-4 overflow-hidden">
-                        <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
-                            <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                <div class="card-body pb-0">
-                                    <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">Simple Dropdown</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="grid grid-cols-12">
-                                        <div class="col-span-6">
-                                            <!-- Dropdown button -->
-                                            <div class="dropdown">
-                                                <button type="button" class="dropdown-toggle btn btn-secondary">
-                                                    Dropdown button
-                                                    <span class="icon-[mdi--chevron-down]"> </span>
-                                                </button>
+                    <div class="space-y-6">
+                        <!-- Card: Basic Dropdown Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Basic Dropdown</h4>
 
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- Dropdown button -->
+                                <p class="card-subtitle">
+                                    Use the
+                                    <code>dropdown</code>
+                                    ,
+                                    <code>dropdown-toggle</code>
+                                    and
+                                    <code>dropdown-menu</code>
+                                    classes to create a basic dropdown.
+                                </p>
+
+                                <div class="code-viewer mt-4">
+                                    <div class="dropdown">
+                                        <div class="dropdown-toggle">
+                                            <span class="flex items-center gap-1 text-sm font-medium">
+                                                Dropdown
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </span>
                                         </div>
-                                        <div class="col-span-6">
-                                            <!-- Dropdown button -->
-                                            <div class="dropdown inline-block">
-                                                <button type="button" class="dropdown-toggle btn btn-secondary">
-                                                    Dropdown Link
-                                                    <span class="icon-[mdi--chevron-down]"> </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- Dropdown button -->
+                                        <div class="dropdown-menu">
+                                            <ul class="dropdown-list">
+                                                <li class="dropdown-list-item">
+                                                    <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                </li>
+                                                <li class="dropdown-list-item">
+                                                    <a href="javascript:void(0)" class="dropdown-link">
+                                                        Another action
+                                                    </a>
+                                                </li>
+                                                <li class="dropdown-list-item">
+                                                    <a href="javascript:void(0)" class="dropdown-link">
+                                                        Something else here
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                <div class="card-body pb-0">
-                                    <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">Variant</h6>
-                                </div>
-                                <div class="card-body">
-                                    <!-- Dropdown button -->
-                                    <div class="flex flex-wrap gap-2">
+                        </div>
+                        <!-- Card: Basic Dropdown Ends -->
+
+                        <!-- Card: Dropdown Button Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Dropdown Button</h4>
+
+                                <p class="card-subtitle">
+                                    Use
+                                    <code>btn btn-{color}</code>
+                                    with the
+                                    <code>dropdown-toggle</code>
+                                    class to create a dropdown button.
+                                </p>
+
+                                <div class="code-viewer mt-4">
+                                    <div class="flex flex-wrap items-center gap-4">
                                         <div class="dropdown">
-                                            <button type="button" class="dropdown-toggle btn btn-primary">
+                                            <button class="dropdown-toggle btn btn-primary flex gap-2">
                                                 Primary
-                                                <span class="icon-[mdi--chevron-down]"> </span>
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
                                             </button>
-
-                                            <ul class="dropdown-menu left-0">
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Action </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Another action </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Something else here </a>
-                                                </li>
-                                            </ul>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
-
                                         <div class="dropdown">
-                                            <button type="button" class="dropdown-toggle btn btn-secondary">
+                                            <button class="dropdown-toggle btn btn-secondary flex gap-2">
                                                 Secondary
-                                                <span class="icon-[mdi--chevron-down]"> </span>
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
                                             </button>
-
-                                            <ul class="dropdown-menu left-0">
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Action </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Another action </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Something else here </a>
-                                                </li>
-                                            </ul>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
-
                                         <div class="dropdown">
-                                            <button type="button" class="dropdown-toggle btn btn-success">
+                                            <button class="dropdown-toggle btn btn-success flex gap-2">
                                                 Success
-                                                <span class="icon-[mdi--chevron-down]"> </span>
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
                                             </button>
-
-                                            <ul class="dropdown-menu left-0">
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Action </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Another action </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Something else here </a>
-                                                </li>
-                                            </ul>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
-
                                         <div class="dropdown">
-                                            <button type="button" class="dropdown-toggle btn btn-info">
-                                                Info <span class="icon-[mdi--chevron-down]"> </span>
-                                            </button>
-
-                                            <ul class="dropdown-menu left-0">
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Action </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Another action </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Something else here </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="dropdown">
-                                            <button type="button" class="dropdown-toggle btn btn-warning">
-                                                Warning
-                                                <span class="icon-[mdi--chevron-down]"> </span>
-                                            </button>
-
-                                            <ul class="dropdown-menu left-0">
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Action </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Another action </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Something else here </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="dropdown">
-                                            <button type="button" class="dropdown-toggle btn btn-danger">
+                                            <button class="dropdown-toggle btn btn-danger flex gap-2">
                                                 Danger
-                                                <span class="icon-[mdi--chevron-down]"> </span>
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
                                             </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-warning flex gap-2">
+                                                Warning
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-info flex gap-2">
+                                                Info
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-dark flex gap-2">
+                                                Dark
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Dropdown Button Ends -->
 
-                                            <ul class="dropdown-menu left-0">
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Action </a>
+                        <!-- Card: Outlined Dropdown Button Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Outlined Dropdown Button</h4>
+
+                                <p class="card-subtitle">
+                                    Use
+                                    <code>btn btn-outline-{color}</code>
+                                    with the
+                                    <code>dropdown-toggle</code>
+                                    class to create a dropdown button.
+                                </p>
+
+                                <div class="code-viewer mt-4">
+                                    <div class="flex flex-wrap items-center gap-4">
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-outline-primary flex gap-2">
+                                                Primary
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-outline-secondary flex gap-2">
+                                                Secondary
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-outline-success flex gap-2">
+                                                Success
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-outline-danger flex gap-2">
+                                                Danger
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-outline-warning flex gap-2">
+                                                Warning
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-outline-info flex gap-2">
+                                                Info
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-outline-dark flex gap-2">
+                                                Dark
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Outlined Dropdown Button Ends -->
+
+                        <!-- Card: Split Dropdown Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Split Dropdown</h4>
+
+                                <p class="card-subtitle">
+                                    You can create a split dropdown button with the
+                                    <code>btn-group</code>
+                                    class.
+                                </p>
+
+                                <div class="code-viewer mt-4">
+                                    <div class="dropdown">
+                                        <div class="btn-group divide-x divide-primary-600">
+                                            <button class="btn btn-primary">Dropdown</button>
+                                            <button class="btn btn-primary dropdown-toggle px-2">
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                        </div>
+                                        <div class="dropdown-menu">
+                                            <ul class="dropdown-list">
+                                                <li class="dropdown-list-item">
+                                                    <a href="javascript:void(0)" class="dropdown-link"> Action </a>
                                                 </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Another action </a>
+                                                <li class="dropdown-list-item">
+                                                    <a href="javascript:void(0)" class="dropdown-link">
+                                                        Another action
+                                                    </a>
                                                 </li>
-                                                <li>
-                                                    <a class="dropdown-link" href="#"> Something else here </a>
+                                                <li class="dropdown-list-item">
+                                                    <a href="javascript:void(0)" class="dropdown-link">
+                                                        Something else here
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <!-- Dropdown button -->
                                 </div>
                             </div>
                         </div>
+                        <!-- Card: Split Dropdown Ends -->
 
-                        <div class="grid grid-cols-12 gap-5">
-                            <div class="col-span-12 lg:col-span-6">
-                                <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                    <div class="card-body pb-0">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">
-                                            Split Button Dropdowns
-                                        </h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="flex flex-wrap gap-2">
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-primary p-0">
-                                                    <span class="px-3">Primary</span>
-                                                    <span
-                                                        class="text-16 dropdown-toggle icon-[mdi--chevron-down] h-full w-10 justify-center bg-white bg-opacity-20 py-3 align-middle">
-                                                    </span>
-                                                </button>
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                        <!-- Card: Dropdown Size Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Dropdown Size</h4>
 
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-secondary p-0">
-                                                    <span class="px-3">Secondary</span>
-                                                    <span
-                                                        class="text-16 dropdown-toggle icon-[mdi--chevron-down] h-full w-10 justify-center bg-white bg-opacity-20 py-3 align-middle">
-                                                    </span>
-                                                </button>
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                <p class="card-subtitle">
+                                    You can create a small, medium, large or extra large dropdown button. Just add the
+                                    <code>btn-xs</code>
+                                    ,
+                                    <code>btn-sm</code>
+                                    ,
+                                    <code>btn-md</code>
+                                    ,
+                                    <code>btn-lg</code>
+                                    or
+                                    <code>btn-xl</code>
+                                    along with the
+                                    <code>btn</code>
+                                    class.
+                                </p>
 
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-success p-0">
-                                                    <span class="px-3">Success</span>
-                                                    <span
-                                                        class="text-16 dropdown-toggle icon-[mdi--chevron-down] h-full w-10 justify-center bg-white bg-opacity-20 py-3 align-middle">
-                                                    </span>
-                                                </button>
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
+                                <div class="code-viewer mt-4">
+                                    <div class="flex flex-wrap items-center gap-4">
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-primary btn-xs items-center gap-2">
+                                                Extra Small
+                                                <i class="icon-[mdi--chevron-down] w-3"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
                                                     </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
                                                     </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-info p-0">
-                                                    <span class="px-3">Info</span>
-                                                    <span
-                                                        class="text-16 dropdown-toggle icon-[mdi--chevron-down] h-full w-10 justify-center bg-white bg-opacity-20 py-3 align-middle">
-                                                    </span>
-                                                </button>
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-warning p-0">
-                                                    <span class="px-3">Warning</span>
-                                                    <span
-                                                        class="text-16 dropdown-toggle icon-[mdi--chevron-down] h-full w-10 justify-center bg-white bg-opacity-20 py-3 align-middle">
-                                                    </span>
-                                                </button>
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-danger p-0">
-                                                    <span class="px-3">Danger</span>
-                                                    <span
-                                                        class="text-16 dropdown-toggle icon-[mdi--chevron-down] h-full w-10 justify-center bg-white bg-opacity-20 py-3 align-middle">
-                                                    </span>
-                                                </button>
-                                                <ul class="dropdown-menu">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                    <hr />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#">Separated link</a>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-span-12 lg:col-span-6">
-                                <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                    <div class="card-body pb-0">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">Sizing</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="flex flex-wrap gap-2">
-                                            <div class="dropdown">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-secondary p-0 align-middle text-xs">
-                                                    <span class="px-3">Large button</span>
-                                                    <span
-                                                        class="text-16 dropdown-toggle focus-visible:border-3 icon-[mdi--chevron-down] h-full w-10 justify-center bg-white bg-opacity-20 py-2 align-middle focus-visible:border-gray-500/10"></span>
-                                                </button>
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-primary btn-sm items-center gap-2">
+                                                Small
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
                                                     </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
                                                     </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="dropdown">
-                                                <button type="button" class="dropdown-toggle btn btn-info py-2 text-xs">
-                                                    Info
-                                                    <span class="icon-[mdi--chevron-down] ml-2"> </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-primary btn-md items-center gap-2">
+                                                Medium
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
                                                     </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
                                                     </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="dropdown">
-                                                <button
-                                                    type="button"
-                                                    class="dropdown-toggle btn btn-primary"
-                                                    id="dropdownM1">
-                                                    Large button
-                                                    <span class="icon-[mdi--chevron-down] ml-2 justify-center text-xl">
-                                                    </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <!-- Dropdown button -->
-
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-secondary p-0 text-lg">
-                                                    <span class="px-3">Secondary</span>
-                                                    <span
-                                                        class="dropdown-toggle focus-visible:border-3 icon-[mdi--chevron-down] ml-2 h-full w-10 justify-center bg-white bg-opacity-20 py-3.5 align-middle text-xl focus-visible:border-gray-500/10">
-                                                    </span>
-                                                </button>
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-primary btn-lg items-center gap-2">
+                                                Large
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
                                                     </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
                                                     </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle btn btn-primary btn-xl items-center gap-2">
+                                                Extra Large
+                                                <i class="icon-[mdi--chevron-down] w-4"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <ul class="dropdown-list">
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link"> Action </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Another action
+                                                        </a>
+                                                    </li>
+                                                    <li class="dropdown-list-item">
+                                                        <a href="javascript:void(0)" class="dropdown-link">
+                                                            Something else here
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1493,179 +1678,198 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Card: Dropdown Size Ends -->
 
-                        <div class="grid grid-cols-12 gap-5">
-                            <div class="col-span-12 lg:col-span-6">
-                                <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                    <div class="card-body pb-0">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">With dividers</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="flex flex-wrap gap-2">
-                                            <div class="dropdown relative">
-                                                <button type="button" class="dropdown-toggle btn btn-secondary">
-                                                    Dropdown button
-                                                    <span class="icon-[mdi--chevron-down]"> </span>
+                        <!-- Card: Dropdown Position Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Dropdown Position</h4>
+
+                                <p class="card-subtitle">
+                                    You can create a dropdown button with different position. Just add the
+                                    <code>data-placement</code>
+                                    attribute with the
+                                    <code>dropdown</code>
+                                    class. The available placements are
+                                    <code>top</code>
+                                    ,
+                                    <code>top-start</code>
+                                    ,
+                                    <code>top-end</code>
+                                    ,
+                                    <code>bottom</code>
+                                    ,
+                                    <code>bottom-start</code>
+                                    ,
+                                    <code>bottom-end</code>
+                                    ,
+                                    <code>left</code>
+                                    ,
+                                    <code>left-start</code>
+                                    ,
+                                    <code>left-end</code>
+                                    ,
+                                    <code>right</code>
+                                    ,
+                                    <code>right-start</code>
+                                    and
+                                    <code>right-end</code>
+                                    .
+                                </p>
+
+                                <div class="code-viewer mt-4">
+                                    <div class="space-y-4">
+                                        <div class="flex flex-wrap items-center gap-4">
+                                            <div class="dropdown" data-placement="top-start">
+                                                <button class="dropdown-toggle btn btn-primary items-center gap-2">
+                                                    Top Left
+                                                    <i class="icon-[mdi--chevron-down] w-4"></i>
                                                 </button>
-
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Active Menu </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Separated link </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown relative">
-                                                <button type="button" class="dropdown-toggle btn btn-secondary">
-                                                    Option
-                                                    <span class="icon-[mdi--chevron-down]"> </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Edit </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Duplicate </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Archive </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Move </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Share </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Add to favorites </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Delete </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-span-12 lg:col-span-6">
-                                <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                    <div class="card-body pb-0">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">Menu Content</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="flex flex-wrap gap-2">
-                                            <div class="dropdown relative">
-                                                <button type="button" class="dropdown-toggle btn btn-primary">
-                                                    Header
-                                                    <span class="icon-[mdi--chevron-down]"> </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu left-0">
-                                                    <div class="dropdown-header px-4 py-1">
-                                                        <h6
-                                                            class="text-13 text-truncate mn-0 text-gray-500 dark:text-gray-100">
-                                                            Welcome Jessie!
-                                                        </h6>
-                                                    </div>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                    <hr class="dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown relative">
-                                                <button type="button" class="dropdown-toggle btn btn-success">
-                                                    Text
-                                                    <span class="icon-[mdi--chevron-down]"> </span>
-                                                </button>
-
-                                                <div class="dropdown-menu left-0">
-                                                    <div class="p-3 text-gray-600 dark:text-zinc-100">
-                                                        <p>
-                                                            Some example text that's free-flowing within the dropdown
-                                                            menu.
-                                                        </p>
-                                                        <p class="mt-2">And this is more example text.</p>
-                                                    </div>
+                                                <div class="dropdown-menu">
+                                                    <ul class="dropdown-list">
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Another action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Something else here
+                                                            </a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
-
-                                            <div class="dropdown relative">
-                                                <button type="button" class="dropdown-toggle btn-light">
-                                                    Success
-                                                    <span class="icon-[mdi--chevron-down]"> </span>
+                                            <div class="dropdown" data-placement="top">
+                                                <button class="dropdown-toggle btn btn-primary items-center gap-2">
+                                                    Top Center
+                                                    <i class="icon-[mdi--chevron-down] w-4"></i>
                                                 </button>
-
-                                                <div class="dropdown-menu left-0">
-                                                    <form class="p-4" autocomplete="off">
-                                                        <div class="mb-2">
-                                                            <label class="form-label text-14 dark:text-gray-100">
-                                                                Email address
-                                                            </label>
-                                                            <input
-                                                                type="email"
-                                                                class="form-control mt-2 w-full rounded border-gray-300 dark:border-zinc-600 dark:bg-zinc-800 dark:placeholder:text-zinc-100"
-                                                                placeholder="email@example.com" />
-                                                        </div>
-                                                        <div class="mb-2">
-                                                            <label class="form-label text-14 dark:text-gray-100">
-                                                                Password
-                                                            </label>
-                                                            <input
-                                                                type="password"
-                                                                class="form-control mt-2 w-full rounded border-gray-300 dark:border-zinc-600 dark:bg-zinc-800 dark:placeholder:text-zinc-100"
-                                                                placeholder="Password" />
-                                                        </div>
-                                                        <div class="mb-2">
-                                                            <div class="form-check flex items-center">
-                                                                <input
-                                                                    type="checkbox"
-                                                                    class="form-check-input rounded focus:ring-0 focus:ring-offset-0 dark:bg-zinc-800 dark:text-zinc-100 dark:checked:bg-violet-500"
-                                                                    id="rememberdropdownCheck" />
-                                                                <label
-                                                                    class="form-check-label ml-2 text-sm"
-                                                                    for="rememberdropdownCheck">
-                                                                    Remember me
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mt-4">
-                                                            <button
-                                                                class="btn bg-violet-500 text-white shadow-lg shadow-violet-200 dark:border-zinc-600 dark:shadow-zinc-600"
-                                                                type="submit">
-                                                                Sign in
-                                                            </button>
-                                                        </div>
-                                                    </form>
+                                                <div class="dropdown-menu">
+                                                    <ul class="dropdown-list">
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Another action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Something else here
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown" data-placement="top-end">
+                                                <button class="dropdown-toggle btn btn-primary items-center gap-2">
+                                                    Top Left
+                                                    <i class="icon-[mdi--chevron-down] w-4"></i>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <ul class="dropdown-list">
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Another action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Something else here
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap items-center gap-4">
+                                            <div class="dropdown" data-placement="bottom-start">
+                                                <button class="dropdown-toggle btn btn-primary items-center gap-2">
+                                                    Bottom Left
+                                                    <i class="icon-[mdi--chevron-down] w-4"></i>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <ul class="dropdown-list">
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Another action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Something else here
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown" data-placement="bottom">
+                                                <button class="dropdown-toggle btn btn-primary items-center gap-2">
+                                                    Bottom Center
+                                                    <i class="icon-[mdi--chevron-down] w-4"></i>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <ul class="dropdown-list">
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Another action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Something else here
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown" data-placement="bottom-end">
+                                                <button class="dropdown-toggle btn btn-primary items-center gap-2">
+                                                    Bottom Left
+                                                    <i class="icon-[mdi--chevron-down] w-4"></i>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <ul class="dropdown-list">
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Another action
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-list-item">
+                                                            <a href="javascript:void(0)" class="dropdown-link">
+                                                                Something else here
+                                                            </a>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -1673,420 +1877,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="grid grid-cols-12 gap-5">
-                            <div class="col-span-12 lg:col-span-6">
-                                <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                    <div class="card-body pb-0">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">Menu Alignment</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="flex flex-wrap gap-2">
-                                            <div class="dropdown relative">
-                                                <button type="button" class="dropdown-toggle btn btn-secondary">
-                                                    Right-aligned menu example
-                                                    <span class="icon-[mdi--chevron-down] ml-1"> </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown relative">
-                                                <button type="button" class="dropdown-toggle btn btn-secondary">
-                                                    Left-aligned but right aligned when large screen
-                                                    <span class="icon-[mdi--chevron-down] ml-1"> </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu left-0 lg:left-0 lg:right-auto">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown relative">
-                                                <button type="button" class="dropdown-toggle btn btn-secondary">
-                                                    Right-aligned but left aligned when large screen
-                                                    <span class="icon-[mdi--chevron-down] ml-1"> </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-span-12 lg:col-span-6">
-                                <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                    <div class="card-body pb-0">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">With icons</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="flex flex-wrap gap-2">
-                                            <div class="dropdown relative">
-                                                <button type="button" class="dropdown-toggle btn btn-secondary">
-                                                    <span
-                                                        class="icon-[mdi--shape-plus-outline] mr-2 align-middle text-lg">
-                                                    </span>
-                                                    Option With icons
-                                                    <span class="icon-[mdi--chevron-down]"> </span>
-                                                </button>
-
-                                                <ul
-                                                    class="dropdown-menu absolute z-50 float-left mt-1 hidden w-44 list-none rounded-lg border-none bg-white bg-clip-padding py-2 text-left shadow-lg dark:bg-zinc-700">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#">
-                                                            <span
-                                                                class="icon-[mdi--pen] mr-2 align-middle text-lg"></span>
-                                                            Edit
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#">
-                                                            <span
-                                                                class="icon-[mdi--content-copy] mr-2 align-middle text-lg"></span>
-                                                            Duplicate
-                                                        </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#">
-                                                            <span
-                                                                class="icon-[mdi--archive] mr-2 align-middle text-lg"></span>
-                                                            Archive
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#">
-                                                            <span
-                                                                class="icon-[mdi--cursor-move] mr-2 align-middle text-lg">
-                                                            </span>
-                                                            Move
-                                                        </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#">
-                                                            <span
-                                                                class="icon-[mdi--share-variant-outline] mr-2 align-middle text-lg">
-                                                                share
-                                                            </span>
-                                                            Share
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#">
-                                                            <span
-                                                                class="icon-[mdi--heart-outline] mr-2 align-middle text-lg">
-                                                            </span>
-                                                            Add to favorites
-                                                        </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#">
-                                                            <span class="icon-[mdi--delete] mr-2 align-middle text-lg">
-                                                            </span>
-                                                            Delete
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-12 gap-5">
-                            <div class="col-span-12 lg:col-span-6">
-                                <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                    <div class="card-body pb-0">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">
-                                            Auto Close Behavior
-                                        </h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="flex flex-wrap gap-2">
-                                            <div class="dropdown relative">
-                                                <button type="button" class="dropdown-toggle btn btn-secondary">
-                                                    Default dropdown
-                                                    <span class="icon-[mdi--chevron-down] ml-1"> </span>
-                                                </button>
-
-                                                <ul
-                                                    class="dropdown-menu absolute z-50 float-left hidden min-w-full list-none rounded-lg border-none bg-white bg-clip-padding py-2 text-left shadow-lg dark:bg-zinc-700">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Menu item </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Menu item </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Menu item </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown relative">
-                                                <button
-                                                    type="button"
-                                                    class="dropdown-toggle btn btn-secondary"
-                                                    data-tw-auto-close="outside">
-                                                    Clickable outside
-                                                    <span class="icon-[mdi--chevron-down] ml-1"> </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu">
-                                                    <li>
-                                                        <a class="dropdown-link" href="javascript:void(0)">
-                                                            Menu item
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="javascript:void(0)">
-                                                            Menu item
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="javascript:void(0)">
-                                                            Menu item
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown relative">
-                                                <button
-                                                    type="button"
-                                                    class="dropdown-toggle btn btn-secondary"
-                                                    data-tw-auto-close="inside">
-                                                    Clickable inside
-                                                    <span class="icon-[mdi--chevron-down] ml-1"> </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu">
-                                                    <li>
-                                                        <a class="dropdown-link" href="javascript:void(0)">
-                                                            Menu item
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="javascript:void(0)">
-                                                            Menu item
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="javascript:void(0)">
-                                                            Menu item
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-span-12 lg:col-span-6">
-                                <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                    <div class="card-body pb-0">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">Dropup Variation</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="flex flex-wrap items-center gap-3">
-                                            <div class="dropup relative">
-                                                <button type="button" class="dropdown-toggle btn btn-primary">
-                                                    Dropup
-                                                    <span class="icon-[mdi--chevron-down] ml-1"> </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Separated link </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropup relative">
-                                                <button type="button" class="btn btn-primary">
-                                                    <span class="px-3">Dropup</span>
-                                                    <span
-                                                        class="text-16 dropdown-toggle icon-[mdi--chevron-down] h-full w-10 bg-white bg-opacity-20 py-3 align-middle"
-                                                        id="dropdownMenu1">
-                                                    </span>
-                                                </button>
-                                                <ul class="dropdown-menu left-0" aria-labelledby="dropdownMenu1">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Separated link </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-12 gap-5">
-                            <div class="col-span-12 lg:col-span-6">
-                                <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                    <div class="card-body pb-0">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">
-                                            Dropstart Variation
-                                        </h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="flex flex-wrap gap-3">
-                                            <div class="dropstart relative">
-                                                <button type="button" class="dropdown-toggle btn btn-primary">
-                                                    <span class="icon-[mdi--chevron-down] mr-1"> </span>
-                                                    Dropstart
-                                                </button>
-
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Separated link </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropstart relative">
-                                                <button type="button" class="btn btn-primary">
-                                                    <span
-                                                        class="text-16 dropdown-toggle icon-[mdi--chevron-down] h-full w-10 bg-white bg-opacity-20 py-3 align-middle"
-                                                        id="dropdownMenu1">
-                                                    </span>
-                                                    <span class="px-3">Dropstart</span>
-                                                </button>
-                                                <ul class="dropdown-menu left-0" aria-labelledby="dropdownMenu1">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                    <hr class="my-1 border-gray-50 dark:border-zinc-600" />
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Separated link </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-span-12 lg:col-span-6">
-                                <div class="card dark:border-zinc-600 dark:bg-zinc-800">
-                                    <div class="card-body pb-0">
-                                        <h6 class="text-15 mb-1 text-gray-700 dark:text-gray-100">Dropend Variation</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="flex flex-wrap items-center gap-3">
-                                            <div class="dropdown relative">
-                                                <button type="button" class="dropdown-toggle btn btn-primary py-3">
-                                                    Dropend
-                                                    <span class="icon-[mdi--chevron-down] ml-1"> </span>
-                                                </button>
-
-                                                <ul class="dropdown-menu left-0">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown relative">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary dropdown-toggle bg-sky-500 p-0">
-                                                    <span class="px-3">Dropend </span>
-                                                    <span
-                                                        class="text-16 focus-visible:border-3 icon-[mdi--chevron-down] h-full w-10 bg-white bg-opacity-20 py-3 align-middle focus-visible:border-sky-500/10"
-                                                        id="dropdownMenu1">
-                                                    </span>
-                                                </button>
-                                                <ul class="dropdown-menu left-0" aria-labelledby="dropdownMenu1">
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Another action </a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-link" href="#"> Something else here </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Card: Dropdown Position Ends -->
                     </div>
                 </main>
 
