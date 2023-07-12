@@ -9,31 +9,24 @@
 @import 'flatpickr/dist/flatpickr.css';
 @import 'simple-datatables/dist/style.css';
 
-@import 'tailwindcss/base';
-@import './base/colors.css';
-@import 'tailwindcss/components';
-/* custom components */
-@import './theme.css';
-@import './components/reset.css';
-@import './components/common-ui.css';
-@import './components/badges.css';
-@import './components/header.css';
-@import './components/horizontal-menu.css';
-@import './components/vertical-menu.css';
-@import './components/footer.css';
-@import './components/cards.css';
-@import './components/buttons.css';
-@import './components/forms.css';
-@import './components/alerts.css';
-@import './components/breadcrumb.css';
-@import './components/dropdown.css';
-@import './components/tables.css';
-
-/* Start Pages */
-@import './components/pages/dashboard.css';
-@import './components/pages/login.css';
-@import './components/pages/calenders.css';
-
-/* utilities */
-@import 'tailwindcss/utilities';
-@import './extras.css';
+@import 'tailwind.css';
+@import 'reset.css';
+@import 'colors.css';
+@import 'components/theme.css';
+@import 'components/common-ui.css';
+@import 'components/badges.css';
+@import 'components/header.css';
+@import 'components/horizontal-menu.css';
+@import 'components/vertical-menu.css';
+@import 'components/footer.css';
+@import 'components/cards.css';
+@import 'components/buttons.css';
+@import 'components/forms.css';
+@import 'components/alerts.css';
+@import 'components/breadcrumb.css';
+@import 'components/dropdown.css';
+@import 'components/tables.css';
+@import 'components/dashboard.css';
+@import 'components/login.css';
+@import 'components/calenders.css';
+@import 'extras.css';

@@ -8,7 +8,7 @@
         "dev": "vite",
         "build": "vite build --emptyOutDir",
         "start": "vite preview",
-        "format": "prettier --write \"src/**/*.{js,css,scss,html}\""
+        "format": "prettier --write \"src/**/*.{js,css,scss,html}\" --ignore-path .gitignore"
     },
     "dependencies": {
         "@alpinejs/collapse": "^3.12.3",
