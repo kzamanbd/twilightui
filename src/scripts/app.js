@@ -440,7 +440,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var alertDismiss = document.querySelectorAll('.alert-dismissible');
 
         Array.from(alertDismiss).forEach(function (elem) {
-            elem.querySelector('.alert-dismiss').addEventListener('click', function () {
+            elem.querySelector('.alert-dismiss')?.addEventListener('click', function () {
                 elem.classList.add('hidden');
             });
         });
