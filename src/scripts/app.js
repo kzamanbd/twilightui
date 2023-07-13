@@ -1,15 +1,27 @@
 import dropdown from './dropdown';
+import modal from './modal';
 import ripples from './ripples';
 import twilight from './twilight';
 import sidebar from './vertical';
 
-// You will need a ResizeObserver polyfill for browsers that don't support it! (iOS Safari, Edge, ...)
-import ResizeObserver from 'resize-observer-polyfill';
-window.ResizeObserver = ResizeObserver;
-
 // tippy.js for tooltip
 import tippy from 'tippy.js';
 window.tippy = tippy;
+
+// initialize app
+twilight.init();
+// initialize sidebar
+sidebar.init();
+// initialize dropdown
+dropdown.init();
+// initialize ripples
+ripples.init();
+// initialize modal
+modal.init();
+
+// You will need a ResizeObserver polyfill for browsers that don't support it! (iOS Safari, Edge, ...)
+import ResizeObserver from 'resize-observer-polyfill';
+window.ResizeObserver = ResizeObserver;
 
 // sweet alert2
 import Swal from 'sweetalert2';
@@ -47,8 +59,3 @@ window.DataTable = DataTable;
 window.DataTableExportCSV = exportCSV;
 window.DataTableExportJSON = exportJSON;
 window.DataTableExportTXT = exportTXT;
-
-twilight.init();
-sidebar.init();
-dropdown.init();
-ripples.init();
