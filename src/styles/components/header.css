@@ -1,29 +1,31 @@
 @layer components {
     /* start top header components */
-    .top-header {
-        @apply z-10 bg-white duration-300 supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur dark:bg-dark;
+    .navbar-nav {
+        @apply z-10 transition-all duration-300 ease-in-out;
     }
-    .horizontal .top-header {
+    .horizontal .navbar-nav {
         @apply shadow-md;
     }
     .primary-header {
-        @apply flex items-center justify-between px-6 py-3;
+        @apply flex items-center justify-between bg-white px-6 py-3 supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur dark:bg-dark-700;
     }
     .navbar-fixed {
-        @apply dark--text sticky top-0 z-10 dark:shadow-xl;
+        @apply dark--text sticky top-0 z-10;
     }
     .vertical .navbar-fixed.scrollable,
     .collapsible .navbar-fixed.scrollable {
-        @apply mx-6 rounded-bl-lg rounded-br-lg shadow-md !important;
+        @apply mx-6;
     }
-    .navbar-hidden {
-        @apply hidden;
+    .vertical .navbar-fixed.scrollable .primary-header,
+    .collapsible .navbar-fixed.scrollable .primary-header {
+        @apply rounded-bl-lg rounded-br-lg shadow-xl;
     }
     .header-icon {
         @apply dark--text relative flex items-center p-1.5 text-xs font-medium;
         @apply rounded-lg border border-gray-200 bg-white hover:bg-gray-100 dark:bg-dark;
         @apply dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-white;
     }
+    .navbar-hidden,
     .horizontal .sidebar-toggle {
         @apply hidden;
     }
@@ -34,13 +36,13 @@
     .user-menu-link {
         @apply flex items-center justify-between px-4 py-2 text-sm;
         @apply dark--text rounded-md hover:text-primary-600;
-        @apply hover:bg-light hover:dark:bg-dark-secondary;
+        @apply hover:bg-light hover:dark:bg-dark-700;
     }
     .language-dropdown {
         @apply absolute left-0 -m-40 hidden w-40 space-y-2 rounded-md bg-white px-2 py-4 shadow-xl group-hover:block dark:bg-dark;
     }
     .language-dropdown-item {
         @apply dark--text flex items-center rounded-md px-4 py-2 hover:bg-light hover:text-primary-600;
-        @apply hover:dark:bg-dark-secondary dark:hover:text-gray-300;
+        @apply hover:dark:bg-dark-700 dark:hover:text-gray-300;
     }
 }

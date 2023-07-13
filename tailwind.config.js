@@ -16,8 +16,8 @@ module.exports = {
         extend: {
             colors: {
                 dark: {
-                    DEFAULT: '#1E293B',
-                    secondary: '#151521',
+                    ...colors.slate,
+                    DEFAULT: '#1F2937',
                 },
                 white: {
                     DEFAULT: '#FFFFFF',
@@ -31,20 +31,20 @@ module.exports = {
                     DEFAULT: '#00A76F',
                 },
                 info: {
-                    ...colors.blue,
-                    DEFAULT: colors.blue[500],
+                    ...colors.indigo,
+                    DEFAULT: colors.indigo[500],
                 },
                 danger: {
-                    ...colors.red,
-                    DEFAULT: colors.red[500],
+                    ...colors.rose,
+                    DEFAULT: colors.rose[500],
                 },
                 success: {
-                    ...colors.green,
-                    DEFAULT: colors.green[500],
+                    ...colors.emerald,
+                    DEFAULT: colors.emerald[500],
                 },
                 warning: {
-                    ...colors.yellow,
-                    DEFAULT: colors.yellow[500],
+                    ...colors.amber,
+                    DEFAULT: colors.amber[500],
                 },
                 secondary: {
                     ...colors.gray,

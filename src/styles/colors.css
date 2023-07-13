@@ -31,7 +31,4 @@
     --info: theme('colors.info.DEFAULT');
     --: theme('colors.info.100');
     --info-700: theme('colors.info.700');
-
-    --dark: theme('colors.dark.DEFAULT');
-    --dark-secondary: theme('colors.dark.secondary');
 }

@@ -68,7 +68,7 @@ window.DataTableExportTXT = exportTXT;
 (function () {
     // window scroll
     window.addEventListener('scroll', () => {
-        const header = document.querySelector('.top-header');
+        const header = document.querySelector('.navbar-nav');
         const scrollTop = document.querySelector('.scroll-top');
         if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
             // do something

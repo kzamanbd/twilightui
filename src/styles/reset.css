@@ -8,7 +8,7 @@ body:has(> .dark) {
     color-scheme: dark;
 }
 body.overflow-hidden,
-body.overflow-hidden .top-header {
+body.overflow-hidden .navbar-nav {
     @apply pr-[17px];
 }
 
