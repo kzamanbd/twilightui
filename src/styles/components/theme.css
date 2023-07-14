@@ -11,11 +11,10 @@
         @apply lg:container lg:mx-auto lg:shadow-lg;
     }
     .twilight {
-        @apply dark--text bg-light text-sm font-normal antialiased dark:bg-dark-700;
+        @apply dark--text overflow-x-hidden bg-light text-sm font-normal antialiased dark:bg-dark-700;
     }
     .twilight-body {
         @apply relative flex min-h-screen flex-col transition-all duration-300 dark:bg-dark-700 lg:ml-64;
-        @apply bg-[url('/images/mask.svg')] [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,1))];
     }
     .expanded.twilight-body {
         @apply lg:ml-[70px];

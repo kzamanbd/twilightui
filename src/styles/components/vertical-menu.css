@@ -36,6 +36,7 @@
         @apply hidden;
     }
     .vertical-menu .tw-menu-header .minus,
+    .collapsed.vertical-menu:not(:hover) .toggle-sidebar,
     .collapsed.vertical-menu:not(:hover) .tw-menu-header .label {
         @apply lg:hidden;
     }
