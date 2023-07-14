@@ -10,7 +10,7 @@
         @apply flex items-center justify-between bg-white px-6 py-3 supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur dark:bg-dark-700;
     }
     .navbar-fixed {
-        @apply dark--text sticky top-0 z-10;
+        @apply dark--text sticky top-0;
     }
     .vertical .navbar-fixed.scrollable,
     .collapsible .navbar-fixed.scrollable {
