@@ -42,7 +42,7 @@
                                     r="16.39"
                                     transform="translate(38.08 89.53) rotate(-76.62)" />
                             </svg>
-                            <span class="app-name" x-text="$store.app.name"></span>
+                            <div class="app-name">Twilight <span class="text-primary">UI</span></div>
                         </a>
                         <div class="collapse-icon" @click="$store.app.collapsibleMenu()"></div>
                         <button type="button" class="lg:hidden" @click="$store.app.toggleVMenu()">
@@ -909,14 +909,20 @@
                     <div class="primary-header">
                         <!-- sidebar toggle button -->
                         <div class="flex items-center">
-                            <button type="button" @click="$store.app.toggleVMenu()" aria-label="Menu">
-                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <button type="button" @click="$store.app.collapsibleMenu()" aria-label="Menu">
+                                <svg
+                                    stroke="currentColor"
+                                    fill="none"
+                                    stroke-width="0"
+                                    viewBox="0 0 24 24"
+                                    height="22"
+                                    width="22"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M4 6H20M4 12H20M4 18H11"
-                                        stroke="currentColor"
-                                        stroke-width="2"
                                         stroke-linecap="round"
-                                        stroke-linejoin="round"></path>
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 6h16M4 12h8m-8 6h16"></path>
                                 </svg>
                             </button>
                             <a href="/index.html" class="horizontal-logo">
@@ -936,7 +942,7 @@
                                         r="16.39"
                                         transform="translate(38.08 89.53) rotate(-76.62)" />
                                 </svg>
-                                <span class="app-name" x-text="$store.app.name"></span>
+                                <div class="app-name">Twilight <span class="text-primary">UI</span></div>
                             </a>
                         </div>
 
