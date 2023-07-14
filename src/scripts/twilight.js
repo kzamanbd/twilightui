@@ -1,10 +1,10 @@
 // simplebar
+import 'simplebar';
 import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
 import mask from '@alpinejs/mask';
 import persist from '@alpinejs/persist';
 import Alpine from 'alpinejs';
-import 'simplebar';
 
 window.Alpine = Alpine;
 Alpine.plugin(collapse);
@@ -22,7 +22,7 @@ const app = {
             menu: 'vertical', // vertical, collapsible, horizontal
             layout: 'full', // full, boxed-layout
             animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
-            navbar: 'navbar-sticky', // navbar-static, navbar-fixed, navbar-hidden
+            navbar: 'navbar-fixed', // navbar-static, navbar-fixed, navbar-hidden
             footer: 'footer-static', // footer-static, footer-fixed, footer-hidden
             semiDark: false,
             sidebar: false,
