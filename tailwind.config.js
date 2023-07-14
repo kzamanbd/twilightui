@@ -23,9 +23,7 @@ module.exports = {
                     DEFAULT: '#FFFFFF',
                     light: '#E0E6ED',
                 },
-                light: {
-                    DEFAULT: '#F5F8FA',
-                },
+                light: '#F5F8FA',
                 primary: {
                     ...primary,
                     DEFAULT: '#00A76F',
