@@ -1,8 +1,11 @@
-const verticalMenu = {
+export default {
     twilight: document.querySelector('.twilight'),
     verticalMenu: document.querySelector('.vertical-menu'),
     content: document.querySelector('.tw-nav-menu'),
     menuItems: document.querySelectorAll('.tw-menu-link'),
+    wrapper: document.querySelector('.twilight-body'),
+    sidebarToggle: document.querySelectorAll('.toggle-sidebar'),
+    overlay: document.querySelector('.menu-shadow'),
 
     toggleHeight(element, height) {
         if (element.style.height === '0px' || element.style.height === '') {
@@ -30,6 +33,50 @@ const verticalMenu = {
                 if (dropdown && menuItem.classList.contains('active')) {
                     this.toggleHeight(dropdown, dropdown.scrollHeight);
                     arrow.classList.toggle('rotate');
+                }
+            });
+        }
+    },
+
+    initSidebarToggle() {
+        if (this.sidebarToggle) {
+            this.sidebarToggle.forEach(toggle => {
+                toggle.addEventListener('click', () => this.toggleSidebar());
+            });
+        }
+        if (this.overlay) {
+            this.overlay.addEventListener('click', () => this.toggleSidebar());
+        }
+    },
+
+    toggleSidebar() {
+        const windowWidth = window.innerWidth;
+        if (windowWidth < 1024) {
+            this.verticalMenu.classList.toggle('expanded');
+            this.overlay.classList.toggle('hidden');
+        } else {
+            this.verticalMenu.classList.toggle('collapsed');
+            this.wrapper.classList.toggle('expanded');
+        }
+    },
+
+    initWrapper() {
+        if (this.verticalMenu) {
+            if (this.verticalMenu.classList.contains('collapsed')) {
+                this.wrapper.classList.add('expanded');
+            } else {
+                this.wrapper.classList.remove('expanded');
+            }
+        }
+    },
+
+    handleWindowResize() {
+        if (this.verticalMenu) {
+            window.addEventListener('resize', () => {
+                if (window.innerWidth < 1024) {
+                    this.verticalMenu.classList.remove('collapsed');
+                } else {
+                    this.verticalMenu.classList.remove('expanded');
                 }
             });
         }
@@ -66,9 +113,10 @@ const verticalMenu = {
     },
 
     init() {
+        this.initWrapper();
         this.initMenuItems();
         this.initScrollBar();
+        this.initSidebarToggle();
+        this.handleWindowResize();
     },
 };
-
-export default verticalMenu;

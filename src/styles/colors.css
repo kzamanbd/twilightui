@@ -29,6 +29,5 @@
     --warning-700: theme('colors.warning.700');
 
     --info: theme('colors.info.DEFAULT');
-    --: theme('colors.info.100');
     --info-700: theme('colors.info.700');
 }

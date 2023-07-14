@@ -24,7 +24,6 @@ const app = {
             footer: 'footer-static', // footer-static, footer-fixed, footer-hidden
             semiDark: false,
             sidebar: false,
-            sidebarCollapsed: false,
         };
 
         // theme config persist with alpinejs
@@ -54,9 +53,9 @@ const app = {
             toggleVMenu() {
                 this.sidebar = !this.sidebar;
             },
-            sidebarCollapsed: Alpine.$persist($themeConfig.sidebarCollapsed),
+            sidebarCollapsed: 'compact', // expanded, compact, collapsed
             collapsibleMenu() {
-                this.menu = this.menu == 'collapsible' ? 'vertical' : 'collapsible';
+                console.log('collapsibleMenu');
             },
 
             // window full screen
@@ -167,12 +166,11 @@ const app = {
             },
             get appConfig() {
                 const app = this.$store.app;
-                const sidebar = app.sidebar && 'toggle-menu';
                 let theme = app.theme;
                 if (theme == 'system') {
                     theme = !!window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                 }
-                return [sidebar, theme, app.menu, app.layout].filter(Boolean);
+                return [theme, app.menu, app.layout].filter(Boolean);
             },
             get isFullscreen() {
                 return this.$store.app.fullscreen ? 'fullscreen_exit' : 'fullscreen';

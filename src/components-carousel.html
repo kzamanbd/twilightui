@@ -20,7 +20,7 @@
             <!-- Loading dialog -->
             <div class="animate__animated loading duration-300">Loading.....</div>
             <!-- menu shadow -->
-            <div class="menu-shadow" @click="$store.app.toggleVMenu()"></div>
+            <div class="menu-shadow hidden"></div>
             <!-- vertical-menu -->
             <aside class="vertical-menu">
                 <div class="vertical-content" :class="[$store.app.semiDark && 'semi-dark']">
@@ -45,9 +45,9 @@
                             </svg>
                             <div class="app-name">Twilight <span class="text-primary">UI</span></div>
                         </a>
-                        <div class="collapse-icon" @click="$store.app.collapsibleMenu()"></div>
-                        <button type="button" class="lg:hidden" @click="$store.app.toggleVMenu()">
-                            <span class="icon-[mdi--close]"></span>
+                        <button type="button" class="toggle-sidebar">
+                            <span class="icon-[mdi--radiobox-blank] hidden lg:block"></span>
+                            <span class="icon-[mdi--close] lg:hidden"></span>
                         </button>
                     </div>
                     <!-- Menu Content -->
@@ -910,7 +910,7 @@
                     <div class="primary-header">
                         <!-- sidebar toggle button -->
                         <div class="flex items-center">
-                            <button type="button" @click="$store.app.collapsibleMenu()" aria-label="Menu">
+                            <button type="button" class="toggle-sidebar" aria-label="Menu">
                                 <svg
                                     stroke="currentColor"
                                     fill="none"
