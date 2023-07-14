@@ -1,3 +1,4 @@
+import drawer from './drawer';
 import dropdown from './dropdown';
 import modal from './modal';
 import ripples from './ripples';
@@ -18,6 +19,8 @@ dropdown.init();
 ripples.init();
 // initialize modal
 modal.init();
+// initialize drawer
+drawer.init();
 
 // You will need a ResizeObserver polyfill for browsers that don't support it! (iOS Safari, Edge, ...)
 import ResizeObserver from 'resize-observer-polyfill';
