@@ -1,5 +1,3 @@
-// simplebar
-import 'simplebar';
 import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
 import mask from '@alpinejs/mask';
@@ -19,13 +17,14 @@ const app = {
             locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
             theme: 'light', // light, dark, system
             rtlClass: 'ltr', // rtl, ltr
-            menu: 'vertical', // vertical, collapsible, horizontal
+            menu: 'vertical', // vertical, horizontal
             layout: 'full', // full, boxed-layout
             animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
             navbar: 'navbar-fixed', // navbar-static, navbar-fixed, navbar-hidden
             footer: 'footer-static', // footer-static, footer-fixed, footer-hidden
             semiDark: false,
             sidebar: false,
+            sidebarCollapsed: false,
         };
 
         // theme config persist with alpinejs
@@ -50,6 +49,26 @@ const app = {
 
                 this.theme = theme;
             },
+            // sidebar
+            sidebar: Alpine.$persist($themeConfig.sidebar),
+            toggleVMenu() {
+                this.sidebar = !this.sidebar;
+            },
+            sidebarCollapsed: Alpine.$persist($themeConfig.sidebarCollapsed),
+            collapsibleMenu() {
+                this.menu = this.menu == 'collapsible' ? 'vertical' : 'collapsible';
+            },
+
+            // window full screen
+            fullscreen: false,
+            toggleFullscreen() {
+                if (this.fullscreen) {
+                    document.exitFullscreen();
+                } else {
+                    document.documentElement.requestFullscreen();
+                }
+                this.fullscreen = !this.fullscreen;
+            },
 
             // navigation menu
             menu: Alpine.$persist($themeConfig.menu),
@@ -57,7 +76,6 @@ const app = {
                 if (!val) {
                     val = this.menu || $themeConfig.menu; // vertical, collapsible, horizontal
                 }
-                this.sidebar = false; // reset sidebar state
                 this.menu = val;
             },
 
@@ -128,27 +146,6 @@ const app = {
 
                 this.locale = val;
             },
-
-            // sidebar
-            sidebar: Alpine.$persist($themeConfig.sidebar),
-            toggleVMenu() {
-                this.sidebar = !this.sidebar;
-            },
-
-            collapsibleMenu() {
-                this.menu = this.menu == 'collapsible' ? 'vertical' : 'collapsible';
-            },
-
-            // window full screen
-            fullscreen: false,
-            toggleFullscreen() {
-                if (this.fullscreen) {
-                    document.exitFullscreen();
-                } else {
-                    document.documentElement.requestFullscreen();
-                }
-                this.fullscreen = !this.fullscreen;
-            },
         });
 
         //? alpine data
@@ -175,7 +172,7 @@ const app = {
                 if (theme == 'system') {
                     theme = !!window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
                 }
-                return [sidebar, theme, app.menu, app.layout];
+                return [sidebar, theme, app.menu, app.layout].filter(Boolean);
             },
             get isFullscreen() {
                 return this.$store.app.fullscreen ? 'fullscreen_exit' : 'fullscreen';

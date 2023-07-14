@@ -1,3 +1,4 @@
+import 'simplebar';
 import drawer from './drawer';
 import dropdown from './dropdown';
 import modal from './modal';
