@@ -182,6 +182,7 @@ document.addEventListener('alpine:init', () => {
             }
 
             this.isAddEventModal = true;
+            document.querySelector('[data-target="#modal-create-event"]').click();
         },
 
         editDate(data) {

@@ -1,15 +1,4 @@
 @layer components {
-    /* modal ui */
-    .modal {
-        @apply fixed inset-0 z-[999] overflow-y-auto bg-white/60 supports-[backdrop-filter]:bg-black/60 supports-[backdrop-filter]:backdrop-blur;
-    }
-    .modal-dialog {
-        @apply flex min-h-full items-start justify-center px-4;
-    }
-    .modal-dialog-center {
-        @apply items-center justify-center;
-    }
-
     /* chats */
     .chat-wrapper {
         @apply relative flex h-full gap-5 sm:h-[calc(100vh_-_200px)] sm:min-h-0;

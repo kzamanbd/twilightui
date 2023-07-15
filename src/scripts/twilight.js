@@ -282,7 +282,7 @@ const app = {
             }
 
             // scroll top
-            document.querySelector('.scroll-top').addEventListener('click', () => {
+            document.querySelector('.scroll-top')?.addEventListener('click', () => {
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;
             });
