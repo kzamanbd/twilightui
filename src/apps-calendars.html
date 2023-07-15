@@ -1114,7 +1114,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-primary flex" @click="editEvent()">
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary flex"
+                                        @click="editEvent()"
+                                        data-toggle="modal"
+                                        data-target="#modal-create-event">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24px"
@@ -1132,39 +1137,34 @@
                                         Create Event
                                     </button>
                                 </div>
-                                <template x-teleport="body">
-                                    <div class="modal" x-show="isAddEventModal">
-                                        <div class="modal-dialog" @click.self="isAddEventModal = false">
-                                            <div
-                                                x-show="isAddEventModal"
-                                                x-transition
-                                                x-transition.duration.300
-                                                class="card relative my-8 w-[90%] max-w-lg overflow-hidden rounded-lg border-0 p-0 md:w-full">
-                                                <button
-                                                    type="button"
-                                                    class="text-white-dark absolute right-4 top-4 hover:text-dark"
-                                                    @click="isAddEventModal = false">
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="24px"
-                                                        height="24px"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        class="h-6 w-6">
-                                                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                                                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                                                    </svg>
-                                                </button>
-                                                <h3
-                                                    class="bg-[#fbfbfb] py-3 pl-5 pr-[50px] text-lg font-medium dark:bg-[#121c2c]"
-                                                    x-text="params.id ? 'Edit Event' : 'Add Event'">
-                                                    Edit Event
-                                                </h3>
-                                                <div class="p-5">
+                                <div>
+                                    <div id="modal-create-event" class="modal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header flex justify-between">
+                                                    <h6
+                                                        class="font-medium dark:bg-[#121c2c]"
+                                                        x-text="params.id ? 'Edit Event' : 'Add Event'">
+                                                        Edit Event
+                                                    </h6>
+                                                    <button type="button" data-dismiss="modal">
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="24px"
+                                                            height="24px"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="h-6 w-6">
+                                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
                                                     <form @submit.prevent="saveEvent">
                                                         <div class="mb-5">
                                                             <label for="title">Event Title :</label>
@@ -1262,7 +1262,7 @@
                                                             <button
                                                                 type="button"
                                                                 class="btn btn-outline-danger"
-                                                                @click="isAddEventModal = false">
+                                                                data-dismiss="modal">
                                                                 Cancel
                                                             </button>
                                                             <button
@@ -1277,7 +1277,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </template>
+                                </div>
                                 <div id="calendar"></div>
                             </div>
                         </div>

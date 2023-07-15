@@ -177,7 +177,7 @@ input[type='range']:active::-webkit-slider-thumb {
     box-sizing: border-box;
 }
 .custom-file-container .label-container label {
-    color: #4361ee;
+    color: var(--primary);
     font-size: 16px;
 }
 .custom-file-container .label-container {
@@ -242,7 +242,7 @@ input[type='range']:active::-webkit-slider-thumb {
     padding: 10px 16px;
     line-height: 1.25;
     background-color: rgba(27, 85, 226, 0.239);
-    color: #4361ee;
+    color: var(--primary);
     border-left: 1px solid #e0e6ed;
     box-sizing: border-box;
 }
