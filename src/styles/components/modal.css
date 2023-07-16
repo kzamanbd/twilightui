@@ -42,7 +42,7 @@
     }
 
     .modal-header {
-        @apply border-b border-b-slate-200 dark:border-b-slate-600;
+        @apply flex items-center justify-between border-b border-b-slate-200 dark:border-b-slate-600;
     }
 
     .modal-body {
