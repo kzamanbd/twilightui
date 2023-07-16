@@ -84,7 +84,7 @@ const dropdown = {
             });
         });
 
-        // watch for new dropdowns
+        // watch dom changes for new dropdowns
         const observer = new MutationObserver(mutations => {
             mutations.forEach(mutation => {
                 mutation.addedNodes.forEach(node => {

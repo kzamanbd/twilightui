@@ -131,33 +131,55 @@ const modal = {
     init() {
         const toggles = this.querySelectors('[data-toggle="modal"]');
 
-        if (toggles.length) {
-            toggles.forEach(toggle => {
-                const targetId = toggle.dataset.target;
+        function modalToggle(toggle) {
+            const targetId = toggle.dataset.target;
 
-                if (targetId) {
-                    const target = document.querySelector(targetId);
-                    const options = {
-                        keyboard: target.dataset.keyboard === 'false' ? false : true,
-                        backdrop: (() => {
-                            let output = true;
+            if (targetId) {
+                const target = document.querySelector(targetId);
+                const options = {
+                    keyboard: target.dataset?.keyboard === 'false' ? false : true,
+                    backdrop: (() => {
+                        let output = true;
 
-                            if (target.dataset.backdrop === 'static') {
-                                output = 'static';
-                            }
+                        if (target.dataset?.backdrop === 'static') {
+                            output = 'static';
+                        }
 
-                            if (target.dataset.backdrop === 'false') {
-                                output = false;
-                            }
+                        if (target.dataset?.backdrop === 'false') {
+                            output = false;
+                        }
 
-                            return output;
-                        })(),
-                    };
+                        return output;
+                    })(),
+                };
 
-                    new Modal(toggle, options);
-                }
-            });
+                new Modal(toggle, options);
+            }
         }
+
+        if (toggles.length) {
+            toggles.forEach(modalToggle);
+        }
+
+        // watch dom changes for new modal toggles
+        const observer = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+                mutation.addedNodes.forEach(node => {
+                    if (node.classList && node.classList.contains('modal')) {
+                        const toggles = node.querySelectorAll('[data-toggle="modal"]');
+
+                        if (toggles.length) {
+                            toggles.forEach(modalToggle);
+                        }
+                    }
+                });
+            });
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+        });
     },
 
     querySelectors(selectors) {

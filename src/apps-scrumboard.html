@@ -1256,13 +1256,17 @@
                             <div class="modal-dialog modal-dialog-center">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h6
-                                            class="font-medium dark:bg-[#121c2c]"
-                                            x-text="params.id ? 'Edit Project' : 'Add Project'"></h6>
-                                        <button type="button" data-dismiss="modal">
-                                            <span class="icon-[mdi--close]"> </span>
-                                        </button>
+                                        <div class="flex items-center justify-between">
+                                            <h6 x-text="params.id ? 'Edit Project' : 'Add Project'"></h6>
+                                            <button
+                                                type="button"
+                                                class="btn btn-plain-secondary p-1"
+                                                data-dismiss="modal">
+                                                <i class="icon-[mdi--close]"></i>
+                                            </button>
+                                        </div>
                                     </div>
+
                                     <div class="modal-body">
                                         <form @submit.prevent="saveProject">
                                             <div class="grid gap-5">
@@ -1302,12 +1306,15 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h6
-                                            x-text="paramsTask.id ? 'Edit Task' : 'Add Task'"
-                                            class="text-lg font-medium dark:bg-[#121c2c]"></h6>
-                                        <button type="button">
-                                            <span class="icon-[mdi--close]"> close </span>
-                                        </button>
+                                        <div class="flex items-center justify-between">
+                                            <h6 x-text="paramsTask.id ? 'Edit Task' : 'Add Task'"></h6>
+                                            <button
+                                                type="button"
+                                                class="btn btn-plain-secondary p-1"
+                                                data-dismiss="modal">
+                                                <i class="icon-[mdi--close]"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                     <div class="modal-body">
                                         <form @submit.prevent="saveTask">

@@ -188,16 +188,6 @@ const app = {
             },
         }));
 
-        Alpine.data('modal', (initialOpenState = false) => ({
-            open: initialOpenState,
-
-            toggle(event) {
-                this.open = !this.open;
-                // if click esc key
-                if (event && event.keyCode === 27) this.open = false;
-            },
-        }));
-
         // Magic: $tooltip
         Alpine.magic('tooltip', el => (message, placement) => {
             let instance = tippy(el, {
