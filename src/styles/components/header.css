@@ -7,7 +7,7 @@
         @apply shadow-md;
     }
     .primary-header {
-        @apply flex items-center justify-between bg-white px-6 py-3 supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur dark:bg-dark-700;
+        @apply flex items-center justify-between bg-white px-6 py-2.5 supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur dark:bg-dark-700;
     }
     .navbar-fixed {
         @apply dark--text sticky top-0;
