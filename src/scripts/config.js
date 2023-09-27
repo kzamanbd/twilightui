@@ -266,11 +266,10 @@ Alpine.plugin(persist);
     }
     document.addEventListener('DOMContentLoaded', function () {
         // screen loader
-        const loading = document.getElementsByClassName('loading');
-        if (loading?.length) {
-            loading[0].classList.add('animate__fadeOut');
+        const loading = document.querySelector('.loading');
+        if (loading) {
             setTimeout(() => {
-                loading[0].remove();
+                loading.remove();
             }, 200);
         }
 

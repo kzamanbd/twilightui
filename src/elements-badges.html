@@ -15,7 +15,9 @@
     <body>
         <div class="twilight" x-data="twilightTheme" :class="appConfig">
             <!-- Loading dialog -->
-            <div class="loading">Loading.....</div>
+            <div class="loading">
+                <div id="loader"></div>
+            </div>
             <!-- menu shadow -->
             <div class="menu-shadow hidden"></div>
             <!-- vertical-menu -->
@@ -991,7 +993,7 @@
                                     <img class="h-full w-full object-cover" src="/images/author.png" alt="Author" />
                                 </button>
 
-                                <ul class="dropdown-menu dark:bg-dark w-64 py-2 shadow-2xl">
+                                <ul class="dropdown-menu w-64 py-2 shadow-2xl dark:bg-dark">
                                     <li class="flex items-center border-b px-4 py-2 dark:border-gray-700">
                                         <div class="flex-shrink-0">
                                             <img
