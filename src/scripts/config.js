@@ -882,7 +882,6 @@ window.createModal = function (target, options = {}) {
  * @license MIT
  */
 
-const twilight = document.querySelector('.twilight');
 const verticalMenu = document.querySelector('.vertical-menu');
 const content = document.querySelector('.tw-nav-menu');
 const menuItems = document.querySelectorAll('.tw-menu-link');
