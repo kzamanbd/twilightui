@@ -156,4 +156,7 @@
     .timeline-widget .timeline-widget-list .timeline-widget-content {
         max-width: 20rem;
     }
+    .icon-container {
+        @apply flex h-14 w-14 items-center justify-center rounded-md border border-dark/20 bg-white dark:border-[#191e3a];
+    }
 }
