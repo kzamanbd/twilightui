@@ -1,27 +1,10 @@
 import 'simplebar';
-import drawer from './drawer';
-import dropdown from './dropdown';
-import modal from './modal';
-import ripples from './ripples';
-import twilight from './twilight';
-import sidebar from './vertical';
-
-// tippy.js for tooltip
-import tippy from 'tippy.js';
-window.tippy = tippy;
-
-// initialize app
-twilight.init();
-// initialize sidebar
-sidebar.init();
-// initialize dropdown
-dropdown.init();
-// initialize ripples
-ripples.init();
-// initialize modal
-modal.init();
-// initialize drawer
-drawer.init();
+import './config';
+import './drawer';
+import './dropdown';
+import './modal';
+import './ripples';
+import './vertical-menu';
 
 // You will need a ResizeObserver polyfill for browsers that don't support it! (iOS Safari, Edge, ...)
 import ResizeObserver from 'resize-observer-polyfill';

@@ -75,27 +75,23 @@ class Dropdown {
     }
 }
 
-const dropdown = {
-    init() {
-        window.addEventListener('load', () => {
-            const dropdowns = document.querySelectorAll('.dropdown');
-            dropdowns.forEach(dropdown => {
-                new Dropdown(dropdown, dropdown.dataset);
+(function () {
+    window.addEventListener('load', () => {
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            new Dropdown(dropdown, dropdown.dataset);
+        });
+    });
+
+    // watch dom changes for new dropdowns
+    const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+                if (node.classList && node.classList.contains('dropdown')) {
+                    new Dropdown(node, node.dataset);
+                }
             });
         });
-
-        // watch dom changes for new dropdowns
-        const observer = new MutationObserver(mutations => {
-            mutations.forEach(mutation => {
-                mutation.addedNodes.forEach(node => {
-                    if (node.classList && node.classList.contains('dropdown')) {
-                        new Dropdown(node, node.dataset);
-                    }
-                });
-            });
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-    },
-};
-
-export default dropdown;
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+})();

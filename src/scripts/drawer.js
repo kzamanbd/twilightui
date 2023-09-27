@@ -136,55 +136,51 @@ class Drawer {
     }
 }
 
-const drawer = {
-    init() {
-        const toggles = this.querySelectors('[data-toggle="drawer"]');
+function querySelectors(selectors) {
+    let output = [];
 
-        if (toggles.length) {
-            toggles.forEach(toggle => {
-                const targetId = toggle.dataset.target;
+    if (selectors) {
+        output = [...document.querySelectorAll(selectors)].filter(selectorElement => {
+            // Return all the elements except .code-viewer-source children elements
+            return !selectorElement.parentElement.classList.contains('code-viewer-source');
+        });
+    }
 
-                if (targetId) {
-                    const target = document.querySelector(targetId);
-                    const options = {
-                        keyboard: target.dataset.keyboard === 'false' ? false : true,
-                        backdrop: (() => {
-                            let output = true;
-
-                            if (target.dataset.backdrop === 'static') {
-                                output = 'static';
-                            }
-
-                            if (target.dataset.backdrop === 'false') {
-                                output = false;
-                            }
-
-                            return output;
-                        })(),
-                    };
-
-                    new Drawer(toggle, options);
-                }
-            });
-        }
-    },
-
-    querySelectors(selectors) {
-        let output = [];
-
-        if (selectors) {
-            output = [...document.querySelectorAll(selectors)].filter(selectorElement => {
-                // Return all the elements except .code-viewer-source children elements
-                return !selectorElement.parentElement.classList.contains('code-viewer-source');
-            });
-        }
-
-        return output;
-    },
-};
+    return output;
+}
 
 window.createDrawer = function (target, options = {}) {
     return new Drawer(target, options);
 };
 
-export default drawer;
+(function () {
+    const toggles = querySelectors('[data-toggle="drawer"]');
+
+    if (toggles.length) {
+        toggles.forEach(toggle => {
+            const targetId = toggle.dataset.target;
+
+            if (targetId) {
+                const target = document.querySelector(targetId);
+                const options = {
+                    keyboard: target.dataset.keyboard === 'false' ? false : true,
+                    backdrop: (() => {
+                        let output = true;
+
+                        if (target.dataset.backdrop === 'static') {
+                            output = 'static';
+                        }
+
+                        if (target.dataset.backdrop === 'false') {
+                            output = false;
+                        }
+
+                        return output;
+                    })(),
+                };
+
+                new Drawer(toggle, options);
+            }
+        });
+    }
+})();

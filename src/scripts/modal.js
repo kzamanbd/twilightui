@@ -1,4 +1,4 @@
-export class Modal {
+class Modal {
     constructor(target, options = {}) {
         //Store the target element
         this.target = null;
@@ -127,76 +127,73 @@ export class Modal {
     }
 }
 
-const modal = {
-    init() {
-        const toggles = this.querySelectors('[data-toggle="modal"]');
+function querySelectors(selectors) {
+    let output = [];
 
-        function modalToggle(toggle) {
-            const targetId = toggle.dataset.target;
-
-            if (targetId) {
-                const target = document.querySelector(targetId);
-                const options = {
-                    keyboard: target.dataset?.keyboard === 'false' ? false : true,
-                    backdrop: (() => {
-                        let output = true;
-
-                        if (target.dataset?.backdrop === 'static') {
-                            output = 'static';
-                        }
-
-                        if (target.dataset?.backdrop === 'false') {
-                            output = false;
-                        }
-
-                        return output;
-                    })(),
-                };
-
-                new Modal(toggle, options);
-            }
-        }
-
-        if (toggles.length) {
-            toggles.forEach(modalToggle);
-        }
-
-        // watch dom changes for new modal toggles
-        const observer = new MutationObserver(mutations => {
-            mutations.forEach(mutation => {
-                mutation.addedNodes.forEach(node => {
-                    if (node.classList && node.classList.contains('modal')) {
-                        const toggles = node.querySelectorAll('[data-toggle="modal"]');
-
-                        if (toggles.length) {
-                            toggles.forEach(modalToggle);
-                        }
-                    }
-                });
-            });
+    if (selectors) {
+        output = [...document.querySelectorAll(selectors)].filter(selectorElement => {
+            // Return all the elements except .code-viewer-source children elements
+            return !selectorElement.parentElement.classList.contains('code-viewer-source');
         });
+    }
 
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true,
-        });
-    },
-
-    querySelectors(selectors) {
-        let output = [];
-
-        if (selectors) {
-            output = [...document.querySelectorAll(selectors)].filter(selectorElement => {
-                // Return all the elements except .code-viewer-source children elements
-                return !selectorElement.parentElement.classList.contains('code-viewer-source');
-            });
-        }
-
-        return output;
-    },
-};
+    return output;
+}
 
 window.createModal = function (target, options = {}) {
     return new Modal(target, options);
 };
-export default modal;
+
+(function () {
+    const toggles = querySelectors('[data-toggle="modal"]');
+
+    function modalToggle(toggle) {
+        const targetId = toggle.dataset.target;
+
+        if (targetId) {
+            const target = document.querySelector(targetId);
+            const options = {
+                keyboard: target.dataset?.keyboard === 'false' ? false : true,
+                backdrop: (() => {
+                    let output = true;
+
+                    if (target.dataset?.backdrop === 'static') {
+                        output = 'static';
+                    }
+
+                    if (target.dataset?.backdrop === 'false') {
+                        output = false;
+                    }
+
+                    return output;
+                })(),
+            };
+
+            new Modal(toggle, options);
+        }
+    }
+
+    if (toggles.length) {
+        toggles.forEach(modalToggle);
+    }
+
+    // watch dom changes for new modal toggles
+    const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+                if (node.classList && node.classList.contains('modal')) {
+                    const toggles = node.querySelectorAll('[data-toggle="modal"]');
+
+                    if (toggles.length) {
+                        toggles.forEach(modalToggle);
+                    }
+                }
+            });
+        });
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+    });
+});
