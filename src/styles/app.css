@@ -9,7 +9,7 @@
 @import 'tailwind.css';
 @import 'reset.css';
 @import 'colors.css';
-@import 'components/theme.css';
+@import 'theme.css';
 @import 'components/common-ui.css';
 @import 'components/badges.css';
 @import 'components/header.css';

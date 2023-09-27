@@ -1,10 +1,5 @@
 import 'simplebar';
 import './config';
-import './drawer';
-import './dropdown';
-import './modal';
-import './ripples';
-import './vertical-menu';
 
 // You will need a ResizeObserver polyfill for browsers that don't support it! (iOS Safari, Edge, ...)
 import ResizeObserver from 'resize-observer-polyfill';
