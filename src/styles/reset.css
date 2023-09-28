@@ -1,11 +1,17 @@
-body:has(> .boxed-layout) {
+/* :root {
+    color-scheme: dark;
+} */
+body:has(.boxed-layout) {
     @apply bg-gray-50;
 }
-body:has(> .dark) {
+body:has(.dark) {
     @apply bg-gray-900;
 }
-body:has(> .dark) {
+body:has(.dark) {
     color-scheme: dark;
+}
+body:has(.loading) {
+    @apply overflow-hidden;
 }
 body.overflow-hidden,
 body.overflow-hidden .navbar-nav {
