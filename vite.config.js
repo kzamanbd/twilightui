@@ -75,7 +75,7 @@ export default defineConfig({
                 entryFileNames: 'js/[name]-[hash].js',
             },
         },
-        chunkSizeWarningLimit: 2000, // 2000kb
+        chunkSizeWarningLimit: 1500, // 1500KiB
     },
     server: {
         port: 5000,
