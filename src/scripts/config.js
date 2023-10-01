@@ -282,12 +282,6 @@ Alpine.plugin(persist);
             }, 200);
         }
 
-        // scroll top
-        document.querySelector('.scroll-top')?.addEventListener('click', () => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        });
-
         // nav-tabs
         document.querySelectorAll('.nav-tabs').forEach(function (elem) {
             elem.querySelectorAll('[data-tw-toggle="tab"]').forEach(function (item) {
