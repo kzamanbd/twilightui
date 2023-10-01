@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 
-import { addDynamicIconSelectors } from '@iconify/tailwind';
-import aspectRatio from '@tailwindcss/aspect-ratio';
-import forms from '@tailwindcss/forms';
-import typography from '@tailwindcss/typography';
-import colors from 'tailwindcss/colors';
-import defaultTheme from 'tailwindcss/defaultTheme';
+const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
+const forms = require('@tailwindcss/forms');
+const typography = require('@tailwindcss/typography');
+const aspectRatio = require('@tailwindcss/aspect-ratio');
+const { addDynamicIconSelectors } = require('@iconify/tailwind');
 
 const primary = colors.green;
 const colorConfig = {
@@ -44,7 +44,7 @@ const colorConfig = {
     },
 };
 
-export default {
+module.exports = {
     content: ['./src/**/*.{html,js}'],
     darkMode: 'class', // or 'media'
     theme: {
