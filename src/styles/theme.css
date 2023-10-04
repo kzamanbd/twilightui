@@ -5,7 +5,7 @@
     }
     .loading {
         @apply fixed inset-0 z-[9999] flex items-center justify-center;
-        @apply supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur;
+        @apply bg-gray-100 supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur;
     }
     .boxed-layout {
         @apply lg:container lg:mx-auto lg:shadow-lg;

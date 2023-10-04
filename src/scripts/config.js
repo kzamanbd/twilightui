@@ -252,19 +252,12 @@ Alpine.plugin(persist);
     // window scroll
     window.addEventListener('scroll', () => {
         const header = document.querySelector('.navbar-nav');
-        const scrollTop = document.querySelector('.scroll-top');
         if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-            // do something
+            // add class to header
             header.classList.add('scrollable');
         } else {
-            // do something
+            // remove class from header
             header.classList.remove('scrollable');
-        }
-        // scroll top button
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            scrollTop.classList.remove('hidden');
-        } else {
-            scrollTop.classList.add('hidden');
         }
     });
 
@@ -275,12 +268,10 @@ Alpine.plugin(persist);
     }
     document.addEventListener('DOMContentLoaded', function () {
         // screen loader
-        const loading = document.querySelector('.loading');
-        if (loading) {
-            setTimeout(() => {
-                loading.remove();
-            }, 200);
-        }
+        setTimeout(() => {
+            const loading = document.querySelector('.loading');
+            loading.remove();
+        }, 200);
 
         // nav-tabs
         document.querySelectorAll('.nav-tabs').forEach(function (elem) {
