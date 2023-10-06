@@ -36,7 +36,7 @@
     .user-menu-link {
         @apply flex items-center justify-between px-4 py-2 text-sm;
         @apply dark--text rounded-md hover:text-primary-600;
-        @apply hover:bg-light hover:dark:bg-dark-700;
+        @apply w-full hover:bg-light hover:dark:bg-dark-700;
     }
     .language-dropdown {
         @apply absolute left-0 -m-40 hidden w-40 space-y-2 rounded-md bg-white px-2 py-4 shadow-xl group-hover:block dark:bg-dark;
