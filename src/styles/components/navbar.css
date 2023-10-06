@@ -10,7 +10,7 @@
         @apply bg-white dark:bg-dark-700;
     }
     .primary-header {
-        @apply flex items-center justify-between px-6 py-3 supports-[backdrop-filter]:bg-light/60 dark:supports-[backdrop-filter]:bg-gray-700/60;
+        @apply flex items-center justify-between px-6 py-3 supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur dark:supports-[backdrop-filter]:bg-gray-700/60;
     }
     .navbar-fixed {
         @apply dark--text sticky top-0;
@@ -21,7 +21,7 @@
     }
     .vertical .navbar-fixed.scrollable .primary-header,
     .collapsible .navbar-fixed.scrollable .primary-header {
-        @apply rounded-bl-lg rounded-br-lg shadow-xl;
+        @apply rounded-bl-lg rounded-br-lg shadow-md;
     }
     .header-icon {
         @apply dark--text relative flex items-center p-1.5 text-xs font-medium;
