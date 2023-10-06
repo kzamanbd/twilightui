@@ -4,10 +4,13 @@
         @apply z-10 transition-all duration-300 ease-in-out;
     }
     .horizontal .navbar-nav {
-        @apply shadow-md;
+        @apply shadow;
+    }
+    .horizontal .navbar-nav:not(.scrollable) {
+        @apply bg-white dark:bg-dark-700;
     }
     .primary-header {
-        @apply flex items-center justify-between bg-white px-6 py-3 supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur dark:bg-dark-700;
+        @apply flex items-center justify-between px-6 py-3 supports-[backdrop-filter]:bg-light/60 dark:supports-[backdrop-filter]:bg-gray-700/60;
     }
     .navbar-fixed {
         @apply dark--text sticky top-0;

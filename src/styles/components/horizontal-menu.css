@@ -1,7 +1,8 @@
 @layer components {
     .vertical .horizontal-menu,
     .collapsible .horizontal-logo,
-    .vertical .horizontal-logo {
+    .vertical .horizontal-logo,
+    .horizontal .toggle-sidebar {
         @apply hidden;
     }
 
