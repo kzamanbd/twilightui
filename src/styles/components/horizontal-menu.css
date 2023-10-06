@@ -47,12 +47,12 @@
         @apply absolute top-full z-20 hidden min-w-[180px] rounded bg-white py-3 shadow dark:bg-gray-800;
     }
 
-    .horizontal-menu ul.tw-dropdown-menu a {
+    .horizontal-menu ul.tw-dropdown-menu .tw-dropdown-item {
         @apply flex items-center justify-between px-4 py-2 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
 
-    .horizontal-menu ul.tw-dropdown-menu a.active {
-        @apply bg-primary-100 text-primary dark:bg-gray-700 dark:hover:text-primary;
+    .horizontal-menu ul.tw-dropdown-menu .active {
+        @apply text-primary dark:hover:text-primary;
     }
 
     .horizontal-menu > li.nav-item:hover > ul.tw-dropdown-menu,
