@@ -44,53 +44,15 @@
     }
 
     .horizontal-menu ul.tw-dropdown-menu {
-        position: absolute;
-        top: 100%;
-        z-index: 20;
-        display: none;
-        min-width: 180px;
-        border-radius: 0.25rem;
-        --tw-bg-opacity: 1;
-        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-        padding: 0.5rem 0;
-        --tw-text-opacity: 1;
-        color: rgb(59 63 92 / var(--tw-text-opacity));
-        --tw-shadow: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
-        --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    }
-
-    .dark .horizontal-menu ul.tw-dropdown-menu {
-        --tw-bg-opacity: 1;
-        background-color: rgb(27 46 75 / var(--tw-bg-opacity));
-        --tw-text-opacity: 1;
-        color: rgb(136 142 168 / var(--tw-text-opacity));
+        @apply absolute top-full z-20 hidden min-w-[180px] rounded bg-white py-3 shadow dark:bg-gray-800;
     }
 
     .horizontal-menu ul.tw-dropdown-menu a {
-        @apply flex items-center justify-between px-4 py-2;
-    }
-
-    .horizontal-menu ul.tw-dropdown-menu a:hover {
-        --tw-bg-opacity: 1;
-        background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-        --tw-text-opacity: 1;
-        color: rgb(67 97 238 / var(--tw-text-opacity));
-    }
-
-    .dark .horizontal-menu ul.tw-dropdown-menu a:hover {
-        @apply bg-[#4361ee1a];
+        @apply flex items-center justify-between px-4 py-2 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
 
     .horizontal-menu ul.tw-dropdown-menu a.active {
-        --tw-bg-opacity: 1;
-        background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-        --tw-text-opacity: 1;
-        color: rgb(67 97 238 / var(--tw-text-opacity));
-    }
-
-    .dark .horizontal-menu ul.tw-dropdown-menu a.active {
-        background-color: #4361ee1a;
+        @apply bg-primary-100 text-primary dark:bg-gray-700 dark:hover:text-primary;
     }
 
     .horizontal-menu > li.nav-item:hover > ul.tw-dropdown-menu,
