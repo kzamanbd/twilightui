@@ -7,7 +7,7 @@
 @import 'simple-datatables/dist/style.css';
 
 @import 'tailwind.css';
-@import 'colors.css';
+@import 'reset.css';
 @import 'theme.css';
 @import 'components/navbar.css';
 @import 'components/horizontal-menu.css';
@@ -27,4 +27,7 @@
 @import 'components/dashboard.css';
 @import 'components/login.css';
 @import 'components/calenders.css';
-@import 'extras.css';
+@import 'components/tooltip.css';
+@import 'components/datatable.css';
+@import 'components/file-upload.css';
+@import 'components/typography.css';
