@@ -7,9 +7,20 @@
         @apply fixed inset-0 z-[9999] flex items-center justify-center;
         @apply bg-gray-100 supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur dark:bg-dark-700;
     }
-    .boxed-layout {
-        @apply lg:container lg:mx-auto lg:shadow-lg;
+    .boxed-layout .navbar-nav,
+    .boxed-layout .footer,
+    .boxed-layout .twilight-content {
+        @apply lg:container lg:mx-auto !important;
     }
+    .boxed-layout .twilight-content,
+    .boxed-layout .primary-header {
+        @apply px-0;
+    }
+
+    .boxed-layout .navbar-nav.scrollable .primary-header {
+        @apply px-6;
+    }
+
     .twilight {
         @apply dark--text bg-light text-sm font-normal antialiased dark:bg-dark-700;
     }
