@@ -93,7 +93,7 @@
         @apply text-gray-400 hover:bg-gray-700 hover:text-primary;
     }
     .semi-dark .tw-menu-link.active {
-        @apply bg-gray-700;
+        @apply bg-gray-700 hover:bg-gray-700;
     }
     .semi-dark .tw-dropdown-link {
         @apply hover:bg-gray-700 hover:text-primary;
