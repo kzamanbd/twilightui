@@ -8,4 +8,7 @@
     .card-body {
         @apply p-4;
     }
+    .variant--bordered .card {
+        @apply border border-gray-200 dark:border-gray-700;
+    }
 }
