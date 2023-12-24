@@ -1,3 +1,23 @@
+/*
+Theme Name: TwiLightUI - Tailwind CSS Admin Template
+Support: kzamanbn@gmail.com
+Description: TwiLightUI - TwilightUI is a modern, clean and very detailed UI kit. We designed 60+ beautiful UI pages, 500+ elements, 50+ icons. It's very easy to used and customize.
+Version: 1.0
+*/
+
+/* CSS Index
+============================
+00. Global CSS
+01. Variable CSS
+02. Common CSS
+03. Button
+04. Header
+05. Search
+============================ */
+
+/*=============================
+1. Google Fonts
+===============================*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&display=swap');
 
 @import 'plugins.css';
