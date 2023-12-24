@@ -1,34 +1,30 @@
 @layer components {
     /* tables */
-    table {
+    table.tw-table {
         @apply w-full border-collapse;
     }
 
-    table tfoot,
-    table thead {
-        @apply bg-gray-100 !important;
+    table.tw-table tfoot,
+    table.tw-table thead {
+        @apply bg-gray-100 dark:bg-gray-800 !important;
     }
 
-    .dark table tfoot,
-    .dark table thead {
-        @apply bg-gray-800 !important;
-    }
-    table thead tr th,
-    table tbody tr th,
-    table tbody tr td,
-    table tfoot tr th,
-    table tfoot tr td {
+    table.tw-table thead tr th,
+    table.tw-table tbody tr th,
+    table.tw-table tbody tr td,
+    table.tw-table tfoot tr th,
+    table.tw-table tfoot tr td {
         @apply border-b border-gray-300 px-4 py-3 dark:border-gray-800 !important;
     }
 
-    table tfoot tr th,
-    table thead tr th,
-    table tbody tr th {
+    table.tw-table tfoot tr th,
+    table.tw-table thead tr th,
+    table.tw-table tbody tr th {
         @apply font-semibold !important;
     }
-    table tbody tr:last-child td,
-    table tfoot tr:last-child td,
-    table tbody tr:last-child th {
+    table.tw-table tbody tr:last-child td,
+    table.tw-table tfoot tr:last-child td,
+    table.tw-table tbody tr:last-child th {
         @apply border-gray-100 dark:border-gray-800 !important;
     }
     .table-hover tbody tr:hover td,
@@ -36,13 +32,10 @@
         @apply bg-gray-200 dark:bg-gray-700 !important;
     }
     .table-striped tbody tr:nth-of-type(odd) {
-        @apply bg-gray-100 !important;
+        @apply bg-gray-100 dark:bg-gray-800;
     }
     .table-striped tbody tr:nth-of-type(odd) {
         @apply bg-gray-100 !important;
-    }
-    .dark .table-striped tbody tr:nth-of-type(odd) {
-        @apply bg-gray-800 !important;
     }
     .table-bordered tbody tr td,
     .table-bordered tfoot tr th,

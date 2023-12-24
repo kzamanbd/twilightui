@@ -1528,7 +1528,7 @@
 
                                     <template x-if="pagedMails.length">
                                         <div class="table-responsive relative min-h-[300px] grow overflow-y-auto">
-                                            <table>
+                                            <table class="tw-table">
                                                 <tbody>
                                                     <template x-for="mail in pagedMails" :key="`${mail.id}${index}`">
                                                         <tr class="cursor-pointer" @click="selectMail(mail)">
