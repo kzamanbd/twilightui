@@ -1,3 +1,6 @@
+@import 'tailwind.css';
+@import 'reset.css';
+
 @layer components {
     /* dark theme */
     .dark--text {

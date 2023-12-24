@@ -6,9 +6,7 @@
 @import 'flatpickr/dist/flatpickr.css';
 @import 'simple-datatables/dist/style.css';
 
-@import 'tailwind.css';
-@import 'reset.css';
-@import 'theme.css';
+@import 'base.css';
 @import 'components/navbar.css';
 @import 'components/horizontal-menu.css';
 @import 'components/vertical-menu.css';
