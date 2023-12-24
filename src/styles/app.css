@@ -1,12 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&display=swap');
-@import 'simplebar/dist/simplebar.css';
-@import 'tippy.js/dist/tippy.css';
-@import 'sweetalert2/dist/sweetalert2.css';
-@import 'quill/dist/quill.snow.css';
-@import 'flatpickr/dist/flatpickr.css';
-@import 'simple-datatables/dist/style.css';
 
+@import 'plugins.css';
 @import 'base.css';
+@import 'typography.css';
 @import 'components/navbar.css';
 @import 'components/horizontal-menu.css';
 @import 'components/vertical-menu.css';
@@ -28,4 +24,3 @@
 @import 'components/tooltip.css';
 @import 'components/datatable.css';
 @import 'components/file-upload.css';
-@import 'components/typography.css';
