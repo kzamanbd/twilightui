@@ -3,18 +3,18 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
-const entries = glob.sync('./src/**/*.html').reduce((acc, path) => {
+const entries = glob.sync('./app/**/*.html').reduce((acc, path) => {
     const name = path.split('/').pop().split('.').shift();
     acc[name] = path;
     return acc;
 }, {});
 
 export default defineConfig({
-    root: 'src',
+    root: 'app',
     resolve: {
         alias: {
             '@tailwind.config': resolve(__dirname, './tailwind.config.js'),
-            '@': resolve(__dirname, './src'),
+            '@': resolve(__dirname, './app'),
         },
     },
     optimizeDeps: {

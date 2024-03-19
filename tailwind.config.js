@@ -45,7 +45,7 @@ const colorConfig = {
 };
 
 module.exports = {
-    content: ['./src/**/*.{html,js}'],
+    content: ['./app/**/*.{html,js}'],
     darkMode: 'class', // or 'media'
     theme: {
         extend: {
