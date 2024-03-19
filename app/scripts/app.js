@@ -1,3 +1,12 @@
+/**
+ * TwilightUI
+ * @version 1.0.0
+ * @description A simple UI framework for building beautiful responsive websites and web apps.
+ * @license MIT
+ * @see https://twilightui.com/
+ * @Alpine Config
+ */
+
 import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
 import mask from '@alpinejs/mask';
@@ -56,14 +65,7 @@ window.DataTableExportCSV = exportCSV;
 window.DataTableExportJSON = exportJSON;
 window.DataTableExportTXT = exportTXT;
 
-/**
- * TwilightUI
- * @version 1.0.0
- * @description A simple UI framework for building beautiful responsive websites and web apps.
- * @license MIT
- * @see https://twilightui.com/
- * @Alpine Config
- */
+
 (function () {
     // theme config
     const $themeConfig = {
