@@ -20,11 +20,7 @@ export default defineConfig({
     optimizeDeps: {
         entries: Object.keys(entries),
     },
-    plugins: [
-        createHtmlPlugin({
-            minify: true,
-        }),
-    ],
+    plugins: [createHtmlPlugin()],
     build: {
         target: 'esnext',
         outDir: resolve(__dirname, 'build'),
