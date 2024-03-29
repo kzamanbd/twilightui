@@ -1353,40 +1353,38 @@
                                     </button>
                                 </div>
                                 <div class="h-px w-full border-b border-[#e0e6ed] dark:border-[#1b2e4b]"></div>
-                                <div class="!mt-0">
-                                    <div data-simplebar class="chat-users">
-                                        <template x-for="person in searchUsers">
-                                            <button
-                                                type="button"
-                                                class="chat-user-item"
-                                                :class="{'bg-gray-100 dark:bg-[#050b14] dark:text-primary text-primary': selectedUser.userId === person.userId}"
-                                                @click="selectUser(person)">
-                                                <div class="flex-1">
-                                                    <div class="flex items-center">
-                                                        <div class="relative flex-shrink-0">
-                                                            <img
-                                                                :src="`/images/users/${person.path}`"
-                                                                class="h-12 w-12 rounded-full object-cover" />
-                                                            <template x-if="person.active">
-                                                                <div class="absolute bottom-0 right-0">
-                                                                    <div class="h-4 w-4 rounded-full bg-success"></div>
-                                                                </div>
-                                                            </template>
-                                                        </div>
-                                                        <div class="mx-3 text-left">
-                                                            <p class="mb-1 font-semibold" x-text="person.name"></p>
-                                                            <p
-                                                                class="text-white-dark max-w-[185px] truncate text-xs"
-                                                                x-text="person.preview"></p>
-                                                        </div>
+                                <div data-simplebar class="chat-users">
+                                    <template x-for="person in searchUsers">
+                                        <button
+                                            type="button"
+                                            class="chat-user-item"
+                                            :class="{'bg-gray-100 dark:bg-[#050b14] dark:text-primary text-primary': selectedUser.userId === person.userId}"
+                                            @click="selectUser(person)">
+                                            <div class="flex-1">
+                                                <div class="flex items-center">
+                                                    <div class="relative flex-shrink-0">
+                                                        <img
+                                                            :src="`/images/users/${person.path}`"
+                                                            class="h-12 w-12 rounded-full object-cover" />
+                                                        <template x-if="person.active">
+                                                            <div class="absolute bottom-0 right-0">
+                                                                <div class="h-4 w-4 rounded-full bg-success"></div>
+                                                            </div>
+                                                        </template>
+                                                    </div>
+                                                    <div class="mx-3 text-left">
+                                                        <p class="mb-1 font-semibold" x-text="person.name"></p>
+                                                        <p
+                                                            class="text-white-dark max-w-[185px] truncate text-xs"
+                                                            x-text="person.preview"></p>
                                                     </div>
                                                 </div>
-                                                <div class="whitespace-nowrap text-xs font-semibold">
-                                                    <p x-text="person.time"></p>
-                                                </div>
-                                            </button>
-                                        </template>
-                                    </div>
+                                            </div>
+                                            <div class="whitespace-nowrap text-xs font-semibold">
+                                                <p x-text="person.time"></p>
+                                            </div>
+                                        </button>
+                                    </template>
                                 </div>
                             </div>
                             <div
