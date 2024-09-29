@@ -15,6 +15,5 @@
     "useTabs": false,
     "vueIndentScriptAndStyle": true,
     "endOfLine": "lf",
-    "plugins": ["prettier-plugin-tailwindcss"],
-    "pluginSearchDirs": false
+    "plugins": ["prettier-plugin-tailwindcss"]
 }

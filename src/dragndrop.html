@@ -1,0 +1,2082 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Drag & Drop - Twilight Dashboard</title>
+        <link rel="icon" href="/favicon.png" />
+        <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
+        <meta name="theme-color" content="#009EF7" />
+        <!-- start:Core Style and Script -->
+        <link rel="stylesheet" href="/styles/app.css" />
+        <script type="module" src="/scripts/app.js"></script>
+    </head>
+
+    <body>
+        <div class="twilight" x-data="twilightTheme" :class="appConfig">
+            <!-- Loading dialog -->
+            <div class="loading">
+                <div id="loader"></div>
+            </div>
+            <!-- menu shadow -->
+            <div class="menu-shadow hidden"></div>
+            <!-- vertical-menu -->
+            <aside class="vertical-menu">
+                <div class="vertical-content" :class="[$store.app.semiDark && 'semi-dark']">
+                    <!-- Menu Logo -->
+                    <div id="brand-logo" class="tw-brand-logo">
+                        <a href="/index.html" class="flex items-center">
+                            <svg class="tw-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.66 120.85">
+                                <path
+                                    class="twl-path"
+                                    d="M102.66,43.16h0v34.34c0,23.93-19.43,43.35-43.35,43.35h0v-34.34c0-23.93,19.43-43.35,43.35-43.35Z" />
+
+                                <path
+                                    class="twl-path"
+                                    d="M23.43,24.86h49.72c0,26.65-21.64,48.29-48.29,48.29H-24.86C-24.86,46.5-3.22,24.86,23.43,24.86Z"
+                                    transform="translate(73.14 24.86) rotate(90)" />
+                                <circle
+                                    class="twl-circle"
+                                    cx="75.7"
+                                    cy="20.66"
+                                    r="16.39"
+                                    transform="translate(38.08 89.53) rotate(-76.62)" />
+                            </svg>
+                            <div class="app-name">Twilight <span class="text-primary">UI</span></div>
+                        </a>
+                        <button type="button" class="toggle-sidebar">
+                            <span class="icon-[mdi--radiobox-marked] hidden lg:block"></span>
+                            <span class="icon-[mdi--close] lg:hidden"></span>
+                        </button>
+                    </div>
+                    <!-- Menu Content -->
+                    <nav data-simplebar class="tw-menu-content no-scrollbar">
+                        <ul class="tw-nav-menu">
+                            <!-- dashboard start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--square-rounded-badge-outline]"></span>
+                                    <span class="tw-link-label">Dashboard</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/index.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sales</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-crypto.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Crypto</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-crm.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">CRM</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-hrm.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">HRM</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-analytics.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Analytics</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/dashboard-ecommerce.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">ECommerce</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- dashboard end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="minus icon-[mdi--minus]"></span>
+                                <span class="label">USER INTERFACE</span>
+                            </li>
+
+                            <!-- components start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--layers-outline]"></span>
+                                    <span class="tw-link-label">Components</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-accordions.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Accordion</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-cards.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Cards</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-carousel.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Carousel</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-lightbox.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Lightbox</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-modals.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Modals</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-progress.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Progress</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-sweetalert.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">SweetAlert2</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-tabs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Tabs</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/components-toasts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Toasts</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- ui-elements start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--hexagon-outline]"></span>
+                                    <span class="tw-link-label">UI Elements</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-alerts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Alerts</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-avatars.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Avatars</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-badges.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Badges</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-breadcrumbs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Breadcrumbs</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-buttons.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Buttons</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-countdown.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Countdown</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-dropdowns.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Dropdowns</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/ui-drawer.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Drawers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-popovers.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Popovers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-tooltips.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Tooltips</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-treeview.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Treeview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/elements-typography.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Typography</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--poll]"></span>
+                                    <span class="tw-link-label">Charts</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/charts-apexcharts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">ApexChart</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/charts-chartjs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">ChartJs</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/charts-echarts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">E Charts</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/icons.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--shape-outline]"></span>
+                                    <span class="tw-link-label">Icons</span>
+                                </a>
+                            </li>
+                            <li class="tw-menu-item">
+                                <a href="/widgets.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--widgets-outline]"></span>
+                                    <span class="tw-link-label">Widgets</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/dragndrop.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--drag-variant]"></span>
+                                    <span class="tw-link-label">Drag & Drop</span>
+                                </a>
+                            </li>
+                            <!-- form elements end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="minus icon-[mdi--minus]"></span>
+                                <span class="label">TABLES AND FORMS</span>
+                            </li>
+                            <!-- page header end -->
+
+                            <li class="tw-menu-item">
+                                <a href="/table-layout.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--table]"></span>
+                                    <span class="tw-link-label">Tables</span>
+                                </a>
+                            </li>
+
+                            <!-- data table -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--table-large-plus]"></span>
+                                    <span class="tw-link-label">Data Tables</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-basic.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Basic</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-advanced.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Advanced</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-order-sorting.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Order Sorting</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-multi-column.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Multi Column</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-checkbox.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Checkbox</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-range-search.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Range Search</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-export.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Export</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-sticky-header.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sticky Header</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-clone-header.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Clone Header</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/datatables-column-chooser.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Column Chooser</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- end data table -->
+
+                            <!-- form elements start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--format-textbox]"></span>
+                                    <span class="tw-link-label">Form Elements</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-basic.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Basic Elements</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-input-group.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Input Group</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-layouts.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Layouts</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-validation.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Validation</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-input-mask.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Input Mask</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-checkbox-radio.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Checkbox & Radio</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-switches.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Switches</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-wizards.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Wizards</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-uploads.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">File Upload</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-editors.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Editors</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-datepicker.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Date Picker</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/forms-clipboard.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Clipboard</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- form elements end -->
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="minus icon-[mdi--minus]"></span>
+                                <span class="label">APPS</span>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-calendars.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--calendar-blank]"></span>
+                                    <span class="tw-link-label">Calendars</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-chats.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--message-text-outline]"></span>
+                                    <span class="tw-link-label">Chats</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-mailbox.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--email-outline]"></span>
+                                    <span class="tw-link-label">Mailbox</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-todolist.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--list-box-outline]"></span>
+                                    <span class="tw-link-label">Todo List</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/apps-scrumboard.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--plus-box-outline]"></span>
+                                    <span class="tw-link-label">ScrumBoard</span>
+                                </a>
+                            </li>
+                            <a href="/apps-projects.html" class="tw-menu-link">
+                                <span class="icon-[mdi--fence]"></span>
+                                <span class="icon-[mdi--abacus]"></span>
+                                <span class="tw-link-label">Projects</span>
+                            </a>
+
+                            <!-- page header -->
+                            <li class="tw-menu-header">
+                                <span class="minus icon-[mdi--minus]"></span>
+                                <span class="label">USER AND PAGES</span>
+                            </li>
+                            <!-- page header end -->
+                            <!-- user profile start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--account-switch]"></span>
+                                    <span class="tw-link-label">User Profile</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/overview.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Overview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/documents.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Documents</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/followers.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Followers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-profile/activities.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Activities</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- user profile end -->
+
+                            <!-- accounts start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--badge-account-horizontal-outline]"></span>
+                                    <span class="tw-link-label">Accounts</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/overview.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Overview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/statements.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Statements</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/activities.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Activities</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./accounts/logs.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Logs</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- accounts end -->
+
+                            <!-- Authentication start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--logout-variant]"></span>
+                                    <span class="tw-link-label">Authentication</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="/login.html" class="tw-dropdown-link" target="_blank">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Login</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/register.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Register</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/reset-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Reset Password</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/forget-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Forget Password</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./authentication/new-password.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">New Password</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Authentication end -->
+
+                            <!-- corporate start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--home-group]"></span>
+                                    <span class="tw-link-label">Corporate</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/about.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">About</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/our-team.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Our Team</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/contact-us.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Contact Us</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/licenses.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Licenses</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./corporate/sitemap.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sitemap</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- corporate end -->
+
+                            <!-- utilities start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--cog]"></span>
+                                    <span class="tw-link-label">Utilities</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/modals.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Modals</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/search.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Search</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./utilities/wizards.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Wizards</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- utilities end -->
+
+                            <!-- Careers pages start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--briefcase-outline]"></span>
+                                    <span class="tw-link-label">Careers</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./careers/careers-list.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Careers List</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./careers/apply.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Careers Apply</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Careers pages end -->
+
+                            <!-- eCommerce start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--basket-outline]"></span>
+                                    <span class="tw-link-label">ECommerce</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/category.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Category</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/sales.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Sales</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/customers.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customers</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/reports.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Reports</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./eCommerce/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- eCommerce end -->
+
+                            <!-- contacts start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--contacts-outline]"></span>
+                                    <span class="tw-link-label">Contacts</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/getting-started.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Getting Started</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/add-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Add Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/edit-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Edit Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/view-contact.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">View Contact</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./contacts/settings.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Settings</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- contacts end -->
+
+                            <!-- user management start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--account-key]"></span>
+                                    <span class="tw-link-label">User Management</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/users.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Users</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/roles.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Roles</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./user-management/permissions.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Permissions</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- user management end -->
+
+                            <!-- customers start -->
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span class="icon-[mdi--face-agent]">change_history</span>
+                                    <span class="tw-link-label">Customers</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/getting-started.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Getting Started</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/customer-listing.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customer Listing</span>
+                                        </a>
+                                    </li>
+                                    <li class="tw-dropdown-item group">
+                                        <a href="./customers/customer-details.html" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Customer Details</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- customers end -->
+
+                            <!-- documentation -->
+                            <li>
+                                <div class="documents-button">
+                                    <a href="https://twilightui-docs.vercel.app" target="_blank" class="documents-link">
+                                        <span class="icon-[mdi--text-box-search-outline]">description</span>
+                                        <span class="btn-label ml-2">Documentation</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="twilight-body">
+                <header class="navbar-nav" :class="[$store.app.navbar]">
+                    <div class="primary-header">
+                        <!-- sidebar toggle button -->
+                        <div class="flex items-center">
+                            <button type="button" class="toggle-sidebar" aria-label="Menu">
+                                <svg
+                                    stroke="currentColor"
+                                    fill="none"
+                                    stroke-width="0"
+                                    viewBox="0 0 24 24"
+                                    height="22"
+                                    width="22"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 6h16M4 12h8m-8 6h16"></path>
+                                </svg>
+                            </button>
+                            <a href="/index.html" class="horizontal-logo">
+                                <svg class="tw-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.66 120.85">
+                                    <path
+                                        class="twl-path"
+                                        d="M102.66,43.16h0v34.34c0,23.93-19.43,43.35-43.35,43.35h0v-34.34c0-23.93,19.43-43.35,43.35-43.35Z" />
+
+                                    <path
+                                        class="twl-path"
+                                        d="M23.43,24.86h49.72c0,26.65-21.64,48.29-48.29,48.29H-24.86C-24.86,46.5-3.22,24.86,23.43,24.86Z"
+                                        transform="translate(73.14 24.86) rotate(90)" />
+                                    <circle
+                                        class="twl-circle"
+                                        cx="75.7"
+                                        cy="20.66"
+                                        r="16.39"
+                                        transform="translate(38.08 89.53) rotate(-76.62)" />
+                                </svg>
+                                <div class="app-name">Twilight <span class="text-primary">UI</span></div>
+                            </a>
+                        </div>
+
+                        <div class="flex items-center space-x-2">
+                            <button
+                                type="button"
+                                class="header-icon"
+                                @click="$store.app.toggleTheme()"
+                                aria-label="Themes">
+                                <span
+                                    :class="
+                                    {
+                                        'icon-[mdi--brightness-6]': $store.app.theme === 'light',
+                                        'icon-[mdi--brightness-2]': $store.app.theme === 'dark',
+                                        'icon-[mdi--brightness-auto]': $store.app.theme === 'system'
+                                    }
+                                ">
+                                </span>
+                            </button>
+
+                            <button type="button" class="header-icon" aria-label="Notification">
+                                <span class="icon-[mdi--bell-outline]"></span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="header-icon"
+                                @click="$store.app.toggleFullscreen()"
+                                aria-label="fullscreen">
+                                <span
+                                    :class="
+                                    {
+                                        'icon-[mdi--fullscreen]': isFullscreen == 'fullscreen',
+                                        'icon-[mdi--fullscreen-exit]': isFullscreen !== 'fullscreen'
+                                    }
+                                "></span>
+                            </button>
+
+                            <button type="button" class="header-icon" @click="toggleCustomizer" aria-label="settings">
+                                <span class="icon-[mdi--cog]"></span>
+                            </button>
+
+                            <div class="dropdown" data-strategy="absolute">
+                                <button
+                                    type="button"
+                                    aria-label="User Profile"
+                                    class="dropdown-toggle flex h-8 w-8 overflow-hidden rounded-md shadow">
+                                    <img class="h-full w-full object-cover" src="/images/author.png" alt="Author" />
+                                </button>
+
+                                <ul class="dropdown-menu w-64 py-2 shadow-2xl dark:bg-dark">
+                                    <li class="flex items-center border-b px-4 py-2 dark:border-gray-700">
+                                        <div class="flex-shrink-0">
+                                            <img
+                                                class="h-8 w-8 rounded-full object-cover"
+                                                src="/images/author.png"
+                                                alt="Author" />
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
+                                                Kamruzzaman
+                                            </p>
+                                            <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
+                                                Software Engineer
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="border-b py-2 dark:border-gray-700">
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> My Profile </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link">
+                                                My Projects
+                                                <span
+                                                    class="ml-1 inline-flex items-center justify-center rounded-full bg-primary px-2 py-1 text-xs font-bold leading-none text-white">
+                                                    9
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> My Subscription </a>
+                                        </div>
+                                    </li>
+                                    <li class="relative py-2">
+                                        <div class="user-menu-item group">
+                                            <a href="#" class="user-menu-link">
+                                                Language
+                                                <span class="flex items-center text-xs font-bold leading-none">
+                                                    <img
+                                                        src="/images/flags/united-states.svg"
+                                                        class="mr-2 h-4 w-4 rounded-full"
+                                                        alt="English" />
+                                                    English
+                                                </span>
+                                                <!-- language dropdown -->
+                                                <div class="language-dropdown">
+                                                    <div class="language-dropdown-item">
+                                                        <img
+                                                            src="/images/flags/united-states.svg"
+                                                            class="mr-2 h-4 w-4 rounded-full"
+                                                            alt="English" />
+                                                        <span class="text-xs leading-none">English</span>
+                                                    </div>
+                                                    <div class="language-dropdown-item">
+                                                        <img
+                                                            src="/images/flags/france.svg"
+                                                            class="mr-2 h-4 w-4 rounded-full"
+                                                            alt="france" />
+                                                        <span class="text-xs leading-none">France</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="user-menu-item">
+                                            <a href="#" class="user-menu-link"> Account Settings </a>
+                                        </div>
+                                        <div class="user-menu-item">
+                                            <a href="./login.html" class="user-menu-link"> Log out </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="twilight-content">
+                    <!-- Start:Breadcrumb -->
+                    <nav class="breadcrumb">
+                        <div class="left-link">
+                            <ol class="breadcrumb-nav">
+                                <li class="inline-flex items-center">
+                                    <a href="/" class="breadcrumb-item"> Draggable </a>
+                                </li>
+
+                                <li aria-current="page">
+                                    <div class="flex items-center">
+                                        <span class="icon-[mdi--chevron-right]"></span>
+                                        <span class="breadcrumb-item-current"> Drag & Drop </span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </nav>
+                    <!-- End:Breadcrumb -->
+
+                    <div x-data="basic" class="dragndrop space-y-4">
+                        <!-- Sortable -->
+                        <div class="card">
+                            <div class="card-header">Sortable</div>
+                            <div class="card-body grid grid-cols-1 gap-x-12 sm:grid-cols-2">
+                                <div>
+                                    <ul id="example1">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 text-center dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:md:text-left rtl:md:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id}.png`"
+                                                            class="mx-auto h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-1 flex-col items-center justify-between md:flex-row">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                        <div>
+                                                            <button
+                                                                type="button"
+                                                                class="btn btn-secondary btn-sm px-5 py-2">
+                                                                View
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul id="example2">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 text-center dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:md:text-left rtl:md:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id + 5}.png`"
+                                                            class="mx-auto h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-1 flex-col items-center justify-between md:flex-row">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                        <div>
+                                                            <button
+                                                                type="button"
+                                                                class="btn btn-secondary btn-sm px-5 py-2">
+                                                                View
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Icon Change -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Icon Change</h6>
+                            </div>
+                            <div class="card-body icon-change grid grid-cols-1 gap-x-12 sm:grid-cols-2">
+                                <div>
+                                    <ul id="example3" class="left">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:text-left rtl:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id}.png`"
+                                                            class="h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div class="flex flex-1 items-center justify-between">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                        <div class="text-white-dark">
+                                                            <svg
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="feather-star h-6 w-6">
+                                                                <path
+                                                                    d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"></path>
+                                                            </svg>
+                                                            <svg
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="feather-heart h-6 w-6">
+                                                                <path
+                                                                    d="M12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"></path>
+                                                                <path
+                                                                    opacity="0.5"
+                                                                    d="M12 5.50063C16.4998 0.825464 22 4.27416 22 9.1371C22 14 17.9806 16.5914 15.0383 18.9109C14 19.7294 13 20.5 12 20.5"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul id="example4" class="right">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:text-left rtl:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id + 5}.png`"
+                                                            class="h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div class="flex flex-1 items-center justify-between">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                        <div class="text-white-dark">
+                                                            <svg
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="feather-star h-6 w-6">
+                                                                <path
+                                                                    d="M9.15316 5.40838C10.4198 3.13613 11.0531 2 12 2C12.9469 2 13.5802 3.13612 14.8468 5.40837L15.1745 5.99623C15.5345 6.64193 15.7144 6.96479 15.9951 7.17781C16.2757 7.39083 16.6251 7.4699 17.3241 7.62805L17.9605 7.77203C20.4201 8.32856 21.65 8.60682 21.9426 9.54773C22.2352 10.4886 21.3968 11.4691 19.7199 13.4299L19.2861 13.9372C18.8096 14.4944 18.5713 14.773 18.4641 15.1177C18.357 15.4624 18.393 15.8341 18.465 16.5776L18.5306 17.2544C18.7841 19.8706 18.9109 21.1787 18.1449 21.7602C17.3788 22.3417 16.2273 21.8115 13.9243 20.7512L13.3285 20.4768C12.6741 20.1755 12.3469 20.0248 12 20.0248C11.6531 20.0248 11.3259 20.1755 10.6715 20.4768L10.0757 20.7512C7.77268 21.8115 6.62118 22.3417 5.85515 21.7602C5.08912 21.1787 5.21588 19.8706 5.4694 17.2544L5.53498 16.5776C5.60703 15.8341 5.64305 15.4624 5.53586 15.1177C5.42868 14.773 5.19043 14.4944 4.71392 13.9372L4.2801 13.4299C2.60325 11.4691 1.76482 10.4886 2.05742 9.54773C2.35002 8.60682 3.57986 8.32856 6.03954 7.77203L6.67589 7.62805C7.37485 7.4699 7.72433 7.39083 8.00494 7.17781C8.28555 6.96479 8.46553 6.64194 8.82547 5.99623L9.15316 5.40838Z"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"></path>
+                                                            </svg>
+                                                            <svg
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                class="feather-heart h-6 w-6">
+                                                                <path
+                                                                    d="M12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"></path>
+                                                                <path
+                                                                    opacity="0.5"
+                                                                    d="M12 5.50063C16.4998 0.825464 22 4.27416 22 9.1371C22 14 17.9806 16.5914 15.0383 18.9109C14 19.7294 13 20.5 12 20.5"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="1.5"
+                                                                    stroke-linecap="round"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Handler -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Handler</h6>
+                            </div>
+                            <div class="card-body grid grid-cols-1 gap-x-12 sm:grid-cols-2">
+                                <div>
+                                    <ul id="example5">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 text-center dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:md:text-left rtl:md:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id}.png`"
+                                                            class="mx-auto h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div class="block flex-1 items-center justify-between sm:flex">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                        <div class="text-white-dark">
+                                                            <span
+                                                                class="handle cursor-move rounded bg-[#ebedf2] px-2 dark:bg-black ltr:mr-1 rtl:ml-1"
+                                                                >+</span
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul id="example6">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 text-center dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:md:text-left rtl:md:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id + 5}.png`"
+                                                            class="mx-auto h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div class="block flex-1 items-center justify-between sm:flex">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                        <div class="text-white-dark">
+                                                            <span
+                                                                class="handle cursor-move rounded bg-[#ebedf2] px-2 dark:bg-black ltr:mr-1 rtl:ml-1"
+                                                                >+</span
+                                                            >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Multiple Drag -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Multiple Drag</h6>
+                            </div>
+                            <div class="card-body grid grid-cols-1 gap-x-12 sm:grid-cols-2">
+                                <div>
+                                    <ul id="example7">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 text-center dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:md:text-left rtl:md:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id}.png`"
+                                                            class="mx-auto h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-1 flex-col items-center justify-between md:flex-row">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul id="example8">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 text-center dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:md:text-left rtl:md:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id + 5}.png`"
+                                                            class="mx-auto h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-1 flex-col items-center justify-between md:flex-row">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- News feed -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>News Feed</h6>
+                            </div>
+                            <div id="example12" class="card-body grid grid-cols-1 gap-x-12 sm:grid-cols-2">
+                                <template x-for="item in items">
+                                    <div class="mb-2.5" x-show="item.id <= 4">
+                                        <div
+                                            class="rounded-md border border-white-light bg-white px-6 py-3.5 dark:border-dark dark:bg-[#1b2e4b]">
+                                            <div
+                                                class="py-sm-2.5 items-md-center block text-center sm:flex ltr:md:text-left rtl:md:text-right">
+                                                <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                    <img
+                                                        alt="avatar"
+                                                        :src="`/images/users/avatar-${item.id +1}.png`"
+                                                        class="mx-auto h-11 w-11 rounded-lg" />
+                                                </div>
+                                                <div
+                                                    class="flex flex-1 flex-col items-center justify-between md:flex-row">
+                                                    <div class="my-3 font-semibold md:my-0">
+                                                        <div
+                                                            class="text-base text-dark dark:text-[#bfc9d4]"
+                                                            x-text="item.name"></div>
+                                                        <div class="text-white-dark text-xs">11 hours ago</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 border-b border-b-[#f1f2f3] py-5 dark:border-b-dark">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                                veniam, quis nostrud exercitation.
+                                            </div>
+                                            <div class="flex-wrap items-center md:flex">
+                                                <div class="text-center xl:flex-1 ltr:md:text-left rtl:md:text-right">
+                                                    <div
+                                                        class="flex justify-center -space-x-2 text-white md:justify-start rtl:space-x-reverse">
+                                                        <img
+                                                            class="dark:ring-white-dark h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                                                            src="/images/users/avatar-6.png"
+                                                            alt="image" />
+                                                        <img
+                                                            class="dark:ring-white-dark h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                                                            src="/images/users/avatar-7.png"
+                                                            alt="image" />
+                                                        <img
+                                                            class="dark:ring-white-dark h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                                                            src="/images/users/avatar-8.png"
+                                                            alt="image" />
+                                                        <img
+                                                            class="dark:ring-white-dark h-10 w-10 rounded-full object-cover ring-2 ring-white"
+                                                            src="/images/users/avatar-10.png"
+                                                            alt="image" />
+                                                    </div>
+                                                </div>
+                                                <div class="text-center ltr:md:text-right rtl:md:text-left">
+                                                    <span class="text-white-dark block pt-2 text-xs lg:pt-0"
+                                                        ><a
+                                                            href="javascript:;"
+                                                            class="text-sm font-semibold text-danger dark:text-primary"
+                                                            >Vincent, Mary</a
+                                                        >
+                                                        and 19 other like this</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Delete User -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Delete User</h6>
+                            </div>
+                            <div class="card-body grid grid-cols-1 gap-x-12 lg:grid-cols-2">
+                                <div>
+                                    <ul id="example13">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 text-center dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:md:text-left rtl:md:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id}.png`"
+                                                            class="mx-auto h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-1 flex-col items-center justify-between md:flex-row">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul id="example14">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 text-center dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:md:text-left rtl:md:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id + 5}.png`"
+                                                            class="mx-auto h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-1 flex-col items-center justify-between md:flex-row">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grid drag -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Grid drag</h6>
+                            </div>
+                            <div
+                                class="card-body grid grid-cols-2 place-items-center gap-8 sm:grid-cols-4 md:grid-cols-6 xl:grid-cols-8"
+                                id="example11">
+                                <template x-for="i in 12">
+                                    <div
+                                        class="flex h-24 w-24 cursor-grab items-center justify-center rounded-md border border-white-light font-semibold shadow dark:border-dark"
+                                        x-text="'Item ' + i"></div>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Swap -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Swap</h6>
+                            </div>
+                            <div class="card-body grid grid-cols-1 gap-x-12 lg:grid-cols-2">
+                                <div>
+                                    <ul id="example9">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 text-center dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:md:text-left rtl:md:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id}.png`"
+                                                            class="mx-auto h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-1 flex-col items-center justify-between md:flex-row">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul id="example10">
+                                        <template x-for="item in items">
+                                            <li class="mb-2.5 cursor-grab">
+                                                <div
+                                                    class="items-md-center flex flex-col rounded-md border border-white-light bg-white px-6 py-3.5 text-center dark:border-dark dark:bg-[#1b2e4b] md:flex-row ltr:md:text-left rtl:md:text-right">
+                                                    <div class="ltr:sm:mr-4 rtl:sm:ml-4">
+                                                        <img
+                                                            alt="avatar"
+                                                            :src="`/images/users/avatar-${item.id + 5}.png`"
+                                                            class="mx-auto h-11 w-11 rounded-full" />
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-1 flex-col items-center justify-between md:flex-row">
+                                                        <div class="my-3 font-semibold md:my-0">
+                                                            <div
+                                                                class="text-base text-dark dark:text-[#bfc9d4]"
+                                                                x-text="item.text"></div>
+                                                            <div
+                                                                class="text-white-dark text-xs"
+                                                                x-text="item.name"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <footer class="footer" :class="[$store.app.footer]">
+                    <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
+                        © <span id="footer-year"></span> <a href="#" class="hover:underline">Twilight™</a>. All Rights
+                        Reserved.
+                    </span>
+                    <ul class="mt-3 flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                        <li>
+                            <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/kzamaan/twilight" class="hover:underline" target="_blank">
+                                Github
+                            </a>
+                        </li>
+                    </ul>
+                </footer>
+            </div>
+
+            <!-- Theme customizer -->
+            <div class="theme-customizer">
+                <div x-show="showCustomizer" @click="toggleCustomizer" class="customizer-shadow"></div>
+
+                <nav class="app-drawers theme" :class="{'!right-0' : showCustomizer}">
+                    <div class="p-4 text-center">
+                        <button type="button" class="customizer-close" @click="toggleCustomizer">
+                            <span class="icon-[mdi--close]"></span>
+                        </button>
+                        <h4 class="mb-1 dark:text-white">TEMPLATE CUSTOMIZER</h4>
+                        <p class="text-white-dark">
+                            Set preferences that will be cookies for your live preview demonstration.
+                        </p>
+                    </div>
+                    <div data-simplebar class="h-[calc(100%_-_110px)] overflow-y-auto overflow-x-hidden p-4">
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Color Scheme</h5>
+                            <p class="text-white-dark text-xs">Overall light or dark presentation.</p>
+                            <div class="mt-3 grid grid-cols-3 gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.theme === 'light' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleTheme('light')">
+                                    <span class="icon-[mdi--brightness-6]"></span>
+                                    Light
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.theme === 'dark' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleTheme('dark')">
+                                    <span class="icon-[mdi--brightness-2]"></span>
+                                    Dark
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.theme === 'system' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleTheme('system')">
+                                    <span class="icon-[mdi--brightness-auto]"></span>
+                                    System
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Navigation Position</h5>
+                            <p class="text-white-dark text-xs">Select the primary navigation paradigm for your app.</p>
+                            <div class="mt-3 grid grid-cols-3 gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4"
+                                    :class="[$store.app.menu === 'horizontal' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleMenu('horizontal')">
+                                    Horizontal
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4 text-center"
+                                    :class="[$store.app.menu === 'vertical' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleMenu('vertical')">
+                                    Vertical
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex items-center px-4 text-center"
+                                    :class="[$store.app.menu === 'collapsible' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleMenu('collapsible')">
+                                    Collapsible
+                                </button>
+                            </div>
+                            <div class="mt-5 text-primary">
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.semiDark"
+                                        type="checkbox"
+                                        :value="true"
+                                        class="form-checkbox"
+                                        @change="$store.app.toggleSemiDark()" />
+                                    <span>Semi Dark (Sidebar &amp; Header)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Layout Style</h5>
+                            <p class="text-white-dark text-xs">Select the primary layout style for your app.</p>
+                            <div class="mt-3 flex gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.layout === 'boxed-layout' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleLayout('boxed-layout')">
+                                    Box
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.layout === 'full' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleLayout('full')">
+                                    Full
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Direction</h5>
+                            <p class="text-white-dark text-xs">Select the direction for your app.</p>
+                            <div class="mt-3 flex gap-2">
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.rtlClass === 'ltr' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleRTL('ltr')">
+                                    LTR
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn flex-auto"
+                                    :class="[$store.app.rtlClass === 'rtl' ? 'btn-primary' :'btn-outline-primary']"
+                                    @click="$store.app.toggleRTL('rtl')">
+                                    RTL
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Navbar Type</h5>
+                            <p class="text-white-dark text-xs">FIxed or Static.</p>
+                            <div class="mt-3 flex items-center gap-3 text-primary">
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.navbar"
+                                        type="radio"
+                                        value="navbar-static"
+                                        class="form-radio"
+                                        @change="$store.app.toggleNavbar()"
+                                        name="$store.app.navbar" />
+                                    <span>Static</span>
+                                </label>
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.navbar"
+                                        type="radio"
+                                        value="navbar-fixed"
+                                        class="form-radio"
+                                        @change="$store.app.toggleNavbar()"
+                                        name="$store.app.navbar" />
+                                    <span>Fixed</span>
+                                </label>
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.navbar"
+                                        type="radio"
+                                        value="navbar-hidden"
+                                        class="form-radio"
+                                        @change="$store.app.toggleNavbar()"
+                                        name="$store.app.navbar" />
+                                    <span>Hidden</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Footer Type</h5>
+                            <p class="text-white-dark text-xs">FIxed or Static.</p>
+                            <div class="mt-3 flex items-center gap-3 text-primary">
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.footer"
+                                        type="radio"
+                                        value="footer-static"
+                                        class="form-radio"
+                                        @change="$store.app.toggleFooter()"
+                                        name="footerType" />
+                                    <span>Static</span>
+                                </label>
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.footer"
+                                        type="radio"
+                                        value="footer-fixed"
+                                        class="form-radio"
+                                        @change="$store.app.toggleFooter()"
+                                        name="footerType" />
+                                    <span>Fixed</span>
+                                </label>
+                                <label class="mb-0 inline-flex items-center">
+                                    <input
+                                        x-model="$store.app.footer"
+                                        type="radio"
+                                        value="footer-hidden"
+                                        class="form-radio"
+                                        @change="$store.app.toggleFooter()"
+                                        name="footerType" />
+                                    <span>Hidden</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card flex items-center justify-between">
+                            <h5 class="customizer-header">Menu Hidden</h5>
+                            <div class="mt-3 flex items-center gap-3 text-primary">
+                                <label class="relative h-6 w-12">
+                                    <input
+                                        x-model="$store.app.navbar"
+                                        type="checkbox"
+                                        class="hidden-checkbox peer"
+                                        id="hidden-switch"
+                                        @change="$store.app.toggleVMenu()" />
+                                    <span for="hidden-switch" class="hidden-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="customizer-card">
+                            <h5 class="customizer-header">Router Transition</h5>
+                            <p class="text-white-dark text-xs">Animation of main content.</p>
+                            <div class="mt-3">
+                                <select
+                                    x-model="$store.app.animation"
+                                    class="form-select w-full border-primary text-primary"
+                                    @change="$store.app.toggleAnimation()">
+                                    <option value>Select Animation</option>
+                                    <option value="animate__fadeIn">Fade</option>
+                                    <option value="animate__fadeInDown">Fade Down</option>
+                                    <option value="animate__fadeInUp">Fade Up</option>
+                                    <option value="animate__fadeInLeft">Fade Left</option>
+                                    <option value="animate__fadeInRight">Fade Right</option>
+                                    <option value="animate__slideInDown">Slide Down</option>
+                                    <option value="animate__slideInLeft">Slide Left</option>
+                                    <option value="animate__slideInRight">Slide Right</option>
+                                    <option value="animate__zoomIn">Zoom In</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('basic', () => ({
+                    init() {
+                        // Basic
+                        var example1 = document.getElementById('example1');
+                        var sortable = Sortable.create(example1, {
+                            animation: 200,
+                            ghostClass: 'gu-transit',
+                            group: 'shared',
+                        });
+                        var example2 = document.getElementById('example2');
+                        var sortable = Sortable.create(example2, {
+                            animation: 200,
+                            ghostClass: 'gu-transit',
+                            group: 'shared',
+                        });
+
+                        // Icon change
+                        var example3 = document.getElementById('example3');
+                        var sortable = Sortable.create(example3, {
+                            animation: 200,
+                            ghostClass: 'gu-transit',
+                            group: 'icon',
+                        });
+                        var example4 = document.getElementById('example4');
+                        var sortable = Sortable.create(example4, {
+                            animation: 200,
+                            ghostClass: 'gu-transit',
+                            group: 'icon',
+                        });
+
+                        // Handler
+                        var example5 = document.getElementById('example5');
+                        var sortable = Sortable.create(example5, {
+                            animation: 200,
+                            handle: '.handle',
+                            group: 'handler',
+                            ghostClass: 'gu-transit',
+                        });
+                        var example6 = document.getElementById('example6');
+                        var sortable = Sortable.create(example6, {
+                            animation: 200,
+                            handle: '.handle',
+                            group: 'handler',
+                            ghostClass: 'gu-transit',
+                        });
+
+                        //Multiple Drag
+                        var example7 = document.getElementById('example7');
+                        var sortable = Sortable.create(example7, {
+                            animation: 200,
+                            group: 'multiple',
+                            multiDrag: true,
+                            selectedClass: 'selected',
+                            fallbackTolerance: 3,
+                            ghostClass: 'gu-transit',
+                        });
+                        var example8 = document.getElementById('example8');
+                        var sortable = Sortable.create(example8, {
+                            animation: 200,
+                            group: 'multiple',
+                            multiDrag: true,
+                            selectedClass: 'selected',
+                            fallbackTolerance: 3,
+                            ghostClass: 'gu-transit',
+                        });
+
+                        //Delete User
+                        var example13 = document.getElementById('example13');
+                        var sortable = Sortable.create(example13, {
+                            animation: 200,
+                            group: 'delete',
+                            removeOnSpill: true,
+                        });
+                        var example14 = document.getElementById('example14');
+                        var sortable = Sortable.create(example14, {
+                            animation: 200,
+                            group: 'delete',
+                            removeOnSpill: true,
+                        });
+
+                        //News Feed
+                        var example12 = document.getElementById('example12');
+                        var sortable = Sortable.create(example12, {
+                            animation: 200,
+                        });
+
+                        //Swap
+                        var example9 = document.getElementById('example9');
+                        var sortable = Sortable.create(example9, {
+                            animation: 200,
+                            group: 'swap',
+                            swap: true,
+                        });
+                        var example10 = document.getElementById('example10');
+                        var sortable = Sortable.create(example10, {
+                            animation: 200,
+                            group: 'swap',
+                            swap: true,
+                        });
+
+                        //Grid drag
+                        var example11 = document.getElementById('example11');
+                        var sortable = Sortable.create(example11, {
+                            animation: 200,
+                        });
+                    },
+                    items: [
+                        {
+                            id: 1,
+                            text: 'Need to be approved',
+                            name: 'Kelly Young',
+                        },
+                        {
+                            id: 2,
+                            text: 'Meeting with client',
+                            name: 'Andy King',
+                        },
+                        {
+                            id: 3,
+                            text: 'Project Detail',
+                            name: 'Judy Holmes',
+                        },
+                        {
+                            id: 4,
+                            text: 'Edited Post Apporval',
+                            name: 'Vincent Carpenter',
+                        },
+                        {
+                            id: 5,
+                            text: 'Project Lead Pickup',
+                            name: 'Mary McDonald',
+                        },
+                    ],
+                }));
+            });
+        </script>
+    </body>
+</html>

@@ -3,18 +3,18 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
-const entries = glob.sync('./app/**/*.html').reduce((acc, path) => {
+const entries = glob.sync('./src/**/*.html').reduce((acc, path) => {
     const name = path.split('/').pop().split('.').shift();
     acc[name] = path;
     return acc;
 }, {});
 
 export default defineConfig({
-    root: 'app',
+    root: 'src',
     resolve: {
         alias: {
             '@tailwind.config': resolve(__dirname, './tailwind.config.js'),
-            '@': resolve(__dirname, './app'),
+            '@': resolve(__dirname, './src'),
         },
     },
     optimizeDeps: {
@@ -37,22 +37,12 @@ export default defineConfig({
 
                     // SVG
                     if (/svg$/.test(chunkInfo.name)) {
-                        outDir = 'svg';
+                        outDir = 'images/svg';
                     }
 
                     // Images
                     if (/(png|jpg|jpeg|gif|webp)$/.test(chunkInfo.name)) {
                         outDir = 'images';
-                    }
-
-                    // Media
-                    if (/(mp3|mp4|webm|ogg|wav|flac|aac)$/.test(chunkInfo.name)) {
-                        outDir += 'media';
-                    }
-
-                    // JSON
-                    if (/json$/.test(chunkInfo.name)) {
-                        outDir = 'json';
                     }
 
                     // JS
@@ -74,8 +64,7 @@ export default defineConfig({
         chunkSizeWarningLimit: 1500, // 1500KiB
     },
     server: {
-        port: 6000,
+        port: 6500,
         open: true,
-        host: true,
     },
 });
