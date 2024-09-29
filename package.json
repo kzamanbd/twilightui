@@ -7,8 +7,8 @@
     "description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
     "scripts": {
         "dev": "vite",
-        "build": "vite build --emptyOutDir",
-        "start": "vite preview",
+        "build": "vite build",
+        "preview": "vite preview",
         "format": "prettier --write \"src/**/*.html\" --ignore-path .gitignore"
     },
     "dependencies": {

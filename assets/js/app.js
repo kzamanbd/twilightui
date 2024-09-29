@@ -4,7 +4,6 @@
  * @description A simple UI framework for building beautiful responsive websites and web apps.
  * @license MIT
  * @see https://twilightui.com/
- * @Alpine Config
  */
 
 import collapse from '@alpinejs/collapse';
@@ -64,7 +63,6 @@ window.DataTable = DataTable;
 window.DataTableExportCSV = exportCSV;
 window.DataTableExportJSON = exportJSON;
 window.DataTableExportTXT = exportTXT;
-
 
 (function () {
     // theme config
