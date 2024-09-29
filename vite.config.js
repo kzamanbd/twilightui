@@ -3,20 +3,13 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
-const entries = glob.sync('./src/**/*.html').reduce((acc, path) => {
+const entries = glob.sync('./pages/**/*.html').reduce((acc, path) => {
     const name = path.split('/').pop().split('.').shift();
     acc[name] = path;
     return acc;
 }, {});
 
 export default defineConfig({
-    root: 'src',
-    resolve: {
-        alias: {
-            '@tailwind.config': resolve(__dirname, './tailwind.config.js'),
-            '@': resolve(__dirname, './src'),
-        },
-    },
     optimizeDeps: {
         entries: Object.keys(entries),
     },
@@ -25,7 +18,10 @@ export default defineConfig({
         target: 'esnext',
         outDir: resolve(__dirname, 'build'),
         rollupOptions: {
-            input: entries,
+            input: {
+                main: resolve(__dirname, 'index.html'),
+                ...entries,
+            },
             output: {
                 assetFileNames: chunkInfo => {
                     let outDir = '';

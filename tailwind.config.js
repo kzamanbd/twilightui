@@ -44,7 +44,7 @@ const colorConfig = {
 
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: ['./src/**/*.{html,js}'],
+    content: ['./index.html', './pages/**/*.{html,js}', './public/features/**/*.{html,js}'],
     darkMode: 'class', // or 'media'
     theme: {
         extend: {
