@@ -2,7 +2,7 @@ import { useStorage } from '@vueuse/core';
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 
-export default function useAuth() {
+export const useAuth = () => {
     const user = useStorage('isAuth', {
         login: false,
         expires: 0
@@ -32,4 +32,4 @@ export default function useAuth() {
         logout,
         isLoggedIn
     };
-}
+};

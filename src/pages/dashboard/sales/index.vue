@@ -1,8 +1,4 @@
 <script setup lang="ts">
-    import useTitle from '@/composables/useTitle';
-
-    useTitle('Dashboard');
-
     import { salesOverview, salesDonut, socialVisitors } from './data';
     import TotalRevenue from './components/TotalRevenue.vue';
     import TotalSales from './components/TotalSales.vue';

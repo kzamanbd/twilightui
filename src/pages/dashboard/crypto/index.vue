@@ -1,8 +1,5 @@
 <script setup lang="ts">
     import { ref, computed } from 'vue';
-    import useTitle from '@/composables/useTitle';
-
-    useTitle('Crypto Dashboard');
 
     const isShowCryptoMenu = ref(false);
     import {

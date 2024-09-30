@@ -1,4 +1,4 @@
-import useAuth from '@/composables/useAuth';
+import { useAuth } from '@/composables/useAuth';
 import HomeView from '@/pages/HomeView.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -45,6 +45,15 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     const { isLoggedIn } = useAuth();
+
+    const name = to.fullPath
+        .split('/')
+        .join(' ')
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, (char) => char.toUpperCase())
+        .replace(/([a-z])([A-Z])/g, '$1 $2'); // if find uppercase letter in the name and before uppercase find lowercase letter then add space
+
+    document.title = `${name} - TwilightUI`;
 
     if (!isLoggedIn.value && to.name !== 'login') {
         next({ name: 'login' });

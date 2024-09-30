@@ -1,10 +1,7 @@
 <script setup lang="ts">
     import { ref } from 'vue';
     import { useRouter } from 'vue-router';
-    import useAuth from '@/composables/useAuth';
-    import useTitle from '@/composables/useTitle';
-
-    useTitle('Login');
+    import { useAuth } from '@/composables/useAuth';
 
     const router = useRouter();
     const isLoading = ref(false);
@@ -14,7 +11,7 @@
         isLoading.value = true;
         auth.login();
         setTimeout(() => {
-            router.push({ name: 'dashboard-sales' });
+            router.push('/dashboard/sales');
         }, 1000);
     };
 </script>

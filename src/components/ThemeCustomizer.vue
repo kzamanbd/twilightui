@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import useTheme from '@/composables/useTheme';
+    import { useTheme } from '@/composables/useTheme';
     import { useThemeCustomizerStore } from '@/stores/themeCustomizer';
     import { computed, watch } from 'vue';
 

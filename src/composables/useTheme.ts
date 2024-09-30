@@ -1,6 +1,6 @@
 import { useStorage } from '@vueuse/core';
 
-export default function useTheme() {
+export const useTheme = () => {
     const themeConfig = {
         locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
         theme: 'light', // light, dark, system
@@ -86,4 +86,4 @@ export default function useTheme() {
         toggleSemiDark,
         collapsibleMenu
     };
-}
+};

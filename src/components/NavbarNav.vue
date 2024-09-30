@@ -1,8 +1,8 @@
 <script setup lang="ts">
     import { useWindowScroll } from '@vueuse/core';
     import { computed, ref } from 'vue';
-    import useTheme from '@/composables/useTheme';
-    import useAuth from '@/composables/useAuth';
+    import { useTheme } from '@/composables/useTheme';
+    import { useAuth } from '@/composables/useAuth';
     import { useThemeCustomizerStore } from '@/stores/themeCustomizer';
 
     const { y: scrollY } = useWindowScroll();
