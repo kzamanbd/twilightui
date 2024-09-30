@@ -1,4 +1,7 @@
-<script setup>
+<script setup lang="ts">
+    import { ref, computed } from 'vue';
+    import useTitle from '@/composables/useTitle';
+
     useTitle('Crypto Dashboard');
 
     const isShowCryptoMenu = ref(false);
@@ -33,7 +36,12 @@
         };
     });
 
-    const selectBitCoin = ({ series, ...item }) => {
+    const getChartOptions = (title: string) => {
+        const key = title.toLowerCase() as keyof typeof financeOptions.value;
+        return financeOptions.value[key]?.options;
+    };
+
+    const selectBitCoin = ({ series, ...item }: any) => {
         selectedCoinObj.value = item;
 
         selectedBitCoin.value.series = [{ data: series }];
@@ -620,9 +628,7 @@
                     </div>
                     <div class="flex-1">
                         <div :id="item.title.toLowerCase()" class="chart">
-                            <apexchart
-                                :options="financeOptions[item.title.toLowerCase()]?.options"
-                                :series="[{ data: item.series }]" />
+                            <apexchart :options="getChartOptions(item.title)" :series="[{ data: item.series }]" />
                         </div>
                     </div>
                 </button>
@@ -747,7 +753,7 @@
                     <div>
                         <div class="mb-1.5 font-semibold">Amount</div>
                         <div class="relative flex">
-                            <input type="text" placeholder class="form-input rounded-r-none border-r-0" />
+                            <input type="text" class="form-input rounded-r-none border-r-0" />
                             <div class="dropdown">
                                 <div
                                     class="dropdown-toggle flex cursor-pointer items-center justify-center gap-1 rounded-none rounded-r-md border bg-[#f1f2f3] px-3 py-2.5 font-semibold dark:border-[#253b5c] dark:bg-[#1b2e4b]">

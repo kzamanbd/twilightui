@@ -31,5 +31,45 @@ export default defineConfig({
             '@': fileURLToPath(new URL('./src', import.meta.url))
         }
     },
+    build: {
+        target: 'esnext',
+        rollupOptions: {
+            output: {
+                assetFileNames: (chunkInfo: any) => {
+                    let outDir = '';
+
+                    // Fonts
+                    if (/(ttf|woff|woff2|eot)$/.test(chunkInfo.name)) {
+                        outDir = 'fonts';
+                    }
+
+                    // SVG
+                    if (/svg$/.test(chunkInfo.name)) {
+                        outDir = 'images/svg';
+                    }
+
+                    // Images
+                    if (/(png|jpg|jpeg|gif|webp)$/.test(chunkInfo.name)) {
+                        outDir = 'images';
+                    }
+
+                    // JS
+                    if (/js$/.test(chunkInfo.name)) {
+                        outDir = 'js';
+                    }
+
+                    // CSS
+                    if (/css$/.test(chunkInfo.name)) {
+                        outDir = 'css';
+                    }
+
+                    return `${outDir}/[name][extname]`;
+                },
+                chunkFileNames: 'js/[name]-[hash].js',
+                entryFileNames: 'js/[name]-[hash].js'
+            }
+        },
+        chunkSizeWarningLimit: 1000 // KiB
+    },
     server: { open: true, port: 1111 }
 });

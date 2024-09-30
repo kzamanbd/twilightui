@@ -1,4 +1,6 @@
-<script setup>
+<script setup lang="ts">
+    import useTitle from '@/composables/useTitle';
+
     useTitle('Dashboard');
 
     import { salesOverview, salesDonut, socialVisitors } from './data';
