@@ -5,9 +5,7 @@ name: Node.js CI
 
 on:
     push:
-        branches: ['master']
-    pull_request:
-        branches: ['master']
+        branches: ['vue']
 
 jobs:
     build:
@@ -15,16 +13,39 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [18.x, 20.x]
-                # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+                node-version: [20.x]
 
         steps:
+            # Checkout the code from the repository
             - uses: actions/checkout@v4
+
+            # Setup Node.js environment
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node-version }}
-                  cache: 'npm'
-            - run: npm ci
-            - run: npm run build --if-present
+
+            # Setup pnpm environment
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v2.4.0
+              with:
+                  version: 9.5.0 # You can use the latest stable pnpm version
+
+            # Cache pnpm store to speed up subsequent builds
+            - name: Cache pnpm store
+              uses: actions/cache@v3
+              with:
+                  path: ~/.pnpm-store # Caches the pnpm store directory
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-
+
+            # Install dependencies using pnpm
+            - name: Install dependencies
+              run: pnpm install
+
+            # Build the project (if a build script is defined)
+            - name: Build
+              run: pnpm run build --if-present
+
             #- run: npm run test:unit
