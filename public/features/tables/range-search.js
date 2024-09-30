@@ -283,6 +283,10 @@ document.addEventListener('alpine:init', () => {
                 searchable: false,
                 perPageSelect: [10, 20, 30, 50, 100],
                 firstLast: true,
+                firstText: `<span class="material-icons-outlined">keyboard_double_arrow_left</span>`,
+                lastText: `<span class="material-icons-outlined">keyboard_double_arrow_right</span>`,
+                prevText: `<span class="material-icons-outlined">chevron_left</span>`,
+                nextText: `<span class="material-icons-outlined">chevron_right</span>`,
                 labels: {
                     perPage: '{select}',
                 },

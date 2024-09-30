@@ -1,3 +1,4 @@
 {
-    "editor.formatOnSave": true
+    "vue.codeActions.enabled": false,
+    "typescript.preferences.autoImportFileExcludePatterns": ["vue-router"]
 }

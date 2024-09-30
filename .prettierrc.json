@@ -1,0 +1,12 @@
+{
+    "$schema": "https://json.schemastore.org/prettierrc",
+    "semi": true,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "printWidth": 120,
+    "trailingComma": "none",
+    "vueIndentScriptAndStyle": true,
+    "htmlWhitespaceSensitivity": "css",
+    "bracketSameLine": true
+}

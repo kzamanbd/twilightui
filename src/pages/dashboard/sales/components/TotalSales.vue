@@ -1,0 +1,79 @@
+<script setup lang="ts">
+    const options = {
+        chart: {
+            height: 350,
+            type: 'bar',
+            events: {
+                click: function (chart: any, w: any, e: any) {
+                    console.log(chart, w, e);
+                }
+            },
+            toolbar: {
+                show: false
+            }
+        },
+        colors: ['#5a66f1', '#5ce0de', '#fd7e14', '#00b19d'],
+        plotOptions: {
+            bar: {
+                columnWidth: '45%',
+                distributed: true
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        legend: {
+            show: false
+        },
+        xaxis: {
+            categories: [
+                ['John', 'Doe'],
+                ['Joe', 'Smith'],
+                ['Jake', 'Williams'],
+                ['Peter', 'Brown']
+            ],
+            labels: {
+                style: {
+                    colors: ['#5a66f1', '#5ce0de', '#fd7e14', '#00b19d'],
+                    fontSize: '12px'
+                }
+            }
+        }
+    };
+    const series = [
+        {
+            data: [21, 22, 10, 28]
+        }
+    ];
+</script>
+
+<template>
+    <div class="card overflow-hidden">
+        <div class="card-body pb-0">
+            <div class="flex">
+                <div class="flex space-x-3 rtl:space-x-reverse">
+                    <div class="avatar dark:primary/10 rounded-sm bg-primary/10 p-2">
+                        <svg
+                            class="fill-primary"
+                            xmlns="http://www.w3.org/2000/svg"
+                            enable-background="new 0 0 24 24"
+                            viewBox="0 0 24 24">
+                            <path
+                                class="fill-primary"
+                                d="M9.5,7h7C16.776123,7,17,6.776123,17,6.5S16.776123,6,16.5,6h-7C9.223877,6,9,6.223877,9,6.5S9.223877,7,9.5,7z M7.5,11h9c0.276123,0,0.5-0.223877,0.5-0.5S16.776123,10,16.5,10h-9C7.223877,10,7,10.223877,7,10.5S7.223877,11,7.5,11z M20.5,2H3.4993896C3.2234497,2.0001831,2.9998169,2.223999,3,2.5v19c-0.000061,0.1124268,0.0378418,0.2216187,0.1074829,0.3098755c0.1710205,0.2167358,0.4853516,0.2537231,0.7020874,0.0827026l2.8652344-2.2617188l2.3583984,1.7695312c0.1777954,0.1328125,0.421814,0.1328125,0.5996094,0L12,19.625l2.3671875,1.7753906c0.1777954,0.1328125,0.421814,0.1328125,0.5996094,0l2.3583984-1.7695312l2.8652344,2.2617188C20.2785034,21.9623413,20.3876343,22.0002441,20.5,22h0.0006104C20.7766113,21.9998169,21.0001831,21.7759399,21,21.5V2.4993896C20.9998169,2.2234497,20.776001,1.9998169,20.5,2z M20,20.46875l-2.3574219-1.8613281c-0.0882568-0.069519-0.1972656-0.1072998-0.3095703-0.1074219c-0.1080933-0.000061-0.2132568,0.0349121-0.2998047,0.0996094L14.6669922,20.375l-2.3671875-1.7753906c-0.1777954-0.1328125-0.421814-0.1328125-0.5996094,0L9.3330078,20.375l-2.3662109-1.7753906c-0.1817017-0.1348877-0.4311523-0.1317139-0.609375,0.0078125L4,20.46875V3h16V20.46875z M7.5,15h9c0.276123,0,0.5-0.223877,0.5-0.5S16.776123,14,16.5,14h-9C7.223877,14,7,14.223877,7,14.5S7.223877,15,7.5,15z"></path>
+                        </svg>
+                    </div>
+                    <h6 class="my-auto mb-2 text-lg font-semibold text-gray-800 dark:text-white">Total Sales</h6>
+                </div>
+                <span class="badge !my-auto bg-secondary/10 py-1 text-secondary ltr:ml-auto rtl:mr-auto"
+                    ><i class="ti ti-trending-up"></i> 1.8%</span
+                >
+            </div>
+            <div class="mt-2">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white">$56,35,262</h2>
+                <p class="text-xs text-gray-400">in last week</p>
+            </div>
+        </div>
+        <apexchart type="bar" height="150" :options="options" :series="series" />
+    </div>
+</template>
