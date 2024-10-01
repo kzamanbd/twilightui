@@ -36,6 +36,7 @@
         ]
     },
     "dependencies": {
+        "@floating-ui/dom": "^1.6.11",
         "@headlessui/vue": "^1.7.14",
         "@iconify-json/mdi": "^1.1.54",
         "@iconify/tailwind": "^0.1.3",

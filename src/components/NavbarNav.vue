@@ -97,17 +97,15 @@
                     <span class="icon-[mdi--cog]"></span>
                 </button>
 
-                <UiDropdown>
-                    <template #trigger>
-                        <button
-                            type="button"
-                            aria-label="User Profile"
-                            class="dropdown-toggle flex h-8 w-8 overflow-hidden rounded-md shadow">
-                            <img class="h-full w-full object-cover" src="/images/author.png" alt="Author" />
-                        </button>
-                    </template>
+                <div class="dropdown" data-strategy="absolute">
+                    <button
+                        type="button"
+                        aria-label="User Profile"
+                        class="dropdown-toggle flex h-8 w-8 overflow-hidden rounded-md shadow">
+                        <img class="h-full w-full object-cover" src="/images/author.png" alt="Author" />
+                    </button>
 
-                    <ul class="w-64 py-2">
+                    <ul class="dropdown-menu w-64 py-2 shadow-2xl dark:bg-dark">
                         <li class="flex items-center border-b px-4 py-2 dark:border-gray-700">
                             <div class="flex-shrink-0">
                                 <img class="h-8 w-8 rounded-full object-cover" src="/images/author.png" alt="Author" />
@@ -169,11 +167,11 @@
                                 <a href="#" class="user-menu-link"> Account Settings </a>
                             </div>
                             <div class="user-menu-item">
-                                <button type="button" @click.prevent="logout" class="user-menu-link">Log out</button>
+                                <a href="#" @click.prevent="logout" class="user-menu-link"> Log out </a>
                             </div>
                         </li>
                     </ul>
-                </UiDropdown>
+                </div>
             </div>
         </div>
     </header>

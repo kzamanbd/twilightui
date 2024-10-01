@@ -1,9 +1,8 @@
 import './assets/styles/app.css';
-
+import './assets/addons';
 import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 import plugins from './plugins/index.d';
-
 import App from './App.vue';
 import router from './router';
 

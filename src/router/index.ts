@@ -51,7 +51,11 @@ const router = createRouter({
             name: 'not-found',
             component: () => import('@/pages/ErrorView.vue')
         }
-    ]
+    ],
+    scrollBehavior() {
+        // always scroll to top
+        return { top: 0 };
+    }
 });
 
 router.beforeEach((to, from, next) => {

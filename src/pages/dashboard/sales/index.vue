@@ -48,16 +48,14 @@
                             <div class="flex">
                                 <h5 class="card-title my-auto">Sales Overview</h5>
                                 <div class="my-auto block ltr:ml-auto rtl:mr-auto">
-                                    <UiDropdown>
-                                        <template #trigger>
-                                            <button
-                                                type="button"
-                                                aria-label="button"
-                                                class="rounded-full !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
-                                                <span class="icon-[mdi--dots-vertical]"></span>
-                                            </button>
-                                        </template>
-                                        <ul class="dark:text-white-dark right-0 text-black">
+                                    <div class="dropdown">
+                                        <button
+                                            type="button"
+                                            aria-label="button"
+                                            class="dropdown-toggle rounded-full !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                            <span class="icon-[mdi--dots-vertical]"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                             <li>
                                                 <a class="dropdown-link" href="javascript:void(0)">Download</a>
                                             </li>
@@ -68,7 +66,7 @@
                                                 <a class="dropdown-link" href="javascript:void(0)">Export</a>
                                             </li>
                                         </ul>
-                                    </UiDropdown>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -111,16 +109,14 @@
                             <div class="flex">
                                 <h5 class="card-title my-auto">Sales Value</h5>
                                 <div class="my-auto block ltr:ml-auto rtl:mr-auto">
-                                    <UiDropdown>
-                                        <template #trigger>
-                                            <button
-                                                type="button"
-                                                aria-label="button"
-                                                class="rounded-full !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
-                                                <span class="icon-[mdi--dots-vertical]"></span>
-                                            </button>
-                                        </template>
-                                        <ul class="dark:text-white-dark right-0 text-black">
+                                    <div class="dropdown">
+                                        <button
+                                            type="button"
+                                            aria-label="button"
+                                            class="dropdown-toggle rounded-full !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                            <span class="icon-[mdi--dots-vertical]"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                             <li>
                                                 <a class="dropdown-link" href="javascript:void(0)">Download</a>
                                             </li>
@@ -131,7 +127,7 @@
                                                 <a class="dropdown-link" href="javascript:void(0)">Export</a>
                                             </li>
                                         </ul>
-                                    </UiDropdown>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -176,16 +172,14 @@
                             <div class="flex">
                                 <h5 class="card-title my-auto">Top Customers</h5>
                                 <div class="my-auto block ltr:ml-auto rtl:mr-auto">
-                                    <UiDropdown>
-                                        <template #trigger>
-                                            <button
-                                                type="button"
-                                                aria-label="button"
-                                                class="rounded-full !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
-                                                <span class="icon-[mdi--dots-vertical]"></span>
-                                            </button>
-                                        </template>
-                                        <ul class="dark:text-white-dark right-0 text-black">
+                                    <div class="dropdown">
+                                        <button
+                                            type="button"
+                                            aria-label="button"
+                                            class="dropdown-toggle rounded-full !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                            <span class="icon-[mdi--dots-vertical]"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                             <li>
                                                 <a class="dropdown-link" href="javascript:void(0)">Download</a>
                                             </li>
@@ -196,7 +190,7 @@
                                                 <a class="dropdown-link" href="javascript:void(0)">Export</a>
                                             </li>
                                         </ul>
-                                    </UiDropdown>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -398,16 +392,14 @@
                             <div class="flex">
                                 <h5 class="card-title my-auto">Upcoming Products</h5>
                                 <div class="my-auto block ltr:ml-auto rtl:mr-auto">
-                                    <UiDropdown>
-                                        <template #trigger>
-                                            <button
-                                                type="button"
-                                                aria-label="button"
-                                                class="rounded-full !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
-                                                <span class="icon-[mdi--dots-vertical]"></span>
-                                            </button>
-                                        </template>
-                                        <ul class="dark:text-white-dark right-0 text-black">
+                                    <div class="dropdown">
+                                        <button
+                                            type="button"
+                                            aria-label="button"
+                                            class="dropdown-toggle rounded-full !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                            <span class="icon-[mdi--dots-vertical]"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                             <li>
                                                 <a class="dropdown-link" href="javascript:void(0)">Download</a>
                                             </li>
@@ -418,7 +410,7 @@
                                                 <a class="dropdown-link" href="javascript:void(0)">Export</a>
                                             </li>
                                         </ul>
-                                    </UiDropdown>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -578,16 +570,15 @@
                             <div class="flex">
                                 <h5 class="card-title my-auto">Social Visitors</h5>
                                 <div class="my-auto block ltr:ml-auto rtl:mr-auto">
-                                    <UiDropdown>
-                                        <template #trigger>
-                                            <button
-                                                type="button"
-                                                aria-label="button"
-                                                class="rounded-sm !border border-gray-200 p-1.5 px-3 text-gray-400 hover:border-gray-200 hover:bg-gray-200 hover:text-gray-500 focus:ring-gray-200 dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
-                                                This Week
-                                            </button>
-                                        </template>
-                                        <ul class="dark:text-white-dark right-0 text-black">
+                                    <div class="dropdown">
+                                        <button
+                                            type="button"
+                                            aria-label="button"
+                                            class="dropdown-toggle rounded-sm !border border-gray-200 p-1.5 px-3 text-gray-400 hover:border-gray-200 hover:bg-gray-200 hover:text-gray-500 focus:ring-gray-200 dark:border-white/10 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                            This Week
+                                        </button>
+
+                                        <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                             <li>
                                                 <a class="dropdown-link" href="javascript:void(0)">This Week</a>
                                             </li>
@@ -598,7 +589,7 @@
                                                 <a class="dropdown-link" href="javascript:void(0)">This Year</a>
                                             </li>
                                         </ul>
-                                    </UiDropdown>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -612,16 +603,14 @@
                         <div class="card-header flex">
                             <h5 class="card-title my-auto">Top Selling Products</h5>
                             <div class="my-auto block ltr:ml-auto rtl:mr-auto">
-                                <UiDropdown>
-                                    <template #trigger>
-                                        <button
-                                            type="button"
-                                            aria-label="button"
-                                            class="rounded-full !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
-                                            <span class="icon-[mdi--dots-vertical]"></span>
-                                        </button>
-                                    </template>
-                                    <ul class="dark:text-white-dark right-0 w-44 text-black">
+                                <div class="dropdown">
+                                    <button
+                                        type="button"
+                                        aria-label="button"
+                                        class="dropdown-toggle rounded-full !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                        <span class="icon-[mdi--dots-vertical]"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dark:text-white-dark right-0 w-44 text-black">
                                         <li>
                                             <a class="dropdown-link" href="javascript:void(0)">Action</a>
                                         </li>
@@ -632,7 +621,7 @@
                                             <a class="dropdown-link" href="javascript:void(0)"> Something else </a>
                                         </li>
                                     </ul>
-                                </UiDropdown>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body p-0">
@@ -769,16 +758,14 @@
                             <div class="flex">
                                 <h5 class="card-title my-auto">Recent Order Details</h5>
                                 <div class="my-auto block ltr:ml-auto rtl:mr-auto">
-                                    <UiDropdown>
-                                        <template #trigger>
-                                            <button
-                                                type="button"
-                                                aria-label="button"
-                                                class="rounded-sm !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
-                                                View All
-                                            </button>
-                                        </template>
-                                        <ul class="dark:text-white-dark right-0 text-black">
+                                    <div class="dropdown">
+                                        <button
+                                            type="button"
+                                            aria-label="button"
+                                            class="dropdown-toggle rounded-sm !border border-gray-200 bg-white p-1.5 text-gray-500 hover:bg-gray-100 focus:ring-gray-200 dark:border-white/10 dark:bg-black/20 dark:hover:border-white/20 dark:hover:bg-black/30 dark:focus:ring-white/10 dark:focus:ring-offset-white/10">
+                                            View All
+                                        </button>
+                                        <ul class="dropdown-menu dark:text-white-dark right-0 text-black">
                                             <li>
                                                 <a class="dropdown-link" href="javascript:void(0)">Download</a>
                                             </li>
@@ -789,7 +776,7 @@
                                                 <a class="dropdown-link" href="javascript:void(0)">Export</a>
                                             </li>
                                         </ul>
-                                    </UiDropdown>
+                                    </div>
                                 </div>
                             </div>
                         </div>
