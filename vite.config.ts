@@ -1,18 +1,19 @@
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { fileURLToPath, URL } from 'node:url';
-import AutoImport from 'unplugin-auto-import/vite';
+import autoImport from 'unplugin-auto-import/vite';
 import { HeadlessUiResolver } from 'unplugin-vue-components/resolvers';
-import Components from 'unplugin-vue-components/vite';
+import components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
-import VueDevTools from 'vite-plugin-vue-devtools';
+import vueDevTools from 'vite-plugin-vue-devtools';
 
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
         vue(),
         vueJsx(),
-        AutoImport({
+        autoImport({
+            dts: true,
             imports: ['vue', 'vue-router', 'pinia'],
             dirs: ['src/components/**', 'src/composables/**', 'src/stores/**'],
             vueTemplate: true,
@@ -21,10 +22,10 @@ export default defineConfig({
                 filepath: 'auto-imports.json'
             }
         }),
-        Components({
+        components({
             resolvers: [HeadlessUiResolver()]
         }),
-        VueDevTools()
+        vueDevTools()
     ],
     resolve: {
         alias: {
