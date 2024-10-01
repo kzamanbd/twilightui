@@ -21,7 +21,9 @@
             <template v-if="Component">
                 <Suspense>
                     <component :is="Component" />
-                    <template #fallback> Loading... </template>
+                    <template #fallback>
+                        <main class="twilight-content">Loading...</main>
+                    </template>
                 </Suspense>
             </template>
         </RouterView>

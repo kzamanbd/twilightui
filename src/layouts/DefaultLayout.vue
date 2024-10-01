@@ -18,12 +18,8 @@
         <div class="twilight-body">
             <NavbarNav />
 
-            <main class="twilight-content">
-                <!-- End:Breadcrumb -->
-                <slot />
-            </main>
-
-            <footer class="footer" :class="[footer]">
+            <slot />
+            <footer class="footer mt-auto" :class="[footer]">
                 <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
                     © <span id="footer-year"></span> <a href="#" class="hover:underline">Twilight™</a>. All Rights
                     Reserved.

@@ -1,5 +1,6 @@
 import { useAuth } from '@/composables/useAuth';
 import HomeView from '@/pages/HomeView.vue';
+import SalesDashboard from '@/pages/dashboard/sales/index.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -19,13 +20,18 @@ const router = createRouter({
             children: [
                 {
                     path: 'sales',
-                    name: 'sales',
-                    component: () => import('@/pages/dashboard/sales/index.vue')
+                    name: 'dashboard-sales',
+                    component: SalesDashboard
                 },
                 {
                     path: 'crypto',
-                    name: 'crypto',
+                    name: 'dashboard-crypto',
                     component: () => import('@/pages/dashboard/crypto/index.vue')
+                },
+                {
+                    path: 'crm',
+                    name: 'dashboard-crm',
+                    component: () => import('@/pages/dashboard/crm/index.vue')
                 }
             ]
         },
@@ -58,7 +64,7 @@ router.beforeEach((to, from, next) => {
     if (!isLoggedIn.value && to.name !== 'login') {
         next({ name: 'login' });
     } else if (to.name === 'login' && isLoggedIn.value) {
-        next({ name: 'dashboard-sales' });
+        next('/dashboard/sales');
     } else {
         next();
     }

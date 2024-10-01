@@ -1,6 +1,6 @@
 <template>
     <div
-        class="container mx-auto flex h-screen flex-col-reverse items-center justify-center gap-16 px-4 py-24 md:gap-28 md:px-44 md:py-20 lg:flex-row lg:px-24 lg:py-24">
+        class="container mx-auto flex h-[calc(100vh_-_125px)] flex-col-reverse items-center justify-center gap-16 px-4 py-24 md:gap-28 md:px-44 md:py-20 lg:flex-row lg:px-24 lg:py-24">
         <div class="relative w-full pb-12 lg:pb-0 xl:w-1/2 xl:pt-24">
             <div class="relative">
                 <div class="absolute">
