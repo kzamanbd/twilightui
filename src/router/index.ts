@@ -24,6 +24,11 @@ const router = createRouter({
                     component: SalesDashboard
                 },
                 {
+                    path: 'analytics',
+                    name: 'dashboard-analytics',
+                    component: () => import('@/pages/dashboard/analytics/index.vue')
+                },
+                {
                     path: 'crypto',
                     name: 'dashboard-crypto',
                     component: () => import('@/pages/dashboard/crypto/index.vue')
