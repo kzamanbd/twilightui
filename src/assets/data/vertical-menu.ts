@@ -26,6 +26,10 @@ export default [
             {
                 name: 'ECommerce',
                 href: '/dashboard/ecommerce'
+            },
+            {
+                name: 'Projects',
+                href: '/dashboard/projects'
             }
         ]
     },

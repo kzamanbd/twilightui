@@ -1,57 +1,11 @@
 import { useAuth } from '@/composables/useAuth';
-import HomeView from '@/pages/HomeView.vue';
-import SalesDashboard from '@/pages/dashboard/sales/index.vue';
+
 import { createRouter, createWebHistory } from 'vue-router';
+import { routes } from './routes';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
-    routes: [
-        {
-            path: '/',
-            name: 'login',
-            component: HomeView,
-            meta: {
-                layout: 'blank'
-            }
-        },
-        {
-            path: '/dashboard',
-            name: 'dashboard',
-            children: [
-                {
-                    path: 'sales',
-                    name: 'dashboard-sales',
-                    component: SalesDashboard
-                },
-                {
-                    path: 'analytics',
-                    name: 'dashboard-analytics',
-                    component: () => import('@/pages/dashboard/analytics/index.vue')
-                },
-                {
-                    path: 'crypto',
-                    name: 'dashboard-crypto',
-                    component: () => import('@/pages/dashboard/crypto/index.vue')
-                },
-                {
-                    path: 'crm',
-                    name: 'dashboard-crm',
-                    component: () => import('@/pages/dashboard/crm/index.vue')
-                }
-            ]
-        },
-        {
-            path: '/table',
-            name: 'table',
-            component: () => import('@/pages/AboutView.vue')
-        },
-        // error page
-        {
-            path: '/:pathMatch(.*)*',
-            name: 'not-found',
-            component: () => import('@/pages/ErrorView.vue')
-        }
-    ],
+    routes: routes,
     scrollBehavior() {
         // always scroll to top
         return { top: 0 };
