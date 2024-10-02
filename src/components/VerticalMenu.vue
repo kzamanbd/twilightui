@@ -1,12 +1,5 @@
 <script setup lang="ts">
-    import verticalMenu from '@/static/vertical-menu';
-    import { useRoute } from 'vue-router';
-
-    const $route = useRoute();
-
-    const defaultOpen = (children: any) => {
-        return children.some((child: any) => child.href === $route.path);
-    };
+    import verticalMenu from '@/assets/data/vertical-menu';
 </script>
 
 <template>
@@ -38,7 +31,6 @@
                     <span class="icon-[mdi--close] lg:hidden"></span>
                 </button>
             </div>
-
             <!-- Menu Content -->
             <SimpleBar class="tw-menu-content no-scrollbar">
                 <ul class="tw-nav-menu">
@@ -50,24 +42,26 @@
                             </li>
                         </template>
                         <template v-else-if="menu.children?.length">
-                            <TwDisclosure
-                                :label="menu.name"
-                                :iconClass="menu.icon"
-                                :defaultOpen="defaultOpen(menu.children)">
-                                <li
-                                    v-for="children in menu.children"
-                                    :key="children.name"
-                                    class="tw-dropdown-item group">
-                                    <router-link :to="children.href" class="tw-dropdown-link">
-                                        <span class="menu-bullet-dot"></span>
-                                        <span class="tw-link-label">{{ children.name }}</span>
-                                    </router-link>
-                                </li>
-                            </TwDisclosure>
+                            <li class="tw-menu-item">
+                                <button type="button" data-ripple class="tw-menu-link group">
+                                    <span :class="menu.icon"></span>
+                                    <span class="tw-link-label">{{ menu.name }}</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="tw-dropdown-menu">
+                                    <li v-for="child in menu.children" :key="child.href" class="tw-dropdown-item group">
+                                        <router-link :to="child.href" class="tw-dropdown-link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">{{ child.name }}</span>
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            </li>
                         </template>
-                        <template v-else-if="!menu.children?.length">
-                            <li v-if="menu.href" class="tw-menu-item">
-                                <router-link :to="menu.href" class="tw-menu-link">
+                        <template v-else>
+                            <li class="tw-menu-item">
+                                <router-link :to="menu.href || '/'" class="tw-menu-link">
                                     <span :class="menu.icon"></span>
                                     <span class="tw-link-label">{{ menu.name }}</span>
                                 </router-link>
@@ -78,7 +72,7 @@
                     <!-- documentation -->
                     <li>
                         <div class="documents-button">
-                            <a href="/documentation/index.html" target="_blank" class="documents-link">
+                            <a href="https://twilightui-docs.vercel.app" target="_blank" class="documents-link">
                                 <span class="icon-[mdi--text-box-search-outline]">description</span>
                                 <span class="btn-label ml-2">Documentation</span>
                             </a>

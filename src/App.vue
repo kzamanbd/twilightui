@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import BlankLayout from '@/layouts/BlankLayout.vue';
+    // @ts-ignore
     import DefaultLayout from '@/layouts/DefaultLayout.vue';
     import { computed } from 'vue';
     import { useRoute, RouterView } from 'vue-router';

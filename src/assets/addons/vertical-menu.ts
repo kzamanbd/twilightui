@@ -5,7 +5,7 @@
  * @license MIT
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
     const verticalMenu = document.querySelector('.vertical-menu') as HTMLElement | null;
     const content = document.querySelector('.tw-nav-menu') as HTMLElement | null;
     const menuItems = document.querySelectorAll('.tw-menu-link') as NodeListOf<HTMLElement>;
@@ -14,11 +14,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.querySelector('.menu-shadow') as HTMLElement | null;
 
     function toggleHeight(element: HTMLElement, height: number): void {
-        // Function implementation, if any
+        if (element.style.height === '0px' || element.style.height === '') {
+            element.style.height = `${height}px`;
+        } else {
+            element.style.height = '0px';
+        }
     }
 
     function initMenuItems(): void {
-        // Initialize menu items logic, if any
+        if (menuItems.length) {
+            menuItems.forEach((menuItem) => {
+                const parent = menuItem.parentElement;
+                const dropdown = parent?.querySelector('.tw-dropdown-menu') as HTMLElement | null;
+                const arrow = menuItem.querySelector('.tw-dropdown-arrow');
+
+                if (dropdown) {
+                    menuItem.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        toggleHeight(dropdown, dropdown.scrollHeight);
+                        menuItem.classList.toggle('active');
+                    });
+                }
+
+                if (dropdown && menuItem.classList.contains('active')) {
+                    toggleHeight(dropdown, dropdown.scrollHeight);
+                    arrow?.classList.toggle('rotate');
+                }
+            });
+        }
     }
 
     function initSidebarToggle(): void {

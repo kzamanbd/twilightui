@@ -50,6 +50,7 @@ class Dropdown {
     }
 
     private init() {
+        console.log('[Dropdown] init', this.target);
         const outsideClickListener = (e: MouseEvent) => {
             if (!this.target.contains(e.target as Node)) {
                 this.content?.classList.remove('show');
@@ -57,7 +58,6 @@ class Dropdown {
                 removeClickListener();
             }
         };
-
         const removeClickListener = () => {
             this.cleanup?.();
             document.removeEventListener('click', outsideClickListener);
@@ -68,6 +68,7 @@ class Dropdown {
             this.content?.classList.toggle('show');
             this.content?.classList.toggle('animate-fade-in-up');
             document.addEventListener('click', outsideClickListener);
+            console.log('click toggle');
         });
     }
 
@@ -99,24 +100,34 @@ class Dropdown {
     }
 }
 
-(function () {
-    window.addEventListener('load', () => {
-        const dropdowns = document.querySelectorAll('.dropdown');
-        dropdowns.forEach((dropdown: any) => {
-            new Dropdown(dropdown as HTMLElement, dropdown.dataset as unknown as DropdownOptions);
-        });
+function dropdownActivator() {
+    console.log('dropdownActivator');
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach((dropdown: any) => {
+        new Dropdown(dropdown as HTMLElement, dropdown.dataset as unknown as DropdownOptions);
     });
+}
 
-    // Watch DOM changes for new dropdowns
+document.addEventListener('DOMContentLoaded', dropdownActivator);
+// Watch DOM changes for new dropdowns
+
+function observeDropdowns() {
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
             mutation.addedNodes.forEach((node) => {
                 if (node instanceof HTMLElement && node.classList.contains('dropdown')) {
-                    new Dropdown(node, node.dataset as unknown as DropdownOptions);
+                    console.log('New dropdown detected', node);
+                    // Initialize the dropdown for new elements
+                    new Dropdown(node as HTMLElement, node.dataset as unknown as DropdownOptions);
                 }
             });
         });
     });
 
-    observer.observe(document.body, { childList: true, subtree: true });
-})();
+    observer.observe(document.body, {
+        childList: true, // Detect when new elements are added/removed
+        subtree: true // Detect within the subtree of elements
+    });
+}
+// Start observing for new dropdowns dynamically added to the DOM
+observeDropdowns();
