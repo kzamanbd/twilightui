@@ -63,7 +63,9 @@ class Dropdown {
             document.removeEventListener('click', outsideClickListener);
         };
 
-        this.toggle?.addEventListener('click', () => {
+        this.toggle?.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default action for links
+            removeClickListener();
             this.updatePosition();
             this.content?.classList.toggle('show');
             this.content?.classList.toggle('animate-fade-in-up');

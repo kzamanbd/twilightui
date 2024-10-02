@@ -8,7 +8,7 @@
 <template>
     <Menu as="div" class="dropdown">
         <MenuButton>
-            <slot name="trigger"> Click </slot>
+            <slot name="action"> Dropdown </slot>
         </MenuButton>
 
         <transition
@@ -18,7 +18,7 @@
             leave-active-class="transition duration-75 ease-in"
             leave-from-class="transform scale-100 opacity-100"
             leave-to-class="transform scale-95 opacity-0">
-            <MenuItems class="dropdown-menu top-10 block">
+            <MenuItems class="dropdown-menu top-10 block max-w-60">
                 <slot />
             </MenuItems>
         </transition>
