@@ -1,5 +1,17 @@
 <script>
-    import { random } from 'lodash';
+    function random(min = 0, max = 1, floating = false) {
+        if (typeof min !== 'number' || typeof max !== 'number') {
+            throw new Error("Both min and max must be numbers.");
+        }
+    
+        if (min > max) {
+            [min, max] = [max, min]; // Swap if min is greater than max
+        }
+    
+        const rand = Math.random() * (max - min) + min;
+    
+        return floating ? rand : Math.floor(rand);
+    }
     // Assume that loading will complete under this amount of time.
     const defaultDuration = 8000;
     // How frequently to update
