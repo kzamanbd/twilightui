@@ -38,6 +38,11 @@ export const routes = [
                 path: 'hrm',
                 name: 'hrm-dashboard',
                 component: () => import('@/pages/dashboard/hrm/index.vue')
+            },
+            {
+                path: 'ecommerce',
+                name: 'ecommerce-dashboard',
+                component: () => import('@/pages/dashboard/ecommerce/index.vue')
             }
         ]
     },
