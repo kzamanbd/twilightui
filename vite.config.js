@@ -16,7 +16,6 @@ export default defineConfig({
     plugins: [createHtmlPlugin()],
     build: {
         target: 'esnext',
-        outDir: resolve(__dirname, 'build'),
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
