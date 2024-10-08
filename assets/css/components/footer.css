@@ -3,7 +3,7 @@
         @apply px-6 py-4 shadow dark:bg-dark md:flex md:items-center md:justify-between;
     }
     .footer-fixed {
-        @apply sticky bottom-0 mx-6 rounded-tl-lg rounded-tr-lg bg-white shadow-md;
+        @apply sticky bottom-0 mx-6 rounded-tl-lg rounded-tr-lg bg-white shadow-lg;
     }
     .footer-hidden {
         @apply hidden;

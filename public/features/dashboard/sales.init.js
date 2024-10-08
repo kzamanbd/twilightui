@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var options1 = {
+    const options1 = {
         series: [
             {
                 type: 'area',
@@ -68,16 +68,18 @@ document.addEventListener('DOMContentLoaded', function () {
             show: false,
         },
     };
-    var spark1 = new ApexCharts(document.querySelector('#sales-chart'), options1);
+    const spark1 = new ApexCharts(document.querySelector('#sales-chart'), options1);
     spark1.render();
 
-    var options2 = {
+    const options2 = {
         series: [
             {
+                name: 'Income',
                 type: 'area',
                 data: [20, 65, 38, 72, 55, 80, 65, 76, 55, 80, 40, 80],
             },
             {
+                name: 'Expenses',
                 type: 'line',
                 data: [85, 45, 75, 50, 85, 43, 80, 40, 70, 64, 50, 89],
             },
@@ -141,83 +143,68 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     };
     document.getElementById('sales-chart2').innerHTML = '';
-    var spark2 = new ApexCharts(document.querySelector('#sales-chart2'), options2);
+    const spark2 = new ApexCharts(document.querySelector('#sales-chart2'), options2);
     spark2.render();
 
-    var options3 = {
+    const options3 = {
         series: [
             {
-                type: 'area',
-                data: [20, 65, 38, 72, 55, 80, 65, 76, 55, 80, 40, 80],
+                name: 'Net Profit',
+                data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
             },
             {
-                type: 'line',
-                data: [85, 45, 75, 50, 85, 43, 80, 40, 70, 64, 50, 89],
+                name: 'Revenue',
+                data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+            },
+            {
+                name: 'Free Cash Flow',
+                data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
             },
         ],
         chart: {
-            animations: {
-                enabled: false,
-            },
+            type: 'bar',
             height: 150,
-            width: '500px',
-            type: 'line',
-            toolbar: {
-                show: false,
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '55%',
+                endingShape: 'rounded',
             },
         },
-        stroke: {
-            width: [1, 2],
-            curve: 'straight',
-            dashArray: [0, 5],
-        },
-        colors: ['#5a66f1', '#d1dae5'],
-        grid: {
-            borderColor: 'transparent',
-        },
-        fill: {
-            colors: undefined,
-            opacity: [0.1, 1],
-            type: ['gradient', 'solid'],
-            gradient: {
-                shade: 'light',
-                type: 'vertical',
-                shadeIntensity: 0.5,
-                gradientToColors: undefined,
-                inverseColors: true,
-                opacityFrom: 0.5,
-                opacityTo: 0,
-                stops: [0, 80, 100],
-                colorStops: [],
-            },
-        },
-        labels: {
+        dataLabels: {
             enabled: false,
         },
-        markers: {
-            size: 0,
+        stroke: {
+            show: true,
+            width: 2,
+            colors: ['transparent'],
         },
         xaxis: {
-            show: false,
-            labels: {
-                show: false,
-            },
+            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
         },
         yaxis: {
-            show: false,
-            labels: {
-                show: false,
+            title: {
+                text: '$ (thousands)',
             },
         },
+        fill: {
+            opacity: 1,
+        },
         tooltip: {
-            show: false,
+            y: {
+                formatter: function (val) {
+                    return '$ ' + val + ' thousands';
+                },
+            },
         },
     };
+
     document.getElementById('sales-chart3').innerHTML = '';
     var spark3 = new ApexCharts(document.querySelector('#sales-chart3'), options3);
     spark3.render();
 
-    var options4 = {
+    const options4 = {
         series: [
             {
                 type: 'area',
@@ -287,11 +274,11 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     };
     document.getElementById('sales-chart4').innerHTML = '';
-    var spark4 = new ApexCharts(document.querySelector('#sales-chart4'), options4);
+    const spark4 = new ApexCharts(document.querySelector('#sales-chart4'), options4);
     spark4.render();
 
     /*  sales overview chart */
-    var options = {
+    const options5 = {
         series: [
             {
                 name: 'Income',
@@ -378,11 +365,11 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         },
     };
-    var chart = new ApexCharts(document.querySelector('#salesOverview'), options);
+    var chart = new ApexCharts(document.querySelector('#salesOverview'), options5);
     chart.render();
 
     /* basic chart */
-    var options = {
+    var options6 = {
         series: [
             {
                 data: [400, 470, 540, 690, 1100, 1380],
@@ -452,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         },
     };
-    var chart1 = new ApexCharts(document.querySelector('#visitors'), options);
+    var chart1 = new ApexCharts(document.querySelector('#visitors'), options6);
     chart1.render();
 
     /* Chartjs (#donut)  */

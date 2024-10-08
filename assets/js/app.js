@@ -74,7 +74,7 @@ window.DataTableExportTXT = exportTXT;
         layout: 'full', // full, boxed-layout
         animation: 'animate__fadeIn', // animate__fadeIn, animate__fadeInDown, animate__fadeInUp, animate__fadeInLeft, animate__fadeInRight, animate__slideInDown, animate__slideInLeft, animate__slideInRight, animate__zoomIn
         navbar: 'navbar-fixed', // navbar-static, navbar-fixed, navbar-hidden
-        footer: 'footer-static', // footer-static, footer-fixed, footer-hidden
+        footer: 'footer-fixed', // footer-static, footer-fixed, footer-hidden
         semiDark: false,
         sidebar: false,
     };
@@ -367,7 +367,7 @@ window.DataTableExportTXT = exportTXT;
         if (menuItems.length) {
             menuItems.forEach(menuItem => {
                 const parent = menuItem.parentElement;
-                const dropdown = parent.querySelector('.tw-dropdown-menu');
+                const dropdown = parent.querySelector('.twd--menu');
                 const arrow = menuItem.querySelector('.tw-dropdown-arrow');
 
                 if (dropdown) {
@@ -436,7 +436,7 @@ window.DataTableExportTXT = exportTXT;
             if (pathName == '/') pathName = '/index.html';
 
             const menuItem = document.querySelector(`ul.tw-nav-menu a[href="${pathName}"]`);
-            const dropdownMenu = menuItem?.closest('ul.tw-dropdown-menu');
+            const dropdownMenu = menuItem?.closest('ul.twd--menu');
 
             if (menuItem) {
                 menuItem.classList.add('active');
@@ -451,7 +451,7 @@ window.DataTableExportTXT = exportTXT;
                 }
             }
             const activeMenu = content?.querySelector('.tw-menu-link.active');
-            const activeSubmenu = content?.querySelector('.tw-dropdown-link.active');
+            const activeSubmenu = content?.querySelector('.twd--link.active');
             if (activeSubmenu) {
                 activeSubmenu.scrollIntoView({ block: 'center', behavior: 'smooth' });
             } else if (activeMenu) {

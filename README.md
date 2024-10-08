@@ -10,6 +10,8 @@ In addition to its pre-built pages, **TwilightUI** comes with a wide range of UI
 
 Overall, **TwilightUI** is an excellent choice for developers who are looking for a developer-friendly and highly customizable admin dashboard template. It’s intuitive design, wide range of pre-built pages, useful UI components and utility classes make it the best choice for creating modern and responsive admin dashboards.
 
+See Vue.js version [here](<https://twilightui.netlify.app/>)
+
 ## 📌 Features
 
 - Based on Tailwindcss 3.x+

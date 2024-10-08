@@ -45,4 +45,13 @@
         @apply dark--text flex items-center rounded-md px-4 py-2 hover:bg-light hover:text-primary-600;
         @apply hover:dark:bg-dark-700 dark:hover:text-gray-300;
     }
+    .bell-icon-container {
+        @apply absolute -right-1 -top-1 flex h-2 w-2;
+    }
+    .bell-icon-badge {
+        @apply absolute inline-flex h-full w-full animate-ping rounded-full bg-primary-400 opacity-75;
+    }
+    .bell-icon-badge-dot {
+        @apply relative inline-flex h-2 w-2 rounded-full bg-primary-500;
+    }
 }

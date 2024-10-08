@@ -58,10 +58,10 @@
     .tw-link-label {
         @apply mx-2 truncate text-sm font-medium;
     }
-    .vertical-menu .tw-dropdown-menu {
+    .vertical-menu .twd--menu {
         @apply mt-1 h-0 space-y-1 overflow-hidden transition-all duration-300 ease-in-out;
     }
-    .vertical-menu .tw-dropdown-item {
+    .vertical-menu .twd--menu-item {
         @apply dark--text rounded-md hover:text-gray-900 dark:hover:text-gray-100;
     }
     .menu-bullet-dot {
@@ -73,20 +73,20 @@
     .tw-menu-link.active .tw-arrow {
         @apply rotate-0;
     }
-    .vertical-menu .tw-dropdown-link {
+    .vertical-menu .twd--link {
         @apply flex w-full items-center truncate rounded-md p-2 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-primary;
     }
-    .vertical-menu .tw-dropdown-link:hover .menu-bullet-dot {
+    .vertical-menu .twd--link:hover .menu-bullet-dot {
         @apply bg-primary;
     }
-    .vertical-menu .tw-dropdown-link.active {
+    .vertical-menu .twd--link.active {
         @apply text-primary;
     }
     /* semi dark */
     .semi-dark .app-name {
         @apply text-gray-400;
     }
-    .semi-dark .tw-dropdown-link {
+    .semi-dark .twd--link {
         @apply text-gray-400;
     }
     .semi-dark .tw-menu-link {
@@ -95,19 +95,19 @@
     .semi-dark .tw-menu-link.active {
         @apply bg-gray-700 hover:bg-gray-700;
     }
-    .semi-dark .tw-dropdown-link {
+    .semi-dark .twd--link {
         @apply hover:bg-gray-700 hover:text-primary;
     }
     .collapsed.vertical-menu:not(:hover) .tw-arrow,
     .collapsed.vertical-menu:not(:hover) .collapse-icon,
-    .collapsed.vertical-menu:not(:hover) .tw-dropdown-menu,
+    .collapsed.vertical-menu:not(:hover) .twd--menu,
     .collapsed.vertical-menu:not(:hover) .documents-link .btn-label,
     .collapsed.vertical-menu:not(:hover) .tw-nav-menu .tw-link-label {
         @apply lg:hidden lg:opacity-0;
     }
     /* vertical menu */
     .collapsed.vertical-menu .tw-arrow,
-    .collapsed.vertical-menu .tw-dropdown-menu,
+    .collapsed.vertical-menu .twd--menu,
     .collapsed.vertical-menu .documents-link .btn-label,
     .collapsed.vertical-menu .tw-nav-menu .tw-link-label {
         @apply lg:block lg:opacity-100;

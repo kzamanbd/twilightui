@@ -7,7 +7,7 @@
     }
 
     .horizontal-menu {
-        @apply hidden items-center border-t border-gray-200 px-6 py-1.5 font-semibold rtl:space-x-reverse dark:border-gray-600 lg:flex lg:space-x-1.5 xl:space-x-8;
+        @apply hidden items-center border-t border-gray-200 px-6 py-1.5 font-semibold dark:border-gray-600 lg:flex lg:space-x-1.5 xl:space-x-8 rtl:space-x-reverse;
     }
 
     .horizontal .horizontal-logo,
@@ -43,20 +43,20 @@
         @apply bg-primary-100 text-primary dark:bg-gray-700 dark:hover:text-primary;
     }
 
-    .horizontal-menu ul.tw-dropdown-menu {
+    .horizontal-menu ul.twd--menu {
         @apply absolute top-full z-20 hidden min-w-[180px] rounded bg-white py-3 shadow dark:bg-gray-800;
     }
 
-    .horizontal-menu ul.tw-dropdown-menu .tw-dropdown-item {
+    .horizontal-menu ul.twd--menu .twd--menu-item {
         @apply flex items-center justify-between px-4 py-2 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
 
-    .horizontal-menu ul.tw-dropdown-menu .active {
+    .horizontal-menu ul.twd--menu .active {
         @apply text-primary dark:hover:text-primary;
     }
 
-    .horizontal-menu > li.nav-item:hover > ul.tw-dropdown-menu,
-    .horizontal-menu > li.nav-item > ul.tw-dropdown-menu > li:hover > ul {
+    .horizontal-menu > li.nav-item:hover > ul.twd--menu,
+    .horizontal-menu > li.nav-item > ul.twd--menu > li:hover > ul {
         @apply block;
     }
 
