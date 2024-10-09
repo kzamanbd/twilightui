@@ -98,6 +98,16 @@
     .semi-dark .twd--link {
         @apply hover:bg-gray-700 hover:text-primary;
     }
+    .collapsed-icon,
+    .expanded-icon {
+        @apply hidden lg:block;
+    }
+    .collapsed.vertical-menu .expanded-icon {
+        @apply hidden !important;
+    }
+    .vertical-menu:not(.collapsed) .collapsed-icon {
+        @apply hidden !important;
+    }
     .collapsed.vertical-menu:not(:hover) .tw-arrow,
     .collapsed.vertical-menu:not(:hover) .collapse-icon,
     .collapsed.vertical-menu:not(:hover) .twd--menu,

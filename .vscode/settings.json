@@ -6,5 +6,5 @@
         "source.fixAll.eslint": "always",
         "source.organizeImports": "always"
     },
-    "cSpell.words": ["simplebar"]
+    "cSpell.words": ["Customizer", "simplebar", "twilightui"]
 }

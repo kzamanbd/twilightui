@@ -201,7 +201,7 @@ window.DataTableExportTXT = exportTXT;
     });
 
     //? alpine data
-    Alpine.data('twilightTheme', () => ({
+    Alpine.data('twilightConfig', () => ({
         showCustomizer: false,
         init() {
             this.$store.app.setRTLLayout();
@@ -293,7 +293,7 @@ window.DataTableExportTXT = exportTXT;
     // window scroll
     window.addEventListener('scroll', () => {
         const header = document.querySelector('.navbar-nav');
-        if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        if (document.documentElement.scrollTop > 0) {
             // add class to header
             header.classList.add('scrollable');
         } else {

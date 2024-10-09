@@ -1,9 +1,9 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-import colors from 'tailwindcss/colors';
+import { addDynamicIconSelectors } from '@iconify/tailwind';
+import aspectRatio from '@tailwindcss/aspect-ratio';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
-import aspectRatio from '@tailwindcss/aspect-ratio';
-import { addDynamicIconSelectors } from '@iconify/tailwind';
+import colors from 'tailwindcss/colors';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 const primary = colors.green;
 const colorConfig = {

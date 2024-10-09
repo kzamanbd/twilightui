@@ -21,7 +21,7 @@
     </head>
 
     <body>
-        <div class="twilight" x-data="twilightTheme" :class="appConfig">
+        <div class="twilight" x-data="twilightConfig" :class="appConfig">
             <!-- Loading dialog -->
             <div class="loading">
                 <div id="loader"></div>
@@ -53,7 +53,8 @@
                             <div class="app-name">Twilight <span class="text-primary">UI</span></div>
                         </a>
                         <button type="button" class="toggle-sidebar">
-                            <span class="icon-[mdi--radiobox-marked] hidden lg:block"></span>
+                            <span class="collapsed-icon icon-[mdi--radiobox-blank]"></span>
+                            <span class="expanded-icon icon-[mdi--radiobox-marked]"></span>
                             <span class="icon-[mdi--close] lg:hidden"></span>
                         </button>
                     </div>
