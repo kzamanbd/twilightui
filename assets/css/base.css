@@ -5,7 +5,7 @@
 @layer components {
     /* dark theme */
     .dark--text {
-        @apply text-gray-700 dark:text-[#6D7993];
+        @apply text-gray-700 dark:text-gray-300;
     }
     .loading {
         @apply fixed inset-0 z-[9999] flex items-center justify-center bg-gray-100 supports-[backdrop-filter]:bg-light/50 supports-[backdrop-filter]:backdrop-blur-sm dark:bg-dark-700 dark:supports-[backdrop-filter]:bg-light/10;
