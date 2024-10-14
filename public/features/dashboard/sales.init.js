@@ -1,282 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const options1 = {
-        series: [
-            {
-                type: 'area',
-                data: [20, 65, 38, 72, 55, 80, 65, 76, 55, 80, 40, 80],
-            },
-            {
-                type: 'line',
-                data: [85, 45, 75, 50, 85, 43, 80, 40, 70, 64, 50, 89],
-            },
-        ],
-        chart: {
-            animations: {
-                enabled: false,
-            },
-            height: 150,
-            width: '500px',
-            type: 'line',
-            toolbar: {
-                show: false,
-            },
-        },
-        stroke: {
-            width: [1, 2],
-            curve: 'straight',
-            dashArray: [0, 5],
-        },
-        colors: ['#5a66f1', '#d1dae5'],
-        grid: {
-            borderColor: 'transparent',
-        },
-        fill: {
-            colors: undefined,
-            opacity: [0.1, 1],
-            type: ['gradient', 'solid'],
-            gradient: {
-                shade: 'light',
-                type: 'vertical',
-                shadeIntensity: 0.5,
-                gradientToColors: undefined,
-                inverseColors: true,
-                opacityFrom: 0.5,
-                opacityTo: 0,
-                stops: [0, 80, 100],
-                colorStops: [],
-            },
-        },
-        labels: {
-            enabled: false,
-        },
-        markers: {
-            size: 0,
-        },
-        xaxis: {
-            show: false,
-            labels: {
-                show: false,
-            },
-        },
-        yaxis: {
-            show: false,
-            labels: {
-                show: false,
-            },
-        },
-        tooltip: {
-            show: false,
-        },
-    };
-    const spark1 = new ApexCharts(document.querySelector('#sales-chart'), options1);
-    spark1.render();
-
-    const options2 = {
-        series: [
-            {
-                name: 'Income',
-                type: 'area',
-                data: [20, 65, 38, 72, 55, 80, 65, 76, 55, 80, 40, 80],
-            },
-            {
-                name: 'Expenses',
-                type: 'line',
-                data: [85, 45, 75, 50, 85, 43, 80, 40, 70, 64, 50, 89],
-            },
-        ],
-        chart: {
-            animations: {
-                enabled: false,
-            },
-            height: 150,
-            width: '500px',
-            type: 'line',
-            toolbar: {
-                show: false,
-            },
-        },
-        stroke: {
-            width: [1, 2],
-            curve: 'straight',
-            dashArray: [0, 5],
-        },
-        colors: ['#5a66f1', '#d1dae5'],
-        grid: {
-            borderColor: 'transparent',
-        },
-        fill: {
-            colors: undefined,
-            opacity: [0.1, 1],
-            type: ['gradient', 'solid'],
-            gradient: {
-                shade: 'light',
-                type: 'vertical',
-                shadeIntensity: 0.5,
-                gradientToColors: undefined,
-                inverseColors: true,
-                opacityFrom: 0.5,
-                opacityTo: 0,
-                stops: [0, 80, 100],
-                colorStops: [],
-            },
-        },
-        labels: {
-            enabled: false,
-        },
-        markers: {
-            size: 0,
-        },
-        xaxis: {
-            show: false,
-            labels: {
-                show: false,
-            },
-        },
-        yaxis: {
-            show: false,
-            labels: {
-                show: false,
-            },
-        },
-        tooltip: {
-            show: false,
-        },
-    };
-    document.getElementById('sales-chart2').innerHTML = '';
-    const spark2 = new ApexCharts(document.querySelector('#sales-chart2'), options2);
-    spark2.render();
-
-    const options3 = {
-        series: [
-            {
-                name: 'Net Profit',
-                data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
-            },
-            {
-                name: 'Revenue',
-                data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
-            },
-            {
-                name: 'Free Cash Flow',
-                data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
-            },
-        ],
-        chart: {
-            type: 'bar',
-            height: 150,
-        },
-        plotOptions: {
-            bar: {
-                horizontal: false,
-                columnWidth: '55%',
-                endingShape: 'rounded',
-            },
-        },
-        dataLabels: {
-            enabled: false,
-        },
-        stroke: {
-            show: true,
-            width: 2,
-            colors: ['transparent'],
-        },
-        xaxis: {
-            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-        },
-        yaxis: {
-            title: {
-                text: '$ (thousands)',
-            },
-        },
-        fill: {
-            opacity: 1,
-        },
-        tooltip: {
-            y: {
-                formatter: function (val) {
-                    return '$ ' + val + ' thousands';
-                },
-            },
-        },
-    };
-
-    document.getElementById('sales-chart3').innerHTML = '';
-    var spark3 = new ApexCharts(document.querySelector('#sales-chart3'), options3);
-    spark3.render();
-
-    const options4 = {
-        series: [
-            {
-                type: 'area',
-                data: [20, 65, 38, 72, 55, 80, 65, 76, 55, 80, 40, 80],
-            },
-            {
-                type: 'line',
-                data: [85, 45, 75, 50, 85, 43, 80, 40, 70, 64, 50, 89],
-            },
-        ],
-        chart: {
-            animations: {
-                enabled: false,
-            },
-            height: 150,
-            width: '500px',
-            type: 'line',
-            toolbar: {
-                show: false,
-            },
-        },
-        stroke: {
-            width: [1, 2],
-            curve: 'straight',
-            dashArray: [0, 5],
-        },
-        colors: ['#5a66f1', '#d1dae5'],
-        grid: {
-            borderColor: 'transparent',
-        },
-        fill: {
-            colors: undefined,
-            opacity: [0.1, 1],
-            type: ['gradient', 'solid'],
-            gradient: {
-                shade: 'light',
-                type: 'vertical',
-                shadeIntensity: 0.5,
-                gradientToColors: undefined,
-                inverseColors: true,
-                opacityFrom: 0.5,
-                opacityTo: 0,
-                stops: [0, 80, 100],
-                colorStops: [],
-            },
-        },
-        labels: {
-            enabled: false,
-        },
-        markers: {
-            size: 0,
-        },
-        xaxis: {
-            show: false,
-            labels: {
-                show: false,
-            },
-        },
-        yaxis: {
-            show: false,
-            labels: {
-                show: false,
-            },
-        },
-        tooltip: {
-            show: false,
-        },
-    };
-    document.getElementById('sales-chart4').innerHTML = '';
-    const spark4 = new ApexCharts(document.querySelector('#sales-chart4'), options4);
-    spark4.render();
-
     /*  sales overview chart */
     const options5 = {
         series: [
@@ -365,88 +87,13 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         },
     };
-    var chart = new ApexCharts(document.querySelector('#salesOverview'), options5);
+    const chart = new ApexCharts(document.querySelector('#salesOverview'), options5);
     chart.render();
 
-    /* basic chart */
-    var options6 = {
-        series: [
-            {
-                data: [400, 470, 540, 690, 1100, 1380],
-            },
-        ],
-        chart: {
-            type: 'bar',
-            height: 370,
-            toolbar: {
-                show: false,
-            },
-        },
-        fill: {
-            type: 'gradient',
-            gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 0.7,
-                opacityTo: 1,
-                colorStops: [
-                    {
-                        offset: 0,
-                        color: '#60a5fa',
-                        opacity: 1,
-                    },
-                    {
-                        offset: 100,
-                        color: '#5a66f1',
-                        opacity: 1,
-                    },
-                ],
-            },
-        },
-        plotOptions: {
-            bar: {
-                borderRadius: 4,
-                horizontal: true,
-            },
-        },
-        colors: ['#5e76a6'],
-        grid: {
-            borderColor: 'transparent',
-        },
-        dataLabels: {
-            enabled: false,
-        },
-        xaxis: {
-            categories: ['Facebook', 'Instagram', 'Dribble', 'Twitter', 'Chrome', 'Pininterest'],
-            labels: {
-                show: true,
-                style: {
-                    colors: '#adb5be',
-                    fontSize: '11px',
-                    fontWeight: 600,
-                    cssClass: 'apexcharts-xaxis-label',
-                },
-            },
-        },
-        yaxis: {
-            labels: {
-                show: true,
-                style: {
-                    colors: '#adb5be',
-                    fontSize: '11px',
-                    fontWeight: 600,
-                    cssClass: 'apexcharts-yaxis-label',
-                },
-            },
-        },
-    };
-    var chart1 = new ApexCharts(document.querySelector('#visitors'), options6);
-    chart1.render();
+    /* Chart js (#donut)  */
+    const myCanvas = document.getElementById('sales-donut');
 
-    /* Chartjs (#donut)  */
-    var myCanvas = document.getElementById('sales-donut');
-    var myCanvasContext = myCanvas.getContext('2d');
-    var myChart;
-    myChart = new window.Chart(myCanvas, {
+    new window.Chart(myCanvas, {
         type: 'doughnut',
         data: {
             labels: ['Items', 'Revenue'],
@@ -469,4 +116,86 @@ document.addEventListener('DOMContentLoaded', function () {
             cutout: 90,
         },
     });
+
+    /* Visitors By Country Map */
+    const markers = [
+        {
+            name: 'Usa',
+            coords: [40.3, -101.38],
+        },
+        {
+            name: 'India',
+            coords: [20.5937, 78.9629],
+        },
+        {
+            name: 'Vatican City',
+            coords: [41.9, 12.45],
+        },
+        {
+            name: 'Canada',
+            coords: [56.1304, -106.3468],
+        },
+        {
+            name: 'Mauritius',
+            coords: [-20.2, 57.5],
+        },
+        {
+            name: 'Singapore',
+            coords: [1.3, 103.8],
+        },
+        {
+            name: 'Palau',
+            coords: [7.35, 134.46],
+        },
+        {
+            name: 'Maldives',
+            coords: [3.2, 73.22],
+        },
+        {
+            name: 'SÃ£o TomÃ© and PrÃ­ncipe',
+            coords: [0.33, 6.73],
+        },
+    ];
+    const map = new jsVectorMap({
+        map: 'world_merc',
+        selector: '#visitors-countries',
+        markersSelectable: true,
+        zoomOnScroll: false,
+        zoomButtons: false,
+
+        onMarkerSelected(index, isSelected, selectedMarkers) {
+            console.log(index, isSelected, selectedMarkers);
+        },
+
+        // -------- Labels --------
+        labels: {
+            markers: {
+                render: function (marker) {
+                    return marker.name;
+                },
+            },
+        },
+
+        // -------- Marker and label style --------
+        markers: markers,
+        markerStyle: {
+            hover: {
+                stroke: '#DDD',
+                strokeWidth: 3,
+                fill: '#FFF',
+            },
+            selected: {
+                fill: '#ff525d',
+            },
+        },
+        markerLabelStyle: {
+            initial: {
+                fontFamily: 'Poppins',
+                fontSize: 13,
+                fontWeight: 500,
+                fill: '#35373e',
+            },
+        },
+    });
+    /* Visitors By Country Map */
 });

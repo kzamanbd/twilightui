@@ -1,7 +1,7 @@
 /*
-Theme Name: TwiLightUI - Tailwind CSS Admin Template
+Theme Name: FleetMetrics - Tailwind CSS Admin Template
 Support: kzamanbn@gmail.com
-Description: TwiLightUI - TwilightUI is a modern, clean and very detailed UI kit. We designed 60+ beautiful UI pages, 500+ elements, 50+ icons. It's very easy to used and customize.
+Description: FleetMetrics - FleetMetrics is a modern, clean and very detailed UI kit. We designed 60+ beautiful UI pages, 500+ elements, 50+ icons. It's very easy to used and customize.
 Version: 1.0
 */
 
@@ -43,3 +43,4 @@ Version: 1.0
 @import './components/tooltip.css';
 @import './components/datatable.css';
 @import './components/file-upload.css';
+@import './dashboard.css';

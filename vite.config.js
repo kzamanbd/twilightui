@@ -1,4 +1,4 @@
-import glob from 'glob';
+import { glob } from 'glob';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';

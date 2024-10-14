@@ -6,12 +6,14 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+*.lockb
 
 node_modules
 .DS_Store
 dist
 build
 dist-ssr
+dev-dist
 coverage
 *.local
 
@@ -19,15 +21,16 @@ coverage
 /cypress/screenshots/
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
 .idea
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-components.d.ts
+
+*.tsbuildinfo
+.eslintrc-auto-import.json
 auto-imports.d.ts
 auto-imports.json
-package-lock.json
+components.d.ts
+vite.config.js.*

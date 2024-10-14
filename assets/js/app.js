@@ -1,31 +1,30 @@
 /**
- * TwilightUI
+ * FleetMetrics
  * @version 1.0.0
  * @description A simple UI framework for building beautiful responsive websites and web apps.
  * @license MIT
- * @see https://twilightui.com/
+ * @see https://draftscripts.com/
  */
 
-import collapse from '@alpinejs/collapse';
-import focus from '@alpinejs/focus';
-import mask from '@alpinejs/mask';
-import persist from '@alpinejs/persist';
-import { autoUpdate, computePosition, flip, hide, offset, shift } from '@floating-ui/dom';
-import Alpine from 'alpinejs';
+/**
+ * Core Dependencies
+ */
+import 'preline';
 import 'simplebar';
 
-// tippy.js for tooltip
-import tippy from 'tippy.js';
-window.tippy = tippy;
+// Alpine & Plugins
+import persist from '@alpinejs/persist';
+import Alpine from 'alpinejs';
 
 window.Alpine = Alpine;
-Alpine.plugin(collapse);
-Alpine.plugin(focus);
-Alpine.plugin(mask);
 Alpine.plugin(persist);
 // You will need a ResizeObserver polyfill for browsers that don't support it! (iOS Safari, Edge, ...)
 import ResizeObserver from 'resize-observer-polyfill';
 window.ResizeObserver = ResizeObserver;
+
+// tippy.js for tooltip
+import tippy from 'tippy.js';
+window.tippy = tippy;
 
 // sweet alert2
 import Swal from 'sweetalert2';
@@ -65,8 +64,78 @@ window.DataTableExportJSON = exportJSON;
 window.DataTableExportTXT = exportTXT;
 
 (function () {
+    // set current year in footer
+    const yearEle = document.querySelector('#footer-year');
+    if (yearEle) {
+        yearEle.innerHTML = `© 2023 - ${new Date().getFullYear()}`;
+    }
+
+    // screen loader
+    const loading = document.querySelector('.loading');
+    loading?.remove();
+
+    // vertical menu active
+    let pathName = window.location.pathname;
+    if (pathName == '/') pathName = '/index.html';
+    const content = document.querySelector('.tw-nav-menu');
+    const sidebarToggle = document.querySelectorAll('.toggle-sidebar');
+    const wrapper = document.querySelector('.tw--container');
+    const overlay = document.querySelector('.menu-shadow');
+    sidebarToggle.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const windowWidth = window.innerWidth;
+            if (windowWidth < 1024) {
+                verticalMenu.classList.toggle('expanded');
+                overlay.classList.toggle('hidden');
+            } else {
+                verticalMenu.classList.toggle('collapsed');
+                wrapper.classList.toggle('expanded');
+            }
+        });
+    });
+
+    const menuItem = document.querySelector(`ul.tw-nav-menu a[href="${pathName}"]`);
+    const dropdownMenu = menuItem?.closest('ul.twd--menu');
+
+    if (menuItem) {
+        menuItem.classList.add('active');
+        if (dropdownMenu) {
+            let targetElement = dropdownMenu.closest('li.tw-menu-item').querySelector('.tw-menu-link');
+            if (targetElement) {
+                targetElement.parentElement.classList.add('active');
+                targetElement.nextElementSibling.classList.add('!block');
+            }
+        }
+    }
+    const activeMenu = content?.querySelector('.tw-menu-link.active');
+    const activeSubmenu = content?.querySelector('.twd--link.active');
+    if (activeSubmenu) {
+        activeSubmenu.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    } else if (activeMenu) {
+        activeMenu.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+    const verticalMenu = document.querySelector('.vertical-menu');
+    window.addEventListener('resize', () => {
+        if (window.innerWidth < 1024) {
+            verticalMenu.classList.remove('collapsed');
+        } else {
+            verticalMenu.classList.remove('expanded');
+        }
+    });
+    // window scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.navbar-nav');
+        if (document.documentElement.scrollTop > 0) {
+            // add class to header
+            header.classList.add('scrollable');
+        } else {
+            // remove class from header
+            header.classList.remove('scrollable');
+        }
+    });
+
     // theme config
-    const $themeConfig = {
+    const initialize = {
         locale: 'en', // en, da, de, el, es, fr, hu, it, ja, pl, pt, ru, sv, tr, zh
         theme: 'light', // light, dark, system
         rtlClass: 'ltr', // rtl, ltr
@@ -79,14 +148,14 @@ window.DataTableExportTXT = exportTXT;
         sidebar: false,
     };
 
-    // theme config persist with alpinejs
+    // theme config persist with alpine js store
     Alpine.store('app', {
-        name: 'TwilightUI',
+        name: 'FleetMetrics',
         // theme
-        theme: Alpine.$persist($themeConfig.theme),
+        theme: Alpine.$persist(initialize.theme),
         toggleTheme(val) {
-            let theme = $themeConfig.theme; // light|dark|system
-            if (val) {
+            let theme = initialize.theme; // light|dark|system
+            if (val && val != 'toggle') {
                 theme = val;
             } else {
                 if (this.theme === 'dark') {
@@ -102,7 +171,7 @@ window.DataTableExportTXT = exportTXT;
             this.theme = theme;
         },
         // sidebar
-        sidebar: Alpine.$persist($themeConfig.sidebar),
+        sidebar: Alpine.$persist(initialize.sidebar),
         toggleVMenu() {
             this.sidebar = !this.sidebar;
         },
@@ -111,41 +180,30 @@ window.DataTableExportTXT = exportTXT;
             console.log('collapsibleMenu');
         },
 
-        // window full screen
-        fullscreen: false,
-        toggleFullscreen() {
-            if (this.fullscreen) {
-                document.exitFullscreen();
-            } else {
-                document.documentElement.requestFullscreen();
-            }
-            this.fullscreen = !this.fullscreen;
-        },
-
         // navigation menu
-        menu: Alpine.$persist($themeConfig.menu),
+        menu: Alpine.$persist(initialize.menu),
         toggleMenu(val) {
             if (!val) {
-                val = this.menu || $themeConfig.menu; // vertical, collapsible, horizontal
+                val = this.menu || initialize.menu; // vertical, collapsible, horizontal
             }
             this.menu = val;
         },
 
         // layout
-        layout: Alpine.$persist($themeConfig.layout),
+        layout: Alpine.$persist(initialize.layout),
         toggleLayout(val) {
             if (!val) {
-                val = this.layout || $themeConfig.layout; // full, boxed-layout
+                val = this.layout || initialize.layout; // full, boxed-layout
             }
 
             this.layout = val;
         },
 
         // rtl support
-        rtlClass: Alpine.$persist($themeConfig.rtlClass),
+        rtlClass: Alpine.$persist(initialize.rtlClass),
         toggleRTL(val) {
             if (!val) {
-                val = this.rtlClass || $themeConfig.rtlClass; // rtl, ltr
+                val = this.rtlClass || initialize.rtlClass; // rtl, ltr
             }
 
             this.rtlClass = val;
@@ -153,14 +211,14 @@ window.DataTableExportTXT = exportTXT;
         },
 
         setRTLLayout() {
-            document.querySelector('html').setAttribute('dir', this.rtlClass || $themeConfig.rtlClass);
+            document.querySelector('html').setAttribute('dir', this.rtlClass || initialize.rtlClass);
         },
 
         // animation
-        animation: Alpine.$persist($themeConfig.animation),
+        animation: Alpine.$persist(initialize.animation),
         toggleAnimation(val) {
             if (!val) {
-                val = this.animation || $themeConfig.animation;
+                val = this.animation || initialize.animation;
             }
             val = val?.trim();
 
@@ -168,32 +226,32 @@ window.DataTableExportTXT = exportTXT;
         },
 
         // navbar type
-        navbar: Alpine.$persist($themeConfig.navbar),
+        navbar: Alpine.$persist(initialize.navbar),
         toggleNavbar(val) {
             if (!val) {
-                val = this.navbar || $themeConfig.navbar;
+                val = this.navbar || initialize.navbar;
             }
 
             this.navbar = val;
         },
         // footer type
-        footer: Alpine.$persist($themeConfig.footer),
+        footer: Alpine.$persist(initialize.footer),
         toggleFooter(val) {
             if (!val) {
-                val = this.footer || $themeConfig.footer;
+                val = this.footer || initialize.footer;
             }
 
             this.footer = val;
         },
 
         // semi dark
-        semiDark: Alpine.$persist($themeConfig.semiDark),
+        semiDark: Alpine.$persist(initialize.semiDark),
 
         // multi language
-        locale: Alpine.$persist($themeConfig.locale),
+        locale: Alpine.$persist(initialize.locale),
         toggleLocale(val) {
             if (!val) {
-                val = this.locale || $themeConfig.locale;
+                val = this.locale || initialize.locale;
             }
 
             this.locale = val;
@@ -201,7 +259,8 @@ window.DataTableExportTXT = exportTXT;
     });
 
     //? alpine data
-    Alpine.data('twilightConfig', () => ({
+    Alpine.data('themeConfig', () => ({
+        fullscreen: false,
         showCustomizer: false,
         init() {
             this.$store.app.setRTLLayout();
@@ -217,6 +276,17 @@ window.DataTableExportTXT = exportTXT;
         toggleCustomizer() {
             this.showCustomizer = !this.showCustomizer;
         },
+        toggleTheme(val) {
+            this.$store.app.toggleTheme(val);
+        },
+        toggleFullscreen() {
+            if (this.fullscreen) {
+                document.exitFullscreen();
+            } else {
+                document.documentElement.requestFullscreen();
+            }
+            this.fullscreen = !this.fullscreen;
+        },
         get appConfig() {
             const app = this.$store.app;
             let theme = app.theme;
@@ -225,19 +295,42 @@ window.DataTableExportTXT = exportTXT;
             }
             return [theme, app.menu, app.layout].filter(Boolean);
         },
-        get isFullscreen() {
-            return this.$store.app.fullscreen ? 'fullscreen_exit' : 'fullscreen';
+        get semiDarkMenu() {
+            return this.$store.app.semiDark ? 'semi-dark' : '';
+        },
+        get navbarType() {
+            return this.$store.app.navbar;
+        },
+        get footerType() {
+            return this.$store.app.footer;
+        },
+        get fullScreenIcon() {
+            return {
+                'icon-[mdi--fullscreen]': this.$store.app.fullscreen == 'fullscreen',
+                'icon-[mdi--fullscreen-exit]': this.$store.app.fullscreen !== 'fullscreen',
+            };
+        },
+        get brightnessIcon() {
+            return {
+                'icon-[mdi--brightness-6]': this.$store.app.theme === 'light',
+                'icon-[mdi--brightness-2]': this.$store.app.theme === 'dark',
+                'icon-[mdi--brightness-auto]': this.$store.app.theme === 'system',
+            };
         },
         get themeIcon() {
             return this.$store.app.theme == 'system' ? 'brightness_auto' : `${this.$store.app.theme}_mode`;
         },
-    }));
-
-    Alpine.data('collapse', () => ({
-        collapse: false,
-
-        collapseSidebar() {
-            this.collapse = !this.collapse;
+        get appName() {
+            return 'Fleet<span class="text-primary">Metrics</span>';
+        },
+        get appLink() {
+            return 'https://draftscripts.com/ui';
+        },
+        get themeDocs() {
+            return 'https://draftscripts.com/docs';
+        },
+        get repoLink() {
+            return 'https://github.com/kzamanbd/twilightui';
         },
     }));
 
@@ -289,188 +382,12 @@ window.DataTableExportTXT = exportTXT;
     });
 
     Alpine.start();
-
-    // window scroll
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('.navbar-nav');
-        if (document.documentElement.scrollTop > 0) {
-            // add class to header
-            header.classList.add('scrollable');
-        } else {
-            // remove class from header
-            header.classList.remove('scrollable');
-        }
-    });
-
-    // set current year in footer
-    const yearEle = document.querySelector('#footer-year');
-    if (yearEle) {
-        yearEle.innerHTML = new Date().getFullYear();
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-        // screen loader
-        setTimeout(() => {
-            const loading = document.querySelector('.loading');
-            loading.remove();
-        }, 200);
-
-        // nav-tabs
-        document.querySelectorAll('.nav-tabs').forEach(function (elem) {
-            elem.querySelectorAll('[data-tw-toggle="tab"]').forEach(function (item) {
-                item.addEventListener('click', function () {
-                    var tabID = item.getAttribute('data-tw-target');
-                    var tabContents = elem.querySelectorAll('.tab-content > .tab-pane');
-
-                    var activeElem = elem.querySelector('[data-tw-toggle="tab"].active');
-                    if (activeElem) activeElem.classList.remove('active');
-
-                    // clear value
-                    for (let i = 0; i < tabContents.length; i++) {
-                        tabContents[i].classList.add('hidden');
-                        tabContents[i].classList.remove('block');
-                    }
-
-                    // change value
-                    item.classList.add('active');
-                    document.getElementById(tabID).classList.remove('hidden');
-                    document.getElementById(tabID).classList.add('block');
-                });
-            });
-        });
-    });
-})();
-
-/**
- * Vertical Menus
- * @version 1.0.0
- * @description A simple vertical menus plugin for TwilightUI
- * @license MIT
- */
-
-(function () {
-    const verticalMenu = document.querySelector('.vertical-menu');
-    const content = document.querySelector('.tw-nav-menu');
-    const menuItems = document.querySelectorAll('.tw-menu-link');
-    const wrapper = document.querySelector('.twilight-body');
-    const sidebarToggle = document.querySelectorAll('.toggle-sidebar');
-    const overlay = document.querySelector('.menu-shadow');
-
-    function toggleHeight(element, height) {
-        if (element.style.height === '0px' || element.style.height === '') {
-            element.style.height = `${height}px`;
-        } else {
-            element.style.height = '0px';
-        }
-    }
-
-    function initMenuItems() {
-        if (menuItems.length) {
-            menuItems.forEach(menuItem => {
-                const parent = menuItem.parentElement;
-                const dropdown = parent.querySelector('.twd--menu');
-                const arrow = menuItem.querySelector('.tw-dropdown-arrow');
-
-                if (dropdown) {
-                    menuItem.addEventListener('click', e => {
-                        e.preventDefault();
-                        toggleHeight(dropdown, dropdown.scrollHeight);
-                        menuItem.classList.toggle('active');
-                    });
-                }
-
-                if (dropdown && menuItem.classList.contains('active')) {
-                    toggleHeight(dropdown, dropdown.scrollHeight);
-                    arrow.classList.toggle('rotate');
-                }
-            });
-        }
-    }
-
-    function initSidebarToggle() {
-        if (sidebarToggle) {
-            sidebarToggle.forEach(toggle => {
-                toggle.addEventListener('click', () => toggleSidebar());
-            });
-        }
-        if (overlay) {
-            overlay.addEventListener('click', () => toggleSidebar());
-        }
-    }
-
-    function toggleSidebar() {
-        const windowWidth = window.innerWidth;
-        if (windowWidth < 1024) {
-            verticalMenu.classList.toggle('expanded');
-            overlay.classList.toggle('hidden');
-        } else {
-            verticalMenu.classList.toggle('collapsed');
-            wrapper.classList.toggle('expanded');
-        }
-    }
-
-    function initWrapper() {
-        if (verticalMenu) {
-            if (verticalMenu.classList.contains('collapsed')) {
-                wrapper.classList.add('expanded');
-            } else {
-                wrapper.classList.remove('expanded');
-            }
-        }
-    }
-
-    function handleWindowResize() {
-        if (verticalMenu) {
-            window.addEventListener('resize', () => {
-                if (window.innerWidth < 1024) {
-                    verticalMenu.classList.remove('collapsed');
-                } else {
-                    verticalMenu.classList.remove('expanded');
-                }
-            });
-        }
-    }
-
-    function initScrollBar() {
-        window.addEventListener('load', () => {
-            let pathName = window.location.pathname;
-            if (pathName == '/') pathName = '/index.html';
-
-            const menuItem = document.querySelector(`ul.tw-nav-menu a[href="${pathName}"]`);
-            const dropdownMenu = menuItem?.closest('ul.twd--menu');
-
-            if (menuItem) {
-                menuItem.classList.add('active');
-                if (dropdownMenu) {
-                    let elements = dropdownMenu.closest('li.tw-menu-item').querySelectorAll('.tw-menu-link');
-                    if (elements) {
-                        elements = elements[0];
-                        setTimeout(() => {
-                            elements.click();
-                        });
-                    }
-                }
-            }
-            const activeMenu = content?.querySelector('.tw-menu-link.active');
-            const activeSubmenu = content?.querySelector('.twd--link.active');
-            if (activeSubmenu) {
-                activeSubmenu.scrollIntoView({ block: 'center', behavior: 'smooth' });
-            } else if (activeMenu) {
-                activeMenu.scrollIntoView({ block: 'center', behavior: 'smooth' });
-            }
-        });
-    }
-
-    initWrapper();
-    initMenuItems();
-    initScrollBar();
-    initSidebarToggle();
-    handleWindowResize();
 })();
 
 /**
  * Drawer
  * @version 1.0.0
- * @description A simple drawer plugin for TwilightUI
+ * @description A simple drawer plugin for FleetMetrics
  * @license MIT
  */
 class Drawer {
@@ -661,112 +578,9 @@ window.createDrawer = function (target, options = {}) {
 })();
 
 /**
- * dropdown
- * @version 1.0.0
- * @description A simple dropdown plugin for TwilightUI
- * @license MIT
- */
-
-class Dropdown {
-    constructor(target, options = {}) {
-        if (typeof target === 'string') {
-            this.target = document.querySelector(target);
-        }
-
-        if (target instanceof HTMLElement) {
-            this.target = target;
-        }
-
-        if (!this.target) {
-            throw new Error('No target element found');
-        }
-
-        this.toggle = this.target.querySelector('.dropdown-toggle');
-        this.content = this.target.querySelector('.dropdown-menu');
-
-        if (!this.toggle) {
-            throw new Error('No toggle element found');
-        }
-
-        if (!this.content) {
-            throw new Error('No content element found');
-        }
-
-        this.options = options;
-        this.init();
-    }
-
-    init() {
-        const outsideClickListener = e => {
-            if (!this.target.contains(e.target)) {
-                this.content.classList.remove('show');
-                this.content.classList.remove('animate-fade-in-up');
-                removeClickListener();
-            }
-        };
-
-        const removeClickListener = () => {
-            this.cleanup();
-            document.removeEventListener('click', outsideClickListener);
-        };
-
-        this.toggle.addEventListener('click', () => {
-            this.updatePosition();
-            this.content.classList.toggle('show');
-            this.content.classList.toggle('animate-fade-in-up');
-            document.addEventListener('click', outsideClickListener);
-        });
-    }
-
-    computePosition() {
-        if (this.options.strategy === 'fixed') {
-            this.content.style.position = 'fixed';
-        }
-        computePosition(this.target, this.content, {
-            placement: this.options.placement || 'bottom-start',
-            strategy: this.options.strategy || 'fixed',
-            middleware: [flip(), shift(), offset(6), hide()],
-        }).then(position => {
-            const { referenceHidden } = position.middlewareData.hide;
-            Object.assign(this.content.style, {
-                visibility: referenceHidden ? 'hidden' : 'visible',
-                // left: `${position.x}px`,
-                top: `${position.y}px`,
-            });
-        });
-    }
-
-    updatePosition() {
-        const cleanup = autoUpdate(this.target, this.content, this.computePosition.bind(this));
-        this.cleanup = cleanup;
-    }
-}
-
-(function () {
-    window.addEventListener('load', () => {
-        const dropdowns = document.querySelectorAll('.dropdown');
-        dropdowns.forEach(dropdown => {
-            new Dropdown(dropdown, dropdown.dataset);
-        });
-    });
-
-    // watch dom changes for new dropdowns
-    const observer = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-            mutation.addedNodes.forEach(node => {
-                if (node.classList && node.classList.contains('dropdown')) {
-                    new Dropdown(node, node.dataset);
-                }
-            });
-        });
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-})();
-
-/**
  * Modal
  * @version 1.0.0
- * @description A simple modal plugin for TwilightUI
+ * @description A simple modal plugin for FleetMetrics
  * @license MIT
  */
 
@@ -960,7 +774,7 @@ window.createModal = function (target, options = {}) {
 /**
  * Ripples
  * @version 1.0.0
- * @description A simple ripples plugin for TwilightUI
+ * @description A simple ripples plugin for FleetMetrics
  */
 
 (function () {

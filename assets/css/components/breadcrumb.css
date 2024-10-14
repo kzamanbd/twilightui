@@ -12,6 +12,6 @@
         @apply text-gray-900 dark:text-white;
     }
     .breadcrumb-item-current {
-        @apply ml-1 text-sm font-medium text-gray-500 dark:text-gray-400 md:ml-2;
+        @apply ml-1 text-sm font-medium text-primary dark:text-gray-400 md:ml-2;
     }
 }
