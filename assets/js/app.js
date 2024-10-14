@@ -9,7 +9,7 @@
 /**
  * Core Dependencies
  */
-import 'preline';
+import 'preline/preline';
 import 'simplebar';
 
 // Alpine & Plugins
