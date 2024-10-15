@@ -1,61 +1,64 @@
 @layer components {
-    .modal {
-        @apply fixed inset-0 z-[999] hidden h-full w-full flex-col overflow-y-auto overflow-x-hidden px-4 py-10 opacity-0 transition-all;
+    .tw-modal {
+        @apply pointer-events-none fixed start-0 top-0 z-[80] hidden size-full overflow-y-auto overflow-x-hidden px-4 py-10;
     }
-    .modal-full {
+    .tw-modal-full {
         @apply p-0;
     }
-    .modal-dialog {
-        @apply relative z-[1001] mx-auto w-full max-w-xl;
+    .tw-modal-dialog {
+        @apply pointer-events-auto relative mx-auto w-full max-w-xl;
     }
 
-    .modal-sm .modal-dialog {
+    .tw-modal-sm .tw-modal-dialog {
         @apply max-w-md;
     }
 
-    .modal-lg .modal-dialog {
+    .tw-modal-lg .tw-modal-dialog {
         @apply max-w-3xl;
     }
 
-    .modal-full .modal-dialog {
+    .tw-modal-full .tw-modal-dialog {
         @apply h-screen max-w-full;
     }
 
-    .modal-full .modal-content {
+    .tw-modal-full .tw-modal-content {
         @apply rounded-none;
     }
-    .modal.open {
-        @apply flex opacity-100;
+    .tw-modal.open {
+        @apply block;
     }
-    .modal-centered {
-        @apply justify-center;
+    .tw-modal-centered {
+        @apply flex items-center justify-center;
     }
-    .modal-content {
+    .tw-modal-content {
         @apply relative flex h-full w-full flex-col overflow-hidden rounded-md bg-white shadow-xl dark:bg-slate-800;
     }
 
-    .modal-header,
-    .modal-body,
-    .modal-footer {
+    .tw-modal-header,
+    .tw-modal-body,
+    .tw-modal-footer {
         @apply px-4 py-4;
     }
 
-    .modal-header {
+    .tw-modal-header {
         @apply border-b border-b-slate-200 dark:border-b-slate-600;
     }
 
-    .modal-body {
+    .tw-modal-close {
+        @apply btn p-1;
+    }
+    .tw-modal-body {
         @apply flex-grow overflow-auto;
     }
 
-    .modal-footer {
+    .tw-modal-footer {
         @apply border-t border-t-slate-300 dark:border-t-slate-600;
     }
 
-    .modal-backdrop {
+    .tw-modal-backdrop {
         @apply fixed inset-0 z-[1000] h-full w-full bg-black opacity-0 transition-opacity duration-500 ease-in-out;
     }
-    .modal-backdrop.show {
+    .tw-modal-backdrop.show {
         @apply opacity-40;
     }
 }
