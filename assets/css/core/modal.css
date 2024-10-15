@@ -54,11 +54,4 @@
     .tw-modal-footer {
         @apply border-t border-t-slate-300 dark:border-t-slate-600;
     }
-
-    .tw-modal-backdrop {
-        @apply fixed inset-0 z-[1000] h-full w-full bg-black opacity-0 transition-opacity duration-500 ease-in-out;
-    }
-    .tw-modal-backdrop.show {
-        @apply opacity-40;
-    }
 }

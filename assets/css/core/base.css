@@ -189,6 +189,7 @@ body:has(.dark) {
     color-scheme: dark;
 }
 body.overflow-hidden,
+body:has(.open.opened),
 body.overflow-hidden .navbar-nav {
     @apply pr-[17px];
 }
