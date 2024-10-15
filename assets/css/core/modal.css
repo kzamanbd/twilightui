@@ -37,7 +37,7 @@
     .tw-modal-header,
     .tw-modal-body,
     .tw-modal-footer {
-        @apply px-4 py-4;
+        @apply px-4 py-3;
     }
 
     .tw-modal-header {

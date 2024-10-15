@@ -1275,8 +1275,7 @@
                             <button
                                 type="button"
                                 class="btn btn-primary flex"
-                                data-toggle="modal"
-                                data-target="#isAddProjectModal"
+                                data-hs-overlay="#isAddProjectModal"
                                 @click="addEditProject()">
                                 <span class="icon-[mdi--plus] mr-2 text-lg/none">add</span>
                                 Add Project
@@ -1297,7 +1296,7 @@
                                                         type="button"
                                                         class="mr-2 hover:text-primary rtl:ml-2"
                                                         data-toggle="modal"
-                                                        data-target="#isAddTaskModal"
+                                                        data-hs-overlay="#isAddTaskModal"
                                                         @click="addEditTask(project.id)">
                                                         <span class="icon-[mdi--add-circle-outline]"></span>
                                                     </button>
@@ -1340,21 +1339,23 @@
                                             </div>
 
                                             <!-- task list -->
-                                            <div class="card-body sortable-list min-h-[150px]" :data-id="project.id">
+                                            <div
+                                                class="card-body sortable-list min-h-[150px] space-y-3"
+                                                :data-id="project.id">
                                                 <template x-for="task in project.tasks">
                                                     <div
                                                         :key="`${project.id}${task.id}`"
                                                         :data-id="`${project.id}${task.id}`"
-                                                        class="mb-5 cursor-move space-y-3">
+                                                        class="cursor-move space-y-3">
                                                         <div class="sortable-item-card">
                                                             <template x-if="task.image">
                                                                 <img
-                                                                    src="/images/carousel1.jpeg"
+                                                                    src="/images/img-3.jpg"
                                                                     alt="images"
                                                                     class="h-32 w-full rounded-md object-cover" />
                                                             </template>
                                                             <div
-                                                                class="text-base font-medium"
+                                                                class="my-2 text-base font-medium"
                                                                 x-text="task.title"></div>
                                                             <p class="break-all" x-text="task.description"></p>
                                                             <div class="flex flex-wrap items-center gap-2">
@@ -1385,7 +1386,7 @@
                                                                     </span>
                                                                     <span class="ml-2" x-text="task.date"></span>
                                                                 </div>
-                                                                <div class="flex items-center">
+                                                                <div class="flex items-center gap-2">
                                                                     <button
                                                                         type="button"
                                                                         class="hover:text-info"
@@ -1398,6 +1399,7 @@
                                                                     <button
                                                                         type="button"
                                                                         class="hover:text-danger"
+                                                                        data-hs-overlay="#isDeleteModal"
                                                                         @click="deleteConfirmModal(project.id, task)">
                                                                         <span
                                                                             class="icon-[mdi--minus-circle-outline] text-lg/none">
@@ -1414,9 +1416,8 @@
                                             <div class="py-2">
                                                 <button
                                                     type="button"
-                                                    class="btn btn-primary mx-auto flex"
-                                                    data-toggle="modal"
-                                                    data-target="#isAddTaskModal"
+                                                    class="btn btn-primary mx-auto"
+                                                    data-hs-overlay="#isAddTaskModal"
                                                     @click="addEditTask(project.id)">
                                                     <span class="icon-[mdi--add] text-lg/none">add</span>
                                                     Add Task
@@ -1430,22 +1431,22 @@
 
                         <!-- add project modal -->
 
-                        <div id="isAddProjectModal" class="modal">
-                            <div class="modal-dialog modal-dialog-center">
-                                <div class="modal-content">
-                                    <div class="modal-header">
+                        <div id="isAddProjectModal" class="tw-modal">
+                            <div class="tw-modal-dialog">
+                                <div class="tw-modal-content">
+                                    <div class="tw-modal-header">
                                         <div class="flex items-center justify-between">
                                             <h6 x-text="params.id ? 'Edit Project' : 'Add Project'"></h6>
                                             <button
                                                 type="button"
-                                                class="btn btn-plain-secondary p-1"
-                                                data-dismiss="modal">
+                                                class="tw-modal-close"
+                                                data-hs-overlay="#isAddProjectModal">
                                                 <i class="icon-[mdi--close]"></i>
                                             </button>
                                         </div>
                                     </div>
 
-                                    <div class="modal-body">
+                                    <div class="tw-modal-body">
                                         <form @submit.prevent="saveProject">
                                             <div class="grid gap-5">
                                                 <div>
@@ -1462,13 +1463,13 @@
                                             <div class="mt-8 flex items-center justify-end">
                                                 <button
                                                     type="button"
-                                                    class="btn btn-outline-danger"
-                                                    data-dismiss="modal">
+                                                    class="btn btn-danger"
+                                                    data-hs-overlay="#isAddProjectModal">
                                                     Cancel
                                                 </button>
                                                 <button
                                                     type="submit"
-                                                    data-dismiss="modal"
+                                                    data-hs-overlay="#isAddProjectModal"
                                                     class="btn btn-primary ml-4 rtl:mr-4"
                                                     x-text="params.id ? 'Update' : 'Add'"></button>
                                             </div>
@@ -1480,21 +1481,21 @@
 
                         <!-- add task modal -->
 
-                        <div id="isAddTaskModal" class="modal">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
+                        <div id="isAddTaskModal" class="tw-modal">
+                            <div class="tw-modal-dialog tw-modal-centered">
+                                <div class="tw-modal-content">
+                                    <div class="tw-modal-header">
                                         <div class="flex items-center justify-between">
                                             <h6 x-text="paramsTask.id ? 'Edit Task' : 'Add Task'"></h6>
                                             <button
                                                 type="button"
-                                                class="btn btn-plain-secondary p-1"
-                                                data-dismiss="modal">
+                                                class="tw-modal-close"
+                                                data-hs-overlay="#isAddTaskModal">
                                                 <i class="icon-[mdi--close]"></i>
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="tw-modal-body">
                                         <form @submit.prevent="saveTask">
                                             <div class="space-y-4">
                                                 <div>
@@ -1531,12 +1532,12 @@
                                                 <button
                                                     type="button"
                                                     class="btn btn-outline-danger"
-                                                    data-dismiss="modal">
+                                                    data-hs-overlay="#isAddTaskModal">
                                                     Cancel
                                                 </button>
                                                 <button
                                                     type="submit"
-                                                    data-dismiss="modal"
+                                                    data-hs-overlay="#isAddTaskModal"
                                                     class="btn btn-primary ml-4 rtl:mr-4"
                                                     x-text="paramsTask.id ? 'Update' : 'Add'"></button>
                                             </div>
@@ -1547,87 +1548,83 @@
                         </div>
 
                         <!-- delete task modal -->
-                        <template x-teleport="body">
-                            <div x-show="isDeleteModal" class="modal">
-                                <div class="modal-dialog modal-dialog-center" @click.self="isDeleteModal = false">
-                                    <div
-                                        x-show="isDeleteModal"
-                                        x-transition
-                                        x-transition.duration.300
-                                        class="card relative my-8 w-[90%] max-w-lg overflow-hidden rounded-lg border-0 p-0 md:w-full">
-                                        <button
-                                            type="button"
-                                            class="text-white-dark absolute right-4 top-4 rtl:left-4"
-                                            @click="isDeleteModal = false">
-                                            <span class="icon-[mdi--close]"> close </span>
-                                        </button>
-                                        <div
-                                            class="bg-[#fbfbfb] py-3 pl-5 pr-[50px] text-lg font-medium dark:bg-[#121c2c] rtl:pl-[50px] rtl:pr-5">
-                                            Delete Task
+                        <div id="isDeleteModal" class="tw-modal">
+                            <div class="tw-modal-dialog tw-modal-centered">
+                                <div class="tw-modal-content max-w-lg">
+                                    <div class="tw-modal-header border-0">
+                                        <div class="flex items-center justify-between">
+                                            <h5 class="text-lg">Delete Task</h5>
+                                            <button
+                                                type="button"
+                                                class="tw-modal-close"
+                                                data-hs-overlay="#isDeleteModal">
+                                                <i class="icon-[mdi--close]"></i>
+                                            </button>
                                         </div>
-                                        <div class="p-5 text-center">
-                                            <div
-                                                class="mx-auto w-fit rounded-full bg-danger p-4 text-white ring-4 ring-danger/30">
-                                                <svg
-                                                    width="24"
-                                                    height="24"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-5 w-5">
-                                                    <path
-                                                        opacity="0.5"
-                                                        d="M9.17065 4C9.58249 2.83481 10.6937 2 11.9999 2C13.3062 2 14.4174 2.83481 14.8292 4"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"
-                                                        stroke-linecap="round"></path>
-                                                    <path
-                                                        d="M20.5001 6H3.5"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"
-                                                        stroke-linecap="round"></path>
-                                                    <path
-                                                        d="M18.8334 8.5L18.3735 15.3991C18.1965 18.054 18.108 19.3815 17.243 20.1907C16.378 21 15.0476 21 12.3868 21H11.6134C8.9526 21 7.6222 21 6.75719 20.1907C5.89218 19.3815 5.80368 18.054 5.62669 15.3991L5.16675 8.5"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"
-                                                        stroke-linecap="round"></path>
-                                                    <path
-                                                        opacity="0.5"
-                                                        d="M9.5 11L10 16"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"
-                                                        stroke-linecap="round"></path>
-                                                    <path
-                                                        opacity="0.5"
-                                                        d="M14.5 11L14 16"
-                                                        stroke="currentColor"
-                                                        stroke-width="1.5"
-                                                        stroke-linecap="round"></path>
-                                                </svg>
-                                            </div>
-                                            <div class="mx-auto mt-5 text-base sm:w-3/4">
-                                                Are you sure you want to delete Task?
-                                            </div>
+                                    </div>
+                                    <div class="tw-modal-body p-5 text-center">
+                                        <div
+                                            class="mx-auto w-fit rounded-full bg-danger p-4 text-white ring-4 ring-danger/30">
+                                            <svg
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="h-5 w-5">
+                                                <path
+                                                    opacity="0.5"
+                                                    d="M9.17065 4C9.58249 2.83481 10.6937 2 11.9999 2C13.3062 2 14.4174 2.83481 14.8292 4"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"></path>
+                                                <path
+                                                    d="M20.5001 6H3.5"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"></path>
+                                                <path
+                                                    d="M18.8334 8.5L18.3735 15.3991C18.1965 18.054 18.108 19.3815 17.243 20.1907C16.378 21 15.0476 21 12.3868 21H11.6134C8.9526 21 7.6222 21 6.75719 20.1907C5.89218 19.3815 5.80368 18.054 5.62669 15.3991L5.16675 8.5"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"></path>
+                                                <path
+                                                    opacity="0.5"
+                                                    d="M9.5 11L10 16"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"></path>
+                                                <path
+                                                    opacity="0.5"
+                                                    d="M14.5 11L14 16"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="mx-auto mt-5 text-base sm:w-3/4">
+                                            Are you sure you want to delete Task?
+                                        </div>
 
-                                            <div class="mt-8 flex items-center justify-center">
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-outline-danger"
-                                                    @click="isDeleteModal = false">
-                                                    Cancel
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    class="btn btn-primary ml-4 rtl:mr-4"
-                                                    @click="deleteTask">
-                                                    Delete
-                                                </button>
-                                            </div>
+                                        <div class="mt-8 flex items-center justify-center">
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-danger"
+                                                data-hs-overlay="#isDeleteModal">
+                                                Cancel
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary ml-4 rtl:mr-4"
+                                                data-hs-overlay="#isDeleteModal"
+                                                @click="deleteTask">
+                                                Delete
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </template>
+                        </div>
                     </div>
                 </main>
 
