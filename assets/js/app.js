@@ -247,6 +247,10 @@ window.DataTableExportTXT = exportTXT;
         // semi dark
         semiDark: Alpine.$persist(initialize.semiDark),
 
+        toggleSemiDark() {
+            this.semiDark = !this.semiDark;
+        },
+
         // multi language
         locale: Alpine.$persist(initialize.locale),
         toggleLocale(val) {

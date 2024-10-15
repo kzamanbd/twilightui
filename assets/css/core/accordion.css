@@ -1,0 +1,9 @@
+@layer components {
+    /* accordion components */
+    .tw-accordion {
+        @apply rounded border px-5 py-3;
+    }
+    .tw-accordion-content {
+        @apply hidden overflow-hidden transition-[height] duration-300;
+    }
+}

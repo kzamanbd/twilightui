@@ -1,12 +1,12 @@
 @layer components {
     .modal {
-        @apply fixed inset-0 z-[999] hidden h-full w-full flex-col overflow-y-auto overflow-x-hidden px-4 py-10;
+        @apply fixed inset-0 z-[999] hidden h-full w-full flex-col overflow-y-auto overflow-x-hidden px-4 py-10 opacity-0 transition-all;
     }
     .modal-full {
         @apply p-0;
     }
     .modal-dialog {
-        @apply relative z-[1001] mx-auto w-full max-w-xl origin-center scale-90 transform opacity-0 transition-all duration-500 ease-in-out;
+        @apply relative z-[1001] mx-auto w-full max-w-xl;
     }
 
     .modal-sm .modal-dialog {
@@ -24,9 +24,8 @@
     .modal-full .modal-content {
         @apply rounded-none;
     }
-
-    .modal.show .modal-dialog {
-        @apply scale-100 opacity-100;
+    .modal.open {
+        @apply flex opacity-100;
     }
     .modal-centered {
         @apply justify-center;

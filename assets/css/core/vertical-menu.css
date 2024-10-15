@@ -74,15 +74,16 @@
     }
     /* semi dark */
     .semi-dark .app-name {
-        @apply text-gray-400;
+        @apply text-gray-300;
     }
     .semi-dark .twd--link {
-        @apply text-gray-400;
+        @apply text-gray-300;
     }
     .semi-dark .tw-menu-link {
-        @apply text-gray-400 hover:bg-gray-700 hover:text-primary;
+        @apply text-gray-300 hover:bg-gray-700 hover:text-primary;
     }
-    .semi-dark .tw-menu-link.active {
+    .semi-dark .tw-menu-link.active,
+    .semi-dark .tw-menu-item.active .tw-menu-link {
         @apply bg-gray-700 hover:bg-gray-700;
     }
     .semi-dark .twd--link {
