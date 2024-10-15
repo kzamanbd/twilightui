@@ -82,16 +82,6 @@
         @apply h-8 w-8 text-sm;
     }
 
-    .tw-primary-action {
-        @apply btn btn-outline-primary bg-primary-100 p-1.5;
-    }
-    .tw-warning-action {
-        @apply btn btn-outline-warning bg-yellow-50 p-1.5;
-    }
-    .tw-danger-action {
-        @apply btn btn-outline-danger bg-red-50 p-1.5;
-    }
-
     .timeline-widget {
         position: relative;
     }
