@@ -37,7 +37,9 @@
 <template>
     <div class="theme-customizer">
         <div v-show="showCustomizer" @click="toggle" class="customizer-shadow"></div>
-
+        <div class="customizer-icon" @click="toggle">
+            <span class="icon-[mdi--cog]"></span>
+        </div>
         <nav class="app-drawers theme" :class="{ '!right-0': showCustomizer }">
             <div class="p-4 text-center">
                 <button type="button" class="customizer-close" @click="toggle">

@@ -1,4 +1,5 @@
 import { useStorage } from '@vueuse/core';
+import { computed } from 'vue';
 
 export const useTheme = () => {
     const themeConfig = {
@@ -16,6 +17,7 @@ export const useTheme = () => {
 
     themeConfig.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
+    const appName = 'Fleet<span class="text-primary">Metrics</span>';
     const theme = useStorage('theme', themeConfig.theme);
     const navbar = useStorage('navbar', themeConfig.navbar);
     const animation = useStorage('animation', themeConfig.animation);
@@ -27,8 +29,9 @@ export const useTheme = () => {
     const footer = useStorage('footer', themeConfig.footer);
 
     const toggleTheme = (value?: string) => {
-        if (!value) {
+        if (value == 'toggle') {
             theme.value = theme.value === 'light' ? 'dark' : 'light';
+            return;
         }
         theme.value = value || theme.value;
     };
@@ -65,16 +68,20 @@ export const useTheme = () => {
         rtlClass.value = value;
     };
 
+    const semiDarkMenu = computed(() => ({ 'semi-dark': semiDark.value }));
+
     return {
         menu,
         theme,
         navbar,
         footer,
+        appName,
         layout,
         sidebar,
         semiDark,
         rtlClass,
         animation,
+        semiDarkMenu,
         // methods
         toggleRTL,
         toggleMenu,

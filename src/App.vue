@@ -23,7 +23,7 @@
                 <Suspense>
                     <component :is="Component" />
                     <template #fallback>
-                        <main class="twilight-content">Loading...</main>
+                        <main class="tw--content">Loading...</main>
                     </template>
                 </Suspense>
             </template>

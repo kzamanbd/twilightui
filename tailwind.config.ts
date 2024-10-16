@@ -1,10 +1,8 @@
-/** @type {import('tailwindcss').Config} */
-
 import { addDynamicIconSelectors } from '@iconify/tailwind';
 import aspectRatio from '@tailwindcss/aspect-ratio';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
-import type { Config } from 'tailwindcss';
+import preline from 'preline/plugin';
 import colors from 'tailwindcss/colors';
 import defaultTheme from 'tailwindcss/defaultTheme';
 
@@ -45,8 +43,9 @@ const colorConfig = {
     }
 };
 
-const config: Config = {
-    content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}', 'node_modules/preline/dist/*.js'],
     darkMode: 'class', // or 'media'
     theme: {
         extend: {
@@ -56,7 +55,5 @@ const config: Config = {
             }
         }
     },
-    plugins: [forms, typography, aspectRatio, addDynamicIconSelectors()]
+    plugins: [preline, forms, typography, aspectRatio, addDynamicIconSelectors()]
 };
-
-export default config;

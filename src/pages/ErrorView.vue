@@ -11,16 +11,18 @@
                         <p class="my-2 text-gray-800">
                             Sorry about that! Please visit our home page to get where you need to go.
                         </p>
-                        <a href="/dashboard/sales" class="btn btn-primary btn-lg shadow-sm">Take me there!</a>
+                        <router-link to="/dashboard/sales" class="btn btn-primary btn-lg shadow-sm">
+                            Take me there!
+                        </router-link>
                     </div>
                 </div>
                 <div>
-                    <img src="/404-2.png" />
+                    <img src="/images/404-2.png" />
                 </div>
             </div>
         </div>
         <div>
-            <img src="/404.png" />
+            <img src="/images/network.png" />
         </div>
     </div>
 </template>

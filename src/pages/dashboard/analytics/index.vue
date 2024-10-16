@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <main class="twilight-content">
+    <main class="tw--content">
         <!-- Start:Breadcrumb -->
         <nav class="breadcrumb">
             <div class="left-link">

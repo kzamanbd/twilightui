@@ -7,25 +7,26 @@
 </script>
 
 <template>
-    <main class="twilight-content">
-        <!-- Start:Breadcrumb -->
+    <main class="tw--content">
+        <!-- Start Breadcrumb -->
         <nav class="breadcrumb">
             <div class="left-link">
-                <ol class="breadcrumb-nav">
-                    <li class="inline-flex items-center">
-                        <a href="/" class="breadcrumb-item"> Dashboard </a>
-                    </li>
-
-                    <li aria-current="page">
-                        <div class="flex items-center">
-                            <span class="icon-[mdi--chevron-right]"></span>
-                            <span class="breadcrumb-item-current"> Sales </span>
-                        </div>
-                    </li>
-                </ol>
+                <h3>Sales</h3>
             </div>
+            <ol class="breadcrumb-nav">
+                <li class="inline-flex items-center">
+                    <a href="/" class="breadcrumb-item"> Dashboard </a>
+                </li>
+
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <span class="icon-[mdi--chevron-right]"></span>
+                        <span class="breadcrumb-item-current"> Sales </span>
+                    </div>
+                </li>
+            </ol>
         </nav>
-        <!-- End:Breadcrumb -->
+        <!-- End Breadcrumb -->
         <div class="space-y-4">
             <div class="grid grid-cols-12 gap-x-5 space-y-5 lg:space-y-0">
                 <div class="col-span-12 md:col-span-6 xl:col-span-3">

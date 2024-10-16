@@ -1,0 +1,31 @@
+@layer components {
+    .tw-drawer {
+        @apply pointer-events-none fixed inset-x-0 top-0 z-[80] hidden size-full transform bg-white transition-all duration-300;
+    }
+    .tw-drawer-left {
+        @apply bottom-0 left-0 right-auto top-0 flex max-h-full max-w-full -translate-x-full flex-col hs-overlay-open:translate-x-0 sm:max-w-xs;
+    }
+
+    .tw-drawer-right {
+        @apply bottom-0 left-auto right-0 top-0 flex max-h-full max-w-full translate-x-full flex-col hs-overlay-open:translate-x-0 sm:max-w-xs;
+    }
+
+    .tw-drawer-top {
+        @apply bottom-auto left-0 right-0 top-0 flex max-h-max min-h-[15rem] max-w-full -translate-y-full flex-col hs-overlay-open:translate-y-0;
+    }
+
+    .tw-drawer-bottom {
+        @apply bottom-0 left-0 right-0 top-auto flex max-h-max min-h-[15rem] max-w-full translate-y-full flex-col hs-overlay-open:translate-y-0;
+    }
+    .tw-drawer-header,
+    .tw-drawer-body,
+    .tw-drawer-footer {
+        @apply pointer-events-auto p-4;
+    }
+    .tw-drawer-footer {
+        @apply mt-auto;
+    }
+    .tw-drawer-header {
+        @apply flex items-center justify-between;
+    }
+}
