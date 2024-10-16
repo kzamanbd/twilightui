@@ -123,7 +123,7 @@
                             <li class="tw-menu-item hs-accordion">
                                 <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
                                     <span class="icon-[mdi--apps]"></span>
-                                    <span class="tw-link-label">Web Apps</span>
+                                    <span class="tw-link-label">Apps</span>
                                     <span class="tw-arrow icon-[mdi--chevron-down]"></span>
                                 </button>
 
@@ -304,12 +304,6 @@
                                         </a>
                                     </li>
                                     <li class="twd--menu-item">
-                                        <a href="/pages/elements-popovers.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Popovers</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-tooltips.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Tooltips</span>
@@ -425,6 +419,12 @@
                                         <a href="/pages/forms-input-group.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Input Group</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/forms-select.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Select</span>
                                         </a>
                                     </li>
                                     <li class="twd--menu-item">
@@ -1674,9 +1674,9 @@
         </div>
         <script src="/assets/js/plugins.js" type="module"></script>
         <script>
-            document.addEventListener('DOMContentLoaded',()=>{
+            document.addEventListener('DOMContentLoaded', () => {
                 new window.ClipboardJS('.btn');
-            })
+            });
             document.addEventListener('alpine:init', function () {
                 // content section
                 Alpine.data('form', () => ({

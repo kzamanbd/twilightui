@@ -211,7 +211,7 @@ window.tippy = tippy;
         semiDark: Alpine.$persist(initialize.semiDark),
 
         toggleSemiDark() {
-            this.semiDark = !this.semiDark;
+            console.log('toggleSemiDark');
         },
 
         // multi language
