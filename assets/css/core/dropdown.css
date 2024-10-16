@@ -7,7 +7,7 @@
         @apply flex cursor-pointer items-center;
     }
     .dropdown-menu {
-        @apply z-20 hidden w-40 min-w-max rounded-md border border-gray-200 bg-white py-2 opacity-0 shadow-lg outline-none transition-[opacity,margin] duration-300 hs-dropdown-open:opacity-100 dark:border-gray-700 dark:bg-gray-800;
+        @apply z-20 hidden w-40 rounded-md border border-gray-200 bg-white py-2 opacity-0 shadow-lg outline-none transition-[opacity,margin] duration-300 hs-dropdown-open:opacity-100 dark:border-gray-700 dark:bg-gray-800;
     }
 
     .dropdown-menu.show {
