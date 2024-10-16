@@ -77,6 +77,9 @@ importers:
       sweetalert2:
         specifier: ^11.4.8
         version: 11.14.1
+      tabulator-tables:
+        specifier: ^6.3.0
+        version: 6.3.0
       tailwindcss:
         specifier: ^3.4.13
         version: 3.4.13
@@ -1164,6 +1167,9 @@ packages:
   sweetalert2@11.14.1:
     resolution: {integrity: sha512-xadhfcA4STGMh8nC5zHFFWURhRpWc4zyI3GdMDFH/m3hGWZeQQNWhX9xcG4lI9gZYsi/IlazKbwvvje3juL3Xg==}
 
+  tabulator-tables@6.3.0:
+    resolution: {integrity: sha512-gFiivoa03+NCDJ28Na3UU45nJT7sFXBsFCBtMqXz5OpsNTWrmL5ZJYA4oZtDFaVfarPqUHNgwm2PhL6DR7CQxg==}
+
   tailwindcss@3.4.13:
     resolution: {integrity: sha512-KqjHOJKogOUt5Bs752ykCeiwvi0fKVkr5oqsFNt/8px/tA8scFPIlkygsf6jXrfCqGHz7VflA6+yytWuM+XhFw==}
     engines: {node: '>=14.0.0'}
@@ -2199,6 +2205,8 @@ snapshots:
       svg.js: 2.7.1
 
   sweetalert2@11.14.1: {}
+
+  tabulator-tables@6.3.0: {}
 
   tailwindcss@3.4.13:
     dependencies:

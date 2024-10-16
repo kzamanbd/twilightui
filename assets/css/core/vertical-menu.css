@@ -89,12 +89,16 @@
     .semi-dark .twd--link {
         @apply hover:bg-gray-700 hover:text-primary;
     }
+    .semi-dark .collapsed-icon,
+    .semi-dark .expanded-icon {
+        @apply bg-white;
+    }
     .collapsed.vertical-menu:not(:hover) .app-name {
         @apply opacity-0;
     }
     .collapsed-icon,
     .expanded-icon {
-        @apply hidden lg:block;
+        @apply hidden dark:bg-white lg:block;
     }
     .collapsed.vertical-menu {
         @apply translate-x-0 hover:w-64 lg:w-[70px];
