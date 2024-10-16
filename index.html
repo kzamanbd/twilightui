@@ -820,7 +820,7 @@
                             </a>
                         </div>
 
-                        <div class="group relative ml-auto transition md:mx-4">
+                        <div class="group relative ml-auto transition md:mx-4" data-hs-overlay="#global-search">
                             <form action="#">
                                 <div class="relative">
                                     <label for="quick-search-orig" class="m-0 block text-sm font-medium">
@@ -2808,6 +2808,60 @@
                     </ul>
                 </footer>
             </div>
+
+            <!-- Start search box -->
+            <div id="global-search" class="hs-overlay tw-modal">
+                <div class="tw-modal-dialog">
+                    <div class="tw-modal-content">
+                        <header class="tw-modal-header border-b border-gray-300 dark:border-gray-700">
+                            <div class="flex w-full items-center justify-around">
+                                <!-- Modal title -->
+                                <svg
+                                    class="quick-search-svg"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.3-4.3"></path>
+                                </svg>
+                                <input type="text" autofocus class="search-box-input" placeholder="Quick search..." />
+                                <button type="button" class="tw-modal-close" data-hs-overlay="#basic-modal">
+                                    <i class="icon-[mdi--close]"></i>
+                                </button>
+                            </div>
+                        </header>
+                        <main class="tw-modal-body">
+                            <div class="flex h-44 items-center justify-center">
+                                <p>No recent searches</p>
+                            </div>
+                        </main>
+                        <footer class="tw-modal-footer border-t border-gray-300 dark:border-gray-700">
+                            <div class="flex w-full items-center justify-between">
+                                <button
+                                    type="button"
+                                    class="rounded border border-gray-300 p-0.5 text-xs dark:border-gray-700">
+                                    ESC
+                                </button>
+                                <a
+                                    href="https://www.algolia.com/docsearch"
+                                    class="flex items-center"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="mr-4 text-xs">Search by</span>
+                                    <img src="/images/algolia.png" alt="Algolia" class="h-6" />
+                                </a>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <!-- End search box -->
 
             <!-- Theme customizer -->
             <div class="theme-customizer">
