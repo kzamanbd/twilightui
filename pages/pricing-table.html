@@ -18,8 +18,10 @@
             <div class="loading">
                 <div id="loader"></div>
             </div>
+
             <!-- menu shadow -->
             <div class="menu-shadow hidden"></div>
+
             <!-- vertical-menu -->
             <aside class="vertical-menu">
                 <div class="vertical-content" :class="semiDarkMenu">
@@ -37,55 +39,134 @@
                     </div>
                     <!-- Menu Content -->
                     <nav data-simplebar class="tw-menu-content hs-accordion-treeview-root no-scrollbar">
-                        <ul class="tw-nav-menu">
+                        <ul class="tw-nav-menu hs-accordion-group">
                             <!-- dashboard start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
                                     <span class="icon-[mdi--square-rounded-badge-outline]"></span>
                                     <span class="tw-link-label">Dashboard</span>
                                     <span class="tw-arrow icon-[mdi--chevron-down]"></span>
                                 </button>
 
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
+                                <ul class="hs-accordion-content twd--menu">
+                                    <li class="twd--menu-item">
                                         <a href="/index.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Sales</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/dashboard-crypto.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Crypto</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/dashboard-crm.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">CRM</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/dashboard-hrm.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">HRM</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/dashboard-analytics.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Analytics</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/dashboard-ecommerce.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">ECommerce</span>
                                         </a>
                                     </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/dashboard-jobs.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Jobs</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/dashboard-personal.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Personal</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/dashboard-courses.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Courses</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/dashboard-projects.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Projects</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/dashboard-stocks.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Stocks</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                             <!-- dashboard end -->
+
+                            <!-- application start -->
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
+                                    <span class="icon-[mdi--apps]"></span>
+                                    <span class="tw-link-label">Web Apps</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/apps-chats.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Chats</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/apps-mailbox.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Email</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/apps-calendars.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Calendars</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/apps-todolist.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Todo List</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/apps-scrumboard.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Scrum Board</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/apps-projects.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Projects</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- application end -->
 
                             <!-- page header -->
                             <li class="tw-menu-header">
@@ -94,63 +175,63 @@
                             </li>
 
                             <!-- components start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
                                     <span class="icon-[mdi--layers-outline]"></span>
                                     <span class="tw-link-label">Components</span>
                                     <span class="tw-arrow icon-[mdi--chevron-down]"></span>
                                 </button>
 
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/components-accordions.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Accordion</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/components-cards.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Cards</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/components-carousel.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Carousel</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/components-lightbox.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Lightbox</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/components-modals.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Modals</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/components-progress.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Progress</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/components-sweetalert.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">SweetAlert2</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/components-tabs.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Tabs</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/components-toasts.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Toasts</span>
@@ -160,81 +241,87 @@
                             </li>
 
                             <!-- ui-elements start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
                                     <span class="icon-[mdi--hexagon-outline]"></span>
                                     <span class="tw-link-label">UI Elements</span>
                                     <span class="tw-arrow icon-[mdi--chevron-down]"></span>
                                 </button>
 
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-alerts.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Alerts</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-avatars.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Avatars</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-badges.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Badges</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-breadcrumbs.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Breadcrumbs</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-buttons.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Buttons</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-countdown.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Countdown</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-dropdowns.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Dropdowns</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="/pages/ui-drawer.html" class="twd--link">
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/elements-pagination.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Pagination</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/elements-drawer.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Drawers</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-popovers.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Popovers</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-tooltips.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Tooltips</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-treeview.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Treeview</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/elements-typography.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Typography</span>
@@ -243,27 +330,28 @@
                                 </ul>
                             </li>
 
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
+                            <!-- start chart -->
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
                                     <span class="icon-[mdi--poll]"></span>
                                     <span class="tw-link-label">Charts</span>
                                     <span class="tw-arrow icon-[mdi--chevron-down]"></span>
                                 </button>
 
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/charts-apexcharts.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">ApexChart</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/charts-chartjs.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">ChartJs</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/charts-echarts.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">E Charts</span>
@@ -271,26 +359,7 @@
                                     </li>
                                 </ul>
                             </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/pages/icons.html" class="tw-menu-link">
-                                    <span class="icon-[mdi--shape-outline]"></span>
-                                    <span class="tw-link-label">Icons</span>
-                                </a>
-                            </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/pages/pricing-table.html" class="tw-menu-link">
-                                    <span class="icon-[mdi--file-table-outline]"></span>
-                                    <span class="tw-link-label">Pricing Table</span>
-                                </a>
-                            </li>
-                            <li class="tw-menu-item">
-                                <a href="/pages/widgets.html" class="tw-menu-link">
-                                    <span class="icon-[mdi--widgets-outline]"></span>
-                                    <span class="tw-link-label">Widgets</span>
-                                </a>
-                            </li>
+                            <!-- end chart -->
 
                             <li class="tw-menu-item">
                                 <a href="/pages/dragndrop.html" class="tw-menu-link">
@@ -298,7 +367,6 @@
                                     <span class="tw-link-label">Drag & Drop</span>
                                 </a>
                             </li>
-                            <!-- form elements end -->
 
                             <!-- page header -->
                             <li class="tw-menu-header">
@@ -307,80 +375,31 @@
                             </li>
                             <!-- page header end -->
 
-                            <li class="tw-menu-item">
-                                <a href="/pages/table-layout.html" class="tw-menu-link">
-                                    <span class="icon-[mdi--table]"></span>
-                                    <span class="tw-link-label">Tables</span>
-                                </a>
-                            </li>
-
-                            <!-- data table -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
+                            <!-- start data table -->
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
                                     <span class="icon-[mdi--table-large-plus]"></span>
-                                    <span class="tw-link-label">Data Tables</span>
+                                    <span class="tw-link-label">Tables</span>
                                     <span class="tw-arrow icon-[mdi--chevron-down]"></span>
                                 </button>
 
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
-                                        <a href="/pages/datatables-basic.html" class="twd--link">
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/table-basic.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Basic</span>
+                                            <span class="tw-link-label">Tables</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="/pages/datatables-advanced.html" class="twd--link">
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/table-datatable.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Advanced</span>
+                                            <span class="tw-link-label">Data Tables</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="/pages/datatables-order-sorting.html" class="twd--link">
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/table-advanced.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Order Sorting</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="/pages/datatables-multi-column.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Multi Column</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="/pages/datatables-checkbox.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Checkbox</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="/pages/datatables-range-search.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Range Search</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="/pages/datatables-export.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Export</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="/pages/datatables-sticky-header.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Sticky Header</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="/pages/datatables-clone-header.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Clone Header</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="/pages/datatables-column-chooser.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Column Chooser</span>
+                                            <span class="tw-link-label">Advanced Tables</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -388,81 +407,81 @@
                             <!-- end data table -->
 
                             <!-- form elements start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
                                     <span class="icon-[mdi--format-textbox]"></span>
                                     <span class="tw-link-label">Form Elements</span>
                                     <span class="tw-arrow icon-[mdi--chevron-down]"></span>
                                 </button>
 
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-basic.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Basic Elements</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-input-group.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Input Group</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-layouts.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Layouts</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-validation.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Validation</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-input-mask.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Input Mask</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-checkbox-radio.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Checkbox & Radio</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-switches.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Switches</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-wizards.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Wizards</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-uploads.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">File Upload</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-editors.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Editors</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-datepicker.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Date Picker</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="/pages/forms-clipboard.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Clipboard</span>
@@ -475,84 +494,188 @@
                             <!-- page header -->
                             <li class="tw-menu-header">
                                 <span class="minus icon-[mdi--minus]"></span>
-                                <span class="label">APPS</span>
-                            </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/pages/apps-chats.html" class="tw-menu-link">
-                                    <span class="icon-[mdi--message-text-outline]"></span>
-                                    <span class="tw-link-label">Chats</span>
-                                </a>
-                            </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/pages/apps-mailbox.html" class="tw-menu-link">
-                                    <span class="icon-[mdi--email-outline]"></span>
-                                    <span class="tw-link-label">Email</span>
-                                </a>
-                            </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/pages/apps-calendars.html" class="tw-menu-link">
-                                    <span class="icon-[mdi--calendar-blank]"></span>
-                                    <span class="tw-link-label">Calendars</span>
-                                </a>
-                            </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/pages/apps-todolist.html" class="tw-menu-link">
-                                    <span class="icon-[mdi--list-box-outline]"></span>
-                                    <span class="tw-link-label">Todo List</span>
-                                </a>
-                            </li>
-
-                            <li class="tw-menu-item">
-                                <a href="/pages/apps-scrumboard.html" class="tw-menu-link">
-                                    <span class="icon-[mdi--plus-box-outline]"></span>
-                                    <span class="tw-link-label">ScrumBoard</span>
-                                </a>
-                            </li>
-                            <li class="tw-menu-item">
-                                <a href="/pages/apps-projects.html" class="tw-menu-link">
-                                    <span class="icon-[mdi--abacus]"></span>
-                                    <span class="tw-link-label">Projects</span>
-                                </a>
-                            </li>
-
-                            <!-- page header -->
-                            <li class="tw-menu-header">
-                                <span class="minus icon-[mdi--minus]"></span>
                                 <span class="label">USER AND PAGES</span>
                             </li>
+
                             <!-- page header end -->
-                            <!-- user profile start -->
                             <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
+                                <a href="/pages/icons.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--shape-outline]"></span>
+                                    <span class="tw-link-label">Icons</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/pages/pricing-table.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--file-table-outline]"></span>
+                                    <span class="tw-link-label">Pricing</span>
+                                </a>
+                            </li>
+
+                            <li class="tw-menu-item">
+                                <a href="/pages/widgets.html" class="tw-menu-link">
+                                    <span class="icon-[mdi--widgets-outline]"></span>
+                                    <span class="tw-link-label">Widgets</span>
+                                </a>
+                            </li>
+
+                            <!-- user management start -->
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
+                                    <span class="icon-[mdi--account-key]"></span>
+                                    <span class="tw-link-label">User Management</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
+                                        <a href="./user-management/users.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Users</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="./user-management/roles.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Roles</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="./user-management/permissions.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Permissions</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- user management end -->
+
+                            <!-- Authentication start -->
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
+                                    <span class="icon-[mdi--logout-variant]"></span>
+                                    <span class="tw-link-label">Authentication</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/login.html" class="twd--link" target="_blank">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Login</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/register.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Register</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/reset-password.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Reset Password</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/forget-password.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">Forget Password</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Authentication end -->
+
+                            <!-- Error start -->
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
+                                    <span class="icon-[mdi--alert-circle-outline]"></span>
+                                    <span class="tw-link-label">Error Pages</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/error-401.html" class="twd--link" target="_blank">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">401</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/error-404.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">404</span>
+                                        </a>
+                                    </li>
+                                    <li class="twd--menu-item">
+                                        <a href="/pages/error-500.html" class="twd--link">
+                                            <span class="menu-bullet-dot"></span>
+                                            <span class="tw-link-label">500</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Error end -->
+
+                            <!-- Nested Menu -->
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
+                                    <span class="icon-[mdi--layers-triple-outline]"></span>
+                                    <span class="tw-link-label">Nested Menu</span>
+                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                </button>
+
+                                <ul class="twd--menu hs-accordion-content hs-accordion-group">
+                                    <!-- Nested Menu -->
+                                    <li class="twd--menu-item hs-accordion">
+                                        <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
+                                            <span class="icon-[mdi--layers-triple-outline]"></span>
+                                            <span class="tw-link-label">Level 1</span>
+                                            <span class="tw-arrow icon-[mdi--chevron-down]"></span>
+                                        </button>
+
+                                        <ul class="twd--menu hs-accordion-content">
+                                            <li class="twd--menu-item">
+                                                <a href="/pages/error-401.html" class="twd--link" target="_blank">
+                                                    <span class="menu-bullet-dot"></span>
+                                                    <span class="tw-link-label">Level 2</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- End Nested Menu -->
+
+                            <!-- user profile start -->
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
                                     <span class="icon-[mdi--account-switch]"></span>
                                     <span class="tw-link-label">User Profile</span>
                                     <span class="tw-arrow icon-[mdi--chevron-down]"></span>
                                 </button>
 
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
                                         <a href="./user-profile/overview.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Overview</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="./user-profile/documents.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Documents</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="./user-profile/followers.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Followers</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="./user-profile/activities.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Activities</span>
@@ -563,39 +686,39 @@
                             <!-- user profile end -->
 
                             <!-- accounts start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
                                     <span class="icon-[mdi--badge-account-horizontal-outline]"></span>
                                     <span class="tw-link-label">Accounts</span>
                                     <span class="tw-arrow icon-[mdi--chevron-down]"></span>
                                 </button>
 
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
                                         <a href="./accounts/overview.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Overview</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="./accounts/settings.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Settings</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="./accounts/statements.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Statements</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="./accounts/activities.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Activities</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="./accounts/logs.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Logs</span>
@@ -605,182 +728,40 @@
                             </li>
                             <!-- accounts end -->
 
-                            <!-- Authentication start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
-                                    <span class="icon-[mdi--logout-variant]"></span>
-                                    <span class="tw-link-label">Authentication</span>
-                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
-                                </button>
-
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
-                                        <a href="/login.html" class="twd--link" target="_blank">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Login</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./authentication/register.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Register</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./authentication/reset-password.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Reset Password</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./authentication/forget-password.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Forget Password</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./authentication/new-password.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">New Password</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- Authentication end -->
-
-                            <!-- corporate start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
-                                    <span class="icon-[mdi--home-group]"></span>
-                                    <span class="tw-link-label">Corporate</span>
-                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
-                                </button>
-
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
-                                        <a href="./corporate/about.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">About</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./corporate/our-team.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Our Team</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./corporate/contact-us.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Contact Us</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./corporate/licenses.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Licenses</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./corporate/sitemap.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Sitemap</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- corporate end -->
-
-                            <!-- utilities start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
-                                    <span class="icon-[mdi--cog]"></span>
-                                    <span class="tw-link-label">Utilities</span>
-                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
-                                </button>
-
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
-                                        <a href="./utilities/modals.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Modals</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./utilities/search.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Search</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./utilities/wizards.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Wizards</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- utilities end -->
-
-                            <!-- Careers pages start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
-                                    <span class="icon-[mdi--briefcase-outline]"></span>
-                                    <span class="tw-link-label">Careers</span>
-                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
-                                </button>
-
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
-                                        <a href="./careers/careers-list.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Careers List</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./careers/apply.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Careers Apply</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- Careers pages end -->
-
                             <!-- eCommerce start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
+                            <li class="tw-menu-item hs-accordion">
+                                <button type="button" data-ripple class="tw-menu-link hs-accordion-toggle">
                                     <span class="icon-[mdi--basket-outline]"></span>
                                     <span class="tw-link-label">ECommerce</span>
                                     <span class="tw-arrow icon-[mdi--chevron-down]"></span>
                                 </button>
 
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
+                                <ul class="twd--menu hs-accordion-content">
+                                    <li class="twd--menu-item">
                                         <a href="./eCommerce/category.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Category</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="./eCommerce/sales.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Sales</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="./eCommerce/customers.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Customers</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="./eCommerce/reports.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Reports</span>
                                         </a>
                                     </li>
-                                    <li class="twd--menu-item group">
+                                    <li class="twd--menu-item">
                                         <a href="./eCommerce/settings.html" class="twd--link">
                                             <span class="menu-bullet-dot"></span>
                                             <span class="tw-link-label">Settings</span>
@@ -789,111 +770,6 @@
                                 </ul>
                             </li>
                             <!-- eCommerce end -->
-
-                            <!-- contacts start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
-                                    <span class="icon-[mdi--contacts-outline]"></span>
-                                    <span class="tw-link-label">Contacts</span>
-                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
-                                </button>
-
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
-                                        <a href="./contacts/getting-started.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Getting Started</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./contacts/add-contact.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Add Contact</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./contacts/edit-contact.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Edit Contact</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./contacts/view-contact.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">View Contact</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./contacts/settings.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Settings</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- contacts end -->
-
-                            <!-- user management start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
-                                    <span class="icon-[mdi--account-key]"></span>
-                                    <span class="tw-link-label">User Management</span>
-                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
-                                </button>
-
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
-                                        <a href="./user-management/users.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Users</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./user-management/roles.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Roles</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./user-management/permissions.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Permissions</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- user management end -->
-
-                            <!-- customers start -->
-                            <li class="tw-menu-item">
-                                <button type="button" data-ripple class="tw-menu-link group">
-                                    <span class="icon-[mdi--face-agent]">change_history</span>
-                                    <span class="tw-link-label">Customers</span>
-                                    <span class="tw-arrow icon-[mdi--chevron-down]"></span>
-                                </button>
-
-                                <ul class="twd--menu">
-                                    <li class="twd--menu-item group">
-                                        <a href="./customers/getting-started.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Getting Started</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./customers/customer-listing.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Customer Listing</span>
-                                        </a>
-                                    </li>
-                                    <li class="twd--menu-item group">
-                                        <a href="./customers/customer-details.html" class="twd--link">
-                                            <span class="menu-bullet-dot"></span>
-                                            <span class="tw-link-label">Customer Details</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- customers end -->
 
                             <!-- documentation -->
                             <li>
@@ -981,26 +857,22 @@
                                 class="header-icon hidden md:flex"
                                 @click="toggleTheme('toggle')"
                                 aria-label="Themes">
-                                <span
-                                    :class="
-                                    {
-                                        'icon-[mdi--brightness-6]': $store.app.theme === 'light',
-                                        'icon-[mdi--brightness-2]': $store.app.theme === 'dark',
-                                        'icon-[mdi--brightness-auto]': $store.app.theme === 'system'
-                                    }
-                                ">
-                                </span>
+                                <span :class="brightnessIcon"></span>
                             </button>
 
-                            <div class="dropdown">
-                                <button type="button" class="header-icon dropdown-toggle" aria-label="Message">
+                            <button type="button" class="header-icon" @click="toggleFullscreen" aria-label="Fullscreen">
+                                <span :class="fullScreenIcon"></span>
+                            </button>
+
+                            <div class="hs-dropdown [--placement:bottom-right]">
+                                <button type="button" class="header-icon hs-dropdown-toggle" aria-label="Message">
                                     <span class="icon-[mdi--email-outline]"></span>
                                     <span class="bell-icon-container">
                                         <span class="bell-icon-badge"></span>
                                         <span class="bell-icon-badge-dot"></span>
                                     </span>
                                 </button>
-                                <div class="dropdown-menu" role="none">
+                                <div class="hs-dropdown-menu dropdown-menu" role="none">
                                     <div
                                         class="flex justify-between border-b border-slate-100 px-4 py-4 dark:border-slate-600"
                                         role="none">
@@ -1160,15 +1032,15 @@
                                 </div>
                             </div>
 
-                            <div class="dropdown">
-                                <button type="button" class="header-icon dropdown-toggle" aria-label="Notification">
+                            <div class="hs-dropdown [--placement:bottom-right]">
+                                <button type="button" class="header-icon hs-dropdown-toggle" aria-label="Notification">
                                     <span class="icon-[mdi--bell-outline]"></span>
                                     <span class="bell-icon-container">
                                         <span class="bell-icon-badge"></span>
                                         <span class="bell-icon-badge-dot"></span>
                                     </span>
                                 </button>
-                                <div class="dropdown-menu" role="none">
+                                <div class="hs-dropdown-menu dropdown-menu" role="none">
                                     <div
                                         class="flex justify-between border-b border-slate-100 px-4 py-4 dark:border-slate-600"
                                         role="none">
@@ -1296,37 +1168,24 @@
                                 </div>
                             </div>
 
-                            <button type="button" class="header-icon" @click="toggleFullscreen" aria-label="fullscreen">
-                                <span
-                                    :class="
-                                    {
-                                        'icon-[mdi--fullscreen]': isFullscreen == 'fullscreen',
-                                        'icon-[mdi--fullscreen-exit]': isFullscreen !== 'fullscreen'
-                                    }
-                                "></span>
-                            </button>
-
-                            <div class="dropdown" data-strategy="absolute">
-                                <button type="button" aria-label="User Profile" class="dropdown-toggle flex gap-2">
+                            <div class="hs-dropdown [--placement:bottom-right]">
+                                <button
+                                    type="button"
+                                    aria-label="User Profile"
+                                    class="hs-dropdown-toggle flex items-center gap-2">
                                     <img
                                         class="h-8 w-8 rounded-md object-cover"
                                         src="/images/author.png"
                                         alt="Author" />
                                     <div class="hidden items-center gap-2 md:flex">
-                                        <div>Kamruzzaman</div>
+                                        <div class="dark--text">Kamruzzaman</div>
                                         <span class="icon-[mdi--chevron-down]"></span>
                                     </div>
                                 </button>
 
-                                <ul class="dropdown-menu w-64 shadow-2xl">
-                                    <li class="flex items-center border-b px-4 py-2 dark:border-gray-700 md:hidden">
-                                        <div class="flex-shrink-0">
-                                            <img
-                                                class="h-8 w-8 rounded-full object-cover"
-                                                src="/images/author.png"
-                                                alt="Author" />
-                                        </div>
-                                        <div class="ml-3">
+                                <ul class="hs-dropdown-menu dropdown-menu w-64 shadow-2xl">
+                                    <li class="border-b px-4 py-2 dark:border-gray-700 md:hidden">
+                                        <div class="px-1">
                                             <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
                                                 Kamruzzaman
                                             </p>
@@ -1397,24 +1256,25 @@
                 </header>
 
                 <main class="tw--content">
-                    <!-- Start:Breadcrumb -->
+                    <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <ol class="breadcrumb-nav">
-                                <li class="inline-flex items-center">
-                                    <a href="/" class="breadcrumb-item"> Components </a>
-                                </li>
-
-                                <li aria-current="page">
-                                    <div class="flex items-center">
-                                        <span class="icon-[mdi--chevron-right]"></span>
-                                        <span class="breadcrumb-item-current"> Pricing </span>
-                                    </div>
-                                </li>
-                            </ol>
+                            <h3>Pricing</h3>
                         </div>
+                        <ol class="breadcrumb-nav">
+                            <li class="inline-flex items-center">
+                                <a href="/" class="breadcrumb-item"> UI </a>
+                            </li>
+
+                            <li aria-current="page">
+                                <div class="flex items-center">
+                                    <span class="icon-[mdi--chevron-right]"></span>
+                                    <span class="breadcrumb-item-current"> Pricing </span>
+                                </div>
+                            </li>
+                        </ol>
                     </nav>
-                    <!-- End:Breadcrumb -->
+                    <!-- End Breadcrumb -->
 
                     <div class="space-y-4" x-data="{yearlyPrice: false}">
                         <!-- Basic -->

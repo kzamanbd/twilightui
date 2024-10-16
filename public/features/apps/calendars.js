@@ -176,13 +176,13 @@ document.addEventListener('alpine:init', () => {
                 };
                 this.minStartDate = new Date();
                 this.minEndDate = this.dateFormat(obj.start);
+                document.querySelector('[data-hs-overlay="#modal-create-event"]')?.click();
             } else {
                 this.minStartDate = new Date();
                 this.minEndDate = new Date();
             }
 
             this.isAddEventModal = true;
-            document.querySelector('[data-target="#modal-create-event"]').click();
         },
 
         editDate(data) {

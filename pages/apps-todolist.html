@@ -1413,6 +1413,7 @@
                                         <button
                                             class="btn btn-primary flex w-full items-center"
                                             type="button"
+                                            data-hs-overlay="#addTaskModal"
                                             @click="addEditTask()">
                                             <span class="icon-[mdi--plus] text-lg/none"> </span>
                                             Add New Task
@@ -1556,7 +1557,9 @@
                                                                     @click.stop="taskComplete(task)" />
                                                             </td>
                                                             <td>
-                                                                <div @click="viewTask(task)">
+                                                                <div
+                                                                    @click="viewTask(task)"
+                                                                    data-hs-overlay="#viewTaskModal">
                                                                     <div
                                                                         class="whitespace-nowrap text-base font-semibold group-hover:text-primary"
                                                                         :class="{ 'line-through': task.status === 'complete' }"
@@ -1745,6 +1748,7 @@
                                                                                     <a
                                                                                         href="javascript:;"
                                                                                         class="dropdown-link"
+                                                                                        data-hs-overlay="#addTaskModal"
                                                                                         @click="addEditTask(task)">
                                                                                         <svg
                                                                                             width="24"
@@ -1939,136 +1943,92 @@
                                     </template>
                                 </div>
                             </div>
-                            <template x-teleport="#show-modal">
-                                <div x-show="addTaskModal" class="modal">
-                                    <div class="modal-dialog">
-                                        <div
-                                            x-show="addTaskModal"
-                                            x-transition
-                                            x-transition.duration.300
-                                            @click.outside="addTaskModal = false"
-                                            class="card relative my-8 w-[90%] max-w-lg overflow-hidden rounded-lg border-0 p-0 md:w-full">
+
+                            <div id="addTaskModal" class="tw-modal">
+                                <div class="tw-modal-dialog">
+                                    <div class="tw-modal-content">
+                                        <div class="tw-modal-header">
+                                            <h6 x-text="params.id ? 'Edit Task' : 'Add Task'">Basic Modal</h6>
                                             <button
                                                 type="button"
-                                                class="text-white-dark absolute right-4 top-4 hover:text-dark"
-                                                @click="addTaskModal = false">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="24px"
-                                                    height="24px"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    stroke-width="1.5"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    class="h-6 w-6">
-                                                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                                                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                                                </svg>
+                                                class="tw-modal-close"
+                                                data-hs-overlay="#addTaskModal">
+                                                <i class="icon-[mdi--close]"></i>
                                             </button>
-                                            <div
-                                                class="bg-[#fbfbfb] py-3 pl-5 pr-[50px] text-lg font-medium dark:bg-[#121c2c]"
-                                                x-text="params.id ? 'Edit Task' : 'Add Task'"></div>
-                                            <div class="p-5">
-                                                <form @submit.prevent="saveTask">
-                                                    <div class="mb-5">
-                                                        <label for="title">Title</label>
-                                                        <input
-                                                            id="title"
-                                                            type="text"
-                                                            placeholder="Enter Task Title"
-                                                            class="form-input"
-                                                            x-model="params.title" />
-                                                    </div>
-                                                    <div class="mb-5">
-                                                        <label for="assignee">Assignee</label>
-                                                        <select
-                                                            id="assignee"
-                                                            class="form-select"
-                                                            x-model="params.assignee">
-                                                            <option value>Select Assignee</option>
-                                                            <option value="John Smith">John Smith</option>
-                                                            <option value="Kia Vega">Kia Vega</option>
-                                                            <option value="Sandy Doe">Sandy Doe</option>
-                                                            <option value="Jane Foster">Jane Foster</option>
-                                                            <option value="Donna Frank">Donna Frank</option>
+                                        </div>
+                                        <div class="tw-modal-body">
+                                            <form @submit.prevent="saveTask">
+                                                <div class="mb-5">
+                                                    <label for="title">Title</label>
+                                                    <input
+                                                        id="title"
+                                                        type="text"
+                                                        placeholder="Enter Task Title"
+                                                        class="form-input"
+                                                        x-model="params.title" />
+                                                </div>
+                                                <div class="mb-5">
+                                                    <label for="assignee">Assignee</label>
+                                                    <select id="assignee" class="form-select" x-model="params.assignee">
+                                                        <option value>Select Assignee</option>
+                                                        <option value="John Smith">John Smith</option>
+                                                        <option value="Kia Vega">Kia Vega</option>
+                                                        <option value="Sandy Doe">Sandy Doe</option>
+                                                        <option value="Jane Foster">Jane Foster</option>
+                                                        <option value="Donna Frank">Donna Frank</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-5 flex justify-between gap-4">
+                                                    <div class="flex-1">
+                                                        <label for="tag">Tag</label>
+                                                        <select id="tag" class="form-select" x-model="params.tag">
+                                                            <option value>Select Tag</option>
+                                                            <option value="team">Team</option>
+                                                            <option value="update">Update</option>
                                                         </select>
                                                     </div>
-                                                    <div class="mb-5 flex justify-between gap-4">
-                                                        <div class="flex-1">
-                                                            <label for="tag">Tag</label>
-                                                            <select id="tag" class="form-select" x-model="params.tag">
-                                                                <option value>Select Tag</option>
-                                                                <option value="team">Team</option>
-                                                                <option value="update">Update</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="flex-1">
-                                                            <label for="priority">Priority</label>
-                                                            <select
-                                                                id="priority"
-                                                                class="form-select"
-                                                                x-model="params.priority">
-                                                                <option value>Select Priority</option>
-                                                                <option value="low">Low</option>
-                                                                <option value="medium">Medium</option>
-                                                                <option value="high">High</option>
-                                                            </select>
-                                                        </div>
+                                                    <div class="flex-1">
+                                                        <label for="priority">Priority</label>
+                                                        <select
+                                                            id="priority"
+                                                            class="form-select"
+                                                            x-model="params.priority">
+                                                            <option value>Select Priority</option>
+                                                            <option value="low">Low</option>
+                                                            <option value="medium">Medium</option>
+                                                            <option value="high">High</option>
+                                                        </select>
                                                     </div>
-                                                    <div class="mb-5">
-                                                        <label>Description</label>
-                                                        <div x-ref="editor"></div>
-                                                    </div>
-                                                    <div class="mt-8 flex items-center justify-end text-right">
-                                                        <button
-                                                            type="button"
-                                                            class="btn btn-outline-danger"
-                                                            @click="addTaskModal = false">
-                                                            Cancel
-                                                        </button>
-                                                        <button
-                                                            type="submit"
-                                                            class="btn btn-primary ml-4"
-                                                            x-text="params.id ? 'Update' : 'Add'"></button>
-                                                    </div>
-                                                </form>
-                                            </div>
+                                                </div>
+                                                <div class="mb-5">
+                                                    <label>Description</label>
+                                                    <div x-ref="editor"></div>
+                                                </div>
+                                                <div class="mt-8 flex items-center justify-end text-right">
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-outline-danger"
+                                                        data-hs-overlay="#addTaskModal">
+                                                        Cancel
+                                                    </button>
+                                                    <button
+                                                        type="submit"
+                                                        data-hs-overlay="#addTaskModal"
+                                                        class="btn btn-primary ml-4"
+                                                        x-text="params.id ? 'Update' : 'Add'"></button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
-                            </template>
+                            </div>
 
-                            <template x-teleport="#show-modal">
-                                <div x-show="viewTaskModal" class="modal">
-                                    <div class="modal-dialog" @click.self="viewTaskModal = false">
-                                        <div
-                                            x-show="viewTaskModal"
-                                            x-transition
-                                            x-transition.duration.300
-                                            class="card relative my-8 w-[90%] max-w-lg overflow-hidden rounded-lg border-0 p-0 md:w-full">
-                                            <button
-                                                type="button"
-                                                class="text-white-dark absolute right-4 top-4 hover:text-dark"
-                                                @click="viewTaskModal = false">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="24px"
-                                                    height="24px"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    stroke-width="1.5"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    class="h-6 w-6">
-                                                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                                                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                                                </svg>
-                                            </button>
+                            <div id="viewTaskModal" class="tw-modal">
+                                <div class="tw-modal-dialog">
+                                    <div class="tw-modal-content">
+                                        <div class="tw-modal-header">
                                             <div
-                                                class="flex flex-wrap items-center gap-2 bg-[#fbfbfb] py-3 pl-5 pr-[50px] text-lg font-medium dark:bg-[#121c2c]">
+                                                class="flex flex-wrap items-center gap-2 bg-[#fbfbfb] text-lg font-medium dark:bg-[#121c2c]">
                                                 <div x-text="selectedTask.title"></div>
                                                 <div
                                                     x-show="selectedTask.priority"
@@ -2091,32 +2051,37 @@
                                                         'badge-outline-info ': selectedTask.tag === 'update',
                                                     }"></div>
                                             </div>
-                                            <div class="p-5">
-                                                <div class="text-base" x-html="selectedTask.description">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                                                    pulvinar feugiat consequat. Duis lacus nibh, sagittis id varius vel,
-                                                    aliquet non augue. Vivamus sem ante, ultrices at ex a, rhoncus
-                                                    ullamcorper tellus. Nunc iaculis eu ligula ac consequat. Orci varius
-                                                    natoque penatibus et magnis dis parturient montes, nascetur
-                                                    ridiculus mus. Vestibulum mattis urna neque, eget posuere lorem
-                                                    tempus non. Suspendisse ac turpis dictum, convallis est ut, posuere
-                                                    sem. Etiam imperdiet aliquam risus, eu commodo urna vestibulum at.
-                                                    Suspendisse malesuada lorem eu sodales aliquam.
-                                                </div>
+                                            <button
+                                                type="button"
+                                                class="tw-modal-close"
+                                                data-hs-overlay="#viewTaskModal">
+                                                <i class="icon-[mdi--close]"></i>
+                                            </button>
+                                        </div>
+                                        <div class="tw-modal-body">
+                                            <div class="text-base" x-html="selectedTask.description">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar
+                                                feugiat consequat. Duis lacus nibh, sagittis id varius vel, aliquet non
+                                                augue. Vivamus sem ante, ultrices at ex a, rhoncus ullamcorper tellus.
+                                                Nunc iaculis eu ligula ac consequat. Orci varius natoque penatibus et
+                                                magnis dis parturient montes, nascetur ridiculus mus. Vestibulum mattis
+                                                urna neque, eget posuere lorem tempus non. Suspendisse ac turpis dictum,
+                                                convallis est ut, posuere sem. Etiam imperdiet aliquam risus, eu commodo
+                                                urna vestibulum at. Suspendisse malesuada lorem eu sodales aliquam.
+                                            </div>
 
-                                                <div class="mt-8 flex items-center justify-end">
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-outline-danger"
-                                                        @click="viewTaskModal = false">
-                                                        Close
-                                                    </button>
-                                                </div>
+                                            <div class="mt-8 flex items-center justify-end">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-outline-danger"
+                                                    data-hs-overlay="#viewTaskModal">
+                                                    Close
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </template>
+                            </div>
                         </div>
                     </div>
                 </main>

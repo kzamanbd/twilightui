@@ -41,7 +41,7 @@
     }
 
     .tw-modal-header {
-        @apply border-b border-b-slate-200 dark:border-b-slate-600;
+        @apply flex items-center justify-between border-b border-b-slate-200 dark:border-b-slate-600;
     }
 
     .tw-modal-close {
@@ -52,6 +52,6 @@
     }
 
     .tw-modal-footer {
-        @apply border-t border-t-slate-300 dark:border-t-slate-600;
+        @apply flex items-center justify-end gap-2 border-t border-t-slate-300 dark:border-t-slate-600;
     }
 }

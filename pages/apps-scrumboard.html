@@ -1441,15 +1441,13 @@
                             <div class="tw-modal-dialog">
                                 <div class="tw-modal-content">
                                     <div class="tw-modal-header">
-                                        <div class="flex items-center justify-between">
-                                            <h6 x-text="params.id ? 'Edit Project' : 'Add Project'"></h6>
-                                            <button
-                                                type="button"
-                                                class="tw-modal-close"
-                                                data-hs-overlay="#isAddProjectModal">
-                                                <i class="icon-[mdi--close]"></i>
-                                            </button>
-                                        </div>
+                                        <h6 x-text="params.id ? 'Edit Project' : 'Add Project'"></h6>
+                                        <button
+                                            type="button"
+                                            class="tw-modal-close"
+                                            data-hs-overlay="#isAddProjectModal">
+                                            <i class="icon-[mdi--close]"></i>
+                                        </button>
                                     </div>
 
                                     <div class="tw-modal-body">
@@ -1491,15 +1489,10 @@
                             <div class="tw-modal-dialog tw-modal-centered">
                                 <div class="tw-modal-content">
                                     <div class="tw-modal-header">
-                                        <div class="flex items-center justify-between">
-                                            <h6 x-text="paramsTask.id ? 'Edit Task' : 'Add Task'"></h6>
-                                            <button
-                                                type="button"
-                                                class="tw-modal-close"
-                                                data-hs-overlay="#isAddTaskModal">
-                                                <i class="icon-[mdi--close]"></i>
-                                            </button>
-                                        </div>
+                                        <h6 x-text="paramsTask.id ? 'Edit Task' : 'Add Task'"></h6>
+                                        <button type="button" class="tw-modal-close" data-hs-overlay="#isAddTaskModal">
+                                            <i class="icon-[mdi--close]"></i>
+                                        </button>
                                     </div>
                                     <div class="tw-modal-body">
                                         <form @submit.prevent="saveTask">
@@ -1558,15 +1551,10 @@
                             <div class="tw-modal-dialog tw-modal-centered">
                                 <div class="tw-modal-content max-w-lg">
                                     <div class="tw-modal-header border-0">
-                                        <div class="flex items-center justify-between">
-                                            <h5 class="text-lg">Delete Task</h5>
-                                            <button
-                                                type="button"
-                                                class="tw-modal-close"
-                                                data-hs-overlay="#isDeleteModal">
-                                                <i class="icon-[mdi--close]"></i>
-                                            </button>
-                                        </div>
+                                        <h5 class="text-lg">Delete Task</h5>
+                                        <button type="button" class="tw-modal-close" data-hs-overlay="#isDeleteModal">
+                                            <i class="icon-[mdi--close]"></i>
+                                        </button>
                                     </div>
                                     <div class="tw-modal-body p-5 text-center">
                                         <div
