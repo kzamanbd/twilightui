@@ -4,17 +4,12 @@
         @apply w-full border-collapse;
     }
 
-    table.tw-table tfoot,
-    table.tw-table thead {
-        @apply bg-gray-100 dark:bg-gray-800 !important;
-    }
-
     table.tw-table thead tr th,
     table.tw-table tbody tr th,
     table.tw-table tbody tr td,
     table.tw-table tfoot tr th,
     table.tw-table tfoot tr td {
-        @apply border-b border-gray-300 px-4 py-3 dark:border-gray-800 !important;
+        @apply border-b border-gray-300 px-2 py-1.5 dark:border-gray-800 !important;
     }
 
     table.tw-table tfoot tr th,
