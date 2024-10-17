@@ -832,13 +832,26 @@
                                         id="quick-search-orig"
                                         class="quick-search-input"
                                         placeholder="Quick search..." />
-                                    <div class="absolute inset-y-0 end-0 hidden p-2 md:block">
-                                        <span
-                                            class="rounded-md p-1 text-xs font-medium text-gray-400 dark:text-neutral-500">
-                                            Ctrl + /
+                                    <div class="absolute inset-y-0 end-0 hidden items-center p-2 md:flex">
+                                        <span class="dark--text flex rounded-md text-xs font-medium !text-gray-400">
+                                            <svg
+                                                class="size-4"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"></path>
+                                            </svg>
+                                            <span>+ /</span>
                                         </span>
                                     </div>
-                                    <button type="button" class="quick-search-btn group">
+                                    <button type="button" class="quick-search-btn">
                                         <svg
                                             class="quick-search-svg"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -859,7 +872,7 @@
                             <div id="quick-search" class="quick-search-icon"></div>
                         </div>
 
-                        <div class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-3">
                             <button
                                 type="button"
                                 class="header-icon hidden md:flex"
@@ -872,12 +885,12 @@
                                 <span :class="fullScreenIcon"></span>
                             </button>
 
-                            <div class="hs-dropdown [--placement:bottom-right]">
+                            <div class="hs-dropdown">
                                 <button type="button" class="header-icon hs-dropdown-toggle" aria-label="Message">
                                     <span class="icon-[mdi--email-outline]"></span>
-                                    <span class="bell-icon-container">
-                                        <span class="bell-icon-badge"></span>
-                                        <span class="bell-icon-badge-dot"></span>
+                                    <span class="tw-bell-icon">
+                                        <span class="tw-icon-badge"></span>
+                                        <span class="tw-badge-dot"></span>
                                     </span>
                                 </button>
                                 <div class="hs-dropdown-menu dropdown-menu" role="none">
@@ -929,8 +942,8 @@
                                                 <div class="flex-0">
                                                     <span
                                                         class="flex h-4 w-4 items-center justify-center rounded-full border border-white bg-danger-500 text-[10px] text-white">
-                                                        1</span
-                                                    >
+                                                        1
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1040,12 +1053,12 @@
                                 </div>
                             </div>
 
-                            <div class="hs-dropdown [--placement:bottom-right]">
+                            <div class="hs-dropdown">
                                 <button type="button" class="header-icon hs-dropdown-toggle" aria-label="Notification">
                                     <span class="icon-[mdi--bell-outline]"></span>
-                                    <span class="bell-icon-container">
-                                        <span class="bell-icon-badge"></span>
-                                        <span class="bell-icon-badge-dot"></span>
+                                    <span class="tw-bell-icon count">
+                                        <span class="tw-icon-badge"></span>
+                                        <span class="tw-badge-dot">5</span>
                                     </span>
                                 </button>
                                 <div class="hs-dropdown-menu dropdown-menu" role="none">
@@ -1176,7 +1189,7 @@
                                 </div>
                             </div>
 
-                            <div class="hs-dropdown [--placement:bottom-right]">
+                            <div class="hs-dropdown">
                                 <button
                                     type="button"
                                     aria-label="User Profile"
@@ -1185,77 +1198,106 @@
                                         class="h-8 w-8 rounded-md object-cover"
                                         src="/images/author.png"
                                         alt="Author" />
-                                    <div class="hidden items-center gap-2 md:flex">
-                                        <div class="dark--text">Kamruzzaman</div>
-                                        <span class="icon-[mdi--chevron-down]"></span>
-                                    </div>
                                 </button>
 
-                                <ul class="hs-dropdown-menu dropdown-menu w-64 shadow-2xl">
-                                    <li class="border-b px-4 py-2 dark:border-gray-700 md:hidden">
-                                        <div class="px-1">
-                                            <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
-                                                Kamruzzaman
-                                            </p>
-                                            <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
-                                                Software Engineer
-                                            </p>
-                                        </div>
+                                <ul class="hs-dropdown-menu dropdown-menu w-60">
+                                    <li class="user-menu-item">
+                                        <a href="#" class="user-menu-link mb-2">
+                                            <div class="flex-shrink-0">
+                                                <img
+                                                    class="h-8 w-8 rounded-full object-cover"
+                                                    src="/images/author.png"
+                                                    alt="Author" />
+                                            </div>
+                                            <div class="px-1">
+                                                <p class="font-medium leading-5 text-gray-900 dark:text-gray-300">
+                                                    Jon Michael
+                                                </p>
+                                                <p class="text-xs leading-5 text-gray-500 dark:text-gray-300">
+                                                    Computer Scientist
+                                                </p>
+                                            </div>
+                                        </a>
                                     </li>
-                                    <li class="border-b py-2 dark:border-gray-700">
-                                        <div class="user-menu-item">
-                                            <a href="#" class="user-menu-link"> My Profile </a>
-                                        </div>
-                                        <div class="user-menu-item">
-                                            <a href="#" class="user-menu-link">
-                                                My Projects
+                                    <li class="user-group-divider"></li>
+                                    <li class="user-menu-item">
+                                        <a href="#" class="user-menu-link">
+                                            <span class="icon-[mdi--wallet]"></span>
+                                            <span>Billing</span>
+                                        </a>
+                                    </li>
+                                    <li class="user-menu-item">
+                                        <a href="#" class="user-menu-link">
+                                            <span class="icon-[mdi--cog]"></span>
+                                            <span>Settings</span>
+                                        </a>
+                                    </li>
+                                    <li class="user-menu-item">
+                                        <a href="#" class="user-menu-link">
+                                            <span class="icon-[mdi--user]"></span>
+                                            <span>My Account</span>
+                                        </a>
+                                    </li>
+                                    <li class="user-group-divider"></li>
+                                    <li class="user-menu-item">
+                                        <div class="user-menu-link justify-between">
+                                            <span>Dark Mode</span>
+                                            <label class="relative mb-0 h-6 w-12">
+                                                <input
+                                                    type="checkbox"
+                                                    @change="toggleTheme('toggle')"
+                                                    :checked="appTheme == 'dark'"
+                                                    class="custom_switch peer absolute z-10 h-full w-full cursor-pointer opacity-0"
+                                                    id="custom_switch_checkbox4" />
                                                 <span
-                                                    class="ml-1 inline-flex items-center justify-center rounded-full bg-primary px-2 py-1 text-xs font-bold leading-none text-white">
-                                                    9
-                                                </span>
-                                            </a>
-                                        </div>
-                                        <div class="user-menu-item">
-                                            <a href="#" class="user-menu-link"> My Subscription </a>
+                                                    class="dark:before:bg-white-dark block h-full rounded-full bg-[#ebedf2] before:absolute before:bottom-1 before:left-1 before:h-4 before:w-4 before:rounded-full before:bg-white before:transition-all before:duration-300 peer-checked:bg-primary peer-checked:before:left-7 dark:bg-dark dark:peer-checked:before:bg-white"></span>
+                                            </label>
                                         </div>
                                     </li>
-                                    <li class="relative py-2">
-                                        <div class="user-menu-item group">
-                                            <a href="#" class="user-menu-link">
-                                                Language
-                                                <span class="flex items-center text-xs font-bold leading-none">
+                                    <li class="user-group-divider"></li>
+                                    <li class="user-menu-item">
+                                        <a href="#" class="user-menu-link">
+                                            My Projects
+                                            <span
+                                                class="ml-1 inline-flex items-center justify-center rounded-full bg-primary px-2 py-1 text-xs font-bold leading-none text-white">
+                                                9
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="user-menu-item">
+                                        <a href="#" class="user-menu-link"> My Subscription </a>
+                                    </li>
+                                    <li class="user-menu-item group">
+                                        <div class="user-menu-link justify-between">
+                                            <span>Language</span>
+                                            <div class="flex items-center text-xs font-bold">
+                                                <img
+                                                    src="/images/flags/united-states.svg"
+                                                    class="mr-2 h-4 w-4 rounded-full"
+                                                    alt="English" />
+                                                English
+                                            </div>
+                                            <!-- language dropdown -->
+                                            <div class="language-dropdown">
+                                                <div class="language-dropdown-item">
                                                     <img
                                                         src="/images/flags/united-states.svg"
                                                         class="mr-2 h-4 w-4 rounded-full"
                                                         alt="English" />
-                                                    English
-                                                </span>
-                                                <!-- language dropdown -->
-                                                <div class="language-dropdown">
-                                                    <div class="language-dropdown-item">
-                                                        <img
-                                                            src="/images/flags/united-states.svg"
-                                                            class="mr-2 h-4 w-4 rounded-full"
-                                                            alt="English" />
-                                                        <span class="text-xs leading-none">English</span>
-                                                    </div>
-                                                    <div class="language-dropdown-item">
-                                                        <img
-                                                            src="/images/flags/france.svg"
-                                                            class="mr-2 h-4 w-4 rounded-full"
-                                                            alt="france" />
-                                                        <span class="text-xs leading-none">France</span>
-                                                    </div>
+                                                    <span class="text-xs leading-none">English</span>
                                                 </div>
-                                            </a>
+                                                <div class="language-dropdown-item">
+                                                    <img
+                                                        src="/images/flags/france.svg"
+                                                        class="mr-2 h-4 w-4 rounded-full"
+                                                        alt="france" />
+                                                    <span class="text-xs leading-none">France</span>
+                                                </div>
+                                            </div>
                                         </div>
-
-                                        <div class="user-menu-item">
-                                            <a href="#" class="user-menu-link"> Account Settings </a>
-                                        </div>
-                                        <div class="user-menu-item">
-                                            <a href="/pages/login.html" class="user-menu-link"> Log out </a>
-                                        </div>
+                                    </li>
+                                    <li class="user-menu-item">
+                                        <a href="/pages/login.html" class="user-menu-link"> Sign out </a>
                                     </li>
                                 </ul>
                             </div>
@@ -2810,7 +2852,7 @@
             </div>
 
             <!-- Start search box -->
-            <div id="global-search" class="hs-overlay tw-modal">
+            <div id="global-search" class="hs-overlay tw-modal blur-backdrop">
                 <div class="tw-modal-dialog">
                     <div class="tw-modal-content">
                         <header class="tw-modal-header border-b border-gray-300 dark:border-gray-700">
@@ -2831,7 +2873,7 @@
                                     <path d="m21 21-4.3-4.3"></path>
                                 </svg>
                                 <input type="text" autofocus class="search-box-input" placeholder="Quick search..." />
-                                <button type="button" class="tw-modal-close" data-hs-overlay="#basic-modal">
+                                <button type="button" class="tw-modal-close" data-hs-overlay="#global-search">
                                     <i class="icon-[mdi--close]"></i>
                                 </button>
                             </div>
@@ -2845,6 +2887,7 @@
                             <div class="flex w-full items-center justify-between">
                                 <button
                                     type="button"
+                                    data-hs-overlay="#global-search"
                                     class="rounded border border-gray-300 p-0.5 text-xs dark:border-gray-700">
                                     ESC
                                 </button>

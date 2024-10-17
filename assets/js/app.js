@@ -254,9 +254,12 @@ window.tippy = tippy;
             }
             this.fullscreen = !this.fullscreen;
         },
+        get appTheme() {
+            return this.$store.app.theme;
+        },
         get appConfig() {
             const app = this.$store.app;
-            let theme = app.theme;
+            let theme = this.appTheme;
             if (theme == 'system') {
                 theme = !!window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
@@ -279,13 +282,13 @@ window.tippy = tippy;
         },
         get brightnessIcon() {
             return {
-                'icon-[mdi--brightness-6]': this.$store.app.theme === 'light',
-                'icon-[mdi--brightness-2]': this.$store.app.theme === 'dark',
-                'icon-[mdi--brightness-auto]': this.$store.app.theme === 'system',
+                'icon-[mdi--brightness-6]': this.appTheme === 'light',
+                'icon-[mdi--brightness-2]': this.appTheme === 'dark',
+                'icon-[mdi--brightness-auto]': this.appTheme === 'system',
             };
         },
         get themeIcon() {
-            return this.$store.app.theme == 'system' ? 'brightness_auto' : `${this.$store.app.theme}_mode`;
+            return this.appTheme == 'system' ? 'brightness_auto' : `${this.appTheme}_mode`;
         },
         get appName() {
             return 'Fleet<span class="text-primary">Metrics</span>';
