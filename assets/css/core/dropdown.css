@@ -23,4 +23,9 @@
     .dropdown-btn.active {
         @apply text-primary dark:text-primary;
     }
+    .list-group-item {
+        @apply dark--text border-b-0 border-t border-solid border-inherit px-5 py-[0.65rem];
+        border-inline-end-width: 1px;
+        border-inline-start-width: 1px;
+    }
 }
