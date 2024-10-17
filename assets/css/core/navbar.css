@@ -7,7 +7,7 @@
         @apply shadow;
     }
     .primary-header {
-        @apply flex items-center justify-between px-6 py-2 transition-all ease-in-out;
+        @apply flex items-center justify-between px-6 py-2;
     }
     .navbar-fixed {
         @apply dark--text sticky top-0;
@@ -31,10 +31,13 @@
     }
     /* start user menu components */
     .user-menu-item {
-        @apply px-3;
+        @apply px-1.5;
+    }
+    .user-group-divider {
+        @apply border-b my-1.5 dark:border-gray-700;
     }
     .user-menu-link {
-        @apply flex items-center justify-between p-2 text-sm;
+        @apply flex items-center gap-2 p-2 text-sm;
         @apply dark--text rounded-md hover:text-primary-600;
         @apply w-full hover:bg-light hover:dark:bg-dark-700;
     }

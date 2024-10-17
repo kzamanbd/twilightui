@@ -54,4 +54,7 @@
     .tw-modal-footer {
         @apply flex items-center justify-end gap-2 border-t border-t-slate-300 dark:border-t-slate-600;
     }
+    .blur-backdrop {
+        @apply hs-overlay-backdrop-open:supports-[backdrop-filter]:bg-light/30 hs-overlay-backdrop-open:supports-[backdrop-filter]:backdrop-blur-sm hs-overlay-backdrop-open:dark:supports-[backdrop-filter]:bg-gray-700/60;
+    }
 }

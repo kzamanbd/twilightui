@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>404 Not Found! - Admin Template</title>
+        <link rel="icon" href="./favicon.png" />
+        <style>
+            .container {
+                display: flex;
+                gap: 4rem;
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+                height: calc(100vh - 4rem);
+                overflow: hidden;
+                margin: 0 auto;
+                max-width: 1200px;
+            }
+            @media (min-width: 768px) {
+                .container {
+                    gap: 7rem;
+                }
+            }
+            @media (min-width: 1024px) {
+                .container {
+                    flex-direction: row;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="relative w-full pb-12 lg:pb-0 xl:w-1/2 xl:pt-24">
+                <div class="relative">
+                    <div class="absolute">
+                        <div class="">
+                            <h1 class="my-2 text-2xl font-bold text-gray-800">
+                                Looks like you've found the doorway to the great nothing
+                            </h1>
+                            <p class="my-2 text-gray-800">
+                                Sorry about that! Please visit our home page to get where you need to go.
+                            </p>
+                            <a href="/index.html" class="btn btn-primary btn-lg shadow-sm">Take me there!</a>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./images/404-2.png" />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="./images/network.png" />
+            </div>
+        </div>
+    </body>
+</html>
