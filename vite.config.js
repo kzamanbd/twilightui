@@ -8,6 +8,7 @@ const entries = glob.sync('./pages/**/*.html').reduce((acc, path) => {
     acc[name] = path;
     return acc;
 }, {});
+entries['main'] = resolve(__dirname, 'index.html');
 
 export default defineConfig({
     optimizeDeps: {
@@ -17,10 +18,7 @@ export default defineConfig({
     build: {
         target: 'esnext',
         rollupOptions: {
-            input: {
-                main: resolve(__dirname, 'index.html'),
-                ...entries,
-            },
+            input: entries,
             output: {
                 assetFileNames: chunkInfo => {
                     let outDir = '';
@@ -42,18 +40,18 @@ export default defineConfig({
 
                     // JS
                     if (/js$/.test(chunkInfo.name)) {
-                        outDir = 'js';
+                        outDir = 'scripts';
                     }
 
                     // CSS
                     if (/css$/.test(chunkInfo.name)) {
-                        outDir = 'css';
+                        outDir = 'styles';
                     }
 
                     return `${outDir}/[name][extname]`;
                 },
-                chunkFileNames: 'js/[name]-[hash].js',
-                entryFileNames: 'js/[name]-[hash].js',
+                chunkFileNames: 'scripts/[name]-[hash].js',
+                entryFileNames: 'scripts/[name]-[hash].js',
             },
         },
         chunkSizeWarningLimit: 1500, // 1500KiB
