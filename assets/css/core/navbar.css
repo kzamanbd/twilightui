@@ -48,14 +48,20 @@
         @apply dark--text flex items-center rounded-md px-4 py-2 hover:bg-light hover:text-primary-600;
         @apply hover:dark:bg-dark-700 dark:hover:text-gray-300;
     }
-    .bell-icon-container {
+    .tw-bell-icon {
         @apply absolute -right-1 -top-1 flex h-2 w-2;
     }
-    .bell-icon-badge {
+    .tw-bell-icon.count {
+        @apply size-4;
+    }
+    .tw-icon-badge {
         @apply absolute inline-flex h-full w-full animate-ping rounded-full bg-primary-400 opacity-75;
     }
-    .bell-icon-badge-dot {
+    .tw-badge-dot {
         @apply relative inline-flex h-2 w-2 rounded-full bg-primary-500;
+    }
+    .tw-bell-icon.count .tw-badge-dot {
+        @apply p-1 items-center flex text-white size-[unset] aspect-1;
     }
     .quick-search-icon {
         @apply absolute start-0 top-0 size-9 cursor-pointer after:absolute after:inset-0 after:-z-[1] after:rounded-full after:hover:bg-gray-200 dark:after:hover:bg-neutral-800 md:w-full;

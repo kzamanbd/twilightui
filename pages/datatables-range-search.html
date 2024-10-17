@@ -936,7 +936,7 @@
                             </a>
                         </div>
 
-                        <div class="group relative ml-auto transition md:mx-4">
+                        <div class="group relative ml-auto transition md:mx-4" data-hs-overlay="#global-search">
                             <form action="#">
                                 <div class="relative">
                                     <label for="quick-search-orig" class="m-0 block text-sm font-medium">
@@ -948,13 +948,26 @@
                                         id="quick-search-orig"
                                         class="quick-search-input"
                                         placeholder="Quick search..." />
-                                    <div class="absolute inset-y-0 end-0 hidden p-2 md:block">
-                                        <span
-                                            class="rounded-md p-1 text-xs font-medium text-gray-400 dark:text-neutral-500">
-                                            Ctrl + /
+                                    <div class="absolute inset-y-0 end-0 hidden items-center p-2 md:flex">
+                                        <span class="dark--text flex rounded-md text-xs font-medium !text-gray-400">
+                                            <svg
+                                                class="size-4"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path
+                                                    d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"></path>
+                                            </svg>
+                                            <span>+ /</span>
                                         </span>
                                     </div>
-                                    <button type="button" class="quick-search-btn group">
+                                    <button type="button" class="quick-search-btn">
                                         <svg
                                             class="quick-search-svg"
                                             xmlns="http://www.w3.org/2000/svg"
