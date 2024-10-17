@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/* added root color variable from tailwind config */
+@layer base {
+    :root {
+        --primary: theme('colors.primary.DEFAULT');
+        --primary-50: theme('colors.primary.50');
+        --primary-100: theme('colors.primary.100');
+        --primary-200: theme('colors.primary.200');
+        --primary-300: theme('colors.primary.300');
+        --primary-400: theme('colors.primary.400');
+        --primary-500: theme('colors.primary.500');
+        --primary-600: theme('colors.primary.600');
+        --primary-700: theme('colors.primary.700');
+        --primary-800: theme('colors.primary.800');
+        --primary-900: theme('colors.primary.900');
+
+        --secondary: theme('colors.secondary.DEFAULT');
+        --secondary-100: theme('colors.secondary.100');
+        --secondary-700: theme('colors.secondary.700');
+
+        --success: theme('colors.success.DEFAULT');
+        --success-100: theme('colors.success.100');
+        --success-700: theme('colors.success.700');
+
+        --danger: theme('colors.danger.DEFAULT');
+        --danger-100: theme('colors.danger.100');
+        --danger-700: theme('colors.danger.700');
+
+        --warning: theme('colors.warning.DEFAULT');
+        --warning-100: theme('colors.warning.100');
+        --warning-700: theme('colors.warning.700');
+
+        --info: theme('colors.info.DEFAULT');
+        --info-700: theme('colors.info.700');
+
+        --pink: theme('colors.pink.500');
+        --indigo: theme('colors.indigo.500');
+    }
+}
+
 @layer components {
     /* dark theme */
     .dark--text {
@@ -76,108 +115,8 @@
     .scroll-top {
         @apply btn btn-outline-primary fixed bottom-12 z-50 animate-pulse rounded-full p-2 duration-300 ltr:right-6 rtl:left-6;
     }
-
-    #loader {
-        display: block;
-        position: relative;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 3px solid transparent;
-        border-top-color: #9370db;
-        -webkit-animation: spin 2s linear infinite;
-        animation: spin 2s linear infinite;
-    }
-    #loader:before {
-        content: '';
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        right: 5px;
-        bottom: 5px;
-        border-radius: 50%;
-        border: 3px solid transparent;
-        border-top-color: #ba55d3;
-        -webkit-animation: spin 3s linear infinite;
-        animation: spin 3s linear infinite;
-    }
-    #loader:after {
-        content: '';
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        right: 15px;
-        bottom: 15px;
-        border-radius: 50%;
-        border: 3px solid transparent;
-        border-top-color: #ff00ff;
-        -webkit-animation: spin 1.5s linear infinite;
-        animation: spin 1.5s linear infinite;
-    }
-    @-webkit-keyframes spin {
-        0% {
-            -webkit-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        100% {
-            -webkit-transform: rotate(360deg);
-            -ms-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
-    @keyframes spin {
-        0% {
-            -webkit-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-        100% {
-            -webkit-transform: rotate(360deg);
-            -ms-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
 }
 
-/* added root color variable from tailwind config */
-@layer base {
-    :root {
-        --primary: theme('colors.primary.DEFAULT');
-        --primary-50: theme('colors.primary.50');
-        --primary-100: theme('colors.primary.100');
-        --primary-200: theme('colors.primary.200');
-        --primary-300: theme('colors.primary.300');
-        --primary-400: theme('colors.primary.400');
-        --primary-500: theme('colors.primary.500');
-        --primary-600: theme('colors.primary.600');
-        --primary-700: theme('colors.primary.700');
-        --primary-800: theme('colors.primary.800');
-        --primary-900: theme('colors.primary.900');
-
-        --secondary: theme('colors.secondary.DEFAULT');
-        --secondary-100: theme('colors.secondary.100');
-        --secondary-700: theme('colors.secondary.700');
-
-        --success: theme('colors.success.DEFAULT');
-        --success-100: theme('colors.success.100');
-        --success-700: theme('colors.success.700');
-
-        --danger: theme('colors.danger.DEFAULT');
-        --danger-100: theme('colors.danger.100');
-        --danger-700: theme('colors.danger.700');
-
-        --warning: theme('colors.warning.DEFAULT');
-        --warning-100: theme('colors.warning.100');
-        --warning-700: theme('colors.warning.700');
-
-        --info: theme('colors.info.DEFAULT');
-        --info-700: theme('colors.info.700');
-
-        --pink: theme('colors.pink.500');
-        --indigo: theme('colors.indigo.500');
-    }
-}
 :root:has(.dark) {
     color-scheme: dark;
 }
@@ -189,41 +128,6 @@ body:has(.dark) {
 }
 body:has(.dark) {
     color-scheme: dark;
-}
-body.overflow-hidden,
-body:has(.open.opened),
-body.overflow-hidden .navbar-nav {
-    @apply pr-[17px];
-}
-
-@keyframes fade-in-up {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fade-in-up {
-    animation: fade-in-up 0.25s ease-in-out;
-}
-
-@keyframes fade-out {
-    0% {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-.animate-fade-out {
-    animation: fade-out 0.3s ease-in-out;
 }
 
 [data-ripple] {
@@ -374,7 +278,7 @@ h6 {
     font-size: 1.375rem;
 }
 [class*='icon-[mdi-'] {
-    @apply h-5 w-5;
+    @apply h-5 w-5 dark:bg-gray-200;
 }
 /* Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {

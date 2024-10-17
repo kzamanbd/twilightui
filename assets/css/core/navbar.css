@@ -1,13 +1,13 @@
 @layer components {
     /* start top header components */
     .navbar-nav {
-        @apply z-10 transition-all duration-200 ease-in-out supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur dark:supports-[backdrop-filter]:bg-gray-700/60;
+        @apply z-10 transition-all ease-in-out supports-[backdrop-filter]:bg-light/60 supports-[backdrop-filter]:backdrop-blur dark:supports-[backdrop-filter]:bg-gray-700/60;
     }
     .horizontal .navbar-nav {
         @apply shadow;
     }
     .primary-header {
-        @apply flex items-center justify-between px-6 py-2 transition-all duration-200 ease-in-out;
+        @apply flex items-center justify-between px-6 py-2 transition-all ease-in-out;
     }
     .navbar-fixed {
         @apply dark--text sticky top-0;
@@ -58,7 +58,7 @@
         @apply absolute start-0 top-0 size-9 cursor-pointer after:absolute after:inset-0 after:-z-[1] after:rounded-full after:hover:bg-gray-200 dark:after:hover:bg-neutral-800 md:w-full;
     }
     .quick-search-input {
-        @apply hidden w-full rounded-lg border-gray-200 py-2 pe-16 ps-10 text-sm shadow-sm transition placeholder:text-gray-400 focus:border-primary-500 focus:ring-primary-500 group-hover:border-gray-300 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder:text-neutral-500 dark:hover:border-neutral-600 dark:group-hover:border-gray-600 md:block lg:min-w-[25rem];
+        @apply hidden w-full rounded-lg border-gray-200 py-2 pe-16 ps-10 text-sm shadow-sm transition placeholder:text-gray-400 focus:border-primary-500 focus:ring-primary-500 group-hover:border-gray-300 dark:border-dark dark:bg-dark dark:text-neutral-400 dark:placeholder:text-neutral-500 dark:hover:border-neutral-600 dark:group-hover:border-gray-600 md:block lg:min-w-[25rem];
     }
     .quick-search-btn {
         @apply block rounded-lg p-[.6875rem] hover:border-gray-300 focus:border-gray-300 focus:outline-none md:pointer-events-none md:absolute md:inset-y-0 md:start-0 md:flex md:items-center md:ps-3;
