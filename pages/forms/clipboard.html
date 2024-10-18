@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Clipboard - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,149 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Clipboard</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Form Elements </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Clipboard </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div x-data="form" class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                        <!-- Copy from input -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Copy from input</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
+                                    <form>
+                                        <input type="text" class="form-input" x-model="message1" id="message1" />
+                                        <div class="mt-5 flex flex-wrap gap-2">
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                                data-clipboard-target="#message1">
+                                                <span class="icon-[mdi--content-copy] mr-2"> </span>
+                                                Copy from Input
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-dark"
+                                                data-clipboard-action="cut"
+                                                data-clipboard-target="#message1">
+                                                <span class="icon-[mdi--content-cut] mr-2"> </span>
+                                                Cut from Input
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Copy form Textarea -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Copy form Textarea</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
+                                    <form>
+                                        <textarea
+                                            rows="3"
+                                            wrap="soft"
+                                            class="form-textarea"
+                                            x-model="message2"
+                                            id="message2"
+                                            spellcheck="true"></textarea>
+                                        <div class="mt-5 flex flex-wrap gap-2">
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                                data-clipboard-target="#message2">
+                                                <span class="icon-[mdi--content-copy] mr-2"> </span>
+                                                Copy from Input
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-dark"
+                                                data-clipboard-action="cut"
+                                                data-clipboard-target="#message2">
+                                                <span class="icon-[mdi--content-cut] mr-2"> </span>
+                                                Cut from Input
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Copy Text from Paragraph -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Copy Text from Paragraph</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
+                                    <form>
+                                        <p class="mb-3 font-semibold">
+                                            Here is your OTP <span class="text-2xl" id="copyOTP">878954</span>.
+                                        </p>
+                                        <p class="font-semibold">Please do not share it to anyone</p>
+                                        <div class="mt-5 flex flex-wrap gap-2">
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                                data-clipboard-target="#copyOTP">
+                                                <span class="icon-[mdi--content-copy] mr-2"> </span>
+                                                Copy from Paragraph
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Advanced -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Copy Hidden Text (Advanced)</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="rounded bg-[#f1f2f3] p-5 dark:bg-[#060818]">
+                                    <form>
+                                        <p class="mb-3 font-semibold">
+                                            <span> Link -&gt; </span>
+                                            <span id="copyLink"> http://www.admin-dashboard.com/code</span>
+                                        </p>
+                                        <span class="absolute opacity-0" id="copyHiddenCode">542458</span>
+                                        <div class="mt-5 flex flex-wrap gap-2">
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                                data-clipboard-target="#copyLink">
+                                                <span class="icon-[mdi--content-copy] mr-2"> </span>
+                                                Copy Link
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-dark"
+                                                data-clipboard-target="#copyHiddenCode">
+                                                <span class="icon-[mdi--content-copy] mr-2"> </span>
+                                                Copy Hidden Code
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
@@ -1369,5 +1496,18 @@
                 </nav>
             </div>
         </div>
+        <script src="/assets/js/plugins.js" type="module"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                new window.ClipboardJS('.btn');
+            });
+            document.addEventListener('alpine:init', function () {
+                // content section
+                Alpine.data('form', () => ({
+                    message1: 'http://www.admin-dashboard.com',
+                    message2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+                }));
+            });
+        </script>
     </body>
 </html>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Input Group - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,682 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Input Group</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Form Elements </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Input Group </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="space-y-4">
+                        <!-- Basic -->
+                        <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
+                            <!-- default -->
+                            <div class="card lg:row-span-2">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Default</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-5">
+                                            <div class="flex">
+                                                <div
+                                                    class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    @
+                                                </div>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Username"
+                                                    class="form-input rounded-l-none" />
+                                            </div>
+                                        </div>
+                                        <div class="mb-5">
+                                            <div class="flex">
+                                                <input
+                                                    type="text"
+                                                    placeholder="Recipient's username"
+                                                    class="form-input rounded-r-none" />
+                                                <div
+                                                    class="flex items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    @example.com
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="url">Your vanity URL</label>
+                                            <div class="flex">
+                                                <div
+                                                    class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    https://
+                                                </div>
+                                                <input
+                                                    id="url"
+                                                    type="url"
+                                                    placeholder="example.com/users/"
+                                                    class="form-input rounded-l-none" />
+                                            </div>
+                                        </div>
+                                        <div class="mb-5">
+                                            <div class="flex">
+                                                <div
+                                                    class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    $
+                                                </div>
+                                                <input type="text" class="form-input rounded-none" />
+                                                <div
+                                                    class="flex items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    .00
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex">
+                                                <div
+                                                    class="flex items-center justify-center whitespace-nowrap rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    With textarea
+                                                </div>
+                                                <textarea rows="4" class="form-textarea rounded-l-none"></textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- simple icon -->
+                            <div class="card">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Simple Icon</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-5">
+                                        <label for="iconLeft">Left</label>
+                                        <div class="flex">
+                                            <div
+                                                class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                <span class="icon-[mdi--bell]"></span>
+                                            </div>
+                                            <input
+                                                id="iconLeft"
+                                                type="text"
+                                                placeholder="Notification"
+                                                class="form-input rounded-l-none" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="iconRight">Right</label>
+                                        <div class="flex">
+                                            <input
+                                                id="iconRight"
+                                                type="text"
+                                                placeholder="Notification"
+                                                class="form-input rounded-r-none" />
+                                            <div
+                                                class="flex items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                <span class="icon-[mdi--bell]"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- spinning Icon -->
+                            <div class="card">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Spinning Icon</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-5">
+                                        <label for="spiLeft">Left</label>
+                                        <div class="flex">
+                                            <div
+                                                class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24px"
+                                                    height="24px"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="text-white-dark h-5 w-5 animate-spin">
+                                                    <line x1="12" y1="2" x2="12" y2="6"></line>
+                                                    <line x1="12" y1="18" x2="12" y2="22"></line>
+                                                    <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                                                    <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                                                    <line x1="2" y1="12" x2="6" y2="12"></line>
+                                                    <line x1="18" y1="12" x2="22" y2="12"></line>
+                                                    <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                                                    <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                                                </svg>
+                                            </div>
+                                            <input
+                                                id="spiLeft"
+                                                type="text"
+                                                placeholder="Spinners"
+                                                class="form-input rounded-l-none" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="spiRight">Right</label>
+                                        <div class="flex">
+                                            <input
+                                                id="spiRight"
+                                                type="text"
+                                                placeholder="Spinners"
+                                                class="form-input rounded-r-none" />
+                                            <div
+                                                class="flex items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24px"
+                                                    height="24px"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="text-white-dark h-5 w-5 animate-spin">
+                                                    <line x1="12" y1="2" x2="12" y2="6"></line>
+                                                    <line x1="12" y1="18" x2="12" y2="22"></line>
+                                                    <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                                                    <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                                                    <line x1="2" y1="12" x2="6" y2="12"></line>
+                                                    <line x1="18" y1="12" x2="22" y2="12"></line>
+                                                    <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                                                    <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- dropdown icon -->
+                            <div class="card">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Dropdown Icon</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="hs-dropdown mb-5">
+                                        <label for="dropdownLeft">Left</label>
+                                        <div class="flex">
+                                            <div
+                                                class="hs-dropdown-toggle flex cursor-pointer items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-primary px-3 font-semibold dark:border-[#17263c]">
+                                                <span class="icon-[mdi--cog] text-white"></span>
+                                            </div>
+                                            <input
+                                                id="dropdownLeft"
+                                                type="text"
+                                                placeholder="Dropdown"
+                                                class="form-input rounded-l-none" />
+                                        </div>
+                                        <ul class="hs-dropdown-menu dropdown-menu">
+                                            <li><a href="javascript:;">Action</a></li>
+                                            <li><a href="javascript:;">Another action</a></li>
+                                            <li><a href="javascript:;">Something else here</a></li>
+                                            <li><a href="javascript:;">Separated link</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="hs-dropdown">
+                                        <label for="dropdownRight">Right</label>
+                                        <div class="flex">
+                                            <input
+                                                id="dropdownRight"
+                                                type="text"
+                                                placeholder="Dropdown"
+                                                class="form-input rounded-r-none" />
+                                            <div
+                                                class="hs-dropdown-toggle flex cursor-pointer items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-success px-3 font-semibold dark:border-[#17263c]">
+                                                <span class="icon-[mdi--cog] text-white"></span>
+                                            </div>
+                                        </div>
+                                        <ul class="hs-dropdown-menu dropdown-menu">
+                                            <li><a href="javascript:;">Action</a></li>
+                                            <li><a href="javascript:;">Another action</a></li>
+                                            <li><a href="javascript:;">Something else here</a></li>
+                                            <li><a href="javascript:;">Separated link</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- checkbox -->
+                            <div class="card">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Checkboxes</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-5">
+                                        <label for="checkLeft">Left</label>
+                                        <div class="flex">
+                                            <div
+                                                class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#f1f2f3] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                <input
+                                                    type="checkbox"
+                                                    class="dark:border-white-dark form-checkbox mr-0 border-[#e0e6ed]"
+                                                    checked />
+                                            </div>
+                                            <input
+                                                id="checkLeft"
+                                                type="text"
+                                                placeholder="Checkbox"
+                                                class="form-input rounded-l-none" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="checkRight">Right</label>
+                                        <div class="flex">
+                                            <input
+                                                id="checkRight"
+                                                type="text"
+                                                placeholder="Checkbox"
+                                                class="form-input rounded-r-none" />
+                                            <div
+                                                class="flex items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-[#f1f2f3] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                <input
+                                                    type="checkbox"
+                                                    class="dark:border-white-dark form-checkbox mr-0 border-[#e0e6ed] text-warning"
+                                                    checked />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- radio -->
+                            <div class="card">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Radios</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-5">
+                                        <label for="radioLeft">Left</label>
+                                        <div class="flex">
+                                            <div
+                                                class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#f1f2f3] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                <input
+                                                    type="radio"
+                                                    class="dark:border-white-dark form-radio mr-0 border-[#e0e6ed] text-info"
+                                                    checked />
+                                            </div>
+                                            <input
+                                                id="radioLeft"
+                                                type="text"
+                                                placeholder="Radio"
+                                                class="form-input rounded-l-none" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="radioRight">Right</label>
+                                        <div class="flex">
+                                            <input
+                                                id="radioRight"
+                                                type="text"
+                                                placeholder="Radio"
+                                                class="form-input rounded-r-none" />
+                                            <div
+                                                class="flex items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-[#f1f2f3] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                <input
+                                                    type="radio"
+                                                    class="dark:border-white-dark form-radio mr-0 border-[#e0e6ed] text-danger"
+                                                    checked />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- switch -->
+                            <div class="card">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Switch</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-5">
+                                        <label for="switchLeft">Left</label>
+                                        <div class="flex">
+                                            <div
+                                                class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                <label class="relative mb-0 h-4 w-7 cursor-pointer">
+                                                    <input
+                                                        type="checkbox"
+                                                        class="peer absolute z-10 h-full w-full cursor-pointer opacity-0 focus:outline-none focus:ring-0"
+                                                        id="custom_switch_checkbox1" />
+                                                    <span
+                                                        class="dark:before:bg-white-dark block h-full rounded-full border border-[#adb5bd] bg-white before:absolute before:bottom-[2px] before:left-0.5 before:h-3 before:w-3 before:rounded-full before:bg-[#adb5bd] before:transition-all before:duration-300 peer-checked:border-primary peer-checked:bg-primary peer-checked:before:left-3.5 peer-checked:before:bg-white dark:bg-dark"></span>
+                                                </label>
+                                            </div>
+                                            <input
+                                                id="switchLeft"
+                                                type="text"
+                                                placeholder="Switch"
+                                                class="form-input rounded-l-none" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="switchRight">Right</label>
+                                        <div class="flex">
+                                            <input
+                                                id="switchRight"
+                                                type="text"
+                                                placeholder="Switch"
+                                                class="form-input rounded-r-none" />
+                                            <div
+                                                class="flex items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                <label class="relative mb-0 h-4 w-7 cursor-pointer">
+                                                    <input
+                                                        type="checkbox"
+                                                        class="peer absolute z-10 h-full w-full cursor-pointer opacity-0 focus:outline-none focus:ring-0"
+                                                        id="custom_switch_checkbox2" />
+                                                    <span
+                                                        class="dark:before:bg-white-dark block h-full rounded-full border border-[#adb5bd] bg-white before:absolute before:bottom-[2px] before:left-0.5 before:h-3 before:w-3 before:rounded-full before:bg-[#adb5bd] before:transition-all before:duration-300 peer-checked:border-primary peer-checked:bg-primary peer-checked:before:left-3.5 peer-checked:before:bg-white dark:bg-dark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sizes -->
+                        <div class="card">
+                            <div class="card-header flex items-center justify-between">
+                                <h6>Sizes</h6>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-5">
+                                        <div class="flex">
+                                            <div
+                                                class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                Small
+                                            </div>
+                                            <input
+                                                type="text"
+                                                placeholder="Username"
+                                                class="form-input rounded-l-none py-2.5 text-base" />
+                                        </div>
+                                    </div>
+                                    <div class="mb-5">
+                                        <div class="flex">
+                                            <div
+                                                class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                Small
+                                            </div>
+                                            <input
+                                                type="text"
+                                                placeholder="Username"
+                                                class="form-input rounded-l-none" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex">
+                                            <div
+                                                class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                Small
+                                            </div>
+                                            <input
+                                                type="text"
+                                                placeholder="Username"
+                                                class="form-input rounded-l-none py-1.5 text-xs" />
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Multiple -->
+                        <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
+                            <div class="card">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Multiple inputs</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="flex">
+                                            <div
+                                                class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                First and last name
+                                            </div>
+                                            <input
+                                                type="text"
+                                                placeholder="First Name"
+                                                class="form-input flex-1 rounded-none border-r-0 focus:!border-r" />
+                                            <input
+                                                type="text"
+                                                placeholder="Last Name"
+                                                class="form-input flex-1 rounded-l-none" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Multiple addons</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-5">
+                                            <div class="flex">
+                                                <div
+                                                    class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    $
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-center rounded-none border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    0.00
+                                                </div>
+                                                <input type="text" class="form-input flex-1 rounded-l-none" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex">
+                                                <input
+                                                    type="text"
+                                                    class="form-input flex-1 rounded-l-md rounded-r-none" />
+                                                <div
+                                                    class="flex items-center justify-center rounded-none border border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    0.00
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    $
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
+                            <div class="card">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Buttons with dropdowns</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="hs-dropdown mb-5">
+                                            <label for="dropdownLeftButton">Left</label>
+                                            <div class="flex">
+                                                <div
+                                                    class="hs-dropdown-toggle flex cursor-pointer items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-primary px-3 font-semibold text-white dark:border-[#17263c]">
+                                                    Dropdown
+                                                </div>
+                                                <input
+                                                    id="dropdownLeftButton"
+                                                    type="text"
+                                                    class="form-input rounded-l-none" />
+                                            </div>
+                                            <ul class="hs-dropdown-menu dropdown-menu">
+                                                <li><a href="javascript:;" class="dropdown-link">Action</a></li>
+                                                <li><a href="javascript:;" class="dropdown-link">Another action</a></li>
+                                                <li>
+                                                    <a href="javascript:;" class="dropdown-link">Something else here</a>
+                                                </li>
+                                                <li><a href="javascript:;" class="dropdown-link">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="hs-dropdown">
+                                            <label for="dropdownRightButton">Right</label>
+                                            <div class="flex">
+                                                <input
+                                                    id="dropdownRightButton"
+                                                    type="text"
+                                                    class="form-input rounded-r-none" />
+                                                <div
+                                                    class="hs-dropdown-toggle flex cursor-pointer items-center justify-center rounded-r-md border border-l-0 border-[#e0e6ed] bg-danger px-3 font-semibold text-white dark:border-[#17263c]">
+                                                    Dropdown
+                                                </div>
+                                            </div>
+                                            <ul class="hs-dropdown-menu dropdown-menu">
+                                                <li><a href="javascript:;" class="dropdown-link">Action</a></li>
+                                                <li><a href="javascript:;" class="dropdown-link">Another action</a></li>
+                                                <li>
+                                                    <a href="javascript:;" class="dropdown-link">Something else here</a>
+                                                </li>
+                                                <li><a href="javascript:;" class="dropdown-link">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Segmented buttons</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="hs-dropdown mb-5">
+                                            <label for="btnLeft">Left</label>
+                                            <div class="flex">
+                                                <button
+                                                    type="button"
+                                                    class="flex items-center justify-center rounded-l-md border border-r-0 border-info bg-info px-3 font-semibold text-white">
+                                                    Action
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="hs-dropdown-toggle flex items-center justify-center rounded-none border border-info bg-white px-3 font-semibold text-info dark:bg-[#1b2e4b]">
+                                                    <span class="icon-[mdi--chevron-down]"></span>
+                                                </button>
+                                                <input
+                                                    id="btnLeft"
+                                                    type="text"
+                                                    class="form-input rounded-l-none border-l-0" />
+                                            </div>
+                                            <ul class="hs-dropdown-menu dropdown-menu">
+                                                <li><a href="javascript:;" class="dropdown-link">Action</a></li>
+                                                <li><a href="javascript:;" class="dropdown-link">Another action</a></li>
+                                                <li>
+                                                    <a href="javascript:;" class="dropdown-link">Something else here</a>
+                                                </li>
+                                                <li><a href="javascript:;" class="dropdown-link">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="hs-dropdown">
+                                            <label for="btnRight">Right</label>
+                                            <div class="flex">
+                                                <input
+                                                    id="btnRight"
+                                                    type="text"
+                                                    class="form-input rounded-r-none border-r-0" />
+                                                <button
+                                                    type="button"
+                                                    class="hs-dropdown-toggle flex items-center justify-center rounded-none border border-secondary bg-white px-3 font-semibold text-secondary dark:bg-[#1b2e4b]">
+                                                    <span class="icon-[mdi--chevron-down]"></span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="flex items-center justify-center rounded-r-md border border-l-0 border-secondary bg-secondary px-3 font-semibold text-white">
+                                                    Action
+                                                </button>
+                                            </div>
+                                            <ul class="hs-dropdown-menu dropdown-menu">
+                                                <li><a href="javascript:;" class="dropdown-link">Action</a></li>
+                                                <li><a href="javascript:;" class="dropdown-link">Another action</a></li>
+                                                <li>
+                                                    <a href="javascript:;" class="dropdown-link">Something else here</a>
+                                                </li>
+                                                <li><a href="javascript:;" class="dropdown-link">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="card lg:col-span-2">
+                                <div class="card-header flex items-center justify-between">
+                                    <h6>Button addons</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-5">
+                                            <label for="addonsLeft">Left</label>
+                                            <div class="flex">
+                                                <button type="button" class="btn btn-info rounded-r-none">
+                                                    Button
+                                                </button>
+                                                <input id="addonsLeft" type="text" class="form-input rounded-l-none" />
+                                            </div>
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="addonsRight">Right</label>
+                                            <div class="flex">
+                                                <input id="addonsRight" type="text" class="form-input rounded-r-none" />
+                                                <button type="button" class="btn btn-secondary rounded-l-none">
+                                                    Button
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="addonsLeftoutline">Left</label>
+                                            <div class="flex">
+                                                <button type="button" class="btn btn-outline-info rounded-r-none">
+                                                    Button
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-outline-info rounded-none border-l-0">
+                                                    Button
+                                                </button>
+                                                <input
+                                                    id="addonsLeftoutline"
+                                                    type="text"
+                                                    class="form-input rounded-l-none" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="addonsRightoutline">Right</label>
+                                            <div class="flex">
+                                                <input
+                                                    id="addonsRightoutline"
+                                                    type="text"
+                                                    class="form-input rounded-r-none" />
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-outline-secondary rounded-none border-r-0">
+                                                    Button
+                                                </button>
+                                                <button type="button" class="btn btn-outline-secondary rounded-l-none">
+                                                    Button
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">

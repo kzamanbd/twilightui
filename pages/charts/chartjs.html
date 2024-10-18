@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>ChartJs - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,148 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>ChartJs</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Charts </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> ChartJs </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="relative space-y-4">
+                        <div class="grid gap-4 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-9 xl:col-span-9">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6 class="card-title">Line Chart</h6>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <canvas
+                                            id="lineChart"
+                                            width="1104"
+                                            height="300"
+                                            style="
+                                                display: block;
+                                                box-sizing: border-box;
+                                                height: 300px;
+                                                width: 1104px;
+                                            "></canvas>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6 class="card-title">Donut Chart</h6>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <canvas
+                                            id="doughnut"
+                                            height="300"
+                                            style="display: block; box-sizing: border-box; height: 300px; width: 336px"
+                                            width="336"></canvas>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end inner-grid-->
+                        <div class="grid gap-4 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-9 xl:col-span-9">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6 class="card-title">Bar Chart</h6>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <canvas
+                                            id="bar"
+                                            height="300"
+                                            style="display: block; box-sizing: border-box; height: 300px; width: 1104px"
+                                            width="1104"></canvas>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-3 xl:col-span-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6 class="card-title">Polar Chart</h6>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <canvas
+                                            id="polarArea"
+                                            height="300"
+                                            style="display: block; box-sizing: border-box; height: 300px; width: 336px"
+                                            width="336">
+                                        </canvas>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end inner-grid-->
+                        <div class="grid gap-4 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6 class="card-title">Pie Chart</h6>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <canvas
+                                            id="pie"
+                                            height="300"
+                                            style="display: block; box-sizing: border-box; height: 300px; width: 720px"
+                                            width="720"></canvas>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6 class="card-title">Radar Chart</h6>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <canvas
+                                            id="radar"
+                                            height="300"
+                                            style="display: block; box-sizing: border-box; height: 300px; width: 720px"
+                                            width="720"></canvas>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end inner-grid-->
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
@@ -1369,5 +1495,8 @@
                 </nav>
             </div>
         </div>
+        <script src="/assets/js/plugins.js" type="module"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.umd.min.js"></script>
+        <script src="/features/charts/chartjs.init.js"></script>
     </body>
 </html>

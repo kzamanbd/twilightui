@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Tooltips - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,178 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Tooltips</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> UI Elements </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Tooltips </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                        <div class="card">
+                            <div class="card-header flex items-center justify-between">
+                                <h5 class="text-lg font-semibold dark:text-white-light">Default</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="flex w-full justify-center gap-4">
+                                    <a
+                                        href="javascript:;"
+                                        x-tooltip="Tooltip using ANCHOR tag"
+                                        class="btn btn-primary bg-primary">
+                                        Link
+                                    </a>
+                                    <button type="button" x-tooltip="Tooltip using BUTTON tag" class="btn btn-success">
+                                        Button
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header flex items-center justify-between">
+                                <h5 class="text-lg font-semibold dark:text-white-light">Placement</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="flex w-full flex-wrap justify-center gap-4">
+                                    <button
+                                        type="button"
+                                        role="tooltip"
+                                        x-tooltip="Tooltip on top"
+                                        data-placement="top"
+                                        data-theme="primary"
+                                        class="btn btn-primary">
+                                        Tooltip on top
+                                    </button>
+                                    <button
+                                        type="button"
+                                        role="tooltip"
+                                        x-tooltip="Tooltip on left"
+                                        :data-placement="$store.app.rtlClass === 'rtl' ? 'right' : 'left'"
+                                        data-theme="secondary"
+                                        class="btn btn-secondary">
+                                        Tooltip on left
+                                    </button>
+                                    <button
+                                        type="button"
+                                        role="tooltip"
+                                        x-tooltip="Tooltip on bottom"
+                                        data-placement="bottom"
+                                        data-theme="warning"
+                                        class="btn btn-warning">
+                                        Tooltip on bottom
+                                    </button>
+                                    <button
+                                        type="button"
+                                        role="tooltip"
+                                        x-tooltip="Tooltip on right"
+                                        :data-placement="$store.app.rtlClass === 'rtl' ? 'left' : 'right'"
+                                        data-theme="danger"
+                                        class="btn btn-danger">
+                                        Tooltip on right
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card lg:col-start-2 lg:row-start-1">
+                            <div class="card-header flex items-center justify-between">
+                                <h5 class="text-lg font-semibold dark:text-white-light">HTML</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="flex w-full justify-center gap-4">
+                                    <button
+                                        type="button"
+                                        x-tooltip="<strong>Bolded content</strong>"
+                                        class="btn btn-dark">
+                                        Tooltip on HTML
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header flex items-center justify-between">
+                                <h5 class="text-lg font-semibold dark:text-white-light">Options</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="flex w-full flex-wrap justify-center gap-4">
+                                    <button type="button" @click="$tooltip('On click')" class="btn btn-primary">
+                                        On Click
+                                    </button>
+                                    <button type="button" @focus="$tooltip('On focus')" class="btn btn-secondary">
+                                        On Focus
+                                    </button>
+                                    <button type="button" x-tooltip="Delay 1s" data-delay="1000" class="btn btn-info">
+                                        Delay
+                                    </button>
+                                    <button
+                                        type="button"
+                                        x-tooltip="Disable Animation"
+                                        data-animation="false"
+                                        class="btn btn-dark">
+                                        Disabled Animation
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card lg:col-span-2">
+                            <div class="card-header flex items-center justify-between">
+                                <h5 class="text-lg font-semibold dark:text-white-light">Colors</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="flex w-full flex-wrap justify-center gap-4">
+                                    <button
+                                        type="button"
+                                        x-tooltip="Primary"
+                                        data-theme="primary"
+                                        class="btn btn-primary">
+                                        Primary
+                                    </button>
+                                    <button
+                                        type="button"
+                                        x-tooltip="Success"
+                                        data-theme="success"
+                                        class="btn btn-success">
+                                        Success
+                                    </button>
+                                    <button type="button" x-tooltip="Info" data-theme="info" class="btn btn-info">
+                                        Info
+                                    </button>
+                                    <button type="button" x-tooltip="Danger" data-theme="danger" class="btn btn-danger">
+                                        Danger
+                                    </button>
+                                    <button
+                                        type="button"
+                                        x-tooltip="Warning"
+                                        data-theme="warning"
+                                        class="btn btn-warning">
+                                        Warning
+                                    </button>
+                                    <button
+                                        type="button"
+                                        x-tooltip="Secondary"
+                                        data-theme="secondary"
+                                        class="btn btn-secondary">
+                                        Secondary
+                                    </button>
+                                    <button type="button" x-tooltip="Dark" data-theme="dark" class="btn btn-dark">
+                                        Dark
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">

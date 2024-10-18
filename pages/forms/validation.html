@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Forms Validation - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,476 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Validations</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Form Elements </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Validations </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="grid grid-cols-1 gap-6 xl:grid-cols-2" x-data="form">
+                        <!-- Basic -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Basic</h6>
+                            </div>
+                            <div class="card-body">
+                                <form class="space-y-5" @submit.prevent="submitForm1()">
+                                    <div :class="[isSubmitForm1 ? (form1.name ? 'has-success' : 'has-error') : '']">
+                                        <label for="fullName">Full Name</label>
+                                        <input
+                                            id="fullName"
+                                            type="text"
+                                            placeholder="Enter Full Name"
+                                            class="form-input"
+                                            x-model="form1.name" />
+                                        <template x-if="isSubmitForm1 && form1.name">
+                                            <p class="mt-1 text-[#1abc9c]">Looks Good!</p>
+                                        </template>
+                                        <template x-if="isSubmitForm1 && !form1.name">
+                                            <p class="mt-1 text-danger">Please fill the Name</p>
+                                        </template>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary !mt-6">Submit Form</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Email -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Email</h6>
+                            </div>
+                            <div class="card-body">
+                                <form class="space-y-5" @submit.prevent="submitForm2()">
+                                    <div
+                                        :class="[isSubmitForm2 ? (form2.email && emailValidate(form2.email)  ? 'has-success' : 'has-error') : '']">
+                                        <label for="Email">Email</label>
+                                        <input
+                                            id="Email"
+                                            type="text"
+                                            placeholder="Enter Email"
+                                            class="form-input"
+                                            x-model="form2.email" />
+                                        <template x-if="isSubmitForm2 && form2.email && emailValidate(form2.email)">
+                                            <p class="mt-1 text-[#1abc9c]">Looks Good!</p>
+                                        </template>
+                                        <template x-if="isSubmitForm2 && !(form2.email && emailValidate(form2.email))">
+                                            <p class="mt-1 text-danger">Please fill the Email</p>
+                                        </template>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary !mt-6">Submit Form</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Select -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Select</h6>
+                            </div>
+                            <div class="card-body">
+                                <form class="space-y-5" @submit.prevent="submitForm3()">
+                                    <div :class="[isSubmitForm3 ? (form3.select ? 'has-success' : 'has-error') : '']">
+                                        <select class="text-white-dark form-select" x-model="form3.select">
+                                            <option value="">Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <template x-if="isSubmitForm3 && form3.select">
+                                            <p class="mt-1 text-[#1abc9c]">Example valid custom select feedback</p>
+                                        </template>
+                                        <template x-if="isSubmitForm3 && !form3.select">
+                                            <p class="mt-1 text-danger">Please Select the field</p>
+                                        </template>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary !mt-6">Submit Form</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Custom Styles -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Custom Styles</h6>
+                            </div>
+                            <div class="card-body">
+                                <form class="space-y-5" @submit.prevent="submitForm4()">
+                                    <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+                                        <div
+                                            :class="[isSubmitForm4 ? (form4.firstName ? 'has-success' : 'has-error') : '']">
+                                            <label for="customFname">First Name</label>
+                                            <input
+                                                id="customFname"
+                                                type="text"
+                                                placeholder="Enter First Name"
+                                                class="form-input"
+                                                x-model="form4.firstName" />
+                                            <template x-if="isSubmitForm4 && form4.firstName">
+                                                <p class="mt-1 text-[#1abc9c]">Looks Good!</p>
+                                            </template>
+                                            <template x-if="isSubmitForm4 && !form4.firstName">
+                                                <p class="mt-1 text-danger">Please fill the first name</p>
+                                            </template>
+                                        </div>
+                                        <div
+                                            :class="[isSubmitForm4 ? (form4.lastName ? 'has-success' : 'has-error') : '']">
+                                            <label for="customLname">Last name</label>
+                                            <input
+                                                id="customLname"
+                                                type="text"
+                                                placeholder="Enter Last Name"
+                                                class="form-input"
+                                                x-model="form4.lastName" />
+                                            <template x-if="isSubmitForm4 && form4.lastName">
+                                                <p class="mt-1 text-[#1abc9c]">Looks Good!</p>
+                                            </template>
+                                            <template x-if="isSubmitForm4 && !form4.lastName">
+                                                <p class="mt-1 text-danger">Please fill the last name</p>
+                                            </template>
+                                        </div>
+                                        <div
+                                            :class="[isSubmitForm4 ? (form4.userName ? 'has-success' : 'has-error') : '']">
+                                            <label for="customeEmail">Username</label>
+                                            <div class="flex">
+                                                <div
+                                                    class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    @
+                                                </div>
+                                                <input
+                                                    id="customeEmail"
+                                                    type="text"
+                                                    placeholder="Enter Username"
+                                                    class="form-input rounded-l-none"
+                                                    x-model="form4.userName" />
+                                            </div>
+                                            <template x-if="isSubmitForm4 && form4.userName">
+                                                <p class="mt-1 text-[#1abc9c]">Looks Good!</p>
+                                            </template>
+                                            <template x-if="isSubmitForm4 && !form4.userName">
+                                                <p class="mt-1 text-danger">Please choose a userName</p>
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-1 gap-5 md:grid-cols-4">
+                                        <div
+                                            class="md:col-span-2"
+                                            :class="[isSubmitForm4 ? (form4.city ? 'has-success' : 'has-error') : '']">
+                                            <label for="customeCity">City</label>
+                                            <input
+                                                id="customeCity"
+                                                type="text"
+                                                placeholder="Enter City"
+                                                class="form-input"
+                                                x-model="form4.city" />
+                                            <template x-if="isSubmitForm4 && form4.city">
+                                                <p class="mt-1 text-[#1abc9c]">Looks Good!</p>
+                                            </template>
+                                            <template x-if="isSubmitForm4 && !form4.city">
+                                                <p class="mt-1 text-danger">Please provide a valid city</p>
+                                            </template>
+                                        </div>
+                                        <div
+                                            :class="[isSubmitForm4 ? (form4.state ? 'has-success' : 'has-error') : '']">
+                                            <label for="customeState">State</label>
+                                            <input
+                                                id="customeState"
+                                                type="text"
+                                                placeholder="Enter State"
+                                                class="form-input"
+                                                x-model="form4.state" />
+                                            <template x-if="isSubmitForm4 && form4.state">
+                                                <p class="mt-1 text-[#1abc9c]">Looks Good!</p>
+                                            </template>
+                                            <template x-if="isSubmitForm4 && !form4.state">
+                                                <p class="mt-1 text-danger">Please provide a valid state</p>
+                                            </template>
+                                        </div>
+                                        <div :class="[isSubmitForm4 ? (form4.zip ? 'has-success' : 'has-error') : '']">
+                                            <label for="customeZip">Zip</label>
+                                            <input
+                                                id="customeZip"
+                                                type="text"
+                                                placeholder="Enter Zip"
+                                                class="form-input"
+                                                x-model="form4.zip" />
+                                            <template x-if="isSubmitForm4 && form4.zip">
+                                                <p class="mt-1 text-[#1abc9c]">Looks Good!</p>
+                                            </template>
+                                            <template x-if="isSubmitForm4 && !form4.zip">
+                                                <p class="mt-1 text-danger">Please provide a valid zip</p>
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <div :class="[isSubmitForm4 ? (form4.isTerms ? 'has-success' : 'has-error') : '']">
+                                        <label class="mt-1 inline-flex cursor-pointer">
+                                            <input type="checkbox" class="form-checkbox" x-model="form4.isTerms" />
+                                            <span class="text-white-dark">Agree to terms and conditions</span>
+                                        </label>
+                                        <template x-if="isSubmitForm4 && !form4.isTerms">
+                                            <p class="mt-1 text-danger">You must agree before submitting.</p>
+                                        </template>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary !mt-6">Submit Form</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Browser Default -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Browser Default</h6>
+                            </div>
+                            <div class="card-body">
+                                <form class="space-y-5" @submit.prevent="submitForm5()">
+                                    <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+                                        <div>
+                                            <label for="browserFname">First Name</label>
+                                            <input
+                                                id="browserFname"
+                                                type="text"
+                                                placeholder="Enter First Name"
+                                                x-model="form5.firstName"
+                                                class="form-input"
+                                                required="" />
+                                        </div>
+                                        <div>
+                                            <label for="browserLname">Last name</label>
+                                            <input
+                                                id="browserLname"
+                                                type="text"
+                                                placeholder="Enter Last name"
+                                                x-model="form5.lastName"
+                                                class="form-input"
+                                                required="" />
+                                        </div>
+                                        <div>
+                                            <label for="browserEmail">Username</label>
+                                            <div class="flex">
+                                                <div
+                                                    class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    @
+                                                </div>
+                                                <input
+                                                    id="browserEmail"
+                                                    type="text"
+                                                    placeholder="Enter Username"
+                                                    x-model="form5.userName"
+                                                    class="form-input rounded-l-none"
+                                                    required="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-1 gap-5 md:grid-cols-4">
+                                        <div class="md:col-span-2">
+                                            <label for="browserCity">City</label>
+                                            <input
+                                                id="browserCity"
+                                                type="text"
+                                                placeholder="Enter City"
+                                                x-model="form5.city"
+                                                class="form-input"
+                                                required="" />
+                                        </div>
+                                        <div>
+                                            <label for="browserState">State</label>
+                                            <input
+                                                id="browserState"
+                                                type="text"
+                                                placeholder="Enter State"
+                                                x-model="form5.state"
+                                                class="form-input"
+                                                required="" />
+                                        </div>
+                                        <div>
+                                            <label for="browserZip">Zip</label>
+                                            <input
+                                                id="browserZip"
+                                                type="text"
+                                                placeholder="Enter Zip"
+                                                x-model="form5.zip"
+                                                class="form-input"
+                                                required="" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="mt-1 flex cursor-pointer items-center">
+                                            <input
+                                                type="checkbox"
+                                                class="form-checkbox"
+                                                x-model="form5.isTerms"
+                                                require="" />
+                                            <span class="text-white-dark">Agree to terms and conditions</span>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary !mt-6">Submit Form</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Tooltips -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Tooltips</h6>
+                            </div>
+                            <div class="card-body">
+                                <form class="space-y-5" @submit.prevent="submitForm6()">
+                                    <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+                                        <div
+                                            :class="[isSubmitForm6 ? (form6.firstName ? 'has-success' : 'has-error') : '']">
+                                            <label for="tlpFname">First Name</label>
+                                            <input
+                                                id="tlpFname"
+                                                type="text"
+                                                placeholder="Enter First Name"
+                                                class="form-input mb-2"
+                                                x-model="form6.firstName" />
+                                            <template x-if="isSubmitForm6 && form6.firstName">
+                                                <span class="rounded bg-[#1abc9c] px-2 py-1 text-white">
+                                                    Looks Good!
+                                                </span>
+                                            </template>
+                                            <template x-if="isSubmitForm6 && !form6.firstName">
+                                                <span class="rounded bg-danger px-2 py-1 text-white">
+                                                    Please fill the first Name
+                                                </span>
+                                            </template>
+                                        </div>
+                                        <div
+                                            :class="[isSubmitForm6 ? (form6.lastName ? 'has-success' : 'has-error') : '']">
+                                            <label for="tlpLname">Last name</label>
+                                            <input
+                                                id="tlpLname"
+                                                type="text"
+                                                placeholder="Enter Last Name"
+                                                class="form-input mb-2"
+                                                x-model="form6.lastName" />
+                                            <template x-if="isSubmitForm6 && form6.lastName">
+                                                <span class="rounded bg-[#1abc9c] px-2 py-1 text-white">
+                                                    Looks Good!
+                                                </span>
+                                            </template>
+                                            <template x-if="isSubmitForm6 && !form6.lastName">
+                                                <span class="rounded bg-danger px-2 py-1 text-white">
+                                                    Please fill the last Name
+                                                </span>
+                                            </template>
+                                        </div>
+                                        <div
+                                            :class="[isSubmitForm6 ? (form6.userName ? 'has-success' : 'has-error') : '']">
+                                            <label for="tlpEmail">Username</label>
+                                            <div class="flex">
+                                                <div
+                                                    class="flex items-center justify-center rounded-l-md border border-r-0 border-[#e0e6ed] bg-[#eee] px-3 font-semibold dark:border-[#17263c] dark:bg-[#1b2e4b]">
+                                                    @
+                                                </div>
+                                                <input
+                                                    id="tlpEmail"
+                                                    type="text"
+                                                    placeholder="Enter Username"
+                                                    class="form-input rounded-l-none"
+                                                    x-model="form6.userName" />
+                                            </div>
+                                            <div class="mt-2">
+                                                <template x-if="isSubmitForm6 && form6.userName">
+                                                    <span class="rounded bg-[#1abc9c] px-2 py-1 text-white">
+                                                        Looks Good!
+                                                    </span>
+                                                </template>
+                                                <template x-if="isSubmitForm6 && !form6.userName">
+                                                    <span class="rounded bg-danger px-2 py-1 text-white">
+                                                        Please choose a userName.
+                                                    </span>
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-1 gap-5 md:grid-cols-4">
+                                        <div
+                                            class="md:col-span-2"
+                                            :class="[isSubmitForm6 ? (form6.city ? 'has-success' : 'has-error') : '']">
+                                            <label for="tlpCity">City</label>
+                                            <input
+                                                id="tlpCity"
+                                                type="text"
+                                                placeholder="Enter City"
+                                                class="form-input mb-2"
+                                                x-model="form6.city" />
+                                            <template x-if="isSubmitForm6 && form6.city">
+                                                <span class="rounded bg-[#1abc9c] px-2 py-1 text-white">
+                                                    Looks Good!
+                                                </span>
+                                            </template>
+                                            <template x-if="isSubmitForm6 && !form6.city">
+                                                <span class="rounded bg-danger px-2 py-1 text-white">
+                                                    Please provide a valid city.
+                                                </span>
+                                            </template>
+                                        </div>
+                                        <div
+                                            :class="[isSubmitForm6 ? (form6.state ? 'has-success' : 'has-error') : '']">
+                                            <label for="tlpState">State</label>
+                                            <input
+                                                id="tlpState"
+                                                type="text"
+                                                placeholder="Enter State"
+                                                class="form-input mb-2"
+                                                x-model="form6.state" />
+                                            <template x-if="isSubmitForm6 && form6.state">
+                                                <span class="rounded bg-[#1abc9c] px-2 py-1 text-white">
+                                                    Looks Good!
+                                                </span>
+                                            </template>
+                                            <template x-if="isSubmitForm6 && !form6.state">
+                                                <span class="rounded bg-danger px-2 py-1 text-white">
+                                                    Please provide a valid state.
+                                                </span>
+                                            </template>
+                                        </div>
+                                        <div :class="[isSubmitForm6 ? (form6.zip ? 'has-success' : 'has-error') : '']">
+                                            <label for="tlpZip">Zip</label>
+                                            <input
+                                                id="tlpZip"
+                                                type="text"
+                                                placeholder="Enter Zip"
+                                                class="form-input mb-2"
+                                                x-model="form6.zip" />
+                                            <template x-if="isSubmitForm6 && form6.zip">
+                                                <span class="rounded bg-[#1abc9c] px-2 py-1 text-white">
+                                                    Looks Good!
+                                                </span>
+                                            </template>
+                                            <template x-if="isSubmitForm6 && !form6.zip">
+                                                <span class="rounded bg-danger px-2 py-1 text-white">
+                                                    Please provide a valid Zip.
+                                                </span>
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <div :class="[isSubmitForm6 ? (form6.isTerms ? 'has-success' : 'has-error') : '']">
+                                        <label class="flex cursor-pointer items-center">
+                                            <input type="checkbox" class="form-checkbox" x-model="form6.isTerms" />
+                                            <span class="text-white-dark">Agree to terms and conditions</span>
+                                        </label>
+                                        <template x-if="isSubmitForm6 && !form6.isTerms">
+                                            <div class="mt-2">
+                                                <span class="rounded bg-danger px-2 py-1 text-white">
+                                                    You must agree before submitting.
+                                                </span>
+                                            </div>
+                                        </template>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary !mt-6">Submit Form</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
@@ -1369,5 +1823,6 @@
                 </nav>
             </div>
         </div>
+        <script src="/features/forms/validations.js"></script>
     </body>
 </html>

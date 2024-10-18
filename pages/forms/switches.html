@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Switches- Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,136 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Switches</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Form Elements </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Switches </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="space-y-4">
+                        <div class="space-y-8">
+                            <!-- Icons -->
+                            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Default (Icons)</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <label class="relative h-6 w-12">
+                                            <input
+                                                type="checkbox"
+                                                class="custom_switch peer absolute z-10 h-full w-full cursor-pointer opacity-0"
+                                                id="custom_switch_checkbox1" />
+                                            <span
+                                                for="custom_switch_checkbox1"
+                                                class="outline_checkbox bg-icon dark:border-white-dark dark:before:bg-white-dark block h-full border-2 border-[#ebedf2] before:absolute before:bottom-1 before:left-1 before:h-4 before:w-4 before:bg-[#ebedf2] before:bg-[url('/images/close.svg')] before:bg-center before:bg-no-repeat before:transition-all before:duration-300 peer-checked:border-primary peer-checked:before:left-7 peer-checked:before:bg-primary peer-checked:before:bg-[url('/images/checked.svg')]"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Rounded (Icons)</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <label class="relative h-6 w-12">
+                                            <input
+                                                type="checkbox"
+                                                class="custom_switch peer absolute z-10 h-full w-full cursor-pointer opacity-0"
+                                                id="custom_switch_checkbox2" />
+                                            <span
+                                                for="custom_switch_checkbox2"
+                                                class="outline_checkbox bg-icon dark:border-white-dark dark:before:bg-white-dark block h-full rounded-full border-2 border-[#ebedf2] before:absolute before:bottom-1 before:left-1 before:h-4 before:w-4 before:rounded-full before:bg-[#ebedf2] before:bg-[url('/images/close.svg')] before:bg-center before:bg-no-repeat before:transition-all before:duration-300 peer-checked:border-primary peer-checked:before:left-7 peer-checked:before:bg-primary peer-checked:before:bg-[url('/images/checked.svg')]"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <!-- Solid -->
+                            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Default (Solid)</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <label class="relative h-6 w-12">
+                                            <input
+                                                type="checkbox"
+                                                class="custom_switch peer absolute z-10 h-full w-full cursor-pointer opacity-0"
+                                                id="custom_switch_checkbox3" />
+                                            <span
+                                                for="custom_switch_checkbox3"
+                                                class="dark:before:bg-white-dark block h-full bg-[#ebedf2] before:absolute before:bottom-1 before:left-1 before:h-4 before:w-4 before:bg-white before:transition-all before:duration-300 peer-checked:bg-primary peer-checked:before:left-7 dark:bg-dark dark:peer-checked:before:bg-white"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Rounded (Solid)</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <label class="relative h-6 w-12">
+                                            <input
+                                                type="checkbox"
+                                                class="custom_switch peer absolute z-10 h-full w-full cursor-pointer opacity-0"
+                                                id="custom_switch_checkbox4" />
+                                            <span
+                                                for="custom_switch_checkbox4"
+                                                class="dark:before:bg-white-dark block h-full rounded-full bg-[#ebedf2] before:absolute before:bottom-1 before:left-1 before:h-4 before:w-4 before:rounded-full before:bg-white before:transition-all before:duration-300 peer-checked:bg-primary peer-checked:before:left-7 dark:bg-dark dark:peer-checked:before:bg-white"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <!-- Outline -->
+                            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Default (Outlined)</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <label class="relative h-6 w-12">
+                                            <input
+                                                type="checkbox"
+                                                class="custom_switch peer absolute z-10 h-full w-full cursor-pointer opacity-0"
+                                                id="custom_switch_checkbox5" />
+                                            <span
+                                                for="custom_switch_checkbox5"
+                                                class="outline_checkbox dark:border-white-dark dark:before:bg-white-dark block h-full border-2 border-[#ebedf2] before:absolute before:bottom-1 before:left-1 before:h-4 before:w-4 before:bg-[#ebedf2] before:transition-all before:duration-300 peer-checked:border-primary peer-checked:before:left-7 peer-checked:before:bg-primary"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Rounded (Outlined)</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <label class="relative h-6 w-12">
+                                            <input
+                                                type="checkbox"
+                                                class="custom_switch peer absolute z-10 h-full w-full cursor-pointer opacity-0"
+                                                id="custom_switch_checkbox6" />
+                                            <span
+                                                for="custom_switch_checkbox6"
+                                                class="outline_checkbox dark:border-white-dark dark:before:bg-white-dark block h-full rounded-full border-2 border-[#ebedf2] before:absolute before:bottom-1 before:left-1 before:h-4 before:w-4 before:rounded-full before:bg-[#ebedf2] before:transition-all before:duration-300 peer-checked:border-primary peer-checked:before:left-7 peer-checked:before:bg-primary"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">

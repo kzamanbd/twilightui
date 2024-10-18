@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Wizards- Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,628 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Wizards</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Form Elements </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Wizards </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div x-data="form">
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                                <!-- Basic -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Text Only (Pills)</h6>
+                                    </div>
+                                    <div class="card-body" x-data="{ activeTab: 1}">
+                                        <div class="inline-block w-full">
+                                            <ul class="mb-5 grid grid-cols-3 text-center">
+                                                <li>
+                                                    <a
+                                                        href="javascript:;"
+                                                        class="block rounded-full bg-[#f3f2ee] p-2.5 text-white dark:bg-[#1b2e4b]"
+                                                        :class="{'!bg-primary text-white': activeTab === 1}"
+                                                        @click="activeTab = 1">
+                                                        1 Home
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="javascript:;"
+                                                        class="block rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
+                                                        :class="{'!bg-primary text-white': activeTab === 2}"
+                                                        @click="activeTab = 2">
+                                                        2 About
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="javascript:;"
+                                                        class="block rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
+                                                        :class="{'!bg-primary text-white': activeTab === 3}"
+                                                        @click="activeTab = 3">
+                                                        3 Success
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                                <template x-if="activeTab === 1">
+                                                    <p class="mb-5">
+                                                        Try the keyboard navigation by clicking arrow left or right!
+                                                    </p>
+                                                </template>
+                                                <p class="mb-5">
+                                                    Try the keyboard navigation by clicking arrow left or right!
+                                                </p>
+                                                <template x-if="activeTab === 2">
+                                                    <p class="mb-5">
+                                                        The next and previous buttons help you to navigate through your
+                                                        content.
+                                                    </p>
+                                                </template>
+                                                <template x-if="activeTab === 3">
+                                                    <p class="mb-5">Wonderful transition effects.</p>
+                                                </template>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 1"
+                                                    @click="activeTab--"
+                                                    disabled="disabled">
+                                                    Back
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 3"
+                                                    @click="activeTab++">
+                                                    Next
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- icon only -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Icon Only (Pills)</h6>
+                                    </div>
+                                    <div class="card-body" x-data="{ activeTab: 1}">
+                                        <div class="inline-block w-full">
+                                            <ul class="mb-5 grid grid-cols-3">
+                                                <li>
+                                                    <a
+                                                        href="javascript:;"
+                                                        class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 text-white dark:bg-[#1b2e4b]"
+                                                        :class="{'!bg-primary text-white': activeTab === 1}"
+                                                        @click="activeTab = 1">
+                                                        <span class="icon-[mdi--home]"> </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="javascript:;"
+                                                        class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
+                                                        :class="{'!bg-primary text-white': activeTab === 2}"
+                                                        @click="activeTab = 2">
+                                                        <span class="icon-[mdi--person]"> </span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="javascript:;"
+                                                        class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
+                                                        :class="{'!bg-primary text-white': activeTab === 3}"
+                                                        @click="activeTab = 3">
+                                                        <span class="icon-[mdi--thumb-up]"> </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                                <template x-if="activeTab === 1">
+                                                    <p class="mb-5">
+                                                        Try the keyboard navigation by clicking arrow left or right!
+                                                    </p>
+                                                </template>
+                                                <p class="mb-5">
+                                                    Try the keyboard navigation by clicking arrow left or right!
+                                                </p>
+                                                <template x-if="activeTab === 2">
+                                                    <p class="mb-5">
+                                                        The next and previous buttons help you to navigate through your
+                                                        content.
+                                                    </p>
+                                                </template>
+                                                <template x-if="activeTab === 3">
+                                                    <p class="mb-5">Wonderful transition effects.</p>
+                                                </template>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 1"
+                                                    @click="activeTab--"
+                                                    disabled="disabled">
+                                                    Back
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 3"
+                                                    @click="activeTab++">
+                                                    Next
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Text & Icon -->
+                                <div class="card lg:col-span-2">
+                                    <div class="card-header">
+                                        <h6>Text &amp; Icon (Pills)</h6>
+                                    </div>
+                                    <div class="card-body" x-data="{ activeTab: 1}">
+                                        <div class="inline-block w-full">
+                                            <ul class="mb-5 grid grid-cols-3">
+                                                <li>
+                                                    <a
+                                                        href="javascript:;"
+                                                        :class="{'text-primary': activeTab === 1}"
+                                                        @click="activeTab = 1"
+                                                        class="text-primary">
+                                                        <div
+                                                            class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 text-white dark:bg-[#1b2e4b]"
+                                                            :class="{'!bg-primary text-white': activeTab === 1}"
+                                                            @click="activeTab = 1">
+                                                            <span class="icon-[mdi--home]"> </span>
+                                                        </div>
+                                                        <span class="mt-2 block text-center">Home</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="javascript:;"
+                                                        :class="{'text-primary': activeTab === 2}"
+                                                        @click="activeTab = 2">
+                                                        <div
+                                                            class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
+                                                            :class="{'!bg-primary text-white': activeTab === 2}"
+                                                            @click="activeTab = 2">
+                                                            <span class="icon-[mdi--person]"> </span>
+                                                        </div>
+                                                        <span class="mt-2 block text-center">About</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="javascript:;"
+                                                        :class="{'text-primary': activeTab === 3}"
+                                                        @click="activeTab = 3">
+                                                        <div
+                                                            class="flex items-center justify-center rounded-full bg-[#f3f2ee] p-2.5 dark:bg-[#1b2e4b]"
+                                                            :class="{'!bg-primary text-white': activeTab === 3}"
+                                                            @click="activeTab = 3">
+                                                            <span class="icon-[mdi--thumb-up]"> </span>
+                                                        </div>
+                                                        <span class="mt-2 block text-center">Success</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                                <template x-if="activeTab === 1">
+                                                    <p class="mb-5">
+                                                        Try the keyboard navigation by clicking arrow left or right!
+                                                    </p>
+                                                </template>
+                                                <p class="mb-5">
+                                                    Try the keyboard navigation by clicking arrow left or right!
+                                                </p>
+                                                <template x-if="activeTab === 2">
+                                                    <p class="mb-5">
+                                                        The next and previous buttons help you to navigate through your
+                                                        content.
+                                                    </p>
+                                                </template>
+                                                <template x-if="activeTab === 3">
+                                                    <p class="mb-5">Wonderful transition effects.</p>
+                                                </template>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 1"
+                                                    @click="activeTab--"
+                                                    disabled="disabled">
+                                                    Back
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 3"
+                                                    @click="activeTab++">
+                                                    Next
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Circle -->
+                            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                                <!-- icon only -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Icon Only (Circle)</h6>
+                                    </div>
+                                    <div class="card-body" x-data="{ activeTab: 1}">
+                                        <div class="inline-block w-full">
+                                            <div class="relative z-[1]">
+                                                <div
+                                                    class="absolute top-[30px] -z-[1] m-auto h-1 w-[15%] bg-primary transition-[width] ltr:left-0 rtl:right-0"
+                                                    :class="{'w-[15%]' : activeTab === 1, 'w-[48%]' : activeTab === 2, 'w-[81%]' : activeTab === 3}"></div>
+                                                <ul class="mb-5 grid grid-cols-3">
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white text-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 1}"
+                                                            @click="activeTab = 1">
+                                                            <span class="icon-[mdi--home]"> </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 2}"
+                                                            @click="activeTab = 2">
+                                                            <span class="icon-[mdi--person]"> </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 3}"
+                                                            @click="activeTab = 3">
+                                                            <span class="icon-[mdi--thumb-up]"> </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <template x-if="activeTab === 1">
+                                                    <p class="mb-5">
+                                                        Try the keyboard navigation by clicking arrow left or right!
+                                                    </p>
+                                                </template>
+                                                <p class="mb-5">
+                                                    Try the keyboard navigation by clicking arrow left or right!
+                                                </p>
+                                                <template x-if="activeTab === 2">
+                                                    <p class="mb-5">
+                                                        The next and previous buttons help you to navigate through your
+                                                        content.
+                                                    </p>
+                                                </template>
+                                                <template x-if="activeTab === 3">
+                                                    <p class="mb-5">Wonderful transition effects.</p>
+                                                </template>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 1"
+                                                    @click="activeTab--"
+                                                    disabled="disabled">
+                                                    Back
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 3"
+                                                    @click="activeTab++">
+                                                    Next
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Text & Icon -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Text &amp; Icon (Circle)</h6>
+                                    </div>
+                                    <div class="card-body" x-data="{ activeTab: 1}">
+                                        <div class="inline-block w-full">
+                                            <div class="relative z-[1]">
+                                                <div
+                                                    class="absolute top-[30px] -z-[1] m-auto h-1 w-[15%] bg-primary transition-[width] ltr:left-0 rtl:right-0"
+                                                    :class="{'w-[15%]' : activeTab === 1, 'w-[48%]' : activeTab === 2, 'w-[81%]' : activeTab === 3}"></div>
+                                                <ul class="mb-5 grid grid-cols-3">
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white text-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 1}"
+                                                            @click="activeTab = 1">
+                                                            <span class="icon-[mdi--home]"> </span>
+                                                        </a>
+                                                        <span
+                                                            class="mt-2 block text-center text-primary"
+                                                            :class="{'text-primary' : activeTab === 1}">
+                                                            Home
+                                                        </span>
+                                                    </li>
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 2}"
+                                                            @click="activeTab = 2">
+                                                            <span class="icon-[mdi--person]"> </span>
+                                                        </a>
+                                                        <span
+                                                            class="mt-2 block text-center"
+                                                            :class="{'text-primary' : activeTab === 2}">
+                                                            About
+                                                        </span>
+                                                    </li>
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 3}"
+                                                            @click="activeTab = 3">
+                                                            <span class="icon-[mdi--thumb-up]"> </span>
+                                                        </a>
+                                                        <span
+                                                            class="mt-2 block text-center"
+                                                            :class="{'text-primary' : activeTab === 3}">
+                                                            Success
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <template x-if="activeTab === 1">
+                                                    <p class="mb-5">
+                                                        Try the keyboard navigation by clicking arrow left or right!
+                                                    </p>
+                                                </template>
+                                                <p class="mb-5">
+                                                    Try the keyboard navigation by clicking arrow left or right!
+                                                </p>
+                                                <template x-if="activeTab === 2">
+                                                    <p class="mb-5">
+                                                        The next and previous buttons help you to navigate through your
+                                                        content.
+                                                    </p>
+                                                </template>
+                                                <template x-if="activeTab === 3">
+                                                    <p class="mb-5">Wonderful transition effects.</p>
+                                                </template>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 1"
+                                                    @click="activeTab--"
+                                                    disabled="disabled">
+                                                    Back
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 3"
+                                                    @click="activeTab++">
+                                                    Next
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Square -->
+                            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                                <!-- icon only -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Icon Only (Square)</h6>
+                                    </div>
+                                    <div class="card-body" x-data="{ activeTab: 1}">
+                                        <div class="inline-block w-full">
+                                            <div class="relative z-[1]">
+                                                <div
+                                                    class="absolute top-[30px] -z-[1] m-auto h-1 w-[15%] bg-primary transition-[width] ltr:left-0 rtl:right-0"
+                                                    :class="{'w-[15%]' : activeTab === 1, 'w-[48%]' : activeTab === 2, 'w-[81%]' : activeTab === 3}"></div>
+                                                <ul class="mb-5 grid grid-cols-3">
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 1}"
+                                                            @click="activeTab = 1">
+                                                            <span class="icon-[mdi--home]"> </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 2}"
+                                                            @click="activeTab = 2">
+                                                            <span class="icon-[mdi--person]"> </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 3}"
+                                                            @click="activeTab = 3">
+                                                            <span class="icon-[mdi--thumb-up]"> </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <template x-if="activeTab === 1">
+                                                    <p class="mb-5">
+                                                        Try the keyboard navigation by clicking arrow left or right!
+                                                    </p>
+                                                </template>
+                                                <p class="mb-5">
+                                                    Try the keyboard navigation by clicking arrow left or right!
+                                                </p>
+                                                <template x-if="activeTab === 2">
+                                                    <p class="mb-5">
+                                                        The next and previous buttons help you to navigate through your
+                                                        content.
+                                                    </p>
+                                                </template>
+                                                <template x-if="activeTab === 3">
+                                                    <p class="mb-5">Wonderful transition effects.</p>
+                                                </template>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 1"
+                                                    @click="activeTab--"
+                                                    disabled="disabled">
+                                                    Back
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 3"
+                                                    @click="activeTab++">
+                                                    Next
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Text & Icon -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6>Text &amp; Icon (Square)</h6>
+                                    </div>
+                                    <div class="card-body" x-data="{ activeTab: 1}">
+                                        <div class="inline-block w-full">
+                                            <div class="relative z-[1]">
+                                                <div
+                                                    class="absolute top-[30px] -z-[1] m-auto h-1 w-[15%] bg-primary transition-[width] ltr:left-0 rtl:right-0"
+                                                    :class="{'w-[15%]' : activeTab === 1, 'w-[48%]' : activeTab === 2, 'w-[81%]' : activeTab === 3}"></div>
+                                                <ul class="mb-5 grid grid-cols-3">
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 1}"
+                                                            @click="activeTab = 1">
+                                                            <span class="icon-[mdi--home]"> </span>
+                                                        </a>
+                                                        <span
+                                                            class="mt-2 block text-center text-primary"
+                                                            :class="{'text-primary' : activeTab === 1}">
+                                                            Home
+                                                        </span>
+                                                    </li>
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 2}"
+                                                            @click="activeTab = 2">
+                                                            <span class="icon-[mdi--person]"> </span>
+                                                        </a>
+                                                        <span
+                                                            class="mt-2 block text-center"
+                                                            :class="{'text-primary' : activeTab === 2}">
+                                                            About
+                                                        </span>
+                                                    </li>
+                                                    <li class="mx-auto">
+                                                        <a
+                                                            href="javascript:;"
+                                                            class="flex h-16 w-16 items-center justify-center border-[3px] border-[#f3f2ee] bg-white dark:border-[#1b2e4b] dark:bg-[#253b5c]"
+                                                            :class="{'!border-primary !bg-primary text-white': activeTab === 3}"
+                                                            @click="activeTab = 3">
+                                                            <span class="icon-[mdi--thumb-up]"> </span>
+                                                        </a>
+                                                        <span
+                                                            class="mt-2 block text-center"
+                                                            :class="{'text-primary' : activeTab === 3}">
+                                                            Success
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <template x-if="activeTab === 1">
+                                                    <p class="mb-5">
+                                                        Try the keyboard navigation by clicking arrow left or right!
+                                                    </p>
+                                                </template>
+                                                <p class="mb-5">
+                                                    Try the keyboard navigation by clicking arrow left or right!
+                                                </p>
+                                                <template x-if="activeTab === 2">
+                                                    <p class="mb-5">
+                                                        The next and previous buttons help you to navigate through your
+                                                        content.
+                                                    </p>
+                                                </template>
+                                                <template x-if="activeTab === 3">
+                                                    <p class="mb-5">Wonderful transition effects.</p>
+                                                </template>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 1"
+                                                    @click="activeTab--"
+                                                    disabled="disabled">
+                                                    Back
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary"
+                                                    :disabled="activeTab === 3"
+                                                    @click="activeTab++">
+                                                    Next
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
