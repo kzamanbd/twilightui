@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Checkbox / Radio - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,461 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Checkbox & Radio</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Form Elements </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Checkbox & Radio </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Default</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="space-y-2">
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox" checked />
+                                            <span>Primary</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox text-success" />
+                                            <span>Success</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox text-secondary" />
+                                            <span>Secondary</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox text-danger" />
+                                            <span>Danger</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox text-warning" />
+                                            <span>Warning</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox text-info" />
+                                            <span>Info</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox text-dark" />
+                                            <span>Dark</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Default Rounded</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="space-y-2">
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full" checked />
+                                            <span>Primary</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full text-success" />
+                                            <span>Success</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full text-secondary" />
+                                            <span>Secondary</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full text-danger" />
+                                            <span>Danger</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full text-warning" />
+                                            <span>Warning</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full text-info" />
+                                            <span>Info</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full text-dark" />
+                                            <span>Dark</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Outline</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="space-y-2">
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox outline-primary" checked />
+                                            <span>Primary</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox outline-success" />
+                                            <span>Success</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox outline-secondary" />
+                                            <span>Secondary</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox outline-danger" />
+                                            <span>Danger</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox outline-warning" />
+                                            <span>Warning</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox outline-info" />
+                                            <span>Info</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox outline-dark" />
+                                            <span>Dark</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Outline Rounded</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="space-y-2">
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input
+                                                type="checkbox"
+                                                class="form-checkbox rounded-full outline-primary"
+                                                checked />
+                                            <span>Primary</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full outline-success" />
+                                            <span>Success</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input
+                                                type="checkbox"
+                                                class="form-checkbox rounded-full outline-secondary" />
+                                            <span>Secondary</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full outline-danger" />
+                                            <span>Danger</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full outline-warning" />
+                                            <span>Warning</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full outline-info" />
+                                            <span>Info</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="inline-flex">
+                                            <input type="checkbox" class="form-checkbox rounded-full outline-dark" />
+                                            <span>Dark</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Default Text Color</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="space-y-2">
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox" checked />
+                                                <span class="peer-checked:text-primary">Primary</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox text-success" />
+                                                <span class="peer-checked:text-success">Success</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox text-secondary" />
+                                                <span class="peer-checked:text-secondary">Secondary</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox text-danger" />
+                                                <span class="peer-checked:text-danger">Danger</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox text-warning" />
+                                                <span class="peer-checked:text-warning">Warning</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox text-info" />
+                                                <span class="peer-checked:text-info">Info</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox text-dark" />
+                                                <span class="peer-checked:text-dark">Dark</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox outline-primary"
+                                                    checked />
+                                                <span class="peer-checked:text-primary">Primary</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox outline-success" />
+                                                <span class="peer-checked:text-success">Success</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox outline-secondary" />
+                                                <span class="peer-checked:text-secondary">Secondary</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox outline-danger" />
+                                                <span class="peer-checked:text-danger">Danger</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox outline-warning" />
+                                                <span class="peer-checked:text-warning">Warning</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox outline-info" />
+                                                <span class="peer-checked:text-info">Info</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input type="checkbox" class="peer form-checkbox outline-dark" />
+                                                <span class="peer-checked:text-dark">Dark</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Rounded Text Color</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="space-y-2">
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full"
+                                                    checked />
+                                                <span class="peer-checked:text-primary">Primary</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full text-success" />
+                                                <span class="peer-checked:text-success">Success</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full text-secondary" />
+                                                <span class="peer-checked:text-secondary">Secondary</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full text-danger" />
+                                                <span class="peer-checked:text-danger">Danger</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full text-warning" />
+                                                <span class="peer-checked:text-warning">Warning</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full text-info" />
+                                                <span class="peer-checked:text-info">Info</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full text-dark" />
+                                                <span class="peer-checked:text-dark">Dark</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full outline-primary"
+                                                    checked />
+                                                <span class="peer-checked:text-primary">Primary</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full outline-success" />
+                                                <span class="peer-checked:text-success">Success</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full outline-secondary" />
+                                                <span class="peer-checked:text-secondary">Secondary</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full outline-danger" />
+                                                <span class="peer-checked:text-danger">Danger</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full outline-warning" />
+                                                <span class="peer-checked:text-warning">Warning</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full outline-info" />
+                                                <span class="peer-checked:text-info">Info</span>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <label class="inline-flex">
+                                                <input
+                                                    type="checkbox"
+                                                    class="peer form-checkbox rounded-full outline-dark" />
+                                                <span class="peer-checked:text-dark">Dark</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">

@@ -37,10 +37,11 @@
         @apply mt-2 space-y-1 px-4 pb-2;
     }
     .vertical-menu .tw-menu-link {
-        @apply flex w-full items-center rounded-md p-2.5 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
+        @apply flex w-full items-center rounded-md px-1.5 py-2.5 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-gray-100;
     }
     .vertical-menu .tw-menu-link.active,
-    .vertical-menu .tw-menu-item.active .tw-menu-link {
+    .vertical-menu .tw-menu-item.active > .tw-menu-link,
+    .vertical-menu .twd--menu-item.active > .tw-menu-link {
         @apply bg-primary-100/75 text-primary hover:bg-primary-100 dark:bg-gray-700 dark:hover:text-primary;
     }
     .tw-link-label {
@@ -50,27 +51,22 @@
         @apply mt-1 hidden space-y-1 overflow-hidden transition-all duration-300 ease-in-out;
     }
     .vertical-menu .twd--menu-item {
-        @apply dark--text ml-4 rounded-md hover:text-gray-900 dark:hover:text-gray-100;
-    }
-    .menu-bullet-dot {
-        @apply ml-2 mr-0.5 h-0.5 w-2 bg-gray-500;
+        @apply dark--text ml-3 rounded-md hover:text-gray-900 dark:hover:text-gray-100;
     }
     .vertical-menu .tw-arrow {
         @apply ml-auto -rotate-90 transform transition-transform;
     }
-    .tw-menu-item.active .tw-arrow,
-    .twd--menu-item.active .tw-arrow,
-    .tw-menu-link.active .tw-arrow {
+    .tw-menu-link.active > .tw-arrow,
+    .tw-menu-item.active > .tw-menu-link .tw-arrow,
+    .twd--menu-item.active > .twd--link .tw-arrow {
         @apply rotate-0;
     }
     .vertical-menu .twd--link {
-        @apply flex w-full items-center truncate rounded-md p-1.5 font-normal text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-primary;
-    }
-    .vertical-menu .twd--link:hover .menu-bullet-dot {
-        @apply bg-primary;
+        @apply flex w-full items-center truncate rounded-md p-1.5 pl-6 text-sm font-medium text-gray-700 hover:bg-primary-100 hover:text-primary dark:text-gray-400 hover:dark:bg-gray-700 dark:hover:text-primary;
+        @apply relative after:absolute after:left-2 after:top-1/2 after:h-0.5 after:w-2 after:-translate-y-1/2 after:bg-gray-500 hover:after:bg-primary;
     }
     .vertical-menu .twd--link.active {
-        @apply text-primary;
+        @apply text-primary after:bg-primary;
     }
     /* semi dark */
     .semi-dark .app-name {

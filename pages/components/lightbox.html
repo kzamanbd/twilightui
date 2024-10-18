@@ -3,13 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Lightbox- Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
         <!-- start:Core Style and Script -->
         <link rel="stylesheet" href="/assets/css/app.css" />
         <script type="module" src="/assets/js/app.js"></script>
+
+        <!-- fancybox -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     </head>
 
     <body>
@@ -1083,22 +1086,85 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Lightbox</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Components </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Lightbox </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="space-y-4" x-data="lightbox">
+                        <!-- Lightbox -->
+                        <div class="card">
+                            <h6 class="card-header">Lightbox</h6>
+                            <div class="card-body">
+                                <div class="mb-5 flex gap-4">
+                                    <div class="flex">
+                                        <div class="mr-4 rtl:ml-4">
+                                            <input
+                                                x-model="allControls"
+                                                :value="1"
+                                                type="radio"
+                                                @change="bindFancybox()"
+                                                class="form-radio mt-1.5"
+                                                checked=""
+                                                value="1"
+                                                name="allControls" />
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="text-lg font-semibold text-primary">All controls</h4>
+                                            <p class="media-text">
+                                                Caption, slideshow, thumbnails and fullscreen buttons, tap to toggle
+                                                controls
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="mr-4 rtl:ml-4">
+                                            <input
+                                                x-model="allControls"
+                                                :value="2"
+                                                type="radio"
+                                                @change="bindFancybox()"
+                                                class="form-radio mt-1.5"
+                                                value="2"
+                                                name="allControls" />
+                                        </div>
+                                        <div class="flex-1">
+                                            <h4 class="text-lg font-semibold text-primary">Minimal</h4>
+                                            <p class="media-text">
+                                                No caption, no slideshow, no thumbnails, no fullscreen, tap to close
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3"
+                                    x-init="bindFancybox()">
+                                    <template x-for="(item, i) in getItems" :key="i">
+                                        <a href="javascript:;" :class="{'md:row-span-2 md:col-span-2' : i == 3}">
+                                            <img
+                                                :src="item.src"
+                                                alt="image-gallery"
+                                                data-fancybox="gallery"
+                                                class="h-full w-full rounded-md object-cover"
+                                                :data-caption="item.title" />
+                                        </a>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
@@ -1369,5 +1435,8 @@
                 </nav>
             </div>
         </div>
+        <script src="/assets/js/plugins.js" type="module"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+        <script src="/features/lightbox.js"></script>
     </body>
 </html>

@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <meta name="theme-color" content="#009EF7" />
+        <title>Drawer - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1084,478 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Drawers</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> UI Elements </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Drawers </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <!-- Drawer Starts -->
+                    <div class="space-y-6">
+                        <!-- Card: Basic Drawer Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Basic Drawer</h4>
+
+                                <p class="card-subtitle">
+                                    Below is a drawer example that is shown by default (via <code>show</code> on
+                                    <code>drawer</code>). Drawer includes support for a header with a close button and
+                                    an optional body and footer classes for some initial padding. We recommand that you
+                                    include drawer headers with dismiss button whenever possible, or provide an explicit
+                                    dismiss button.
+                                </p>
+
+                                <div class="code-viewer mt-4">
+                                    <button class="btn btn-primary" type="button" data-hs-overlay="#drawer-basic">
+                                        Basic Drawer
+                                    </button>
+                                    <div id="drawer-basic" class="tw-drawer tw-drawer-right">
+                                        <div class="tw-drawer-header">
+                                            <h5>Basic Drawer</h5>
+                                            <button
+                                                type="button"
+                                                class="tw-modal-close"
+                                                data-hs-overlay="#drawer-basic">
+                                                <i class="icon-[mdi--close]"></i>
+                                            </button>
+                                        </div>
+                                        <div class="tw-drawer-body">
+                                            <p class="text-sm text-slate-600 dark:text-slate-300">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt iure
+                                                tempora a blanditiis inventore voluptatibus cupiditate, consectetur
+                                                maiores architecto deleniti omnis voluptatem facilis officiis odio harum
+                                                quasi quae atque necessitatibus.
+                                            </p>
+                                        </div>
+                                        <div class="tw-drawer-footer">
+                                            <button
+                                                type="button"
+                                                class="btn btn-secondary"
+                                                data-hs-overlay="#drawer-basic">
+                                                <span>Cancel</span>
+                                            </button>
+
+                                            <button type="button" class="btn btn-primary">
+                                                <span>Confirm</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Basic Drawer Ends -->
+
+                        <!-- Card: Drawer Without Backdrop Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Drawer Without Backdrop</h4>
+
+                                <p class="card-subtitle">
+                                    Use <code>[--overlay-backdrop:false]</code> attribute to disable the default
+                                    backdrop of drawer.
+                                </p>
+
+                                <div class="code-viewer mt-4">
+                                    <div class="code-viewer-content">
+                                        <button
+                                            class="btn btn-primary"
+                                            type="button"
+                                            data-hs-overlay="#drawer-without-backdrop">
+                                            Drawer Without Backdrop
+                                        </button>
+
+                                        <div
+                                            id="drawer-without-backdrop"
+                                            class="tw-drawer tw-drawer-right [--overlay-backdrop:false]">
+                                            <div class="tw-drawer-header">
+                                                <h5>Drawer Without Backdrop</h5>
+
+                                                <button
+                                                    type="button"
+                                                    class="tw-modal-close"
+                                                    data-hs-overlay="#drawer-without-backdrop">
+                                                    <i class="icon-[mdi--close]"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="tw-drawer-body">
+                                                <p class="text-sm text-slate-600 dark:text-slate-300">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
+                                                    iure tempora a blanditiis inventore voluptatibus cupiditate,
+                                                    consectetur maiores architecto deleniti omnis voluptatem facilis
+                                                    officiis odio harum quasi quae atque necessitatibus.
+                                                </p>
+                                            </div>
+
+                                            <div class="tw-drawer-footer">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-secondary"
+                                                    data-hs-overlay="#drawer-without-backdrop">
+                                                    <span>Cancel</span>
+                                                </button>
+
+                                                <button type="button" class="btn btn-primary">
+                                                    <span>Confirm</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Drawer Without Backdrop Ends -->
+
+                        <!-- Card: Drawer With Static Backdrop Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Drawer With Static Backdrop</h4>
+
+                                <p class="card-subtitle">
+                                    Change the <code>data-backdrop</code> attribute to <code>static</code> to disable
+                                    the backdrop close functionality.
+                                </p>
+
+                                <div class="code-viewer mt-4">
+                                    <div class="code-viewer-content">
+                                        <button
+                                            class="btn btn-primary"
+                                            type="button"
+                                            data-hs-overlay="#drawer-with-static-backdrop">
+                                            Drawer With Static Backdrop
+                                        </button>
+
+                                        <div
+                                            id="drawer-with-static-backdrop"
+                                            class="tw-drawer tw-drawer-right [--overlay-backdrop:static]">
+                                            <div class="tw-drawer-header">
+                                                <h5>Static Backdrop</h5>
+
+                                                <button
+                                                    type="button"
+                                                    class="tw-modal-close"
+                                                    data-hs-overlay="#drawer-with-static-backdrop">
+                                                    <i class="icon-[mdi--close]"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="tw-drawer-body">
+                                                <p class="text-sm text-slate-600 dark:text-slate-300">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
+                                                    iure tempora a blanditiis inventore voluptatibus cupiditate,
+                                                    consectetur maiores architecto deleniti omnis voluptatem facilis
+                                                    officiis odio harum quasi quae atque necessitatibus.
+                                                </p>
+                                            </div>
+
+                                            <div class="tw-drawer-footer">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-secondary"
+                                                    data-hs-overlay="#drawer-with-static-backdrop">
+                                                    <span>Cancel</span>
+                                                </button>
+
+                                                <button type="button" class="btn btn-primary">
+                                                    <span>Confirm</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Drawer With Static Backdrop Ends -->
+
+                        <!-- Card: Drawer Placement Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Drawer Placements</h4>
+
+                                <p class="card-subtitle">
+                                    Use <code>drawer-left</code>, <code>drawer-right</code>, <code>drawer-top</code> and
+                                    <code>drawer-bottom</code> modifier classes to set the drawer placement. Default is
+                                    <code>drawer-left</code>
+                                </p>
+
+                                <div class="code-viewer mt-4">
+                                    <div class="code-viewer-content">
+                                        <div class="flex flex-wrap gap-2">
+                                            <button
+                                                class="btn btn-primary"
+                                                type="button"
+                                                data-hs-overlay="#drawer-left">
+                                                Open from Left
+                                            </button>
+                                            <button
+                                                class="btn btn-primary"
+                                                type="button"
+                                                data-hs-overlay="#drawer-right">
+                                                Open from Right
+                                            </button>
+                                            <button class="btn btn-primary" type="button" data-hs-overlay="#drawer-top">
+                                                Open from Top
+                                            </button>
+                                            <button
+                                                class="btn btn-primary"
+                                                type="button"
+                                                data-hs-overlay="#drawer-bottom">
+                                                Open from Bottom
+                                            </button>
+                                        </div>
+
+                                        <div id="drawer-left" class="tw-drawer tw-drawer-left">
+                                            <div class="tw-drawer-header">
+                                                <h5>Drawer Start</h5>
+                                                <button
+                                                    type="button"
+                                                    class="tw-modal-close"
+                                                    data-hs-overlay="#drawer-left">
+                                                    <i class="icon-[mdi--close]"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="tw-drawer-body">
+                                                <p class="text-sm text-slate-600 dark:text-slate-300">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
+                                                    iure tempora a blanditiis inventore voluptatibus cupiditate,
+                                                    consectetur maiores architecto deleniti omnis voluptatem facilis
+                                                    officiis odio harum quasi quae atque necessitatibus.
+                                                </p>
+                                            </div>
+
+                                            <div class="tw-drawer-footer">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-secondary"
+                                                    data-hs-overlay="#drawer-left">
+                                                    <span>Cancel</span>
+                                                </button>
+
+                                                <button type="button" class="btn btn-primary">
+                                                    <span>Confirm</span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div id="drawer-right" class="tw-drawer tw-drawer-right">
+                                            <div class="tw-drawer-header">
+                                                <h5>Drawer End</h5>
+                                                <button
+                                                    type="button"
+                                                    class="tw-modal-close"
+                                                    data-hs-overlay="#drawer-right">
+                                                    <i class="icon-[mdi--close]"></i>
+                                                </button>
+                                            </div>
+                                            <div class="tw-drawer-body">
+                                                <p class="text-sm text-slate-600 dark:text-slate-300">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
+                                                    iure tempora a blanditiis inventore voluptatibus cupiditate,
+                                                    consectetur maiores architecto deleniti omnis voluptatem facilis
+                                                    officiis odio harum quasi quae atque necessitatibus.
+                                                </p>
+                                            </div>
+                                            <div class="tw-drawer-footer">
+                                                <button type="button" class="btn btn-primary">
+                                                    <span>Confirm</span>
+                                                </button>
+
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-secondary"
+                                                    data-hs-overlay="#drawer-right">
+                                                    <span>Cancel</span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div id="drawer-top" class="tw-drawer tw-drawer-top">
+                                            <div class="container mx-auto">
+                                                <div class="tw-drawer-header">
+                                                    <h5>Drawer Top</h5>
+
+                                                    <button type="button" class="tw-modal-close" data-dismiss="drawer">
+                                                        <i class="icon-[mdi--close]"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="tw-drawer-body">
+                                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Incidunt iure tempora a blanditiis inventore voluptatibus
+                                                        cupiditate, consectetur maiores architecto deleniti omnis
+                                                        voluptatem facilis officiis odio harum quasi quae atque
+                                                        necessitatibus.
+                                                    </p>
+                                                </div>
+                                                <div class="tw-drawer-footer">
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-secondary"
+                                                        data-dismiss="drawer">
+                                                        Cancel
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary">Confirm</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="drawer-bottom" class="tw-drawer tw-drawer-bottom">
+                                            <div class="container mx-auto">
+                                                <div class="tw-drawer-header">
+                                                    <h5>Drawer Bottom</h5>
+
+                                                    <button type="button" class="tw-modal-close" data-dismiss="drawer">
+                                                        <i class="icon-[mdi--close]"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="tw-drawer-body">
+                                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        Incidunt iure tempora a blanditiis inventore voluptatibus
+                                                        cupiditate, consectetur maiores architecto deleniti omnis
+                                                        voluptatem facilis officiis odio harum quasi quae atque
+                                                        necessitatibus.
+                                                    </p>
+                                                </div>
+                                                <div class="tw-drawer-footer">
+                                                    <button
+                                                        type="button"
+                                                        class="btn btn-secondary"
+                                                        data-dismiss="drawer">
+                                                        Cancel
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary">Confirm</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Drawer Placement Ends -->
+
+                        <!-- Card: Controlled Drawer Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Controlled Drawer</h4>
+
+                                <p class="card-subtitle">
+                                    To control the drawer via javascript, use <code>createDrawer()</code> global
+                                    function to initialize the drawer with default options.
+                                </p>
+
+                                <div class="code-viewer mt-4">
+                                    <div class="code-viewer-content">
+                                        <button
+                                            class="btn btn-primary"
+                                            type="button"
+                                            data-hs-overlay="#drawer-controlled">
+                                            Controlled Drawer
+                                        </button>
+
+                                        <div id="drawer-controlled" class="tw-drawer tw-drawer-right">
+                                            <div class="tw-drawer-header">
+                                                <h5>Controlled Drawer</h5>
+
+                                                <button type="button" class="tw-modal-close" data-dismiss="drawer">
+                                                    <i class="icon-[mdi--close]"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="tw-drawer-body">
+                                                <p class="text-sm text-slate-600 dark:text-slate-300">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
+                                                    iure tempora a blanditiis inventore voluptatibus cupiditate,
+                                                    consectetur maiores architecto deleniti omnis voluptatem facilis
+                                                    officiis odio harum quasi quae atque necessitatibus.
+                                                </p>
+                                            </div>
+
+                                            <div class="tw-drawer-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="drawer">
+                                                    <span>Cancel</span>
+                                                </button>
+
+                                                <button type="button" class="btn btn-primary">
+                                                    <span>Confirm</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Controlled Drawer Ends -->
+
+                        <!-- Card: Disable keypress Drawer Starts -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Disable Drawer Keypress</h4>
+
+                                <p class="card-subtitle">
+                                    Set <code>data-keyboard</code> attribute to <code>false</code> to disable the ESC
+                                    close functionality of drawer.
+                                </p>
+
+                                <div class="code-viewer mt-4">
+                                    <div class="code-viewer-content">
+                                        <button
+                                            class="btn btn-primary"
+                                            type="button"
+                                            data-hs-overlay="#disable-keypress-drawer">
+                                            Disable Drawer Keypresse
+                                        </button>
+
+                                        <div
+                                            id="disable-keypress-drawer"
+                                            class="tw-drawer tw-drawer-right"
+                                            data-keyboard="false">
+                                            <div class="tw-drawer-header">
+                                                <h5>Disable Drawer Keypress</h5>
+
+                                                <button type="button" class="tw-modal-close" data-dismiss="drawer">
+                                                    <i class="icon-[mdi--close]"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="tw-drawer-body">
+                                                <p class="text-sm text-slate-600 dark:text-slate-300">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt
+                                                    iure tempora a blanditiis inventore voluptatibus cupiditate,
+                                                    consectetur maiores architecto deleniti omnis voluptatem facilis
+                                                    officiis odio harum quasi quae atque necessitatibus.
+                                                </p>
+                                            </div>
+
+                                            <div class="tw-drawer-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="drawer">
+                                                    <span>Cancel</span>
+                                                </button>
+
+                                                <button type="button" class="btn btn-primary">
+                                                    <span>Confirm</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Disable keypress Drawer Ends -->
+                    </div>
+                    <!-- Drawer Ends -->
                 </main>
 
                 <footer class="footer" :class="footerType">

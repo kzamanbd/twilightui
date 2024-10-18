@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>ApexCharts - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,536 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>ApexCharts</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Charts </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> ApexCharts </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="space-y-4">
+                        <div class="mb-4 grid gap-4 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Basic Line Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo">
+                                            <div id="apex_line1" style="min-height: 365px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Line with Data Labels</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo">
+                                            <div id="apex_line2" style="min-height: 365px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Basic Area Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo">
+                                            <div id="apex_area1" style="min-height: 375px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">rea Chart - Datetime X-Axis</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo">
+                                            <div class="toolbar flex space-x-2">
+                                                <button
+                                                    class="btn rounded bg-gray-100 px-3 py-2 text-sm font-medium text-indigo-700 hover:bg-opacity-50 hover:text-black focus:bg-opacity-50 focus:text-black focus:outline-none dark:bg-slate-700 dark:text-slate-300"
+                                                    id="one_month">
+                                                    1M
+                                                </button>
+                                                <button
+                                                    class="btn rounded bg-gray-100 px-3 py-2 text-sm font-medium text-indigo-700 hover:bg-opacity-50 hover:text-black focus:bg-opacity-50 focus:text-black focus:outline-none dark:bg-slate-700 dark:text-slate-300"
+                                                    id="six_months">
+                                                    6M
+                                                </button>
+                                                <button
+                                                    class="btn active rounded bg-gray-100 px-3 py-2 text-sm font-medium text-indigo-700 hover:bg-opacity-50 hover:text-black focus:bg-opacity-50 focus:text-black focus:outline-none dark:bg-slate-700 dark:text-slate-300"
+                                                    id="one_year">
+                                                    1Y
+                                                </button>
+                                                <button
+                                                    class="btn rounded bg-gray-100 px-3 py-2 text-sm font-medium text-indigo-700 hover:bg-opacity-50 hover:text-black focus:bg-opacity-50 focus:text-black focus:outline-none dark:bg-slate-700 dark:text-slate-300"
+                                                    id="ytd">
+                                                    YTD
+                                                </button>
+                                                <button
+                                                    class="btn rounded bg-gray-100 px-3 py-2 text-sm font-medium text-indigo-700 hover:bg-opacity-50 hover:text-black focus:bg-opacity-50 focus:text-black focus:outline-none dark:bg-slate-700 dark:text-slate-300"
+                                                    id="all">
+                                                    ALL
+                                                </button>
+                                            </div>
+                                            <div id="apex_area2" style="min-height: 365px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Basic Column Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo">
+                                            <div id="apex_column1" style="min-height: 411px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Column Chart With Datalabels</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo">
+                                            <div id="apex_column2" style="min-height: 395px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Basic Bar Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo">
+                                            <div id="apex_bar" style="min-height: 395px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Multiple Y-Axis Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo">
+                                            <div id="apex_mixed" style="min-height: 395px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">3D Bubble Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo">
+                                            <div id="apex_bubble" style="min-height: 395px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Simple Candlestick Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo">
+                                            <div id="apex_candlestick" style="min-height: 335px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Basic Treemap</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo my-0">
+                                            <div id="treemap_1" style="min-height: 365px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Treemap Color</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo my-0">
+                                            <div id="treemap_2" style="min-height: 365px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Polar Area</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo my-0">
+                                            <div id="polar_Area_1" style="min-height: 247.7px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-6 xl:col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Monochrome</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo my-0">
+                                            <div id="polar_Area_2" style="min-height: 286.417px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end inner-grid-->
+                        <div class="mb-4 grid gap-4 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
+                            <div class="sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Simple Pie Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="">
+                                            <div id="apex_pie1" style="min-height: 287.7px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Gradient Donut Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="">
+                                            <div id="apex_pie2" style="min-height: 287.7px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Patterned Donut Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="">
+                                            <div id="apex_pie3" style="min-height: 287.7px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Basic RadialBar Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo m-0">
+                                            <div id="apex_radialbar1" style="min-height: 298.7px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Multiple RadialBars</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo m-0">
+                                            <div id="apex_radialbar2" style="min-height: 328.7px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Stroked Circular Guage</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="chart-demo m-0">
+                                            <div id="apex_radialbar3" style="min-height: 334.275px"></div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end grid-->
+
+                        <div class="mb-4 grid gap-4 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
+                            <div class="sm:col-span-12 md:col-span-12 lg:col-span-12 xl:col-span-12">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Simple Pie Chart</h4>
+                                    </div>
+                                    <!--end card-header-->
+                                    <div class="card-body">
+                                        <div class="mb-4 grid gap-4 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12">
+                                            <div class="sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4">
+                                                <div id="spark1" style="min-height: 160px"></div>
+                                            </div>
+                                            <!--end col-->
+                                            <div class="sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4">
+                                                <div id="spark2" style="min-height: 160px"></div>
+                                            </div>
+                                            <!--end col-->
+                                            <div class="sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-4">
+                                                <div id="spark3" style="min-height: 160px"></div>
+                                            </div>
+                                            <!--end col-->
+                                        </div>
+                                        <!--end grid-->
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end grid-->
+                    </div>
+
+                    <div class="mt-4 space-y-4">
+                        <div class="grid grid-cols-1 gap-5 xl:grid-cols-12">
+                            <div class="col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6>Line with Data Labels</h6>
+                                    </div>
+                                    <div class="card-body flex flex-wrap gap-3">
+                                        <div
+                                            id="line_chart_datalabel"
+                                            data-colors='["#5156be", "#2ab57d"]'
+                                            class="w-full"
+                                            style="min-height: 395px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6>Dashed Line</h6>
+                                    </div>
+                                    <div class="card-body flex flex-wrap gap-3">
+                                        <div
+                                            id="line_chart_dashed"
+                                            data-colors='["#5156be", "#fd625e", "#2ab57d"]'
+                                            class="w-full"
+                                            style="min-height: 395px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-5 xl:grid-cols-12">
+                            <div class="col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6>Spline Area</h6>
+                                    </div>
+                                    <div class="card-body flex flex-wrap gap-3">
+                                        <div
+                                            id="spline_area"
+                                            data-colors='["#5156be", "#2ab57d"]'
+                                            class="w-full"
+                                            style="min-height: 365px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6>Column Chart</h6>
+                                    </div>
+                                    <div class="card-body flex flex-wrap gap-3">
+                                        <div
+                                            id="column_chart"
+                                            data-colors='["#2ab57d", "#5156be", "#fd625e"]'
+                                            class="w-full"
+                                            style="min-height: 365px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-5 xl:grid-cols-12">
+                            <div class="col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6>Column with Data Labels</h6>
+                                    </div>
+                                    <div class="card-body flex flex-wrap gap-3">
+                                        <div
+                                            id="column_chart_datalabel"
+                                            data-colors='["#5156be"]'
+                                            class="w-full"
+                                            style="min-height: 365px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6>Bar Chart</h6>
+                                    </div>
+                                    <div class="card-body flex flex-wrap gap-3">
+                                        <div
+                                            id="bar_chart"
+                                            data-colors='["#2ab57d"]'
+                                            class="w-full"
+                                            style="min-height: 365px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-5 xl:grid-cols-12">
+                            <div class="col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6>Line, Column &amp; Area Chart</h6>
+                                    </div>
+                                    <div class="card-body flex flex-wrap gap-3">
+                                        <div
+                                            id="mixed_chart"
+                                            data-colors='["#fd625e", "#5156be", "#2ab57d"]'
+                                            class="w-full"
+                                            style="min-height: 365px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-span-6">
+                                <div class="card h-full">
+                                    <div class="card-header">
+                                        <h6>Radial Chart</h6>
+                                    </div>
+                                    <div class="card-body flex flex-wrap gap-3">
+                                        <div
+                                            id="radial_chart"
+                                            data-colors='["#5156be", "#2ab57d", "#fd625e", "#ffbf53"]'
+                                            class="w-full"
+                                            style="min-height: 348.7px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
@@ -1369,5 +1883,10 @@
                 </nav>
             </div>
         </div>
+        <script src="/assets/js/plugins.js" type="module"></script>
+        <script src="/features/charts/irregular-data-series.js"></script>
+        <script src="/features/charts/ohlc.js"></script>
+        <script src="/features/charts/apex.init.js"></script>
+        <script src="/features/charts/apex2.init.js"></script>
     </body>
 </html>

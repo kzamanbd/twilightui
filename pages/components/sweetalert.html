@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Sweet Alerts - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1082,23 +1082,256 @@
                 <main class="tw--content">
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
-                        <div class="left-link">
-                            <h3>Untitled</h3>
+                        <div class="left-link flex items-center gap-2">
+                            <h3>SweetAlert2</h3>
+                            <a
+                                href="https://sweetalert.js.org/docs/"
+                                target="_blank"
+                                class="dark:text-primary-dark flex items-center space-x-1 text-sm font-medium text-primary">
+                                <div class="mr-1 flex rounded-full p-1.5">
+                                    <span class="icon-[mdi--information-outline]"> info </span>
+                                </div>
+                                <span> Documentation </span>
+                            </a>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Components </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> SweetAlert2 </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="sweet-alerts space-y-8">
+                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                            <!-- basic -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">Basic message</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-primary" @click="displayAlert(1)">
+                                            Basic message
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- message -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">Success message</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-secondary" @click="displayAlert(2)">
+                                            Success message!
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Dynamic -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">Dynamic queue</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-success" @click="displayAlert(3)">
+                                            Dynamic queue
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- A title with text -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">
+                                        A title with a text under
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-danger" @click="displayAlert(4)">
+                                            Title &amp; text
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Chaining modals -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">Chaining modals (queue)</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-warning" @click="displayAlert(5)">
+                                            Chaining modals (queue)
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Animation -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">Custom animation</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-info" @click="displayAlert(6)">
+                                            Custom animation
+                                        </button>
+                                    </div>
+                                    <div
+                                        class="fixed inset-0 z-[999] hidden bg-[black]/60 px-4 transition-all duration-300">
+                                        <div
+                                            class="card absolute left-1/2 top-1/2 w-11/12 -translate-x-1/2 -translate-y-1/2 text-center sm:w-[480px]">
+                                            <h3 class="mb-5 text-2xl font-bold text-[#3b3f5c] dark:text-white-light">
+                                                Custom animation with Animate.css
+                                            </h3>
+                                            <button type="button" class="btn btn-info">Ok</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Auto close timer -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">
+                                        Message with auto close timer
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-primary" @click="displayAlert(7)">
+                                            Message timer
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Custom image -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">
+                                        Message with custom image
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-secondary" @click="displayAlert(8)">
+                                            Message with custom image
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Custom HTML -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">
+                                        Custom HTML description and buttons
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-danger" @click="displayAlert(9)">
+                                            Custom Description &amp; buttons
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Warning message -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">
+                                        Warning message, with "Confirm" button
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-success" @click="displayAlert(10)">
+                                            Confirm
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Cancel -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">
+                                        Execute something else for "Cancel".
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-warning" @click="displayAlert(11)">
+                                            Addition else for "Cancel".
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Custom Style -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">
+                                        A message with custom width, padding and background
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-info" @click="displayAlert(12)">
+                                            Custom Message
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Footer -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">With Footer</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-dark" @click="displayAlert(13)">
+                                            With Footer
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- RTL -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">RTL support</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center" id="rtl-container">
+                                        <button type="button" class="btn btn-primary" @click="displayAlert(14)">
+                                            RTL
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Mixin -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="text-lg font-semibold dark:text-white-light">Mixin</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="flex items-center justify-center">
+                                        <button type="button" class="btn btn-secondary" @click="displayAlert(15)">
+                                            Mixin
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
@@ -1369,5 +1602,7 @@
                 </nav>
             </div>
         </div>
+        <script src="/assets/js/plugins.js" type="module"></script>
+        <script src="/features/sweetalert.js"></script>
     </body>
 </html>

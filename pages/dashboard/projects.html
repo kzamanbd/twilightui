@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Projects - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,715 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Projects</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Dashboard </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Projects </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+                        <div class="sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="flex flex-wrap content-between">
+                                        <div class="">
+                                            <p class="text-xs font-medium uppercase text-slate-400">Projects</p>
+                                            <h4 class="text-center text-[20px] font-medium dark:text-slate-300">78</h4>
+                                        </div>
+                                        <div class="ml-auto self-center">
+                                            <span class="icon-[mdi--gamepad-circle-down] text-3xl text-slate-400">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                        <div class="sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="flex flex-wrap content-between">
+                                        <div class="">
+                                            <p class="text-xs font-medium uppercase text-slate-400">Tasks</p>
+                                            <h4 class="text-center text-[20px] font-medium dark:text-slate-300">
+                                                40
+                                                <span
+                                                    class="rounded bg-green-100 px-2 py-[2px] text-[10px] font-medium text-green-500 focus:outline-none dark:text-green-600">
+                                                    Active
+                                                </span>
+                                            </h4>
+                                        </div>
+                                        <div class="ml-auto self-center">
+                                            <span class="icon-[mdi--calendar-check-outline] text-3xl text-slate-400">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                        <div class="sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="flex flex-wrap content-between">
+                                        <div class="">
+                                            <p class="text-xs font-medium uppercase text-slate-400">Total Hours</p>
+                                            <h4 class="text-center text-[20px] font-medium dark:text-slate-300">
+                                                801:30
+                                            </h4>
+                                        </div>
+                                        <div class="ml-auto self-center">
+                                            <span class="icon-[mdi--clock-outline] text-3xl text-slate-400">
+                                                schedule
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                        <div class="sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="flex flex-wrap content-between">
+                                        <div class="">
+                                            <p class="text-xs font-medium uppercase text-slate-400">Budget</p>
+                                            <h4 class="text-center text-[20px] font-medium dark:text-slate-300">
+                                                $24100
+                                            </h4>
+                                        </div>
+                                        <div class="ml-auto self-center">
+                                            <span class="icon-[mdi--currency-usd] text-3xl text-slate-400"> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end inner-grid-->
+                    <div class="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+                        <div
+                            class="order-1 sm:order-1 sm:col-span-1 md:col-span-1 lg:order-1 lg:col-span-1 xl:order-1 xl:col-span-1">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Tasks Performance</h4>
+                                </div>
+                                <!--end card-header-->
+                                <div class="card-body">
+                                    <div id="task_status" class="apex-charts" style="min-height: 291.65px"></div>
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                        <div
+                            class="order-2 sm:order-3 sm:col-span-1 md:col-span-2 lg:order-3 lg:col-span-2 xl:order-2 xl:col-span-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="budgets" class="apex-charts" style="min-height: 365px"></div>
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                        <div
+                            class="order-3 sm:order-2 sm:col-span-1 md:col-span-1 lg:order-2 lg:col-span-1 xl:order-3 xl:col-span-1">
+                            <div class="card h-full">
+                                <div class="card-body">
+                                    <img src="/images/products/p-1.png" class="mx-auto my-3 h-20 rounded-full" />
+                                    <h4 class="text-center text-[18px] font-medium dark:text-slate-300">
+                                        Management System
+                                    </h4>
+                                    <p class="text-center text-xs font-medium uppercase text-slate-400">#123658</p>
+                                    <div class="mt-4 flex items-center space-x-4">
+                                        <div class="flex items-center">
+                                            <input
+                                                type="checkbox"
+                                                class="form-checkbox"
+                                                id="checkbox-1"
+                                                name="checkbox-1"
+                                                value="1"
+                                                checked="" />
+                                            <label
+                                                for="checkbox-1"
+                                                class="m-0 cursor-pointer font-medium dark:text-slate-400">
+                                                Planing
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input
+                                                type="checkbox"
+                                                class="form-checkbox"
+                                                id="checkbox-2"
+                                                name="checkbox-2"
+                                                value="1"
+                                                checked="" />
+                                            <label
+                                                for="checkbox-2"
+                                                class="m-0 cursor-pointer font-medium dark:text-slate-400">
+                                                Design
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input
+                                                type="checkbox"
+                                                class="form-checkbox"
+                                                id="checkbox-3"
+                                                name="checkbox-3"
+                                                value="1" />
+                                            <label
+                                                for="checkbox-3"
+                                                class="m-0 cursor-pointer font-medium dark:text-slate-400">
+                                                Design
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input
+                                                type="checkbox"
+                                                class="form-checkbox"
+                                                id="checkbox-4"
+                                                name="checkbox-4"
+                                                value="1" />
+                                            <label
+                                                for="checkbox-4"
+                                                class="m-0 cursor-pointer font-medium dark:text-slate-400">
+                                                Testing
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end card-body-->
+                                <div class="border-b border-dashed border-slate-200 dark:border-slate-700"></div>
+                                <div class="card-body">
+                                    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+                                        <div class="sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
+                                            <div class="flex">
+                                                <img
+                                                    src="/images/users/avatar-1.png"
+                                                    class="mx-auto h-8 cursor-pointer rounded-full hover:z-10" />
+                                                <img
+                                                    src="/images/users/avatar-2.png"
+                                                    class="mx-auto -ml-8 h-8 cursor-pointer rounded-full hover:z-10" />
+                                                <img
+                                                    src="/images/users/avatar-3.png"
+                                                    class="mx-auto -ml-8 h-8 cursor-pointer rounded-full hover:z-10" />
+                                                <img
+                                                    src="/images/users/avatar-4.png"
+                                                    class="mx-auto -ml-8 h-8 cursor-pointer rounded-full hover:z-10" />
+                                                <img
+                                                    src="/images/users/avatar-5.png"
+                                                    class="mx-auto -ml-8 h-8 cursor-pointer rounded-full hover:z-10" />
+                                                <img
+                                                    src="/images/users/avatar-6.png"
+                                                    class="mx-auto -ml-8 h-8 cursor-pointer rounded-full hover:z-10" />
+                                                <img
+                                                    src="/images/users/avatar-7.png"
+                                                    class="mx-auto -ml-8 h-8 cursor-pointer rounded-full hover:z-10" />
+                                            </div>
+                                        </div>
+                                        <div class="sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
+                                            <button
+                                                class="w-full rounded bg-gray-100 py-2 text-sm font-medium text-indigo-700 hover:bg-opacity-50 hover:text-black focus:bg-opacity-50 focus:text-black focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2">
+                                                More Details
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end inner-grid-->
+
+                    <div x-data="projects" class="mt-6 flex min-w-full overflow-y-auto">
+                        <div class="relative flex grid-cols-5 gap-4">
+                            <div class="group col-span-1 w-72">
+                                <div class="mb-4 flex border-b-2 border-pink-500 pb-2">
+                                    <div>
+                                        <h5 class="text-sm font-medium uppercase dark:text-slate-300">Meeting</h5>
+                                        <h6 class="text-sm font-medium dark:text-slate-300">
+                                            3 Issues - <span class="text-slate-400">20 Points</span>
+                                        </h6>
+                                    </div>
+                                    <div class="ml-auto self-center">
+                                        <button
+                                            class="hidden h-7 w-7 self-center rounded bg-blue-100 text-blue-500 hover:bg-blue-700 hover:text-white group-hover:block">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <span
+                                            class="rounded bg-green-100 px-2 py-[2px] text-[11px] font-medium text-green-500 focus:outline-none dark:text-green-600"
+                                            >Mobile App</span
+                                        >
+                                        <h4 class="my-2 text-[16px] font-medium dark:text-slate-300">
+                                            Mobile Account Setting
+                                        </h4>
+                                        <p class="text-sm font-medium text-slate-400">
+                                            Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                        </p>
+                                        <div
+                                            class="my-4 border-b border-dashed border-slate-200 dark:border-slate-700"></div>
+                                        <div class="flex flex-wrap content-between">
+                                            <div class="self-center">
+                                                <a href="" class="text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--link] text-xs text-slate-400"> </span>
+                                                    6
+                                                </a>
+                                                <a href="" class="ml-2 text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--comment] text-xs text-slate-400"></span>
+                                                    3
+                                                </a>
+                                            </div>
+                                            <div class="ml-auto self-center">
+                                                <div class="flex">
+                                                    <img
+                                                        src="/images/users/avatar-1.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                    <img
+                                                        src="/images/users/avatar-2.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                    <img
+                                                        src="/images/users/avatar-3.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <span
+                                            class="rounded bg-pink-100 px-2 py-[2px] text-[11px] font-medium text-pink-500 focus:outline-none dark:text-pink-600"
+                                            >UI/UX</span
+                                        >
+                                        <h4 class="my-2 text-[16px] font-medium dark:text-slate-300">Dribbble Shot</h4>
+                                        <p class="rounded-md bg-slate-100 p-3">
+                                            <img src="/images/widgets/ill-2.png" class="mx-auto" />
+                                        </p>
+                                        <div
+                                            class="my-4 border-b border-dashed border-slate-200 dark:border-slate-700"></div>
+                                        <div class="flex flex-wrap content-between">
+                                            <div class="self-center">
+                                                <a href="" class="text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--link] text-xs text-slate-400"> </span>
+                                                    6
+                                                </a>
+                                                <a href="" class="ml-2 text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--comment] text-xs text-slate-400"></span>
+                                                    3
+                                                </a>
+                                            </div>
+                                            <div class="ml-auto self-center">
+                                                <div class="flex">
+                                                    <img
+                                                        src="/images/users/avatar-4.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="group col-span-1 w-72">
+                                <div class="mb-4 flex border-b-2 border-yellow-500 pb-2">
+                                    <div>
+                                        <h5 class="text-sm font-medium uppercase dark:text-slate-300">Todo</h5>
+                                        <h6 class="text-sm font-medium dark:text-slate-300">
+                                            3 Issues - <span class="text-slate-400">20 Points</span>
+                                        </h6>
+                                    </div>
+                                    <div class="ml-auto self-center">
+                                        <button
+                                            class="hidden h-7 w-7 self-center rounded bg-blue-100 text-blue-500 hover:bg-blue-700 hover:text-white group-hover:block">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <span
+                                            class="rounded bg-yellow-50 px-2 py-[2px] text-[11px] font-medium text-yellow-500 focus:outline-none dark:text-yellow-600">
+                                            Pharma Web
+                                        </span>
+                                        <h4 class="my-2 text-[16px] font-medium dark:text-slate-300">Covid Vaccine</h4>
+
+                                        <div
+                                            class="flex flex-wrap content-between rounded-md bg-slate-50 p-3 dark:bg-slate-700">
+                                            <div class="flex items-center">
+                                                <span class="icon-[mdi--folder] mr-2 text-2xl text-slate-400"></span>
+                                                <span class="text-xs font-medium text-slate-500">25.7MB</span>
+                                            </div>
+                                            <div class="ml-auto self-center">
+                                                <button
+                                                    class="h-6 w-6 self-center rounded bg-slate-200 text-slate-500 hover:bg-slate-700 hover:text-white dark:bg-slate-800 dark:hover:bg-slate-900">
+                                                    <span class="icon-[mdi--download] text-xs"></span>
+                                                </button>
+                                                <button
+                                                    class="h-6 w-6 self-center rounded bg-slate-200 text-slate-500 hover:bg-slate-700 hover:text-white dark:bg-slate-800 dark:hover:bg-slate-900">
+                                                    <span class="icon-[mdi--cloud-download-outline] text-xs"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="my-4 border-b border-dashed border-slate-200 dark:border-slate-700"></div>
+                                        <div class="flex flex-wrap content-between">
+                                            <div class="self-center">
+                                                <a href="" class="text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--link] text-xs text-slate-400"> </span>
+                                                    6
+                                                </a>
+                                                <a href="" class="ml-2 text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--comment] text-xs text-slate-400"></span>
+                                                    3
+                                                </a>
+                                            </div>
+                                            <div class="ml-auto self-center">
+                                                <div class="flex">
+                                                    <img
+                                                        src="/images/users/avatar-8.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <span
+                                            class="rounded bg-purple-100 px-2 py-[2px] text-[11px] font-medium text-purple-500 focus:outline-none dark:text-purple-600">
+                                            Money App
+                                        </span>
+                                        <h4 class="my-2 text-[16px] font-medium dark:text-slate-300">INR to USD</h4>
+                                        <p class="text-sm font-medium text-slate-400">
+                                            Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                        </p>
+                                        <div
+                                            class="my-4 border-b border-dashed border-slate-200 dark:border-slate-700"></div>
+                                        <div class="flex flex-wrap content-between">
+                                            <div class="self-center">
+                                                <a href="" class="text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--link] text-xs text-slate-400"> </span>
+                                                    6
+                                                </a>
+                                                <a href="" class="ml-2 text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--comment] text-xs text-slate-400"></span>
+                                                    3
+                                                </a>
+                                            </div>
+                                            <div class="ml-auto self-center">
+                                                <div class="flex">
+                                                    <img
+                                                        src="/images/users/avatar-6.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                    <img
+                                                        src="/images/users/avatar-5.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+
+                            <div class="group col-span-1 w-72">
+                                <div class="mb-4 flex border-b-2 border-green-500 pb-2">
+                                    <div>
+                                        <h5 class="text-sm font-medium uppercase dark:text-slate-300">In Progress</h5>
+                                        <h6 class="text-sm font-medium dark:text-slate-300">
+                                            3 Issues - <span class="text-slate-400">20 Points</span>
+                                        </h6>
+                                    </div>
+                                    <div class="ml-auto self-center">
+                                        <button
+                                            class="hidden h-7 w-7 self-center rounded bg-blue-100 text-blue-500 hover:bg-blue-700 hover:text-white group-hover:block">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <span
+                                            class="rounded bg-pink-100 px-2 py-[2px] text-[11px] font-medium text-pink-500 focus:outline-none dark:text-pink-600">
+                                            UI/UX
+                                        </span>
+                                        <h4 class="my-2 text-[16px] font-medium dark:text-slate-300">Dribbble Shot</h4>
+                                        <p class="rounded-md bg-slate-100 p-3">
+                                            <img src="/images/widgets/ill-1.png" class="mx-auto" />
+                                        </p>
+                                        <div
+                                            class="my-4 border-b border-dashed border-slate-200 dark:border-slate-700"></div>
+                                        <div class="flex flex-wrap content-between">
+                                            <div class="self-center">
+                                                <a href="" class="text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--link] text-xs text-slate-400"> </span>
+                                                    6
+                                                </a>
+                                                <a href="" class="ml-2 text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--comment] text-xs text-slate-400"></span>
+                                                    3
+                                                </a>
+                                            </div>
+                                            <div class="ml-auto self-center">
+                                                <div class="flex">
+                                                    <img
+                                                        src="/images/users/avatar-4.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <span
+                                            class="rounded bg-green-100 px-2 py-[2px] text-[11px] font-medium text-green-500 focus:outline-none dark:text-green-600">
+                                            Mobile App
+                                        </span>
+                                        <h4 class="my-2 text-[16px] font-medium dark:text-slate-300">
+                                            Mobile Account Setting
+                                        </h4>
+                                        <p class="text-sm font-medium text-slate-400">
+                                            Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                        </p>
+                                        <div
+                                            class="my-4 border-b border-dashed border-slate-200 dark:border-slate-700"></div>
+                                        <div class="flex flex-wrap content-between">
+                                            <div class="self-center">
+                                                <a href="" class="text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--link] text-xs text-slate-400"> </span>
+                                                    6
+                                                </a>
+                                                <a href="" class="ml-2 text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--comment] text-xs text-slate-400"></span>
+                                                    3
+                                                </a>
+                                            </div>
+                                            <div class="ml-auto self-center">
+                                                <div class="flex">
+                                                    <img
+                                                        src="/images/users/avatar-1.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                    <img
+                                                        src="/images/users/avatar-2.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                    <img
+                                                        src="/images/users/avatar-3.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="group col-span-1 w-72">
+                                <div class="mb-4 flex border-b-2 border-purple-500 pb-2">
+                                    <div>
+                                        <h5 class="text-sm font-medium uppercase dark:text-slate-300">Testing</h5>
+                                        <h6 class="text-sm font-medium dark:text-slate-300">
+                                            3 Issues - <span class="text-slate-400">20 Points</span>
+                                        </h6>
+                                    </div>
+                                    <div class="ml-auto self-center">
+                                        <button
+                                            class="hidden h-7 w-7 self-center rounded bg-blue-100 text-blue-500 hover:bg-blue-700 hover:text-white group-hover:block">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <span
+                                            class="rounded bg-purple-100 px-2 py-[2px] text-[11px] font-medium text-purple-500 focus:outline-none dark:text-purple-600">
+                                            Money App
+                                        </span>
+                                        <h4 class="my-2 text-[16px] font-medium dark:text-slate-300">INR to USD</h4>
+                                        <p class="text-sm font-medium text-slate-400">
+                                            Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                        </p>
+                                        <div
+                                            class="my-4 border-b border-dashed border-slate-200 dark:border-slate-700"></div>
+                                        <div class="flex flex-wrap content-between">
+                                            <div class="self-center">
+                                                <a href="" class="text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--link] text-xs text-slate-400"> </span>
+                                                    6
+                                                </a>
+                                                <a href="" class="ml-2 text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--comment] text-xs text-slate-400"></span>
+                                                    3
+                                                </a>
+                                            </div>
+                                            <div class="ml-auto self-center">
+                                                <div class="flex">
+                                                    <img
+                                                        src="/images/users/avatar-6.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                    <img
+                                                        src="/images/users/avatar-5.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <span
+                                            class="rounded bg-yellow-50 px-2 py-[2px] text-[11px] font-medium text-yellow-500 focus:outline-none dark:text-yellow-600">
+                                            Pharma Web
+                                        </span>
+                                        <h4 class="my-2 text-[16px] font-medium dark:text-slate-300">Covid Vaccine</h4>
+
+                                        <div
+                                            class="flex flex-wrap content-between rounded-md bg-slate-50 p-3 dark:bg-slate-700">
+                                            <div class="flex items-center">
+                                                <span class="icon-[mdi--folder] mr-2 text-2xl text-slate-400"></span>
+                                                <span class="text-xs font-medium text-slate-500">25.7MB</span>
+                                            </div>
+                                            <div class="ml-auto self-center">
+                                                <button
+                                                    class="h-6 w-6 self-center rounded bg-slate-200 text-slate-500 hover:bg-slate-700 hover:text-white dark:bg-slate-800 dark:hover:bg-slate-900">
+                                                    <span class="icon-[mdi--download] text-xs"></span>
+                                                </button>
+                                                <button
+                                                    class="h-6 w-6 self-center rounded bg-slate-200 text-slate-500 hover:bg-slate-700 hover:text-white dark:bg-slate-800 dark:hover:bg-slate-900">
+                                                    <span class="icon-[mdi--cloud-download-outline] text-xs"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="my-4 border-b border-dashed border-slate-200 dark:border-slate-700"></div>
+                                        <div class="flex flex-wrap content-between">
+                                            <div class="self-center">
+                                                <a href="" class="text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--link] text-xs text-slate-400"> </span>
+                                                    6
+                                                </a>
+                                                <a href="" class="ml-2 text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--comment] text-xs text-slate-400"></span>
+                                                    3
+                                                </a>
+                                            </div>
+                                            <div class="ml-auto self-center">
+                                                <div class="flex">
+                                                    <img
+                                                        src="/images/users/avatar-8.png"
+                                                        class="mx-auto h-7 cursor-pointer rounded-full" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                            <div class="group col-span-1 w-72">
+                                <div class="mb-4 flex border-b-2 border-red-500 pb-2">
+                                    <div>
+                                        <h5 class="text-sm font-medium uppercase dark:text-slate-300">Done</h5>
+                                        <h6 class="text-sm font-medium dark:text-slate-300">
+                                            3 Issues - <span class="text-slate-400">20 Points</span>
+                                        </h6>
+                                    </div>
+                                    <div class="ml-auto self-center">
+                                        <button
+                                            class="hidden h-7 w-7 self-center rounded bg-blue-100 text-blue-500 hover:bg-blue-700 hover:text-white group-hover:block">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h4 class="my-2 text-[16px] font-medium dark:text-slate-300">
+                                            <span
+                                                class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-green-500/10">
+                                                <i class="icon-[mdi--check] text-xl text-green-400">check</i>
+                                            </span>
+                                            Mobile Account Setting
+                                        </h4>
+                                        <div class="mt-4">
+                                            <p
+                                                class="pb-1 text-right text-sm font-semibold leading-none text-slate-400">
+                                                100%
+                                            </p>
+                                        </div>
+                                        <div class="relative h-1 w-full rounded-full bg-gray-200">
+                                            <div class="h-1 w-full rounded-full bg-green-400"></div>
+                                        </div>
+                                        <div
+                                            class="my-4 border-b border-dashed border-slate-200 dark:border-slate-700"></div>
+                                        <div class="mt-4 flex flex-wrap content-between">
+                                            <div class="self-center">
+                                                <a href="" class="text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--link] text-xs text-slate-400"> </span>
+                                                    6
+                                                </a>
+                                                <a href="" class="ml-2 text-sm dark:text-slate-400">
+                                                    <span class="icon-[mdi--comment] text-xs text-slate-400"></span>
+                                                    3
+                                                </a>
+                                            </div>
+                                            <div class="ml-auto self-center">
+                                                <button
+                                                    class="w-full rounded bg-gray-100 px-3 py-2 text-sm font-medium text-indigo-700 hover:bg-opacity-50 hover:text-black focus:bg-opacity-50 focus:text-black focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2">
+                                                    Ckeck
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end card-body-->
+                                </div>
+                                <!--end card-->
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end inner-grid-->
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
@@ -1369,5 +2062,7 @@
                 </nav>
             </div>
         </div>
+        <script src="/assets/js/plugins.js" type="module"></script>
+        <script src="/features/dashboard/project.init.js"></script>
     </body>
 </html>

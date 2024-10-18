@@ -3,13 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Date Picker - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
         <!-- start:Core Style and Script -->
         <link rel="stylesheet" href="/assets/css/app.css" />
         <script type="module" src="/assets/js/app.js"></script>
+
+        <!-- date picker -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" />
     </head>
 
     <body>
@@ -1083,22 +1086,270 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Datetime Picker</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Form Elements </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Datetime Picker </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="space-y-4" x-data="form">
+                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                            <!-- Basic -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Basic</h6>
+                                </div>
+                                <div class="card-body">
+                                    <input
+                                        id="basic"
+                                        x-model="date1"
+                                        class="flatpickr-input form-input"
+                                        type="text"
+                                        readonly="readonly" />
+                                </div>
+                            </div>
+
+                            <!-- Date & time -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Date Time</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-2.5">
+                                        Use
+                                        <code class="text-danger">{enableTime: true, dateFormat: 'Y-m-d H:i'}</code>
+                                        option to enable time support
+                                    </div>
+                                    <input
+                                        id="dateTime"
+                                        x-model="date2"
+                                        class="flatpickr-input form-input"
+                                        type="text"
+                                        readonly="readonly" />
+                                </div>
+                            </div>
+
+                            <!-- range-calendar -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Range Calendar</h6>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="mb-2.5">
+                                        Use <code class="text-danger">{mode: 'range'}</code> select the date with range.
+                                    </div>
+                                    <input
+                                        id="range-calendar"
+                                        x-model="date3"
+                                        class="flatpickr-input form-input"
+                                        type="text"
+                                        readonly="readonly" />
+                                </div>
+                            </div>
+
+                            <!-- preloading time -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Preloading Time</h6>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="mb-2.5">
+                                        Use
+                                        <code class="text-danger">
+                                            {noCalendar: true, enableTime: true, dateFormat: 'H:i'}
+                                        </code>
+                                        with Date Time options to disable calendar and show time picker only.
+                                    </div>
+                                    <input
+                                        id="preloading-time"
+                                        x-model="date4"
+                                        class="flatpickr-input form-input"
+                                        type="text"
+                                        readonly="readonly" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- range picker -->
+                        <div class="inline-block rounded bg-[#009688]/[.26] px-2 py-1 text-base text-[#009688]">
+                            Javascript Range Slider
+                        </div>
+                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                            <!-- Top-Left -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Position : Top-Left</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="font-bold">
+                                        <span
+                                            x-text="slider1"
+                                            class="inline-block rounded border border-white-light px-2 py-1 text-primary dark:border-dark">
+                                        </span>
+                                        <span>%</span>
+                                    </div>
+                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider1" />
+                                </div>
+                            </div>
+
+                            <!-- Top-right -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Position : Top-right</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-right font-bold rtl:text-left">
+                                        <span
+                                            x-text="slider2"
+                                            class="inline-block rounded border border-white-light px-2 py-1 text-primary dark:border-dark">
+                                        </span>
+                                        <span>%</span>
+                                    </div>
+                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider2" />
+                                </div>
+                            </div>
+
+                            <!-- bottom-left -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Position : Bottom-Left</h6>
+                                </div>
+                                <div class="card-body">
+                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider3" />
+                                    <div class="font-bold">
+                                        <span
+                                            x-text="slider3"
+                                            class="inline-block rounded border border-white-light px-2 py-1 text-primary dark:border-dark">
+                                        </span>
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom-right -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Position : Bottom-right</h6>
+                                </div>
+                                <div class="card-body">
+                                    <input type="range" class="w-full py-2.5" min="0" max="100" x-model="slider4" />
+                                    <div class="text-right font-bold rtl:text-left">
+                                        <span
+                                            x-text="slider4"
+                                            class="inline-block rounded border border-white-light px-2 py-1 text-primary dark:border-dark">
+                                        </span>
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Noui slider -->
+                        <div class="inline-block rounded bg-[#009688]/[.26] px-2 py-1 text-base text-[#009688]">
+                            noUI Slider
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                            <!-- Using HTML5 input elements -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Using HTML5 input elements</h6>
+                                </div>
+                                <div class="card-body pt-5">
+                                    <div class="mt-5" id="noui_slider1"></div>
+                                    <div class="my-4 grid grid-cols-1 gap-8 lg:grid-cols-2">
+                                        <div class="mb-3">
+                                            <select
+                                                x-model="nouiMin1"
+                                                class="form-select w-full"
+                                                id="select"
+                                                @change="selectUpdateValue()">
+                                                <template x-for="(i, index) in 100" x-model="nouiMin1">
+                                                    <option :key="i" x-text="index"></option>
+                                                </template>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <input
+                                                type="number"
+                                                id="input"
+                                                x-model="nouiMax1"
+                                                class="form-input"
+                                                :min="-20"
+                                                :max="100"
+                                                step="1"
+                                                @change="selectUpdateValue()"
+                                                min="-20"
+                                                max="100" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Non linear slider -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h6>Non linear slider</h6>
+                                </div>
+                                <div class="card-body pt-5">
+                                    <div class="mt-5" id="noui_slider2"></div>
+
+                                    <div class="my-5 grid grid-cols-1 gap-8 font-bold lg:grid-cols-2">
+                                        <div>
+                                            <span class="mr-2 text-primary" id="nouiMin2" x-text="nouiMin2">500</span>
+                                            <span
+                                                class="dark:text-white-dark rounded border border-white-light px-2 py-1 text-dark dark:border-dark"
+                                                id="nouiMin2Perc"
+                                                x-text="nouiMin2Perc">
+                                            </span>
+                                        </div>
+                                        <div class="text-right rtl:text-left">
+                                            <span class="mr-2 text-primary" id="nouiMax2" x-text="nouiMax2">4000</span>
+                                            <span
+                                                class="dark:text-white-dark rounded border border-white-light px-2 py-1 text-dark dark:border-dark"
+                                                id="nouiMax2Perc"
+                                                x-text="nouiMax2Perc">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Locking slider -->
+                            <div class="card lg:col-span-2">
+                                <div class="card-header">
+                                    <h6>Locking sliders together</h6>
+                                </div>
+                                <div class="card-body pt-5">
+                                    <div class="my-5" id="locking_slider1"></div>
+                                    <div class="mb-10 font-bold text-primary" id="locking_slider1_value">60.00</div>
+                                    <div class="my-5" id="locking_slider2"></div>
+                                    <div class="mb-10 font-bold text-primary" id="locking_slider2_value">80.00</div>
+                                    <div class="text-right rtl:text-left">
+                                        <button
+                                            type="button"
+                                            class="btn btn-primary"
+                                            id="lockbutton"
+                                            @click="lockedState = !lockedState"
+                                            x-text="lockedState ? 'Unlock':'Lock'"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
@@ -1369,5 +1620,8 @@
                 </nav>
             </div>
         </div>
+        <script src="/assets/js/plugins.js" type="module"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
+        <script src="/features/datepicker.js"></script>
     </body>
 </html>

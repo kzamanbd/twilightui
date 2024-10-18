@@ -3,13 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Quill & Markdown Editor - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
         <!-- start:Core Style and Script -->
         <link rel="stylesheet" href="/assets/css/app.css" />
         <script type="module" src="/assets/js/app.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css" />
     </head>
 
     <body>
@@ -1083,22 +1084,159 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Editors</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Form Elements </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Editors </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                        <!-- Basic -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Basic (Quill)</h6>
+                            </div>
+                            <div class="card-body">
+                                <div id="editor" class="h-80">
+                                    <h1>This is a heading text...</h1>
+                                    <br />
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dui arcu,
+                                        pellentesque id mattis sed, mattis semper erat. Etiam commodo arcu a mollis
+                                        consequat. Curabitur pretium auctor tortor, bibendum placerat elit feugiat et.
+                                        Ut ac turpis nec dui ullamcorper ornare. Vestibulum finibus quis magna at
+                                        accumsan. Praesent a purus vitae tortor fringilla tempus vel non purus.
+                                        Suspendisse eleifend nibh porta dolor ullamcorper laoreet. Ut sit amet ipsum
+                                        vitae lectus pharetra tincidunt. In ipsum quam, iaculis at erat ut, fermentum
+                                        efficitur ipsum. Nunc odio diam, fringilla in auctor et, scelerisque at lorem.
+                                        Sed convallis tempor dolor eu dictum. Cras ornare ornare imperdiet. Pellentesque
+                                        sagittis lacus non libero fringilla faucibus. Aenean ullamcorper enim et metus
+                                        vestibulum, eu aliquam nunc placerat. Praesent fringilla dolor sit amet leo
+                                        pulvinar semper.
+                                    </p>
+                                    <br />
+                                    <p>
+                                        Curabitur vel tincidunt dui. Duis vestibulum eget velit sit amet aliquet.
+                                        Curabitur vitae cursus ex. Aliquam pulvinar vulputate ullamcorper. Maecenas
+                                        luctus in eros et aliquet. Cras auctor luctus nisl a consectetur. Morbi
+                                        hendrerit nisi nunc, quis egestas nibh consectetur nec. Aliquam vel lorem enim.
+                                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                                        Curae; Nunc placerat, enim quis varius luctus, enim arcu tincidunt purus, in
+                                        vulputate tortor mi a tortor. Praesent porta ornare fermentum. Praesent sed
+                                        ligula at ante tempor posuere a at lorem.
+                                    </p>
+                                    <br />
+                                    <p>
+                                        Curabitur vel tincidunt dui. Duis vestibulum eget velit sit amet aliquet.
+                                        Curabitur vitae cursus ex. Aliquam pulvinar vulputate ullamcorper. Maecenas
+                                        luctus in eros et aliquet. Cras auctor luctus nisl a consectetur. Morbi
+                                        hendrerit nisi nunc, quis egestas nibh consectetur nec. Aliquam vel lorem enim.
+                                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                                        Curae; Nunc placerat, enim quis varius luctus, enim arcu tincidunt purus, in
+                                        vulputate tortor mi a tortor. Praesent porta ornare fermentum. Praesent sed
+                                        ligula at ante tempor posuere a at lorem.
+                                    </p>
+                                    <br />
+                                    <p>
+                                        Aliquam diam felis, vehicula ut ipsum eu, consectetur tincidunt ipsum.
+                                        Vestibulum sed metus ac nisi tincidunt mollis sed non urna. Vivamus lacinia
+                                        ullamcorper interdum. Sed sed erat vel leo venenatis pretium. Sed aliquet sem
+                                        nunc, ut iaculis dolor consectetur et. Vivamus ligula sapien, maximus nec
+                                        pellentesque ut, imperdiet at libero. Vivamus semper nulla lectus, id dapibus
+                                        nulla convallis id. Quisque elementum lectus ac dui gravida, ut molestie nunc
+                                        convallis. Pellentesque et odio non dolor convallis commodo sit amet a ante.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- With Tooltip -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>With Tooltip (Quill)</h6>
+                            </div>
+                            <div class="card-body">
+                                <div id="editor1" class="h-80">
+                                    <h1>This is a heading text...</h1>
+                                    <br />
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dui arcu,
+                                        pellentesque id mattis sed, mattis semper erat. Etiam commodo arcu a mollis
+                                        consequat. Curabitur pretium auctor tortor, bibendum placerat elit feugiat et.
+                                        Ut ac turpis nec dui ullamcorper ornare. Vestibulum finibus quis magna at
+                                        accumsan. Praesent a purus vitae tortor fringilla tempus vel non purus.
+                                        Suspendisse eleifend nibh porta dolor ullamcorper laoreet. Ut sit amet ipsum
+                                        vitae lectus pharetra tincidunt. In ipsum quam, iaculis at erat ut, fermentum
+                                        efficitur ipsum. Nunc odio diam, fringilla in auctor et, scelerisque at lorem.
+                                        Sed convallis tempor dolor eu dictum. Cras ornare ornare imperdiet. Pellentesque
+                                        sagittis lacus non libero fringilla faucibus. Aenean ullamcorper enim et metus
+                                        vestibulum, eu aliquam nunc placerat. Praesent fringilla dolor sit amet leo
+                                        pulvinar semper.
+                                    </p>
+                                    <br />
+                                    <p>
+                                        Curabitur vel tincidunt dui. Duis vestibulum eget velit sit amet aliquet.
+                                        Curabitur vitae cursus ex. Aliquam pulvinar vulputate ullamcorper. Maecenas
+                                        luctus in eros et aliquet. Cras auctor luctus nisl a consectetur. Morbi
+                                        hendrerit nisi nunc, quis egestas nibh consectetur nec. Aliquam vel lorem enim.
+                                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                                        Curae; Nunc placerat, enim quis varius luctus, enim arcu tincidunt purus, in
+                                        vulputate tortor mi a tortor. Praesent porta ornare fermentum. Praesent sed
+                                        ligula at ante tempor posuere a at lorem.
+                                    </p>
+                                    <br />
+                                    <p>
+                                        Curabitur vel tincidunt dui. Duis vestibulum eget velit sit amet aliquet.
+                                        Curabitur vitae cursus ex. Aliquam pulvinar vulputate ullamcorper. Maecenas
+                                        luctus in eros et aliquet. Cras auctor luctus nisl a consectetur. Morbi
+                                        hendrerit nisi nunc, quis egestas nibh consectetur nec. Aliquam vel lorem enim.
+                                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                                        Curae; Nunc placerat, enim quis varius luctus, enim arcu tincidunt purus, in
+                                        vulputate tortor mi a tortor. Praesent porta ornare fermentum. Praesent sed
+                                        ligula at ante tempor posuere a at lorem.
+                                    </p>
+                                    <br />
+                                    <p>
+                                        Aliquam diam felis, vehicula ut ipsum eu, consectetur tincidunt ipsum.
+                                        Vestibulum sed metus ac nisi tincidunt mollis sed non urna. Vivamus lacinia
+                                        ullamcorper interdum. Sed sed erat vel leo venenatis pretium. Sed aliquet sem
+                                        nunc, ut iaculis dolor consectetur et. Vivamus ligula sapien, maximus nec
+                                        pellentesque ut, imperdiet at libero. Vivamus semper nulla lectus, id dapibus
+                                        nulla convallis id. Quisque elementum lectus ac dui gravida, ut molestie nunc
+                                        convallis. Pellentesque et odio non dolor convallis commodo sit amet a ante.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Markdown Basic -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Basic (Markdown)</h6>
+                            </div>
+                            <div class="card-body">
+                                <textarea id="mde-basic"></textarea>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Autosaving (Markdown)</h6>
+                            </div>
+                            <div class="card-body">
+                                <textarea id="mde-autosave"></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
@@ -1369,5 +1507,67 @@
                 </nav>
             </div>
         </div>
+        <script src="/assets/js/plugins.js" type="module"></script>
+        <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+        <script>
+            window.addEventListener('load', function () {
+                var quill = new Quill('#editor', {
+                    theme: 'snow',
+                });
+                var toolbar = quill.container.previousSibling;
+                toolbar.querySelector('.ql-picker').setAttribute('title', 'Font Size');
+                toolbar.querySelector('button.ql-bold').setAttribute('title', 'Bold');
+                toolbar.querySelector('button.ql-italic').setAttribute('title', 'Italic');
+                toolbar.querySelector('button.ql-link').setAttribute('title', 'Link');
+                toolbar.querySelector('button.ql-underline').setAttribute('title', 'Underline');
+                toolbar.querySelector('button.ql-clean').setAttribute('title', 'Clear Formatting');
+                toolbar.querySelector('[value=ordered]').setAttribute('title', 'Ordered List');
+                toolbar.querySelector('[value=bullet]').setAttribute('title', 'Bullet List');
+
+                // editor 2
+                var quill2 = new Quill('#editor1', {
+                    theme: 'snow',
+                });
+                var toolbar2 = quill2.container.previousSibling;
+                toolbar2.querySelector('.ql-picker').setAttribute('title', 'Font Size');
+                toolbar2.querySelector('button.ql-bold').setAttribute('title', 'Bold');
+                toolbar2.querySelector('button.ql-italic').setAttribute('title', 'Italic');
+                toolbar2.querySelector('button.ql-link').setAttribute('title', 'Link');
+                toolbar2.querySelector('button.ql-underline').setAttribute('title', 'Underline');
+                toolbar2.querySelector('button.ql-clean').setAttribute('title', 'Clear Formatting');
+                toolbar2.querySelector('[value=ordered]').setAttribute('title', 'Ordered List');
+                toolbar2.querySelector('[value=bullet]').setAttribute('title', 'Bullet List');
+
+                // Markdown Editor
+                const easyMDE = new EasyMDE({
+                    element: document.getElementById('mde-basic'),
+                    initialValue: `# Basic Example
+Go ahead, play around with the editor! Be sure to check out **bold** and *italic* styling, or even[links](https://google.com). You can type the Markdown syntax, use the toolbar, or use shortcuts like 'cmd-b' or 'ctrl-b'.
+
+## Lists
+Unordered lists can be started using the toolbar or by typing '*', '-', or '+'. Ordered lists can be started by typing '1.'.
+
+#### Unordered
+* Lists are a piece of cake
+`,
+                });
+
+                const easymde1 = new EasyMDE({
+                    element: document.getElementById('mde-autosave'),
+                    autosave: {
+                        enabled: true,
+                        delay: 1000,
+                        uniqueId: 'mde-autosave-demo',
+                    },
+                    initialValue: `
+                        # Autosaving!
+
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                        By default, it saves every 10 seconds, but this can be changed. When this textarea is included in a form, it will automatically forget the saved value when the form is submitted.
+                    `,
+                });
+            });
+        </script>
     </body>
 </html>

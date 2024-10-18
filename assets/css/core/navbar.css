@@ -37,7 +37,7 @@
         @apply border-b my-1.5 dark:border-gray-700;
     }
     .user-menu-link {
-        @apply flex items-center gap-2 p-2 text-sm;
+        @apply flex items-center gap-2 p-2 text-sm cursor-pointer;
         @apply dark--text rounded-md hover:text-primary-600;
         @apply w-full hover:bg-light hover:dark:bg-dark-700;
     }
@@ -46,7 +46,7 @@
     }
     .language-dropdown-item {
         @apply dark--text flex items-center rounded-md px-4 py-2 hover:bg-light hover:text-primary-600;
-        @apply hover:dark:bg-dark-700 dark:hover:text-gray-300;
+        @apply hover:dark:bg-dark-700 dark:hover:text-gray-300 cursor-pointer;
     }
     .tw-bell-icon {
         @apply absolute -right-1 -top-1 flex h-2 w-2;

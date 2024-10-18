@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Dashboard - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,367 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Scrum Board</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Apps </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Scrum Board </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div x-data="scrumboard">
+                        <div>
+                            <button
+                                type="button"
+                                class="btn btn-primary flex"
+                                data-hs-overlay="#isAddProjectModal"
+                                @click="addEditProject()">
+                                <span class="icon-[mdi--plus] mr-2 text-lg/none">add</span>
+                                Add Project
+                            </button>
+                        </div>
+
+                        <!-- project list -->
+                        <div class="relative pt-5">
+                            <div data-simplebar class="-mx-2 h-full">
+                                <div class="flex flex-nowrap items-start gap-5 overflow-x-auto px-2 pb-2">
+                                    <template x-for="project in projectList" :key="project.id">
+                                        <div class="card w-80 flex-none">
+                                            <div class="card-header flex justify-between">
+                                                <h4 x-text="project.title" class="text-base font-semibold"></h4>
+
+                                                <div class="flex">
+                                                    <button
+                                                        type="button"
+                                                        class="mr-2 hover:text-primary rtl:ml-2"
+                                                        data-toggle="modal"
+                                                        data-hs-overlay="#isAddTaskModal"
+                                                        @click="addEditTask(project.id)">
+                                                        <span class="icon-[mdi--add-circle-outline]"></span>
+                                                    </button>
+                                                    <div class="hs-dropdown">
+                                                        <button
+                                                            type="button"
+                                                            class="hs-dropdown-toggle hover:text-primary">
+                                                            <span class="icon-[mdi--dots-horizontal]"></span>
+                                                        </button>
+                                                        <ul class="hs-dropdown-menu dropdown-menu">
+                                                            <li>
+                                                                <a
+                                                                    href="javascript:;"
+                                                                    class="dropdown-link"
+                                                                    data-toggle="modal"
+                                                                    data-target="#isAddTaskModal"
+                                                                    @click="addEditProject(project)">
+                                                                    Edit
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a
+                                                                    href="javascript:;"
+                                                                    class="dropdown-link"
+                                                                    @click="deleteProject(project)">
+                                                                    Delete
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a
+                                                                    href="javascript:;"
+                                                                    class="dropdown-link"
+                                                                    @click="clearProjects(project)">
+                                                                    Clear All
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- task list -->
+                                            <div
+                                                class="card-body sortable-list min-h-[150px] space-y-3"
+                                                :data-id="project.id">
+                                                <template x-for="task in project.tasks">
+                                                    <div
+                                                        :key="`${project.id}${task.id}`"
+                                                        :data-id="`${project.id}${task.id}`"
+                                                        class="cursor-move space-y-3">
+                                                        <div class="sortable-item-card">
+                                                            <template x-if="task.image">
+                                                                <img
+                                                                    src="/images/img-3.jpg"
+                                                                    alt="images"
+                                                                    class="h-32 w-full rounded-md object-cover" />
+                                                            </template>
+                                                            <div
+                                                                class="my-2 text-base font-medium"
+                                                                x-text="task.title"></div>
+                                                            <p class="break-all" x-text="task.description"></p>
+                                                            <div class="flex flex-wrap items-center gap-2">
+                                                                <template x-if="task.tags?.length">
+                                                                    <template x-for="(tag , i) in task.tags" :key="i">
+                                                                        <div
+                                                                            class="btn btn-outline-primary my-2 flex px-2 py-1">
+                                                                            <span
+                                                                                class="icon-[mdi--tag-outline]"></span>
+                                                                            <span class="ml-2" x-text="tag"></span>
+                                                                        </div>
+                                                                    </template>
+                                                                </template>
+                                                                <template x-if="!task.tags?.length">
+                                                                    <div
+                                                                        class="btn text-white-dark dark:border-white-dark/50 my-2 flex px-2 py-1 shadow-none">
+                                                                        <span class="icon-[mdi--tag-outline]"></span>
+                                                                        <span class="ml-2">No Tags</span>
+                                                                    </div>
+                                                                </template>
+                                                            </div>
+                                                            <div class="flex items-center justify-between">
+                                                                <div
+                                                                    class="flex items-center font-medium hover:text-primary">
+                                                                    <span
+                                                                        class="icon-[mdi--calendar-today] text-lg/none">
+                                                                        today
+                                                                    </span>
+                                                                    <span class="ml-2" x-text="task.date"></span>
+                                                                </div>
+                                                                <div class="flex items-center gap-2">
+                                                                    <button
+                                                                        type="button"
+                                                                        class="hover:text-info"
+                                                                        @click="addEditTask(project.id, task)">
+                                                                        <span
+                                                                            class="icon-[mdi--clock-edit-outline] text-lg/none">
+                                                                            edit_note
+                                                                        </span>
+                                                                    </button>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="hover:text-danger"
+                                                                        data-hs-overlay="#isDeleteModal"
+                                                                        @click="deleteConfirmModal(project.id, task)">
+                                                                        <span
+                                                                            class="icon-[mdi--minus-circle-outline] text-lg/none">
+                                                                            remove_circle_outline
+                                                                        </span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </div>
+
+                                            <div class="py-2">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-primary mx-auto"
+                                                    data-hs-overlay="#isAddTaskModal"
+                                                    @click="addEditTask(project.id)">
+                                                    <span class="icon-[mdi--add] text-lg/none">add</span>
+                                                    Add Task
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- add project modal -->
+
+                        <div id="isAddProjectModal" class="tw-modal">
+                            <div class="tw-modal-dialog">
+                                <div class="tw-modal-content">
+                                    <div class="tw-modal-header">
+                                        <h6 x-text="params.id ? 'Edit Project' : 'Add Project'"></h6>
+                                        <button
+                                            type="button"
+                                            class="tw-modal-close"
+                                            data-hs-overlay="#isAddProjectModal">
+                                            <i class="icon-[mdi--close]"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="tw-modal-body">
+                                        <form @submit.prevent="saveProject">
+                                            <div class="grid gap-5">
+                                                <div>
+                                                    <label for="title">Name</label>
+                                                    <input
+                                                        id="title"
+                                                        x-model="params.title"
+                                                        type="text"
+                                                        class="form-input mt-1"
+                                                        placeholder="Enter Name" />
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-8 flex items-center justify-end">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-danger"
+                                                    data-hs-overlay="#isAddProjectModal">
+                                                    Cancel
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    data-hs-overlay="#isAddProjectModal"
+                                                    class="btn btn-primary ml-4 rtl:mr-4"
+                                                    x-text="params.id ? 'Update' : 'Add'"></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- add task modal -->
+
+                        <div id="isAddTaskModal" class="tw-modal">
+                            <div class="tw-modal-dialog tw-modal-centered">
+                                <div class="tw-modal-content">
+                                    <div class="tw-modal-header">
+                                        <h6 x-text="paramsTask.id ? 'Edit Task' : 'Add Task'"></h6>
+                                        <button type="button" class="tw-modal-close" data-hs-overlay="#isAddTaskModal">
+                                            <i class="icon-[mdi--close]"></i>
+                                        </button>
+                                    </div>
+                                    <div class="tw-modal-body">
+                                        <form @submit.prevent="saveTask">
+                                            <div class="space-y-4">
+                                                <div>
+                                                    <label for="taskTitle">Name</label>
+                                                    <input
+                                                        id="taskTitle"
+                                                        x-model="paramsTask.title"
+                                                        type="text"
+                                                        class="form-input"
+                                                        placeholder="Enter Name" />
+                                                </div>
+
+                                                <div>
+                                                    <label for="taskTag">Tag</label>
+                                                    <input
+                                                        id="taskTag"
+                                                        x-model="paramsTask.tags"
+                                                        type="text"
+                                                        class="form-input"
+                                                        placeholder="Enter Tag" />
+                                                </div>
+                                                <div>
+                                                    <label for="taskdesc">Description</label>
+                                                    <textarea
+                                                        id="taskdesc"
+                                                        x-ref="editor"
+                                                        x-model="paramsTask.description"
+                                                        class="form-textarea min-h-[130px] rounded-tl-none rounded-tr-none"
+                                                        placeholder="Enter Description"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-8 flex items-center justify-end">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-outline-danger"
+                                                    data-hs-overlay="#isAddTaskModal">
+                                                    Cancel
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    data-hs-overlay="#isAddTaskModal"
+                                                    class="btn btn-primary ml-4 rtl:mr-4"
+                                                    x-text="paramsTask.id ? 'Update' : 'Add'"></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- delete task modal -->
+                        <div id="isDeleteModal" class="tw-modal">
+                            <div class="tw-modal-dialog tw-modal-centered">
+                                <div class="tw-modal-content max-w-lg">
+                                    <div class="tw-modal-header border-0">
+                                        <h5 class="text-lg">Delete Task</h5>
+                                        <button type="button" class="tw-modal-close" data-hs-overlay="#isDeleteModal">
+                                            <i class="icon-[mdi--close]"></i>
+                                        </button>
+                                    </div>
+                                    <div class="tw-modal-body p-5 text-center">
+                                        <div
+                                            class="mx-auto w-fit rounded-full bg-danger p-4 text-white ring-4 ring-danger/30">
+                                            <svg
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="h-5 w-5">
+                                                <path
+                                                    opacity="0.5"
+                                                    d="M9.17065 4C9.58249 2.83481 10.6937 2 11.9999 2C13.3062 2 14.4174 2.83481 14.8292 4"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"></path>
+                                                <path
+                                                    d="M20.5001 6H3.5"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"></path>
+                                                <path
+                                                    d="M18.8334 8.5L18.3735 15.3991C18.1965 18.054 18.108 19.3815 17.243 20.1907C16.378 21 15.0476 21 12.3868 21H11.6134C8.9526 21 7.6222 21 6.75719 20.1907C5.89218 19.3815 5.80368 18.054 5.62669 15.3991L5.16675 8.5"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"></path>
+                                                <path
+                                                    opacity="0.5"
+                                                    d="M9.5 11L10 16"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"></path>
+                                                <path
+                                                    opacity="0.5"
+                                                    d="M14.5 11L14 16"
+                                                    stroke="currentColor"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="mx-auto mt-5 text-base sm:w-3/4">
+                                            Are you sure you want to delete Task?
+                                        </div>
+
+                                        <div class="mt-8 flex items-center justify-center">
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-danger"
+                                                data-hs-overlay="#isDeleteModal">
+                                                Cancel
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary ml-4 rtl:mr-4"
+                                                data-hs-overlay="#isDeleteModal"
+                                                @click="deleteTask">
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
@@ -1369,5 +1714,7 @@
                 </nav>
             </div>
         </div>
+        <script src="/assets/js/plugins.js" type="module"></script>
+        <script src="/features/apps/scrumboard.js"></script>
     </body>
 </html>

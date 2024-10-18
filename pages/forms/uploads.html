@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Untitled - Admin Template</title>
+        <title>Uploads - Admin Template</title>
         <link rel="icon" href="/favicon.png" />
         <link rel="mask-icon" href="/favicon.png" color="#009EF7" />
         <meta name="theme-color" content="#009EF7" />
@@ -1083,22 +1083,43 @@
                     <!-- Start Breadcrumb -->
                     <nav class="breadcrumb">
                         <div class="left-link">
-                            <h3>Untitled</h3>
+                            <h3>Uploads</h3>
                         </div>
                         <ol class="breadcrumb-nav">
                             <li class="inline-flex items-center">
-                                <a href="/" class="breadcrumb-item"> UI </a>
+                                <a href="/" class="breadcrumb-item"> Form Elements </a>
                             </li>
 
                             <li aria-current="page">
                                 <div class="flex items-center">
                                     <span class="icon-[mdi--chevron-right]"></span>
-                                    <span class="breadcrumb-item-current"> Untitled </span>
+                                    <span class="breadcrumb-item-current"> Uploads </span>
                                 </div>
                             </li>
                         </ol>
                     </nav>
                     <!-- End Breadcrumb -->
+
+                    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+                        <!-- Single File -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Single File Upload</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="custom-file-container" data-upload-id="myFirstImage"></div>
+                            </div>
+                        </div>
+                        <!-- Multiple File -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6>Multiple File</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="custom-file-container" data-upload-id="mySecondImage"></div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
 
                 <footer class="footer" :class="footerType">
@@ -1369,5 +1390,25 @@
                 </nav>
             </div>
         </div>
+        <script src="/assets/js/plugins.js" type="module"></script>
+        <script>
+            window.addEventListener('load', function () {
+                new FileUploadWithPreview('myFirstImage', {
+                    images: {
+                        baseImage: '/images/file-preview.svg',
+                        backgroundImage: '',
+                    },
+                });
+
+                // multiple image upload
+                new FileUploadWithPreview('mySecondImage', {
+                    images: {
+                        baseImage: '/images/file-preview.svg',
+                        backgroundImage: '',
+                    },
+                    multiple: true,
+                });
+            });
+        </script>
     </body>
 </html>
